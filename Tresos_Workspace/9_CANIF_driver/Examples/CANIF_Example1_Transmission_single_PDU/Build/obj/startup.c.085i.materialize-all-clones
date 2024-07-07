@@ -1,0 +1,146 @@
+init_data_bss ()
+{
+  const uint32 * zeroTable_Ptr;
+  const uint32 * initTable_Ptr;
+  uint32 j;
+  uint32 i;
+  uint32 size;
+  uint32 len;
+  uint8 * ram;
+  const uint8 * rom;
+  const struct Sys_ZeroLayoutType * zero_layout;
+  const struct Sys_CopyLayoutType * copy_layout;
+  long unsigned int _1;
+  const struct Sys_CopyLayoutType * _2;
+  long unsigned int _3;
+  const struct Sys_CopyLayoutType * _4;
+  long unsigned int _5;
+  const struct Sys_CopyLayoutType * _6;
+  uint8 * _7;
+  long unsigned int _8;
+  long unsigned int _9;
+  const struct Sys_CopyLayoutType * _10;
+  uint8 * _11;
+  long unsigned int _12;
+  const uint8 * _13;
+  uint8 * _14;
+  unsigned char _15;
+  long unsigned int _16;
+  const struct Sys_ZeroLayoutType * _17;
+  long unsigned int _18;
+  const struct Sys_ZeroLayoutType * _19;
+  uint8 * _20;
+  long unsigned int _21;
+  long unsigned int _22;
+  const struct Sys_ZeroLayoutType * _23;
+  uint8 * _24;
+  long unsigned int _25;
+  uint8 * _26;
+
+  <bb 2> :
+  len_35 = 0;
+  size_36 = 0;
+  i_37 = 0;
+  j_38 = 0;
+  initTable_Ptr_39 = &__INIT_TABLE;
+  zeroTable_Ptr_40 = &__ZERO_TABLE;
+  len_42 = *initTable_Ptr_39;
+  initTable_Ptr_43 = initTable_Ptr_39 + 4;
+  copy_layout_44 = initTable_Ptr_43;
+  i_45 = 0;
+  goto <bb 7>; [INV]
+
+  <bb 3> :
+  _1 = i_27 * 12;
+  _2 = copy_layout_44 + _1;
+  rom_56 = _2->rom_start;
+  _3 = i_27 * 12;
+  _4 = copy_layout_44 + _3;
+  ram_57 = _4->ram_start;
+  _5 = i_27 * 12;
+  _6 = copy_layout_44 + _5;
+  _7 = _6->rom_end;
+  _8 = (long unsigned int) _7;
+  _9 = i_27 * 12;
+  _10 = copy_layout_44 + _9;
+  _11 = _10->rom_start;
+  _12 = (long unsigned int) _11;
+  size_58 = _8 - _12;
+  j_59 = 0;
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  _13 = rom_56 + j_29;
+  _14 = ram_57 + j_29;
+  _15 = *_13;
+  *_14 = _15;
+  j_62 = j_29 + 1;
+
+  <bb 5> :
+  # j_29 = PHI <j_59(3), j_62(4)>
+  if (j_29 < size_58)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 6> :
+  i_60 = i_27 + 1;
+
+  <bb 7> :
+  # i_27 = PHI <i_45(2), i_60(6)>
+  if (i_27 < len_42)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 8> :
+  len_46 = *zeroTable_Ptr_40;
+  zeroTable_Ptr_47 = zeroTable_Ptr_40 + 4;
+  zero_layout_48 = zeroTable_Ptr_47;
+  i_49 = 0;
+  goto <bb 13>; [INV]
+
+  <bb 9> :
+  _16 = i_28 * 8;
+  _17 = zero_layout_48 + _16;
+  ram_50 = _17->ram_start;
+  _18 = i_28 * 8;
+  _19 = zero_layout_48 + _18;
+  _20 = _19->ram_end;
+  _21 = (long unsigned int) _20;
+  _22 = i_28 * 8;
+  _23 = zero_layout_48 + _22;
+  _24 = _23->ram_start;
+  _25 = (long unsigned int) _24;
+  size_51 = _21 - _25;
+  j_52 = 0;
+  goto <bb 11>; [INV]
+
+  <bb 10> :
+  _26 = ram_50 + j_30;
+  *_26 = 0;
+  j_55 = j_30 + 1;
+
+  <bb 11> :
+  # j_30 = PHI <j_52(9), j_55(10)>
+  if (j_30 < size_51)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 12> :
+  i_53 = i_28 + 1;
+
+  <bb 13> :
+  # i_28 = PHI <i_49(8), i_53(12)>
+  if (i_28 < len_46)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 14>; [INV]
+
+  <bb 14> :
+  return;
+
+}
+
+

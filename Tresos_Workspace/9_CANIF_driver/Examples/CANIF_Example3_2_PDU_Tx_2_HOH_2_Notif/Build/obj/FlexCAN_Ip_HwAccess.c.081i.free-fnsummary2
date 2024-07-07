@@ -1,0 +1,3310 @@
+FlexCAN_ResetImaskBuff (uint8 Instance)
+{
+  uint8 ImaskCnt;
+  int _1;
+  int _2;
+  unsigned char ImaskCnt.18_3;
+
+  <bb 2> :
+  ImaskCnt_6 = 0;
+  ImaskCnt_7 = 0;
+  goto <bb 4>; [INV]
+
+  <bb 3> :
+  _1 = (int) Instance_9(D);
+  _2 = (int) ImaskCnt_4;
+  FlexCAN_Ip_au32ImaskBuff[_1][_2] ={v} 0;
+  ImaskCnt.18_3 = ImaskCnt_4;
+  ImaskCnt_11 = ImaskCnt.18_3 + 1;
+
+  <bb 4> :
+  # ImaskCnt_4 = PHI <ImaskCnt_7(2), ImaskCnt_11(3)>
+  if (ImaskCnt_4 == 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 5> :
+  return;
+
+}
+
+
+FlexCAN_ConfigCtrlOptions (struct FLEXCAN_Type * pBase, uint32 u32Options)
+{
+  long unsigned int _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _5;
+  long unsigned int _6;
+  long unsigned int _7;
+  long unsigned int _8;
+  long unsigned int _9;
+
+  <bb 2> :
+  _1 = u32Options_17(D) & 32;
+  if (_1 != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  FlexCAN_SetIsoCan (pBase_19(D), 1);
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  FlexCAN_SetIsoCan (pBase_19(D), 0);
+
+  <bb 5> :
+  _2 = u32Options_17(D) & 64;
+  if (_2 != 0)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  FlexCAN_SetEntireFrameArbitrationFieldComparison (pBase_19(D), 1);
+  goto <bb 8>; [INV]
+
+  <bb 7> :
+  FlexCAN_SetEntireFrameArbitrationFieldComparison (pBase_19(D), 0);
+
+  <bb 8> :
+  _3 = u32Options_17(D) & 8;
+  if (_3 != 0)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 9> :
+  FlexCAN_SetProtocolException (pBase_19(D), 1);
+  goto <bb 11>; [INV]
+
+  <bb 10> :
+  FlexCAN_SetProtocolException (pBase_19(D), 0);
+
+  <bb 11> :
+  _4 = u32Options_17(D) & 2;
+  if (_4 != 0)
+    goto <bb 12>; [INV]
+  else
+    goto <bb 14>; [INV]
+
+  <bb 12> :
+  _5 ={v} pBase_19(D)->MCR;
+  _6 = _5 & 2048;
+  if (_6 == 0)
+    goto <bb 13>; [INV]
+  else
+    goto <bb 14>; [INV]
+
+  <bb 13> :
+  FlexCAN_CanBitSampling (pBase_19(D), 1);
+  goto <bb 15>; [INV]
+
+  <bb 14> :
+  FlexCAN_CanBitSampling (pBase_19(D), 0);
+
+  <bb 15> :
+  _7 = u32Options_17(D) & 4;
+  if (_7 != 0)
+    goto <bb 16>; [INV]
+  else
+    goto <bb 17>; [INV]
+
+  <bb 16> :
+  FlexCAN_SetBusOffAutorecovery (pBase_19(D), 1);
+  goto <bb 18>; [INV]
+
+  <bb 17> :
+  FlexCAN_SetBusOffAutorecovery (pBase_19(D), 0);
+
+  <bb 18> :
+  _8 = u32Options_17(D) & 1;
+  if (_8 != 0)
+    goto <bb 19>; [INV]
+  else
+    goto <bb 20>; [INV]
+
+  <bb 19> :
+  FlexCAN_SetRemoteReqStore (pBase_19(D), 1);
+  goto <bb 21>; [INV]
+
+  <bb 20> :
+  FlexCAN_SetRemoteReqStore (pBase_19(D), 0);
+
+  <bb 21> :
+  _9 = u32Options_17(D) & 16;
+  if (_9 != 0)
+    goto <bb 22>; [INV]
+  else
+    goto <bb 23>; [INV]
+
+  <bb 22> :
+  FlexCAN_SetEdgeFilter (pBase_19(D), 1);
+  goto <bb 24>; [INV]
+
+  <bb 23> :
+  FlexCAN_SetEdgeFilter (pBase_19(D), 0);
+
+  <bb 24> :
+  return;
+
+}
+
+
+FlexCAN_IsMbOutOfRange (const struct FLEXCAN_Type * pBase, uint8 u8MbIndex, boolean bIsLegacyFifoEn, uint32 u32MaxMbNum)
+{
+  uint32 u32NumOfMbOccupiedByFiFo;
+  uint32 u32NumOfFiFoElement;
+  boolean ReturnValue;
+  boolean D.7297;
+  unsigned char _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _5;
+  long unsigned int _6;
+  long unsigned int _7;
+  boolean _22;
+
+  <bb 2> :
+  ReturnValue_9 = 0;
+  u32NumOfFiFoElement_10 = 0;
+  u32NumOfMbOccupiedByFiFo_11 = 0;
+  _1 = (unsigned char) u32MaxMbNum_12(D);
+  if (u8MbIndex_13(D) >= _1)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  ReturnValue_21 = 1;
+  goto <bb 8>; [INV]
+
+  <bb 4> :
+  if (bIsLegacyFifoEn_14(D) != 0)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 5> :
+  _2 ={v} pBase_17(D)->CTRL2;
+  _3 = _2 >> 24;
+  u32NumOfFiFoElement_18 = _3 & 15;
+  _4 = u32NumOfFiFoElement_18 + 1;
+  _5 = _4 * 8;
+  _6 = _5 / 4;
+  u32NumOfMbOccupiedByFiFo_19 = _6 + 5;
+  _7 = (long unsigned int) u8MbIndex_13(D);
+  if (u32NumOfMbOccupiedByFiFo_19 >= _7)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 6> :
+  ReturnValue_20 = 1;
+  goto <bb 8>; [INV]
+
+  <bb 7> :
+  ReturnValue_15 = 0;
+
+  <bb 8> :
+  # ReturnValue_8 = PHI <ReturnValue_21(3), ReturnValue_20(6), ReturnValue_15(7), ReturnValue_9(5)>
+  _22 = ReturnValue_8;
+
+  <bb 9> :
+<L8>:
+  return _22;
+
+}
+
+
+FlexCAN_ReadRxFifo (const struct FLEXCAN_Type * base, struct Flexcan_Ip_MsgBuffType * rxFifo)
+{
+  uint8 can_real_payload;
+  uint8 flexcan_mb_dlc_value;
+  uint32 * msgData_32;
+  const uint32 * flexcan_mb_data_32;
+  const uint32 * flexcan_mb_id;
+  const uint32 * flexcan_mb;
+  uint32 MbWord;
+  uint32 DataByte;
+  long unsigned int base.10_1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  unsigned char _5;
+  long unsigned int _6;
+  long unsigned int _7;
+  long unsigned int _8;
+  long unsigned int _9;
+  long unsigned int _10;
+  long unsigned int _11;
+  long unsigned int _12;
+  unsigned char _13;
+  long unsigned int _14;
+  long unsigned int _15;
+  long unsigned int _16;
+  long unsigned int _17;
+  const uint32 * _18;
+  long unsigned int _19;
+  long unsigned int _20;
+  long unsigned int _21;
+  long unsigned int _22;
+  long unsigned int _23;
+  long unsigned int _24;
+  long unsigned int _25;
+  long unsigned int _26;
+  long unsigned int _27;
+  long unsigned int _28;
+  uint32 * _29;
+  long unsigned int _30;
+  long unsigned int _31;
+
+  <bb 2> :
+  base.10_1 = (long unsigned int) base_36(D);
+  _2 = base.10_1 + 128;
+  flexcan_mb_37 = (const uint32 *) _2;
+  flexcan_mb_id_38 = flexcan_mb_37 + 4;
+  flexcan_mb_data_32_39 = flexcan_mb_37 + 8;
+  msgData_32_40 = 0B;
+  _3 ={v} *flexcan_mb_37;
+  _4 = _3 >> 16;
+  _5 = (unsigned char) _4;
+  flexcan_mb_dlc_value_42 = _5 & 15;
+  can_real_payload_44 = FlexCAN_ComputePayloadSize (flexcan_mb_dlc_value_42);
+  msgData_32_46 = &rxFifo_45(D)->data;
+  if (can_real_payload_44 > 8)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  can_real_payload_47 = 8;
+
+  <bb 4> :
+  # can_real_payload_33 = PHI <can_real_payload_44(2), can_real_payload_47(3)>
+  rxFifo_45(D)->dataLen = can_real_payload_33;
+  _6 ={v} *flexcan_mb_37;
+  rxFifo_45(D)->cs = _6;
+  _7 = rxFifo_45(D)->cs;
+  _8 = _7 & 2097152;
+  if (_8 != 0)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  _9 ={v} *flexcan_mb_id_38;
+  rxFifo_45(D)->msgId = _9;
+  goto <bb 7>; [INV]
+
+  <bb 6> :
+  _10 ={v} *flexcan_mb_id_38;
+  _11 = _10 >> 18;
+  rxFifo_45(D)->msgId = _11;
+
+  <bb 7> :
+  _12 ={v} base_36(D)->RXFIR;
+  _13 = (unsigned char) _12;
+  rxFifo_45(D)->id_hit = _13;
+  _14 = rxFifo_45(D)->cs;
+  _15 = _14 & 65535;
+  rxFifo_45(D)->time_stamp = _15;
+  DataByte_54 = 0;
+  goto <bb 9>; [INV]
+
+  <bb 8> :
+  _16 = DataByte_32 >> 2;
+  _17 = _16 * 4;
+  _18 = flexcan_mb_data_32_39 + _17;
+  MbWord_55 ={v} *_18;
+  _19 = MbWord_55 >> 24;
+  _20 = MbWord_55 >> 8;
+  _21 = _20 & 65280;
+  _22 = _19 | _21;
+  _23 = MbWord_55 << 8;
+  _24 = _23 & 16711680;
+  _25 = _22 | _24;
+  _26 = MbWord_55 << 24;
+  _27 = DataByte_32 >> 2;
+  _28 = _27 * 4;
+  _29 = msgData_32_46 + _28;
+  _30 = _25 | _26;
+  *_29 = _30;
+  DataByte_57 = DataByte_32 + 4;
+
+  <bb 9> :
+  # DataByte_32 = PHI <DataByte_54(7), DataByte_57(8)>
+  _31 = (long unsigned int) can_real_payload_33;
+  if (DataByte_32 < _31)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 10> :
+  return;
+
+}
+
+
+FlexCAN_SetRxFifoFilter (struct FLEXCAN_Type * base, Flexcan_Ip_RxFifoIdElementFormatType idFormat, const struct Flexcan_Ip_IdTableType * idFilterTable)
+{
+  volatile uint32 * FilterTable;
+  uint32 Val;
+  uint32 Val2;
+  uint32 Val1;
+  uint32 NumOfFilters;
+  uint32 j;
+  uint32 i;
+  long unsigned int base.9_1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _5;
+  long unsigned int _6;
+  long unsigned int _7;
+  const struct Flexcan_Ip_IdTableType * _8;
+  _Bool _9;
+  long unsigned int _10;
+  const struct Flexcan_Ip_IdTableType * _11;
+  _Bool _12;
+  long unsigned int _13;
+  const struct Flexcan_Ip_IdTableType * _14;
+  long unsigned int _15;
+  long unsigned int _16;
+  long unsigned int _17;
+  long unsigned int _18;
+  volatile uint32 * _19;
+  long unsigned int _20;
+  long unsigned int _21;
+  const struct Flexcan_Ip_IdTableType * _22;
+  long unsigned int _23;
+  long unsigned int _24;
+  long unsigned int _25;
+  long unsigned int _26;
+  volatile uint32 * _27;
+  long unsigned int _28;
+  long unsigned int _29;
+  long unsigned int _30;
+  long unsigned int _31;
+  long unsigned int _32;
+  long unsigned int _33;
+  long unsigned int _34;
+  const struct Flexcan_Ip_IdTableType * _35;
+  _Bool _36;
+  sizetype _37;
+  sizetype _38;
+  const struct Flexcan_Ip_IdTableType * _39;
+  _Bool _40;
+  long unsigned int _41;
+  const struct Flexcan_Ip_IdTableType * _42;
+  _Bool _43;
+  long unsigned int _44;
+  const struct Flexcan_Ip_IdTableType * _45;
+  long unsigned int _46;
+  long unsigned int _47;
+  long unsigned int _48;
+  long unsigned int _49;
+  long unsigned int _50;
+  volatile uint32 * _51;
+  long unsigned int _52;
+  long unsigned int _53;
+  const struct Flexcan_Ip_IdTableType * _54;
+  long unsigned int _55;
+  long unsigned int _56;
+  long unsigned int _57;
+  long unsigned int _58;
+  volatile uint32 * _59;
+  long unsigned int _60;
+  sizetype _61;
+  sizetype _62;
+  const struct Flexcan_Ip_IdTableType * _63;
+  _Bool _64;
+  long unsigned int _65;
+  volatile uint32 * _66;
+  long unsigned int _67;
+  sizetype _68;
+  sizetype _69;
+  const struct Flexcan_Ip_IdTableType * _70;
+  long unsigned int _71;
+  long unsigned int _72;
+  long unsigned int _73;
+  long unsigned int _74;
+  long unsigned int _75;
+  volatile uint32 * _76;
+  long unsigned int _77;
+  long unsigned int _78;
+  volatile uint32 * _79;
+  long unsigned int _80;
+  sizetype _81;
+  sizetype _82;
+  const struct Flexcan_Ip_IdTableType * _83;
+  long unsigned int _84;
+  long unsigned int _85;
+  long unsigned int _86;
+  long unsigned int _87;
+  long unsigned int _88;
+  volatile uint32 * _89;
+  long unsigned int _90;
+  long unsigned int _91;
+  long unsigned int _92;
+  long unsigned int _93;
+  long unsigned int _94;
+  long unsigned int _95;
+  long unsigned int _96;
+  const struct Flexcan_Ip_IdTableType * _97;
+  _Bool _98;
+  long unsigned int _99;
+  const struct Flexcan_Ip_IdTableType * _100;
+  long unsigned int _101;
+  long unsigned int _102;
+  long unsigned int _103;
+  long unsigned int _104;
+  volatile uint32 * _105;
+  long unsigned int _106;
+  long unsigned int _107;
+  const struct Flexcan_Ip_IdTableType * _108;
+  long unsigned int _109;
+  long unsigned int _110;
+  long unsigned int _111;
+  long unsigned int _112;
+  volatile uint32 * _113;
+  long unsigned int _114;
+  sizetype _115;
+  sizetype _116;
+  const struct Flexcan_Ip_IdTableType * _117;
+  _Bool _118;
+  long unsigned int _119;
+  volatile uint32 * _120;
+  long unsigned int _121;
+  sizetype _122;
+  sizetype _123;
+  const struct Flexcan_Ip_IdTableType * _124;
+  long unsigned int _125;
+  long unsigned int _126;
+  long unsigned int _127;
+  long unsigned int _128;
+  long unsigned int _129;
+  long unsigned int _130;
+  volatile uint32 * _131;
+  long unsigned int _132;
+  long unsigned int _133;
+  volatile uint32 * _134;
+  long unsigned int _135;
+  sizetype _136;
+  sizetype _137;
+  const struct Flexcan_Ip_IdTableType * _138;
+  long unsigned int _139;
+  long unsigned int _140;
+  long unsigned int _141;
+  long unsigned int _142;
+  long unsigned int _143;
+  long unsigned int _144;
+  volatile uint32 * _145;
+  long unsigned int _146;
+  sizetype _147;
+  sizetype _148;
+  const struct Flexcan_Ip_IdTableType * _149;
+  _Bool _150;
+  long unsigned int _151;
+  volatile uint32 * _152;
+  long unsigned int _153;
+  sizetype _154;
+  sizetype _155;
+  const struct Flexcan_Ip_IdTableType * _156;
+  long unsigned int _157;
+  long unsigned int _158;
+  long unsigned int _159;
+  long unsigned int _160;
+  long unsigned int _161;
+  long unsigned int _162;
+  volatile uint32 * _163;
+  long unsigned int _164;
+  long unsigned int _165;
+  volatile uint32 * _166;
+  long unsigned int _167;
+  sizetype _168;
+  sizetype _169;
+  const struct Flexcan_Ip_IdTableType * _170;
+  long unsigned int _171;
+  long unsigned int _172;
+  long unsigned int _173;
+  long unsigned int _174;
+  long unsigned int _175;
+  long unsigned int _176;
+  volatile uint32 * _177;
+  long unsigned int _178;
+  sizetype _179;
+  sizetype _180;
+  const struct Flexcan_Ip_IdTableType * _181;
+  _Bool _182;
+  long unsigned int _183;
+  volatile uint32 * _184;
+  long unsigned int _185;
+  sizetype _186;
+  sizetype _187;
+  const struct Flexcan_Ip_IdTableType * _188;
+  long unsigned int _189;
+  long unsigned int _190;
+  long unsigned int _191;
+  long unsigned int _192;
+  long unsigned int _193;
+  volatile uint32 * _194;
+  long unsigned int _195;
+  long unsigned int _196;
+  volatile uint32 * _197;
+  long unsigned int _198;
+  sizetype _199;
+  sizetype _200;
+  const struct Flexcan_Ip_IdTableType * _201;
+  long unsigned int _202;
+  long unsigned int _203;
+  long unsigned int _204;
+  long unsigned int _205;
+  long unsigned int _206;
+  volatile uint32 * _207;
+  long unsigned int _208;
+  long unsigned int _209;
+  long unsigned int _210;
+  long unsigned int _211;
+  long unsigned int _212;
+
+  <bb 2> :
+  Val1_232 = 0;
+  Val2_233 = 0;
+  Val_234 = 0;
+  base.9_1 = (long unsigned int) base_235(D);
+  _2 = base.9_1 + 224;
+  FilterTable_236 = (volatile uint32 *) _2;
+  _3 ={v} base_235(D)->CTRL2;
+  _4 = _3 >> 24;
+  NumOfFilters_238 = _4 & 15;
+  switch (idFormat_239(D)) <default: <L40> [INV], case 0: <L0> [INV], case 1: <L9> [INV], case 2: <L23> [INV], case 3: <L39> [INV]>
+
+  <bb 3> :
+<L0>:
+  SchM_Enter_Can_43_FLEXCAN_CAN_EXCLUSIVE_AREA_13 ();
+  _5 ={v} base_235(D)->MCR;
+  _6 = _5 & 4294966527;
+  base_235(D)->MCR ={v} _6;
+  SchM_Exit_Can_43_FLEXCAN_CAN_EXCLUSIVE_AREA_13 ();
+  i_279 = 0;
+  goto <bb 10>; [INV]
+
+  <bb 4> :
+  Val_280 = 0;
+  _7 = i_213 * 8;
+  _8 = idFilterTable_248(D) + _7;
+  _9 = _8->isRemoteFrame;
+  if (_9 != 0)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  Val_281 = 2147483648;
+
+  <bb 6> :
+  # Val_220 = PHI <Val_280(4), Val_281(5)>
+  _10 = i_213 * 8;
+  _11 = idFilterTable_248(D) + _10;
+  _12 = _11->isExtendedFrame;
+  if (_12 != 0)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 7> :
+  Val_283 = Val_220 | 1073741824;
+  _13 = i_213 * 8;
+  _14 = idFilterTable_248(D) + _13;
+  _15 = _14->id;
+  _16 = _15 << 1;
+  _17 = _16 & 1073741823;
+  _18 = i_213 * 4;
+  _19 = FilterTable_236 + _18;
+  _20 = Val_283 + _17;
+  *_19 ={v} _20;
+  goto <bb 9>; [INV]
+
+  <bb 8> :
+  _21 = i_213 * 8;
+  _22 = idFilterTable_248(D) + _21;
+  _23 = _22->id;
+  _24 = _23 << 19;
+  _25 = _24 & 1073217536;
+  _26 = i_213 * 4;
+  _27 = FilterTable_236 + _26;
+  _28 = Val_220 + _25;
+  *_27 ={v} _28;
+
+  <bb 9> :
+  i_285 = i_213 + 1;
+
+  <bb 10> :
+  # i_213 = PHI <i_279(3), i_285(9)>
+  _29 = NumOfFilters_238 + 1;
+  _30 = _29 * 8;
+  if (i_213 < _30)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 11> :
+  goto <bb 44>; [INV]
+
+  <bb 12> :
+<L9>:
+  SchM_Enter_Can_43_FLEXCAN_CAN_EXCLUSIVE_AREA_13 ();
+  _31 ={v} base_235(D)->MCR;
+  _32 = _31 & 4294966527;
+  _33 = _32 | 256;
+  base_235(D)->MCR ={v} _33;
+  SchM_Exit_Can_43_FLEXCAN_CAN_EXCLUSIVE_AREA_13 ();
+  j_262 = 0;
+  i_263 = 0;
+  goto <bb 24>; [INV]
+
+  <bb 13> :
+  Val1_264 = 0;
+  Val2_265 = 0;
+  _34 = j_216 * 8;
+  _35 = idFilterTable_248(D) + _34;
+  _36 = _35->isRemoteFrame;
+  if (_36 != 0)
+    goto <bb 14>; [INV]
+  else
+    goto <bb 15>; [INV]
+
+  <bb 14> :
+  Val1_266 = 2147483648;
+
+  <bb 15> :
+  # Val1_218 = PHI <Val1_264(13), Val1_266(14)>
+  _37 = j_216 + 1;
+  _38 = _37 * 8;
+  _39 = idFilterTable_248(D) + _38;
+  _40 = _39->isRemoteFrame;
+  if (_40 != 0)
+    goto <bb 16>; [INV]
+  else
+    goto <bb 17>; [INV]
+
+  <bb 16> :
+  Val2_267 = 32768;
+
+  <bb 17> :
+  # Val2_219 = PHI <Val2_265(15), Val2_267(16)>
+  _41 = j_216 * 8;
+  _42 = idFilterTable_248(D) + _41;
+  _43 = _42->isExtendedFrame;
+  if (_43 != 0)
+    goto <bb 18>; [INV]
+  else
+    goto <bb 19>; [INV]
+
+  <bb 18> :
+  Val1_269 = Val1_218 | 1073741824;
+  _44 = j_216 * 8;
+  _45 = idFilterTable_248(D) + _44;
+  _46 = _45->id;
+  _47 = _46 >> 15;
+  _48 = _47 << 16;
+  _49 = _48 & 1073676288;
+  _50 = i_214 * 4;
+  _51 = FilterTable_236 + _50;
+  _52 = Val1_269 + _49;
+  *_51 ={v} _52;
+  goto <bb 20>; [INV]
+
+  <bb 19> :
+  _53 = j_216 * 8;
+  _54 = idFilterTable_248(D) + _53;
+  _55 = _54->id;
+  _56 = _55 << 19;
+  _57 = _56 & 1073217536;
+  _58 = i_214 * 4;
+  _59 = FilterTable_236 + _58;
+  _60 = Val1_218 + _57;
+  *_59 ={v} _60;
+
+  <bb 20> :
+  _61 = j_216 + 1;
+  _62 = _61 * 8;
+  _63 = idFilterTable_248(D) + _62;
+  _64 = _63->isExtendedFrame;
+  if (_64 != 0)
+    goto <bb 21>; [INV]
+  else
+    goto <bb 22>; [INV]
+
+  <bb 21> :
+  Val2_272 = Val2_219 | 16384;
+  _65 = i_214 * 4;
+  _66 = FilterTable_236 + _65;
+  _67 ={v} *_66;
+  _68 = j_216 + 1;
+  _69 = _68 * 8;
+  _70 = idFilterTable_248(D) + _69;
+  _71 = _70->id;
+  _72 = _71 >> 15;
+  _73 = _72 & 16383;
+  _74 = Val2_272 + _73;
+  _75 = i_214 * 4;
+  _76 = FilterTable_236 + _75;
+  _77 = _67 | _74;
+  *_76 ={v} _77;
+  goto <bb 23>; [INV]
+
+  <bb 22> :
+  _78 = i_214 * 4;
+  _79 = FilterTable_236 + _78;
+  _80 ={v} *_79;
+  _81 = j_216 + 1;
+  _82 = _81 * 8;
+  _83 = idFilterTable_248(D) + _82;
+  _84 = _83->id;
+  _85 = _84 << 3;
+  _86 = _85 & 16376;
+  _87 = Val2_219 + _86;
+  _88 = i_214 * 4;
+  _89 = FilterTable_236 + _88;
+  _90 = _80 | _87;
+  *_89 ={v} _90;
+
+  <bb 23> :
+  j_274 = j_216 + 2;
+  i_275 = i_214 + 1;
+
+  <bb 24> :
+  # i_214 = PHI <i_263(12), i_275(23)>
+  # j_216 = PHI <j_262(12), j_274(23)>
+  _91 = NumOfFilters_238 + 1;
+  _92 = _91 * 8;
+  if (i_214 < _92)
+    goto <bb 13>; [INV]
+  else
+    goto <bb 25>; [INV]
+
+  <bb 25> :
+  goto <bb 44>; [INV]
+
+  <bb 26> :
+<L23>:
+  SchM_Enter_Can_43_FLEXCAN_CAN_EXCLUSIVE_AREA_13 ();
+  _93 ={v} base_235(D)->MCR;
+  _94 = _93 & 4294966527;
+  _95 = _94 | 512;
+  base_235(D)->MCR ={v} _95;
+  SchM_Exit_Can_43_FLEXCAN_CAN_EXCLUSIVE_AREA_13 ();
+  j_246 = 0;
+  i_247 = 0;
+  goto <bb 40>; [INV]
+
+  <bb 27> :
+  _96 = j_217 * 8;
+  _97 = idFilterTable_248(D) + _96;
+  _98 = _97->isExtendedFrame;
+  if (_98 != 0)
+    goto <bb 28>; [INV]
+  else
+    goto <bb 29>; [INV]
+
+  <bb 28> :
+  _99 = j_217 * 8;
+  _100 = idFilterTable_248(D) + _99;
+  _101 = _100->id;
+  _102 = _101 >> 21;
+  _103 = _102 << 24;
+  _104 = i_215 * 4;
+  _105 = FilterTable_236 + _104;
+  _106 = Val1_232 + _103;
+  *_105 ={v} _106;
+  goto <bb 30>; [INV]
+
+  <bb 29> :
+  _107 = j_217 * 8;
+  _108 = idFilterTable_248(D) + _107;
+  _109 = _108->id;
+  _110 = _109 >> 3;
+  _111 = _110 << 24;
+  _112 = i_215 * 4;
+  _113 = FilterTable_236 + _112;
+  _114 = Val1_232 + _111;
+  *_113 ={v} _114;
+
+  <bb 30> :
+  _115 = j_217 + 1;
+  _116 = _115 * 8;
+  _117 = idFilterTable_248(D) + _116;
+  _118 = _117->isExtendedFrame;
+  if (_118 != 0)
+    goto <bb 31>; [INV]
+  else
+    goto <bb 32>; [INV]
+
+  <bb 31> :
+  _119 = i_215 * 4;
+  _120 = FilterTable_236 + _119;
+  _121 ={v} *_120;
+  _122 = j_217 + 1;
+  _123 = _122 * 8;
+  _124 = idFilterTable_248(D) + _123;
+  _125 = _124->id;
+  _126 = _125 >> 21;
+  _127 = _126 << 16;
+  _128 = _127 & 16711680;
+  _129 = Val1_232 + _128;
+  _130 = i_215 * 4;
+  _131 = FilterTable_236 + _130;
+  _132 = _121 | _129;
+  *_131 ={v} _132;
+  goto <bb 33>; [INV]
+
+  <bb 32> :
+  _133 = i_215 * 4;
+  _134 = FilterTable_236 + _133;
+  _135 ={v} *_134;
+  _136 = j_217 + 1;
+  _137 = _136 * 8;
+  _138 = idFilterTable_248(D) + _137;
+  _139 = _138->id;
+  _140 = _139 >> 3;
+  _141 = _140 << 16;
+  _142 = _141 & 16711680;
+  _143 = Val1_232 + _142;
+  _144 = i_215 * 4;
+  _145 = FilterTable_236 + _144;
+  _146 = _135 | _143;
+  *_145 ={v} _146;
+
+  <bb 33> :
+  _147 = j_217 + 2;
+  _148 = _147 * 8;
+  _149 = idFilterTable_248(D) + _148;
+  _150 = _149->isExtendedFrame;
+  if (_150 != 0)
+    goto <bb 34>; [INV]
+  else
+    goto <bb 35>; [INV]
+
+  <bb 34> :
+  _151 = i_215 * 4;
+  _152 = FilterTable_236 + _151;
+  _153 ={v} *_152;
+  _154 = j_217 + 2;
+  _155 = _154 * 8;
+  _156 = idFilterTable_248(D) + _155;
+  _157 = _156->id;
+  _158 = _157 >> 21;
+  _159 = _158 << 8;
+  _160 = _159 & 65535;
+  _161 = Val1_232 + _160;
+  _162 = i_215 * 4;
+  _163 = FilterTable_236 + _162;
+  _164 = _153 | _161;
+  *_163 ={v} _164;
+  goto <bb 36>; [INV]
+
+  <bb 35> :
+  _165 = i_215 * 4;
+  _166 = FilterTable_236 + _165;
+  _167 ={v} *_166;
+  _168 = j_217 + 2;
+  _169 = _168 * 8;
+  _170 = idFilterTable_248(D) + _169;
+  _171 = _170->id;
+  _172 = _171 >> 3;
+  _173 = _172 << 8;
+  _174 = _173 & 65535;
+  _175 = Val1_232 + _174;
+  _176 = i_215 * 4;
+  _177 = FilterTable_236 + _176;
+  _178 = _167 | _175;
+  *_177 ={v} _178;
+
+  <bb 36> :
+  _179 = j_217 + 3;
+  _180 = _179 * 8;
+  _181 = idFilterTable_248(D) + _180;
+  _182 = _181->isExtendedFrame;
+  if (_182 != 0)
+    goto <bb 37>; [INV]
+  else
+    goto <bb 38>; [INV]
+
+  <bb 37> :
+  _183 = i_215 * 4;
+  _184 = FilterTable_236 + _183;
+  _185 ={v} *_184;
+  _186 = j_217 + 3;
+  _187 = _186 * 8;
+  _188 = idFilterTable_248(D) + _187;
+  _189 = _188->id;
+  _190 = _189 >> 21;
+  _191 = _190 & 255;
+  _192 = Val1_232 + _191;
+  _193 = i_215 * 4;
+  _194 = FilterTable_236 + _193;
+  _195 = _185 | _192;
+  *_194 ={v} _195;
+  goto <bb 39>; [INV]
+
+  <bb 38> :
+  _196 = i_215 * 4;
+  _197 = FilterTable_236 + _196;
+  _198 ={v} *_197;
+  _199 = j_217 + 3;
+  _200 = _199 * 8;
+  _201 = idFilterTable_248(D) + _200;
+  _202 = _201->id;
+  _203 = _202 >> 3;
+  _204 = _203 & 255;
+  _205 = Val1_232 + _204;
+  _206 = i_215 * 4;
+  _207 = FilterTable_236 + _206;
+  _208 = _198 | _205;
+  *_207 ={v} _208;
+
+  <bb 39> :
+  j_257 = j_217 + 4;
+  i_258 = i_215 + 1;
+
+  <bb 40> :
+  # i_215 = PHI <i_247(26), i_258(39)>
+  # j_217 = PHI <j_246(26), j_257(39)>
+  _209 = NumOfFilters_238 + 1;
+  _210 = _209 * 8;
+  if (i_215 < _210)
+    goto <bb 27>; [INV]
+  else
+    goto <bb 41>; [INV]
+
+  <bb 41> :
+  goto <bb 44>; [INV]
+
+  <bb 42> :
+<L39>:
+  SchM_Enter_Can_43_FLEXCAN_CAN_EXCLUSIVE_AREA_13 ();
+  _211 ={v} base_235(D)->MCR;
+  _212 = _211 | 768;
+  base_235(D)->MCR ={v} _212;
+  SchM_Exit_Can_43_FLEXCAN_CAN_EXCLUSIVE_AREA_13 ();
+  goto <bb 44>; [INV]
+
+  <bb 43> :
+<L40>:
+
+  <bb 44> :
+  return;
+
+}
+
+
+FlexCAN_SetOperationMode (struct FLEXCAN_Type * base, Flexcan_Ip_ModesType mode)
+{
+  long unsigned int _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _5;
+  long unsigned int _6;
+  long unsigned int _7;
+  long unsigned int _8;
+  long unsigned int _9;
+  long unsigned int _10;
+
+  <bb 2> :
+  switch (mode_12(D)) <default: <L3> [INV], case 0: <L0> [INV], case 1: <L1> [INV], case 2: <L2> [INV]>
+
+  <bb 3> :
+<L0>:
+  _1 ={v} base_14(D)->CTRL1;
+  _2 = _1 & 4294967287;
+  base_14(D)->CTRL1 ={v} _2;
+  _3 ={v} base_14(D)->CTRL1;
+  _4 = _3 & 4294963199;
+  base_14(D)->CTRL1 ={v} _4;
+  goto <bb 7>; [INV]
+
+  <bb 4> :
+<L1>:
+  _5 ={v} base_14(D)->CTRL1;
+  _6 = _5 | 8;
+  base_14(D)->CTRL1 ={v} _6;
+  goto <bb 7>; [INV]
+
+  <bb 5> :
+<L2>:
+  _7 ={v} base_14(D)->CTRL1;
+  _8 = _7 | 4096;
+  base_14(D)->CTRL1 ={v} _8;
+  _9 ={v} base_14(D)->CTRL1;
+  _10 = _9 & 4294967287;
+  base_14(D)->CTRL1 ={v} _10;
+  FlexCAN_SetSelfReception (base_14(D), 1);
+  goto <bb 7>; [INV]
+
+  <bb 6> :
+<L3>:
+
+  <bb 7> :
+  return;
+
+}
+
+
+FlexCAN_SetMaxMsgBuffNum (struct FLEXCAN_Type * base, uint32 maxMsgBuffNum)
+{
+  Flexcan_Ip_StatusType Status;
+  Flexcan_Ip_PtrSizeType ValEndRam;
+  Flexcan_Ip_PtrSizeType ValEndMb;
+  uint8 Can_Real_Payload;
+  uint8 Arbitration_Field_Size;
+  volatile uint8 * Flexcan_Mb_Data;
+  volatile uint32 * Flexcan_Mb_Id;
+  volatile uint32 * Flexcan_Mb;
+  const uint32 * ValEndMbPointer;
+  const uint32 * RAM;
+  uint32 DataByte;
+  uint32 MsgBuffIdx;
+  Flexcan_Ip_StatusType D.7251;
+  long unsigned int base.6_1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _5;
+  long unsigned int ValEndMbPointer.7_6;
+  long unsigned int _7;
+  long unsigned int _8;
+  long unsigned int _9;
+  long unsigned int _10;
+  const uint32 * _11;
+  long unsigned int _12;
+  long unsigned int _13;
+  long unsigned int _14;
+  long unsigned int _15;
+  long unsigned int _16;
+  long unsigned int _17;
+  long unsigned int _18;
+  long unsigned int _19;
+  volatile uint8 * _20;
+  long unsigned int _21;
+  Flexcan_Ip_StatusType _65;
+
+  <bb 2> :
+  base.6_1 = (long unsigned int) base_30(D);
+  _2 = base.6_1 + 128;
+  RAM_31 = (const uint32 *) _2;
+  ValEndMbPointer_32 = 0B;
+  Flexcan_Mb_33 = 0B;
+  Flexcan_Mb_Id_34 = 0B;
+  Flexcan_Mb_Data_35 = 0B;
+  Arbitration_Field_Size_36 = 8;
+  _3 = maxMsgBuffNum_37(D) + 4294967295;
+  Can_Real_Payload_40 = FlexCAN_GetMbPayloadSize (base_30(D), _3);
+  ValEndMb_41 = 0;
+  ValEndRam_42 = 0;
+  Status_43 = 0;
+  _4 = maxMsgBuffNum_37(D) + 4294967295;
+  ValEndMbPointer_45 = FlexCAN_GetMsgBuffRegion (base_30(D), _4);
+  _5 = (long unsigned int) Can_Real_Payload_40;
+  ValEndMbPointer.7_6 = (long unsigned int) ValEndMbPointer_45;
+  _7 = _5 + ValEndMbPointer.7_6;
+  _8 = (long unsigned int) Arbitration_Field_Size_36;
+  ValEndMb_46 = _7 + _8;
+  _9 = FlexCAN_GetMaxMbNum (base_30(D));
+  _10 = _9 * 16;
+  _11 = RAM_31 + _10;
+  ValEndRam_48 = (Flexcan_Ip_PtrSizeType) _11;
+  if (ValEndMb_46 > ValEndRam_48)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 3>; [INV]
+
+  <bb 3> :
+  _12 = FlexCAN_GetMaxMbNum (base_30(D));
+  if (maxMsgBuffNum_37(D) > _12)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  Status_50 = 4;
+
+  <bb 5> :
+  # Status_24 = PHI <Status_43(3), Status_50(4)>
+  if (Status_24 == 0)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 6> :
+  _13 ={v} base_30(D)->MCR;
+  _14 = _13 & 4294967168;
+  _15 = maxMsgBuffNum_37(D) + 4294967295;
+  _16 = _15 & 127;
+  _17 = _14 | _16;
+  base_30(D)->MCR ={v} _17;
+  _18 ={v} base_30(D)->MCR;
+  _19 = _18 & 536870912;
+  if (_19 == 0)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 7> :
+  MsgBuffIdx_52 = 0;
+  goto <bb 12>; [INV]
+
+  <bb 8> :
+  Flexcan_Mb_54 = FlexCAN_GetMsgBuffRegion (base_30(D), MsgBuffIdx_22);
+  Flexcan_Mb_Id_55 = Flexcan_Mb_54 + 4;
+  Flexcan_Mb_Data_56 = Flexcan_Mb_54 + 8;
+  *Flexcan_Mb_54 ={v} 0;
+  *Flexcan_Mb_Id_55 ={v} 0;
+  Can_Real_Payload_60 = FlexCAN_GetMbPayloadSize (base_30(D), MsgBuffIdx_22);
+  DataByte_61 = 0;
+  goto <bb 10>; [INV]
+
+  <bb 9> :
+  _20 = Flexcan_Mb_Data_56 + DataByte_23;
+  *_20 ={v} 0;
+  DataByte_64 = DataByte_23 + 1;
+
+  <bb 10> :
+  # DataByte_23 = PHI <DataByte_61(8), DataByte_64(9)>
+  _21 = (long unsigned int) Can_Real_Payload_60;
+  if (DataByte_23 < _21)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 11> :
+  MsgBuffIdx_62 = MsgBuffIdx_22 + 1;
+
+  <bb 12> :
+  # MsgBuffIdx_22 = PHI <MsgBuffIdx_52(7), MsgBuffIdx_62(11)>
+  if (MsgBuffIdx_22 < maxMsgBuffNum_37(D))
+    goto <bb 8>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 13> :
+  _65 = Status_24;
+
+  <bb 14> :
+<L13>:
+  return _65;
+
+}
+
+
+FlexCAN_SetTxMsgBuff (volatile uint32 * const pMbAddr, const struct Flexcan_Ip_MsbuffCodeStatusType * cs, uint32 msgId, const uint8 * msgData, const boolean isRemote)
+{
+  const uint32 * MsgData_32;
+  volatile uint32 * Flexcan_Mb_Data_32;
+  volatile uint8 * Flexcan_Mb_Data;
+  volatile uint32 * Flexcan_Mb_Id;
+  volatile uint32 * Flexcan_Mb;
+  uint8 Payload_Size;
+  uint8 Dlc_Value;
+  uint32 DataByte;
+  uint32 Flexcan_Mb_Config;
+  long unsigned int _1;
+  unsigned char _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  const uint32 * _5;
+  long unsigned int _6;
+  long unsigned int _7;
+  long unsigned int _8;
+  long unsigned int _9;
+  const uint32 * _10;
+  long unsigned int _11;
+  long unsigned int _12;
+  long unsigned int _13;
+  long unsigned int _14;
+  long unsigned int _15;
+  long unsigned int _16;
+  const uint32 * _17;
+  long unsigned int _18;
+  long unsigned int _19;
+  long unsigned int _20;
+  long unsigned int _21;
+  long unsigned int _22;
+  long unsigned int _23;
+  const uint32 * _24;
+  long unsigned int _25;
+  long unsigned int _26;
+  long unsigned int _27;
+  long unsigned int _28;
+  volatile uint32 * _29;
+  long unsigned int _30;
+  long unsigned int _31;
+  long unsigned int _32;
+  const uint8 * _33;
+  long unsigned int _34;
+  volatile uint8 * _35;
+  unsigned char _36;
+  long unsigned int _37;
+  long unsigned int _38;
+  volatile uint8 * _39;
+  unsigned char _40;
+  long unsigned int _41;
+  <unnamed type> _42;
+  long unsigned int _43;
+  long unsigned int _44;
+  long unsigned int _45;
+  long unsigned int _46;
+  long unsigned int _47;
+  <unnamed type> _48;
+  long unsigned int _49;
+  long unsigned int _50;
+  long unsigned int _51;
+  long unsigned int _52;
+  long unsigned int _53;
+  long unsigned int _54;
+  long unsigned int _55;
+  long unsigned int _56;
+  long unsigned int _57;
+  long unsigned int _58;
+  long unsigned int _59;
+  _Bool _60;
+  long unsigned int _61;
+  long unsigned int _62;
+  long unsigned int _63;
+  long unsigned int _64;
+  long unsigned int _65;
+  long unsigned int _66;
+  long unsigned int _67;
+  _Bool _68;
+
+  <bb 2> :
+  Flexcan_Mb_Config_84 = 0;
+  Flexcan_Mb_86 = pMbAddr_85(D);
+  Flexcan_Mb_Id_87 = Flexcan_Mb_86 + 4;
+  Flexcan_Mb_Data_88 = Flexcan_Mb_86 + 8;
+  Flexcan_Mb_Data_32_89 = Flexcan_Mb_86 + 8;
+  MsgData_32_91 = msgData_90(D);
+  *Flexcan_Mb_86 ={v} 134217728;
+  *Flexcan_Mb_Id_87 ={v} 0;
+  _1 = cs_95(D)->dataLen;
+  _2 = (unsigned char) _1;
+  Dlc_Value_97 = FlexCAN_ComputeDLCValue (_2);
+  if (msgData_90(D) != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 3> :
+  DataByte_98 = 0;
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  _3 = DataByte_74 >> 2;
+  _4 = _3 * 4;
+  _5 = MsgData_32_91 + _4;
+  _6 = *_5;
+  _7 = _6 >> 24;
+  _8 = DataByte_74 >> 2;
+  _9 = _8 * 4;
+  _10 = MsgData_32_91 + _9;
+  _11 = *_10;
+  _12 = _11 >> 8;
+  _13 = _12 & 65280;
+  _14 = _7 | _13;
+  _15 = DataByte_74 >> 2;
+  _16 = _15 * 4;
+  _17 = MsgData_32_91 + _16;
+  _18 = *_17;
+  _19 = _18 << 8;
+  _20 = _19 & 16711680;
+  _21 = _14 | _20;
+  _22 = DataByte_74 >> 2;
+  _23 = _22 * 4;
+  _24 = MsgData_32_91 + _23;
+  _25 = *_24;
+  _26 = _25 << 24;
+  _27 = DataByte_74 >> 2;
+  _28 = _27 * 4;
+  _29 = Flexcan_Mb_Data_32_89 + _28;
+  _30 = _21 | _26;
+  *_29 ={v} _30;
+  DataByte_107 = DataByte_74 + 4;
+
+  <bb 5> :
+  # DataByte_74 = PHI <DataByte_98(3), DataByte_107(4)>
+  _31 = cs_95(D)->dataLen;
+  _32 = _31 & 4294967292;
+  if (DataByte_74 < _32)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 6> :
+  goto <bb 8>; [INV]
+
+  <bb 7> :
+  _33 = msgData_90(D) + DataByte_75;
+  _34 = DataByte_75 ^ 3;
+  _35 = Flexcan_Mb_Data_88 + _34;
+  _36 = *_33;
+  *_35 ={v} _36;
+  DataByte_105 = DataByte_75 + 1;
+
+  <bb 8> :
+  # DataByte_75 = PHI <DataByte_74(6), DataByte_105(7)>
+  _37 = cs_95(D)->dataLen;
+  if (DataByte_75 < _37)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 9> :
+  Payload_Size_100 = FlexCAN_ComputePayloadSize (Dlc_Value_97);
+  DataByte_101 = cs_95(D)->dataLen;
+  goto <bb 11>; [INV]
+
+  <bb 10> :
+  _38 = DataByte_76 ^ 3;
+  _39 = Flexcan_Mb_Data_88 + _38;
+  _40 = cs_95(D)->fd_padding;
+  *_39 ={v} _40;
+  DataByte_103 = DataByte_76 + 1;
+
+  <bb 11> :
+  # DataByte_76 = PHI <DataByte_101(9), DataByte_103(10)>
+  _41 = (long unsigned int) Payload_Size_100;
+  if (DataByte_76 < _41)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 12> :
+  _42 = cs_95(D)->msgIdType;
+  if (_42 == 1)
+    goto <bb 13>; [INV]
+  else
+    goto <bb 14>; [INV]
+
+  <bb 13> :
+  _43 ={v} *Flexcan_Mb_Id_87;
+  _44 = _43 & 3758096384;
+  *Flexcan_Mb_Id_87 ={v} _44;
+  _45 ={v} *Flexcan_Mb_Id_87;
+  _46 = msgId_109(D) & 536870911;
+  _47 = _45 | _46;
+  *Flexcan_Mb_Id_87 ={v} _47;
+  Flexcan_Mb_Config_111 = Flexcan_Mb_Config_84 | 6291456;
+
+  <bb 14> :
+  # Flexcan_Mb_Config_69 = PHI <Flexcan_Mb_Config_84(12), Flexcan_Mb_Config_111(13)>
+  _48 = cs_95(D)->msgIdType;
+  if (_48 == 0)
+    goto <bb 15>; [INV]
+  else
+    goto <bb 16>; [INV]
+
+  <bb 15> :
+  _49 ={v} *Flexcan_Mb_Id_87;
+  _50 = _49 & 3758358527;
+  *Flexcan_Mb_Id_87 ={v} _50;
+  _51 ={v} *Flexcan_Mb_Id_87;
+  _52 = msgId_109(D) << 18;
+  _53 = _52 & 536608768;
+  _54 = _51 | _53;
+  *Flexcan_Mb_Id_87 ={v} _54;
+  Flexcan_Mb_Config_114 = Flexcan_Mb_Config_69 & 4288675839;
+
+  <bb 16> :
+  # Flexcan_Mb_Config_70 = PHI <Flexcan_Mb_Config_69(14), Flexcan_Mb_Config_114(15)>
+  Flexcan_Mb_Config_115 = Flexcan_Mb_Config_70 & 4293984255;
+  _55 = (long unsigned int) Dlc_Value_97;
+  _56 = _55 << 16;
+  _57 = _56 & 983040;
+  Flexcan_Mb_Config_116 = Flexcan_Mb_Config_115 | _57;
+  _58 = cs_95(D)->code;
+  if (_58 != 15)
+    goto <bb 17>; [INV]
+  else
+    goto <bb 27>; [INV]
+
+  <bb 17> :
+  _59 = cs_95(D)->code;
+  if (_59 == 28)
+    goto <bb 18>; [INV]
+  else
+    goto <bb 19>; [INV]
+
+  <bb 18> :
+  Flexcan_Mb_Config_119 = Flexcan_Mb_Config_116 | 1048576;
+  goto <bb 21>; [INV]
+
+  <bb 19> :
+  if (isRemote_117(D) != 0)
+    goto <bb 20>; [INV]
+  else
+    goto <bb 21>; [INV]
+
+  <bb 20> :
+  Flexcan_Mb_Config_118 = Flexcan_Mb_Config_116 | 1048576;
+
+  <bb 21> :
+  # Flexcan_Mb_Config_71 = PHI <Flexcan_Mb_Config_119(18), Flexcan_Mb_Config_116(19), Flexcan_Mb_Config_118(20)>
+  Flexcan_Mb_Config_120 = Flexcan_Mb_Config_71 & 4043309055;
+  _60 = cs_95(D)->fd_enable;
+  if (_60 != 0)
+    goto <bb 22>; [INV]
+  else
+    goto <bb 23>; [INV]
+
+  <bb 22> :
+  _61 = cs_95(D)->code;
+  _62 = _61 << 24;
+  _63 = _62 & 251658240;
+  _64 = Flexcan_Mb_Config_120 | _63;
+  Flexcan_Mb_Config_122 = _64 | 2147483648;
+  Flexcan_Mb_Config_123 = Flexcan_Mb_Config_122 & 4293918719;
+  goto <bb 24>; [INV]
+
+  <bb 23> :
+  _65 = cs_95(D)->code;
+  _66 = _65 << 24;
+  _67 = _66 & 251658240;
+  Flexcan_Mb_Config_121 = Flexcan_Mb_Config_120 | _67;
+
+  <bb 24> :
+  # Flexcan_Mb_Config_72 = PHI <Flexcan_Mb_Config_123(22), Flexcan_Mb_Config_121(23)>
+  _68 = cs_95(D)->enable_brs;
+  if (_68 != 0)
+    goto <bb 25>; [INV]
+  else
+    goto <bb 26>; [INV]
+
+  <bb 25> :
+  Flexcan_Mb_Config_124 = Flexcan_Mb_Config_72 | 1073741824;
+
+  <bb 26> :
+  # Flexcan_Mb_Config_73 = PHI <Flexcan_Mb_Config_72(24), Flexcan_Mb_Config_124(25)>
+  *Flexcan_Mb_86 ={v} Flexcan_Mb_Config_73;
+
+  <bb 27> :
+  return;
+
+}
+
+
+FlexCAN_GetMsgBuff (const struct FLEXCAN_Type * base, uint32 msgBuffIdx, struct Flexcan_Ip_MsgBuffType * msgBuff)
+{
+  uint8 Payload_Size;
+  uint8 Flexcan_Mb_Dlc_Value;
+  uint32 MbWord;
+  uint32 * MsgBuff_Data_32;
+  const uint32 * Flexcan_Mb_Data_32;
+  const uint8 * Flexcan_Mb_Data;
+  const uint32 * Flexcan_Mb_Id;
+  const uint32 * Flexcan_Mb;
+  uint8 i;
+  long unsigned int _1;
+  long unsigned int _2;
+  unsigned char _3;
+  unsigned char _4;
+  long unsigned int _5;
+  long unsigned int _6;
+  long unsigned int _7;
+  long unsigned int _8;
+  long unsigned int _9;
+  long unsigned int _10;
+  long unsigned int _11;
+  long unsigned int _12;
+  unsigned char _13;
+  unsigned int _14;
+  unsigned int _15;
+  const uint32 * _16;
+  long unsigned int _17;
+  long unsigned int _18;
+  long unsigned int _19;
+  long unsigned int _20;
+  long unsigned int _21;
+  long unsigned int _22;
+  long unsigned int _23;
+  long unsigned int _24;
+  unsigned char _25;
+  unsigned int _26;
+  unsigned int _27;
+  uint32 * _28;
+  long unsigned int _29;
+  unsigned int _30;
+  unsigned int _31;
+  unsigned int _32;
+  unsigned char _33;
+  sizetype _34;
+  const uint8 * _35;
+  int _36;
+  unsigned char _37;
+  unsigned char i.5_38;
+
+  <bb 2> :
+  Flexcan_Mb_50 = FlexCAN_GetMsgBuffRegion (base_47(D), msgBuffIdx_48(D));
+  Flexcan_Mb_Id_51 = Flexcan_Mb_50 + 4;
+  Flexcan_Mb_Data_52 = Flexcan_Mb_50 + 8;
+  Flexcan_Mb_Data_32_53 = Flexcan_Mb_50 + 8;
+  MsgBuff_Data_32_54 = 0B;
+  _1 ={v} *Flexcan_Mb_50;
+  _2 = _1 >> 16;
+  _3 = (unsigned char) _2;
+  Flexcan_Mb_Dlc_Value_55 = _3 & 15;
+  Payload_Size_57 = FlexCAN_ComputePayloadSize (Flexcan_Mb_Dlc_Value_55);
+  MsgBuff_Data_32_59 = &msgBuff_58(D)->data;
+  _4 = FlexCAN_GetMbPayloadSize (base_47(D), msgBuffIdx_48(D));
+  if (Payload_Size_57 > _4)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  Payload_Size_62 = FlexCAN_GetMbPayloadSize (base_47(D), msgBuffIdx_48(D));
+
+  <bb 4> :
+  # Payload_Size_41 = PHI <Payload_Size_57(2), Payload_Size_62(3)>
+  msgBuff_58(D)->dataLen = Payload_Size_41;
+  _5 ={v} *Flexcan_Mb_50;
+  msgBuff_58(D)->cs = _5;
+  _6 = msgBuff_58(D)->cs;
+  _7 = _6 & 2097152;
+  if (_7 != 0)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  _8 ={v} *Flexcan_Mb_Id_51;
+  msgBuff_58(D)->msgId = _8;
+  goto <bb 7>; [INV]
+
+  <bb 6> :
+  _9 ={v} *Flexcan_Mb_Id_51;
+  _10 = _9 >> 18;
+  msgBuff_58(D)->msgId = _10;
+
+  <bb 7> :
+  _11 = msgBuff_58(D)->cs;
+  _12 = _11 & 65535;
+  msgBuff_58(D)->time_stamp = _12;
+  i_68 = 0;
+  goto <bb 9>; [INV]
+
+  <bb 8> :
+  _13 = i_39 >> 2;
+  _14 = (unsigned int) _13;
+  _15 = _14 * 4;
+  _16 = Flexcan_Mb_Data_32_53 + _15;
+  MbWord_71 ={v} *_16;
+  _17 = MbWord_71 >> 24;
+  _18 = MbWord_71 >> 8;
+  _19 = _18 & 65280;
+  _20 = _17 | _19;
+  _21 = MbWord_71 << 8;
+  _22 = _21 & 16711680;
+  _23 = _20 | _22;
+  _24 = MbWord_71 << 24;
+  _25 = i_39 >> 2;
+  _26 = (unsigned int) _25;
+  _27 = _26 * 4;
+  _28 = MsgBuff_Data_32_59 + _27;
+  _29 = _23 | _24;
+  *_28 = _29;
+  i_73 = i_39 + 4;
+
+  <bb 9> :
+  # i_39 = PHI <i_68(7), i_73(8)>
+  _30 = (unsigned int) i_39;
+  _31 = (unsigned int) Payload_Size_41;
+  _32 = _31 & 4294967292;
+  if (_30 < _32)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 10> :
+  goto <bb 12>; [INV]
+
+  <bb 11> :
+  _33 = i_40 ^ 3;
+  _34 = (sizetype) _33;
+  _35 = Flexcan_Mb_Data_52 + _34;
+  _36 = (int) i_40;
+  _37 ={v} *_35;
+  msgBuff_58(D)->data[_36] = _37;
+  i.5_38 = i_40;
+  i_70 = i.5_38 + 1;
+
+  <bb 12> :
+  # i_40 = PHI <i_39(10), i_70(11)>
+  if (i_40 < Payload_Size_41)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 13> :
+  return;
+
+}
+
+
+FlexCAN_GetMsgBuffTimestamp (const struct FLEXCAN_Type * base, uint32 msgBuffIdx)
+{
+  const uint32 * Flexcan_Mb;
+  uint32 TimeStamp;
+  uint32 D.7219;
+  long unsigned int _1;
+  uint32 _9;
+
+  <bb 2> :
+  TimeStamp_2 = 0;
+  Flexcan_Mb_7 = FlexCAN_GetMsgBuffRegion (base_4(D), msgBuffIdx_5(D));
+  _1 ={v} *Flexcan_Mb_7;
+  TimeStamp_8 = _1 & 65535;
+  _9 = TimeStamp_8;
+
+  <bb 3> :
+<L0>:
+  return _9;
+
+}
+
+
+FlexCAN_SetRxMsgBuff (const struct FLEXCAN_Type * base, uint32 msgBuffIdx, const struct Flexcan_Ip_MsbuffCodeStatusType * cs, uint32 msgId)
+{
+  volatile uint32 * flexcan_mb_id;
+  volatile uint32 * flexcan_mb;
+  <unnamed type> _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _5;
+  long unsigned int _6;
+  long unsigned int _7;
+  long unsigned int _8;
+  long unsigned int _9;
+  long unsigned int _10;
+  <unnamed type> _11;
+  long unsigned int _12;
+  long unsigned int _13;
+  long unsigned int _14;
+  long unsigned int _15;
+  long unsigned int _16;
+  long unsigned int _17;
+  long unsigned int _18;
+  long unsigned int _19;
+  long unsigned int _20;
+  long unsigned int _21;
+  long unsigned int _22;
+  long unsigned int _23;
+  long unsigned int _24;
+  long unsigned int _25;
+  long unsigned int _26;
+  long unsigned int _27;
+
+  <bb 2> :
+  flexcan_mb_35 = FlexCAN_GetMsgBuffRegion (base_32(D), msgBuffIdx_33(D));
+  flexcan_mb_id_36 = flexcan_mb_35 + 4;
+  *flexcan_mb_35 ={v} 0;
+  *flexcan_mb_id_36 ={v} 0;
+  _1 = cs_39(D)->msgIdType;
+  if (_1 == 1)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  _2 ={v} *flexcan_mb_35;
+  _3 = _2 | 2097152;
+  *flexcan_mb_35 ={v} _3;
+  _4 ={v} *flexcan_mb_35;
+  _5 = _4 & 4290772991;
+  *flexcan_mb_35 ={v} _5;
+  _6 ={v} *flexcan_mb_id_36;
+  _7 = _6 & 3758096384;
+  *flexcan_mb_id_36 ={v} _7;
+  _8 ={v} *flexcan_mb_id_36;
+  _9 = msgId_43(D) & 536870911;
+  _10 = _8 | _9;
+  *flexcan_mb_id_36 ={v} _10;
+
+  <bb 4> :
+  _11 = cs_39(D)->msgIdType;
+  if (_11 == 0)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  _12 ={v} *flexcan_mb_35;
+  _13 = _12 & 4288675839;
+  *flexcan_mb_35 ={v} _13;
+  _14 ={v} *flexcan_mb_id_36;
+  _15 = _14 & 3758358527;
+  *flexcan_mb_id_36 ={v} _15;
+  _16 ={v} *flexcan_mb_id_36;
+  _17 = msgId_43(D) << 18;
+  _18 = _17 & 536608768;
+  _19 = _16 | _18;
+  *flexcan_mb_id_36 ={v} _19;
+
+  <bb 6> :
+  _20 = cs_39(D)->code;
+  if (_20 != 15)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 7> :
+  _21 ={v} *flexcan_mb_35;
+  _22 = _21 & 4043309055;
+  *flexcan_mb_35 ={v} _22;
+  _23 ={v} *flexcan_mb_35;
+  _24 = cs_39(D)->code;
+  _25 = _24 << 24;
+  _26 = _25 & 251658240;
+  _27 = _23 | _26;
+  *flexcan_mb_35 ={v} _27;
+
+  <bb 8> :
+  return;
+
+}
+
+
+FlexCAN_EnableInterrupts (struct FLEXCAN_Type * pBase, uint8 u8Instance)
+{
+  int _1;
+  long unsigned int _2;
+
+  <bb 2> :
+  _1 = (int) u8Instance_3(D);
+  _2 ={v} FlexCAN_Ip_au32ImaskBuff[_1][0];
+  pBase_5(D)->IMASK1 ={v} _2;
+  return;
+
+}
+
+
+FlexCAN_DisableInterrupts (struct FLEXCAN_Type * pBase)
+{
+  <bb 2> :
+  pBase_2(D)->IMASK1 ={v} 0;
+  return;
+
+}
+
+
+FLEXCAN_ClearMsgBuffIntCmd (struct FLEXCAN_Type * pBase, uint8 u8Instance, uint32 mb_idx, boolean bIsIntActive)
+{
+  uint32 temp;
+  long unsigned int _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  int _4;
+  long unsigned int _5;
+  int _6;
+  long unsigned int _7;
+
+  <bb 2> :
+  _1 = mb_idx_10(D) & 31;
+  temp_11 = 1 << _1;
+  if (mb_idx_10(D) <= 31)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 3> :
+  SchM_Enter_Can_43_FLEXCAN_CAN_EXCLUSIVE_AREA_11 ();
+  _2 ={v} pBase_14(D)->IMASK1;
+  _3 = ~temp_11;
+  _4 = (int) u8Instance_15(D);
+  _5 = _2 & _3;
+  FlexCAN_Ip_au32ImaskBuff[_4][0] ={v} _5;
+  if (bIsIntActive_17(D) != 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  _6 = (int) u8Instance_15(D);
+  _7 ={v} FlexCAN_Ip_au32ImaskBuff[_6][0];
+  pBase_14(D)->IMASK1 ={v} _7;
+
+  <bb 5> :
+  SchM_Exit_Can_43_FLEXCAN_CAN_EXCLUSIVE_AREA_11 ();
+
+  <bb 6> :
+  return;
+
+}
+
+
+FlexCAN_SetMsgBuffIntCmd (struct FLEXCAN_Type * base, uint8 u8Instance, uint32 msgBuffIdx, boolean enable, boolean bIsIntActive)
+{
+  Flexcan_Ip_StatusType stat;
+  uint32 temp;
+  Flexcan_Ip_StatusType D.7207;
+  long unsigned int _1;
+  int _2;
+  long unsigned int _3;
+  int _4;
+  long unsigned int _5;
+  int _6;
+  long unsigned int _7;
+  int _8;
+  long unsigned int _9;
+  long unsigned int _10;
+  int _11;
+  long unsigned int _12;
+  int _13;
+  long unsigned int _14;
+  Flexcan_Ip_StatusType _33;
+
+  <bb 2> :
+  stat_17 = 0;
+  _1 = msgBuffIdx_18(D) & 31;
+  temp_19 = 1 << _1;
+  if (msgBuffIdx_18(D) <= 31)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 3> :
+  if (enable_21(D) != 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 4> :
+  SchM_Enter_Can_43_FLEXCAN_CAN_EXCLUSIVE_AREA_18 ();
+  _2 = (int) u8Instance_23(D);
+  _3 ={v} FlexCAN_Ip_au32ImaskBuff[_2][0];
+  _4 = (int) u8Instance_23(D);
+  _5 = temp_19 | _3;
+  FlexCAN_Ip_au32ImaskBuff[_4][0] ={v} _5;
+  if (bIsIntActive_30(D) != 0)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  _6 = (int) u8Instance_23(D);
+  _7 ={v} FlexCAN_Ip_au32ImaskBuff[_6][0];
+  base_25(D)->IMASK1 ={v} _7;
+
+  <bb 6> :
+  SchM_Exit_Can_43_FLEXCAN_CAN_EXCLUSIVE_AREA_18 ();
+  goto <bb 8>; [INV]
+
+  <bb 7> :
+  SchM_Enter_Can_43_FLEXCAN_CAN_EXCLUSIVE_AREA_18 ();
+  _8 = (int) u8Instance_23(D);
+  _9 ={v} FlexCAN_Ip_au32ImaskBuff[_8][0];
+  _10 = ~temp_19;
+  _11 = (int) u8Instance_23(D);
+  _12 = _9 & _10;
+  FlexCAN_Ip_au32ImaskBuff[_11][0] ={v} _12;
+  _13 = (int) u8Instance_23(D);
+  _14 ={v} FlexCAN_Ip_au32ImaskBuff[_13][0];
+  base_25(D)->IMASK1 ={v} _14;
+  SchM_Exit_Can_43_FLEXCAN_CAN_EXCLUSIVE_AREA_18 ();
+
+  <bb 8> :
+  _33 = stat_17;
+
+  <bb 9> :
+<L7>:
+  return _33;
+
+}
+
+
+FlexCAN_LockRxMsgBuff (const struct FLEXCAN_Type * base, uint32 msgBuffIdx)
+{
+  const uint32 * flexcan_mb;
+  long unsigned int vol.4;
+  long unsigned int vol.4_6;
+
+  <bb 2> :
+  flexcan_mb_5 = FlexCAN_GetMsgBuffRegion (base_2(D), msgBuffIdx_3(D));
+  vol.4_6 ={v} *flexcan_mb_5;
+  return;
+
+}
+
+
+FlexCAN_GetMbPayloadSize (const struct FLEXCAN_Type * base, uint32 maxMsgBuffNum)
+{
+  uint8 mb_size;
+  uint8 i;
+  uint8 maxMbBlockNum;
+  uint8 can_real_payload;
+  uint32 ramBlockSize;
+  uint8 arbitration_field_size;
+  uint8 D.7197;
+  long unsigned int _1;
+  long unsigned int _2;
+  unsigned char _3;
+  long unsigned int _4;
+  unsigned char i.3_5;
+  uint8 _27;
+
+  <bb 2> :
+  arbitration_field_size_12 = 8;
+  ramBlockSize_13 = 512;
+  can_real_payload_14 = 8;
+  maxMbBlockNum_15 = 0;
+  i_16 = 0;
+  mb_size_17 = 0;
+  i_18 = 0;
+  goto <bb 6>; [INV]
+
+  <bb 3> :
+  can_real_payload_22 = FlexCAN_GetPayloadSize (base_20(D), i_9);
+  mb_size_23 = can_real_payload_22 + arbitration_field_size_12;
+  _1 = (long unsigned int) mb_size_23;
+  _2 = ramBlockSize_13 / _1;
+  _3 = (unsigned char) _2;
+  maxMbBlockNum_24 = maxMbBlockNum_8 + _3;
+  _4 = (long unsigned int) maxMbBlockNum_24;
+  if (maxMsgBuffNum_25(D) < _4)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  goto <bb 7>; [INV]
+
+  <bb 5> :
+  i.3_5 = i_9;
+  i_26 = i.3_5 + 1;
+
+  <bb 6> :
+  # can_real_payload_6 = PHI <can_real_payload_14(2), can_real_payload_22(5)>
+  # maxMbBlockNum_8 = PHI <maxMbBlockNum_15(2), maxMbBlockNum_24(5)>
+  # i_9 = PHI <i_18(2), i_26(5)>
+  if (i_9 == 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 7> :
+  # can_real_payload_7 = PHI <can_real_payload_22(4), can_real_payload_6(6)>
+  _27 = can_real_payload_7;
+
+  <bb 8> :
+<L5>:
+  return _27;
+
+}
+
+
+FlexCAN_GetPayloadSize (const struct FLEXCAN_Type * base, uint8 mbdsrIdx)
+{
+  uint32 payloadSize;
+  uint8 D.7193;
+  _Bool _1;
+  int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _5;
+  long unsigned int _6;
+  long unsigned int _7;
+  long unsigned int _8;
+  uint8 _19;
+
+  <bb 2> :
+  payloadSize_11 = 0;
+  _1 = FlexCAN_IsFDAvailable (base_13(D));
+  if (_1 != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 3> :
+  _2 = (int) mbdsrIdx_16(D);
+  if (_2 == 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+<L1>:
+  _3 ={v} base_13(D)->FDCTRL;
+  _4 = _3 >> 16;
+  _5 = _4 & 3;
+  payloadSize_17 = 8 << _5;
+  goto <bb 6>; [INV]
+
+  <bb 5> :
+<L2>:
+  _6 ={v} base_13(D)->FDCTRL;
+  _7 = _6 >> 16;
+  _8 = _7 & 3;
+  payloadSize_18 = 8 << _8;
+
+  <bb 6> :
+  # payloadSize_9 = PHI <payloadSize_17(4), payloadSize_18(5)>
+  goto <bb 8>; [INV]
+
+  <bb 7> :
+  payloadSize_15 = 8;
+
+  <bb 8> :
+  # payloadSize_10 = PHI <payloadSize_9(6), payloadSize_15(7)>
+  _19 = (uint8) payloadSize_10;
+
+  <bb 9> :
+<L6>:
+  return _19;
+
+}
+
+
+FlexCAN_SetPayloadSize (struct FLEXCAN_Type * base, const struct Flexcan_Ip_PayloadSizeType * payloadSize)
+{
+  uint32 tmp;
+  _Bool _1;
+  <unnamed type> _2;
+  long unsigned int _3;
+
+  <bb 2> :
+  _1 = FlexCAN_IsFDEnabled (base_6(D));
+  if (_1 != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  tmp_8 ={v} base_6(D)->FDCTRL;
+  tmp_9 = tmp_8 & 4294770687;
+  _2 = payloadSize_10(D)->payloadBlock0;
+  _3 = _2 << 16;
+  tmp_11 = tmp_9 | _3;
+  base_6(D)->FDCTRL ={v} tmp_11;
+
+  <bb 4> :
+  return;
+
+}
+
+
+FlexCAN_IsFDAvailable (const struct FLEXCAN_Type * base)
+{
+  boolean returnValue;
+  static struct FLEXCAN_Type * const flexcanBase[1] = {1073889280B};
+  uint32 i;
+  boolean D.7184;
+  struct FLEXCAN_Type * _1;
+  boolean _11;
+
+  <bb 2> :
+  i_4 = 0;
+  returnValue_5 = 0;
+  i_6 = 0;
+  goto <bb 6>; [INV]
+
+  <bb 3> :
+  _1 = flexcanBase[i_2];
+  if (base_8(D) == _1)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  returnValue_10 = 1;
+  goto <bb 7>; [INV]
+
+  <bb 5> :
+  i_9 = i_2 + 1;
+
+  <bb 6> :
+  # i_2 = PHI <i_6(2), i_9(5)>
+  if (i_2 == 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 7> :
+  # returnValue_3 = PHI <returnValue_10(4), returnValue_5(6)>
+  _11 = returnValue_3;
+
+  <bb 8> :
+<L5>:
+  return _11;
+
+}
+
+
+FlexCAN_EnableRxFifo (struct FLEXCAN_Type * base, uint32 numOfFilters)
+{
+  Flexcan_Ip_StatusType stat;
+  uint16 noOfMbx;
+  uint32 i;
+  Flexcan_Ip_StatusType D.7180;
+  long unsigned int _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _5;
+  long unsigned int _6;
+  long unsigned int _7;
+  long unsigned int _8;
+  long unsigned int _9;
+  long unsigned int _10;
+  long unsigned int _11;
+  Flexcan_Ip_StatusType _29;
+
+  <bb 2> :
+  _1 = FlexCAN_GetMaxMbNum (base_17(D));
+  noOfMbx_19 = (uint16) _1;
+  stat_20 = 0;
+  _2 ={v} base_17(D)->MCR;
+  _3 = _2 & 2048;
+  if (_3 != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  stat_21 = 1;
+
+  <bb 4> :
+  # stat_13 = PHI <stat_20(2), stat_21(3)>
+  if (stat_13 == 0)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 5> :
+  _4 ={v} base_17(D)->MCR;
+  _5 = _4 | 536870912;
+  base_17(D)->MCR ={v} _5;
+  _6 ={v} base_17(D)->CTRL2;
+  _7 = _6 & 4043309055;
+  _8 = numOfFilters_23(D) << 24;
+  _9 = _8 & 251658240;
+  _10 = _7 | _9;
+  base_17(D)->CTRL2 ={v} _10;
+  base_17(D)->RXFGMASK ={v} 4294967295;
+  i_26 = 0;
+  goto <bb 7>; [INV]
+
+  <bb 6> :
+  base_17(D)->RXIMR[i_12] ={v} 536870911;
+  i_28 = i_12 + 1;
+
+  <bb 7> :
+  # i_12 = PHI <i_26(5), i_28(6)>
+  _11 = (long unsigned int) noOfMbx_19;
+  if (i_12 < _11)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 8> :
+  _29 = stat_13;
+
+  <bb 9> :
+<L7>:
+  return _29;
+
+}
+
+
+FlexCAN_Init (struct FLEXCAN_Type * base)
+{
+  Flexcan_Ip_StatusType returnResult;
+  uint32 uS2Ticks;
+  uint32 timeElapsed;
+  uint32 timeStart;
+  Flexcan_Ip_StatusType D.7173;
+  long unsigned int D.7166;
+  long unsigned int _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _5;
+  long unsigned int _6;
+  long unsigned int _7;
+  _Bool _8;
+  long unsigned int _25;
+  Flexcan_Ip_StatusType _42;
+
+  <bb 2> :
+  timeStart = 0;
+  timeElapsed_16 = 0;
+  uS2Ticks_18 = OsIf_MicrosToTicks (1000000, 0);
+  returnResult_19 = 0;
+  _1 ={v} base_20(D)->MCR;
+  _2 = _1 | 33554432;
+  base_20(D)->MCR ={v} _2;
+  _3 = OsIf_GetCounter (0);
+  timeStart = _3;
+  goto <bb 5>; [INV]
+
+  <bb 3> :
+  _25 = OsIf_GetElapsed (&timeStart, 0);
+  timeElapsed_26 = _25 + timeElapsed_9;
+  if (timeElapsed_26 >= uS2Ticks_18)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  returnResult_27 = 3;
+  goto <bb 6>; [INV]
+
+  <bb 5> :
+  # timeElapsed_9 = PHI <timeElapsed_16(2), timeElapsed_26(3)>
+  _4 ={v} base_20(D)->MCR;
+  _5 = _4 & 33554432;
+  if (_5 != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 6> :
+  # returnResult_10 = PHI <returnResult_27(4), returnResult_19(5)>
+  if (returnResult_10 == 0)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 7> :
+  _6 ={v} base_20(D)->MCR;
+  _7 = _6 | 4096;
+  base_20(D)->MCR ={v} _7;
+  FlexCAN_ClearRAM (base_20(D));
+  base_20(D)->RXMGMASK ={v} 4294967295;
+  base_20(D)->RX14MASK ={v} 4294967295;
+  base_20(D)->RX15MASK ={v} 4294967295;
+  base_20(D)->IMASK1 ={v} 0;
+  base_20(D)->IFLAG1 ={v} 4294967295;
+  base_20(D)->ESR1 ={v} 3866630;
+  base_20(D)->CTRL1 ={v} 0;
+  base_20(D)->CTRL2 ={v} 1048576;
+  base_20(D)->CBT ={v} 0;
+  _8 = FlexCAN_IsFDAvailable (base_20(D));
+  if (_8 != 0)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 8> :
+  base_20(D)->FDCBT ={v} 0;
+  base_20(D)->FDCTRL ={v} 2147500288;
+
+  <bb 9> :
+  _42 = returnResult_10;
+  timeStart ={v} {CLOBBER};
+
+  <bb 10> :
+<L10>:
+  return _42;
+
+}
+
+
+FlexCAN_SetErrIntCmd (struct FLEXCAN_Type * base, flexcan_int_type_t errType, boolean enable)
+{
+  uint32 temp;
+  long unsigned int _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _5;
+  long unsigned int _6;
+  long unsigned int _7;
+  long unsigned int _8;
+  long unsigned int _9;
+  long unsigned int _10;
+  long unsigned int _11;
+  long unsigned int _12;
+  long unsigned int _13;
+  long unsigned int _14;
+  long unsigned int _15;
+
+  <bb 2> :
+  temp_19 = errType_18(D);
+  SchM_Enter_Can_43_FLEXCAN_CAN_EXCLUSIVE_AREA_06 ();
+  if (enable_22(D) != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 3> :
+  if (errType_18(D) == 16385)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  _1 ={v} base_23(D)->CTRL2;
+  _2 = _1 | 2147483648;
+  base_23(D)->CTRL2 ={v} _2;
+  goto <bb 14>; [INV]
+
+  <bb 5> :
+  if (errType_18(D) == 1024)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 6> :
+  if (errType_18(D) == 2048)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 7> :
+  _3 ={v} base_23(D)->MCR;
+  _4 = _3 | 2097152;
+  base_23(D)->MCR ={v} _4;
+
+  <bb 8> :
+  _5 ={v} base_23(D)->CTRL1;
+  _6 = temp_19 | _5;
+  base_23(D)->CTRL1 ={v} _6;
+  goto <bb 14>; [INV]
+
+  <bb 9> :
+  if (errType_18(D) == 16385)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 10> :
+  _7 ={v} base_23(D)->CTRL2;
+  _8 = _7 & 2147483647;
+  base_23(D)->CTRL2 ={v} _8;
+  goto <bb 14>; [INV]
+
+  <bb 11> :
+  _9 ={v} base_23(D)->CTRL1;
+  _10 = ~temp_19;
+  _11 = _9 & _10;
+  base_23(D)->CTRL1 ={v} _11;
+  temp_25 ={v} base_23(D)->CTRL1;
+  _12 = temp_25 & 1024;
+  if (_12 == 0)
+    goto <bb 12>; [INV]
+  else
+    goto <bb 14>; [INV]
+
+  <bb 12> :
+  _13 = temp_25 & 2048;
+  if (_13 == 0)
+    goto <bb 13>; [INV]
+  else
+    goto <bb 14>; [INV]
+
+  <bb 13> :
+  _14 ={v} base_23(D)->MCR;
+  _15 = _14 & 4292870143;
+  base_23(D)->MCR ={v} _15;
+
+  <bb 14> :
+  SchM_Exit_Can_43_FLEXCAN_CAN_EXCLUSIVE_AREA_06 ();
+  return;
+
+}
+
+
+FlexCAN_Disable (struct FLEXCAN_Type * base)
+{
+  Flexcan_Ip_StatusType returnResult;
+  uint32 uS2Ticks;
+  uint32 timeElapsed;
+  uint32 timeStart;
+  Flexcan_Ip_StatusType D.7147;
+  long unsigned int D.7144;
+  long unsigned int _1;
+  signed int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _5;
+  long unsigned int _6;
+  long unsigned int _7;
+  long unsigned int _25;
+  Flexcan_Ip_StatusType _28;
+
+  <bb 2> :
+  timeStart = 0;
+  timeElapsed_14 = 0;
+  uS2Ticks_16 = OsIf_MicrosToTicks (1000000, 0);
+  returnResult_17 = 0;
+  _1 ={v} base_18(D)->MCR;
+  _2 = (signed int) _1;
+  if (_2 >= 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 3> :
+  SchM_Enter_Can_43_FLEXCAN_CAN_EXCLUSIVE_AREA_05 ();
+  _3 ={v} base_18(D)->MCR;
+  _4 = _3 | 2147483648;
+  base_18(D)->MCR ={v} _4;
+  SchM_Exit_Can_43_FLEXCAN_CAN_EXCLUSIVE_AREA_05 ();
+  _5 = OsIf_GetCounter (0);
+  timeStart = _5;
+  goto <bb 6>; [INV]
+
+  <bb 4> :
+  _25 = OsIf_GetElapsed (&timeStart, 0);
+  timeElapsed_26 = _25 + timeElapsed_8;
+  if (timeElapsed_26 >= uS2Ticks_16)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  returnResult_27 = 3;
+  goto <bb 7>; [INV]
+
+  <bb 6> :
+  # timeElapsed_8 = PHI <timeElapsed_14(3), timeElapsed_26(4)>
+  _6 ={v} base_18(D)->MCR;
+  _7 = _6 & 1048576;
+  if (_7 == 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 7> :
+  # returnResult_9 = PHI <returnResult_17(2), returnResult_27(5), returnResult_17(6)>
+  _28 = returnResult_9;
+  timeStart ={v} {CLOBBER};
+
+  <bb 8> :
+<L8>:
+  return _28;
+
+}
+
+
+FlexCAN_ExitFreezeMode (struct FLEXCAN_Type * base)
+{
+  Flexcan_Ip_StatusType returnValue;
+  uint32 uS2Ticks;
+  uint32 timeElapsed;
+  uint32 timeStart;
+  Flexcan_Ip_StatusType D.7139;
+  long unsigned int D.7136;
+  long unsigned int _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _5;
+  long unsigned int _6;
+  long unsigned int _7;
+  long unsigned int _26;
+  Flexcan_Ip_StatusType _29;
+
+  <bb 2> :
+  timeStart = 0;
+  timeElapsed_14 = 0;
+  uS2Ticks_16 = OsIf_MicrosToTicks (1000000, 0);
+  returnValue_17 = 0;
+  SchM_Enter_Can_43_FLEXCAN_CAN_EXCLUSIVE_AREA_04 ();
+  _1 ={v} base_19(D)->MCR;
+  _2 = _1 & 4026531839;
+  base_19(D)->MCR ={v} _2;
+  _3 ={v} base_19(D)->MCR;
+  _4 = _3 & 3221225471;
+  base_19(D)->MCR ={v} _4;
+  SchM_Exit_Can_43_FLEXCAN_CAN_EXCLUSIVE_AREA_04 ();
+  _5 = OsIf_GetCounter (0);
+  timeStart = _5;
+  goto <bb 5>; [INV]
+
+  <bb 3> :
+  _26 = OsIf_GetElapsed (&timeStart, 0);
+  timeElapsed_27 = _26 + timeElapsed_8;
+  if (timeElapsed_27 >= uS2Ticks_16)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  returnValue_28 = 3;
+  goto <bb 6>; [INV]
+
+  <bb 5> :
+  # timeElapsed_8 = PHI <timeElapsed_14(2), timeElapsed_27(3)>
+  _6 ={v} base_19(D)->MCR;
+  _7 = _6 & 16777216;
+  if (_7 != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 6> :
+  # returnValue_9 = PHI <returnValue_28(4), returnValue_17(5)>
+  _29 = returnValue_9;
+  timeStart ={v} {CLOBBER};
+
+  <bb 7> :
+<L6>:
+  return _29;
+
+}
+
+
+FlexCAN_Enable (struct FLEXCAN_Type * base)
+{
+  Flexcan_Ip_StatusType returnValue;
+  uint32 uS2Ticks;
+  uint32 timeElapsed;
+  uint32 timeStart;
+  Flexcan_Ip_StatusType D.7133;
+  long unsigned int D.7130;
+  long unsigned int _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _5;
+  long unsigned int _23;
+  Flexcan_Ip_StatusType _26;
+
+  <bb 2> :
+  timeStart = 0;
+  timeElapsed_12 = 0;
+  uS2Ticks_14 = OsIf_MicrosToTicks (1000000, 0);
+  returnValue_15 = 0;
+  SchM_Enter_Can_43_FLEXCAN_CAN_EXCLUSIVE_AREA_03 ();
+  _1 ={v} base_17(D)->MCR;
+  _2 = _1 & 2147483647;
+  base_17(D)->MCR ={v} _2;
+  SchM_Exit_Can_43_FLEXCAN_CAN_EXCLUSIVE_AREA_03 ();
+  _3 = OsIf_GetCounter (0);
+  timeStart = _3;
+  goto <bb 5>; [INV]
+
+  <bb 3> :
+  _23 = OsIf_GetElapsed (&timeStart, 0);
+  timeElapsed_24 = _23 + timeElapsed_6;
+  if (timeElapsed_24 >= uS2Ticks_14)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  returnValue_25 = 3;
+  goto <bb 6>; [INV]
+
+  <bb 5> :
+  # timeElapsed_6 = PHI <timeElapsed_12(2), timeElapsed_24(3)>
+  _4 ={v} base_17(D)->MCR;
+  _5 = _4 & 16777216;
+  if (_5 == 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 6> :
+  # returnValue_7 = PHI <returnValue_25(4), returnValue_15(5)>
+  _26 = returnValue_7;
+  timeStart ={v} {CLOBBER};
+
+  <bb 7> :
+<L6>:
+  return _26;
+
+}
+
+
+FlexCAN_EnterFreezeMode (struct FLEXCAN_Type * base)
+{
+  Flexcan_Ip_StatusType returnResult;
+  uint32 uS2Ticks;
+  uint32 timeElapsed;
+  uint32 timeStart;
+  Flexcan_Ip_StatusType D.7127;
+  long unsigned int D.7124;
+  long unsigned int _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _5;
+  signed int _6;
+  long unsigned int _7;
+  long unsigned int _8;
+  long unsigned int _9;
+  long unsigned int _10;
+  long unsigned int _11;
+  long unsigned int _32;
+  Flexcan_Ip_StatusType _35;
+
+  <bb 2> :
+  timeStart = 0;
+  timeElapsed_19 = 0;
+  uS2Ticks_21 = OsIf_MicrosToTicks (1000000, 0);
+  returnResult_22 = 0;
+  SchM_Enter_Can_43_FLEXCAN_CAN_EXCLUSIVE_AREA_02 ();
+  _1 ={v} base_24(D)->MCR;
+  _2 = _1 | 1073741824;
+  base_24(D)->MCR ={v} _2;
+  _3 ={v} base_24(D)->MCR;
+  _4 = _3 | 268435456;
+  base_24(D)->MCR ={v} _4;
+  _5 ={v} base_24(D)->MCR;
+  _6 = (signed int) _5;
+  if (_6 < 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  _7 ={v} base_24(D)->MCR;
+  _8 = _7 & 2147483647;
+  base_24(D)->MCR ={v} _8;
+
+  <bb 4> :
+  SchM_Exit_Can_43_FLEXCAN_CAN_EXCLUSIVE_AREA_02 ();
+  _9 = OsIf_GetCounter (0);
+  timeStart = _9;
+  goto <bb 7>; [INV]
+
+  <bb 5> :
+  _32 = OsIf_GetElapsed (&timeStart, 0);
+  timeElapsed_33 = _32 + timeElapsed_12;
+  if (timeElapsed_33 >= uS2Ticks_21)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  returnResult_34 = 3;
+  goto <bb 8>; [INV]
+
+  <bb 7> :
+  # timeElapsed_12 = PHI <timeElapsed_19(4), timeElapsed_33(5)>
+  _10 ={v} base_24(D)->MCR;
+  _11 = _10 & 16777216;
+  if (_11 == 0)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 8> :
+  # returnResult_13 = PHI <returnResult_34(6), returnResult_22(7)>
+  _35 = returnResult_13;
+  timeStart ={v} {CLOBBER};
+
+  <bb 9> :
+<L8>:
+  return _35;
+
+}
+
+
+FlexCAN_GetMaxMbNum (const struct FLEXCAN_Type * base)
+{
+  static const uint32 maxMbNum[3] = {32, 16, 16};
+  static struct FLEXCAN_Type * const flexcanBase[3] = {1073889280B, 1073893376B, 1073917952B};
+  uint32 ret;
+  uint32 i;
+  uint32 D.7120;
+  struct FLEXCAN_Type * _1;
+  uint32 _7;
+
+  <bb 2> :
+  ret_5 = 0;
+  i_6 = 0;
+  goto <bb 6>; [INV]
+
+  <bb 3> :
+  _1 = flexcanBase[i_2];
+  if (base_9(D) == _1)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  ret_10 = maxMbNum[i_2];
+
+  <bb 5> :
+  # ret_3 = PHI <ret_4(3), ret_10(4)>
+  i_11 = i_2 + 1;
+
+  <bb 6> :
+  # i_2 = PHI <i_6(2), i_11(5)>
+  # ret_4 = PHI <ret_5(2), ret_3(5)>
+  if (i_2 <= 2)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 7> :
+  _7 = ret_4;
+
+  <bb 8> :
+<L5>:
+  return _7;
+
+}
+
+
+FlexCAN_GetMsgBuffRegion (const struct FLEXCAN_Type * base, uint32 msgBuffIdx)
+{
+  volatile uint32 * pAddressRet;
+  volatile uint32 * RAM;
+  uint8 payload_size;
+  uint32 mb_index;
+  uint8 maxMbNum;
+  uint8 i;
+  uint8 msgBuffIdxBackup;
+  uint16 ramBlockOffset;
+  uint32 ramBlockSize;
+  uint8 mb_size;
+  uint8 arbitration_field_size;
+  volatile uint32 * D.7116;
+  long unsigned int base.1_1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  unsigned char i.2_5;
+  long unsigned int _6;
+  unsigned char _7;
+  long unsigned int _8;
+  unsigned char _9;
+  long unsigned int _10;
+  long unsigned int _11;
+  long unsigned int _12;
+  volatile uint32 * _46;
+
+  <bb 2> :
+  arbitration_field_size_22 = 8;
+  mb_size_23 = 0;
+  ramBlockSize_24 = 512;
+  ramBlockOffset_25 = 0;
+  msgBuffIdxBackup_27 = (uint8) msgBuffIdx_26(D);
+  i_28 = 0;
+  maxMbNum_29 = 0;
+  mb_index_30 = 0;
+  payload_size_31 = 0;
+  base.1_1 = (long unsigned int) base_32(D);
+  _2 = base.1_1 + 128;
+  RAM_33 = (volatile uint32 *) _2;
+  pAddressRet_34 = 0B;
+  i_35 = 0;
+  goto <bb 6>; [INV]
+
+  <bb 3> :
+  payload_size_38 = FlexCAN_GetPayloadSize (base_32(D), i_17);
+  mb_size_39 = payload_size_38 + arbitration_field_size_22;
+  _3 = (long unsigned int) mb_size_39;
+  _4 = ramBlockSize_24 / _3;
+  maxMbNum_40 = (uint8) _4;
+  if (maxMbNum_40 > msgBuffIdxBackup_16)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  goto <bb 7>; [INV]
+
+  <bb 5> :
+  ramBlockOffset_41 = ramBlockOffset_15 + 128;
+  msgBuffIdxBackup_42 = msgBuffIdxBackup_16 - maxMbNum_40;
+  i.2_5 = i_17;
+  i_43 = i.2_5 + 1;
+
+  <bb 6> :
+  # mb_size_13 = PHI <mb_size_23(2), mb_size_39(5)>
+  # ramBlockOffset_15 = PHI <ramBlockOffset_25(2), ramBlockOffset_41(5)>
+  # msgBuffIdxBackup_16 = PHI <msgBuffIdxBackup_27(2), msgBuffIdxBackup_42(5)>
+  # i_17 = PHI <i_35(2), i_43(5)>
+  # maxMbNum_18 = PHI <maxMbNum_29(2), maxMbNum_40(5)>
+  if (i_17 == 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 7> :
+  # mb_size_14 = PHI <mb_size_39(4), mb_size_13(6)>
+  # maxMbNum_19 = PHI <maxMbNum_40(4), maxMbNum_18(6)>
+  _6 = (long unsigned int) ramBlockOffset_15;
+  _7 = msgBuffIdxBackup_16 % maxMbNum_19;
+  _8 = (long unsigned int) _7;
+  _9 = mb_size_14 >> 2;
+  _10 = (long unsigned int) _9;
+  _11 = _8 * _10;
+  mb_index_44 = _6 + _11;
+  _12 = mb_index_44 * 4;
+  pAddressRet_45 = RAM_33 + _12;
+  _46 = pAddressRet_45;
+
+  <bb 8> :
+<L5>:
+  return _46;
+
+}
+
+
+FlexCAN_ComputePayloadSize (uint8 dlcValue)
+{
+  uint8 ret;
+  uint8 D.7112;
+  int _1;
+  uint8 _13;
+
+  <bb 2> :
+  ret_3 = 8;
+  if (dlcValue_4(D) <= 8)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  ret_12 = dlcValue_4(D);
+  goto <bb 13>; [INV]
+
+  <bb 4> :
+  _1 = (int) dlcValue_4(D);
+  switch (_1) <default: <L9> [INV], case 9: <L2> [INV], case 10: <L3> [INV], case 11: <L4> [INV], case 12: <L5> [INV], case 13: <L6> [INV], case 14: <L7> [INV], case 15: <L8> [INV]>
+
+  <bb 5> :
+<L2>:
+  ret_11 = 12;
+  goto <bb 13>; [INV]
+
+  <bb 6> :
+<L3>:
+  ret_10 = 16;
+  goto <bb 13>; [INV]
+
+  <bb 7> :
+<L4>:
+  ret_9 = 20;
+  goto <bb 13>; [INV]
+
+  <bb 8> :
+<L5>:
+  ret_8 = 24;
+  goto <bb 13>; [INV]
+
+  <bb 9> :
+<L6>:
+  ret_7 = 32;
+  goto <bb 13>; [INV]
+
+  <bb 10> :
+<L7>:
+  ret_6 = 48;
+  goto <bb 13>; [INV]
+
+  <bb 11> :
+<L8>:
+  ret_5 = 64;
+  goto <bb 13>; [INV]
+
+  <bb 12> :
+<L9>:
+
+  <bb 13> :
+  # ret_2 = PHI <ret_12(3), ret_11(5), ret_10(6), ret_9(7), ret_8(8), ret_7(9), ret_6(10), ret_5(11), ret_3(12)>
+  _13 = ret_2;
+
+  <bb 14> :
+<L12>:
+  return _13;
+
+}
+
+
+FlexCAN_ClearRAM (struct FLEXCAN_Type * base)
+{
+  volatile uint32 * RAM;
+  uint32 RXIMR_size;
+  uint32 RAM_size;
+  uint32 databyte;
+  long unsigned int _1;
+  long unsigned int base.0_2;
+  long unsigned int _3;
+  long unsigned int _4;
+  volatile uint32 * _5;
+  long unsigned int _6;
+  volatile uint32 * _7;
+
+  <bb 2> :
+  _1 = FlexCAN_GetMaxMbNum (base_13(D));
+  RAM_size_15 = _1 * 4;
+  RXIMR_size_17 = FlexCAN_GetMaxMbNum (base_13(D));
+  base.0_2 = (long unsigned int) base_13(D);
+  _3 = base.0_2 + 128;
+  RAM_18 = (volatile uint32 *) _3;
+  databyte_19 = 0;
+  goto <bb 4>; [INV]
+
+  <bb 3> :
+  _4 = databyte_8 * 4;
+  _5 = RAM_18 + _4;
+  *_5 ={v} 0;
+  databyte_25 = databyte_8 + 1;
+
+  <bb 4> :
+  # databyte_8 = PHI <databyte_19(2), databyte_25(3)>
+  if (databyte_8 < RAM_size_15)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 5> :
+  RAM_20 = &base_13(D)->RXIMR;
+  databyte_21 = 0;
+  goto <bb 7>; [INV]
+
+  <bb 6> :
+  _6 = databyte_9 * 4;
+  _7 = RAM_20 + _6;
+  *_7 ={v} 0;
+  databyte_23 = databyte_9 + 1;
+
+  <bb 7> :
+  # databyte_9 = PHI <databyte_21(5), databyte_23(6)>
+  if (databyte_9 < RXIMR_size_17)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 8> :
+  return;
+
+}
+
+
+FlexCAN_ComputeDLCValue (uint8 payloadSize)
+{
+  static const uint8 payload_code[65] = "\x00\x01\x02\x03\x04\x05\x06\x07\b\t\t\t\t\n\n\n\n\v\v\v\v\f\f\f\f\r\r\r\r\r\r\r\r\x0e\x0e\x0e\x0e\x0e\x0e\x0e\x0e\x0e\x0e\x0e\x0e\x0e\x0e\x0e\x0e\x0f\x0f\x0f\x0f\x0f\x0f\x0f\x0f\x0f\x0f\x0f\x0f\x0f\x0f\x0f\x0f";
+  uint32 ret;
+  uint8 D.7107;
+  int _1;
+  unsigned char _2;
+  uint8 _8;
+
+  <bb 2> :
+  ret_4 = 255;
+  if (payloadSize_5(D) <= 64)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  _1 = (int) payloadSize_5(D);
+  _2 = payload_code[_1];
+  ret_7 = (uint32) _2;
+
+  <bb 4> :
+  # ret_3 = PHI <ret_4(2), ret_7(3)>
+  _8 = (uint8) ret_3;
+
+  <bb 5> :
+<L3>:
+  return _8;
+
+}
+
+
+FlexCAN_CanBitSampling (struct FLEXCAN_Type * base, boolean enable)
+{
+  long unsigned int iftmp.14;
+  long unsigned int _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int iftmp.14_4;
+  long unsigned int iftmp.14_8;
+  long unsigned int iftmp.14_9;
+
+  <bb 2> :
+  _1 ={v} base_6(D)->CTRL1;
+  _2 = _1 & 4294967167;
+  if (enable_7(D) != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  iftmp.14_9 = 128;
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  iftmp.14_8 = 0;
+
+  <bb 5> :
+  # iftmp.14_4 = PHI <iftmp.14_9(3), iftmp.14_8(4)>
+  _3 = iftmp.14_4 | _2;
+  base_6(D)->CTRL1 ={v} _3;
+  return;
+
+}
+
+
+FlexCAN_SetEdgeFilter (struct FLEXCAN_Type * base, boolean enable)
+{
+  long unsigned int iftmp.17;
+  long unsigned int _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int iftmp.17_4;
+  long unsigned int iftmp.17_8;
+  long unsigned int iftmp.17_9;
+
+  <bb 2> :
+  _1 ={v} base_6(D)->CTRL2;
+  _2 = _1 & 4294965247;
+  if (enable_7(D) != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  iftmp.17_9 = 0;
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  iftmp.17_8 = 2048;
+
+  <bb 5> :
+  # iftmp.17_4 = PHI <iftmp.17_9(3), iftmp.17_8(4)>
+  _3 = iftmp.17_4 | _2;
+  base_6(D)->CTRL2 ={v} _3;
+  return;
+
+}
+
+
+FlexCAN_SetBusOffAutorecovery (struct FLEXCAN_Type * base, boolean enable)
+{
+  long unsigned int iftmp.15;
+  long unsigned int _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int iftmp.15_4;
+  long unsigned int iftmp.15_8;
+  long unsigned int iftmp.15_9;
+
+  <bb 2> :
+  _1 ={v} base_6(D)->CTRL1;
+  _2 = _1 & 4294967231;
+  if (enable_7(D) != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  iftmp.15_9 = 0;
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  iftmp.15_8 = 64;
+
+  <bb 5> :
+  # iftmp.15_4 = PHI <iftmp.15_9(3), iftmp.15_8(4)>
+  _3 = iftmp.15_4 | _2;
+  base_6(D)->CTRL1 ={v} _3;
+  return;
+
+}
+
+
+FlexCAN_SetRemoteReqStore (struct FLEXCAN_Type * base, boolean enable)
+{
+  long unsigned int iftmp.16;
+  long unsigned int _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int iftmp.16_4;
+  long unsigned int iftmp.16_8;
+  long unsigned int iftmp.16_9;
+
+  <bb 2> :
+  _1 ={v} base_6(D)->CTRL2;
+  _2 = _1 & 4294836223;
+  if (enable_7(D) != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  iftmp.16_9 = 131072;
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  iftmp.16_8 = 0;
+
+  <bb 5> :
+  # iftmp.16_4 = PHI <iftmp.16_9(3), iftmp.16_8(4)>
+  _3 = iftmp.16_4 | _2;
+  base_6(D)->CTRL2 ={v} _3;
+  return;
+
+}
+
+
+FlexCAN_SetProtocolException (struct FLEXCAN_Type * base, boolean enable)
+{
+  long unsigned int iftmp.13;
+  long unsigned int _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int iftmp.13_4;
+  long unsigned int iftmp.13_8;
+  long unsigned int iftmp.13_9;
+
+  <bb 2> :
+  _1 ={v} base_6(D)->CTRL2;
+  _2 = _1 & 4294950911;
+  if (enable_7(D) != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  iftmp.13_9 = 16384;
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  iftmp.13_8 = 0;
+
+  <bb 5> :
+  # iftmp.13_4 = PHI <iftmp.13_9(3), iftmp.13_8(4)>
+  _3 = iftmp.13_4 | _2;
+  base_6(D)->CTRL2 ={v} _3;
+  return;
+
+}
+
+
+FlexCAN_SetEntireFrameArbitrationFieldComparison (struct FLEXCAN_Type * base, boolean enable)
+{
+  long unsigned int iftmp.12;
+  long unsigned int _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int iftmp.12_4;
+  long unsigned int iftmp.12_8;
+  long unsigned int iftmp.12_9;
+
+  <bb 2> :
+  _1 ={v} base_6(D)->CTRL2;
+  _2 = _1 & 4294901759;
+  if (enable_7(D) != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  iftmp.12_9 = 65536;
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  iftmp.12_8 = 0;
+
+  <bb 5> :
+  # iftmp.12_4 = PHI <iftmp.12_9(3), iftmp.12_8(4)>
+  _3 = iftmp.12_4 | _2;
+  base_6(D)->CTRL2 ={v} _3;
+  return;
+
+}
+
+
+FlexCAN_SetIsoCan (struct FLEXCAN_Type * base, boolean enable)
+{
+  long unsigned int iftmp.11;
+  long unsigned int _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int iftmp.11_4;
+  long unsigned int iftmp.11_8;
+  long unsigned int iftmp.11_9;
+
+  <bb 2> :
+  _1 ={v} base_6(D)->CTRL2;
+  _2 = _1 & 4294963199;
+  if (enable_7(D) != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  iftmp.11_9 = 4096;
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  iftmp.11_8 = 0;
+
+  <bb 5> :
+  # iftmp.11_4 = PHI <iftmp.11_9(3), iftmp.11_8(4)>
+  _3 = iftmp.11_4 | _2;
+  base_6(D)->CTRL2 ={v} _3;
+  return;
+
+}
+
+
+FlexCAN_IsFDEnabled (const struct FLEXCAN_Type * base)
+{
+  boolean D.7188;
+  long unsigned int _1;
+  long unsigned int _2;
+  boolean _5;
+
+  <bb 2> :
+  _1 ={v} base_4(D)->MCR;
+  _2 = _1 & 2048;
+  _5 = _2 != 0;
+
+  <bb 3> :
+<L0>:
+  return _5;
+
+}
+
+
+FlexCAN_SetSelfReception (struct FLEXCAN_Type * base, boolean enable)
+{
+  long unsigned int iftmp.8;
+  long unsigned int _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int iftmp.8_4;
+  long unsigned int iftmp.8_8;
+  long unsigned int iftmp.8_9;
+
+  <bb 2> :
+  _1 ={v} base_6(D)->MCR;
+  _2 = _1 & 4294836223;
+  if (enable_7(D) != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  iftmp.8_9 = 0;
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  iftmp.8_8 = 131072;
+
+  <bb 5> :
+  # iftmp.8_4 = PHI <iftmp.8_9(3), iftmp.8_8(4)>
+  _3 = iftmp.8_4 | _2;
+  base_6(D)->MCR ={v} _3;
+  return;
+
+}
+
+

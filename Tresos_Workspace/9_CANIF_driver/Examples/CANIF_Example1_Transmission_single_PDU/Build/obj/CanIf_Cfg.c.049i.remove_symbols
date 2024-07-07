@@ -1,0 +1,54 @@
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+Symbol table:
+
+Can_43_FLEXCAN_SetControllerMode/5 (Can_43_FLEXCAN_SetControllerMode) @0e59f9a0
+  Type: function
+  Visibility: external public
+  Address is taken.
+  References: 
+  Referring: Can_43_FLEXCAN_Driver_P2Func/0 (addr) 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+Can_43_FLEXCAN_Write/4 (Can_43_FLEXCAN_Write) @0e59f8c0
+  Type: function
+  Visibility: external public
+  Address is taken.
+  References: 
+  Referring: Can_43_FLEXCAN_Driver_P2Func/0 (addr) 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+CanIf_PCConfig/3 (CanIf_PCConfig) @0e5a44c8
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: CanIf_CtrlPCConfig/2 (addr) 
+  Referring: 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+CanIf_CtrlPCConfig/2 (CanIf_CtrlPCConfig) @0e5a4438
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: Can_43_FLEXCAN_Driver_Config/1 (addr) 
+  Referring: CanIf_PCConfig/3 (addr) 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+Can_43_FLEXCAN_Driver_Config/1 (Can_43_FLEXCAN_Driver_Config) @0e5a43a8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: Can_43_FLEXCAN_Driver_P2Func/0 (addr) 
+  Referring: CanIf_CtrlPCConfig/2 (addr) 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+Can_43_FLEXCAN_Driver_P2Func/0 (Can_43_FLEXCAN_Driver_P2Func) @0e5a4318
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: Can_43_FLEXCAN_Write/4 (addr) Can_43_FLEXCAN_SetControllerMode/5 (addr) 
+  Referring: Can_43_FLEXCAN_Driver_Config/1 (addr) 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known

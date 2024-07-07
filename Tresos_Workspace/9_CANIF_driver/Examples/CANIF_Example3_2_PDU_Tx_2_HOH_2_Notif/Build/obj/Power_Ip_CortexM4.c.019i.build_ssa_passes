@@ -1,0 +1,64 @@
+Power_Ip_CM4_DisableDeepSleep ()
+{
+  uint32 TempValue;
+
+  <bb 2> :
+  TempValue = 0;
+  Power_Ip_pxCM4.6_1 = Power_Ip_pxCM4;
+  TempValue = Power_Ip_pxCM4.6_1->SCR;
+  TempValue = TempValue & 4294967291;
+  Power_Ip_pxCM4.7_2 = Power_Ip_pxCM4;
+  Power_Ip_pxCM4.7_2->SCR = TempValue;
+  return;
+
+}
+
+
+Power_Ip_CM4_EnableDeepSleep ()
+{
+  uint32 TempValue;
+
+  <bb 2> :
+  TempValue = 0;
+  Power_Ip_pxCM4.4_1 = Power_Ip_pxCM4;
+  TempValue = Power_Ip_pxCM4.4_1->SCR;
+  TempValue = TempValue | 4;
+  Power_Ip_pxCM4.5_2 = Power_Ip_pxCM4;
+  Power_Ip_pxCM4.5_2->SCR = TempValue;
+  return;
+
+}
+
+
+Power_Ip_CM4_EnableSleepOnExit ()
+{
+  uint32 TempValue;
+
+  <bb 2> :
+  TempValue = 0;
+  Power_Ip_pxCM4.2_1 = Power_Ip_pxCM4;
+  TempValue = Power_Ip_pxCM4.2_1->SCR;
+  TempValue = TempValue | 2;
+  Power_Ip_pxCM4.3_2 = Power_Ip_pxCM4;
+  Power_Ip_pxCM4.3_2->SCR = TempValue;
+  return;
+
+}
+
+
+Power_Ip_CM4_DisableSleepOnExit ()
+{
+  uint32 TempValue;
+
+  <bb 2> :
+  TempValue = 0;
+  Power_Ip_pxCM4.0_1 = Power_Ip_pxCM4;
+  TempValue = Power_Ip_pxCM4.0_1->SCR;
+  TempValue = TempValue & 4294967293;
+  Power_Ip_pxCM4.1_2 = Power_Ip_pxCM4;
+  Power_Ip_pxCM4.1_2->SCR = TempValue;
+  return;
+
+}
+
+

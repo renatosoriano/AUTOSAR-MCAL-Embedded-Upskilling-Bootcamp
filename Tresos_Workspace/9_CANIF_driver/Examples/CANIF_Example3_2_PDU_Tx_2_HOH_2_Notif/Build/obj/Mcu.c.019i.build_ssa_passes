@@ -1,0 +1,187 @@
+Mcu_ClkSrcFailureNotification (Clock_Ip_NameType ClockName)
+{
+  <bb 2> :
+  Mcu_pConfigPtr.7_1 = Mcu_pConfigPtr;
+  if (Mcu_pConfigPtr.7_1 != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  Mcu_pConfigPtr.8_2 = Mcu_pConfigPtr;
+  _3 = Mcu_pConfigPtr.8_2->ClkSrcFailureNotification;
+
+  <bb 4> :
+  return;
+
+}
+
+
+Mcu_SleepOnExit (Mcu_SleepOnExitType SleepOnExit)
+{
+  <bb 2> :
+  Mcu_Ipw_SleepOnExit (SleepOnExit);
+  return;
+
+}
+
+
+Mcu_GetResetRawValue ()
+{
+  Mcu_RawResetType RawResetValue;
+  Mcu_RawResetType D.5922;
+
+  <bb 2> :
+  RawResetValue = Mcu_Ipw_GetResetRawValue ();
+  D.5922 = RawResetValue;
+
+  <bb 3> :
+<L0>:
+  return D.5922;
+
+}
+
+
+Mcu_GetResetReason ()
+{
+  Mcu_ResetType ResetReason;
+  Mcu_ResetType D.5920;
+
+  <bb 2> :
+  ResetReason = Mcu_Ipw_GetResetReason ();
+  D.5920 = ResetReason;
+
+  <bb 3> :
+<L0>:
+  return D.5920;
+
+}
+
+
+Mcu_GetPllStatus ()
+{
+  Mcu_PllStatusType PllStatus;
+  Mcu_PllStatusType D.5918;
+
+  <bb 2> :
+  PllStatus = 2;
+  D.5918 = PllStatus;
+
+  <bb 3> :
+<L0>:
+  return D.5918;
+
+}
+
+
+Mcu_SetMode (Mcu_ModeType McuMode)
+{
+  const uint8 McuModeId;
+
+  <bb 2> :
+  McuModeId = Mcu_au8ModeConfigIds[McuMode];
+  SchM_Enter_Mcu_MCU_EXCLUSIVE_AREA_00 ();
+  Mcu_pConfigPtr.6_1 = Mcu_pConfigPtr;
+  _2 = Mcu_pConfigPtr.6_1->ModeConfigArrayPtr;
+  _3 = (int) McuModeId;
+  _4 = &(*_2)[_3];
+  Mcu_Ipw_SetMode (_4);
+  SchM_Exit_Mcu_MCU_EXCLUSIVE_AREA_00 ();
+  return;
+
+}
+
+
+Mcu_InitClock (Mcu_ClockType ClockSetting)
+{
+  Std_ReturnType ClockStatus;
+  const uint8 ClockConfigId;
+  Std_ReturnType D.5916;
+
+  <bb 2> :
+  ClockConfigId = Mcu_au8ClockConfigIds[ClockSetting];
+  Mcu_pConfigPtr.5_1 = Mcu_pConfigPtr;
+  _2 = Mcu_pConfigPtr.5_1->ClockConfigArrayPtr;
+  _3 = (int) ClockConfigId;
+  _4 = &(*_2)[_3];
+  Mcu_Ipw_InitClock (_4);
+  ClockStatus = 0;
+  D.5916 = ClockStatus;
+
+  <bb 3> :
+<L0>:
+  return D.5916;
+
+}
+
+
+Mcu_InitRamSection (Mcu_RamSectionType RamSection)
+{
+  Std_ReturnType RamStatus;
+  Std_ReturnType D.5914;
+
+  <bb 2> :
+  RamStatus = 1;
+  D.5914 = RamStatus;
+
+  <bb 3> :
+<L0>:
+  return D.5914;
+
+}
+
+
+Mcu_Init (const struct Mcu_ConfigType * ConfigPtr)
+{
+  uint32 NoConfigs;
+
+  <bb 2> :
+  Mcu_pConfigPtr = ConfigPtr;
+  NoConfigs = 0;
+  goto <bb 4>; [INV]
+
+  <bb 3> :
+  Mcu_pConfigPtr.0_1 = Mcu_pConfigPtr;
+  _2 = Mcu_pConfigPtr.0_1->ModeConfigArrayPtr;
+  _3 = (*_2)[NoConfigs].ModeConfigId;
+  _4 = (unsigned char) NoConfigs;
+  Mcu_au8ModeConfigIds[_3] = _4;
+  NoConfigs = NoConfigs + 1;
+
+  <bb 4> :
+  Mcu_pConfigPtr.1_5 = Mcu_pConfigPtr;
+  _6 = Mcu_pConfigPtr.1_5->NoModeConfigs;
+  if (NoConfigs < _6)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 5> :
+  NoConfigs = 0;
+  goto <bb 7>; [INV]
+
+  <bb 6> :
+  Mcu_pConfigPtr.2_7 = Mcu_pConfigPtr;
+  _8 = Mcu_pConfigPtr.2_7->ClockConfigArrayPtr;
+  _9 = (*_8)[NoConfigs].ClkConfigId;
+  _10 = (unsigned char) NoConfigs;
+  Mcu_au8ClockConfigIds[_9] = _10;
+  NoConfigs = NoConfigs + 1;
+
+  <bb 7> :
+  Mcu_pConfigPtr.3_11 = Mcu_pConfigPtr;
+  _12 = Mcu_pConfigPtr.3_11->NoClkConfigs;
+  if (NoConfigs < _12)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 8> :
+  Mcu_pConfigPtr.4_13 = Mcu_pConfigPtr;
+  _14 = Mcu_pConfigPtr.4_13->HwIPsConfigPtr;
+  Mcu_Ipw_Init (_14);
+  return;
+
+}
+
+

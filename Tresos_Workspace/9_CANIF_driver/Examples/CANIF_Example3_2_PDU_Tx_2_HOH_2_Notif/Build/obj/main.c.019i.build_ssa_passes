@@ -1,0 +1,119 @@
+EcuM_Init ()
+{
+  <bb 2> :
+  Mcu_Init (&Mcu_Config);
+  Mcu_InitClock (0);
+  Mcu_SetMode (0);
+  OsIf_Init (0B);
+  Platform_Init (0B);
+  Port_Init (&Port_Config);
+  Can_43_FLEXCAN_Init (&Can_43_FLEXCAN_Config);
+  CanIf_Init (&CanIf_Config);
+  return;
+
+}
+
+
+main ()
+{
+  struct PduInfoType PduInfo;
+  int D.7427;
+
+  <bb 2> :
+  EcuM_Init ();
+  Can_43_FLEXCAN_SetControllerMode (0, 1);
+  PduInfo.SduDataPtr = &Can_au8Sdu8bytes;
+  PduInfo.SduLength = 8;
+  PduInfo.MetaDataPtr = 0B;
+
+  <bb 3> :
+  CanIf_Transmit (0, &PduInfo);
+  CanIf_Transmit (1, &PduInfo);
+
+  <bb 4> :
+  CanIf_bTxFlag.0_1 = CanIf_bTxFlag;
+  _2 = ~CanIf_bTxFlag.0_1;
+  if (_2 != 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 5> :
+  CanIf_bTxFlag = 0;
+  _3 = Can_au8Sdu8bytes[0];
+  _4 = _3;
+  _5 = _4 + 1;
+  Can_au8Sdu8bytes[0] = _5;
+  _6 = Can_au8Sdu8bytes[7];
+  _7 = _6;
+  _8 = _7 + 1;
+  Can_au8Sdu8bytes[7] = _8;
+  Delay (5000);
+  goto <bb 3>; [INV]
+
+}
+
+
+CDD_UserTxConfirmation0x124 (PduIdType TxPduId, Std_ReturnType result)
+{
+  <bb 2> :
+  if (result == 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  CanIf_bTxFlag = 1;
+
+  <bb 4> :
+  return;
+
+}
+
+
+CDD_UserTxConfirmation0x123 (PduIdType TxPduId, Std_ReturnType result)
+{
+  <bb 2> :
+  if (result == 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  CanIf_bTxFlag = 1;
+
+  <bb 4> :
+  return;
+
+}
+
+
+Delay (uint32 ms)
+{
+  uint32 ElapsedTime;
+  uint32 SeedTick;
+  uint32 Timeout;
+  long unsigned int D.7422;
+
+  <bb 2> :
+  _1 = ms * 1000;
+  Timeout = OsIf_MicrosToTicks (_1, 1);
+  _2 = OsIf_GetCounter (1);
+  SeedTick = _2;
+  ElapsedTime = 0;
+
+  <bb 3> :
+  D.7422 = OsIf_GetElapsed (&SeedTick, 1);
+  ElapsedTime = D.7422 + ElapsedTime;
+  if (ElapsedTime < Timeout)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 4> :
+  SeedTick = {CLOBBER};
+  return;
+
+}
+
+

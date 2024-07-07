@@ -1,0 +1,110 @@
+EcuM_Init ()
+{
+  <bb 2> :
+  Mcu_Init (&Mcu_Config);
+  Mcu_InitClock (0);
+  Mcu_SetMode (0);
+  OsIf_Init (0B);
+  Platform_Init (0B);
+  Port_Init (&Port_Config);
+  Can_43_FLEXCAN_Init (&Can_43_FLEXCAN_Config);
+  CanIf_Init (&CanIf_Config);
+  return;
+
+}
+
+
+main ()
+{
+  int D.7420;
+
+  <bb 2> :
+  EcuM_Init ();
+  Can_43_FLEXCAN_SetControllerMode (0, 1);
+
+  <bb 3> :
+  goto <bb 3>; [INV]
+
+}
+
+
+CDD_UserRxIndication (PduIdType RxPduId, const struct PduInfoType * PduInfoPtr)
+{
+  uint8 i;
+  uint8 * _1;
+  unsigned char _2;
+  uint8 * _3;
+  sizetype _4;
+  uint8 * _5;
+  int _6;
+  unsigned char _7;
+  unsigned char i.0_8;
+
+  <bb 2> :
+  _1 = PduInfoPtr_13(D)->SduDataPtr;
+  _2 = *_1;
+  if (_2 == 50)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 3> :
+  i_14 = 0;
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  _3 = PduInfoPtr_13(D)->SduDataPtr;
+  _4 = (sizetype) i_9;
+  _5 = _3 + _4;
+  _6 = (int) i_9;
+  _7 = *_5;
+  Can_au8Sdu8bytes[_6] = _7;
+  i.0_8 = i_9;
+  i_16 = i.0_8 + 1;
+
+  <bb 5> :
+  # i_9 = PHI <i_14(3), i_16(4)>
+  if (i_9 <= 7)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 6> :
+  return;
+
+}
+
+
+Delay (uint32 ms)
+{
+  uint32 ElapsedTime;
+  uint32 SeedTick;
+  uint32 Timeout;
+  long unsigned int D.7417;
+  long unsigned int _1;
+  long unsigned int _2;
+  long unsigned int _13;
+
+  <bb 2> :
+  _1 = ms_5(D) * 1000;
+  Timeout_8 = OsIf_MicrosToTicks (_1, 1);
+  _2 = OsIf_GetCounter (1);
+  SeedTick = _2;
+  ElapsedTime_11 = 0;
+
+  <bb 3> :
+  # ElapsedTime_3 = PHI <ElapsedTime_11(2), ElapsedTime_14(3)>
+  _13 = OsIf_GetElapsed (&SeedTick, 1);
+  ElapsedTime_14 = _13 + ElapsedTime_3;
+  if (ElapsedTime_14 < Timeout_8)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 4> :
+  SeedTick ={v} {CLOBBER};
+  return;
+
+}
+
+

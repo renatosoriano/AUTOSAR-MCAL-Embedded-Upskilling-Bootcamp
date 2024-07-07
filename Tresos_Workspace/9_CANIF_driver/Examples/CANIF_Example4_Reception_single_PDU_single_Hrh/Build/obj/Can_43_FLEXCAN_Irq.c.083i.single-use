@@ -1,0 +1,78 @@
+Can_43_FLEXCAN_ErrorIrqCallback (uint8 u8Instance, Flexcan_Ip_EventType event, uint32 u32ErrStatus, const struct Flexcan_Ip_StateType * driverState)
+{
+  <bb 2> :
+  if (event_2(D) == 7)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+<L0>:
+  Can_43_FLEXCAN_ProcessBusOffInterrupt (u8Instance_4(D));
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+<L1>:
+
+  <bb 5> :
+  return;
+
+}
+
+
+Can_43_FLEXCAN_CommonIrqCallback (uint8 u8Instance, Flexcan_Ip_EventType event, uint32 u32buffIdx, const struct Flexcan_Ip_StateType * driverState)
+{
+  _Bool _1;
+  _Bool _2;
+  unsigned char _3;
+  unsigned char _4;
+  unsigned char _5;
+
+  <bb 2> :
+  _1 = driverState_8(D)->mbs[u32buffIdx_9(D)].isPolling;
+  _2 = ~_1;
+  if (_2 != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 3> :
+  switch (event_10(D)) <default: <L6> [INV], case 0: <L2> [INV], case 1: <L3> [INV], case 2: <L4> [INV], case 3: <L5> [INV], case 4: <L1> [INV]>
+
+  <bb 4> :
+<L1>:
+  _3 = (unsigned char) u32buffIdx_9(D);
+  Can_43_FLEXCAN_ProcessMesgBufferCommonInterrupt (u8Instance_11(D), _3, 3);
+  goto <bb 10>; [INV]
+
+  <bb 5> :
+<L2>:
+  _4 = (unsigned char) u32buffIdx_9(D);
+  Can_43_FLEXCAN_ProcessMesgBufferCommonInterrupt (u8Instance_11(D), _4, 0);
+  goto <bb 10>; [INV]
+
+  <bb 6> :
+<L3>:
+  _5 = (unsigned char) u32buffIdx_9(D);
+  Can_43_FLEXCAN_ProcessMesgBufferCommonInterrupt (u8Instance_11(D), _5, 1);
+  goto <bb 10>; [INV]
+
+  <bb 7> :
+<L4>:
+  Can_43_FLEXCAN_ProcessMesgBufferCommonInterrupt (u8Instance_11(D), 6, 1);
+  goto <bb 10>; [INV]
+
+  <bb 8> :
+<L5>:
+  Can_43_FLEXCAN_ProcessMesgBufferCommonInterrupt (u8Instance_11(D), 7, 1);
+  goto <bb 10>; [INV]
+
+  <bb 9> :
+<L6>:
+
+  <bb 10> :
+  return;
+
+}
+
+

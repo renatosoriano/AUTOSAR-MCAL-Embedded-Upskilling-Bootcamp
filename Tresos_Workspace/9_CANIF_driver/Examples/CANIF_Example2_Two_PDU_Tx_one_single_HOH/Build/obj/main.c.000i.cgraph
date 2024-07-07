@@ -1,0 +1,1194 @@
+Trivially needed symbols: EcuM_Init/10 main/9 CDD_UserTxConfirmation/8 Delay/7 Can_au8Sdu8bytes/6 CanIf_bTxFlag/5
+
+
+Initial Symbol table:
+
+CanIf_Config/27 (CanIf_Config) @0e96e318
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: EcuM_Init/10 (addr) 
+  Availability: not-ready
+  Varpool flags: read-only
+CanIf_Init/26 (CanIf_Init) @0e96d9a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: EcuM_Init/10 
+  Calls: 
+Can_43_FLEXCAN_Config/25 (Can_43_FLEXCAN_Config) @0e96e288
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: EcuM_Init/10 (addr) 
+  Availability: not-ready
+  Varpool flags: read-only
+Can_43_FLEXCAN_Init/24 (Can_43_FLEXCAN_Init) @0e96d8c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: EcuM_Init/10 
+  Calls: 
+Port_Config/23 (Port_Config) @0e96e1f8
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: EcuM_Init/10 (addr) 
+  Availability: not-ready
+  Varpool flags: read-only
+Port_Init/22 (Port_Init) @0e96d7e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: EcuM_Init/10 
+  Calls: 
+Platform_Init/21 (Platform_Init) @0e96d700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: EcuM_Init/10 
+  Calls: 
+OsIf_Init/20 (OsIf_Init) @0e96d620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: EcuM_Init/10 
+  Calls: 
+Mcu_SetMode/19 (Mcu_SetMode) @0e96d540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: EcuM_Init/10 
+  Calls: 
+Mcu_InitClock/18 (Mcu_InitClock) @0e96d460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: EcuM_Init/10 
+  Calls: 
+Mcu_Config/17 (Mcu_Config) @0e96e048
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: EcuM_Init/10 (addr) 
+  Availability: not-ready
+  Varpool flags: read-only
+Mcu_Init/16 (Mcu_Init) @0e96d380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: EcuM_Init/10 
+  Calls: 
+CanIf_Transmit/15 (CanIf_Transmit) @0e96d0e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: main/9 main/9 
+  Calls: 
+Can_43_FLEXCAN_SetControllerMode/14 (Can_43_FLEXCAN_SetControllerMode) @0e96d000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: main/9 
+  Calls: 
+OsIf_GetElapsed/13 (OsIf_GetElapsed) @0e966e00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Delay/7 
+  Calls: 
+OsIf_GetCounter/12 (OsIf_GetCounter) @0e966d20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Delay/7 
+  Calls: 
+OsIf_MicrosToTicks/11 (OsIf_MicrosToTicks) @0e966c40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Delay/7 
+  Calls: 
+EcuM_Init/10 (EcuM_Init) @0e9667e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @01981040
+  References: Mcu_Config/17 (addr) Port_Config/23 (addr) Can_43_FLEXCAN_Config/25 (addr) CanIf_Config/27 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: main/9 
+  Calls: CanIf_Init/26 Can_43_FLEXCAN_Init/24 Port_Init/22 Platform_Init/21 OsIf_Init/20 Mcu_SetMode/19 Mcu_InitClock/18 Mcu_Init/16 
+main/9 (main) @0e966540
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0e9667e0
+  References: Can_au8Sdu8bytes/6 (addr) CanIf_bTxFlag/5 (read) CanIf_bTxFlag/5 (write) Can_au8Sdu8bytes/6 (read) Can_au8Sdu8bytes/6 (write) Can_au8Sdu8bytes/6 (read) Can_au8Sdu8bytes/6 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Delay/7 CanIf_Transmit/15 CanIf_Transmit/15 Can_43_FLEXCAN_SetControllerMode/14 EcuM_Init/10 
+CDD_UserTxConfirmation/8 (CDD_UserTxConfirmation) @0e9662a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0e966540
+  References: CanIf_bTxFlag/5 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+Delay/7 (Delay) @0e966000
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0e9662a0
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: main/9 
+  Calls: OsIf_GetElapsed/13 OsIf_GetCounter/12 OsIf_MicrosToTicks/11 
+Can_au8Sdu8bytes/6 (Can_au8Sdu8bytes) @0e962168
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0e966000
+  References: 
+  Referring: main/9 (addr) main/9 (read) main/9 (write) main/9 (read) main/9 (write) 
+  Availability: not-ready
+  Varpool flags: initialized
+CanIf_bTxFlag/5 (CanIf_bTxFlag) @0e962090
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0e962168
+  References: 
+  Referring: CDD_UserTxConfirmation/8 (write) main/9 (read) main/9 (write) 
+  Availability: not-ready
+  Varpool flags: initialized
+Platform_Ipw_InstallIrqHandler/4 (Platform_Ipw_InstallIrqHandler) @0e75ac40
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+Platform_Ipw_GetIrqPriority/3 (Platform_Ipw_GetIrqPriority) @0e75a9a0
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+Platform_Ipw_SetIrqPriority/2 (Platform_Ipw_SetIrqPriority) @0e75a700
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+Platform_Ipw_SetIrq/1 (Platform_Ipw_SetIrq) @0e75a460
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+DevAssert/0 (DevAssert) @0e37aa80
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+
+Removing unused symbols: Platform_Ipw_InstallIrqHandler/4 Platform_Ipw_GetIrqPriority/3 Platform_Ipw_SetIrqPriority/2 Platform_Ipw_SetIrq/1 DevAssert/0
+
+Reclaimed Symbol table:
+
+CanIf_Config/27 (CanIf_Config) @0e96e318
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: EcuM_Init/10 (addr) 
+  Availability: not-ready
+  Varpool flags: read-only
+CanIf_Init/26 (CanIf_Init) @0e96d9a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: EcuM_Init/10 
+  Calls: 
+Can_43_FLEXCAN_Config/25 (Can_43_FLEXCAN_Config) @0e96e288
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: EcuM_Init/10 (addr) 
+  Availability: not-ready
+  Varpool flags: read-only
+Can_43_FLEXCAN_Init/24 (Can_43_FLEXCAN_Init) @0e96d8c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: EcuM_Init/10 
+  Calls: 
+Port_Config/23 (Port_Config) @0e96e1f8
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: EcuM_Init/10 (addr) 
+  Availability: not-ready
+  Varpool flags: read-only
+Port_Init/22 (Port_Init) @0e96d7e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: EcuM_Init/10 
+  Calls: 
+Platform_Init/21 (Platform_Init) @0e96d700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: EcuM_Init/10 
+  Calls: 
+OsIf_Init/20 (OsIf_Init) @0e96d620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: EcuM_Init/10 
+  Calls: 
+Mcu_SetMode/19 (Mcu_SetMode) @0e96d540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: EcuM_Init/10 
+  Calls: 
+Mcu_InitClock/18 (Mcu_InitClock) @0e96d460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: EcuM_Init/10 
+  Calls: 
+Mcu_Config/17 (Mcu_Config) @0e96e048
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: EcuM_Init/10 (addr) 
+  Availability: not-ready
+  Varpool flags: read-only
+Mcu_Init/16 (Mcu_Init) @0e96d380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: EcuM_Init/10 
+  Calls: 
+CanIf_Transmit/15 (CanIf_Transmit) @0e96d0e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: main/9 main/9 
+  Calls: 
+Can_43_FLEXCAN_SetControllerMode/14 (Can_43_FLEXCAN_SetControllerMode) @0e96d000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: main/9 
+  Calls: 
+OsIf_GetElapsed/13 (OsIf_GetElapsed) @0e966e00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Delay/7 
+  Calls: 
+OsIf_GetCounter/12 (OsIf_GetCounter) @0e966d20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Delay/7 
+  Calls: 
+OsIf_MicrosToTicks/11 (OsIf_MicrosToTicks) @0e966c40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Delay/7 
+  Calls: 
+EcuM_Init/10 (EcuM_Init) @0e9667e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Mcu_Config/17 (addr) Port_Config/23 (addr) Can_43_FLEXCAN_Config/25 (addr) CanIf_Config/27 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: main/9 
+  Calls: CanIf_Init/26 Can_43_FLEXCAN_Init/24 Port_Init/22 Platform_Init/21 OsIf_Init/20 Mcu_SetMode/19 Mcu_InitClock/18 Mcu_Init/16 
+main/9 (main) @0e966540
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Can_au8Sdu8bytes/6 (addr) CanIf_bTxFlag/5 (read) CanIf_bTxFlag/5 (write) Can_au8Sdu8bytes/6 (read) Can_au8Sdu8bytes/6 (write) Can_au8Sdu8bytes/6 (read) Can_au8Sdu8bytes/6 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Delay/7 CanIf_Transmit/15 CanIf_Transmit/15 Can_43_FLEXCAN_SetControllerMode/14 EcuM_Init/10 
+CDD_UserTxConfirmation/8 (CDD_UserTxConfirmation) @0e9662a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: CanIf_bTxFlag/5 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+Delay/7 (Delay) @0e966000
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: main/9 
+  Calls: OsIf_GetElapsed/13 OsIf_GetCounter/12 OsIf_MicrosToTicks/11 
+Can_au8Sdu8bytes/6 (Can_au8Sdu8bytes) @0e962168
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: main/9 (addr) main/9 (read) main/9 (write) main/9 (read) main/9 (write) 
+  Availability: not-ready
+  Varpool flags: initialized
+CanIf_bTxFlag/5 (CanIf_bTxFlag) @0e962090
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: CDD_UserTxConfirmation/8 (write) main/9 (read) main/9 (write) 
+  Availability: not-ready
+  Varpool flags: initialized
+
+
+Initial Symbol table:
+
+CanIf_Config/27 (CanIf_Config) @0e96e318
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: EcuM_Init/10 (addr) 
+  Availability: not-ready
+  Varpool flags: read-only
+CanIf_Init/26 (CanIf_Init) @0e96d9a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: EcuM_Init/10 
+  Calls: 
+Can_43_FLEXCAN_Config/25 (Can_43_FLEXCAN_Config) @0e96e288
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: EcuM_Init/10 (addr) 
+  Availability: not-ready
+  Varpool flags: read-only
+Can_43_FLEXCAN_Init/24 (Can_43_FLEXCAN_Init) @0e96d8c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: EcuM_Init/10 
+  Calls: 
+Port_Config/23 (Port_Config) @0e96e1f8
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: EcuM_Init/10 (addr) 
+  Availability: not-ready
+  Varpool flags: read-only
+Port_Init/22 (Port_Init) @0e96d7e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: EcuM_Init/10 
+  Calls: 
+Platform_Init/21 (Platform_Init) @0e96d700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: EcuM_Init/10 
+  Calls: 
+OsIf_Init/20 (OsIf_Init) @0e96d620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: EcuM_Init/10 
+  Calls: 
+Mcu_SetMode/19 (Mcu_SetMode) @0e96d540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: EcuM_Init/10 
+  Calls: 
+Mcu_InitClock/18 (Mcu_InitClock) @0e96d460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: EcuM_Init/10 
+  Calls: 
+Mcu_Config/17 (Mcu_Config) @0e96e048
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: EcuM_Init/10 (addr) 
+  Availability: not-ready
+  Varpool flags: read-only
+Mcu_Init/16 (Mcu_Init) @0e96d380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: EcuM_Init/10 
+  Calls: 
+CanIf_Transmit/15 (CanIf_Transmit) @0e96d0e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: main/9 main/9 
+  Calls: 
+Can_43_FLEXCAN_SetControllerMode/14 (Can_43_FLEXCAN_SetControllerMode) @0e96d000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: main/9 
+  Calls: 
+OsIf_GetElapsed/13 (OsIf_GetElapsed) @0e966e00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Delay/7 
+  Calls: 
+OsIf_GetCounter/12 (OsIf_GetCounter) @0e966d20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Delay/7 
+  Calls: 
+OsIf_MicrosToTicks/11 (OsIf_MicrosToTicks) @0e966c40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Delay/7 
+  Calls: 
+EcuM_Init/10 (EcuM_Init) @0e9667e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Mcu_Config/17 (addr) Port_Config/23 (addr) Can_43_FLEXCAN_Config/25 (addr) CanIf_Config/27 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: main/9 
+  Calls: CanIf_Init/26 Can_43_FLEXCAN_Init/24 Port_Init/22 Platform_Init/21 OsIf_Init/20 Mcu_SetMode/19 Mcu_InitClock/18 Mcu_Init/16 
+main/9 (main) @0e966540
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Can_au8Sdu8bytes/6 (addr) CanIf_bTxFlag/5 (read) CanIf_bTxFlag/5 (write) Can_au8Sdu8bytes/6 (read) Can_au8Sdu8bytes/6 (write) Can_au8Sdu8bytes/6 (read) Can_au8Sdu8bytes/6 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Delay/7 CanIf_Transmit/15 CanIf_Transmit/15 Can_43_FLEXCAN_SetControllerMode/14 EcuM_Init/10 
+CDD_UserTxConfirmation/8 (CDD_UserTxConfirmation) @0e9662a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: CanIf_bTxFlag/5 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+Delay/7 (Delay) @0e966000
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: main/9 
+  Calls: OsIf_GetElapsed/13 OsIf_GetCounter/12 OsIf_MicrosToTicks/11 
+Can_au8Sdu8bytes/6 (Can_au8Sdu8bytes) @0e962168
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: main/9 (addr) main/9 (read) main/9 (write) main/9 (read) main/9 (write) 
+  Availability: not-ready
+  Varpool flags: initialized
+CanIf_bTxFlag/5 (CanIf_bTxFlag) @0e962090
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: CDD_UserTxConfirmation/8 (write) main/9 (read) main/9 (write) 
+  Availability: not-ready
+  Varpool flags: initialized
+
+Removing unused symbols:
+
+Reclaimed Symbol table:
+
+CanIf_Config/27 (CanIf_Config) @0e96e318
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: EcuM_Init/10 (addr) 
+  Availability: not-ready
+  Varpool flags: read-only
+CanIf_Init/26 (CanIf_Init) @0e96d9a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: EcuM_Init/10 
+  Calls: 
+Can_43_FLEXCAN_Config/25 (Can_43_FLEXCAN_Config) @0e96e288
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: EcuM_Init/10 (addr) 
+  Availability: not-ready
+  Varpool flags: read-only
+Can_43_FLEXCAN_Init/24 (Can_43_FLEXCAN_Init) @0e96d8c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: EcuM_Init/10 
+  Calls: 
+Port_Config/23 (Port_Config) @0e96e1f8
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: EcuM_Init/10 (addr) 
+  Availability: not-ready
+  Varpool flags: read-only
+Port_Init/22 (Port_Init) @0e96d7e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: EcuM_Init/10 
+  Calls: 
+Platform_Init/21 (Platform_Init) @0e96d700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: EcuM_Init/10 
+  Calls: 
+OsIf_Init/20 (OsIf_Init) @0e96d620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: EcuM_Init/10 
+  Calls: 
+Mcu_SetMode/19 (Mcu_SetMode) @0e96d540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: EcuM_Init/10 
+  Calls: 
+Mcu_InitClock/18 (Mcu_InitClock) @0e96d460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: EcuM_Init/10 
+  Calls: 
+Mcu_Config/17 (Mcu_Config) @0e96e048
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: EcuM_Init/10 (addr) 
+  Availability: not-ready
+  Varpool flags: read-only
+Mcu_Init/16 (Mcu_Init) @0e96d380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: EcuM_Init/10 
+  Calls: 
+CanIf_Transmit/15 (CanIf_Transmit) @0e96d0e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: main/9 main/9 
+  Calls: 
+Can_43_FLEXCAN_SetControllerMode/14 (Can_43_FLEXCAN_SetControllerMode) @0e96d000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: main/9 
+  Calls: 
+OsIf_GetElapsed/13 (OsIf_GetElapsed) @0e966e00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Delay/7 
+  Calls: 
+OsIf_GetCounter/12 (OsIf_GetCounter) @0e966d20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Delay/7 
+  Calls: 
+OsIf_MicrosToTicks/11 (OsIf_MicrosToTicks) @0e966c40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Delay/7 
+  Calls: 
+EcuM_Init/10 (EcuM_Init) @0e9667e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Mcu_Config/17 (addr) Port_Config/23 (addr) Can_43_FLEXCAN_Config/25 (addr) CanIf_Config/27 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: main/9 
+  Calls: CanIf_Init/26 Can_43_FLEXCAN_Init/24 Port_Init/22 Platform_Init/21 OsIf_Init/20 Mcu_SetMode/19 Mcu_InitClock/18 Mcu_Init/16 
+main/9 (main) @0e966540
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Can_au8Sdu8bytes/6 (addr) CanIf_bTxFlag/5 (read) CanIf_bTxFlag/5 (write) Can_au8Sdu8bytes/6 (read) Can_au8Sdu8bytes/6 (write) Can_au8Sdu8bytes/6 (read) Can_au8Sdu8bytes/6 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Delay/7 CanIf_Transmit/15 CanIf_Transmit/15 Can_43_FLEXCAN_SetControllerMode/14 EcuM_Init/10 
+CDD_UserTxConfirmation/8 (CDD_UserTxConfirmation) @0e9662a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: CanIf_bTxFlag/5 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+Delay/7 (Delay) @0e966000
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: main/9 
+  Calls: OsIf_GetElapsed/13 OsIf_GetCounter/12 OsIf_MicrosToTicks/11 
+Can_au8Sdu8bytes/6 (Can_au8Sdu8bytes) @0e962168
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: main/9 (addr) main/9 (read) main/9 (write) main/9 (read) main/9 (write) 
+  Availability: not-ready
+  Varpool flags: initialized
+CanIf_bTxFlag/5 (CanIf_bTxFlag) @0e962090
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: CDD_UserTxConfirmation/8 (write) main/9 (read) main/9 (write) 
+  Availability: not-ready
+  Varpool flags: initialized
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+Optimized Symbol table:
+
+CanIf_Config/27 (CanIf_Config) @0e96e318
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: EcuM_Init/10 (addr) 
+  Availability: not_available
+  Varpool flags: read-only
+CanIf_Init/26 (CanIf_Init) @0e96d9a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: EcuM_Init/10 
+  Calls: 
+Can_43_FLEXCAN_Config/25 (Can_43_FLEXCAN_Config) @0e96e288
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: EcuM_Init/10 (addr) 
+  Availability: not_available
+  Varpool flags: read-only
+Can_43_FLEXCAN_Init/24 (Can_43_FLEXCAN_Init) @0e96d8c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: EcuM_Init/10 
+  Calls: 
+Port_Config/23 (Port_Config) @0e96e1f8
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: EcuM_Init/10 (addr) 
+  Availability: not_available
+  Varpool flags: read-only
+Port_Init/22 (Port_Init) @0e96d7e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: EcuM_Init/10 
+  Calls: 
+Platform_Init/21 (Platform_Init) @0e96d700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: EcuM_Init/10 
+  Calls: 
+OsIf_Init/20 (OsIf_Init) @0e96d620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: EcuM_Init/10 
+  Calls: 
+Mcu_SetMode/19 (Mcu_SetMode) @0e96d540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: EcuM_Init/10 
+  Calls: 
+Mcu_InitClock/18 (Mcu_InitClock) @0e96d460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: EcuM_Init/10 
+  Calls: 
+Mcu_Config/17 (Mcu_Config) @0e96e048
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: EcuM_Init/10 (addr) 
+  Availability: not_available
+  Varpool flags: read-only
+Mcu_Init/16 (Mcu_Init) @0e96d380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: EcuM_Init/10 
+  Calls: 
+CanIf_Transmit/15 (CanIf_Transmit) @0e96d0e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: main/9 main/9 
+  Calls: 
+Can_43_FLEXCAN_SetControllerMode/14 (Can_43_FLEXCAN_SetControllerMode) @0e96d000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: main/9 
+  Calls: 
+OsIf_GetElapsed/13 (OsIf_GetElapsed) @0e966e00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Delay/7 
+  Calls: 
+OsIf_GetCounter/12 (OsIf_GetCounter) @0e966d20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Delay/7 
+  Calls: 
+OsIf_MicrosToTicks/11 (OsIf_MicrosToTicks) @0e966c40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Delay/7 
+  Calls: 
+EcuM_Init/10 (EcuM_Init) @0e9667e0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Mcu_Config/17 (addr) Port_Config/23 (addr) Can_43_FLEXCAN_Config/25 (addr) CanIf_Config/27 (addr) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: main/9 
+  Calls: CanIf_Init/26 Can_43_FLEXCAN_Init/24 Port_Init/22 Platform_Init/21 OsIf_Init/20 Mcu_SetMode/19 Mcu_InitClock/18 Mcu_Init/16 
+main/9 (main) @0e966540
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Can_au8Sdu8bytes/6 (addr) CanIf_bTxFlag/5 (read) CanIf_bTxFlag/5 (write) Can_au8Sdu8bytes/6 (read) Can_au8Sdu8bytes/6 (write) Can_au8Sdu8bytes/6 (read) Can_au8Sdu8bytes/6 (write) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Delay/7 CanIf_Transmit/15 CanIf_Transmit/15 Can_43_FLEXCAN_SetControllerMode/14 EcuM_Init/10 
+CDD_UserTxConfirmation/8 (CDD_UserTxConfirmation) @0e9662a0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: CanIf_bTxFlag/5 (write) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+Delay/7 (Delay) @0e966000
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: main/9 
+  Calls: OsIf_GetElapsed/13 OsIf_GetCounter/12 OsIf_MicrosToTicks/11 
+Can_au8Sdu8bytes/6 (Can_au8Sdu8bytes) @0e962168
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: main/9 (addr) main/9 (read) main/9 (write) main/9 (read) main/9 (write) 
+  Availability: available
+  Varpool flags: initialized
+CanIf_bTxFlag/5 (CanIf_bTxFlag) @0e962090
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: CDD_UserTxConfirmation/8 (write) main/9 (read) main/9 (write) 
+  Availability: available
+  Varpool flags: initialized
+Materializing clones
+Materialization Call site updates done.
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+Trivially needed variables: Can_au8Sdu8bytes/6 CanIf_bTxFlag/5
+Removing variables:
+
+Final Symbol table:
+
+CanIf_Config/27 (CanIf_Config) @0e96e318
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Varpool flags: read-only
+CanIf_Init/26 (CanIf_Init) @0e96d9a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+Can_43_FLEXCAN_Config/25 (Can_43_FLEXCAN_Config) @0e96e288
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Varpool flags: read-only
+Can_43_FLEXCAN_Init/24 (Can_43_FLEXCAN_Init) @0e96d8c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+Port_Config/23 (Port_Config) @0e96e1f8
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Varpool flags: read-only
+Port_Init/22 (Port_Init) @0e96d7e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+Platform_Init/21 (Platform_Init) @0e96d700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+OsIf_Init/20 (OsIf_Init) @0e96d620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+Mcu_SetMode/19 (Mcu_SetMode) @0e96d540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+Mcu_InitClock/18 (Mcu_InitClock) @0e96d460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+Mcu_Config/17 (Mcu_Config) @0e96e048
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Varpool flags: read-only
+Mcu_Init/16 (Mcu_Init) @0e96d380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+CanIf_Transmit/15 (CanIf_Transmit) @0e96d0e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+Can_43_FLEXCAN_SetControllerMode/14 (Can_43_FLEXCAN_SetControllerMode) @0e96d000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+OsIf_GetElapsed/13 (OsIf_GetElapsed) @0e966e00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+OsIf_GetCounter/12 (OsIf_GetCounter) @0e966d20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+OsIf_MicrosToTicks/11 (OsIf_MicrosToTicks) @0e966c40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+EcuM_Init/10 (EcuM_Init) @0e9667e0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.EcuM_Init (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+main/9 (main) @0e966540
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.main (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+CDD_UserTxConfirmation/8 (CDD_UserTxConfirmation) @0e9662a0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.CDD_UserTxConfirmation (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+Delay/7 (Delay) @0e966000
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.Delay (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+Can_au8Sdu8bytes/6 (Can_au8Sdu8bytes) @0e962168
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.data.Can_au8Sdu8bytes (implicit_section)
+  Aux: @00000001
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags: initialized
+CanIf_bTxFlag/5 (CanIf_bTxFlag) @0e962090
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.bss.CanIf_bTxFlag (implicit_section)
+  Aux: @0e962168
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags: initialized

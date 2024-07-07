@@ -1,0 +1,106 @@
+<?xml version='1.0'?>
+<datamodel version="7.0" 
+           xmlns="http://www.tresos.de/_projects/DataModel2/16/root.xsd" 
+           xmlns:a="http://www.tresos.de/_projects/DataModel2/16/attribute.xsd" 
+           xmlns:v="http://www.tresos.de/_projects/DataModel2/06/schema.xsd" 
+           xmlns:d="http://www.tresos.de/_projects/DataModel2/06/data.xsd">
+
+  <d:ctr type="AUTOSAR" factory="autosar" 
+         xmlns:ad="http://www.tresos.de/_projects/DataModel2/08/admindata.xsd" 
+         xmlns:cd="http://www.tresos.de/_projects/DataModel2/08/customdata.xsd" 
+         xmlns:f="http://www.tresos.de/_projects/DataModel2/14/formulaexpr.xsd" 
+         xmlns:icc="http://www.tresos.de/_projects/DataModel2/08/implconfigclass.xsd" 
+         xmlns:mt="http://www.tresos.de/_projects/DataModel2/11/multitest.xsd"  
+         xmlns:variant="http://www.tresos.de/_projects/DataModel2/11/variant.xsd">
+    <d:lst type="TOP-LEVEL-PACKAGES">
+      <d:ctr name="CanIf" type="AR-PACKAGE">
+        <d:lst type="ELEMENTS">
+          <d:chc name="CanIf" type="AR-ELEMENT" value="MODULE-CONFIGURATION">
+            <d:ctr type="MODULE-CONFIGURATION">
+              <a:a name="DEF" value="ASPath:/TS_T40D2M20I0R0/CanIf"/>
+              <d:var name="POST_BUILD_VARIANT_USED" type="BOOLEAN" value="true">
+                <a:a name="IMPORTER_INFO" value="@DEF"/>
+              </d:var>
+              <d:var name="IMPLEMENTATION_CONFIG_VARIANT" type="ENUMERATION" 
+                     value="VariantPostBuild"/>
+              <d:ctr name="CanIfPublicCfg" type="IDENTIFIABLE">
+                <d:lst name="CanIfPublicCddHeaderFile">
+                  <d:var type="STRING" value="CanIf_Cdd"/>
+                </d:lst>
+              </d:ctr>
+              <d:lst name="CanIfCtrlDrvCfg" type="MAP">
+                <d:ctr name="CanIfCtrlDrvCfg_0" type="IDENTIFIABLE">
+                  <d:ref name="CanIfCtrlDrvNameRef" type="REFERENCE" 
+                         value="ASPath:/Can_43_FLEXCAN/Can/CanGeneral"/>
+                  <d:lst name="CanIfCtrlCfg" type="MAP">
+                    <d:ctr name="CanIfCtrlCfg_0" type="IDENTIFIABLE">
+                      <d:var name="CanIfCtrlId" type="INTEGER" value="0">
+                        <a:a name="IMPORTER_INFO">
+                          <a:v>@DEF</a:v>
+                          <a:v>@CALC</a:v>
+                        </a:a>
+                      </d:var>
+                      <d:ref name="CanIfCtrlCanCtrlRef" type="REFERENCE" 
+                             value="ASPath:/Can_43_FLEXCAN/Can/CanConfigSet/CanController_0"/>
+                    </d:ctr>
+                  </d:lst>
+                </d:ctr>
+              </d:lst>
+              <d:ctr name="CanIfInitCfg" type="IDENTIFIABLE">
+                <d:var name="CanIfMaxRxPduCfg" type="INTEGER" value="1">
+                  <a:a name="ENABLE" value="true"/>
+                </d:var>
+                <d:var name="CanIfMaxTxPduCfg" type="INTEGER" value="0">
+                  <a:a name="ENABLE" value="false"/>
+                </d:var>
+                <d:lst name="CanIfTxPduCfg" type="MAP"/>
+                <d:lst name="CanIfRxPduCfg" type="MAP">
+                  <d:ctr name="CanIfRxPduCfg_0" type="IDENTIFIABLE">
+                    <d:var name="CanIfRxPduId" type="INTEGER" value="0">
+                      <a:a name="IMPORTER_INFO">
+                        <a:v>@DEF</a:v>
+                        <a:v>@CALC</a:v>
+                      </a:a>
+                    </d:var>
+                    <d:var name="CanIfRxPduDataLengthCheck" type="BOOLEAN" 
+                           value="true">
+                      <a:a name="ENABLE" value="true"/>
+                    </d:var>
+                    <d:var name="CanIfRxPduDataLength" type="INTEGER" value="8">
+                      <a:a name="ENABLE" value="true"/>
+                    </d:var>
+                    <d:var name="CanIfRxPduUserRxIndicationName" 
+                           type="FUNCTION-NAME" value="CDD_UserRxIndication">
+                      <a:a name="ENABLE" value="true"/>
+                    </d:var>
+                    <d:var name="CanIfRxPduUserRxIndicationUL" 
+                           type="ENUMERATION" value="CDD">
+                      <a:a name="ENABLE" value="true"/>
+                    </d:var>
+                    <d:ref name="CanIfRxPduHrhIdRef" type="REFERENCE" 
+                           value="ASPath:/CanIf/CanIf/CanIfInitCfg/CanIfInitHohCfg_0/CanIfHrhCfg_0"/>
+                  </d:ctr>
+                </d:lst>
+                <d:lst name="CanIfBufferCfg" type="MAP"/>
+                <d:lst name="CanIfInitHohCfg" type="MAP">
+                  <d:ctr name="CanIfInitHohCfg_0" type="IDENTIFIABLE">
+                    <d:lst name="CanIfHthCfg" type="MAP"/>
+                    <d:lst name="CanIfHrhCfg" type="MAP">
+                      <d:ctr name="CanIfHrhCfg_0" type="IDENTIFIABLE">
+                        <d:ref name="CanIfHrhCanCtrlIdRef" type="REFERENCE" 
+                               value="ASPath:/CanIf/CanIf/CanIfCtrlDrvCfg_0/CanIfCtrlCfg_0"/>
+                        <d:ref name="CanIfHrhIdSymRef" type="REFERENCE" 
+                               value="ASPath:/Can_43_FLEXCAN/Can/CanConfigSet/CanHardwareObject_0"/>
+                      </d:ctr>
+                    </d:lst>
+                  </d:ctr>
+                </d:lst>
+              </d:ctr>
+            </d:ctr>
+          </d:chc>
+        </d:lst>
+      </d:ctr>
+    </d:lst>
+  </d:ctr>
+
+</datamodel>
