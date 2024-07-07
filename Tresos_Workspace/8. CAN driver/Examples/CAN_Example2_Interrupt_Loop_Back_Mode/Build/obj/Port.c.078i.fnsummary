@@ -1,0 +1,70 @@
+Symbol table:
+
+Port_Ipw_RefreshPortDirection/5 (Port_Ipw_RefreshPortDirection) @0e21c000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Port_RefreshPortDirection/3 
+  Calls: 
+Port_Ipw_Init/4 (Port_Ipw_Init) @0e0517e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Port_Init/2 
+  Calls: 
+Port_RefreshPortDirection/3 (Port_RefreshPortDirection) @0e051c40
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Port_pConfigPtr/1 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Port_Ipw_RefreshPortDirection/5 
+Port_Init/2 (Port_Init) @0e0519a0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Port_pConfigPtr/1 (write) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Port_Ipw_Init/4 
+Port_pConfigPtr/1 (Port_pConfigPtr) @0e216c60
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: Port_Init/2 (write) Port_RefreshPortDirection/3 (read) 
+  Availability: available
+  Varpool flags:
+Port_RefreshPortDirection ()
+{
+  const struct Port_ConfigType * Port_pConfigPtr.0_1;
+
+  <bb 2> :
+  Port_pConfigPtr.0_1 = Port_pConfigPtr;
+  Port_Ipw_RefreshPortDirection (Port_pConfigPtr.0_1);
+  return;
+
+}
+
+
+Port_Init (const struct Port_ConfigType * ConfigPtr)
+{
+  const struct Port_ConfigType * pLocalConfigPtr;
+
+  <bb 2> :
+  pLocalConfigPtr_2 = ConfigPtr_1(D);
+  Port_Ipw_Init (pLocalConfigPtr_2);
+  Port_pConfigPtr = pLocalConfigPtr_2;
+  return;
+
+}
+
+

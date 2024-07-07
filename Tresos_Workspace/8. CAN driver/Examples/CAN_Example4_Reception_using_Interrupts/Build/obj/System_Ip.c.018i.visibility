@@ -1,0 +1,72 @@
+
+Marking local functions: System_Ip_ConfigIrqPrivileged/1
+
+
+Marking externally visible functions: System_Ip_ConfigIrq/2
+
+
+Marking externally visible variables:
+
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+Symbol table:
+
+System_Ip_ConfigIrq/2 (System_Ip_ConfigIrq) @0e407ee0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: System_Ip_ConfigIrqPrivileged/1 
+System_Ip_ConfigIrqPrivileged/1 (System_Ip_ConfigIrqPrivileged) @0e407c40
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: System_Ip_ConfigIrq/2 
+  Calls: 
+System_Ip_ConfigIrq (System_Ip_IrqType eIrq, boolean bEnable)
+{
+  <bb 2> :
+  System_Ip_ConfigIrqPrivileged (eIrq, bEnable);
+  return;
+
+}
+
+
+System_Ip_ConfigIrqPrivileged (System_Ip_IrqType eIrq, boolean bEnable)
+{
+  uint32 regValTemp;
+
+  <bb 2> :
+  _1 = 3758620672B;
+  regValTemp = _1->ISCR;
+  if (bEnable != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  _2 = 1 << eIrq;
+  regValTemp = regValTemp | _2;
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  _3 = 1 << eIrq;
+  _4 = ~_3;
+  regValTemp = regValTemp & _4;
+
+  <bb 5> :
+  _5 = 3758620672B;
+  _5->ISCR = regValTemp;
+  return;
+
+}
+
+

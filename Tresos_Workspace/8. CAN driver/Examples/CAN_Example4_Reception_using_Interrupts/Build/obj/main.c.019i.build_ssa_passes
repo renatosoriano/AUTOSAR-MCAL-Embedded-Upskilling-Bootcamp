@@ -1,0 +1,90 @@
+EcuM_Init ()
+{
+  <bb 2> :
+  Mcu_Init (&Mcu_Config);
+  Mcu_InitClock (0);
+  Mcu_SetMode (0);
+  Platform_Init (0B);
+  Port_Init (&Port_Config);
+  Can_43_FLEXCAN_Init (&Can_43_FLEXCAN_Config);
+  return;
+
+}
+
+
+main ()
+{
+  int D.7322;
+
+  <bb 2> :
+  EcuM_Init ();
+  Can_43_FLEXCAN_SetControllerMode (0, 1);
+
+  <bb 3> :
+  goto <bb 3>; [INV]
+
+}
+
+
+CanIf_RxIndication (const struct Can_HwType * Mailbox, const struct PduInfoType * PduInfoPtr)
+{
+  uint8 i;
+
+  <bb 2> :
+  _1 = PduInfoPtr->SduDataPtr;
+  _2 = *_1;
+  if (_2 == 50)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 3> :
+  i = 0;
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  _3 = PduInfoPtr->SduDataPtr;
+  _4 = (sizetype) i;
+  _5 = _3 + _4;
+  _6 = (int) i;
+  _7 = *_5;
+  Can_au8Sdu8bytes[_6] = _7;
+  i.0_8 = i;
+  i = i.0_8 + 1;
+
+  <bb 5> :
+  if (i <= 7)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 6> :
+  return;
+
+}
+
+
+CanIf_TxConfirmation (PduIdType CanTxPduId)
+{
+  <bb 2> :
+  return;
+
+}
+
+
+CanIf_ControllerModeIndication (uint8 ControllerId, Can_ControllerStateType ControllerMode)
+{
+  <bb 2> :
+  return;
+
+}
+
+
+CanIf_ControllerBusOff (uint8 ControllerId)
+{
+  <bb 2> :
+  return;
+
+}
+
+

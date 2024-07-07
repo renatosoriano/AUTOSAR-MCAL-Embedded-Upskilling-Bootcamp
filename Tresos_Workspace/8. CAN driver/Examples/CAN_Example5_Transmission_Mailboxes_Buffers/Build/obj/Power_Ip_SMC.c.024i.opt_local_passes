@@ -1,0 +1,267 @@
+Power_Ip_SMC_ModeConfig (const struct Power_Ip_ModeConfigType * ModeConfigPtr)
+{
+  boolean TimeoutOccurred;
+  uint32 TimeoutTicks;
+  uint32 ElapsedTime;
+  uint32 StartTime;
+  uint32 PowerModeStatus;
+  uint32 TempValue;
+  Power_Ip_PowerModeType PowerMode;
+  uint32 PowerSwitchMode;
+  uint32 D.5581;
+  struct SMC_Type * _1;
+  struct SMC_Type * _2;
+  long unsigned int TimeoutTicks.0_3;
+  struct SMC_Type * _4;
+  long unsigned int _5;
+  _Bool _6;
+  struct SMC_Type * _7;
+  struct SMC_Type * _8;
+  long unsigned int TimeoutTicks.1_9;
+  struct SMC_Type * _10;
+  long unsigned int _11;
+  _Bool _12;
+  struct SMC_Type * _13;
+  struct SMC_Type * _14;
+  long unsigned int TimeoutTicks.2_15;
+  struct SMC_Type * _16;
+  long unsigned int _17;
+  _Bool _18;
+  uint32 _67;
+
+  <bb 2> :
+  PowerSwitchMode_30 = 0;
+  PowerMode_31 = 0;
+  TimeoutOccurred_32 = 0;
+  PowerMode_35 = ModeConfigPtr_34(D)->PowerMode;
+  switch (PowerMode_35) <default: <L18> [INV], case 0: <L0> [INV], case 1: <L6> [INV], case 2: <L12> [INV]>
+
+  <bb 3> :
+<L0>:
+  _1 = 1074257920B;
+  TempValue_56 ={v} _1->PMCTRL;
+  TempValue_57 = TempValue_56 & 4294967199;
+  TempValue_58 = TempValue_57;
+  _2 = 1074257920B;
+  _2->PMCTRL ={v} TempValue_58;
+  Power_Ip_StartTimeout (&StartTime, &ElapsedTime, &TimeoutTicks, 50000);
+
+  <bb 4> :
+  TimeoutTicks.0_3 = TimeoutTicks;
+  TimeoutOccurred_62 = Power_Ip_TimeoutExpired (&StartTime, &ElapsedTime, TimeoutTicks.0_3);
+  _4 = 1074257920B;
+  _5 ={v} _4->PMSTAT;
+  PowerModeStatus_63 = _5 & 1;
+  if (PowerModeStatus_63 != 1)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  _6 = ~TimeoutOccurred_62;
+  if (_6 != 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 6> :
+  if (TimeoutOccurred_62 != 0)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 7> :
+  PowerSwitchMode_64 = 1;
+  Power_Ip_ReportPowerErrors (0, 255);
+
+  <bb 8> :
+  # PowerSwitchMode_19 = PHI <PowerSwitchMode_30(6), PowerSwitchMode_64(7)>
+  goto <bb 22>; [INV]
+
+  <bb 9> :
+<L6>:
+  _7 = 1074257920B;
+  TempValue_46 ={v} _7->PMCTRL;
+  TempValue_47 = TempValue_46 & 4294967199;
+  TempValue_48 = TempValue_47 | 96;
+  _8 = 1074257920B;
+  _8->PMCTRL ={v} TempValue_48;
+  Power_Ip_StartTimeout (&StartTime, &ElapsedTime, &TimeoutTicks, 50000);
+
+  <bb 10> :
+  TimeoutTicks.1_9 = TimeoutTicks;
+  TimeoutOccurred_52 = Power_Ip_TimeoutExpired (&StartTime, &ElapsedTime, TimeoutTicks.1_9);
+  _10 = 1074257920B;
+  _11 ={v} _10->PMSTAT;
+  PowerModeStatus_53 = _11 & 128;
+  if (PowerModeStatus_53 != 128)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 11> :
+  _12 = ~TimeoutOccurred_52;
+  if (_12 != 0)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 12> :
+  if (TimeoutOccurred_52 != 0)
+    goto <bb 13>; [INV]
+  else
+    goto <bb 14>; [INV]
+
+  <bb 13> :
+  PowerSwitchMode_54 = 1;
+  Power_Ip_ReportPowerErrors (0, 255);
+
+  <bb 14> :
+  # PowerSwitchMode_20 = PHI <PowerSwitchMode_30(12), PowerSwitchMode_54(13)>
+  goto <bb 22>; [INV]
+
+  <bb 15> :
+<L12>:
+  _13 = 1074257920B;
+  TempValue_36 ={v} _13->PMCTRL;
+  TempValue_37 = TempValue_36 & 4294967199;
+  TempValue_38 = TempValue_37 | 64;
+  _14 = 1074257920B;
+  _14->PMCTRL ={v} TempValue_38;
+  Power_Ip_StartTimeout (&StartTime, &ElapsedTime, &TimeoutTicks, 50000);
+
+  <bb 16> :
+  TimeoutTicks.2_15 = TimeoutTicks;
+  TimeoutOccurred_42 = Power_Ip_TimeoutExpired (&StartTime, &ElapsedTime, TimeoutTicks.2_15);
+  _16 = 1074257920B;
+  _17 ={v} _16->PMSTAT;
+  PowerModeStatus_43 = _17 & 4;
+  if (PowerModeStatus_43 != 4)
+    goto <bb 17>; [INV]
+  else
+    goto <bb 18>; [INV]
+
+  <bb 17> :
+  _18 = ~TimeoutOccurred_42;
+  if (_18 != 0)
+    goto <bb 16>; [INV]
+  else
+    goto <bb 18>; [INV]
+
+  <bb 18> :
+  if (TimeoutOccurred_42 != 0)
+    goto <bb 19>; [INV]
+  else
+    goto <bb 20>; [INV]
+
+  <bb 19> :
+  PowerSwitchMode_44 = 1;
+  Power_Ip_ReportPowerErrors (0, 255);
+
+  <bb 20> :
+  # PowerSwitchMode_21 = PHI <PowerSwitchMode_30(18), PowerSwitchMode_44(19)>
+  goto <bb 22>; [INV]
+
+  <bb 21> :
+<L18>:
+  PowerSwitchMode_66 = 1;
+
+  <bb 22> :
+  # PowerSwitchMode_22 = PHI <PowerSwitchMode_19(8), PowerSwitchMode_20(14), PowerSwitchMode_21(20), PowerSwitchMode_66(21)>
+  _67 = PowerSwitchMode_22;
+  StartTime ={v} {CLOBBER};
+  ElapsedTime ={v} {CLOBBER};
+  TimeoutTicks ={v} {CLOBBER};
+
+  <bb 23> :
+<L21>:
+  return _67;
+
+}
+
+
+Power_Ip_SMC_ModeCheckEntry (Power_Ip_PowerModeType PowerMode)
+{
+  uint32 CurrentPowerMode;
+  Power_Ip_SMC_ModeStatusType PowerModeCheck;
+  Power_Ip_SMC_ModeStatusType D.5570;
+  struct SMC_Type * _1;
+  long unsigned int _2;
+  Power_Ip_SMC_ModeStatusType _13;
+
+  <bb 2> :
+  PowerModeCheck_6 = 1;
+  _1 = 1074257920B;
+  _2 ={v} _1->PMSTAT;
+  CurrentPowerMode_8 = _2 & 255;
+  switch (PowerMode_9(D)) <default: <L8> [INV], case 0: <L0> [INV], case 1: <L1> [INV], case 2: <L4> [INV]>
+
+  <bb 3> :
+<L0>:
+  PowerModeCheck_12 = 0;
+  goto <bb 12>; [INV]
+
+  <bb 4> :
+<L1>:
+  if (CurrentPowerMode_8 == 1)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  PowerModeCheck_11 = 0;
+
+  <bb 6> :
+  # PowerModeCheck_3 = PHI <PowerModeCheck_6(4), PowerModeCheck_11(5)>
+  goto <bb 12>; [INV]
+
+  <bb 7> :
+<L4>:
+  if (CurrentPowerMode_8 == 1)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 8> :
+  if (CurrentPowerMode_8 == 16)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 9> :
+  PowerModeCheck_10 = 0;
+
+  <bb 10> :
+  # PowerModeCheck_4 = PHI <PowerModeCheck_6(8), PowerModeCheck_10(9)>
+  goto <bb 12>; [INV]
+
+  <bb 11> :
+<L8>:
+
+  <bb 12> :
+  # PowerModeCheck_5 = PHI <PowerModeCheck_12(3), PowerModeCheck_3(6), PowerModeCheck_4(10), PowerModeCheck_6(11)>
+  _13 = PowerModeCheck_5;
+
+  <bb 13> :
+<L10>:
+  return _13;
+
+}
+
+
+Power_Ip_SMC_AllowedModesConfig (const struct Power_Ip_SMC_ConfigType * ConfigPtr)
+{
+  long unsigned int _1;
+  struct SMC_Type * _2;
+  long unsigned int _3;
+
+  <bb 2> :
+  _1 = ConfigPtr_5(D)->AllowedModes;
+  _2 = 1074257920B;
+  _3 = _1 & 160;
+  _2->PMPROT ={v} _3;
+  return;
+
+}
+
+

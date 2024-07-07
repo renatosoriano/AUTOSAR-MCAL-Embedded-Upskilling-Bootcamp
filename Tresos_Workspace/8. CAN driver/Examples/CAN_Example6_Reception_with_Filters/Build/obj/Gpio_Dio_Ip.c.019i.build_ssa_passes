@@ -1,0 +1,111 @@
+Gpio_Dio_Ip_ReadPin (const struct GPIO_Type * const base, Gpio_Dio_Ip_PinsChannelType pin)
+{
+  Gpio_Dio_Ip_PinsLevelType returnValue;
+  Gpio_Dio_Ip_PinsLevelType D.5421;
+
+  <bb 2> :
+  returnValue = 0;
+  _1 = base->PDIR;
+  _2 = 1 << pin;
+  _3 = _1 & _2;
+  _4 = _3 >> pin;
+  returnValue = (Gpio_Dio_Ip_PinsLevelType) _4;
+  D.5421 = returnValue;
+
+  <bb 3> :
+<L0>:
+  return D.5421;
+
+}
+
+
+Gpio_Dio_Ip_ReadPins (const struct GPIO_Type * const base)
+{
+  Gpio_Dio_Ip_PinsChannelType returnValue;
+  Gpio_Dio_Ip_PinsChannelType D.5419;
+
+  <bb 2> :
+  returnValue = 0;
+  returnValue = base->PDIR;
+  D.5419 = returnValue;
+
+  <bb 3> :
+<L0>:
+  return D.5419;
+
+}
+
+
+Gpio_Dio_Ip_TogglePins (struct GPIO_Type * const base, Gpio_Dio_Ip_PinsChannelType pins)
+{
+  <bb 2> :
+  base->PTOR = pins;
+  return;
+
+}
+
+
+Gpio_Dio_Ip_ClearPins (struct GPIO_Type * const base, Gpio_Dio_Ip_PinsChannelType pins)
+{
+  <bb 2> :
+  base->PCOR = pins;
+  return;
+
+}
+
+
+Gpio_Dio_Ip_SetPins (struct GPIO_Type * const base, Gpio_Dio_Ip_PinsChannelType pins)
+{
+  <bb 2> :
+  base->PSOR = pins;
+  return;
+
+}
+
+
+Gpio_Dio_Ip_GetPinsOutput (const struct GPIO_Type * const base)
+{
+  Gpio_Dio_Ip_PinsChannelType returnValue;
+  Gpio_Dio_Ip_PinsChannelType D.5417;
+
+  <bb 2> :
+  returnValue = 0;
+  returnValue = base->PDOR;
+  D.5417 = returnValue;
+
+  <bb 3> :
+<L0>:
+  return D.5417;
+
+}
+
+
+Gpio_Dio_Ip_WritePins (struct GPIO_Type * const base, Gpio_Dio_Ip_PinsChannelType pins)
+{
+  <bb 2> :
+  base->PDOR = pins;
+  return;
+
+}
+
+
+Gpio_Dio_Ip_WritePin (struct GPIO_Type * const base, Gpio_Dio_Ip_PinsChannelType pin, Gpio_Dio_Ip_PinsLevelType value)
+{
+  Gpio_Dio_Ip_PinsChannelType pinsValues;
+
+  <bb 2> :
+  SchM_Enter_Dio_DIO_EXCLUSIVE_AREA_00 ();
+  pinsValues = base->PDOR;
+  _1 = 1 << pin;
+  _2 = ~_1;
+  pinsValues = pinsValues & _2;
+  _3 = (long unsigned int) value;
+  _4 = _3 << pin;
+  pinsValues = pinsValues | _4;
+  base->PDOR = pinsValues;
+  SchM_Exit_Dio_DIO_EXCLUSIVE_AREA_00 ();
+  return;
+
+}
+
+

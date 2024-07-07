@@ -1,0 +1,140 @@
+Power_Ip_InstallNotificationsCallback (void (*Power_Ip_ReportErrorsCallbackType) (Power_Ip_ReportErrorType, uint8) ReportErrorsCallback)
+{
+  <bb 2> :
+  Power_Ip_pfReportErrorsCallback = ReportErrorsCallback;
+  return;
+
+}
+
+
+Power_Ip_EnableSleepOnExit ()
+{
+  <bb 2> :
+  Power_Ip_CM4_EnableSleepOnExit ();
+  return;
+
+}
+
+
+Power_Ip_DisableSleepOnExit ()
+{
+  <bb 2> :
+  Power_Ip_CM4_DisableSleepOnExit ();
+  return;
+
+}
+
+
+Power_Ip_Init (const struct Power_Ip_HwIPsConfigType * HwIPsConfigPtr)
+{
+  <bb 2> :
+  _1 = HwIPsConfigPtr->RCMConfigPtr;
+  Power_Ip_RCM_ResetInit (_1);
+  _2 = HwIPsConfigPtr->PMCConfigPtr;
+  Power_Ip_PMC_PowerInit (_2);
+  _3 = HwIPsConfigPtr->SMCConfigPtr;
+  Power_Ip_SMC_AllowedModesConfig (_3);
+  return;
+
+}
+
+
+Power_Ip_GetResetRawValue ()
+{
+  Power_Ip_RawResetType ResetReason;
+  Power_Ip_RawResetType D.5599;
+
+  <bb 2> :
+  ResetReason = Power_Ip_RCM_GetResetRawValue ();
+  D.5599 = ResetReason;
+
+  <bb 3> :
+<L0>:
+  return D.5599;
+
+}
+
+
+Power_Ip_GetResetReason ()
+{
+  uint32 ResetVal;
+  Power_Ip_ResetType ResetReason;
+  Power_Ip_ResetType D.5597;
+
+  <bb 2> :
+  ResetVal = Power_Ip_RCM_GetResetReason ();
+  ResetReason = Power_Ip_ConvertIntergeToResetType (ResetVal);
+  D.5597 = ResetReason;
+
+  <bb 3> :
+<L0>:
+  return D.5597;
+
+}
+
+
+Power_Ip_ConvertIntergeToResetType (uint32 ResetReasonIndex)
+{
+  Power_Ip_ResetType ResetReason;
+  Power_Ip_ResetType D.5595;
+
+  <bb 2> :
+  ResetReason = 12;
+  _1 = ResetReasonArray[ResetReasonIndex];
+  if (_1 <= 14)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  ResetReason = ResetReasonArray[ResetReasonIndex];
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  ResetReason = 12;
+
+  <bb 5> :
+  D.5595 = ResetReason;
+
+  <bb 6> :
+<L3>:
+  return D.5595;
+
+}
+
+
+Power_Ip_SetMode (const struct Power_Ip_ModeConfigType * ModeConfigPtr)
+{
+  Power_Ip_PowerModeType PowerMode;
+  uint32 PowerSwitchMode;
+
+  <bb 2> :
+  PowerMode = ModeConfigPtr->PowerMode;
+  _1 = Power_Ip_SMC_ModeCheckEntry (PowerMode);
+  if (_1 != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  PowerSwitchMode = 1;
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  PowerSwitchMode = Power_Ip_SMC_ModeConfig (ModeConfigPtr);
+
+  <bb 5> :
+  if (PowerSwitchMode == 1)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  Power_Ip_ReportPowerErrors (3, 255);
+
+  <bb 7> :
+  return;
+
+}
+
+

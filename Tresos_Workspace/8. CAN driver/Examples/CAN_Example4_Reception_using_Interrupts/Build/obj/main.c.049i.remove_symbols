@@ -1,0 +1,253 @@
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+Symbol table:
+
+Can_43_FLEXCAN_Config/21 (Can_43_FLEXCAN_Config) @0e9b0168
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: EcuM_Init/11 (addr) 
+  Availability: not_available
+  Varpool flags: read-only
+Can_43_FLEXCAN_Init/20 (Can_43_FLEXCAN_Init) @0e96e620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: EcuM_Init/11 
+  Calls: 
+Port_Config/19 (Port_Config) @0e9b00d8
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: EcuM_Init/11 (addr) 
+  Availability: not_available
+  Varpool flags: read-only
+Port_Init/18 (Port_Init) @0e96e540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: EcuM_Init/11 
+  Calls: 
+Platform_Init/17 (Platform_Init) @0e96e460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: EcuM_Init/11 
+  Calls: 
+Mcu_SetMode/16 (Mcu_SetMode) @0e96e380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: EcuM_Init/11 
+  Calls: 
+Mcu_InitClock/15 (Mcu_InitClock) @0e96e2a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: EcuM_Init/11 
+  Calls: 
+Mcu_Config/14 (Mcu_Config) @0e963f30
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: EcuM_Init/11 (addr) 
+  Availability: not_available
+  Varpool flags: read-only
+Mcu_Init/13 (Mcu_Init) @0e96e1c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: EcuM_Init/11 
+  Calls: 
+Can_43_FLEXCAN_SetControllerMode/12 (Can_43_FLEXCAN_SetControllerMode) @0e96e000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: main/10 
+  Calls: 
+EcuM_Init/11 (EcuM_Init) @0e9688c0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Mcu_Config/14 (addr) Port_Config/19 (addr) Can_43_FLEXCAN_Config/21 (addr) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: main/10 
+  Calls: Can_43_FLEXCAN_Init/20 Port_Init/18 Platform_Init/17 Mcu_SetMode/16 Mcu_InitClock/15 Mcu_Init/13 
+main/10 (main) @0e968620
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Can_43_FLEXCAN_SetControllerMode/12 EcuM_Init/11 
+CanIf_RxIndication/9 (CanIf_RxIndication) @0e968380
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Can_au8Sdu8bytes/5 (write) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+CanIf_TxConfirmation/8 (CanIf_TxConfirmation) @0e9680e0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+CanIf_ControllerModeIndication/7 (CanIf_ControllerModeIndication) @0e961e00
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+CanIf_ControllerBusOff/6 (CanIf_ControllerBusOff) @0e961b60
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+Can_au8Sdu8bytes/5 (Can_au8Sdu8bytes) @0e95df78
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: CanIf_RxIndication/9 (write) 
+  Availability: available
+  Varpool flags:
+EcuM_Init ()
+{
+  <bb 2> :
+  Mcu_Init (&Mcu_Config);
+  Mcu_InitClock (0);
+  Mcu_SetMode (0);
+  Platform_Init (0B);
+  Port_Init (&Port_Config);
+  Can_43_FLEXCAN_Init (&Can_43_FLEXCAN_Config);
+  return;
+
+}
+
+
+main ()
+{
+  int D.7322;
+
+  <bb 2> :
+  EcuM_Init ();
+  Can_43_FLEXCAN_SetControllerMode (0, 1);
+
+  <bb 3> :
+  goto <bb 3>; [INV]
+
+}
+
+
+CanIf_RxIndication (const struct Can_HwType * Mailbox, const struct PduInfoType * PduInfoPtr)
+{
+  uint8 i;
+  uint8 * _1;
+  unsigned char _2;
+  uint8 * _3;
+  sizetype _4;
+  uint8 * _5;
+  int _6;
+  unsigned char _7;
+  unsigned char i.0_8;
+
+  <bb 2> :
+  _1 = PduInfoPtr_13(D)->SduDataPtr;
+  _2 = *_1;
+  if (_2 == 50)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 3> :
+  i_14 = 0;
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  _3 = PduInfoPtr_13(D)->SduDataPtr;
+  _4 = (sizetype) i_9;
+  _5 = _3 + _4;
+  _6 = (int) i_9;
+  _7 = *_5;
+  Can_au8Sdu8bytes[_6] = _7;
+  i.0_8 = i_9;
+  i_16 = i.0_8 + 1;
+
+  <bb 5> :
+  # i_9 = PHI <i_14(3), i_16(4)>
+  if (i_9 <= 7)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 6> :
+  return;
+
+}
+
+
+CanIf_TxConfirmation (PduIdType CanTxPduId)
+{
+  <bb 2> :
+  return;
+
+}
+
+
+CanIf_ControllerModeIndication (uint8 ControllerId, Can_ControllerStateType ControllerMode)
+{
+  <bb 2> :
+  return;
+
+}
+
+
+CanIf_ControllerBusOff (uint8 ControllerId)
+{
+  <bb 2> :
+  return;
+
+}
+
+

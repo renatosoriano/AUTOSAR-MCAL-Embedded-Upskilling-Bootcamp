@@ -1,0 +1,862 @@
+SEGGER_RTT_printf (unsigned int BufferIndex, const char * sFormat)
+{
+  struct va_list ParamList;
+  int r;
+  int D.5978;
+  int _8;
+
+  <bb 2> :
+  __builtin_va_start (&ParamList, 0);
+  r_6 = SEGGER_RTT_vprintf (BufferIndex_3(D), sFormat_4(D), &ParamList);
+  __builtin_va_end (&ParamList);
+  _8 = r_6;
+  ParamList ={v} {CLOBBER};
+
+  <bb 3> :
+<L1>:
+  return _8;
+
+}
+
+
+SEGGER_RTT_vprintf (unsigned int BufferIndex, const char * sFormat, struct va_list * pParamList)
+{
+  const char * s;
+  char c0;
+  char acBuffer[64];
+  unsigned int FieldWidth;
+  unsigned int FormatFlags;
+  unsigned int NumDigits;
+  int v;
+  struct SEGGER_RTT_PRINTF_DESC BufferDesc;
+  char c;
+  int D.5975;
+  int _1;
+  unsigned int _2;
+  unsigned int _3;
+  unsigned int _4;
+  unsigned int _5;
+  unsigned int _6;
+  unsigned int _7;
+  int _8;
+  unsigned int v.3_9;
+  unsigned int v.4_10;
+  int _11;
+  unsigned int v.5_12;
+  int _13;
+  int _14;
+  unsigned int _15;
+  unsigned int _16;
+  int _17;
+  unsigned int _18;
+  int _19;
+  int _20;
+  int _109;
+
+  <bb 2> :
+  BufferDesc.pBuffer = &acBuffer;
+  BufferDesc.BufferSize = 64;
+  BufferDesc.Cnt = 0;
+  BufferDesc.RTTBufferIndex = BufferIndex_50(D);
+  BufferDesc.ReturnValue = 0;
+
+  <bb 3> :
+  # sFormat_21 = PHI <sFormat_53(D)(2), sFormat_28(43)>
+  c_54 = *sFormat_21;
+  sFormat_55 = sFormat_21 + 1;
+  if (c_54 == 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  goto <bb 44>; [INV]
+
+  <bb 5> :
+  if (c_54 == 37)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 42>; [INV]
+
+  <bb 6> :
+  FormatFlags_57 = 0;
+  v_58 = 1;
+
+  <bb 7> :
+  # sFormat_22 = PHI <sFormat_55(6), sFormat_23(13)>
+  # v_30 = PHI <v_58(6), v_31(13)>
+  # FormatFlags_34 = PHI <FormatFlags_57(6), FormatFlags_35(13)>
+  c_59 = *sFormat_22;
+  _1 = (int) c_59;
+  switch (_1) <default: <L9> [INV], case 35: <L8> [INV], case 43: <L7> [INV], case 45: <L5> [INV], case 48: <L6> [INV]>
+
+  <bb 8> :
+<L5>:
+  FormatFlags_62 = FormatFlags_34 | 1;
+  sFormat_63 = sFormat_22 + 1;
+  goto <bb 13>; [INV]
+
+  <bb 9> :
+<L6>:
+  FormatFlags_60 = FormatFlags_34 | 2;
+  sFormat_61 = sFormat_22 + 1;
+  goto <bb 13>; [INV]
+
+  <bb 10> :
+<L7>:
+  FormatFlags_64 = FormatFlags_34 | 4;
+  sFormat_65 = sFormat_22 + 1;
+  goto <bb 13>; [INV]
+
+  <bb 11> :
+<L8>:
+  FormatFlags_66 = FormatFlags_34 | 8;
+  sFormat_67 = sFormat_22 + 1;
+  goto <bb 13>; [INV]
+
+  <bb 12> :
+<L9>:
+  v_68 = 0;
+
+  <bb 13> :
+  # sFormat_23 = PHI <sFormat_63(8), sFormat_61(9), sFormat_65(10), sFormat_67(11), sFormat_22(12)>
+  # v_31 = PHI <v_30(8), v_30(9), v_30(10), v_30(11), v_68(12)>
+  # FormatFlags_35 = PHI <FormatFlags_62(8), FormatFlags_60(9), FormatFlags_64(10), FormatFlags_66(11), FormatFlags_34(12)>
+  if (v_31 != 0)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 14>; [INV]
+
+  <bb 14> :
+  FieldWidth_69 = 0;
+
+  <bb 15> :
+  # sFormat_24 = PHI <sFormat_23(14), sFormat_71(17)>
+  # FieldWidth_36 = PHI <FieldWidth_69(14), FieldWidth_72(17)>
+  c_70 = *sFormat_24;
+  if (c_70 <= 47)
+    goto <bb 18>; [INV]
+  else
+    goto <bb 16>; [INV]
+
+  <bb 16> :
+  if (c_70 > 57)
+    goto <bb 18>; [INV]
+  else
+    goto <bb 17>; [INV]
+
+  <bb 17> :
+  sFormat_71 = sFormat_24 + 1;
+  _2 = FieldWidth_36 * 10;
+  _3 = (unsigned int) c_70;
+  _4 = _2 + _3;
+  FieldWidth_72 = _4 + 4294967248;
+  goto <bb 15>; [INV]
+
+  <bb 18> :
+  NumDigits_73 = 0;
+  c_74 = *sFormat_24;
+  if (c_74 == 46)
+    goto <bb 19>; [INV]
+  else
+    goto <bb 23>; [INV]
+
+  <bb 19> :
+  sFormat_75 = sFormat_24 + 1;
+
+  <bb 20> :
+  # sFormat_25 = PHI <sFormat_75(19), sFormat_77(22)>
+  # NumDigits_32 = PHI <NumDigits_73(19), NumDigits_78(22)>
+  c_76 = *sFormat_25;
+  if (c_76 <= 47)
+    goto <bb 23>; [INV]
+  else
+    goto <bb 21>; [INV]
+
+  <bb 21> :
+  if (c_76 > 57)
+    goto <bb 23>; [INV]
+  else
+    goto <bb 22>; [INV]
+
+  <bb 22> :
+  sFormat_77 = sFormat_25 + 1;
+  _5 = NumDigits_32 * 10;
+  _6 = (unsigned int) c_76;
+  _7 = _5 + _6;
+  NumDigits_78 = _7 + 4294967248;
+  goto <bb 20>; [INV]
+
+  <bb 23> :
+  # sFormat_26 = PHI <sFormat_24(18), sFormat_25(20), sFormat_25(21)>
+  # NumDigits_33 = PHI <NumDigits_73(18), NumDigits_32(20), NumDigits_32(21)>
+  c_79 = *sFormat_26;
+
+  <bb 24> :
+  # sFormat_27 = PHI <sFormat_26(23), sFormat_105(26)>
+  # c_29 = PHI <c_79(23), c_106(26)>
+  if (c_29 == 108)
+    goto <bb 26>; [INV]
+  else
+    goto <bb 25>; [INV]
+
+  <bb 25> :
+  if (c_29 == 104)
+    goto <bb 26>; [INV]
+  else
+    goto <bb 27>; [INV]
+
+  <bb 26> :
+  sFormat_105 = sFormat_27 + 1;
+  c_106 = *sFormat_105;
+  goto <bb 24>; [INV]
+
+  <bb 27> :
+  _8 = (int) c_29;
+  switch (_8) <default: <L40> [INV], case 37: <L39> [INV], case 88: <L29> [INV], case 99: <L26> [INV], case 100: <L27> [INV], case 112: <L38> [INV], case 115: <L31> [INV], case 117: <L28> [INV], case 120: <L29> [INV]>
+
+  <bb 28> :
+<L26>:
+  v_97 = .VA_ARG (pParamList_80(D), 0B, 0B);
+  c0_98 = (char) v_97;
+  _StoreChar (&BufferDesc, c0_98);
+  goto <bb 41>; [INV]
+
+  <bb 29> :
+<L27>:
+  v_94 = .VA_ARG (pParamList_80(D), 0B, 0B);
+  _PrintInt (&BufferDesc, v_94, 10, NumDigits_33, FieldWidth_36, FormatFlags_35);
+  goto <bb 41>; [INV]
+
+  <bb 30> :
+<L28>:
+  v_82 = .VA_ARG (pParamList_80(D), 0B, 0B);
+  v.3_9 = (unsigned int) v_82;
+  _PrintUnsigned (&BufferDesc, v.3_9, 10, NumDigits_33, FieldWidth_36, FormatFlags_35);
+  goto <bb 41>; [INV]
+
+  <bb 31> :
+<L29>:
+  v_101 = .VA_ARG (pParamList_80(D), 0B, 0B);
+  v.4_10 = (unsigned int) v_101;
+  _PrintUnsigned (&BufferDesc, v.4_10, 16, NumDigits_33, FieldWidth_36, FormatFlags_35);
+  goto <bb 41>; [INV]
+
+  <bb 32> :
+<L31>:
+  s_85 = .VA_ARG (pParamList_80(D), 0B, 0B);
+  if (s_85 == 0B)
+    goto <bb 33>; [INV]
+  else
+    goto <bb 34>; [INV]
+
+  <bb 33> :
+  s_86 = "(NULL)";
+
+  <bb 34> :
+  # s_37 = PHI <s_85(32), s_86(33), s_88(36)>
+  c_87 = *s_37;
+  s_88 = s_37 + 1;
+  if (c_87 == 0)
+    goto <bb 35>; [INV]
+  else
+    goto <bb 36>; [INV]
+
+  <bb 35> :
+  goto <bb 37>; [INV]
+
+  <bb 36> :
+  _StoreChar (&BufferDesc, c_87);
+  _11 = BufferDesc.ReturnValue;
+  if (_11 >= 0)
+    goto <bb 34>; [INV]
+  else
+    goto <bb 37>; [INV]
+
+  <bb 37> :
+  goto <bb 41>; [INV]
+
+  <bb 38> :
+<L38>:
+  v_91 = .VA_ARG (pParamList_80(D), 0B, 0B);
+  v.5_12 = (unsigned int) v_91;
+  _PrintUnsigned (&BufferDesc, v.5_12, 16, 8, 8, 0);
+  goto <bb 41>; [INV]
+
+  <bb 39> :
+<L39>:
+  _StoreChar (&BufferDesc, 37);
+  goto <bb 41>; [INV]
+
+  <bb 40> :
+<L40>:
+
+  <bb 41> :
+  sFormat_104 = sFormat_27 + 1;
+  goto <bb 43>; [INV]
+
+  <bb 42> :
+  _StoreChar (&BufferDesc, c_54);
+
+  <bb 43> :
+  # sFormat_28 = PHI <sFormat_104(41), sFormat_55(42)>
+  _13 = BufferDesc.ReturnValue;
+  if (_13 >= 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 44>; [INV]
+
+  <bb 44> :
+  _14 = BufferDesc.ReturnValue;
+  if (_14 > 0)
+    goto <bb 45>; [INV]
+  else
+    goto <bb 48>; [INV]
+
+  <bb 45> :
+  _15 = BufferDesc.Cnt;
+  if (_15 != 0)
+    goto <bb 46>; [INV]
+  else
+    goto <bb 47>; [INV]
+
+  <bb 46> :
+  _16 = BufferDesc.Cnt;
+  SEGGER_RTT_Write (BufferIndex_50(D), &acBuffer, _16);
+
+  <bb 47> :
+  _17 = BufferDesc.ReturnValue;
+  _18 = BufferDesc.Cnt;
+  _19 = (int) _18;
+  _20 = _17 + _19;
+  BufferDesc.ReturnValue = _20;
+
+  <bb 48> :
+  _109 = BufferDesc.ReturnValue;
+  BufferDesc ={v} {CLOBBER};
+  acBuffer ={v} {CLOBBER};
+
+  <bb 49> :
+<L50>:
+  return _109;
+
+}
+
+
+_PrintInt (struct SEGGER_RTT_PRINTF_DESC * pBufferDesc, int v, unsigned int Base, unsigned int NumDigits, unsigned int FieldWidth, unsigned int FormatFlags)
+{
+  int Number;
+  unsigned int Width;
+  int Base.0_1;
+  int Base.1_2;
+  unsigned int _3;
+  unsigned int _4;
+  unsigned int _5;
+  int _6;
+  int _7;
+  unsigned int _8;
+  int _9;
+  unsigned int _10;
+  unsigned int _11;
+  int _12;
+  int _13;
+  unsigned int v.2_14;
+
+  <bb 2> :
+  Number_31 = ABS_EXPR <v_30(D)>;
+  Width_32 = 1;
+  goto <bb 4>; [INV]
+
+  <bb 3> :
+  Base.0_1 = (int) Base_33(D);
+  Number_49 = Number_23 / Base.0_1;
+  Width_50 = Width_21 + 1;
+
+  <bb 4> :
+  # Width_21 = PHI <Width_32(2), Width_50(3)>
+  # Number_23 = PHI <Number_31(2), Number_49(3)>
+  Base.1_2 = (int) Base_33(D);
+  if (Number_23 >= Base.1_2)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 5> :
+  if (NumDigits_34(D) > Width_21)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  Width_35 = NumDigits_34(D);
+
+  <bb 7> :
+  # Width_22 = PHI <Width_21(5), Width_35(6)>
+  if (FieldWidth_36(D) != 0)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 8> :
+  if (v_30(D) < 0)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 9> :
+  _3 = FormatFlags_37(D) & 4;
+  if (_3 != 0)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 10> :
+  FieldWidth_38 = FieldWidth_36(D) + 4294967295;
+
+  <bb 11> :
+  # FieldWidth_16 = PHI <FieldWidth_36(D)(7), FieldWidth_36(D)(9), FieldWidth_38(10)>
+  _4 = FormatFlags_37(D) & 2;
+  if (_4 == 0)
+    goto <bb 13>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 12> :
+  if (NumDigits_34(D) != 0)
+    goto <bb 13>; [INV]
+  else
+    goto <bb 20>; [INV]
+
+  <bb 13> :
+  _5 = FormatFlags_37(D) & 1;
+  if (_5 == 0)
+    goto <bb 14>; [INV]
+  else
+    goto <bb 20>; [INV]
+
+  <bb 14> :
+  if (FieldWidth_16 != 0)
+    goto <bb 15>; [INV]
+  else
+    goto <bb 20>; [INV]
+
+  <bb 15> :
+  goto <bb 18>; [INV]
+
+  <bb 16> :
+  FieldWidth_40 = FieldWidth_17 + 4294967295;
+  _StoreChar (pBufferDesc_41(D), 32);
+  _6 = pBufferDesc_41(D)->ReturnValue;
+  if (_6 < 0)
+    goto <bb 17>; [INV]
+  else
+    goto <bb 18>; [INV]
+
+  <bb 17> :
+  goto <bb 20>; [INV]
+
+  <bb 18> :
+  # FieldWidth_17 = PHI <FieldWidth_16(15), FieldWidth_40(16)>
+  if (FieldWidth_17 != 0)
+    goto <bb 19>; [INV]
+  else
+    goto <bb 20>; [INV]
+
+  <bb 19> :
+  if (Width_22 < FieldWidth_17)
+    goto <bb 16>; [INV]
+  else
+    goto <bb 20>; [INV]
+
+  <bb 20> :
+  # FieldWidth_18 = PHI <FieldWidth_16(12), FieldWidth_16(13), FieldWidth_16(14), FieldWidth_40(17), FieldWidth_17(18), FieldWidth_17(19)>
+  _7 = pBufferDesc_41(D)->ReturnValue;
+  if (_7 >= 0)
+    goto <bb 21>; [INV]
+  else
+    goto <bb 37>; [INV]
+
+  <bb 21> :
+  if (v_30(D) < 0)
+    goto <bb 22>; [INV]
+  else
+    goto <bb 23>; [INV]
+
+  <bb 22> :
+  v_44 = -v_30(D);
+  _StoreChar (pBufferDesc_41(D), 45);
+  goto <bb 25>; [INV]
+
+  <bb 23> :
+  _8 = FormatFlags_37(D) & 4;
+  if (_8 != 0)
+    goto <bb 24>; [INV]
+  else
+    goto <bb 25>; [INV]
+
+  <bb 24> :
+  _StoreChar (pBufferDesc_41(D), 43);
+
+  <bb 25> :
+  # v_15 = PHI <v_44(22), v_30(D)(23), v_30(D)(24)>
+  _9 = pBufferDesc_41(D)->ReturnValue;
+  if (_9 >= 0)
+    goto <bb 26>; [INV]
+  else
+    goto <bb 37>; [INV]
+
+  <bb 26> :
+  _10 = FormatFlags_37(D) & 2;
+  if (_10 != 0)
+    goto <bb 27>; [INV]
+  else
+    goto <bb 35>; [INV]
+
+  <bb 27> :
+  _11 = FormatFlags_37(D) & 1;
+  if (_11 == 0)
+    goto <bb 28>; [INV]
+  else
+    goto <bb 35>; [INV]
+
+  <bb 28> :
+  if (NumDigits_34(D) == 0)
+    goto <bb 29>; [INV]
+  else
+    goto <bb 35>; [INV]
+
+  <bb 29> :
+  if (FieldWidth_18 != 0)
+    goto <bb 30>; [INV]
+  else
+    goto <bb 35>; [INV]
+
+  <bb 30> :
+  goto <bb 33>; [INV]
+
+  <bb 31> :
+  FieldWidth_46 = FieldWidth_19 + 4294967295;
+  _StoreChar (pBufferDesc_41(D), 48);
+  _12 = pBufferDesc_41(D)->ReturnValue;
+  if (_12 < 0)
+    goto <bb 32>; [INV]
+  else
+    goto <bb 33>; [INV]
+
+  <bb 32> :
+  goto <bb 35>; [INV]
+
+  <bb 33> :
+  # FieldWidth_19 = PHI <FieldWidth_18(30), FieldWidth_46(31)>
+  if (FieldWidth_19 != 0)
+    goto <bb 34>; [INV]
+  else
+    goto <bb 35>; [INV]
+
+  <bb 34> :
+  if (Width_22 < FieldWidth_19)
+    goto <bb 31>; [INV]
+  else
+    goto <bb 35>; [INV]
+
+  <bb 35> :
+  # FieldWidth_20 = PHI <FieldWidth_18(26), FieldWidth_18(27), FieldWidth_18(28), FieldWidth_18(29), FieldWidth_46(32), FieldWidth_19(33), FieldWidth_19(34)>
+  _13 = pBufferDesc_41(D)->ReturnValue;
+  if (_13 >= 0)
+    goto <bb 36>; [INV]
+  else
+    goto <bb 37>; [INV]
+
+  <bb 36> :
+  v.2_14 = (unsigned int) v_15;
+  _PrintUnsigned (pBufferDesc_41(D), v.2_14, Base_33(D), NumDigits_34(D), FieldWidth_20, FormatFlags_37(D));
+
+  <bb 37> :
+  return;
+
+}
+
+
+_PrintUnsigned (struct SEGGER_RTT_PRINTF_DESC * pBufferDesc, unsigned int v, unsigned int Base, unsigned int NumDigits, unsigned int FieldWidth, unsigned int FormatFlags)
+{
+  char c;
+  unsigned int Width;
+  unsigned int Number;
+  unsigned int Digit;
+  unsigned int Div;
+  static const char _aV2C[16] = "0123456789ABCDEF";
+  unsigned int _1;
+  unsigned int _2;
+  int _3;
+  int _4;
+  unsigned int _5;
+  char _6;
+  int _7;
+  unsigned int _8;
+  int _9;
+
+  <bb 2> :
+  Number_28 = v_27(D);
+  Digit_29 = 1;
+  Width_30 = 1;
+  goto <bb 4>; [INV]
+
+  <bb 3> :
+  Number_51 = Number_18 / Base_31(D);
+  Width_52 = Width_19 + 1;
+
+  <bb 4> :
+  # Number_18 = PHI <Number_28(2), Number_51(3)>
+  # Width_19 = PHI <Width_30(2), Width_52(3)>
+  if (Number_18 >= Base_31(D))
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 5> :
+  if (NumDigits_32(D) > Width_19)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  Width_33 = NumDigits_32(D);
+
+  <bb 7> :
+  # Width_20 = PHI <Width_19(5), Width_33(6)>
+  _1 = FormatFlags_34(D) & 1;
+  if (_1 == 0)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 18>; [INV]
+
+  <bb 8> :
+  if (FieldWidth_35(D) != 0)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 18>; [INV]
+
+  <bb 9> :
+  _2 = FormatFlags_34(D) & 2;
+  if (_2 != 0)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 10> :
+  if (NumDigits_32(D) == 0)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 11> :
+  c_37 = 48;
+  goto <bb 13>; [INV]
+
+  <bb 12> :
+  c_38 = 32;
+
+  <bb 13> :
+  # c_21 = PHI <c_37(11), c_38(12)>
+  goto <bb 16>; [INV]
+
+  <bb 14> :
+  FieldWidth_39 = FieldWidth_13 + 4294967295;
+  _StoreChar (pBufferDesc_40(D), c_21);
+  _3 = pBufferDesc_40(D)->ReturnValue;
+  if (_3 < 0)
+    goto <bb 15>; [INV]
+  else
+    goto <bb 16>; [INV]
+
+  <bb 15> :
+  goto <bb 18>; [INV]
+
+  <bb 16> :
+  # FieldWidth_13 = PHI <FieldWidth_35(D)(13), FieldWidth_39(14)>
+  if (FieldWidth_13 != 0)
+    goto <bb 17>; [INV]
+  else
+    goto <bb 18>; [INV]
+
+  <bb 17> :
+  if (Width_20 < FieldWidth_13)
+    goto <bb 14>; [INV]
+  else
+    goto <bb 18>; [INV]
+
+  <bb 18> :
+  # FieldWidth_14 = PHI <FieldWidth_35(D)(7), FieldWidth_35(D)(8), FieldWidth_39(15), FieldWidth_13(16), FieldWidth_13(17)>
+  _4 = pBufferDesc_40(D)->ReturnValue;
+  if (_4 >= 0)
+    goto <bb 19>; [INV]
+  else
+    goto <bb 34>; [INV]
+
+  <bb 19> :
+  # NumDigits_11 = PHI <NumDigits_32(D)(18), NumDigits_12(23)>
+  # Digit_16 = PHI <Digit_29(18), Digit_50(23)>
+  if (NumDigits_11 > 1)
+    goto <bb 20>; [INV]
+  else
+    goto <bb 21>; [INV]
+
+  <bb 20> :
+  NumDigits_49 = NumDigits_11 + 4294967295;
+  goto <bb 23>; [INV]
+
+  <bb 21> :
+  Div_42 = v_27(D) / Digit_16;
+  if (Div_42 < Base_31(D))
+    goto <bb 22>; [INV]
+  else
+    goto <bb 23>; [INV]
+
+  <bb 22> :
+  goto <bb 24>; [INV]
+
+  <bb 23> :
+  # NumDigits_12 = PHI <NumDigits_49(20), NumDigits_11(21)>
+  Digit_50 = Digit_16 * Base_31(D);
+  goto <bb 19>; [INV]
+
+  <bb 24> :
+  # v_10 = PHI <v_27(D)(22), v_44(26)>
+  # Digit_17 = PHI <Digit_16(22), Digit_46(26)>
+  Div_43 = v_10 / Digit_17;
+  _5 = Div_43 * Digit_17;
+  v_44 = v_10 - _5;
+  _6 = _aV2C[Div_43];
+  _StoreChar (pBufferDesc_40(D), _6);
+  _7 = pBufferDesc_40(D)->ReturnValue;
+  if (_7 < 0)
+    goto <bb 25>; [INV]
+  else
+    goto <bb 26>; [INV]
+
+  <bb 25> :
+  goto <bb 27>; [INV]
+
+  <bb 26> :
+  Digit_46 = Digit_17 / Base_31(D);
+  if (Digit_46 != 0)
+    goto <bb 24>; [INV]
+  else
+    goto <bb 27>; [INV]
+
+  <bb 27> :
+  _8 = FormatFlags_34(D) & 1;
+  if (_8 != 0)
+    goto <bb 28>; [INV]
+  else
+    goto <bb 34>; [INV]
+
+  <bb 28> :
+  if (FieldWidth_14 != 0)
+    goto <bb 29>; [INV]
+  else
+    goto <bb 34>; [INV]
+
+  <bb 29> :
+  goto <bb 32>; [INV]
+
+  <bb 30> :
+  FieldWidth_47 = FieldWidth_15 + 4294967295;
+  _StoreChar (pBufferDesc_40(D), 32);
+  _9 = pBufferDesc_40(D)->ReturnValue;
+  if (_9 < 0)
+    goto <bb 31>; [INV]
+  else
+    goto <bb 32>; [INV]
+
+  <bb 31> :
+  goto <bb 34>; [INV]
+
+  <bb 32> :
+  # FieldWidth_15 = PHI <FieldWidth_14(29), FieldWidth_47(30)>
+  if (FieldWidth_15 != 0)
+    goto <bb 33>; [INV]
+  else
+    goto <bb 34>; [INV]
+
+  <bb 33> :
+  if (Width_20 < FieldWidth_15)
+    goto <bb 30>; [INV]
+  else
+    goto <bb 34>; [INV]
+
+  <bb 34> :
+  return;
+
+}
+
+
+_StoreChar (struct SEGGER_RTT_PRINTF_DESC * p, char c)
+{
+  unsigned int Cnt;
+  unsigned int _1;
+  unsigned int _2;
+  char * _3;
+  char * _4;
+  unsigned int _5;
+  int _6;
+  int _7;
+  unsigned int _8;
+  unsigned int _9;
+  unsigned int _10;
+  char * _11;
+  unsigned int _12;
+  unsigned int _13;
+  unsigned int _14;
+
+  <bb 2> :
+  Cnt_19 = p_18(D)->Cnt;
+  _1 = Cnt_19 + 1;
+  _2 = p_18(D)->BufferSize;
+  if (_1 <= _2)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  _3 = p_18(D)->pBuffer;
+  _4 = _3 + Cnt_19;
+  *_4 = c_20(D);
+  _5 = Cnt_19 + 1;
+  p_18(D)->Cnt = _5;
+  _6 = p_18(D)->ReturnValue;
+  _7 = _6 + 1;
+  p_18(D)->ReturnValue = _7;
+
+  <bb 4> :
+  _8 = p_18(D)->Cnt;
+  _9 = p_18(D)->BufferSize;
+  if (_8 == _9)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 5> :
+  _10 = p_18(D)->RTTBufferIndex;
+  _11 = p_18(D)->pBuffer;
+  _12 = p_18(D)->Cnt;
+  _13 = SEGGER_RTT_Write (_10, _11, _12);
+  _14 = p_18(D)->Cnt;
+  if (_13 != _14)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  p_18(D)->ReturnValue = -1;
+  goto <bb 8>; [INV]
+
+  <bb 7> :
+  p_18(D)->Cnt = 0;
+
+  <bb 8> :
+  return;
+
+}
+
+

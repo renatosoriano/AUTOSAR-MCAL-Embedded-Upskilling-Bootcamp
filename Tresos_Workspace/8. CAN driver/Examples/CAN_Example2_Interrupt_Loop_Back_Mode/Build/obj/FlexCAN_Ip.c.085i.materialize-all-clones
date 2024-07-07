@@ -1,0 +1,5062 @@
+FlexCAN_Ip_ManualBusOffRecovery (uint8 Instance)
+{
+  Flexcan_Ip_StatusType RetVal;
+  uint32 uS2Ticks;
+  uint32 timeElapsed;
+  uint32 timeStart;
+  struct FLEXCAN_Type * Base;
+  Flexcan_Ip_StatusType D.7884;
+  long unsigned int D.7881;
+  int _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _5;
+  long unsigned int _6;
+  long unsigned int _7;
+  long unsigned int _8;
+  long unsigned int _9;
+  long unsigned int _10;
+  long unsigned int _11;
+  long unsigned int _12;
+  long unsigned int _33;
+  Flexcan_Ip_StatusType _36;
+
+  <bb 2> :
+  _1 = (int) Instance_17(D);
+  Base_19 = Flexcan_Ip_apxBase[_1];
+  timeStart = 0;
+  timeElapsed_21 = 0;
+  uS2Ticks_23 = OsIf_MicrosToTicks (1000000, 0);
+  RetVal_24 = 1;
+  _2 ={v} Base_19->CTRL1;
+  _3 = _2 & 64;
+  if (_3 != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 3> :
+  RetVal_25 = 0;
+  _4 ={v} Base_19->ESR1;
+  _5 = _4 & 32;
+  if (_5 != 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 4> :
+  SchM_Enter_Can_43_FLEXCAN_CAN_EXCLUSIVE_AREA_20 ();
+  _6 ={v} Base_19->CTRL1;
+  _7 = _6 & 4294967231;
+  Base_19->CTRL1 ={v} _7;
+  _8 ={v} Base_19->CTRL1;
+  _9 = _8 | 64;
+  Base_19->CTRL1 ={v} _9;
+  SchM_Exit_Can_43_FLEXCAN_CAN_EXCLUSIVE_AREA_20 ();
+  _10 = OsIf_GetCounter (0);
+  timeStart = _10;
+  goto <bb 7>; [INV]
+
+  <bb 5> :
+  _33 = OsIf_GetElapsed (&timeStart, 0);
+  timeElapsed_34 = _33 + timeElapsed_13;
+  if (timeElapsed_34 >= uS2Ticks_23)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  RetVal_35 = 3;
+  goto <bb 8>; [INV]
+
+  <bb 7> :
+  # timeElapsed_13 = PHI <timeElapsed_21(4), timeElapsed_34(5)>
+  _11 ={v} Base_19->ESR1;
+  _12 = _11 & 32;
+  if (_12 != 0)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 8> :
+  # RetVal_14 = PHI <RetVal_24(2), RetVal_25(3), RetVal_35(6), RetVal_25(7)>
+  _36 = RetVal_14;
+  timeStart ={v} {CLOBBER};
+
+  <bb 9> :
+<L10>:
+  return _36;
+
+}
+
+
+FlexCAN_Ip_GetListenOnlyMode (uint8 instance)
+{
+  const struct FLEXCAN_Type * base;
+  boolean D.7875;
+  int _1;
+  boolean _6;
+
+  <bb 2> :
+  _1 = (int) instance_2(D);
+  base_4 = Flexcan_Ip_apxBase[_1];
+  _6 = FlexCAN_IsListenOnlyModeEnabled (base_4);
+
+  <bb 3> :
+<L0>:
+  return _6;
+
+}
+
+
+FlexCAN_Ip_SetListenOnlyMode_Privileged (uint8 instance, const boolean enable)
+{
+  boolean disabled;
+  struct FLEXCAN_Type * pBase;
+  Flexcan_Ip_StatusType status;
+  Flexcan_Ip_StatusType result;
+  Flexcan_Ip_StatusType D.7869;
+  int _1;
+  _Bool _2;
+  int _3;
+  _Bool _4;
+  _Bool _5;
+  int _6;
+  Flexcan_Ip_StatusType _28;
+
+  <bb 2> :
+  result_12 = 0;
+  status_13 = 0;
+  _1 = (int) instance_14(D);
+  pBase_16 = Flexcan_Ip_apxBase[_1];
+  _2 = FlexCAN_IsEnabled (pBase_16);
+  _3 = (int) _2;
+  _4 = _3 != 0;
+  _5 = ~_4;
+  _6 = (int) _5;
+  disabled_18 = (boolean) _6;
+  if (disabled_18 != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  result_20 = FlexCAN_Enable (pBase_16);
+
+  <bb 4> :
+  # result_7 = PHI <result_12(2), result_20(3)>
+  if (result_7 == 0)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  SchM_Enter_Can_43_FLEXCAN_CAN_EXCLUSIVE_AREA_10 ();
+  FlexCAN_SetListenOnlyMode (pBase_16, enable_22(D));
+  SchM_Exit_Can_43_FLEXCAN_CAN_EXCLUSIVE_AREA_10 ();
+
+  <bb 6> :
+  if (disabled_18 != 0)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 7> :
+  status_26 = FlexCAN_Disable (pBase_16);
+  if (status_26 != 0)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 8> :
+  result_27 = status_26;
+
+  <bb 9> :
+  # result_8 = PHI <result_7(6), result_7(7), result_27(8)>
+  _28 = result_8;
+
+  <bb 10> :
+<L8>:
+  return _28;
+
+}
+
+
+FlexCAN_Ip_SetRxMb15Mask_Privileged (uint8 instance, uint32 mask)
+{
+  boolean disabled;
+  struct FLEXCAN_Type * pBase;
+  Flexcan_Ip_StatusType status;
+  Flexcan_Ip_StatusType result;
+  Flexcan_Ip_StatusType D.7859;
+  int _1;
+  _Bool _2;
+  int _3;
+  _Bool _4;
+  _Bool _5;
+  int _6;
+  Flexcan_Ip_StatusType _26;
+
+  <bb 2> :
+  result_12 = 0;
+  status_13 = 0;
+  _1 = (int) instance_14(D);
+  pBase_16 = Flexcan_Ip_apxBase[_1];
+  _2 = FlexCAN_IsEnabled (pBase_16);
+  _3 = (int) _2;
+  _4 = _3 != 0;
+  _5 = ~_4;
+  _6 = (int) _5;
+  disabled_18 = (boolean) _6;
+  if (disabled_18 != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  result_20 = FlexCAN_Enable (pBase_16);
+
+  <bb 4> :
+  # result_7 = PHI <result_12(2), result_20(3)>
+  if (result_7 == 0)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  pBase_16->RX15MASK ={v} mask_21(D);
+
+  <bb 6> :
+  if (disabled_18 != 0)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 7> :
+  status_24 = FlexCAN_Disable (pBase_16);
+  if (status_24 != 0)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 8> :
+  result_25 = status_24;
+
+  <bb 9> :
+  # result_8 = PHI <result_7(6), result_7(7), result_25(8)>
+  _26 = result_8;
+
+  <bb 10> :
+<L8>:
+  return _26;
+
+}
+
+
+FlexCAN_Ip_SetRxMb14Mask_Privileged (uint8 instance, uint32 mask)
+{
+  boolean disabled;
+  struct FLEXCAN_Type * pBase;
+  Flexcan_Ip_StatusType status;
+  Flexcan_Ip_StatusType result;
+  Flexcan_Ip_StatusType D.7849;
+  int _1;
+  _Bool _2;
+  int _3;
+  _Bool _4;
+  _Bool _5;
+  int _6;
+  Flexcan_Ip_StatusType _26;
+
+  <bb 2> :
+  result_12 = 0;
+  status_13 = 0;
+  _1 = (int) instance_14(D);
+  pBase_16 = Flexcan_Ip_apxBase[_1];
+  _2 = FlexCAN_IsEnabled (pBase_16);
+  _3 = (int) _2;
+  _4 = _3 != 0;
+  _5 = ~_4;
+  _6 = (int) _5;
+  disabled_18 = (boolean) _6;
+  if (disabled_18 != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  result_20 = FlexCAN_Enable (pBase_16);
+
+  <bb 4> :
+  # result_7 = PHI <result_12(2), result_20(3)>
+  if (result_7 == 0)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  pBase_16->RX14MASK ={v} mask_21(D);
+
+  <bb 6> :
+  if (disabled_18 != 0)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 7> :
+  status_24 = FlexCAN_Disable (pBase_16);
+  if (status_24 != 0)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 8> :
+  result_25 = status_24;
+
+  <bb 9> :
+  # result_8 = PHI <result_7(6), result_7(7), result_25(8)>
+  _26 = result_8;
+
+  <bb 10> :
+<L8>:
+  return _26;
+
+}
+
+
+FlexCAN_Ip_AbortTransfer (uint8 u8Instance, uint8 mb_idx)
+{
+  Flexcan_Ip_StatusType result;
+  const struct Flexcan_Ip_StateType * state;
+  struct FLEXCAN_Type * pBase;
+  Flexcan_Ip_StatusType D.7839;
+  int _1;
+  int _2;
+  int _3;
+  <unnamed type> _4;
+  long unsigned int _5;
+  _Bool _6;
+  int _7;
+  <unnamed type> _8;
+  int _9;
+  <unnamed type> _10;
+  Flexcan_Ip_StatusType _26;
+
+  <bb 2> :
+  _1 = (int) u8Instance_15(D);
+  pBase_17 = Flexcan_Ip_apxBase[_1];
+  _2 = (int) u8Instance_15(D);
+  state_18 = Flexcan_Ip_apxState[_2];
+  result_19 = 0;
+  if (mb_idx_20(D) <= 31)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 3> :
+  _3 = (int) mb_idx_20(D);
+  _4 ={v} state_18->mbs[_3].state;
+  if (_4 == 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  result_25 = 5;
+  goto <bb 9>; [INV]
+
+  <bb 5> :
+  _5 = (long unsigned int) mb_idx_20(D);
+  _6 = state_18->isIntActive;
+  FLEXCAN_ClearMsgBuffIntCmd (pBase_17, u8Instance_15(D), _5, _6);
+  _7 = (int) mb_idx_20(D);
+  _8 ={v} state_18->mbs[_7].state;
+  if (_8 == 2)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  result_23 = FlexCAN_AbortTxTransfer (u8Instance_15(D), mb_idx_20(D));
+
+  <bb 7> :
+  # result_11 = PHI <result_19(5), result_23(6)>
+  _9 = (int) mb_idx_20(D);
+  _10 ={v} state_18->mbs[_9].state;
+  if (_10 == 1)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 8> :
+  FlexCAN_AbortRxTransfer (u8Instance_15(D), mb_idx_20(D));
+
+  <bb 9> :
+  # result_12 = PHI <result_19(2), result_25(4), result_11(7), result_11(8)>
+  _26 = result_12;
+
+  <bb 10> :
+<L9>:
+  return _26;
+
+}
+
+
+FlexCAN_Ip_SetErrorInt_Privileged (uint8 u8Instance, Flexcan_Ip_ErrorIntType type, boolean enable)
+{
+  boolean disabled;
+  struct FLEXCAN_Type * pBase;
+  Flexcan_Ip_StatusType status;
+  Flexcan_Ip_StatusType result;
+  Flexcan_Ip_StatusType D.7828;
+  int _1;
+  _Bool _2;
+  int _3;
+  _Bool _4;
+  _Bool _5;
+  int _6;
+  Flexcan_Ip_StatusType _31;
+
+  <bb 2> :
+  result_12 = 0;
+  status_13 = 0;
+  _1 = (int) u8Instance_14(D);
+  pBase_16 = Flexcan_Ip_apxBase[_1];
+  _2 = FlexCAN_IsEnabled (pBase_16);
+  _3 = (int) _2;
+  _4 = _3 != 0;
+  _5 = ~_4;
+  _6 = (int) _5;
+  disabled_18 = (boolean) _6;
+  if (disabled_18 != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  result_20 = FlexCAN_Enable (pBase_16);
+
+  <bb 4> :
+  # result_7 = PHI <result_12(2), result_20(3)>
+  if (result_7 == 0)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 5> :
+  switch (type_21(D)) <default: <L8> [INV], case 0: <L6> [INV], case 1: <L7> [INV], case 2: <L4> [INV], case 3: <L5> [INV], case 4: <L3> [INV]>
+
+  <bb 6> :
+<L3>:
+  FlexCAN_SetErrIntCmd (pBase_16, 32768, enable_22(D));
+  goto <bb 12>; [INV]
+
+  <bb 7> :
+<L4>:
+  FlexCAN_SetErrIntCmd (pBase_16, 16384, enable_22(D));
+  goto <bb 12>; [INV]
+
+  <bb 8> :
+<L5>:
+  FlexCAN_SetErrIntCmd (pBase_16, 16385, enable_22(D));
+  goto <bb 12>; [INV]
+
+  <bb 9> :
+<L6>:
+  FlexCAN_SetErrIntCmd (pBase_16, 1024, enable_22(D));
+  goto <bb 12>; [INV]
+
+  <bb 10> :
+<L7>:
+  FlexCAN_SetErrIntCmd (pBase_16, 2048, enable_22(D));
+  goto <bb 12>; [INV]
+
+  <bb 11> :
+<L8>:
+
+  <bb 12> :
+  if (disabled_18 != 0)
+    goto <bb 13>; [INV]
+  else
+    goto <bb 15>; [INV]
+
+  <bb 13> :
+  status_29 = FlexCAN_Disable (pBase_16);
+  if (status_29 != 0)
+    goto <bb 14>; [INV]
+  else
+    goto <bb 15>; [INV]
+
+  <bb 14> :
+  result_30 = status_29;
+
+  <bb 15> :
+  # result_8 = PHI <result_7(12), result_7(13), result_30(14)>
+  _31 = result_8;
+
+  <bb 16> :
+<L15>:
+  return _31;
+
+}
+
+
+FlexCAN_Ip_DisableInterrupts_Privileged (uint8 u8Instance)
+{
+  struct Flexcan_Ip_StateType * state;
+  Flexcan_Ip_StatusType result;
+  struct FLEXCAN_Type * pBase;
+  Flexcan_Ip_StatusType D.7818;
+  int _1;
+  int _2;
+  _Bool _3;
+  Flexcan_Ip_StatusType _15;
+
+  <bb 2> :
+  _1 = (int) u8Instance_6(D);
+  pBase_8 = Flexcan_Ip_apxBase[_1];
+  result_9 = 1;
+  _2 = (int) u8Instance_6(D);
+  state_10 = Flexcan_Ip_apxState[_2];
+  _3 = FlexCAN_IsEnabled (pBase_8);
+  if (_3 != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  FlexCAN_DisableInterrupts (pBase_8);
+  state_10->isIntActive = 0;
+  result_14 = 0;
+
+  <bb 4> :
+  # result_4 = PHI <result_9(2), result_14(3)>
+  _15 = result_4;
+
+  <bb 5> :
+<L2>:
+  return _15;
+
+}
+
+
+FlexCAN_Ip_EnableInterrupts_Privileged (uint8 u8Instance)
+{
+  struct Flexcan_Ip_StateType * state;
+  Flexcan_Ip_StatusType result;
+  struct FLEXCAN_Type * pBase;
+  Flexcan_Ip_StatusType D.7814;
+  int _1;
+  int _2;
+  _Bool _3;
+  Flexcan_Ip_StatusType _15;
+
+  <bb 2> :
+  _1 = (int) u8Instance_6(D);
+  pBase_8 = Flexcan_Ip_apxBase[_1];
+  result_9 = 1;
+  _2 = (int) u8Instance_6(D);
+  state_10 = Flexcan_Ip_apxState[_2];
+  _3 = FlexCAN_IsEnabled (pBase_8);
+  if (_3 != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  FlexCAN_EnableInterrupts (pBase_8, u8Instance_6(D));
+  state_10->isIntActive = 1;
+  result_14 = 0;
+
+  <bb 4> :
+  # result_4 = PHI <result_9(2), result_14(3)>
+  _15 = result_4;
+
+  <bb 5> :
+<L2>:
+  return _15;
+
+}
+
+
+FlexCAN_Ip_ClearBuffStatusFlag (uint8 instance, uint8 msgBuffIdx)
+{
+  struct FLEXCAN_Type * pBase;
+  int _1;
+  long unsigned int _2;
+
+  <bb 2> :
+  _1 = (int) instance_3(D);
+  pBase_5 = Flexcan_Ip_apxBase[_1];
+  _2 = (long unsigned int) msgBuffIdx_6(D);
+  FlexCAN_ClearMsgBuffIntStatusFlag (pBase_5, _2);
+  return;
+
+}
+
+
+FlexCAN_Ip_GetBuffStatusFlag (uint8 instance, uint8 msgBuffIdx)
+{
+  const struct FLEXCAN_Type * pBase;
+  boolean returnResult;
+  boolean D.7810;
+  int _1;
+  long unsigned int _2;
+  unsigned char _3;
+  boolean _10;
+
+  <bb 2> :
+  _1 = (int) instance_4(D);
+  pBase_6 = Flexcan_Ip_apxBase[_1];
+  _2 = (long unsigned int) msgBuffIdx_7(D);
+  _3 = FlexCAN_GetBuffStatusFlag (pBase_6, _2);
+  returnResult_9 = _3 == 1;
+  _10 = returnResult_9;
+
+  <bb 3> :
+<L0>:
+  return _10;
+
+}
+
+
+FlexCAN_Ip_SetTxArbitrationStartDelay_Privileged (uint8 instance, uint8 value)
+{
+  boolean disabled;
+  struct FLEXCAN_Type * pBase;
+  Flexcan_Ip_StatusType status;
+  Flexcan_Ip_StatusType result;
+  Flexcan_Ip_StatusType D.7808;
+  int _1;
+  _Bool _2;
+  int _3;
+  _Bool _4;
+  _Bool _5;
+  int _6;
+  Flexcan_Ip_StatusType _28;
+
+  <bb 2> :
+  result_12 = 0;
+  status_13 = 0;
+  _1 = (int) instance_14(D);
+  pBase_16 = Flexcan_Ip_apxBase[_1];
+  _2 = FlexCAN_IsEnabled (pBase_16);
+  _3 = (int) _2;
+  _4 = _3 != 0;
+  _5 = ~_4;
+  _6 = (int) _5;
+  disabled_18 = (boolean) _6;
+  if (disabled_18 != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  result_20 = FlexCAN_Enable (pBase_16);
+
+  <bb 4> :
+  # result_7 = PHI <result_12(2), result_20(3)>
+  if (result_7 == 0)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  SchM_Enter_Can_43_FLEXCAN_CAN_EXCLUSIVE_AREA_17 ();
+  FlexCAN_SetTxArbitrationStartDelay (pBase_16, value_22(D));
+  SchM_Exit_Can_43_FLEXCAN_CAN_EXCLUSIVE_AREA_17 ();
+
+  <bb 6> :
+  if (disabled_18 != 0)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 7> :
+  status_26 = FlexCAN_Disable (pBase_16);
+  if (status_26 != 0)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 8> :
+  result_27 = status_26;
+
+  <bb 9> :
+  # result_8 = PHI <result_7(6), result_7(7), result_27(8)>
+  _28 = result_8;
+
+  <bb 10> :
+<L8>:
+  return _28;
+
+}
+
+
+FlexCAN_Ip_SetTDCOffset_Privileged (uint8 instance, boolean enable, uint8 offset)
+{
+  boolean disabled;
+  struct FLEXCAN_Type * pBase;
+  Flexcan_Ip_StatusType status;
+  Flexcan_Ip_StatusType result;
+  Flexcan_Ip_StatusType D.7796;
+  int _1;
+  _Bool _2;
+  int _3;
+  _Bool _4;
+  _Bool _5;
+  int _6;
+  Flexcan_Ip_StatusType _29;
+
+  <bb 2> :
+  result_12 = 0;
+  status_13 = 0;
+  _1 = (int) instance_14(D);
+  pBase_16 = Flexcan_Ip_apxBase[_1];
+  _2 = FlexCAN_IsEnabled (pBase_16);
+  _3 = (int) _2;
+  _4 = _3 != 0;
+  _5 = ~_4;
+  _6 = (int) _5;
+  disabled_18 = (boolean) _6;
+  if (disabled_18 != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  result_20 = FlexCAN_Enable (pBase_16);
+
+  <bb 4> :
+  # result_7 = PHI <result_12(2), result_20(3)>
+  if (result_7 == 0)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  SchM_Enter_Can_43_FLEXCAN_CAN_EXCLUSIVE_AREA_16 ();
+  FlexCAN_SetTDCOffset (pBase_16, enable_22(D), offset_23(D));
+  SchM_Exit_Can_43_FLEXCAN_CAN_EXCLUSIVE_AREA_16 ();
+
+  <bb 6> :
+  if (disabled_18 != 0)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 7> :
+  status_27 = FlexCAN_Disable (pBase_16);
+  if (status_27 != 0)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 8> :
+  result_28 = status_27;
+
+  <bb 9> :
+  # result_8 = PHI <result_7(6), result_7(7), result_28(8)>
+  _29 = result_8;
+
+  <bb 10> :
+<L8>:
+  return _29;
+
+}
+
+
+FlexCAN_Ip_GetBitrateFD (uint8 instance, struct Flexcan_Ip_TimeSegmentType * bitrate)
+{
+  boolean enhCbt;
+  const struct FLEXCAN_Type * pBase;
+  boolean D.7786;
+  int _1;
+  boolean _8;
+
+  <bb 2> :
+  _1 = (int) instance_2(D);
+  pBase_4 = Flexcan_Ip_apxBase[_1];
+  enhCbt_5 = 0;
+  FlexCAN_GetFDTimeSegments (pBase_4, bitrate_6(D));
+  _8 = enhCbt_5;
+
+  <bb 3> :
+<L0>:
+  return _8;
+
+}
+
+
+FlexCAN_Ip_SetBitrateCbt_Privileged (uint8 instance, const struct Flexcan_Ip_TimeSegmentType * bitrate, boolean bitRateSwitch)
+{
+  boolean disabled;
+  boolean fd_enable;
+  struct FLEXCAN_Type * pBase;
+  Flexcan_Ip_StatusType status;
+  Flexcan_Ip_StatusType result;
+  Flexcan_Ip_StatusType D.7782;
+  int _1;
+  long unsigned int _2;
+  signed int _3;
+  Flexcan_Ip_StatusType _28;
+
+  <bb 2> :
+  result_9 = 0;
+  status_10 = 0;
+  _1 = (int) instance_11(D);
+  pBase_13 = Flexcan_Ip_apxBase[_1];
+  fd_enable_15 = FlexCAN_IsFDEnabled (pBase_13);
+  _2 ={v} pBase_13->MCR;
+  _3 = (signed int) _2;
+  disabled_16 = _3 < 0;
+  if (disabled_16 != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  result_18 = FlexCAN_Enable (pBase_13);
+
+  <bb 4> :
+  # result_4 = PHI <result_9(2), result_18(3)>
+  if (result_4 == 0)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  SchM_Enter_Can_43_FLEXCAN_CAN_EXCLUSIVE_AREA_15 ();
+  FlexCAN_SetFDEnabled (pBase_13, fd_enable_15, bitRateSwitch_20(D));
+  FlexCAN_SetFDTimeSegments (pBase_13, bitrate_22(D));
+  SchM_Exit_Can_43_FLEXCAN_CAN_EXCLUSIVE_AREA_15 ();
+
+  <bb 6> :
+  if (disabled_16 != 0)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 7> :
+  status_26 = FlexCAN_Disable (pBase_13);
+  if (status_26 != 0)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 8> :
+  result_27 = status_26;
+
+  <bb 9> :
+  # result_5 = PHI <result_4(6), result_4(7), result_27(8)>
+  _28 = result_5;
+
+  <bb 10> :
+<L8>:
+  return _28;
+
+}
+
+
+FlexCAN_Ip_GetTDCValue (uint8 u8Instance)
+{
+  const struct FLEXCAN_Type * pBase;
+  uint8 value;
+  uint8 D.7772;
+  int _1;
+  long unsigned int _2;
+  unsigned char _3;
+  uint8 _9;
+
+  <bb 2> :
+  value_4 = 0;
+  _1 = (int) u8Instance_5(D);
+  pBase_7 = Flexcan_Ip_apxBase[_1];
+  _2 ={v} pBase_7->FDCTRL;
+  _3 = (unsigned char) _2;
+  value_8 = _3 & 63;
+  _9 = value_8;
+
+  <bb 3> :
+<L0>:
+  return _9;
+
+}
+
+
+FlexCAN_Ip_GetTDCFail (uint8 u8Instance)
+{
+  const struct FLEXCAN_Type * pBase;
+  boolean value;
+  boolean D.7770;
+  int _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  boolean _9;
+
+  <bb 2> :
+  value_4 = 0;
+  _1 = (int) u8Instance_5(D);
+  pBase_7 = Flexcan_Ip_apxBase[_1];
+  _2 ={v} pBase_7->FDCTRL;
+  _3 = _2 & 16384;
+  value_8 = _3 == 16384;
+  _9 = value_8;
+
+  <bb 3> :
+<L0>:
+  return _9;
+
+}
+
+
+FlexCAN_Ip_ClearTDCFail (uint8 u8Instance)
+{
+  struct FLEXCAN_Type * pBase;
+  int _1;
+  long unsigned int _2;
+  long unsigned int _3;
+
+  <bb 2> :
+  _1 = (int) u8Instance_4(D);
+  pBase_6 = Flexcan_Ip_apxBase[_1];
+  SchM_Enter_Can_43_FLEXCAN_CAN_EXCLUSIVE_AREA_09 ();
+  _2 ={v} pBase_6->FDCTRL;
+  _3 = _2 | 16384;
+  pBase_6->FDCTRL ={v} _3;
+  SchM_Exit_Can_43_FLEXCAN_CAN_EXCLUSIVE_AREA_09 ();
+  return;
+
+}
+
+
+FlexCAN_Ip_GetBitrate (uint8 instance, struct Flexcan_Ip_TimeSegmentType * bitrate)
+{
+  boolean enhCbt;
+  const struct FLEXCAN_Type * pBase;
+  boolean D.7768;
+  int _1;
+  _Bool _2;
+  boolean _12;
+
+  <bb 2> :
+  _1 = (int) instance_4(D);
+  pBase_6 = Flexcan_Ip_apxBase[_1];
+  enhCbt_7 = 0;
+  _2 = FlexCAN_IsExCbtEnabled (pBase_6);
+  if (_2 != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  FlexCAN_GetExtendedTimeSegments (pBase_6, bitrate_9(D));
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  FlexCAN_GetTimeSegments (pBase_6, bitrate_9(D));
+
+  <bb 5> :
+  _12 = enhCbt_7;
+
+  <bb 6> :
+<L3>:
+  return _12;
+
+}
+
+
+FlexCAN_Ip_SetBitrate_Privileged (uint8 instance, const struct Flexcan_Ip_TimeSegmentType * bitrate, boolean enhExt)
+{
+  boolean disabled;
+  struct FLEXCAN_Type * pBase;
+  Flexcan_Ip_StatusType status;
+  Flexcan_Ip_StatusType result;
+  Flexcan_Ip_StatusType D.7761;
+  int _1;
+  long unsigned int _2;
+  signed int _3;
+  _Bool _4;
+  Flexcan_Ip_StatusType _28;
+
+  <bb 2> :
+  result_11 = 0;
+  status_12 = 0;
+  _1 = (int) instance_13(D);
+  pBase_15 = Flexcan_Ip_apxBase[_1];
+  _2 ={v} pBase_15->MCR;
+  _3 = (signed int) _2;
+  disabled_16 = _3 < 0;
+  if (disabled_16 != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  result_18 = FlexCAN_Enable (pBase_15);
+
+  <bb 4> :
+  # result_5 = PHI <result_11(2), result_18(3)>
+  if (result_5 == 0)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 5> :
+  SchM_Enter_Can_43_FLEXCAN_CAN_EXCLUSIVE_AREA_14 ();
+  _4 = FlexCAN_IsExCbtEnabled (pBase_15);
+  if (_4 != 0)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  FlexCAN_SetExtendedTimeSegments (pBase_15, bitrate_21(D));
+  goto <bb 8>; [INV]
+
+  <bb 7> :
+  FlexCAN_SetTimeSegments (pBase_15, bitrate_21(D));
+
+  <bb 8> :
+  SchM_Exit_Can_43_FLEXCAN_CAN_EXCLUSIVE_AREA_14 ();
+
+  <bb 9> :
+  if (disabled_16 != 0)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 10> :
+  status_26 = FlexCAN_Disable (pBase_15);
+  if (status_26 != 0)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 11> :
+  result_27 = status_26;
+
+  <bb 12> :
+  # result_6 = PHI <result_5(9), result_5(10), result_27(11)>
+  _28 = result_6;
+
+  <bb 13> :
+<L11>:
+  return _28;
+
+}
+
+
+FlexCAN_Ip_SetRxMaskType_Privileged (uint8 instance, Flexcan_Ip_RxMaskType type)
+{
+  boolean disabled;
+  struct FLEXCAN_Type * pBase;
+  Flexcan_Ip_StatusType status;
+  Flexcan_Ip_StatusType result;
+  Flexcan_Ip_StatusType D.7745;
+  int _1;
+  _Bool _2;
+  int _3;
+  _Bool _4;
+  _Bool _5;
+  int _6;
+  Flexcan_Ip_StatusType _28;
+
+  <bb 2> :
+  result_12 = 0;
+  status_13 = 0;
+  _1 = (int) instance_14(D);
+  pBase_16 = Flexcan_Ip_apxBase[_1];
+  _2 = FlexCAN_IsEnabled (pBase_16);
+  _3 = (int) _2;
+  _4 = _3 != 0;
+  _5 = ~_4;
+  _6 = (int) _5;
+  disabled_18 = (boolean) _6;
+  if (disabled_18 != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  result_20 = FlexCAN_Enable (pBase_16);
+
+  <bb 4> :
+  # result_7 = PHI <result_12(2), result_20(3)>
+  if (result_7 == 0)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  SchM_Enter_Can_43_FLEXCAN_CAN_EXCLUSIVE_AREA_08 ();
+  FlexCAN_SetRxMaskType (pBase_16, type_22(D));
+  SchM_Exit_Can_43_FLEXCAN_CAN_EXCLUSIVE_AREA_08 ();
+
+  <bb 6> :
+  if (disabled_18 != 0)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 7> :
+  status_26 = FlexCAN_Disable (pBase_16);
+  if (status_26 != 0)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 8> :
+  result_27 = status_26;
+
+  <bb 9> :
+  # result_8 = PHI <result_7(6), result_7(7), result_27(8)>
+  _28 = result_8;
+
+  <bb 10> :
+<L8>:
+  return _28;
+
+}
+
+
+FlexCAN_Ip_SetStopMode_Privileged (uint8 instance)
+{
+  Flexcan_Ip_StatusType status;
+  struct FLEXCAN_Type * pBase;
+  Flexcan_Ip_StatusType D.7735;
+  int _1;
+  Flexcan_Ip_StatusType _11;
+
+  <bb 2> :
+  _1 = (int) instance_4(D);
+  pBase_6 = Flexcan_Ip_apxBase[_1];
+  status_8 = FlexCAN_EnterFreezeMode (pBase_6);
+  if (status_8 == 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  status_10 = FlexCAN_Disable (pBase_6);
+
+  <bb 4> :
+  # status_2 = PHI <status_8(2), status_10(3)>
+  _11 = status_2;
+
+  <bb 5> :
+<L2>:
+  return _11;
+
+}
+
+
+FlexCAN_Ip_SetStartMode_Privileged (uint8 instance)
+{
+  struct FLEXCAN_Type * pBase;
+  Flexcan_Ip_StatusType D.7731;
+  int _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  Flexcan_Ip_StatusType _11;
+
+  <bb 2> :
+  _1 = (int) instance_4(D);
+  pBase_6 = Flexcan_Ip_apxBase[_1];
+  SchM_Enter_Can_43_FLEXCAN_CAN_EXCLUSIVE_AREA_07 ();
+  _2 ={v} pBase_6->MCR;
+  _3 = _2 & 2147483647;
+  pBase_6->MCR ={v} _3;
+  SchM_Exit_Can_43_FLEXCAN_CAN_EXCLUSIVE_AREA_07 ();
+  _11 = FlexCAN_ExitFreezeMode (pBase_6);
+
+  <bb 3> :
+<L0>:
+  return _11;
+
+}
+
+
+FlexCAN_Ip_GetStartMode_Privileged (uint8 instance)
+{
+  const struct FLEXCAN_Type * base;
+  boolean D.7729;
+  int _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  boolean _7;
+
+  <bb 2> :
+  _1 = (int) instance_4(D);
+  base_6 = Flexcan_Ip_apxBase[_1];
+  _2 ={v} base_6->MCR;
+  _3 = _2 & 17825792;
+  _7 = _3 == 0;
+
+  <bb 3> :
+<L0>:
+  return _7;
+
+}
+
+
+FlexCAN_Ip_GetStopMode_Privileged (uint8 instance)
+{
+  const struct FLEXCAN_Type * base;
+  boolean D.7727;
+  int _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  boolean _7;
+
+  <bb 2> :
+  _1 = (int) instance_4(D);
+  base_6 = Flexcan_Ip_apxBase[_1];
+  _2 ={v} base_6->MCR;
+  _3 = _2 & 1048576;
+  _7 = _3 == 1048576;
+
+  <bb 3> :
+<L0>:
+  return _7;
+
+}
+
+
+FlexCAN_Ip_MainFunctionWrite (uint8 instance, uint8 mb_idx)
+{
+  struct Flexcan_Ip_MsgBuffType mb;
+  struct Flexcan_Ip_StateType * state;
+  struct FLEXCAN_Type * base;
+  int _1;
+  int _2;
+  long unsigned int _3;
+  unsigned char _4;
+  int _5;
+  <unnamed type> _6;
+  int _7;
+  _Bool _8;
+  long unsigned int _9;
+  long unsigned int _10;
+  int _11;
+  long unsigned int _12;
+  long unsigned int _13;
+  long unsigned int _14;
+  long unsigned int _15;
+  long unsigned int _16;
+  long unsigned int _17;
+  int _18;
+  long unsigned int _19;
+  long unsigned int _20;
+  int _21;
+  void (*<T665>) (uint8, Flexcan_Ip_EventType, uint32, const struct FlexCANState *) _22;
+  void (*<T665>) (uint8, Flexcan_Ip_EventType, uint32, const struct FlexCANState *) _23;
+  long unsigned int _24;
+
+  <bb 2> :
+  _1 = (int) instance_28(D);
+  base_30 = Flexcan_Ip_apxBase[_1];
+  _2 = (int) instance_28(D);
+  state_31 = Flexcan_Ip_apxState[_2];
+  _3 = (long unsigned int) mb_idx_32(D);
+  _4 = FlexCAN_GetBuffStatusFlag (base_30, _3);
+  if (_4 != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 3> :
+  _5 = (int) mb_idx_32(D);
+  _6 ={v} state_31->mbs[_5].state;
+  if (_6 == 2)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 4> :
+  _7 = (int) mb_idx_32(D);
+  _8 = state_31->mbs[_7].isRemote;
+  if (_8 != 0)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 5> :
+  mb.cs = 0;
+  mb.time_stamp = 0;
+  _9 = (long unsigned int) mb_idx_32(D);
+  FlexCAN_LockRxMsgBuff (base_30, _9);
+  _10 = (long unsigned int) mb_idx_32(D);
+  FlexCAN_GetMsgBuff (base_30, _10, &mb);
+  FlexCAN_UnlockRxMsgBuff (base_30);
+  _11 = (int) mb_idx_32(D);
+  _12 = mb.time_stamp;
+  state_31->mbs[_11].time_stamp = _12;
+  _13 = mb.cs;
+  _14 = _13 >> 24;
+  _15 = _14 & 15;
+  if (_15 == 4)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  _16 = (long unsigned int) mb_idx_32(D);
+  FlexCAN_ClearMsgBuffIntStatusFlag (base_30, _16);
+
+  <bb 7> :
+  mb ={v} {CLOBBER};
+  goto <bb 9>; [INV]
+
+  <bb 8> :
+  _17 = (long unsigned int) mb_idx_32(D);
+  _18 = (int) mb_idx_32(D);
+  _19 = FlexCAN_GetMsgBuffTimestamp (base_30, _17);
+  state_31->mbs[_18].time_stamp = _19;
+  FlexCAN_UnlockRxMsgBuff (base_30);
+  _20 = (long unsigned int) mb_idx_32(D);
+  FlexCAN_ClearMsgBuffIntStatusFlag (base_30, _20);
+
+  <bb 9> :
+  _21 = (int) mb_idx_32(D);
+  state_31->mbs[_21].state ={v} 0;
+  _22 = state_31->callback;
+  if (_22 != 0B)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 10> :
+  _23 = state_31->callback;
+  _24 = (long unsigned int) mb_idx_32(D);
+  _23 (instance_28(D), 4, _24, state_31);
+
+  <bb 11> :
+  return;
+
+}
+
+
+FlexCAN_Ip_MainFunctionBusOff_Privileged (uint8 instance)
+{
+  uint32 u32ErrStatus;
+  const struct Flexcan_Ip_StateType * state;
+  struct FLEXCAN_Type * base;
+  Flexcan_Ip_StatusType eRetVal;
+  Flexcan_Ip_StatusType D.7714;
+  int _1;
+  int _2;
+  long unsigned int _3;
+  void (*<T665>) (uint8, Flexcan_Ip_EventType, uint32, const struct FlexCANState *) _4;
+  void (*<T665>) (uint8, Flexcan_Ip_EventType, uint32, const struct FlexCANState *) _5;
+  Flexcan_Ip_StatusType _19;
+
+  <bb 2> :
+  eRetVal_9 = 1;
+  _1 = (int) instance_10(D);
+  base_12 = Flexcan_Ip_apxBase[_1];
+  _2 = (int) instance_10(D);
+  state_13 = Flexcan_Ip_apxState[_2];
+  u32ErrStatus_14 = 0;
+  u32ErrStatus_15 ={v} base_12->ESR1;
+  _3 = u32ErrStatus_15 & 4;
+  if (_3 != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 3> :
+  _4 = state_13->error_callback;
+  if (_4 != 0B)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  _5 = state_13->error_callback;
+  _5 (instance_10(D), 7, u32ErrStatus_15, state_13);
+
+  <bb 5> :
+  base_12->ESR1 ={v} 4;
+  eRetVal_18 = 0;
+
+  <bb 6> :
+  # eRetVal_6 = PHI <eRetVal_9(2), eRetVal_18(5)>
+  _19 = eRetVal_6;
+
+  <bb 7> :
+<L4>:
+  return _19;
+
+}
+
+
+FlexCAN_Ip_MainFunctionRead (uint8 instance, uint8 mb_idx)
+{
+  const struct Flexcan_Ip_StateType * state;
+  const struct FLEXCAN_Type * base;
+  int _1;
+  int _2;
+  _Bool _3;
+  unsigned char _4;
+  long unsigned int _5;
+  unsigned char _6;
+  int _7;
+  <unnamed type> _8;
+  long unsigned int _9;
+
+  <bb 2> :
+  _1 = (int) instance_12(D);
+  base_14 = Flexcan_Ip_apxBase[_1];
+  _2 = (int) instance_12(D);
+  state_15 = Flexcan_Ip_apxState[_2];
+  _3 = state_15->bIsLegacyFifoEn;
+  if (_3 != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 3> :
+  if (mb_idx_16(D) <= 7)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 4> :
+  if (mb_idx_16(D) == 0)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 5> :
+  _4 = FlexCAN_GetBuffStatusFlag (base_14, 5);
+  if (_4 != 0)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  FlexCAN_IRQHandlerRxFIFO (instance_12(D), 5);
+
+  <bb 7> :
+  goto <bb 11>; [INV]
+
+  <bb 8> :
+  _5 = (long unsigned int) mb_idx_16(D);
+  _6 = FlexCAN_GetBuffStatusFlag (base_14, _5);
+  if (_6 != 0)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 9> :
+  _7 = (int) mb_idx_16(D);
+  _8 ={v} state_15->mbs[_7].state;
+  if (_8 == 1)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 10> :
+  _9 = (long unsigned int) mb_idx_16(D);
+  FlexCAN_IRQHandlerRxMB (instance_12(D), _9);
+
+  <bb 11> :
+  return;
+
+}
+
+
+FlexCAN_Ip_Deinit_Privileged (uint8 instance)
+{
+  Flexcan_Ip_StatusType result;
+  struct FLEXCAN_Type * base;
+  Flexcan_Ip_StatusType D.7694;
+  int _1;
+  int _2;
+  Flexcan_Ip_StatusType _12;
+
+  <bb 2> :
+  _1 = (int) instance_4(D);
+  base_6 = Flexcan_Ip_apxBase[_1];
+  result_8 = FlexCAN_EnterFreezeMode (base_6);
+  if (result_8 == 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  FlexCAN_SetRegDefaultVal (base_6);
+  FlexCAN_Disable (base_6);
+  _2 = (int) instance_4(D);
+  Flexcan_Ip_apxState[_2] = 0B;
+
+  <bb 4> :
+  _12 = result_8;
+
+  <bb 5> :
+<L2>:
+  return _12;
+
+}
+
+
+FlexCAN_Ip_SetRxFifoGlobalMask_Privileged (uint8 instance, uint32 mask)
+{
+  boolean disabled;
+  struct FLEXCAN_Type * pBase;
+  Flexcan_Ip_StatusType status;
+  Flexcan_Ip_StatusType result;
+  Flexcan_Ip_StatusType D.7690;
+  int _1;
+  _Bool _2;
+  int _3;
+  _Bool _4;
+  _Bool _5;
+  int _6;
+  Flexcan_Ip_StatusType _26;
+
+  <bb 2> :
+  result_12 = 0;
+  status_13 = 0;
+  _1 = (int) instance_14(D);
+  pBase_16 = Flexcan_Ip_apxBase[_1];
+  _2 = FlexCAN_IsEnabled (pBase_16);
+  _3 = (int) _2;
+  _4 = _3 != 0;
+  _5 = ~_4;
+  _6 = (int) _5;
+  disabled_18 = (boolean) _6;
+  if (disabled_18 != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  result_20 = FlexCAN_Enable (pBase_16);
+
+  <bb 4> :
+  # result_7 = PHI <result_12(2), result_20(3)>
+  if (result_7 == 0)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  FlexCAN_SetRxFifoGlobalMask (pBase_16, mask_21(D));
+
+  <bb 6> :
+  if (disabled_18 != 0)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 7> :
+  status_24 = FlexCAN_Disable (pBase_16);
+  if (status_24 != 0)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 8> :
+  result_25 = status_24;
+
+  <bb 9> :
+  # result_8 = PHI <result_7(6), result_7(7), result_25(8)>
+  _26 = result_8;
+
+  <bb 10> :
+<L8>:
+  return _26;
+
+}
+
+
+FlexCAN_Ip_SetRxIndividualMask_Privileged (uint8 instance, uint8 mb_idx, uint32 mask)
+{
+  boolean disabled;
+  struct FLEXCAN_Type * pBase;
+  Flexcan_Ip_StatusType status;
+  Flexcan_Ip_StatusType result;
+  Flexcan_Ip_StatusType D.7680;
+  int _1;
+  _Bool _2;
+  int _3;
+  _Bool _4;
+  _Bool _5;
+  int _6;
+  long unsigned int _7;
+  Flexcan_Ip_StatusType _28;
+
+  <bb 2> :
+  result_13 = 0;
+  status_14 = 0;
+  _1 = (int) instance_15(D);
+  pBase_17 = Flexcan_Ip_apxBase[_1];
+  _2 = FlexCAN_IsEnabled (pBase_17);
+  _3 = (int) _2;
+  _4 = _3 != 0;
+  _5 = ~_4;
+  _6 = (int) _5;
+  disabled_19 = (boolean) _6;
+  if (disabled_19 != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  result_21 = FlexCAN_Enable (pBase_17);
+
+  <bb 4> :
+  # result_8 = PHI <result_13(2), result_21(3)>
+  if (result_8 == 0)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  _7 = (long unsigned int) mb_idx_22(D);
+  FlexCAN_SetRxIndividualMask (pBase_17, _7, mask_23(D));
+
+  <bb 6> :
+  if (disabled_19 != 0)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 7> :
+  status_26 = FlexCAN_Disable (pBase_17);
+  if (status_26 != 0)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 8> :
+  result_27 = status_26;
+
+  <bb 9> :
+  # result_9 = PHI <result_8(6), result_8(7), result_27(8)>
+  _28 = result_9;
+
+  <bb 10> :
+<L8>:
+  return _28;
+
+}
+
+
+FlexCAN_Ip_ExitFreezeMode_Privileged (uint8 instance)
+{
+  struct FLEXCAN_Type * base;
+  Flexcan_Ip_StatusType D.7670;
+  int _1;
+  Flexcan_Ip_StatusType _6;
+
+  <bb 2> :
+  _1 = (int) instance_2(D);
+  base_4 = Flexcan_Ip_apxBase[_1];
+  _6 = FlexCAN_ExitFreezeMode (base_4);
+
+  <bb 3> :
+<L0>:
+  return _6;
+
+}
+
+
+FlexCAN_Ip_EnterFreezeMode_Privileged (uint8 instance)
+{
+  struct FLEXCAN_Type * base;
+  Flexcan_Ip_StatusType D.7668;
+  int _1;
+  Flexcan_Ip_StatusType _6;
+
+  <bb 2> :
+  _1 = (int) instance_2(D);
+  base_4 = Flexcan_Ip_apxBase[_1];
+  _6 = FlexCAN_EnterFreezeMode (base_4);
+
+  <bb 3> :
+<L0>:
+  return _6;
+
+}
+
+
+FlexCAN_Ip_SetRxMbGlobalMask_Privileged (uint8 instance, uint32 mask)
+{
+  boolean disabled;
+  struct FLEXCAN_Type * pBase;
+  Flexcan_Ip_StatusType status;
+  Flexcan_Ip_StatusType result;
+  Flexcan_Ip_StatusType D.7666;
+  int _1;
+  _Bool _2;
+  int _3;
+  _Bool _4;
+  _Bool _5;
+  int _6;
+  Flexcan_Ip_StatusType _26;
+
+  <bb 2> :
+  result_12 = 0;
+  status_13 = 0;
+  _1 = (int) instance_14(D);
+  pBase_16 = Flexcan_Ip_apxBase[_1];
+  _2 = FlexCAN_IsEnabled (pBase_16);
+  _3 = (int) _2;
+  _4 = _3 != 0;
+  _5 = ~_4;
+  _6 = (int) _5;
+  disabled_18 = (boolean) _6;
+  if (disabled_18 != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  result_20 = FlexCAN_Enable (pBase_16);
+
+  <bb 4> :
+  # result_7 = PHI <result_12(2), result_20(3)>
+  if (result_7 == 0)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  FlexCAN_SetRxMsgBuffGlobalMask (pBase_16, mask_21(D));
+
+  <bb 6> :
+  if (disabled_18 != 0)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 7> :
+  status_24 = FlexCAN_Disable (pBase_16);
+  if (status_24 != 0)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 8> :
+  result_25 = status_24;
+
+  <bb 9> :
+  # result_8 = PHI <result_7(6), result_7(7), result_25(8)>
+  _26 = result_8;
+
+  <bb 10> :
+<L8>:
+  return _26;
+
+}
+
+
+FlexCAN_Ip_SendBlocking (uint8 instance, uint8 mb_idx, const struct Flexcan_Ip_DataInfoType * tx_info, uint32 msg_id, const uint8 * mb_data, uint32 timeout_ms)
+{
+  volatile uint32 * flexcan_mb;
+  uint32 flexcan_mb_config;
+  uint32 uS2Ticks;
+  uint32 mS2Ticks;
+  uint32 timeElapsed;
+  uint32 timeStart;
+  struct Flexcan_Ip_StateType * state;
+  struct FLEXCAN_Type * base;
+  Flexcan_Ip_StatusType result;
+  Flexcan_Ip_StatusType D.7655;
+  long unsigned int D.7648;
+  long unsigned int D.7641;
+  int _1;
+  int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _5;
+  unsigned char _6;
+  int _7;
+  <unnamed type> _8;
+  long unsigned int _9;
+  long unsigned int _10;
+  long unsigned int _11;
+  long unsigned int _12;
+  unsigned char _13;
+  long unsigned int _14;
+  long unsigned int _15;
+  long unsigned int _16;
+  long unsigned int _17;
+  long unsigned int _18;
+  int _19;
+  long unsigned int _55;
+  long unsigned int _72;
+  Flexcan_Ip_StatusType _80;
+
+  <bb 2> :
+  _1 = (int) instance_33(D);
+  base_35 = Flexcan_Ip_apxBase[_1];
+  _2 = (int) instance_33(D);
+  state_36 = Flexcan_Ip_apxState[_2];
+  timeStart = 0;
+  timeElapsed_38 = 0;
+  _3 = timeout_ms_39(D) * 1000;
+  mS2Ticks_41 = OsIf_MicrosToTicks (_3, 0);
+  uS2Ticks_42 = 0;
+  flexcan_mb_config_43 = 0;
+  flexcan_mb_44 = 0B;
+  result_50 = FlexCAN_StartSendData (instance_33(D), mb_idx_45(D), tx_info_46(D), msg_id_47(D), mb_data_48(D));
+  if (result_50 == 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 18>; [INV]
+
+  <bb 3> :
+  _4 = OsIf_GetCounter (0);
+  timeStart = _4;
+  goto <bb 6>; [INV]
+
+  <bb 4> :
+  _55 = OsIf_GetElapsed (&timeStart, 0);
+  timeElapsed_56 = _55 + timeElapsed_25;
+  if (timeElapsed_56 >= mS2Ticks_41)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  result_57 = 3;
+  goto <bb 7>; [INV]
+
+  <bb 6> :
+  # timeElapsed_25 = PHI <timeElapsed_38(3), timeElapsed_56(4)>
+  _5 = (long unsigned int) mb_idx_45(D);
+  _6 = FlexCAN_GetBuffStatusFlag (base_35, _5);
+  if (_6 != 1)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 7> :
+  # result_20 = PHI <result_57(5), result_50(6)>
+  if (result_20 == 3)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 17>; [INV]
+
+  <bb 8> :
+  _7 = (int) mb_idx_45(D);
+  _8 ={v} state_36->mbs[_7].state;
+  if (_8 != 0)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 17>; [INV]
+
+  <bb 9> :
+  _9 = (long unsigned int) mb_idx_45(D);
+  FlexCAN_ClearMsgBuffIntStatusFlag (base_35, _9);
+  _10 = (long unsigned int) mb_idx_45(D);
+  flexcan_mb_60 = FlexCAN_GetMsgBuffRegion (base_35, _10);
+  flexcan_mb_config_61 ={v} *flexcan_mb_60;
+  flexcan_mb_config_62 = flexcan_mb_config_61 & 4043309055;
+  flexcan_mb_config_63 = flexcan_mb_config_62 | 150994944;
+  *flexcan_mb_60 ={v} flexcan_mb_config_63;
+  uS2Ticks_66 = OsIf_MicrosToTicks (1000000, 0);
+  _11 = OsIf_GetCounter (0);
+  timeStart = _11;
+  timeElapsed_69 = 0;
+  goto <bb 12>; [INV]
+
+  <bb 10> :
+  _72 = OsIf_GetElapsed (&timeStart, 0);
+  timeElapsed_73 = _72 + timeElapsed_26;
+  if (timeElapsed_73 >= uS2Ticks_66)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 11> :
+  result_74 = 3;
+  goto <bb 13>; [INV]
+
+  <bb 12> :
+  # timeElapsed_26 = PHI <timeElapsed_69(9), timeElapsed_73(10)>
+  _12 = (long unsigned int) mb_idx_45(D);
+  _13 = FlexCAN_GetBuffStatusFlag (base_35, _12);
+  if (_13 == 0)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 13> :
+  # result_21 = PHI <result_74(11), result_20(12)>
+  flexcan_mb_config_75 ={v} *flexcan_mb_60;
+  _14 = flexcan_mb_config_75 >> 24;
+  _15 = _14 & 15;
+  if (_15 == 8)
+    goto <bb 14>; [INV]
+  else
+    goto <bb 15>; [INV]
+
+  <bb 14> :
+  result_76 = 0;
+
+  <bb 15> :
+  # result_22 = PHI <result_21(13), result_76(14)>
+  _16 = flexcan_mb_config_75 >> 24;
+  _17 = _16 & 15;
+  if (_17 == 9)
+    goto <bb 16>; [INV]
+  else
+    goto <bb 17>; [INV]
+
+  <bb 16> :
+  result_77 = 3;
+
+  <bb 17> :
+  # result_23 = PHI <result_20(7), result_20(8), result_22(15), result_77(16)>
+  _18 = (long unsigned int) mb_idx_45(D);
+  FlexCAN_ClearMsgBuffIntStatusFlag (base_35, _18);
+  _19 = (int) mb_idx_45(D);
+  state_36->mbs[_19].state ={v} 0;
+
+  <bb 18> :
+  # result_24 = PHI <result_50(2), result_23(17)>
+  _80 = result_24;
+  timeStart ={v} {CLOBBER};
+
+  <bb 19> :
+<L21>:
+  return _80;
+
+}
+
+
+FlexCAN_BusOff_IRQHandler (uint8 instance)
+{
+  uint32 u32ErrStatus;
+  const struct Flexcan_Ip_StateType * state;
+  struct FLEXCAN_Type * base;
+  int _1;
+  int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _5;
+  void (*<T665>) (uint8, Flexcan_Ip_EventType, uint32, const struct FlexCANState *) _6;
+  void (*<T665>) (uint8, Flexcan_Ip_EventType, uint32, const struct FlexCANState *) _7;
+  long unsigned int _8;
+  long unsigned int _9;
+  long unsigned int _10;
+  void (*<T665>) (uint8, Flexcan_Ip_EventType, uint32, const struct FlexCANState *) _11;
+  void (*<T665>) (uint8, Flexcan_Ip_EventType, uint32, const struct FlexCANState *) _12;
+  long unsigned int _13;
+  long unsigned int _14;
+  long unsigned int _15;
+  void (*<T665>) (uint8, Flexcan_Ip_EventType, uint32, const struct FlexCANState *) _16;
+  void (*<T665>) (uint8, Flexcan_Ip_EventType, uint32, const struct FlexCANState *) _17;
+
+  <bb 2> :
+  _1 = (int) instance_23(D);
+  base_25 = Flexcan_Ip_apxBase[_1];
+  _2 = (int) instance_23(D);
+  state_26 = Flexcan_Ip_apxState[_2];
+  u32ErrStatus_27 = 0;
+  if (state_26 != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 15>; [INV]
+
+  <bb 3> :
+  u32ErrStatus_29 ={v} base_25->ESR1;
+  _3 = u32ErrStatus_29 & 131072;
+  if (_3 != 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 4> :
+  _4 ={v} base_25->CTRL1;
+  _5 = _4 & 2048;
+  if (_5 != 0)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 5> :
+  base_25->ESR1 ={v} 131072;
+  _6 = state_26->error_callback;
+  if (_6 != 0B)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  _7 = state_26->error_callback;
+  _7 (instance_23(D), 9, u32ErrStatus_29, state_26);
+  u32ErrStatus_32 ={v} base_25->ESR1;
+
+  <bb 7> :
+  # u32ErrStatus_18 = PHI <u32ErrStatus_29(3), u32ErrStatus_29(4), u32ErrStatus_29(5), u32ErrStatus_32(6)>
+  _8 = u32ErrStatus_18 & 65536;
+  if (_8 != 0)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 8> :
+  _9 ={v} base_25->CTRL1;
+  _10 = _9 & 1024;
+  if (_10 != 0)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 9> :
+  base_25->ESR1 ={v} 65536;
+  _11 = state_26->error_callback;
+  if (_11 != 0B)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 10> :
+  _12 = state_26->error_callback;
+  _12 (instance_23(D), 8, u32ErrStatus_18, state_26);
+  u32ErrStatus_35 ={v} base_25->ESR1;
+
+  <bb 11> :
+  # u32ErrStatus_19 = PHI <u32ErrStatus_18(7), u32ErrStatus_18(8), u32ErrStatus_18(9), u32ErrStatus_35(10)>
+  _13 = u32ErrStatus_19 & 4;
+  if (_13 != 0)
+    goto <bb 12>; [INV]
+  else
+    goto <bb 16>; [INV]
+
+  <bb 12> :
+  _14 ={v} base_25->CTRL1;
+  _15 = _14 & 32768;
+  if (_15 != 0)
+    goto <bb 13>; [INV]
+  else
+    goto <bb 16>; [INV]
+
+  <bb 13> :
+  base_25->ESR1 ={v} 4;
+  _16 = state_26->error_callback;
+  if (_16 != 0B)
+    goto <bb 14>; [INV]
+  else
+    goto <bb 16>; [INV]
+
+  <bb 14> :
+  _17 = state_26->error_callback;
+  _17 (instance_23(D), 7, u32ErrStatus_19, state_26);
+  goto <bb 16>; [INV]
+
+  <bb 15> :
+  base_25->ESR1 ={v} 720900;
+
+  <bb 16> :
+  return;
+
+}
+
+
+FlexCAN_Error_IRQHandler (uint8 instance)
+{
+  uint32 u32ErrStatus;
+  const struct Flexcan_Ip_StateType * state;
+  struct FLEXCAN_Type * pBase;
+  int _1;
+  int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _5;
+  void (*<T665>) (uint8, Flexcan_Ip_EventType, uint32, const struct FlexCANState *) _6;
+  void (*<T665>) (uint8, Flexcan_Ip_EventType, uint32, const struct FlexCANState *) _7;
+  long unsigned int _8;
+  long unsigned int _9;
+  signed int _10;
+  void (*<T665>) (uint8, Flexcan_Ip_EventType, uint32, const struct FlexCANState *) _11;
+  void (*<T665>) (uint8, Flexcan_Ip_EventType, uint32, const struct FlexCANState *) _12;
+
+  <bb 2> :
+  _1 = (int) instance_16(D);
+  pBase_18 = Flexcan_Ip_apxBase[_1];
+  _2 = (int) instance_16(D);
+  state_19 = Flexcan_Ip_apxState[_2];
+  u32ErrStatus_20 = 0;
+  if (state_19 != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 3> :
+  u32ErrStatus_22 ={v} pBase_18->ESR1;
+  _3 = u32ErrStatus_22 & 2;
+  if (_3 != 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 4> :
+  _4 ={v} pBase_18->CTRL1;
+  _5 = _4 & 16384;
+  if (_5 != 0)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 5> :
+  pBase_18->ESR1 ={v} 2;
+  _6 = state_19->error_callback;
+  if (_6 != 0B)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  _7 = state_19->error_callback;
+  _7 (instance_16(D), 5, u32ErrStatus_22, state_19);
+  u32ErrStatus_25 ={v} pBase_18->ESR1;
+
+  <bb 7> :
+  # u32ErrStatus_13 = PHI <u32ErrStatus_22(3), u32ErrStatus_22(4), u32ErrStatus_22(5), u32ErrStatus_25(6)>
+  _8 = u32ErrStatus_13 & 1048576;
+  if (_8 != 0)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 8> :
+  _9 ={v} pBase_18->CTRL2;
+  _10 = (signed int) _9;
+  if (_10 < 0)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 9> :
+  pBase_18->ESR1 ={v} 1048576;
+  _11 = state_19->error_callback;
+  if (_11 != 0B)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 10> :
+  _12 = state_19->error_callback;
+  _12 (instance_16(D), 6, u32ErrStatus_13, state_19);
+  goto <bb 12>; [INV]
+
+  <bb 11> :
+  pBase_18->ESR1 ={v} 3145730;
+
+  <bb 12> :
+  return;
+
+}
+
+
+FlexCAN_Ip_GetControllerRxErrorCounter (uint8 instance)
+{
+  const struct FLEXCAN_Type * base;
+  uint8 D.7601;
+  int _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  uint8 _7;
+
+  <bb 2> :
+  _1 = (int) instance_4(D);
+  base_6 = Flexcan_Ip_apxBase[_1];
+  _2 ={v} base_6->ECR;
+  _3 = _2 >> 8;
+  _7 = (uint8) _3;
+
+  <bb 3> :
+<L0>:
+  return _7;
+
+}
+
+
+FlexCAN_Ip_GetControllerTxErrorCounter (uint8 instance)
+{
+  const struct FLEXCAN_Type * base;
+  uint8 D.7599;
+  int _1;
+  long unsigned int _2;
+  uint8 _6;
+
+  <bb 2> :
+  _1 = (int) instance_3(D);
+  base_5 = Flexcan_Ip_apxBase[_1];
+  _2 ={v} base_5->ECR;
+  _6 = (uint8) _2;
+
+  <bb 3> :
+<L0>:
+  return _6;
+
+}
+
+
+FlexCAN_Ip_GetErrorStatus (uint8 instance)
+{
+  const struct FLEXCAN_Type * base;
+  uint32 D.7597;
+  int _1;
+  uint32 _5;
+
+  <bb 2> :
+  _1 = (int) instance_2(D);
+  base_4 = Flexcan_Ip_apxBase[_1];
+  _5 ={v} base_4->ESR1;
+
+  <bb 3> :
+<L0>:
+  return _5;
+
+}
+
+
+FlexCAN_Ip_ClearErrorStatus (uint8 instance, uint32 error)
+{
+  struct FLEXCAN_Type * base;
+  int _1;
+
+  <bb 2> :
+  _1 = (int) instance_2(D);
+  base_4 = Flexcan_Ip_apxBase[_1];
+  base_4->ESR1 ={v} error_5(D);
+  return;
+
+}
+
+
+FlexCAN_IRQHandler (uint8 instance, uint32 startMbIdx, uint32 endMbIdx)
+{
+  uint32 mb_idx;
+  const struct Flexcan_Ip_StateType * state;
+  struct FLEXCAN_Type * base;
+  uint32 flag_reg;
+  uint32 u32MbHandle;
+  int _1;
+  int _2;
+  unsigned char _3;
+  unsigned char _4;
+  _Bool _5;
+  <unnamed type> _6;
+  <unnamed type> _7;
+  unsigned char _8;
+  <unnamed type> _9;
+
+  <bb 2> :
+  u32MbHandle_19 = 0;
+  flag_reg_20 = 0;
+  _1 = (int) instance_21(D);
+  base_23 = Flexcan_Ip_apxBase[_1];
+  _2 = (int) instance_21(D);
+  state_24 = Flexcan_Ip_apxState[_2];
+  mb_idx_26 = endMbIdx_25(D);
+  if (state_24 != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 18>; [INV]
+
+  <bb 3> :
+  _3 = FlexCAN_GetMsgBuffIntStatusFlag (base_23, mb_idx_26);
+  flag_reg_32 = (uint32) _3;
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  mb_idx_33 = mb_idx_12 + 4294967295;
+  _4 = FlexCAN_GetMsgBuffIntStatusFlag (base_23, mb_idx_33);
+  flag_reg_35 = (uint32) _4;
+
+  <bb 5> :
+  # flag_reg_11 = PHI <flag_reg_32(3), flag_reg_35(4)>
+  # mb_idx_12 = PHI <mb_idx_26(3), mb_idx_33(4)>
+  if (flag_reg_11 == 0)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  if (mb_idx_12 > startMbIdx_27(D))
+    goto <bb 4>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 7> :
+  if (flag_reg_11 != 0)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 21>; [INV]
+
+  <bb 8> :
+  u32MbHandle_36 = mb_idx_12;
+  _5 = state_24->bIsLegacyFifoEn;
+  if (_5 != 0)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 9> :
+  if (mb_idx_12 <= 7)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 10> :
+  FlexCAN_IRQHandlerRxFIFO (instance_21(D), mb_idx_12);
+  u32MbHandle_38 = 0;
+  goto <bb 13>; [INV]
+
+  <bb 11> :
+  _6 ={v} state_24->mbs[u32MbHandle_36].state;
+  if (_6 == 1)
+    goto <bb 12>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 12> :
+  FlexCAN_IRQHandlerRxMB (instance_21(D), mb_idx_12);
+
+  <bb 13> :
+  # u32MbHandle_10 = PHI <u32MbHandle_38(10), u32MbHandle_36(11), u32MbHandle_36(12)>
+  _7 ={v} state_24->mbs[u32MbHandle_10].state;
+  if (_7 == 2)
+    goto <bb 14>; [INV]
+  else
+    goto <bb 15>; [INV]
+
+  <bb 14> :
+  FlexCAN_IRQHandlerTxMB (instance_21(D), mb_idx_12);
+
+  <bb 15> :
+  _8 = FlexCAN_GetMsgBuffIntStatusFlag (base_23, mb_idx_12);
+  if (_8 != 0)
+    goto <bb 16>; [INV]
+  else
+    goto <bb 21>; [INV]
+
+  <bb 16> :
+  _9 ={v} state_24->mbs[u32MbHandle_10].state;
+  if (_9 == 0)
+    goto <bb 17>; [INV]
+  else
+    goto <bb 21>; [INV]
+
+  <bb 17> :
+  FlexCAN_ClearMsgBuffIntStatusFlag (base_23, mb_idx_12);
+  goto <bb 21>; [INV]
+
+  <bb 18> :
+  mb_idx_28 = startMbIdx_27(D);
+  goto <bb 20>; [INV]
+
+  <bb 19> :
+  FlexCAN_ClearMsgBuffIntStatusFlag (base_23, mb_idx_13);
+  mb_idx_30 = mb_idx_13 + 1;
+
+  <bb 20> :
+  # mb_idx_13 = PHI <mb_idx_28(18), mb_idx_30(19)>
+  if (mb_idx_13 <= endMbIdx_25(D))
+    goto <bb 19>; [INV]
+  else
+    goto <bb 21>; [INV]
+
+  <bb 21> :
+  return;
+
+}
+
+
+FlexCAN_CompleteRxMessageFifoData (uint8 instance)
+{
+  struct Flexcan_Ip_StateType * state;
+  struct FLEXCAN_Type * base;
+  int _1;
+  int _2;
+  <unnamed type> _3;
+  _Bool _4;
+  _Bool _5;
+  _Bool _6;
+
+  <bb 2> :
+  _1 = (int) instance_8(D);
+  base_10 = Flexcan_Ip_apxBase[_1];
+  _2 = (int) instance_8(D);
+  state_11 = Flexcan_Ip_apxState[_2];
+  _3 = state_11->transferType;
+  if (_3 == 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  _4 = state_11->isIntActive;
+  FlexCAN_SetMsgBuffIntCmd (base_10, instance_8(D), 5, 0, _4);
+  _5 = state_11->isIntActive;
+  FlexCAN_SetMsgBuffIntCmd (base_10, instance_8(D), 6, 0, _5);
+  _6 = state_11->isIntActive;
+  FlexCAN_SetMsgBuffIntCmd (base_10, instance_8(D), 7, 0, _6);
+
+  <bb 4> :
+  state_11->mbs[0].pMBmessage = 0B;
+  state_11->mbs[0].state ={v} 0;
+  return;
+
+}
+
+
+FlexCAN_Ip_GetTransferStatus (uint8 instance, uint8 mb_idx)
+{
+  Flexcan_Ip_StatusType status;
+  const struct Flexcan_Ip_StateType * state;
+  Flexcan_Ip_StatusType D.7571;
+  int _1;
+  int _2;
+  <unnamed type> _3;
+  Flexcan_Ip_StatusType _12;
+
+  <bb 2> :
+  _1 = (int) instance_5(D);
+  state_7 = Flexcan_Ip_apxState[_1];
+  status_8 = 1;
+  if (mb_idx_9(D) <= 31)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 3> :
+  _2 = (int) mb_idx_9(D);
+  _3 ={v} state_7->mbs[_2].state;
+  if (_3 == 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  status_11 = 0;
+  goto <bb 6>; [INV]
+
+  <bb 5> :
+  status_10 = 2;
+
+  <bb 6> :
+  # status_4 = PHI <status_8(2), status_11(4), status_10(5)>
+  _12 = status_4;
+
+  <bb 7> :
+<L5>:
+  return _12;
+
+}
+
+
+FlexCAN_Ip_ConfigRemoteResponseMb (uint8 instance, uint8 mb_idx, const struct Flexcan_Ip_DataInfoType * tx_info, uint32 msg_id, const uint8 * mb_data)
+{
+  volatile uint32 * pMbAddr;
+  const struct Flexcan_Ip_StateType * const state;
+  struct FLEXCAN_Type * pBase;
+  struct Flexcan_Ip_MsbuffCodeStatusType cs;
+  Flexcan_Ip_StatusType result;
+  Flexcan_Ip_StatusType D.7563;
+  int _1;
+  int _2;
+  long unsigned int _3;
+  <unnamed type> _4;
+  long unsigned int _5;
+  long unsigned int _6;
+  _Bool _7;
+  _Bool _8;
+  _Bool _9;
+  long unsigned int _10;
+  _Bool _11;
+  Flexcan_Ip_StatusType _36;
+
+  <bb 2> :
+  result_14 = 0;
+  _1 = (int) instance_15(D);
+  pBase_17 = Flexcan_Ip_apxBase[_1];
+  _2 = (int) instance_15(D);
+  state_18 = Flexcan_Ip_apxState[_2];
+  pMbAddr_19 = 0B;
+  if (result_14 == 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 3> :
+  _3 = tx_info_20(D)->data_length;
+  cs.dataLen = _3;
+  _4 = tx_info_20(D)->msg_id_type;
+  cs.msgIdType = _4;
+  cs.code = 10;
+  cs.fd_enable = 0;
+  cs.enable_brs = 0;
+  cs.fd_padding = 0;
+  _5 = (long unsigned int) mb_idx_27(D);
+  FlexCAN_ClearMsgBuffIntStatusFlag (pBase_17, _5);
+  _6 = (long unsigned int) mb_idx_27(D);
+  pMbAddr_30 = FlexCAN_GetMsgBuffRegion (pBase_17, _6);
+  _7 = tx_info_20(D)->is_remote;
+  FlexCAN_SetTxMsgBuff (pMbAddr_30, &cs, msg_id_31(D), mb_data_32(D), _7);
+  _8 = tx_info_20(D)->is_polling;
+  _9 = ~_8;
+  if (_9 != 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  _10 = (long unsigned int) mb_idx_27(D);
+  _11 = state_18->isIntActive;
+  result_35 = FlexCAN_SetMsgBuffIntCmd (pBase_17, instance_15(D), _10, 1, _11);
+
+  <bb 5> :
+  # result_12 = PHI <result_14(2), result_14(3), result_35(4)>
+  _36 = result_12;
+  cs ={v} {CLOBBER};
+
+  <bb 6> :
+<L5>:
+  return _36;
+
+}
+
+
+FlexCAN_Ip_ConfigRxFifo_Privileged (uint8 instance, Flexcan_Ip_RxFifoIdElementFormatType id_format, const struct Flexcan_Ip_IdTableType * id_filter_table)
+{
+  boolean disabled;
+  struct FLEXCAN_Type * pBase;
+  Flexcan_Ip_StatusType status;
+  Flexcan_Ip_StatusType result;
+  Flexcan_Ip_StatusType D.7557;
+  int _1;
+  _Bool _2;
+  int _3;
+  _Bool _4;
+  _Bool _5;
+  int _6;
+  Flexcan_Ip_StatusType _27;
+
+  <bb 2> :
+  result_12 = 0;
+  status_13 = 0;
+  _1 = (int) instance_14(D);
+  pBase_16 = Flexcan_Ip_apxBase[_1];
+  _2 = FlexCAN_IsEnabled (pBase_16);
+  _3 = (int) _2;
+  _4 = _3 != 0;
+  _5 = ~_4;
+  _6 = (int) _5;
+  disabled_18 = (boolean) _6;
+  if (disabled_18 != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  result_20 = FlexCAN_Enable (pBase_16);
+
+  <bb 4> :
+  # result_7 = PHI <result_12(2), result_20(3)>
+  if (result_7 == 0)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  FlexCAN_SetRxFifoFilter (pBase_16, id_format_21(D), id_filter_table_22(D));
+
+  <bb 6> :
+  if (disabled_18 != 0)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 7> :
+  status_25 = FlexCAN_Disable (pBase_16);
+  if (status_25 != 0)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 8> :
+  result_26 = status_25;
+
+  <bb 9> :
+  # result_8 = PHI <result_7(6), result_7(7), result_26(8)>
+  _27 = result_8;
+
+  <bb 10> :
+<L8>:
+  return _27;
+
+}
+
+
+FlexCAN_Ip_RxFifoBlocking (uint8 instance, struct Flexcan_Ip_MsgBuffType * data, uint32 timeout)
+{
+  Flexcan_Ip_StatusType result;
+  Flexcan_Ip_StatusType D.7547;
+  Flexcan_Ip_StatusType _12;
+
+  <bb 2> :
+  result_3 = 0;
+  result_8 = FlexCAN_StartRxMessageFifoData (instance_5(D), data_6(D));
+  if (result_8 == 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  result_11 = FlexCAN_ProccessLegacyRxFIFO (instance_5(D), timeout_9(D));
+
+  <bb 4> :
+  # result_1 = PHI <result_8(2), result_11(3)>
+  _12 = result_1;
+
+  <bb 5> :
+<L2>:
+  return _12;
+
+}
+
+
+FlexCAN_Ip_RxFifo (uint8 instance, struct Flexcan_Ip_MsgBuffType * data)
+{
+  Flexcan_Ip_StatusType result;
+  Flexcan_Ip_StatusType D.7543;
+  Flexcan_Ip_StatusType _7;
+
+  <bb 2> :
+  result_1 = 0;
+  result_6 = FlexCAN_StartRxMessageFifoData (instance_3(D), data_4(D));
+  _7 = result_6;
+
+  <bb 3> :
+<L0>:
+  return _7;
+
+}
+
+
+FlexCAN_Ip_ReceiveBlocking (uint8 instance, uint8 mb_idx, struct Flexcan_Ip_MsgBuffType * data, boolean isPolling, uint32 u32TimeoutMs)
+{
+  struct FLEXCAN_Type * base;
+  struct Flexcan_Ip_StateType * state;
+  uint32 mS2Ticks;
+  uint32 timeElapsed;
+  uint32 timeStart;
+  Flexcan_Ip_StatusType result;
+  Flexcan_Ip_StatusType D.7540;
+  long unsigned int D.7526;
+  long unsigned int _1;
+  int _2;
+  int _3;
+  _Bool _4;
+  long unsigned int _5;
+  _Bool _6;
+  long unsigned int _7;
+  long unsigned int _8;
+  unsigned char _9;
+  long unsigned int _10;
+  int _11;
+  <unnamed type> _12;
+  _Bool _13;
+  long unsigned int _14;
+  _Bool _15;
+  int _16;
+  <unnamed type> _17;
+  int _18;
+  long unsigned int _50;
+  Flexcan_Ip_StatusType _57;
+
+  <bb 2> :
+  timeStart = 0;
+  timeElapsed_31 = 0;
+  _1 = u32TimeoutMs_32(D) * 1000;
+  mS2Ticks_34 = OsIf_MicrosToTicks (_1, 0);
+  _2 = (int) instance_35(D);
+  state_36 = Flexcan_Ip_apxState[_2];
+  _3 = (int) instance_35(D);
+  base_37 = Flexcan_Ip_apxBase[_3];
+  result_42 = FlexCAN_StartRxMessageBufferData (instance_35(D), mb_idx_38(D), data_39(D), isPolling_40(D));
+  if (result_42 == 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 3> :
+  _4 = ~isPolling_40(D);
+  if (_4 != 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  _5 = (long unsigned int) mb_idx_38(D);
+  _6 = state_36->isIntActive;
+  result_44 = FlexCAN_SetMsgBuffIntCmd (base_37, instance_35(D), _5, 1, _6);
+
+  <bb 5> :
+  # result_19 = PHI <result_42(2), result_42(3), result_44(4)>
+  if (result_19 == 0)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 6> :
+  _7 = OsIf_GetCounter (0);
+  timeStart = _7;
+  goto <bb 12>; [INV]
+
+  <bb 7> :
+  if (isPolling_40(D) != 0)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 8> :
+  _8 = (long unsigned int) mb_idx_38(D);
+  _9 = FlexCAN_GetBuffStatusFlag (base_37, _8);
+  if (_9 != 0)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 9> :
+  _10 = (long unsigned int) mb_idx_38(D);
+  FlexCAN_IRQHandlerRxMB (instance_35(D), _10);
+
+  <bb 10> :
+  _50 = OsIf_GetElapsed (&timeStart, 0);
+  timeElapsed_51 = _50 + timeElapsed_22;
+  if (timeElapsed_51 >= mS2Ticks_34)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 11> :
+  result_52 = 3;
+  goto <bb 13>; [INV]
+
+  <bb 12> :
+  # timeElapsed_22 = PHI <timeElapsed_31(6), timeElapsed_51(10)>
+  _11 = (int) mb_idx_38(D);
+  _12 ={v} state_36->mbs[_11].state;
+  if (_12 == 1)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 13> :
+  # result_20 = PHI <result_19(5), result_52(11), result_19(12)>
+  if (result_20 == 3)
+    goto <bb 14>; [INV]
+  else
+    goto <bb 16>; [INV]
+
+  <bb 14> :
+  _13 = ~isPolling_40(D);
+  if (_13 != 0)
+    goto <bb 15>; [INV]
+  else
+    goto <bb 16>; [INV]
+
+  <bb 15> :
+  _14 = (long unsigned int) mb_idx_38(D);
+  _15 = state_36->isIntActive;
+  FlexCAN_SetMsgBuffIntCmd (base_37, instance_35(D), _14, 0, _15);
+
+  <bb 16> :
+  if (result_20 != 4)
+    goto <bb 17>; [INV]
+  else
+    goto <bb 21>; [INV]
+
+  <bb 17> :
+  if (result_20 != 2)
+    goto <bb 18>; [INV]
+  else
+    goto <bb 21>; [INV]
+
+  <bb 18> :
+  _16 = (int) mb_idx_38(D);
+  _17 ={v} state_36->mbs[_16].state;
+  if (_17 == 0)
+    goto <bb 19>; [INV]
+  else
+    goto <bb 20>; [INV]
+
+  <bb 19> :
+  result_56 = 0;
+  goto <bb 21>; [INV]
+
+  <bb 20> :
+  _18 = (int) mb_idx_38(D);
+  state_36->mbs[_18].state ={v} 0;
+  result_55 = 3;
+
+  <bb 21> :
+  # result_21 = PHI <result_20(16), result_20(17), result_56(19), result_55(20)>
+  _57 = result_21;
+  timeStart ={v} {CLOBBER};
+
+  <bb 22> :
+<L27>:
+  return _57;
+
+}
+
+
+FlexCAN_Ip_Receive (uint8 instance, uint8 mb_idx, struct Flexcan_Ip_MsgBuffType * data, boolean isPolling)
+{
+  const struct Flexcan_Ip_StateType * state;
+  struct FLEXCAN_Type * base;
+  Flexcan_Ip_StatusType result;
+  Flexcan_Ip_StatusType D.7514;
+  int _1;
+  int _2;
+  _Bool _3;
+  long unsigned int _4;
+  _Bool _5;
+  Flexcan_Ip_StatusType _19;
+
+  <bb 2> :
+  _1 = (int) instance_8(D);
+  base_10 = Flexcan_Ip_apxBase[_1];
+  _2 = (int) instance_8(D);
+  state_11 = Flexcan_Ip_apxState[_2];
+  result_16 = FlexCAN_StartRxMessageBufferData (instance_8(D), mb_idx_12(D), data_13(D), isPolling_14(D));
+  if (result_16 == 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 3> :
+  _3 = ~isPolling_14(D);
+  if (_3 != 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  _4 = (long unsigned int) mb_idx_12(D);
+  _5 = state_11->isIntActive;
+  result_18 = FlexCAN_SetMsgBuffIntCmd (base_10, instance_8(D), _4, 1, _5);
+
+  <bb 5> :
+  # result_6 = PHI <result_16(2), result_16(3), result_18(4)>
+  _19 = result_6;
+
+  <bb 6> :
+<L4>:
+  return _19;
+
+}
+
+
+FlexCAN_Ip_ConfigRxMb (uint8 instance, uint8 mb_idx, const struct Flexcan_Ip_DataInfoType * rx_info, uint32 msg_id)
+{
+  struct FLEXCAN_Type * base;
+  struct Flexcan_Ip_MsbuffCodeStatusType cs;
+  Flexcan_Ip_StatusType eResult;
+  Flexcan_Ip_StatusType D.7507;
+  int _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  <unnamed type> _4;
+  _Bool _5;
+  long unsigned int _6;
+  long unsigned int _7;
+  long unsigned int _8;
+  Flexcan_Ip_StatusType _26;
+
+  <bb 2> :
+  eResult_9 = 0;
+  _1 = (int) instance_10(D);
+  base_12 = Flexcan_Ip_apxBase[_1];
+  _2 = (long unsigned int) mb_idx_13(D);
+  FlexCAN_ClearMsgBuffIntStatusFlag (base_12, _2);
+  _3 = rx_info_15(D)->data_length;
+  cs.dataLen = _3;
+  _4 = rx_info_15(D)->msg_id_type;
+  cs.msgIdType = _4;
+  _5 = rx_info_15(D)->fd_enable;
+  cs.fd_enable = _5;
+  cs.code = 15;
+  _6 = (long unsigned int) mb_idx_13(D);
+  FlexCAN_SetRxMsgBuff (base_12, _6, &cs, msg_id_20(D));
+  cs.code = 0;
+  _7 = (long unsigned int) mb_idx_13(D);
+  FlexCAN_SetRxMsgBuff (base_12, _7, &cs, msg_id_20(D));
+  cs.code = 4;
+  _8 = (long unsigned int) mb_idx_13(D);
+  FlexCAN_SetRxMsgBuff (base_12, _8, &cs, msg_id_20(D));
+  _26 = eResult_9;
+  cs ={v} {CLOBBER};
+
+  <bb 3> :
+<L1>:
+  return _26;
+
+}
+
+
+FlexCAN_Ip_Send (uint8 instance, uint8 mb_idx, const struct Flexcan_Ip_DataInfoType * tx_info, uint32 msg_id, const uint8 * mb_data)
+{
+  const struct Flexcan_Ip_StateType * state;
+  struct FLEXCAN_Type * base;
+  Flexcan_Ip_StatusType result;
+  Flexcan_Ip_StatusType D.7503;
+  int _1;
+  int _2;
+  _Bool _3;
+  _Bool _4;
+  _Bool _5;
+  _Bool _6;
+  long unsigned int _7;
+  _Bool _8;
+  Flexcan_Ip_StatusType _25;
+
+  <bb 2> :
+  result_11 = 1;
+  _1 = (int) instance_12(D);
+  base_14 = Flexcan_Ip_apxBase[_1];
+  _2 = (int) instance_12(D);
+  state_15 = Flexcan_Ip_apxState[_2];
+  _3 = FlexCAN_IsListenOnlyModeEnabled (base_14);
+  _4 = ~_3;
+  if (_4 != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 3> :
+  result_22 = FlexCAN_StartSendData (instance_12(D), mb_idx_17(D), tx_info_18(D), msg_id_19(D), mb_data_20(D));
+  if (result_22 == 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 4> :
+  _5 = tx_info_18(D)->is_polling;
+  _6 = ~_5;
+  if (_6 != 0)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  _7 = (long unsigned int) mb_idx_17(D);
+  _8 = state_15->isIntActive;
+  result_24 = FlexCAN_SetMsgBuffIntCmd (base_14, instance_12(D), _7, 1, _8);
+
+  <bb 6> :
+  # result_9 = PHI <result_11(2), result_22(3), result_22(4), result_24(5)>
+  _25 = result_9;
+
+  <bb 7> :
+<L6>:
+  return _25;
+
+}
+
+
+FlexCAN_Ip_Init_Privileged (uint8 Flexcan_Ip_u8Instance, struct Flexcan_Ip_StateType * Flexcan_Ip_pState, const struct Flexcan_Ip_ConfigType * Flexcan_Ip_pData)
+{
+  uint32 i;
+  struct FLEXCAN_Type * pBase;
+  Flexcan_Ip_StatusType eResult;
+  Flexcan_Ip_StatusType D.7495;
+  int _1;
+  <unnamed type> _2;
+  <unnamed type> _3;
+  void (*<T66b>) (uint8, Flexcan_Ip_EventType, uint32, const struct Flexcan_Ip_StateType *) _4;
+  void (*<T66b>) (uint8, Flexcan_Ip_EventType, uint32, const struct Flexcan_Ip_StateType *) _5;
+  _Bool _6;
+  long unsigned int _7;
+  int _8;
+  Flexcan_Ip_StatusType _37;
+
+  <bb 2> :
+  eResult_12 = 0;
+  _1 = (int) Flexcan_Ip_u8Instance_13(D);
+  pBase_15 = Flexcan_Ip_apxBase[_1];
+  eResult_18 = FlexCAN_InitController (Flexcan_Ip_u8Instance_13(D), pBase_15, Flexcan_Ip_pData_16(D));
+  if (eResult_18 == 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 3> :
+  FlexCAN_InitBaudrate (pBase_15, Flexcan_Ip_pData_16(D));
+  _2 = Flexcan_Ip_pData_16(D)->flexcanMode;
+  FlexCAN_SetOperationMode (pBase_15, _2);
+  i_21 = 0;
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  Flexcan_Ip_pState_22(D)->mbs[i_9].isPolling = 1;
+  Flexcan_Ip_pState_22(D)->mbs[i_9].pMBmessage = 0B;
+  Flexcan_Ip_pState_22(D)->mbs[i_9].state ={v} 0;
+  Flexcan_Ip_pState_22(D)->mbs[i_9].time_stamp = 0;
+  i_36 = i_9 + 1;
+
+  <bb 5> :
+  # i_9 = PHI <i_21(3), i_36(4)>
+  if (i_9 <= 31)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 6> :
+  _3 = Flexcan_Ip_pData_16(D)->transfer_type;
+  Flexcan_Ip_pState_22(D)->transferType = _3;
+  _4 = Flexcan_Ip_pData_16(D)->Callback;
+  Flexcan_Ip_pState_22(D)->callback = _4;
+  Flexcan_Ip_pState_22(D)->callbackParam = 0B;
+  _5 = Flexcan_Ip_pData_16(D)->ErrorCallback;
+  Flexcan_Ip_pState_22(D)->error_callback = _5;
+  Flexcan_Ip_pState_22(D)->errorCallbackParam = 0B;
+  _6 = Flexcan_Ip_pData_16(D)->is_rx_fifo_needed;
+  Flexcan_Ip_pState_22(D)->bIsLegacyFifoEn = _6;
+  _7 = Flexcan_Ip_pData_16(D)->max_num_mb;
+  Flexcan_Ip_pState_22(D)->u32MaxMbNum = _7;
+  Flexcan_Ip_pState_22(D)->isIntActive = 1;
+  _8 = (int) Flexcan_Ip_u8Instance_13(D);
+  Flexcan_Ip_apxState[_8] = Flexcan_Ip_pState_22(D);
+
+  <bb 7> :
+  _37 = eResult_18;
+
+  <bb 8> :
+<L5>:
+  return _37;
+
+}
+
+
+FlexCAN_AbortRxTransfer (uint8 u8Instance, uint8 mb_idx)
+{
+  volatile uint32 * flexcan_mb;
+  uint32 flexcan_mb_config;
+  uint32 val2;
+  uint8 val1;
+  struct Flexcan_Ip_StateType * state;
+  struct FLEXCAN_Type * pBase;
+  int _1;
+  int _2;
+  int _3;
+  _Bool _4;
+  long unsigned int _5;
+  long unsigned int _6;
+  unsigned char _7;
+  long unsigned int _8;
+  long unsigned int _9;
+  _Bool _10;
+  long unsigned int _11;
+  long unsigned int _12;
+
+  <bb 2> :
+  _1 = (int) u8Instance_15(D);
+  pBase_17 = Flexcan_Ip_apxBase[_1];
+  _2 = (int) u8Instance_15(D);
+  state_18 = Flexcan_Ip_apxState[_2];
+  val1_19 = 0;
+  val2_20 = 0;
+  flexcan_mb_config_21 = 0;
+  flexcan_mb_22 = 0B;
+  _3 = (int) mb_idx_23(D);
+  state_18->mbs[_3].state ={v} 0;
+  _4 = state_18->bIsLegacyFifoEn;
+  if (_4 != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 3> :
+  _5 ={v} pBase_17->CTRL2;
+  _6 = _5 >> 24;
+  _7 = (unsigned char) _6;
+  val1_34 = _7 & 15;
+  val2_36 = RxFifoOcuppiedLastMsgBuff (val1_34);
+  _8 = (long unsigned int) mb_idx_23(D);
+  if (val2_36 < _8)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  _9 = (long unsigned int) mb_idx_23(D);
+  flexcan_mb_38 = FlexCAN_GetMsgBuffRegion (pBase_17, _9);
+  flexcan_mb_config_39 ={v} *flexcan_mb_38;
+  flexcan_mb_config_40 = flexcan_mb_config_39 & 4043309055;
+  flexcan_mb_config_41 = flexcan_mb_config_40;
+  *flexcan_mb_38 ={v} flexcan_mb_config_41;
+  flexcan_mb_config_43 = flexcan_mb_config_41 & 4043309055;
+  flexcan_mb_config_44 = flexcan_mb_config_43 | 67108864;
+  *flexcan_mb_38 ={v} flexcan_mb_config_44;
+
+  <bb 5> :
+  if (mb_idx_23(D) == 0)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 6> :
+  _10 = state_18->isIntActive;
+  FLEXCAN_ClearMsgBuffIntCmd (pBase_17, u8Instance_15(D), 5, _10);
+  goto <bb 8>; [INV]
+
+  <bb 7> :
+  _11 = (long unsigned int) mb_idx_23(D);
+  flexcan_mb_26 = FlexCAN_GetMsgBuffRegion (pBase_17, _11);
+  flexcan_mb_config_27 ={v} *flexcan_mb_26;
+  flexcan_mb_config_28 = flexcan_mb_config_27 & 4043309055;
+  flexcan_mb_config_29 = flexcan_mb_config_28;
+  *flexcan_mb_26 ={v} flexcan_mb_config_29;
+  flexcan_mb_config_31 = flexcan_mb_config_29 & 4043309055;
+  flexcan_mb_config_32 = flexcan_mb_config_31 | 67108864;
+  *flexcan_mb_26 ={v} flexcan_mb_config_32;
+
+  <bb 8> :
+  _12 = (long unsigned int) mb_idx_23(D);
+  FlexCAN_ClearMsgBuffIntStatusFlag (pBase_17, _12);
+  return;
+
+}
+
+
+FlexCAN_AbortTxTransfer (uint8 u8Instance, uint8 mb_idx)
+{
+  volatile uint32 * flexcan_mb;
+  uint32 uS2Ticks;
+  uint32 flexcan_mb_config;
+  uint32 timeElapsed;
+  uint32 timeStart;
+  Flexcan_Ip_StatusType result;
+  struct Flexcan_Ip_StateType * state;
+  struct FLEXCAN_Type * pBase;
+  Flexcan_Ip_StatusType D.7481;
+  long unsigned int D.7472;
+  int _1;
+  int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _5;
+  unsigned char _6;
+  long unsigned int _7;
+  long unsigned int _8;
+  long unsigned int _9;
+  long unsigned int _10;
+  long unsigned int _11;
+  int _12;
+  long unsigned int _42;
+  Flexcan_Ip_StatusType _50;
+
+  <bb 2> :
+  _1 = (int) u8Instance_19(D);
+  pBase_21 = Flexcan_Ip_apxBase[_1];
+  _2 = (int) u8Instance_19(D);
+  state_22 = Flexcan_Ip_apxState[_2];
+  result_23 = 0;
+  timeStart = 0;
+  timeElapsed_25 = 0;
+  flexcan_mb_config_26 = 0;
+  uS2Ticks_27 = 0;
+  flexcan_mb_28 = 0B;
+  _3 = (long unsigned int) mb_idx_29(D);
+  flexcan_mb_31 = FlexCAN_GetMsgBuffRegion (pBase_21, _3);
+  flexcan_mb_config_32 ={v} *flexcan_mb_31;
+  flexcan_mb_config_33 = flexcan_mb_config_32 & 4043309055;
+  flexcan_mb_config_34 = flexcan_mb_config_33 | 150994944;
+  *flexcan_mb_31 ={v} flexcan_mb_config_34;
+  uS2Ticks_37 = OsIf_MicrosToTicks (1000000, 0);
+  _4 = OsIf_GetCounter (0);
+  timeStart = _4;
+  goto <bb 5>; [INV]
+
+  <bb 3> :
+  _42 = OsIf_GetElapsed (&timeStart, 0);
+  timeElapsed_43 = _42 + timeElapsed_16;
+  if (timeElapsed_43 >= uS2Ticks_37)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  result_44 = 3;
+  goto <bb 6>; [INV]
+
+  <bb 5> :
+  # timeElapsed_16 = PHI <timeElapsed_25(2), timeElapsed_43(3)>
+  _5 = (long unsigned int) mb_idx_29(D);
+  _6 = FlexCAN_GetBuffStatusFlag (pBase_21, _5);
+  if (_6 == 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 6> :
+  # result_13 = PHI <result_44(4), result_23(5)>
+  if (result_13 != 3)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 7> :
+  flexcan_mb_config_45 ={v} *flexcan_mb_31;
+  _7 = flexcan_mb_config_45 >> 24;
+  _8 = _7 & 15;
+  if (_8 == 8)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 8> :
+  result_46 = 5;
+
+  <bb 9> :
+  # result_14 = PHI <result_13(7), result_46(8)>
+  _9 = flexcan_mb_config_45 >> 24;
+  _10 = _9 & 15;
+  if (_10 == 9)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 10> :
+  result_47 = 0;
+
+  <bb 11> :
+  # result_15 = PHI <result_13(6), result_14(9), result_47(10)>
+  _11 = (long unsigned int) mb_idx_29(D);
+  FlexCAN_ClearMsgBuffIntStatusFlag (pBase_21, _11);
+  _12 = (int) mb_idx_29(D);
+  state_22->mbs[_12].state ={v} 0;
+  _50 = result_15;
+  timeStart ={v} {CLOBBER};
+
+  <bb 12> :
+<L12>:
+  return _50;
+
+}
+
+
+FlexCAN_IRQHandlerRxFIFO (uint8 instance, uint32 mb_idx)
+{
+  struct Flexcan_Ip_MsgBuffType data;
+  struct Flexcan_Ip_StateType * state;
+  struct FLEXCAN_Type * base;
+  int _1;
+  int _2;
+  struct Flexcan_Ip_MsgBuffType * _3;
+  <unnamed type> _4;
+  struct Flexcan_Ip_MsgBuffType * _5;
+  void (*<T665>) (uint8, Flexcan_Ip_EventType, uint32, const struct FlexCANState *) _6;
+  void (*<T665>) (uint8, Flexcan_Ip_EventType, uint32, const struct FlexCANState *) _7;
+  <unnamed type> _8;
+  void (*<T665>) (uint8, Flexcan_Ip_EventType, uint32, const struct FlexCANState *) _9;
+  void (*<T665>) (uint8, Flexcan_Ip_EventType, uint32, const struct FlexCANState *) _10;
+  void (*<T665>) (uint8, Flexcan_Ip_EventType, uint32, const struct FlexCANState *) _11;
+  void (*<T665>) (uint8, Flexcan_Ip_EventType, uint32, const struct FlexCANState *) _12;
+
+  <bb 2> :
+  _1 = (int) instance_19(D);
+  base_21 = Flexcan_Ip_apxBase[_1];
+  _2 = (int) instance_19(D);
+  state_22 = Flexcan_Ip_apxState[_2];
+  _3 = state_22->mbs[0].pMBmessage;
+  if (_3 == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  state_22->mbs[0].pMBmessage = &data;
+
+  <bb 4> :
+  switch (mb_idx_24(D)) <default: <L15> [INV], case 5: <L2> [INV], case 6: <L9> [INV], case 7: <L12> [INV]>
+
+  <bb 5> :
+<L2>:
+  _4 ={v} state_22->mbs[0].state;
+  if (_4 == 1)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 6> :
+  _5 = state_22->mbs[0].pMBmessage;
+  FlexCAN_ReadRxFifo (base_21, _5);
+  FlexCAN_ClearMsgBuffIntStatusFlag (base_21, mb_idx_24(D));
+  state_22->mbs[0].state ={v} 0;
+  _6 = state_22->callback;
+  if (_6 != 0B)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 7> :
+  _7 = state_22->callback;
+  _7 (instance_19(D), 1, 0, state_22);
+
+  <bb 8> :
+  _8 ={v} state_22->mbs[0].state;
+  if (_8 == 0)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 9> :
+  state_22->mbs[0].isPolling = 1;
+  FlexCAN_CompleteRxMessageFifoData (instance_19(D));
+
+  <bb 10> :
+  goto <bb 18>; [INV]
+
+  <bb 11> :
+<L9>:
+  FlexCAN_ClearMsgBuffIntStatusFlag (base_21, mb_idx_24(D));
+  _9 = state_22->callback;
+  if (_9 != 0B)
+    goto <bb 12>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 12> :
+  _10 = state_22->callback;
+  _10 (instance_19(D), 2, 0, state_22);
+
+  <bb 13> :
+  goto <bb 18>; [INV]
+
+  <bb 14> :
+<L12>:
+  FlexCAN_ClearMsgBuffIntStatusFlag (base_21, mb_idx_24(D));
+  _11 = state_22->callback;
+  if (_11 != 0B)
+    goto <bb 15>; [INV]
+  else
+    goto <bb 16>; [INV]
+
+  <bb 15> :
+  _12 = state_22->callback;
+  _12 (instance_19(D), 3, 0, state_22);
+
+  <bb 16> :
+  goto <bb 18>; [INV]
+
+  <bb 17> :
+<L15>:
+
+  <bb 18> :
+  data ={v} {CLOBBER};
+  return;
+
+}
+
+
+FlexCAN_IRQHandlerTxMB (uint8 u8Instance, uint32 u32MbIdx)
+{
+  struct Flexcan_Ip_MsgBuffType mb;
+  struct Flexcan_Ip_StateType * pState;
+  struct FLEXCAN_Type * pBase;
+  int _1;
+  int _2;
+  _Bool _3;
+  long unsigned int _4;
+  long unsigned int _5;
+  long unsigned int _6;
+  long unsigned int _7;
+  long unsigned int _8;
+  void (*<T665>) (uint8, Flexcan_Ip_EventType, uint32, const struct FlexCANState *) _9;
+  void (*<T665>) (uint8, Flexcan_Ip_EventType, uint32, const struct FlexCANState *) _10;
+  <unnamed type> _11;
+  _Bool _12;
+  _Bool _13;
+  _Bool _14;
+
+  <bb 2> :
+  _1 = (int) u8Instance_18(D);
+  pBase_20 = Flexcan_Ip_apxBase[_1];
+  _2 = (int) u8Instance_18(D);
+  pState_21 = Flexcan_Ip_apxState[_2];
+  mb.cs = 0;
+  mb.time_stamp = 0;
+  _3 = pState_21->mbs[u32MbIdx_24(D)].isRemote;
+  if (_3 != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 3> :
+  FlexCAN_LockRxMsgBuff (pBase_20, u32MbIdx_24(D));
+  FlexCAN_GetMsgBuff (pBase_20, u32MbIdx_24(D), &mb);
+  FlexCAN_UnlockRxMsgBuff (pBase_20);
+  _4 = mb.time_stamp;
+  pState_21->mbs[u32MbIdx_24(D)].time_stamp = _4;
+  _5 = mb.cs;
+  _6 = _5 >> 24;
+  _7 = _6 & 15;
+  if (_7 == 4)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 4> :
+  FlexCAN_ClearMsgBuffIntStatusFlag (pBase_20, u32MbIdx_24(D));
+  goto <bb 6>; [INV]
+
+  <bb 5> :
+  _8 = FlexCAN_GetMsgBuffTimestamp (pBase_20, u32MbIdx_24(D));
+  pState_21->mbs[u32MbIdx_24(D)].time_stamp = _8;
+  FlexCAN_UnlockRxMsgBuff (pBase_20);
+  FlexCAN_ClearMsgBuffIntStatusFlag (pBase_20, u32MbIdx_24(D));
+
+  <bb 6> :
+  pState_21->mbs[u32MbIdx_24(D)].state ={v} 0;
+  _9 = pState_21->callback;
+  if (_9 != 0B)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 7> :
+  _10 = pState_21->callback;
+  _10 (u8Instance_18(D), 4, u32MbIdx_24(D), pState_21);
+
+  <bb 8> :
+  _11 ={v} pState_21->mbs[u32MbIdx_24(D)].state;
+  if (_11 == 0)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 9> :
+  pState_21->mbs[u32MbIdx_24(D)].isPolling = 1;
+  _12 = pState_21->isIntActive;
+  FlexCAN_SetMsgBuffIntCmd (pBase_20, u8Instance_18(D), u32MbIdx_24(D), 0, _12);
+  goto <bb 12>; [INV]
+
+  <bb 10> :
+  _13 = pState_21->mbs[u32MbIdx_24(D)].isPolling;
+  if (_13 != 0)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 11> :
+  _14 = pState_21->isIntActive;
+  FlexCAN_SetMsgBuffIntCmd (pBase_20, u8Instance_18(D), u32MbIdx_24(D), 0, _14);
+
+  <bb 12> :
+  mb ={v} {CLOBBER};
+  return;
+
+}
+
+
+FlexCAN_IRQHandlerRxMB (uint8 instance, uint32 mb_idx)
+{
+  volatile uint32 * flexcan_mb;
+  boolean bIsCriticalSectionNeeded;
+  boolean bCurrentIntStat;
+  struct Flexcan_Ip_MsgBuffType data;
+  struct Flexcan_Ip_StateType * state;
+  struct FLEXCAN_Type * base;
+  int _1;
+  int _2;
+  struct Flexcan_Ip_MsgBuffType * _3;
+  _Bool _4;
+  _Bool _5;
+  struct Flexcan_Ip_MsgBuffType * _6;
+  _Bool _7;
+  struct Flexcan_Ip_MsgBuffType * _8;
+  long unsigned int _9;
+  long unsigned int _10;
+  long unsigned int _11;
+  struct Flexcan_Ip_MsgBuffType * _12;
+  long unsigned int _13;
+  long unsigned int _14;
+  long unsigned int _15;
+  struct Flexcan_Ip_MsgBuffType * _16;
+  long unsigned int _17;
+  long unsigned int _18;
+  long unsigned int _19;
+  long unsigned int _20;
+  long unsigned int _21;
+  long unsigned int _22;
+  long unsigned int _23;
+  void (*<T665>) (uint8, Flexcan_Ip_EventType, uint32, const struct FlexCANState *) _24;
+  void (*<T665>) (uint8, Flexcan_Ip_EventType, uint32, const struct FlexCANState *) _25;
+  <unnamed type> _26;
+  _Bool _27;
+  _Bool _28;
+  _Bool _29;
+  _Bool _30;
+  _Bool _31;
+  _Bool _32;
+
+  <bb 2> :
+  _1 = (int) instance_40(D);
+  base_42 = Flexcan_Ip_apxBase[_1];
+  _2 = (int) instance_40(D);
+  state_43 = Flexcan_Ip_apxState[_2];
+  bCurrentIntStat_44 = 0;
+  _3 = state_43->mbs[mb_idx_45(D)].pMBmessage;
+  if (_3 == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  state_43->mbs[mb_idx_45(D)].pMBmessage = &data;
+
+  <bb 4> :
+  bIsCriticalSectionNeeded_47 = 0;
+  _4 = state_43->mbs[mb_idx_45(D)].isPolling;
+  if (_4 != 0)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 5> :
+  _5 = state_43->bIsLegacyFifoEn;
+  if (_5 != 0)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  bIsCriticalSectionNeeded_48 = 1;
+  __asm__ __volatile__(" cpsid i");
+
+  <bb 7> :
+  # bIsCriticalSectionNeeded_33 = PHI <bIsCriticalSectionNeeded_47(4), bIsCriticalSectionNeeded_47(5), bIsCriticalSectionNeeded_48(6)>
+  FlexCAN_LockRxMsgBuff (base_42, mb_idx_45(D));
+  _6 = state_43->mbs[mb_idx_45(D)].pMBmessage;
+  FlexCAN_GetMsgBuff (base_42, mb_idx_45(D), _6);
+  FlexCAN_ClearMsgBuffIntStatusFlag (base_42, mb_idx_45(D));
+  _7 = state_43->bIsLegacyFifoEn;
+  if (_7 != 0)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 8> :
+  _8 = state_43->mbs[mb_idx_45(D)].pMBmessage;
+  _9 = _8->cs;
+  _10 = _9 >> 24;
+  _11 = _10 & 15;
+  if (_11 != 2)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 9> :
+  _12 = state_43->mbs[mb_idx_45(D)].pMBmessage;
+  _13 = _12->cs;
+  _14 = _13 >> 24;
+  _15 = _14 & 15;
+  if (_15 != 4)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 10> :
+  _16 = state_43->mbs[mb_idx_45(D)].pMBmessage;
+  _17 = _16->cs;
+  _18 = _17 >> 24;
+  _19 = _18 & 15;
+  if (_19 != 6)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 11> :
+  flexcan_mb_54 = FlexCAN_GetMsgBuffRegion (base_42, mb_idx_45(D));
+  _20 ={v} *flexcan_mb_54;
+  _21 = _20 & 4043309055;
+  *flexcan_mb_54 ={v} _21;
+  _22 ={v} *flexcan_mb_54;
+  _23 = _22 | 67108864;
+  *flexcan_mb_54 ={v} _23;
+  goto <bb 13>; [INV]
+
+  <bb 12> :
+  FlexCAN_UnlockRxMsgBuff (base_42);
+
+  <bb 13> :
+  if (bIsCriticalSectionNeeded_33 != 0)
+    goto <bb 14>; [INV]
+  else
+    goto <bb 15>; [INV]
+
+  <bb 14> :
+  __asm__ __volatile__(" cpsie i");
+
+  <bb 15> :
+  state_43->mbs[mb_idx_45(D)].state ={v} 0;
+  bCurrentIntStat_60 = state_43->mbs[mb_idx_45(D)].isPolling;
+  _24 = state_43->callback;
+  if (_24 != 0B)
+    goto <bb 16>; [INV]
+  else
+    goto <bb 17>; [INV]
+
+  <bb 16> :
+  _25 = state_43->callback;
+  _25 (instance_40(D), 0, mb_idx_45(D), state_43);
+
+  <bb 17> :
+  _26 ={v} state_43->mbs[mb_idx_45(D)].state;
+  if (_26 == 0)
+    goto <bb 18>; [INV]
+  else
+    goto <bb 20>; [INV]
+
+  <bb 18> :
+  _27 = state_43->mbs[mb_idx_45(D)].isPolling;
+  _28 = ~_27;
+  if (_28 != 0)
+    goto <bb 19>; [INV]
+  else
+    goto <bb 20>; [INV]
+
+  <bb 19> :
+  state_43->mbs[mb_idx_45(D)].isPolling = 1;
+  _29 = state_43->isIntActive;
+  FlexCAN_SetMsgBuffIntCmd (base_42, instance_40(D), mb_idx_45(D), 0, _29);
+  goto <bb 23>; [INV]
+
+  <bb 20> :
+  _30 = ~bCurrentIntStat_60;
+  if (_30 != 0)
+    goto <bb 21>; [INV]
+  else
+    goto <bb 23>; [INV]
+
+  <bb 21> :
+  _31 = state_43->mbs[mb_idx_45(D)].isPolling;
+  if (_31 != 0)
+    goto <bb 22>; [INV]
+  else
+    goto <bb 23>; [INV]
+
+  <bb 22> :
+  _32 = state_43->isIntActive;
+  FlexCAN_SetMsgBuffIntCmd (base_42, instance_40(D), mb_idx_45(D), 0, _32);
+
+  <bb 23> :
+  data ={v} {CLOBBER};
+  return;
+
+}
+
+
+FlexCAN_StartRxMessageFifoData (uint8 instance, struct Flexcan_Ip_MsgBuffType * data)
+{
+  Flexcan_Ip_StatusType eResult;
+  struct Flexcan_Ip_StateType * state;
+  struct FLEXCAN_Type * base;
+  Flexcan_Ip_StatusType D.7431;
+  int _1;
+  int _2;
+  <unnamed type> _3;
+  <unnamed type> _4;
+  <unnamed type> _5;
+  _Bool _6;
+  _Bool _7;
+  _Bool _8;
+  Flexcan_Ip_StatusType _28;
+
+  <bb 2> :
+  base_12 = 0B;
+  state_13 = 0B;
+  eResult_14 = 0;
+  _1 = (int) instance_15(D);
+  base_17 = Flexcan_Ip_apxBase[_1];
+  _2 = (int) instance_15(D);
+  state_18 = Flexcan_Ip_apxState[_2];
+  _3 ={v} state_18->mbs[0].state;
+  if (_3 == 1)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  eResult_27 = 2;
+  goto <bb 8>; [INV]
+
+  <bb 4> :
+  state_18->mbs[0].state ={v} 1;
+  _4 = state_18->transferType;
+  if (_4 == 1)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  state_18->mbs[0].isPolling = 1;
+
+  <bb 6> :
+  state_18->mbs[0].pMBmessage = data_21(D);
+  _5 = state_18->transferType;
+  if (_5 == 0)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 7> :
+  state_18->mbs[0].isPolling = 0;
+  _6 = state_18->isIntActive;
+  FlexCAN_SetMsgBuffIntCmd (base_17, instance_15(D), 6, 1, _6);
+  _7 = state_18->isIntActive;
+  FlexCAN_SetMsgBuffIntCmd (base_17, instance_15(D), 7, 1, _7);
+  _8 = state_18->isIntActive;
+  FlexCAN_SetMsgBuffIntCmd (base_17, instance_15(D), 5, 1, _8);
+
+  <bb 8> :
+  # eResult_9 = PHI <eResult_27(3), eResult_14(6), eResult_14(7)>
+  _28 = eResult_9;
+
+  <bb 9> :
+<L7>:
+  return _28;
+
+}
+
+
+FlexCAN_StartSendData (uint8 Flexcan_Ip_u8Instance, uint8 mb_idx, const struct Flexcan_Ip_DataInfoType * tx_info, uint32 msg_id, const uint8 * mb_data)
+{
+  volatile uint32 * pMbAddr;
+  struct FLEXCAN_Type * base;
+  struct Flexcan_Ip_StateType * state;
+  struct Flexcan_Ip_MsbuffCodeStatusType cs;
+  Flexcan_Ip_StatusType eResult;
+  Flexcan_Ip_StatusType D.7421;
+  int _1;
+  int _2;
+  int _3;
+  <unnamed type> _4;
+  long unsigned int _5;
+  int _6;
+  int _7;
+  int _8;
+  _Bool _9;
+  int _10;
+  _Bool _11;
+  long unsigned int _12;
+  <unnamed type> _13;
+  _Bool _14;
+  unsigned char _15;
+  _Bool _16;
+  _Bool _17;
+  long unsigned int _18;
+  Flexcan_Ip_StatusType _48;
+
+  <bb 2> :
+  eResult_22 = 0;
+  _1 = (int) Flexcan_Ip_u8Instance_23(D);
+  state_25 = Flexcan_Ip_apxState[_1];
+  _2 = (int) Flexcan_Ip_u8Instance_23(D);
+  base_26 = Flexcan_Ip_apxBase[_2];
+  pMbAddr_27 = 0B;
+  _3 = (int) mb_idx_28(D);
+  _4 ={v} state_25->mbs[_3].state;
+  if (_4 != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  eResult_47 = 2;
+  goto <bb 8>; [INV]
+
+  <bb 4> :
+  _5 = (long unsigned int) mb_idx_28(D);
+  FlexCAN_ClearMsgBuffIntStatusFlag (base_26, _5);
+  _6 = (int) mb_idx_28(D);
+  state_25->mbs[_6].state ={v} 2;
+  _7 = (int) mb_idx_28(D);
+  state_25->mbs[_7].time_stamp = 0;
+  _8 = (int) mb_idx_28(D);
+  _9 = tx_info_32(D)->is_polling;
+  state_25->mbs[_8].isPolling = _9;
+  _10 = (int) mb_idx_28(D);
+  _11 = tx_info_32(D)->is_remote;
+  state_25->mbs[_10].isRemote = _11;
+  _12 = tx_info_32(D)->data_length;
+  cs.dataLen = _12;
+  _13 = tx_info_32(D)->msg_id_type;
+  cs.msgIdType = _13;
+  _14 = tx_info_32(D)->fd_enable;
+  cs.fd_enable = _14;
+  _15 = tx_info_32(D)->fd_padding;
+  cs.fd_padding = _15;
+  _16 = tx_info_32(D)->enable_brs;
+  cs.enable_brs = _16;
+  _17 = tx_info_32(D)->is_remote;
+  if (_17 != 0)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  cs.code = 28;
+  goto <bb 7>; [INV]
+
+  <bb 6> :
+  cs.code = 12;
+
+  <bb 7> :
+  _18 = (long unsigned int) mb_idx_28(D);
+  pMbAddr_43 = FlexCAN_GetMsgBuffRegion (base_26, _18);
+  FlexCAN_SetTxMsgBuff (pMbAddr_43, &cs, msg_id_44(D), mb_data_45(D), 0);
+
+  <bb 8> :
+  # eResult_19 = PHI <eResult_47(3), eResult_22(7)>
+  _48 = eResult_19;
+  cs ={v} {CLOBBER};
+
+  <bb 9> :
+<L7>:
+  return _48;
+
+}
+
+
+FlexCAN_StartRxMessageBufferData (uint8 instance, uint8 mb_idx, struct Flexcan_Ip_MsgBuffType * data, boolean isPolling)
+{
+  struct Flexcan_Ip_StateType * state;
+  Flexcan_Ip_StatusType result;
+  Flexcan_Ip_StatusType D.7413;
+  int _1;
+  int _2;
+  <unnamed type> _3;
+  int _4;
+  int _5;
+  int _6;
+  Flexcan_Ip_StatusType _20;
+
+  <bb 2> :
+  result_9 = 0;
+  _1 = (int) instance_10(D);
+  state_12 = Flexcan_Ip_apxState[_1];
+  _2 = (int) mb_idx_13(D);
+  _3 ={v} state_12->mbs[_2].state;
+  if (_3 != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  result_19 = 2;
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  _4 = (int) mb_idx_13(D);
+  state_12->mbs[_4].state ={v} 1;
+  _5 = (int) mb_idx_13(D);
+  state_12->mbs[_5].pMBmessage = data_15(D);
+  _6 = (int) mb_idx_13(D);
+  state_12->mbs[_6].isPolling = isPolling_17(D);
+
+  <bb 5> :
+  # result_7 = PHI <result_19(3), result_9(4)>
+  _20 = result_7;
+
+  <bb 6> :
+<L3>:
+  return _20;
+
+}
+
+
+FlexCAN_ProccessLegacyRxFIFO (uint8 u8Instance, uint32 u32TimeoutMs)
+{
+  uint32 u32intType;
+  uint32 mS2Ticks;
+  uint32 timeElapsed;
+  uint32 timeStart;
+  struct FLEXCAN_Type * pBase;
+  struct Flexcan_Ip_StateType * pState;
+  Flexcan_Ip_StatusType eResult;
+  Flexcan_Ip_StatusType D.7389;
+  long unsigned int D.7382;
+  int _1;
+  int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  <unnamed type> _5;
+  unsigned char _6;
+  <unnamed type> _7;
+  <unnamed type> _8;
+  _Bool _9;
+  _Bool _10;
+  _Bool _11;
+  <unnamed type> _12;
+  long unsigned int _42;
+  Flexcan_Ip_StatusType _51;
+
+  <bb 2> :
+  eResult_24 = 0;
+  _1 = (int) u8Instance_25(D);
+  pState_27 = Flexcan_Ip_apxState[_1];
+  _2 = (int) u8Instance_25(D);
+  pBase_28 = Flexcan_Ip_apxBase[_2];
+  timeStart = 0;
+  timeElapsed_30 = 0;
+  _3 = u32TimeoutMs_31(D) * 1000;
+  mS2Ticks_33 = OsIf_MicrosToTicks (_3, 0);
+  u32intType_34 = 0;
+  _4 = OsIf_GetCounter (0);
+  timeStart = _4;
+  goto <bb 11>; [INV]
+
+  <bb 3> :
+  _5 = pState_27->transferType;
+  if (_5 == 1)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 4> :
+  u32intType_37 = 7;
+  goto <bb 8>; [INV]
+
+  <bb 5> :
+  _6 = FlexCAN_GetBuffStatusFlag (pBase_28, u32intType_16);
+  if (_6 != 0)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  FlexCAN_IRQHandlerRxFIFO (u8Instance_25(D), u32intType_16);
+
+  <bb 7> :
+  u32intType_40 = u32intType_16 + 4294967295;
+
+  <bb 8> :
+  # u32intType_16 = PHI <u32intType_37(4), u32intType_40(7)>
+  if (u32intType_16 > 4)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 9> :
+  _42 = OsIf_GetElapsed (&timeStart, 0);
+  timeElapsed_43 = _42 + timeElapsed_15;
+  if (timeElapsed_43 >= mS2Ticks_33)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 10> :
+  eResult_44 = 3;
+  goto <bb 12>; [INV]
+
+  <bb 11> :
+  # timeElapsed_15 = PHI <timeElapsed_30(2), timeElapsed_43(9)>
+  _7 ={v} pState_27->mbs[0].state;
+  if (_7 == 1)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 12> :
+  # eResult_13 = PHI <eResult_44(10), eResult_24(11)>
+  if (eResult_13 == 3)
+    goto <bb 13>; [INV]
+  else
+    goto <bb 15>; [INV]
+
+  <bb 13> :
+  _8 = pState_27->transferType;
+  if (_8 != 1)
+    goto <bb 14>; [INV]
+  else
+    goto <bb 15>; [INV]
+
+  <bb 14> :
+  _9 = pState_27->isIntActive;
+  FlexCAN_SetMsgBuffIntCmd (pBase_28, u8Instance_25(D), 5, 0, _9);
+  _10 = pState_27->isIntActive;
+  FlexCAN_SetMsgBuffIntCmd (pBase_28, u8Instance_25(D), 6, 0, _10);
+  _11 = pState_27->isIntActive;
+  FlexCAN_SetMsgBuffIntCmd (pBase_28, u8Instance_25(D), 7, 0, _11);
+
+  <bb 15> :
+  _12 ={v} pState_27->mbs[0].state;
+  switch (_12) <default: <L18> [INV], case 0: <L17> [INV], case 1: <L16> [INV]>
+
+  <bb 16> :
+<L16>:
+  pState_27->mbs[0].state ={v} 0;
+  goto <bb 19>; [INV]
+
+  <bb 17> :
+<L17>:
+  eResult_49 = 0;
+  goto <bb 19>; [INV]
+
+  <bb 18> :
+<L18>:
+  eResult_50 = 1;
+
+  <bb 19> :
+  # eResult_14 = PHI <eResult_13(16), eResult_49(17), eResult_50(18)>
+  _51 = eResult_14;
+  timeStart ={v} {CLOBBER};
+
+  <bb 20> :
+<L21>:
+  return _51;
+
+}
+
+
+FlexCAN_InitBaudrate (struct FLEXCAN_Type * pBase, const struct Flexcan_Ip_ConfigType * Flexcan_Ip_pData)
+{
+  _Bool _1;
+  _Bool _2;
+  const struct Flexcan_Ip_TimeSegmentType * _3;
+  const struct Flexcan_Ip_TimeSegmentType * _4;
+  const struct Flexcan_Ip_TimeSegmentType * _5;
+
+  <bb 2> :
+  _1 = Flexcan_Ip_pData_8(D)->fd_enable;
+  FlexCAN_EnableExtCbt (pBase_9(D), _1);
+  _2 = Flexcan_Ip_pData_8(D)->fd_enable;
+  if (_2 != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  _3 = &Flexcan_Ip_pData_8(D)->bitrate;
+  FlexCAN_SetExtendedTimeSegments (pBase_9(D), _3);
+  _4 = &Flexcan_Ip_pData_8(D)->bitrate_cbt;
+  FlexCAN_SetFDTimeSegments (pBase_9(D), _4);
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  _5 = &Flexcan_Ip_pData_8(D)->bitrate;
+  FlexCAN_SetTimeSegments (pBase_9(D), _5);
+
+  <bb 5> :
+  return;
+
+}
+
+
+FlexCAN_InitController (uint8 Instance, struct FLEXCAN_Type * pBase, const struct Flexcan_Ip_ConfigType * Flexcan_Ip_pData)
+{
+  Flexcan_Ip_StatusType eResult;
+  Flexcan_Ip_StatusType D.7355;
+  _Bool _1;
+  _Bool _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  _Bool _5;
+  _Bool _6;
+  _Bool _7;
+  long unsigned int _8;
+  Flexcan_Ip_StatusType _36;
+
+  <bb 2> :
+  eResult_14 = 0;
+  _1 = FlexCAN_IsEnabled (pBase_16(D));
+  if (_1 != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 3> :
+  eResult_19 = FlexCAN_EnterFreezeMode (pBase_16(D));
+  if (eResult_19 == 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  eResult_21 = FlexCAN_Disable (pBase_16(D));
+
+  <bb 5> :
+  # eResult_9 = PHI <eResult_14(2), eResult_19(3), eResult_21(4)>
+  if (eResult_9 == 0)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 6> :
+  _2 = Flexcan_Ip_pData_22(D)->is_pe_clock;
+  FlexCAN_SetClkSrc (pBase_16(D), _2);
+  _3 ={v} pBase_16(D)->MCR;
+  _4 = _3 & 2147483647;
+  pBase_16(D)->MCR ={v} _4;
+  eResult_26 = FlexCAN_Init (pBase_16(D));
+  if (eResult_26 != 0)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 7> :
+  FlexCAN_EnterFreezeMode (pBase_16(D));
+  FlexCAN_Disable (pBase_16(D));
+  goto <bb 11>; [INV]
+
+  <bb 8> :
+  _5 = FlexCAN_IsFDAvailable (pBase_16(D));
+  if (_5 != 0)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 9> :
+  _6 = Flexcan_Ip_pData_22(D)->fd_enable;
+  _7 = Flexcan_Ip_pData_22(D)->bitRateSwitch;
+  FlexCAN_SetFDEnabled (pBase_16(D), _6, _7);
+
+  <bb 10> :
+  _8 = Flexcan_Ip_pData_22(D)->ctrlOptions;
+  FlexCAN_ConfigCtrlOptions (pBase_16(D), _8);
+  FlexCAN_ResetImaskBuff (Instance_30(D));
+  eResult_33 = FlexCAN_InitCtroll (pBase_16(D), Flexcan_Ip_pData_22(D));
+
+  <bb 11> :
+  # eResult_10 = PHI <eResult_9(5), eResult_26(7), eResult_33(10)>
+  _36 = eResult_10;
+
+  <bb 12> :
+<L11>:
+  return _36;
+
+}
+
+
+FlexCAN_InitCtroll (struct FLEXCAN_Type * pBase, const struct Flexcan_Ip_ConfigType * Flexcan_Ip_pData)
+{
+  Flexcan_Ip_StatusType eResult;
+  Flexcan_Ip_StatusType D.7338;
+  <unnamed type> _1;
+  const struct Flexcan_Ip_PayloadSizeType * _2;
+  long unsigned int _3;
+  Flexcan_Ip_StatusType _17;
+
+  <bb 2> :
+  eResult_6 = 0;
+  _1 = Flexcan_Ip_pData_8(D)->flexcanMode;
+  if (_1 != 2)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  FlexCAN_SetSelfReception (pBase_9(D), 0);
+
+  <bb 4> :
+  eResult_12 = FlexCAN_InitRxFifo (pBase_9(D), Flexcan_Ip_pData_8(D));
+  if (eResult_12 != 0)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  FlexCAN_EnterFreezeMode (pBase_9(D));
+  FlexCAN_Disable (pBase_9(D));
+  goto <bb 7>; [INV]
+
+  <bb 6> :
+  _2 = &Flexcan_Ip_pData_8(D)->payload;
+  FlexCAN_SetPayloadSize (pBase_9(D), _2);
+  _3 = Flexcan_Ip_pData_8(D)->max_num_mb;
+  FlexCAN_SetMaxMsgBuffNum (pBase_9(D), _3);
+
+  <bb 7> :
+  _17 = eResult_12;
+
+  <bb 8> :
+<L5>:
+  return _17;
+
+}
+
+
+FlexCAN_InitRxFifo (struct FLEXCAN_Type * pBase, const struct Flexcan_Ip_ConfigType * Flexcan_Ip_pData)
+{
+  Flexcan_Ip_StatusType eResult;
+  Flexcan_Ip_StatusType D.7331;
+  _Bool _1;
+  <unnamed type> _2;
+  Flexcan_Ip_StatusType _11;
+
+  <bb 2> :
+  eResult_5 = 0;
+  _1 = Flexcan_Ip_pData_7(D)->is_rx_fifo_needed;
+  if (_1 != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  _2 = Flexcan_Ip_pData_7(D)->num_id_filters;
+  eResult_10 = FlexCAN_EnableRxFifo (pBase_8(D), _2);
+
+  <bb 4> :
+  # eResult_3 = PHI <eResult_5(2), eResult_10(3)>
+  _11 = eResult_3;
+
+  <bb 5> :
+<L2>:
+  return _11;
+
+}
+
+
+FlexCAN_SetRegDefaultVal (struct FLEXCAN_Type * base)
+{
+  _Bool _1;
+
+  <bb 2> :
+  _1 = FlexCAN_IsFDAvailable (base_4(D));
+  if (_1 != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  base_4(D)->FDCBT ={v} 0;
+  base_4(D)->FDCTRL ={v} 2147500288;
+
+  <bb 4> :
+  base_4(D)->IFLAG1 ={v} 4294967295;
+  base_4(D)->IMASK1 ={v} 0;
+  base_4(D)->CBT ={v} 0;
+  base_4(D)->CTRL2 ={v} 1048576;
+  base_4(D)->ESR1 ={v} 241670;
+  base_4(D)->ECR ={v} 0;
+  base_4(D)->TIMER ={v} 0;
+  base_4(D)->CTRL1 ={v} 0;
+  base_4(D)->MCR ={v} 3633315855;
+  return;
+
+}
+
+
+FlexCAN_SetRxMaskType (struct FLEXCAN_Type * base, Flexcan_Ip_RxMaskType type)
+{
+  long unsigned int _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+
+  <bb 2> :
+  if (type_6(D) == 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  _1 ={v} base_8(D)->MCR;
+  _2 = _1 & 4294901759;
+  base_8(D)->MCR ={v} _2;
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  _3 ={v} base_8(D)->MCR;
+  _4 = _3 | 65536;
+  base_8(D)->MCR ={v} _4;
+
+  <bb 5> :
+  return;
+
+}
+
+
+FlexCAN_SetTxArbitrationStartDelay (struct FLEXCAN_Type * base, uint8 tasd)
+{
+  long unsigned int _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _5;
+  long unsigned int _6;
+
+  <bb 2> :
+  _1 ={v} base_8(D)->CTRL2;
+  _2 = _1 & 4278714367;
+  _3 = (long unsigned int) tasd_9(D);
+  _4 = _3 << 19;
+  _5 = _4 & 16252928;
+  _6 = _2 | _5;
+  base_8(D)->CTRL2 ={v} _6;
+  return;
+
+}
+
+
+FlexCAN_SetRxIndividualMask (struct FLEXCAN_Type * base, uint32 msgBuffIdx, uint32 mask)
+{
+  <bb 2> :
+  base_2(D)->RXIMR[msgBuffIdx_3(D)] ={v} mask_4(D);
+  return;
+
+}
+
+
+FlexCAN_SetRxMsgBuffGlobalMask (struct FLEXCAN_Type * base, uint32 Mask)
+{
+  <bb 2> :
+  base_2(D)->RXMGMASK ={v} Mask_3(D);
+  return;
+
+}
+
+
+FlexCAN_GetMsgBuffIntStatusFlag (const struct FLEXCAN_Type * base, uint32 msgBuffIdx)
+{
+  uint32 mask;
+  uint8 flag;
+  uint8 D.7595;
+  long unsigned int _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  unsigned char _5;
+  uint8 _13;
+
+  <bb 2> :
+  flag_7 = 0;
+  if (msgBuffIdx_8(D) <= 31)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  mask_11 ={v} base_10(D)->IMASK1;
+  _1 ={v} base_10(D)->IFLAG1;
+  _2 = mask_11 & _1;
+  _3 = msgBuffIdx_8(D) & 31;
+  _4 = _2 >> _3;
+  _5 = (unsigned char) _4;
+  flag_12 = _5 & 1;
+
+  <bb 4> :
+  # flag_6 = PHI <flag_7(2), flag_12(3)>
+  _13 = flag_6;
+
+  <bb 5> :
+<L2>:
+  return _13;
+
+}
+
+
+FlexCAN_SetClkSrc (struct FLEXCAN_Type * base, boolean enable)
+{
+  long unsigned int iftmp.1;
+  long unsigned int _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int iftmp.1_4;
+  long unsigned int iftmp.1_8;
+  long unsigned int iftmp.1_9;
+
+  <bb 2> :
+  _1 ={v} base_6(D)->CTRL1;
+  _2 = _1 & 4294959103;
+  if (enable_7(D) != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  iftmp.1_9 = 8192;
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  iftmp.1_8 = 0;
+
+  <bb 5> :
+  # iftmp.1_4 = PHI <iftmp.1_9(3), iftmp.1_8(4)>
+  _3 = iftmp.1_4 | _2;
+  base_6(D)->CTRL1 ={v} _3;
+  return;
+
+}
+
+
+RxFifoOcuppiedLastMsgBuff (uint8 x)
+{
+  uint32 D.7491;
+  long unsigned int _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  uint32 _6;
+
+  <bb 2> :
+  _1 = (long unsigned int) x_5(D);
+  _2 = _1 + 1;
+  _3 = _2 * 8;
+  _4 = _3 / 4;
+  _6 = _4 + 5;
+
+  <bb 3> :
+<L0>:
+  return _6;
+
+}
+
+
+FlexCAN_IsListenOnlyModeEnabled (const struct FLEXCAN_Type * base)
+{
+  boolean D.7505;
+  long unsigned int _1;
+  long unsigned int _2;
+  boolean _5;
+
+  <bb 2> :
+  _1 ={v} base_4(D)->CTRL1;
+  _2 = _1 & 8;
+  _5 = _2 != 0;
+
+  <bb 3> :
+<L0>:
+  return _5;
+
+}
+
+
+FlexCAN_IsFDEnabled (const struct FLEXCAN_Type * base)
+{
+  boolean D.7784;
+  long unsigned int _1;
+  long unsigned int _2;
+  boolean _5;
+
+  <bb 2> :
+  _1 ={v} base_4(D)->MCR;
+  _2 = _1 & 2048;
+  _5 = _2 != 0;
+
+  <bb 3> :
+<L0>:
+  return _5;
+
+}
+
+
+FlexCAN_SetSelfReception (struct FLEXCAN_Type * base, boolean enable)
+{
+  long unsigned int iftmp.0;
+  long unsigned int _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int iftmp.0_4;
+  long unsigned int iftmp.0_8;
+  long unsigned int iftmp.0_9;
+
+  <bb 2> :
+  _1 ={v} base_6(D)->MCR;
+  _2 = _1 & 4294836223;
+  if (enable_7(D) != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  iftmp.0_9 = 0;
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  iftmp.0_8 = 131072;
+
+  <bb 5> :
+  # iftmp.0_4 = PHI <iftmp.0_9(3), iftmp.0_8(4)>
+  _3 = iftmp.0_4 | _2;
+  base_6(D)->MCR ={v} _3;
+  return;
+
+}
+
+
+FlexCAN_EnableExtCbt (struct FLEXCAN_Type * base, boolean enableCBT)
+{
+  long unsigned int iftmp.4;
+  long unsigned int _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int iftmp.4_4;
+  long unsigned int iftmp.4_8;
+  long unsigned int iftmp.4_9;
+
+  <bb 2> :
+  _1 ={v} base_6(D)->CBT;
+  _2 = _1 & 2147483647;
+  if (enableCBT_7(D) != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  iftmp.4_9 = 2147483648;
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  iftmp.4_8 = 0;
+
+  <bb 5> :
+  # iftmp.4_4 = PHI <iftmp.4_9(3), iftmp.4_8(4)>
+  _3 = iftmp.4_4 | _2;
+  base_6(D)->CBT ={v} _3;
+  return;
+
+}
+
+
+FlexCAN_IsExCbtEnabled (const struct FLEXCAN_Type * pBase)
+{
+  boolean D.7763;
+  long unsigned int _1;
+  signed int _2;
+  boolean _5;
+
+  <bb 2> :
+  _1 ={v} pBase_4(D)->CBT;
+  _2 = (signed int) _1;
+  _5 = _2 < 0;
+
+  <bb 3> :
+<L0>:
+  return _5;
+
+}
+
+
+FlexCAN_GetFDTimeSegments (const struct FLEXCAN_Type * base, struct Flexcan_Ip_TimeSegmentType * timeSeg)
+{
+  long unsigned int _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _5;
+  long unsigned int _6;
+  long unsigned int _7;
+  long unsigned int _8;
+  long unsigned int _9;
+  long unsigned int _10;
+  long unsigned int _11;
+  long unsigned int _12;
+  long unsigned int _13;
+  long unsigned int _14;
+
+  <bb 2> :
+  _1 ={v} base_16(D)->FDCBT;
+  _2 = _1 >> 20;
+  _3 = _2 & 1023;
+  timeSeg_17(D)->preDivider = _3;
+  _4 ={v} base_16(D)->FDCBT;
+  _5 = _4 >> 10;
+  _6 = _5 & 31;
+  timeSeg_17(D)->propSeg = _6;
+  _7 ={v} base_16(D)->FDCBT;
+  _8 = _7 >> 5;
+  _9 = _8 & 7;
+  timeSeg_17(D)->phaseSeg1 = _9;
+  _10 ={v} base_16(D)->FDCBT;
+  _11 = _10 & 7;
+  timeSeg_17(D)->phaseSeg2 = _11;
+  _12 ={v} base_16(D)->FDCBT;
+  _13 = _12 >> 16;
+  _14 = _13 & 7;
+  timeSeg_17(D)->rJumpwidth = _14;
+  return;
+
+}
+
+
+FlexCAN_GetTimeSegments (const struct FLEXCAN_Type * base, struct Flexcan_Ip_TimeSegmentType * timeSeg)
+{
+  long unsigned int _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _5;
+  long unsigned int _6;
+  long unsigned int _7;
+  long unsigned int _8;
+  long unsigned int _9;
+  long unsigned int _10;
+  long unsigned int _11;
+  long unsigned int _12;
+  long unsigned int _13;
+  long unsigned int _14;
+
+  <bb 2> :
+  _1 ={v} base_16(D)->CTRL1;
+  _2 = _1 >> 24;
+  _3 = _2 & 255;
+  timeSeg_17(D)->preDivider = _3;
+  _4 ={v} base_16(D)->CTRL1;
+  _5 = _4 & 7;
+  timeSeg_17(D)->propSeg = _5;
+  _6 ={v} base_16(D)->CTRL1;
+  _7 = _6 >> 19;
+  _8 = _7 & 7;
+  timeSeg_17(D)->phaseSeg1 = _8;
+  _9 ={v} base_16(D)->CTRL1;
+  _10 = _9 >> 16;
+  _11 = _10 & 7;
+  timeSeg_17(D)->phaseSeg2 = _11;
+  _12 ={v} base_16(D)->CTRL1;
+  _13 = _12 >> 22;
+  _14 = _13 & 3;
+  timeSeg_17(D)->rJumpwidth = _14;
+  return;
+
+}
+
+
+FlexCAN_GetExtendedTimeSegments (const struct FLEXCAN_Type * base, struct Flexcan_Ip_TimeSegmentType * timeSeg)
+{
+  long unsigned int _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _5;
+  long unsigned int _6;
+  long unsigned int _7;
+  long unsigned int _8;
+  long unsigned int _9;
+  long unsigned int _10;
+  long unsigned int _11;
+  long unsigned int _12;
+  long unsigned int _13;
+  long unsigned int _14;
+
+  <bb 2> :
+  _1 ={v} base_16(D)->CBT;
+  _2 = _1 >> 21;
+  _3 = _2 & 1023;
+  timeSeg_17(D)->preDivider = _3;
+  _4 ={v} base_16(D)->CBT;
+  _5 = _4 >> 10;
+  _6 = _5 & 63;
+  timeSeg_17(D)->propSeg = _6;
+  _7 ={v} base_16(D)->CBT;
+  _8 = _7 >> 5;
+  _9 = _8 & 31;
+  timeSeg_17(D)->phaseSeg1 = _9;
+  _10 ={v} base_16(D)->CBT;
+  _11 = _10 & 31;
+  timeSeg_17(D)->phaseSeg2 = _11;
+  _12 ={v} base_16(D)->CBT;
+  _13 = _12 >> 16;
+  _14 = _13 & 31;
+  timeSeg_17(D)->rJumpwidth = _14;
+  return;
+
+}
+
+
+FlexCAN_SetExtendedTimeSegments (struct FLEXCAN_Type * base, const struct Flexcan_Ip_TimeSegmentType * timeSeg)
+{
+  long unsigned int _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _5;
+  long unsigned int _6;
+  long unsigned int _7;
+  long unsigned int _8;
+  long unsigned int _9;
+  long unsigned int _10;
+  long unsigned int _11;
+  long unsigned int _12;
+  long unsigned int _13;
+  long unsigned int _14;
+  long unsigned int _15;
+  long unsigned int _16;
+  long unsigned int _17;
+  long unsigned int _18;
+  long unsigned int _19;
+  long unsigned int _20;
+  long unsigned int _21;
+  long unsigned int _22;
+
+  <bb 2> :
+  _1 ={v} base_24(D)->CBT;
+  _2 = _1 & 2147483648;
+  base_24(D)->CBT ={v} _2;
+  _3 ={v} base_24(D)->CBT;
+  _4 = timeSeg_26(D)->propSeg;
+  _5 = _4 << 10;
+  _6 = _5 & 65535;
+  _7 = timeSeg_26(D)->phaseSeg2;
+  _8 = _7 & 31;
+  _9 = _6 | _8;
+  _10 = timeSeg_26(D)->phaseSeg1;
+  _11 = _10 << 5;
+  _12 = _11 & 992;
+  _13 = _9 | _12;
+  _14 = timeSeg_26(D)->preDivider;
+  _15 = _14 << 21;
+  _16 = _15 & 2145386496;
+  _17 = _13 | _16;
+  _18 = timeSeg_26(D)->rJumpwidth;
+  _19 = _18 << 16;
+  _20 = _19 & 2031616;
+  _21 = _17 | _20;
+  _22 = _3 | _21;
+  base_24(D)->CBT ={v} _22;
+  return;
+
+}
+
+
+FlexCAN_SetTimeSegments (struct FLEXCAN_Type * base, const struct Flexcan_Ip_TimeSegmentType * timeSeg)
+{
+  long unsigned int _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _5;
+  long unsigned int _6;
+  long unsigned int _7;
+  long unsigned int _8;
+  long unsigned int _9;
+  long unsigned int _10;
+  long unsigned int _11;
+  long unsigned int _12;
+  long unsigned int _13;
+  long unsigned int _14;
+  long unsigned int _15;
+  long unsigned int _16;
+  long unsigned int _17;
+  long unsigned int _18;
+  long unsigned int _19;
+  long unsigned int _20;
+  long unsigned int _21;
+
+  <bb 2> :
+  _1 ={v} base_23(D)->CTRL1;
+  _2 = _1 & 65528;
+  base_23(D)->CTRL1 ={v} _2;
+  _3 ={v} base_23(D)->CTRL1;
+  _4 = timeSeg_25(D)->propSeg;
+  _5 = _4 & 7;
+  _6 = timeSeg_25(D)->phaseSeg2;
+  _7 = _6 << 16;
+  _8 = _7 & 458752;
+  _9 = _5 | _8;
+  _10 = timeSeg_25(D)->phaseSeg1;
+  _11 = _10 << 19;
+  _12 = _11 & 3670016;
+  _13 = _9 | _12;
+  _14 = timeSeg_25(D)->preDivider;
+  _15 = _14 << 24;
+  _16 = _13 | _15;
+  _17 = timeSeg_25(D)->rJumpwidth;
+  _18 = _17 << 22;
+  _19 = _18 & 12582912;
+  _20 = _16 | _19;
+  _21 = _3 | _20;
+  base_23(D)->CTRL1 ={v} _21;
+  return;
+
+}
+
+
+FlexCAN_SetFDTimeSegments (struct FLEXCAN_Type * base, const struct Flexcan_Ip_TimeSegmentType * timeSeg)
+{
+  long unsigned int _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _5;
+  long unsigned int _6;
+  long unsigned int _7;
+  long unsigned int _8;
+  long unsigned int _9;
+  long unsigned int _10;
+  long unsigned int _11;
+  long unsigned int _12;
+  long unsigned int _13;
+  long unsigned int _14;
+  long unsigned int _15;
+  long unsigned int _16;
+  long unsigned int _17;
+  long unsigned int _18;
+  long unsigned int _19;
+  long unsigned int _20;
+  long unsigned int _21;
+  long unsigned int _22;
+
+  <bb 2> :
+  _1 ={v} base_24(D)->FDCBT;
+  _2 = _1 & 3221783320;
+  base_24(D)->FDCBT ={v} _2;
+  _3 ={v} base_24(D)->FDCBT;
+  _4 = timeSeg_26(D)->propSeg;
+  _5 = _4 << 10;
+  _6 = _5 & 31744;
+  _7 = timeSeg_26(D)->phaseSeg2;
+  _8 = _7 & 7;
+  _9 = _6 | _8;
+  _10 = timeSeg_26(D)->phaseSeg1;
+  _11 = _10 << 5;
+  _12 = _11 & 255;
+  _13 = _9 | _12;
+  _14 = timeSeg_26(D)->preDivider;
+  _15 = _14 << 20;
+  _16 = _15 & 1072693248;
+  _17 = _13 | _16;
+  _18 = timeSeg_26(D)->rJumpwidth;
+  _19 = _18 << 16;
+  _20 = _19 & 458752;
+  _21 = _17 | _20;
+  _22 = _3 | _21;
+  base_24(D)->FDCBT ={v} _22;
+  return;
+
+}
+
+
+FlexCAN_GetBuffStatusFlag (const struct FLEXCAN_Type * base, uint32 msgBuffIdx)
+{
+  uint32 flag;
+  uint8 D.7394;
+  long unsigned int _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _5;
+  uint8 _12;
+
+  <bb 2> :
+  flag_7 = 0;
+  if (msgBuffIdx_8(D) <= 31)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  _1 ={v} base_10(D)->IFLAG1;
+  _2 = msgBuffIdx_8(D) & 31;
+  _3 = 1 << _2;
+  _4 = _1 & _3;
+  _5 = msgBuffIdx_8(D) & 31;
+  flag_11 = _4 >> _5;
+
+  <bb 4> :
+  # flag_6 = PHI <flag_7(2), flag_11(3)>
+  _12 = (uint8) flag_6;
+
+  <bb 5> :
+<L2>:
+  return _12;
+
+}
+
+
+FlexCAN_ClearMsgBuffIntStatusFlag (struct FLEXCAN_Type * base, uint32 msgBuffIdx)
+{
+  uint32 flag;
+  long unsigned int _1;
+
+  <bb 2> :
+  _1 = msgBuffIdx_3(D) & 31;
+  flag_4 = 1 << _1;
+  if (msgBuffIdx_3(D) <= 31)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  base_6(D)->IFLAG1 ={v} flag_4;
+
+  <bb 4> :
+  return;
+
+}
+
+
+FlexCAN_UnlockRxMsgBuff (const struct FLEXCAN_Type * base)
+{
+  long unsigned int vol.5;
+  long unsigned int vol.5_3;
+
+  <bb 2> :
+  vol.5_3 ={v} base_2(D)->TIMER;
+  return;
+
+}
+
+
+FlexCAN_SetListenOnlyMode (struct FLEXCAN_Type * base, boolean enableListenOnly)
+{
+  long unsigned int iftmp.6;
+  long unsigned int _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int iftmp.6_4;
+  long unsigned int iftmp.6_8;
+  long unsigned int iftmp.6_9;
+
+  <bb 2> :
+  _1 ={v} base_6(D)->CTRL1;
+  _2 = _1 & 4294967287;
+  if (enableListenOnly_7(D) != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  iftmp.6_9 = 8;
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  iftmp.6_8 = 0;
+
+  <bb 5> :
+  # iftmp.6_4 = PHI <iftmp.6_9(3), iftmp.6_8(4)>
+  _3 = iftmp.6_4 | _2;
+  base_6(D)->CTRL1 ={v} _3;
+  return;
+
+}
+
+
+FlexCAN_SetFDEnabled (struct FLEXCAN_Type * base, boolean enableFD, boolean enableBRS)
+{
+  long unsigned int iftmp.3;
+  long unsigned int iftmp.2;
+  long unsigned int _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _5;
+  long unsigned int _6;
+  long unsigned int _7;
+  long unsigned int _8;
+  long unsigned int iftmp.2_9;
+  long unsigned int iftmp.3_10;
+  long unsigned int iftmp.2_14;
+  long unsigned int iftmp.2_15;
+  long unsigned int iftmp.3_18;
+  long unsigned int iftmp.3_19;
+
+  <bb 2> :
+  _1 ={v} base_12(D)->MCR;
+  _2 = _1 & 4294965247;
+  if (enableFD_13(D) != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  iftmp.2_15 = 2048;
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  iftmp.2_14 = 0;
+
+  <bb 5> :
+  # iftmp.2_9 = PHI <iftmp.2_15(3), iftmp.2_14(4)>
+  _3 = iftmp.2_9 | _2;
+  base_12(D)->MCR ={v} _3;
+  _4 ={v} base_12(D)->FDCTRL;
+  _5 = _4 & 2147483647;
+  if (enableBRS_17(D) != 0)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  iftmp.3_19 = 2147483648;
+  goto <bb 8>; [INV]
+
+  <bb 7> :
+  iftmp.3_18 = 0;
+
+  <bb 8> :
+  # iftmp.3_10 = PHI <iftmp.3_19(6), iftmp.3_18(7)>
+  _6 = iftmp.3_10 | _5;
+  base_12(D)->FDCTRL ={v} _6;
+  _7 ={v} base_12(D)->FDCTRL;
+  _8 = _7 & 4294926591;
+  base_12(D)->FDCTRL ={v} _8;
+  return;
+
+}
+
+
+FlexCAN_IsEnabled (const struct FLEXCAN_Type * pBase)
+{
+  boolean D.7357;
+  long unsigned int _1;
+  signed int _2;
+  boolean _5;
+
+  <bb 2> :
+  _1 ={v} pBase_4(D)->MCR;
+  _2 = (signed int) _1;
+  _5 = _2 >= 0;
+
+  <bb 3> :
+<L0>:
+  return _5;
+
+}
+
+
+FlexCAN_SetTDCOffset (struct FLEXCAN_Type * base, boolean enable, uint8 offset)
+{
+  uint32 tmp;
+  long unsigned int _1;
+  long unsigned int _2;
+  long unsigned int _3;
+
+  <bb 2> :
+  tmp_7 ={v} base_6(D)->FDCTRL;
+  tmp_8 = tmp_7 & 4294926591;
+  if (enable_9(D) != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  tmp_10 = tmp_8 | 32768;
+  _1 = (long unsigned int) offset_11(D);
+  _2 = _1 << 8;
+  _3 = _2 & 7936;
+  tmp_12 = tmp_10 | _3;
+
+  <bb 4> :
+  # tmp_4 = PHI <tmp_8(2), tmp_12(3)>
+  base_6(D)->FDCTRL ={v} tmp_4;
+  return;
+
+}
+
+
+FlexCAN_SetRxFifoGlobalMask (struct FLEXCAN_Type * base, uint32 Mask)
+{
+  <bb 2> :
+  base_2(D)->RXFGMASK ={v} Mask_3(D);
+  return;
+
+}
+
+

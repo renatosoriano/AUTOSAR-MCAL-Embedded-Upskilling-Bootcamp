@@ -1,0 +1,224 @@
+Ram_Ip_InitRamSection (const struct Ram_Ip_RamConfigType * RamConfigPtr)
+{
+  Ram_Ip_RamSizeType RamCounterLimit;
+  Ram_Ip_RamIndexType RamCounter;
+  Ram_Ip_StatusType RamStatus;
+  Ram_Ip_StatusType D.5418;
+  Ram_Ip_RamSizeType * _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long long unsigned int _5;
+  uint8[1] * _6;
+  unsigned char _7;
+  long long unsigned int _8;
+  uint8[1] * _9;
+  short unsigned int _10;
+  long long unsigned int _11;
+  uint8[1] * _12;
+  long unsigned int _13;
+  uint8[1] * _14;
+  long long unsigned int _15;
+  long unsigned int _16;
+  long long unsigned int _17;
+  unsigned char _18;
+  uint8[1] * _19;
+  unsigned char _20;
+  long long unsigned int _21;
+  short unsigned int _22;
+  uint8[1] * _23;
+  short unsigned int _24;
+  long long unsigned int _25;
+  long unsigned int _26;
+  uint8[1] * _27;
+  long unsigned int _28;
+  long long unsigned int _29;
+  uint8[1] * _30;
+  long long unsigned int _31;
+  Ram_Ip_StatusType _64;
+
+  <bb 2> :
+  RamStatus_45 = 0;
+  _1 = RamConfigPtr_47(D)->RamSize;
+  _2 = (long unsigned int) _1;
+  _3 = RamConfigPtr_47(D)->RamWriteSize;
+  RamCounterLimit_48 = _2 / _3;
+  RamStatus_49 = 0;
+  RamCounter_50 = 0;
+  goto <bb 10>; [INV]
+
+  <bb 3> :
+  _4 = RamConfigPtr_47(D)->RamWriteSize;
+  switch (_4) <default: <L5> [INV], case 1: <L1> [INV], case 2: <L2> [INV], case 4: <L3> [INV], case 8: <L4> [INV]>
+
+  <bb 4> :
+<L1>:
+  _5 = RamConfigPtr_47(D)->RamDefaultValue;
+  _6 = RamConfigPtr_47(D)->RamBaseAddrPtr;
+  _7 = (unsigned char) _5;
+  (*_6)[RamCounter_41] = _7;
+  goto <bb 9>; [INV]
+
+  <bb 5> :
+<L2>:
+  _8 = RamConfigPtr_47(D)->RamDefaultValue;
+  _9 = RamConfigPtr_47(D)->RamBaseAddrPtr;
+  _10 = (short unsigned int) _8;
+  MEM[(uint16[1] *)_9][RamCounter_41] = _10;
+  goto <bb 9>; [INV]
+
+  <bb 6> :
+<L3>:
+  _11 = RamConfigPtr_47(D)->RamDefaultValue;
+  _12 = RamConfigPtr_47(D)->RamBaseAddrPtr;
+  _13 = (long unsigned int) _11;
+  MEM[(uint32[1] *)_12][RamCounter_41] = _13;
+  goto <bb 9>; [INV]
+
+  <bb 7> :
+<L4>:
+  _14 = RamConfigPtr_47(D)->RamBaseAddrPtr;
+  _15 = RamConfigPtr_47(D)->RamDefaultValue;
+  MEM[(uint64[1] *)_14][RamCounter_41] = _15;
+  goto <bb 9>; [INV]
+
+  <bb 8> :
+<L5>:
+  RamStatus_55 = 1;
+
+  <bb 9> :
+  # RamStatus_32 = PHI <RamStatus_33(4), RamStatus_33(5), RamStatus_33(6), RamStatus_33(7), RamStatus_55(8)>
+  RamCounter_56 = RamCounter_41 + 1;
+
+  <bb 10> :
+  # RamStatus_33 = PHI <RamStatus_49(2), RamStatus_32(9)>
+  # RamCounter_41 = PHI <RamCounter_50(2), RamCounter_56(9)>
+  if (RamCounter_41 < RamCounterLimit_48)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 11> :
+  if (RamStatus_33 == 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 12> :
+  if (RamStatus_33 == 0)
+    goto <bb 13>; [INV]
+  else
+    goto <bb 31>; [INV]
+
+  <bb 13> :
+  RamCounter_57 = 0;
+  goto <bb 29>; [INV]
+
+  <bb 14> :
+  _16 = RamConfigPtr_47(D)->RamWriteSize;
+  switch (_16) <default: <L24> [INV], case 1: <L12> [INV], case 2: <L15> [INV], case 4: <L18> [INV], case 8: <L21> [INV]>
+
+  <bb 15> :
+<L12>:
+  _17 = RamConfigPtr_47(D)->RamDefaultValue;
+  _18 = (unsigned char) _17;
+  _19 = RamConfigPtr_47(D)->RamBaseAddrPtr;
+  _20 = (*_19)[RamCounter_42];
+  if (_18 != _20)
+    goto <bb 16>; [INV]
+  else
+    goto <bb 17>; [INV]
+
+  <bb 16> :
+  RamStatus_61 = 1;
+
+  <bb 17> :
+  # RamStatus_34 = PHI <RamStatus_39(15), RamStatus_61(16)>
+  goto <bb 28>; [INV]
+
+  <bb 18> :
+<L15>:
+  _21 = RamConfigPtr_47(D)->RamDefaultValue;
+  _22 = (short unsigned int) _21;
+  _23 = RamConfigPtr_47(D)->RamBaseAddrPtr;
+  _24 = MEM[(uint16[1] *)_23][RamCounter_42];
+  if (_22 != _24)
+    goto <bb 19>; [INV]
+  else
+    goto <bb 20>; [INV]
+
+  <bb 19> :
+  RamStatus_60 = 1;
+
+  <bb 20> :
+  # RamStatus_35 = PHI <RamStatus_39(18), RamStatus_60(19)>
+  goto <bb 28>; [INV]
+
+  <bb 21> :
+<L18>:
+  _25 = RamConfigPtr_47(D)->RamDefaultValue;
+  _26 = (long unsigned int) _25;
+  _27 = RamConfigPtr_47(D)->RamBaseAddrPtr;
+  _28 = MEM[(uint32[1] *)_27][RamCounter_42];
+  if (_26 != _28)
+    goto <bb 22>; [INV]
+  else
+    goto <bb 23>; [INV]
+
+  <bb 22> :
+  RamStatus_59 = 1;
+
+  <bb 23> :
+  # RamStatus_36 = PHI <RamStatus_39(21), RamStatus_59(22)>
+  goto <bb 28>; [INV]
+
+  <bb 24> :
+<L21>:
+  _29 = RamConfigPtr_47(D)->RamDefaultValue;
+  _30 = RamConfigPtr_47(D)->RamBaseAddrPtr;
+  _31 = MEM[(uint64[1] *)_30][RamCounter_42];
+  if (_29 != _31)
+    goto <bb 25>; [INV]
+  else
+    goto <bb 26>; [INV]
+
+  <bb 25> :
+  RamStatus_58 = 1;
+
+  <bb 26> :
+  # RamStatus_37 = PHI <RamStatus_39(24), RamStatus_58(25)>
+  goto <bb 28>; [INV]
+
+  <bb 27> :
+<L24>:
+  RamStatus_62 = 1;
+
+  <bb 28> :
+  # RamStatus_38 = PHI <RamStatus_34(17), RamStatus_35(20), RamStatus_36(23), RamStatus_37(26), RamStatus_62(27)>
+  RamCounter_63 = RamCounter_42 + 1;
+
+  <bb 29> :
+  # RamStatus_39 = PHI <RamStatus_33(13), RamStatus_38(28)>
+  # RamCounter_42 = PHI <RamCounter_57(13), RamCounter_63(28)>
+  if (RamCounter_42 < RamCounterLimit_48)
+    goto <bb 30>; [INV]
+  else
+    goto <bb 31>; [INV]
+
+  <bb 30> :
+  if (RamStatus_39 == 0)
+    goto <bb 14>; [INV]
+  else
+    goto <bb 31>; [INV]
+
+  <bb 31> :
+  # RamStatus_40 = PHI <RamStatus_33(12), RamStatus_39(29), RamStatus_39(30)>
+  _64 = RamStatus_40;
+
+  <bb 32> :
+<L30>:
+  return _64;
+
+}
+
+

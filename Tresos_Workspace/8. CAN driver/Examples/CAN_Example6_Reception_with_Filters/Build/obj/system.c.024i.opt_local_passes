@@ -1,0 +1,186 @@
+__attribute__((section (".systeminit")))
+SystemInit ()
+{
+  struct S32_SCB_Type * _1;
+  long unsigned int _2;
+  struct S32_SCB_Type * _3;
+  long unsigned int _4;
+  struct S32_SCB_Type * _5;
+  long unsigned int _6;
+  struct S32_SCB_Type * _7;
+  long unsigned int _8;
+  struct S32_SCB_Type * _9;
+  long unsigned int _10;
+  struct S32_SCB_Type * _11;
+  long unsigned int _12;
+  struct AIPS_Type * _13;
+  struct AIPS_Type * _14;
+  struct AIPS_Type * _15;
+  struct AIPS_Type * _16;
+  struct AIPS_Type * _17;
+  struct AIPS_Type * _18;
+  struct AIPS_Type * _19;
+  struct AIPS_Type * _20;
+  struct AIPS_Type * _21;
+  struct AIPS_Type * _22;
+  struct AIPS_Type * _23;
+  struct AIPS_Type * _24;
+  struct AIPS_Type * _25;
+  struct AIPS_Type * _26;
+  struct AIPS_Type * _27;
+  struct AIPS_Type * _28;
+
+  <bb 2> :
+  _1 = 3758153728B;
+  _2 ={v} _1->CPACR;
+  _3 = 3758153728B;
+  _4 = _2 | 15728640;
+  _3->CPACR ={v} _4;
+  __asm__ __volatile__("dsb");
+  __asm__ __volatile__("isb");
+  _5 = 3758153728B;
+  _6 ={v} _5->CCR;
+  _7 = 3758153728B;
+  _8 = _6 | 1;
+  _7->CCR ={v} _8;
+  _9 = 3758153728B;
+  _10 ={v} _9->SHPR3;
+  _11 = 3758153728B;
+  _12 = _10 & 4278255615;
+  _11->SHPR3 ={v} _12;
+  _13 = 1073741824B;
+  _13->MPRA ={v} 2004318071;
+  _14 = 1073741824B;
+  _14->PACRA ={v} 0;
+  _15 = 1073741824B;
+  _15->PACRB ={v} 0;
+  _16 = 1073741824B;
+  _16->PACRD ={v} 0;
+  _17 = 1073741824B;
+  _17->OPACR[0] ={v} 0;
+  _18 = 1073741824B;
+  _18->OPACR[1] ={v} 0;
+  _19 = 1073741824B;
+  _19->OPACR[2] ={v} 0;
+  _20 = 1073741824B;
+  _20->OPACR[3] ={v} 0;
+  _21 = 1073741824B;
+  _21->OPACR[4] ={v} 0;
+  _22 = 1073741824B;
+  _22->OPACR[5] ={v} 0;
+  _23 = 1073741824B;
+  _23->OPACR[6] ={v} 0;
+  _24 = 1073741824B;
+  _24->OPACR[7] ={v} 0;
+  _25 = 1073741824B;
+  _25->OPACR[8] ={v} 0;
+  _26 = 1073741824B;
+  _26->OPACR[9] ={v} 0;
+  _27 = 1073741824B;
+  _27->OPACR[10] ={v} 0;
+  _28 = 1073741824B;
+  _28->OPACR[11] ={v} 0;
+  __asm__ __volatile__("dsb");
+  __asm__ __volatile__("isb");
+  sys_m4_cache_init (0);
+  return;
+
+}
+
+
+Sys_GetCoreID ()
+{
+  uint8 D.6050;
+  uint8 _1;
+
+  <bb 2> :
+  _1 = 0;
+
+  <bb 3> :
+<L0>:
+  return _1;
+
+}
+
+
+default_interrupt_routine ()
+{
+  <bb 2> :
+  goto <bb 2>; [INV]
+
+}
+
+
+startup_go_to_user_mode ()
+{
+  <bb 2> :
+  return;
+
+}
+
+
+sys_m4_cache_init (uint8 cache)
+{
+  uint8 RetValue;
+  uint8 D.6048;
+  struct LMEM_Type * _1;
+  struct LMEM_Type * _2;
+  long unsigned int _3;
+  struct LMEM_Type * _4;
+  long unsigned int _5;
+  struct LMEM_Type * _6;
+  long unsigned int _7;
+  long unsigned int _8;
+  struct LMEM_Type * _9;
+  long unsigned int _10;
+  struct LMEM_Type * _11;
+  long unsigned int _12;
+  uint8 _22;
+
+  <bb 2> :
+  RetValue_15 = 0;
+  if (cache_16(D) == 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 3> :
+  _1 = 3758628864B;
+  _1->PCCCR ={v} 83886080;
+  _2 = 3758628864B;
+  _3 ={v} _2->PCCCR;
+  _4 = 3758628864B;
+  _5 = _3 | 2147483648;
+  _4->PCCCR ={v} _5;
+
+  <bb 4> :
+  _6 = 3758628864B;
+  _7 ={v} _6->PCCCR;
+  _8 = _7 & 2147483648;
+  if (_8 == 2147483648)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 5> :
+  _9 = 3758628864B;
+  _10 ={v} _9->PCCCR;
+  _11 = 3758628864B;
+  _12 = _10 | 1;
+  _11->PCCCR ={v} _12;
+  goto <bb 7>; [INV]
+
+  <bb 6> :
+  RetValue_17 = 1;
+
+  <bb 7> :
+  # RetValue_13 = PHI <RetValue_15(5), RetValue_17(6)>
+  _22 = RetValue_13;
+
+  <bb 8> :
+<L6>:
+  return _22;
+
+}
+
+
