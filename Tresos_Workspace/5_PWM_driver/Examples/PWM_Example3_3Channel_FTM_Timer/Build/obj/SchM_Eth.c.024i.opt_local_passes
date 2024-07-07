@@ -1,0 +1,17 @@
+Eth_schm_read_msr ()
+{
+  register uint32 reg_tmp;
+  uint32 D.5375;
+  uint32 _2;
+
+  <bb 2> :
+  __asm__ __volatile__(" mrs %0, primask " : "=r" reg_tmp_1);
+  _2 = reg_tmp_1;
+
+  <bb 3> :
+<L0>:
+  return _2;
+
+}
+
+

@@ -1,0 +1,220 @@
+Symbol table:
+
+Pwm_Config/17 (Pwm_Config) @0dff3480
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: EcuM_Init/3 (addr) 
+  Availability: not_available
+  Varpool flags: read-only
+Pwm_Init/16 (Pwm_Init) @0e0c9540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: EcuM_Init/3 
+  Calls: 
+Port_Config/15 (Port_Config) @0dff33f0
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: EcuM_Init/3 (addr) 
+  Availability: not_available
+  Varpool flags: read-only
+Port_Init/14 (Port_Init) @0e0c9460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: EcuM_Init/3 
+  Calls: 
+OsIf_Init/13 (OsIf_Init) @0e0c9380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: EcuM_Init/3 
+  Calls: 
+Mcu_SetMode/12 (Mcu_SetMode) @0e0c92a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: EcuM_Init/3 
+  Calls: 
+Mcu_InitClock/11 (Mcu_InitClock) @0e0c91c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: EcuM_Init/3 
+  Calls: 
+Mcu_Config/10 (Mcu_Config) @0dff3288
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: EcuM_Init/3 (addr) 
+  Availability: not_available
+  Varpool flags: read-only
+Mcu_Init/9 (Mcu_Init) @0e0c90e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: EcuM_Init/3 
+  Calls: 
+Pwm_SetOutputToIdle/8 (Pwm_SetOutputToIdle) @0dfef540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: main/2 
+  Calls: 
+Pwm_SetDutyCycle/7 (Pwm_SetDutyCycle) @0dfefee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: main/2 main/2 main/2 
+  Calls: 
+OsIf_GetElapsed/6 (OsIf_GetElapsed) @0dfefd20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Delay/1 
+  Calls: 
+OsIf_GetCounter/5 (OsIf_GetCounter) @0dfefc40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Delay/1 
+  Calls: 
+OsIf_MicrosToTicks/4 (OsIf_MicrosToTicks) @0dfefb60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Delay/1 
+  Calls: 
+EcuM_Init/3 (EcuM_Init) @0dfef700
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Mcu_Config/10 (addr) Port_Config/15 (addr) Pwm_Config/17 (addr) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: main/2 
+  Calls: Pwm_Init/16 Port_Init/14 OsIf_Init/13 Mcu_SetMode/12 Mcu_InitClock/11 Mcu_Init/9 
+main/2 (main) @0dfef460
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Delay/1 Pwm_SetOutputToIdle/8 Delay/1 Pwm_SetDutyCycle/7 Delay/1 Pwm_SetDutyCycle/7 Delay/1 Pwm_SetDutyCycle/7 EcuM_Init/3 
+Delay/1 (Delay) @0dfef1c0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: main/2 main/2 main/2 main/2 
+  Calls: OsIf_GetElapsed/6 OsIf_GetCounter/5 OsIf_MicrosToTicks/4 
+EcuM_Init ()
+{
+  <bb 2> :
+  Mcu_Init (&Mcu_Config);
+  Mcu_InitClock (0);
+  Mcu_SetMode (0);
+  OsIf_Init (0B);
+  Port_Init (&Port_Config);
+  Pwm_Init (&Pwm_Config);
+  return;
+
+}
+
+
+main ()
+{
+  int D.6504;
+
+  <bb 2> :
+  EcuM_Init ();
+
+  <bb 3> :
+  Pwm_SetDutyCycle (0, 8192);
+  Delay (10000);
+  Pwm_SetDutyCycle (0, 16384);
+  Delay (10000);
+  Pwm_SetDutyCycle (0, 24576);
+  Delay (10000);
+  Pwm_SetOutputToIdle (0);
+  Delay (20000);
+  goto <bb 3>; [INV]
+
+}
+
+
+Delay (uint32 ms)
+{
+  uint32 ElapsedTime;
+  uint32 SeedTick;
+  uint32 Timeout;
+  long unsigned int D.6503;
+  long unsigned int _1;
+  long unsigned int _2;
+  long unsigned int _13;
+
+  <bb 2> :
+  _1 = ms_5(D) * 1000;
+  Timeout_8 = OsIf_MicrosToTicks (_1, 1);
+  _2 = OsIf_GetCounter (1);
+  SeedTick = _2;
+  ElapsedTime_11 = 0;
+
+  <bb 3> :
+  # ElapsedTime_3 = PHI <ElapsedTime_11(2), ElapsedTime_14(3)>
+  _13 = OsIf_GetElapsed (&SeedTick, 1);
+  ElapsedTime_14 = _13 + ElapsedTime_3;
+  if (ElapsedTime_14 < Timeout_8)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 4> :
+  SeedTick ={v} {CLOBBER};
+  return;
+
+}
+
+

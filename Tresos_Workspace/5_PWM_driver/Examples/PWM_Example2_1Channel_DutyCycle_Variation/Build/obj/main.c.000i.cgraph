@@ -1,0 +1,879 @@
+Trivially needed symbols: EcuM_Init/3 main/2 Delay/1
+
+
+Initial Symbol table:
+
+Pwm_Config/17 (Pwm_Config) @0dff3480
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: EcuM_Init/3 (addr) 
+  Availability: not-ready
+  Varpool flags: read-only
+Pwm_Init/16 (Pwm_Init) @0e0c9540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: EcuM_Init/3 
+  Calls: 
+Port_Config/15 (Port_Config) @0dff33f0
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: EcuM_Init/3 (addr) 
+  Availability: not-ready
+  Varpool flags: read-only
+Port_Init/14 (Port_Init) @0e0c9460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: EcuM_Init/3 
+  Calls: 
+OsIf_Init/13 (OsIf_Init) @0e0c9380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: EcuM_Init/3 
+  Calls: 
+Mcu_SetMode/12 (Mcu_SetMode) @0e0c92a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: EcuM_Init/3 
+  Calls: 
+Mcu_InitClock/11 (Mcu_InitClock) @0e0c91c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: EcuM_Init/3 
+  Calls: 
+Mcu_Config/10 (Mcu_Config) @0dff3288
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: EcuM_Init/3 (addr) 
+  Availability: not-ready
+  Varpool flags: read-only
+Mcu_Init/9 (Mcu_Init) @0e0c90e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: EcuM_Init/3 
+  Calls: 
+Pwm_SetOutputToIdle/8 (Pwm_SetOutputToIdle) @0dfef540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: main/2 
+  Calls: 
+Pwm_SetDutyCycle/7 (Pwm_SetDutyCycle) @0dfefee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: main/2 main/2 main/2 
+  Calls: 
+OsIf_GetElapsed/6 (OsIf_GetElapsed) @0dfefd20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Delay/1 
+  Calls: 
+OsIf_GetCounter/5 (OsIf_GetCounter) @0dfefc40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Delay/1 
+  Calls: 
+OsIf_MicrosToTicks/4 (OsIf_MicrosToTicks) @0dfefb60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Delay/1 
+  Calls: 
+EcuM_Init/3 (EcuM_Init) @0dfef700
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @01981040
+  References: Mcu_Config/10 (addr) Port_Config/15 (addr) Pwm_Config/17 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: main/2 
+  Calls: Pwm_Init/16 Port_Init/14 OsIf_Init/13 Mcu_SetMode/12 Mcu_InitClock/11 Mcu_Init/9 
+main/2 (main) @0dfef460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0dfef700
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Delay/1 Pwm_SetOutputToIdle/8 Delay/1 Pwm_SetDutyCycle/7 Delay/1 Pwm_SetDutyCycle/7 Delay/1 Pwm_SetDutyCycle/7 EcuM_Init/3 
+Delay/1 (Delay) @0dfef1c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0dfef460
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: main/2 main/2 main/2 main/2 
+  Calls: OsIf_GetElapsed/6 OsIf_GetCounter/5 OsIf_MicrosToTicks/4 
+DevAssert/0 (DevAssert) @0dd35a80
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+
+Removing unused symbols: DevAssert/0
+
+Reclaimed Symbol table:
+
+Pwm_Config/17 (Pwm_Config) @0dff3480
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: EcuM_Init/3 (addr) 
+  Availability: not-ready
+  Varpool flags: read-only
+Pwm_Init/16 (Pwm_Init) @0e0c9540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: EcuM_Init/3 
+  Calls: 
+Port_Config/15 (Port_Config) @0dff33f0
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: EcuM_Init/3 (addr) 
+  Availability: not-ready
+  Varpool flags: read-only
+Port_Init/14 (Port_Init) @0e0c9460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: EcuM_Init/3 
+  Calls: 
+OsIf_Init/13 (OsIf_Init) @0e0c9380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: EcuM_Init/3 
+  Calls: 
+Mcu_SetMode/12 (Mcu_SetMode) @0e0c92a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: EcuM_Init/3 
+  Calls: 
+Mcu_InitClock/11 (Mcu_InitClock) @0e0c91c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: EcuM_Init/3 
+  Calls: 
+Mcu_Config/10 (Mcu_Config) @0dff3288
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: EcuM_Init/3 (addr) 
+  Availability: not-ready
+  Varpool flags: read-only
+Mcu_Init/9 (Mcu_Init) @0e0c90e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: EcuM_Init/3 
+  Calls: 
+Pwm_SetOutputToIdle/8 (Pwm_SetOutputToIdle) @0dfef540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: main/2 
+  Calls: 
+Pwm_SetDutyCycle/7 (Pwm_SetDutyCycle) @0dfefee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: main/2 main/2 main/2 
+  Calls: 
+OsIf_GetElapsed/6 (OsIf_GetElapsed) @0dfefd20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Delay/1 
+  Calls: 
+OsIf_GetCounter/5 (OsIf_GetCounter) @0dfefc40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Delay/1 
+  Calls: 
+OsIf_MicrosToTicks/4 (OsIf_MicrosToTicks) @0dfefb60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Delay/1 
+  Calls: 
+EcuM_Init/3 (EcuM_Init) @0dfef700
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Mcu_Config/10 (addr) Port_Config/15 (addr) Pwm_Config/17 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: main/2 
+  Calls: Pwm_Init/16 Port_Init/14 OsIf_Init/13 Mcu_SetMode/12 Mcu_InitClock/11 Mcu_Init/9 
+main/2 (main) @0dfef460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Delay/1 Pwm_SetOutputToIdle/8 Delay/1 Pwm_SetDutyCycle/7 Delay/1 Pwm_SetDutyCycle/7 Delay/1 Pwm_SetDutyCycle/7 EcuM_Init/3 
+Delay/1 (Delay) @0dfef1c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: main/2 main/2 main/2 main/2 
+  Calls: OsIf_GetElapsed/6 OsIf_GetCounter/5 OsIf_MicrosToTicks/4 
+
+
+Initial Symbol table:
+
+Pwm_Config/17 (Pwm_Config) @0dff3480
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: EcuM_Init/3 (addr) 
+  Availability: not-ready
+  Varpool flags: read-only
+Pwm_Init/16 (Pwm_Init) @0e0c9540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: EcuM_Init/3 
+  Calls: 
+Port_Config/15 (Port_Config) @0dff33f0
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: EcuM_Init/3 (addr) 
+  Availability: not-ready
+  Varpool flags: read-only
+Port_Init/14 (Port_Init) @0e0c9460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: EcuM_Init/3 
+  Calls: 
+OsIf_Init/13 (OsIf_Init) @0e0c9380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: EcuM_Init/3 
+  Calls: 
+Mcu_SetMode/12 (Mcu_SetMode) @0e0c92a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: EcuM_Init/3 
+  Calls: 
+Mcu_InitClock/11 (Mcu_InitClock) @0e0c91c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: EcuM_Init/3 
+  Calls: 
+Mcu_Config/10 (Mcu_Config) @0dff3288
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: EcuM_Init/3 (addr) 
+  Availability: not-ready
+  Varpool flags: read-only
+Mcu_Init/9 (Mcu_Init) @0e0c90e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: EcuM_Init/3 
+  Calls: 
+Pwm_SetOutputToIdle/8 (Pwm_SetOutputToIdle) @0dfef540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: main/2 
+  Calls: 
+Pwm_SetDutyCycle/7 (Pwm_SetDutyCycle) @0dfefee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: main/2 main/2 main/2 
+  Calls: 
+OsIf_GetElapsed/6 (OsIf_GetElapsed) @0dfefd20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Delay/1 
+  Calls: 
+OsIf_GetCounter/5 (OsIf_GetCounter) @0dfefc40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Delay/1 
+  Calls: 
+OsIf_MicrosToTicks/4 (OsIf_MicrosToTicks) @0dfefb60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Delay/1 
+  Calls: 
+EcuM_Init/3 (EcuM_Init) @0dfef700
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Mcu_Config/10 (addr) Port_Config/15 (addr) Pwm_Config/17 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: main/2 
+  Calls: Pwm_Init/16 Port_Init/14 OsIf_Init/13 Mcu_SetMode/12 Mcu_InitClock/11 Mcu_Init/9 
+main/2 (main) @0dfef460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Delay/1 Pwm_SetOutputToIdle/8 Delay/1 Pwm_SetDutyCycle/7 Delay/1 Pwm_SetDutyCycle/7 Delay/1 Pwm_SetDutyCycle/7 EcuM_Init/3 
+Delay/1 (Delay) @0dfef1c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: main/2 main/2 main/2 main/2 
+  Calls: OsIf_GetElapsed/6 OsIf_GetCounter/5 OsIf_MicrosToTicks/4 
+
+Removing unused symbols:
+
+Reclaimed Symbol table:
+
+Pwm_Config/17 (Pwm_Config) @0dff3480
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: EcuM_Init/3 (addr) 
+  Availability: not-ready
+  Varpool flags: read-only
+Pwm_Init/16 (Pwm_Init) @0e0c9540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: EcuM_Init/3 
+  Calls: 
+Port_Config/15 (Port_Config) @0dff33f0
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: EcuM_Init/3 (addr) 
+  Availability: not-ready
+  Varpool flags: read-only
+Port_Init/14 (Port_Init) @0e0c9460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: EcuM_Init/3 
+  Calls: 
+OsIf_Init/13 (OsIf_Init) @0e0c9380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: EcuM_Init/3 
+  Calls: 
+Mcu_SetMode/12 (Mcu_SetMode) @0e0c92a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: EcuM_Init/3 
+  Calls: 
+Mcu_InitClock/11 (Mcu_InitClock) @0e0c91c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: EcuM_Init/3 
+  Calls: 
+Mcu_Config/10 (Mcu_Config) @0dff3288
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: EcuM_Init/3 (addr) 
+  Availability: not-ready
+  Varpool flags: read-only
+Mcu_Init/9 (Mcu_Init) @0e0c90e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: EcuM_Init/3 
+  Calls: 
+Pwm_SetOutputToIdle/8 (Pwm_SetOutputToIdle) @0dfef540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: main/2 
+  Calls: 
+Pwm_SetDutyCycle/7 (Pwm_SetDutyCycle) @0dfefee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: main/2 main/2 main/2 
+  Calls: 
+OsIf_GetElapsed/6 (OsIf_GetElapsed) @0dfefd20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Delay/1 
+  Calls: 
+OsIf_GetCounter/5 (OsIf_GetCounter) @0dfefc40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Delay/1 
+  Calls: 
+OsIf_MicrosToTicks/4 (OsIf_MicrosToTicks) @0dfefb60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Delay/1 
+  Calls: 
+EcuM_Init/3 (EcuM_Init) @0dfef700
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Mcu_Config/10 (addr) Port_Config/15 (addr) Pwm_Config/17 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: main/2 
+  Calls: Pwm_Init/16 Port_Init/14 OsIf_Init/13 Mcu_SetMode/12 Mcu_InitClock/11 Mcu_Init/9 
+main/2 (main) @0dfef460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Delay/1 Pwm_SetOutputToIdle/8 Delay/1 Pwm_SetDutyCycle/7 Delay/1 Pwm_SetDutyCycle/7 Delay/1 Pwm_SetDutyCycle/7 EcuM_Init/3 
+Delay/1 (Delay) @0dfef1c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: main/2 main/2 main/2 main/2 
+  Calls: OsIf_GetElapsed/6 OsIf_GetCounter/5 OsIf_MicrosToTicks/4 
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+Optimized Symbol table:
+
+Pwm_Config/17 (Pwm_Config) @0dff3480
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: EcuM_Init/3 (addr) 
+  Availability: not_available
+  Varpool flags: read-only
+Pwm_Init/16 (Pwm_Init) @0e0c9540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: EcuM_Init/3 
+  Calls: 
+Port_Config/15 (Port_Config) @0dff33f0
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: EcuM_Init/3 (addr) 
+  Availability: not_available
+  Varpool flags: read-only
+Port_Init/14 (Port_Init) @0e0c9460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: EcuM_Init/3 
+  Calls: 
+OsIf_Init/13 (OsIf_Init) @0e0c9380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: EcuM_Init/3 
+  Calls: 
+Mcu_SetMode/12 (Mcu_SetMode) @0e0c92a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: EcuM_Init/3 
+  Calls: 
+Mcu_InitClock/11 (Mcu_InitClock) @0e0c91c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: EcuM_Init/3 
+  Calls: 
+Mcu_Config/10 (Mcu_Config) @0dff3288
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: EcuM_Init/3 (addr) 
+  Availability: not_available
+  Varpool flags: read-only
+Mcu_Init/9 (Mcu_Init) @0e0c90e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: EcuM_Init/3 
+  Calls: 
+Pwm_SetOutputToIdle/8 (Pwm_SetOutputToIdle) @0dfef540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: main/2 
+  Calls: 
+Pwm_SetDutyCycle/7 (Pwm_SetDutyCycle) @0dfefee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: main/2 main/2 main/2 
+  Calls: 
+OsIf_GetElapsed/6 (OsIf_GetElapsed) @0dfefd20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Delay/1 
+  Calls: 
+OsIf_GetCounter/5 (OsIf_GetCounter) @0dfefc40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Delay/1 
+  Calls: 
+OsIf_MicrosToTicks/4 (OsIf_MicrosToTicks) @0dfefb60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Delay/1 
+  Calls: 
+EcuM_Init/3 (EcuM_Init) @0dfef700
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Mcu_Config/10 (addr) Port_Config/15 (addr) Pwm_Config/17 (addr) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: main/2 
+  Calls: Pwm_Init/16 Port_Init/14 OsIf_Init/13 Mcu_SetMode/12 Mcu_InitClock/11 Mcu_Init/9 
+main/2 (main) @0dfef460
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Delay/1 Pwm_SetOutputToIdle/8 Delay/1 Pwm_SetDutyCycle/7 Delay/1 Pwm_SetDutyCycle/7 Delay/1 Pwm_SetDutyCycle/7 EcuM_Init/3 
+Delay/1 (Delay) @0dfef1c0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: main/2 main/2 main/2 main/2 
+  Calls: OsIf_GetElapsed/6 OsIf_GetCounter/5 OsIf_MicrosToTicks/4 
+Materializing clones
+Materialization Call site updates done.
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+Trivially needed variables:
+Removing variables:
+
+Final Symbol table:
+
+Pwm_Config/17 (Pwm_Config) @0dff3480
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Varpool flags: read-only
+Pwm_Init/16 (Pwm_Init) @0e0c9540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+Port_Config/15 (Port_Config) @0dff33f0
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Varpool flags: read-only
+Port_Init/14 (Port_Init) @0e0c9460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+OsIf_Init/13 (OsIf_Init) @0e0c9380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+Mcu_SetMode/12 (Mcu_SetMode) @0e0c92a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+Mcu_InitClock/11 (Mcu_InitClock) @0e0c91c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+Mcu_Config/10 (Mcu_Config) @0dff3288
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Varpool flags: read-only
+Mcu_Init/9 (Mcu_Init) @0e0c90e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+Pwm_SetOutputToIdle/8 (Pwm_SetOutputToIdle) @0dfef540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+Pwm_SetDutyCycle/7 (Pwm_SetDutyCycle) @0dfefee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+OsIf_GetElapsed/6 (OsIf_GetElapsed) @0dfefd20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+OsIf_GetCounter/5 (OsIf_GetCounter) @0dfefc40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+OsIf_MicrosToTicks/4 (OsIf_MicrosToTicks) @0dfefb60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+EcuM_Init/3 (EcuM_Init) @0dfef700
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.EcuM_Init (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+main/2 (main) @0dfef460
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.main (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+Delay/1 (Delay) @0dfef1c0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.Delay (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 

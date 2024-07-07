@@ -1,0 +1,314 @@
+IPA summary for Pwm_Ipw_DeInitInstance/6 is missing.
+IPA summary for Pwm_Ipw_DeInit/5 is missing.
+IPA summary for Pwm_Ipw_InitInstance/4 is missing.
+IPA summary for Pwm_Ipw_Init/3 is missing.
+
+Flattening functions:
+Overall time estimate: 0.000000 weighted by profile: 0.000000
+
+Deciding on inlining of small functions.  Starting with size 0.
+node context cache: 0 hits, 0 misses, 0 initializations
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+
+Deciding on functions to be inlined into all callers and removing useless speculations:
+Overall time estimate: 0.000000 weighted by profile: 0.000000
+
+Why inlining failed?
+function body not available                       :        2 calls, 2.000000 freq, 0 count
+IPA summary for Pwm_Ipw_DeInitInstance/6 is missing.
+IPA summary for Pwm_Ipw_DeInit/5 is missing.
+IPA summary for Pwm_Ipw_InitInstance/4 is missing.
+IPA summary for Pwm_Ipw_Init/3 is missing.
+Symbol table:
+
+Ftm_Pwm_Ip_DeInit/8 (Ftm_Pwm_Ip_DeInit) @0dce77e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Pwm_Ipw_DeInitInstance/6 
+  Calls: 
+Ftm_Pwm_Ip_Init/7 (Ftm_Pwm_Ip_Init) @0dce7540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Pwm_Ipw_InitInstance/4 
+  Calls: 
+Pwm_Ipw_DeInitInstance/6 (Pwm_Ipw_DeInitInstance) @0dce7000
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Ftm_Pwm_Ip_DeInit/8 
+Pwm_Ipw_DeInit/5 (Pwm_Ipw_DeInit) @0dce1b60
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Pwm_Ipw_aFtmDutyCycle/2 (write) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+Pwm_Ipw_InitInstance/4 (Pwm_Ipw_InitInstance) @0dce10e0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Ftm_Pwm_Ip_aPolarity/1 (write) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Ftm_Pwm_Ip_Init/7 
+Pwm_Ipw_Init/3 (Pwm_Ipw_Init) @0dce1d20
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Pwm_Ipw_aFtmDutyCycle/2 (write) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+Pwm_Ipw_aFtmDutyCycle/2 (Pwm_Ipw_aFtmDutyCycle) @0dce0900
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: Pwm_Ipw_Init/3 (write) Pwm_Ipw_DeInit/5 (write) 
+  Availability: available
+  Varpool flags:
+Ftm_Pwm_Ip_aPolarity/1 (Ftm_Pwm_Ip_aPolarity) @0dce0828
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: Pwm_Ipw_InitInstance/4 (write) 
+  Availability: available
+  Varpool flags:
+
+;; Function Pwm_Ipw_Init (Pwm_Ipw_Init, funcdef_no=1, decl_uid=5790, cgraph_uid=2, symbol_order=3)
+
+Pwm_Ipw_Init (const struct Pwm_IpwChannelConfigType * const IpConfig)
+{
+  <unnamed type> _1;
+  unsigned char _2;
+  int _3;
+  const struct Ftm_Pwm_Ip_ChannelConfigType * _4;
+  unsigned char _5;
+  int _6;
+  short unsigned int _7;
+
+  <bb 2> :
+  _1 = IpConfig_10(D)->ChannelType;
+  switch (_1) <default: <L2> [INV], case 0: <L1> [INV], case 1: <L0> [INV]>
+
+  <bb 3> :
+<L0>:
+  _2 = IpConfig_10(D)->ChannelInstanceId;
+  _3 = (int) _2;
+  _4 = IpConfig_10(D)->FtmChConfig;
+  _5 = _4->ChannelId;
+  _6 = (int) _5;
+  _7 = IpConfig_10(D)->ChannelDutyCycle;
+  Pwm_Ipw_aFtmDutyCycle[_3][_6] = _7;
+  goto <bb 6>; [INV]
+
+  <bb 4> :
+<L1>:
+  goto <bb 6>; [INV]
+
+  <bb 5> :
+<L2>:
+
+  <bb 6> :
+  return;
+
+}
+
+
+
+;; Function Pwm_Ipw_InitInstance (Pwm_Ipw_InitInstance, funcdef_no=2, decl_uid=5792, cgraph_uid=3, symbol_order=4)
+
+Pwm_Ipw_InitInstance (const struct Pwm_IpwInstanceConfigType * const IpConfig)
+{
+  uint8 ChannelId;
+  uint8 Index;
+  <unnamed type> _1;
+  const struct Ftm_Pwm_Ip_UserCfgType * _2;
+  unsigned char _3;
+  const struct Ftm_Pwm_Ip_UserCfgType * _4;
+  const struct Ftm_Pwm_Ip_UserCfgType * _5;
+  const struct Ftm_Pwm_Ip_ChannelConfigType * const * _6;
+  unsigned int _7;
+  unsigned int _8;
+  const struct Ftm_Pwm_Ip_ChannelConfigType * const * _9;
+  const struct Ftm_Pwm_Ip_ChannelConfigType * _10;
+  const struct Ftm_Pwm_Ip_UserCfgType * _11;
+  const struct Ftm_Pwm_Ip_ChannelConfigType * const * _12;
+  unsigned int _13;
+  unsigned int _14;
+  const struct Ftm_Pwm_Ip_ChannelConfigType * const * _15;
+  const struct Ftm_Pwm_Ip_ChannelConfigType * _16;
+  unsigned char _17;
+  int _18;
+  int _19;
+  <unnamed type> _20;
+  unsigned char Index.0_21;
+  const struct Ftm_Pwm_Ip_UserCfgType * _22;
+  unsigned char _23;
+
+  <bb 2> :
+  Index_28 = 0;
+  ChannelId_29 = 0;
+  _1 = IpConfig_31(D)->InstanceType;
+  switch (_1) <default: <L7> [INV], case 0: <L6> [INV], case 1: <L0> [INV]>
+
+  <bb 3> :
+<L0>:
+  _2 = IpConfig_31(D)->FtmInsConfig;
+  if (_2 != 0B)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 4> :
+  _3 = IpConfig_31(D)->InstanceId;
+  _4 = IpConfig_31(D)->FtmInsConfig;
+  Ftm_Pwm_Ip_Init (_3, _4);
+  Index_33 = 0;
+  goto <bb 6>; [INV]
+
+  <bb 5> :
+  _5 = IpConfig_31(D)->FtmInsConfig;
+  _6 = _5->ConfiguredChArray;
+  _7 = (unsigned int) Index_24;
+  _8 = _7 * 4;
+  _9 = _6 + _8;
+  _10 = *_9;
+  ChannelId_34 = _10->ChannelId;
+  _11 = IpConfig_31(D)->FtmInsConfig;
+  _12 = _11->ConfiguredChArray;
+  _13 = (unsigned int) Index_24;
+  _14 = _13 * 4;
+  _15 = _12 + _14;
+  _16 = *_15;
+  _17 = IpConfig_31(D)->InstanceId;
+  _18 = (int) _17;
+  _19 = (int) ChannelId_34;
+  _20 = _16->Polarity;
+  Ftm_Pwm_Ip_aPolarity[_18][_19] = _20;
+  Index.0_21 = Index_24;
+  Index_36 = Index.0_21 + 1;
+
+  <bb 6> :
+  # Index_24 = PHI <Index_33(4), Index_36(5)>
+  _22 = IpConfig_31(D)->FtmInsConfig;
+  _23 = _22->NoOfConfiguredCh;
+  if (Index_24 < _23)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 7> :
+  goto <bb 10>; [INV]
+
+  <bb 8> :
+<L6>:
+  goto <bb 10>; [INV]
+
+  <bb 9> :
+<L7>:
+
+  <bb 10> :
+  return;
+
+}
+
+
+
+;; Function Pwm_Ipw_DeInit (Pwm_Ipw_DeInit, funcdef_no=3, decl_uid=5795, cgraph_uid=4, symbol_order=5)
+
+Pwm_Ipw_DeInit (const struct Pwm_IpwChannelConfigType * const IpConfig, Pwm_OutputStateType ChannelIdleState)
+{
+  <unnamed type> _1;
+  unsigned char _2;
+  int _3;
+  const struct Ftm_Pwm_Ip_ChannelConfigType * _4;
+  unsigned char _5;
+  int _6;
+
+  <bb 2> :
+  _1 = IpConfig_9(D)->ChannelType;
+  switch (_1) <default: <L2> [INV], case 0: <L1> [INV], case 1: <L0> [INV]>
+
+  <bb 3> :
+<L0>:
+  _2 = IpConfig_9(D)->ChannelInstanceId;
+  _3 = (int) _2;
+  _4 = IpConfig_9(D)->FtmChConfig;
+  _5 = _4->ChannelId;
+  _6 = (int) _5;
+  Pwm_Ipw_aFtmDutyCycle[_3][_6] = 0;
+  goto <bb 6>; [INV]
+
+  <bb 4> :
+<L1>:
+  goto <bb 6>; [INV]
+
+  <bb 5> :
+<L2>:
+
+  <bb 6> :
+  return;
+
+}
+
+
+
+;; Function Pwm_Ipw_DeInitInstance (Pwm_Ipw_DeInitInstance, funcdef_no=4, decl_uid=5797, cgraph_uid=5, symbol_order=6)
+
+Pwm_Ipw_DeInitInstance (const struct Pwm_IpwInstanceConfigType * const IpConfig)
+{
+  <unnamed type> _1;
+  const struct Ftm_Pwm_Ip_UserCfgType * _2;
+  unsigned char _3;
+
+  <bb 2> :
+  _1 = IpConfig_7(D)->InstanceType;
+  switch (_1) <default: <L4> [INV], case 0: <L3> [INV], case 1: <L0> [INV]>
+
+  <bb 3> :
+<L0>:
+  _2 = IpConfig_7(D)->FtmInsConfig;
+  if (_2 != 0B)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  _3 = IpConfig_7(D)->InstanceId;
+  Ftm_Pwm_Ip_DeInit (_3);
+
+  <bb 5> :
+  goto <bb 8>; [INV]
+
+  <bb 6> :
+<L3>:
+  goto <bb 8>; [INV]
+
+  <bb 7> :
+<L4>:
+
+  <bb 8> :
+  return;
+
+}
+
+

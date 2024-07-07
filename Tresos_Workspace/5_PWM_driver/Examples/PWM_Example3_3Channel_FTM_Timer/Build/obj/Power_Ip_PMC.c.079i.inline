@@ -1,0 +1,71 @@
+IPA summary for Power_Ip_PMC_PowerInit/0 is missing.
+
+Flattening functions:
+Overall time estimate: 0.000000 weighted by profile: 0.000000
+
+Deciding on inlining of small functions.  Starting with size 0.
+node context cache: 0 hits, 0 misses, 0 initializations
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+
+Deciding on functions to be inlined into all callers and removing useless speculations:
+Overall time estimate: 0.000000 weighted by profile: 0.000000
+
+Why inlining failed?
+IPA summary for Power_Ip_PMC_PowerInit/0 is missing.
+Symbol table:
+
+Power_Ip_PMC_PowerInit/0 (Power_Ip_PMC_PowerInit) @0dae87e0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+
+;; Function Power_Ip_PMC_PowerInit (Power_Ip_PMC_PowerInit, funcdef_no=0, decl_uid=5490, cgraph_uid=1, symbol_order=0)
+
+Power_Ip_PMC_PowerInit (const struct Power_Ip_PMC_ConfigType * ConfigPtr)
+{
+  uint8 Tmp;
+  struct PMC_Type * _1;
+  unsigned char _2;
+  struct PMC_Type * _3;
+  struct PMC_Type * _4;
+  unsigned char _5;
+  struct PMC_Type * _6;
+  struct PMC_Type * _7;
+  unsigned char _8;
+  struct PMC_Type * _9;
+
+  <bb 2> :
+  _1 = 1074253824B;
+  Tmp_11 ={v} _1->LVDSC1;
+  Tmp_12 = Tmp_11 & 15;
+  _2 = ConfigPtr_13(D)->Lvdsc1;
+  Tmp_14 = Tmp_12 | _2;
+  _3 = 1074253824B;
+  _3->LVDSC1 ={v} Tmp_14;
+  _4 = 1074253824B;
+  Tmp_16 ={v} _4->LVDSC2;
+  Tmp_17 = Tmp_16 & 31;
+  _5 = ConfigPtr_13(D)->Lvdsc2;
+  Tmp_18 = Tmp_17 | _5;
+  _6 = 1074253824B;
+  _6->LVDSC2 ={v} Tmp_18;
+  _7 = 1074253824B;
+  Tmp_20 ={v} _7->REGSC;
+  Tmp_21 = Tmp_20 & 56;
+  _8 = ConfigPtr_13(D)->Regsc;
+  Tmp_22 = Tmp_21 | _8;
+  _9 = 1074253824B;
+  _9->REGSC ={v} Tmp_22;
+  return;
+
+}
+
+

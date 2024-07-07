@@ -1,0 +1,26 @@
+EcuM_Init ()
+{
+  <bb 2> :
+  Mcu_Init (&Mcu_Config);
+  Mcu_InitClock (0);
+  Mcu_SetMode (0);
+  Port_Init (&Port_Config);
+  Pwm_Init (&Pwm_Config);
+  return;
+
+}
+
+
+main ()
+{
+  int D.6473;
+
+  <bb 2> :
+  EcuM_Init ();
+
+  <bb 3> :
+  goto <bb 3>; [INV]
+
+}
+
+

@@ -1,0 +1,352 @@
+Trivially needed symbols: Ftm_Pwm_Ip_UserCfg0/7 Ftm_Pwm_Ip_I0_ChArray/6 Ftm_Pwm_Ip_I0_Ch1/5 Ftm_Pwm_Ip_I0_Ch0/4 Ftm_Pwm_Ip_I0_Ch2/3 Ftm_Pwm_Ip_InstCfg0/2 Ftm_Pwm_Ip_SyncCfg0/1
+
+
+Initial Symbol table:
+
+Ftm_Pwm_Ip_UserCfg0/7 (Ftm_Pwm_Ip_UserCfg0) @0db11480
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @01981040
+  References: Ftm_Pwm_Ip_InstCfg0/2 (addr) Ftm_Pwm_Ip_I0_ChArray/6 (addr) 
+  Referring: 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+Ftm_Pwm_Ip_I0_ChArray/6 (Ftm_Pwm_Ip_I0_ChArray) @0db113f0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0db11480
+  References: Ftm_Pwm_Ip_I0_Ch2/3 (addr) Ftm_Pwm_Ip_I0_Ch0/4 (addr) Ftm_Pwm_Ip_I0_Ch1/5 (addr) 
+  Referring: Ftm_Pwm_Ip_UserCfg0/7 (addr) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+Ftm_Pwm_Ip_I0_Ch1/5 (Ftm_Pwm_Ip_I0_Ch1) @0db11360
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0db113f0
+  References: 
+  Referring: Ftm_Pwm_Ip_I0_ChArray/6 (addr) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+Ftm_Pwm_Ip_I0_Ch0/4 (Ftm_Pwm_Ip_I0_Ch0) @0db112d0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0db11360
+  References: 
+  Referring: Ftm_Pwm_Ip_I0_ChArray/6 (addr) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+Ftm_Pwm_Ip_I0_Ch2/3 (Ftm_Pwm_Ip_I0_Ch2) @0db11240
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0db112d0
+  References: 
+  Referring: Ftm_Pwm_Ip_I0_ChArray/6 (addr) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+Ftm_Pwm_Ip_InstCfg0/2 (Ftm_Pwm_Ip_InstCfg0) @0db111b0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0db11240
+  References: Ftm_Pwm_Ip_SyncCfg0/1 (addr) 
+  Referring: Ftm_Pwm_Ip_UserCfg0/7 (addr) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+Ftm_Pwm_Ip_SyncCfg0/1 (Ftm_Pwm_Ip_SyncCfg0) @0da29c18
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0db111b0
+  References: 
+  Referring: Ftm_Pwm_Ip_InstCfg0/2 (addr) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+DevAssert/0 (DevAssert) @0da508c0
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+
+Removing unused symbols: DevAssert/0
+
+Reclaimed Symbol table:
+
+Ftm_Pwm_Ip_UserCfg0/7 (Ftm_Pwm_Ip_UserCfg0) @0db11480
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: Ftm_Pwm_Ip_InstCfg0/2 (addr) Ftm_Pwm_Ip_I0_ChArray/6 (addr) 
+  Referring: 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+Ftm_Pwm_Ip_I0_ChArray/6 (Ftm_Pwm_Ip_I0_ChArray) @0db113f0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: Ftm_Pwm_Ip_I0_Ch2/3 (addr) Ftm_Pwm_Ip_I0_Ch0/4 (addr) Ftm_Pwm_Ip_I0_Ch1/5 (addr) 
+  Referring: Ftm_Pwm_Ip_UserCfg0/7 (addr) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+Ftm_Pwm_Ip_I0_Ch1/5 (Ftm_Pwm_Ip_I0_Ch1) @0db11360
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: Ftm_Pwm_Ip_I0_ChArray/6 (addr) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+Ftm_Pwm_Ip_I0_Ch0/4 (Ftm_Pwm_Ip_I0_Ch0) @0db112d0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: Ftm_Pwm_Ip_I0_ChArray/6 (addr) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+Ftm_Pwm_Ip_I0_Ch2/3 (Ftm_Pwm_Ip_I0_Ch2) @0db11240
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: Ftm_Pwm_Ip_I0_ChArray/6 (addr) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+Ftm_Pwm_Ip_InstCfg0/2 (Ftm_Pwm_Ip_InstCfg0) @0db111b0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: Ftm_Pwm_Ip_SyncCfg0/1 (addr) 
+  Referring: Ftm_Pwm_Ip_UserCfg0/7 (addr) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+Ftm_Pwm_Ip_SyncCfg0/1 (Ftm_Pwm_Ip_SyncCfg0) @0da29c18
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: Ftm_Pwm_Ip_InstCfg0/2 (addr) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+
+
+Initial Symbol table:
+
+Ftm_Pwm_Ip_UserCfg0/7 (Ftm_Pwm_Ip_UserCfg0) @0db11480
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: Ftm_Pwm_Ip_InstCfg0/2 (addr) Ftm_Pwm_Ip_I0_ChArray/6 (addr) 
+  Referring: 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+Ftm_Pwm_Ip_I0_ChArray/6 (Ftm_Pwm_Ip_I0_ChArray) @0db113f0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: Ftm_Pwm_Ip_I0_Ch2/3 (addr) Ftm_Pwm_Ip_I0_Ch0/4 (addr) Ftm_Pwm_Ip_I0_Ch1/5 (addr) 
+  Referring: Ftm_Pwm_Ip_UserCfg0/7 (addr) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+Ftm_Pwm_Ip_I0_Ch1/5 (Ftm_Pwm_Ip_I0_Ch1) @0db11360
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: Ftm_Pwm_Ip_I0_ChArray/6 (addr) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+Ftm_Pwm_Ip_I0_Ch0/4 (Ftm_Pwm_Ip_I0_Ch0) @0db112d0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: Ftm_Pwm_Ip_I0_ChArray/6 (addr) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+Ftm_Pwm_Ip_I0_Ch2/3 (Ftm_Pwm_Ip_I0_Ch2) @0db11240
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: Ftm_Pwm_Ip_I0_ChArray/6 (addr) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+Ftm_Pwm_Ip_InstCfg0/2 (Ftm_Pwm_Ip_InstCfg0) @0db111b0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: Ftm_Pwm_Ip_SyncCfg0/1 (addr) 
+  Referring: Ftm_Pwm_Ip_UserCfg0/7 (addr) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+Ftm_Pwm_Ip_SyncCfg0/1 (Ftm_Pwm_Ip_SyncCfg0) @0da29c18
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: Ftm_Pwm_Ip_InstCfg0/2 (addr) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+
+Removing unused symbols:
+
+Reclaimed Symbol table:
+
+Ftm_Pwm_Ip_UserCfg0/7 (Ftm_Pwm_Ip_UserCfg0) @0db11480
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: Ftm_Pwm_Ip_InstCfg0/2 (addr) Ftm_Pwm_Ip_I0_ChArray/6 (addr) 
+  Referring: 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+Ftm_Pwm_Ip_I0_ChArray/6 (Ftm_Pwm_Ip_I0_ChArray) @0db113f0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: Ftm_Pwm_Ip_I0_Ch2/3 (addr) Ftm_Pwm_Ip_I0_Ch0/4 (addr) Ftm_Pwm_Ip_I0_Ch1/5 (addr) 
+  Referring: Ftm_Pwm_Ip_UserCfg0/7 (addr) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+Ftm_Pwm_Ip_I0_Ch1/5 (Ftm_Pwm_Ip_I0_Ch1) @0db11360
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: Ftm_Pwm_Ip_I0_ChArray/6 (addr) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+Ftm_Pwm_Ip_I0_Ch0/4 (Ftm_Pwm_Ip_I0_Ch0) @0db112d0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: Ftm_Pwm_Ip_I0_ChArray/6 (addr) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+Ftm_Pwm_Ip_I0_Ch2/3 (Ftm_Pwm_Ip_I0_Ch2) @0db11240
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: Ftm_Pwm_Ip_I0_ChArray/6 (addr) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+Ftm_Pwm_Ip_InstCfg0/2 (Ftm_Pwm_Ip_InstCfg0) @0db111b0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: Ftm_Pwm_Ip_SyncCfg0/1 (addr) 
+  Referring: Ftm_Pwm_Ip_UserCfg0/7 (addr) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+Ftm_Pwm_Ip_SyncCfg0/1 (Ftm_Pwm_Ip_SyncCfg0) @0da29c18
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: Ftm_Pwm_Ip_InstCfg0/2 (addr) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+Optimized Symbol table:
+
+Ftm_Pwm_Ip_UserCfg0/7 (Ftm_Pwm_Ip_UserCfg0) @0db11480
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Ftm_Pwm_Ip_InstCfg0/2 (addr) Ftm_Pwm_Ip_I0_ChArray/6 (addr) 
+  Referring: 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+Ftm_Pwm_Ip_I0_ChArray/6 (Ftm_Pwm_Ip_I0_ChArray) @0db113f0
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Ftm_Pwm_Ip_I0_Ch2/3 (addr) Ftm_Pwm_Ip_I0_Ch0/4 (addr) Ftm_Pwm_Ip_I0_Ch1/5 (addr) 
+  Referring: Ftm_Pwm_Ip_UserCfg0/7 (addr) 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+Ftm_Pwm_Ip_I0_Ch1/5 (Ftm_Pwm_Ip_I0_Ch1) @0db11360
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: Ftm_Pwm_Ip_I0_ChArray/6 (addr) 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+Ftm_Pwm_Ip_I0_Ch0/4 (Ftm_Pwm_Ip_I0_Ch0) @0db112d0
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: Ftm_Pwm_Ip_I0_ChArray/6 (addr) 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+Ftm_Pwm_Ip_I0_Ch2/3 (Ftm_Pwm_Ip_I0_Ch2) @0db11240
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: Ftm_Pwm_Ip_I0_ChArray/6 (addr) 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+Ftm_Pwm_Ip_InstCfg0/2 (Ftm_Pwm_Ip_InstCfg0) @0db111b0
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Ftm_Pwm_Ip_SyncCfg0/1 (addr) 
+  Referring: Ftm_Pwm_Ip_UserCfg0/7 (addr) 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+Ftm_Pwm_Ip_SyncCfg0/1 (Ftm_Pwm_Ip_SyncCfg0) @0da29c18
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: Ftm_Pwm_Ip_InstCfg0/2 (addr) 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+Materializing clones
+Materialization Call site updates done.
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+Trivially needed variables: Ftm_Pwm_Ip_UserCfg0/7 Ftm_Pwm_Ip_I0_ChArray/6 Ftm_Pwm_Ip_I0_Ch1/5 Ftm_Pwm_Ip_I0_Ch0/4 Ftm_Pwm_Ip_I0_Ch2/3 Ftm_Pwm_Ip_InstCfg0/2 Ftm_Pwm_Ip_SyncCfg0/1
+Removing variables:
+
+Final Symbol table:
+
+Ftm_Pwm_Ip_UserCfg0/7 (Ftm_Pwm_Ip_UserCfg0) @0db11480
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.rodata.Ftm_Pwm_Ip_UserCfg0 (implicit_section)
+  Aux: @00000001
+  References: Ftm_Pwm_Ip_InstCfg0/2 (addr) Ftm_Pwm_Ip_I0_ChArray/6 (addr) 
+  Referring: 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+Ftm_Pwm_Ip_I0_ChArray/6 (Ftm_Pwm_Ip_I0_ChArray) @0db113f0
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.rodata.Ftm_Pwm_Ip_I0_ChArray (implicit_section)
+  Aux: @0db11480
+  References: Ftm_Pwm_Ip_I0_Ch2/3 (addr) Ftm_Pwm_Ip_I0_Ch0/4 (addr) Ftm_Pwm_Ip_I0_Ch1/5 (addr) 
+  Referring: Ftm_Pwm_Ip_UserCfg0/7 (addr) 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+Ftm_Pwm_Ip_I0_Ch1/5 (Ftm_Pwm_Ip_I0_Ch1) @0db11360
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.rodata.Ftm_Pwm_Ip_I0_Ch1 (implicit_section)
+  Aux: @0db113f0
+  References: 
+  Referring: Ftm_Pwm_Ip_I0_ChArray/6 (addr) 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+Ftm_Pwm_Ip_I0_Ch0/4 (Ftm_Pwm_Ip_I0_Ch0) @0db112d0
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.rodata.Ftm_Pwm_Ip_I0_Ch0 (implicit_section)
+  Aux: @0db11360
+  References: 
+  Referring: Ftm_Pwm_Ip_I0_ChArray/6 (addr) 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+Ftm_Pwm_Ip_I0_Ch2/3 (Ftm_Pwm_Ip_I0_Ch2) @0db11240
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.rodata.Ftm_Pwm_Ip_I0_Ch2 (implicit_section)
+  Aux: @0db112d0
+  References: 
+  Referring: Ftm_Pwm_Ip_I0_ChArray/6 (addr) 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+Ftm_Pwm_Ip_InstCfg0/2 (Ftm_Pwm_Ip_InstCfg0) @0db111b0
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.rodata.Ftm_Pwm_Ip_InstCfg0 (implicit_section)
+  Aux: @0db11240
+  References: Ftm_Pwm_Ip_SyncCfg0/1 (addr) 
+  Referring: Ftm_Pwm_Ip_UserCfg0/7 (addr) 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+Ftm_Pwm_Ip_SyncCfg0/1 (Ftm_Pwm_Ip_SyncCfg0) @0da29c18
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.rodata.Ftm_Pwm_Ip_SyncCfg0 (implicit_section)
+  Aux: @0db111b0
+  References: 
+  Referring: Ftm_Pwm_Ip_InstCfg0/2 (addr) 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known

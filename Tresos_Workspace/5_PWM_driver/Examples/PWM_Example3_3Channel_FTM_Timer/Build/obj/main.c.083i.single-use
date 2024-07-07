@@ -1,0 +1,30 @@
+EcuM_Init ()
+{
+  <bb 2> :
+  Mcu_Init (&Mcu_Config);
+  Mcu_InitClock (0);
+  Mcu_SetMode (0);
+  OsIf_Init (0B);
+  Port_Init (&Port_Config);
+  Pwm_Init (&Pwm_Config);
+  return;
+
+}
+
+
+main ()
+{
+  int D.6499;
+
+  <bb 2> :
+  EcuM_Init ();
+  Pwm_SetPeriodAndDuty (0, 37500, 8192);
+  Pwm_SetPeriodAndDuty (1, 37500, 16384);
+  Pwm_SetPeriodAndDuty (2, 37500, 32768);
+
+  <bb 3> :
+  goto <bb 3>; [INV]
+
+}
+
+

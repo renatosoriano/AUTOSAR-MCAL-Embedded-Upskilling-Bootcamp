@@ -1,0 +1,161 @@
+IPA summary for NVIC_SetPriority/3 is missing.
+IPA summary for NVIC_DisableIRQ/2 is missing.
+IPA summary for NVIC_EnableIRQ/1 is missing.
+IPA summary for NVIC_SetPriorityGrouping/0 is missing.
+
+Flattening functions:
+Overall time estimate: 0.000000 weighted by profile: 0.000000
+
+Deciding on inlining of small functions.  Starting with size 0.
+node context cache: 0 hits, 0 misses, 0 initializations
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+
+Deciding on functions to be inlined into all callers and removing useless speculations:
+Overall time estimate: 0.000000 weighted by profile: 0.000000
+
+Why inlining failed?
+IPA summary for NVIC_SetPriority/3 is missing.
+IPA summary for NVIC_DisableIRQ/2 is missing.
+IPA summary for NVIC_EnableIRQ/1 is missing.
+IPA summary for NVIC_SetPriorityGrouping/0 is missing.
+Symbol table:
+
+NVIC_SetPriority/3 (NVIC_SetPriority) @0de22460
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+NVIC_DisableIRQ/2 (NVIC_DisableIRQ) @0de221c0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+NVIC_EnableIRQ/1 (NVIC_EnableIRQ) @0de06ee0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+NVIC_SetPriorityGrouping/0 (NVIC_SetPriorityGrouping) @0de06e00
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+
+;; Function NVIC_SetPriorityGrouping (NVIC_SetPriorityGrouping, funcdef_no=0, decl_uid=6005, cgraph_uid=1, symbol_order=0)
+
+NVIC_SetPriorityGrouping (uint32 PriorityGroup)
+{
+  struct S32_SCB_Type * _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  struct S32_SCB_Type * _4;
+  long unsigned int _5;
+
+  <bb 2> :
+  _1 = 3758153728B;
+  _2 ={v} _1->AIRCR;
+  _3 = _2 & 4294965503;
+  _4 = 3758153728B;
+  _5 = PriorityGroup_7(D) | _3;
+  _4->AIRCR ={v} _5;
+  return;
+
+}
+
+
+
+;; Function NVIC_EnableIRQ (NVIC_EnableIRQ, funcdef_no=1, decl_uid=6007, cgraph_uid=2, symbol_order=1)
+
+NVIC_EnableIRQ (uint8 IRQn)
+{
+  long unsigned int _1;
+  long unsigned int _2;
+  struct S32_NVIC_Type * _3;
+  unsigned char _4;
+  long unsigned int _5;
+  long unsigned int _6;
+
+  <bb 2> :
+  _1 = (long unsigned int) IRQn_7(D);
+  _2 = _1 & 31;
+  _3 = 3758153984B;
+  _4 = IRQn_7(D) >> 5;
+  _5 = (long unsigned int) _4;
+  _6 = 1 << _2;
+  _3->ISER[_5] ={v} _6;
+  return;
+
+}
+
+
+
+;; Function NVIC_DisableIRQ (NVIC_DisableIRQ, funcdef_no=2, decl_uid=6009, cgraph_uid=3, symbol_order=2)
+
+NVIC_DisableIRQ (uint8 IRQn)
+{
+  long unsigned int _1;
+  long unsigned int _2;
+  struct S32_NVIC_Type * _3;
+  unsigned char _4;
+  long unsigned int _5;
+  long unsigned int _6;
+
+  <bb 2> :
+  _1 = (long unsigned int) IRQn_7(D);
+  _2 = _1 & 31;
+  _3 = 3758153984B;
+  _4 = IRQn_7(D) >> 5;
+  _5 = (long unsigned int) _4;
+  _6 = 1 << _2;
+  _3->ICER[_5] ={v} _6;
+  return;
+
+}
+
+
+
+;; Function NVIC_SetPriority (NVIC_SetPriority, funcdef_no=3, decl_uid=6012, cgraph_uid=4, symbol_order=3)
+
+NVIC_SetPriority (uint8 IRQn, uint8 priority)
+{
+  uint8 shift;
+  long unsigned int _1;
+  int _2;
+  long unsigned int _3;
+  struct S32_NVIC_Type * _4;
+  long unsigned int _5;
+  unsigned char _6;
+
+  <bb 2> :
+  shift_7 = 4;
+  _1 = (long unsigned int) priority_8(D);
+  _2 = (int) shift_7;
+  _3 = _1 << _2;
+  _4 = 3758153984B;
+  _5 = (long unsigned int) IRQn_9(D);
+  _6 = (unsigned char) _3;
+  _4->IP[_5] ={v} _6;
+  return;
+
+}
+
+
