@@ -42,11 +42,11 @@ The Upskilling Bootcamp covers:
 
 ## 2. Hardware Requirements
 
-**[NXP S32K144-Q100 Evaluation Board for Automotive General Purpose](https://www.nxp.com/design/design-center/development-boards-and-designs/automotive-development-platforms/s32k-mcu-platforms/s32k144-q100-evaluation-board-for-automotive-general-purpose:S32K144EVB)** - Based on the 32-bit Arm® Cortex®-M4F S32K14 MCU, this is the base board used in this bootcamp. \
+**[NXP S32K144-Q100 Evaluation Board for Automotive General Purpose](https://www.nxp.com/design/design-center/development-boards-and-designs/automotive-development-platforms/s32k-mcu-platforms/s32k144-q100-evaluation-board-for-automotive-general-purpose:S32K144EVB)** - Based on the 32-bit Arm® Cortex®-M4F S32K14 MCU, this is the base board used in this bootcamp. 
 
 ![S32K144_pinout.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/S32K144_pinout.png)
 
-**[Modular-S1 Board](https://embedded-house.ghost.io/tag/autosar-mcal-with-nxp-s32k1xx/)** - Board developed by Modular MX, comes with a whole new layer of additional peripherals customized specifically for NXP S32K144. Contains 2 potentiometers, 1 buzzer, 3 push buttons, 8 leds, general purpose inputs-outputs, USB Hub, CAN analyzer, 24 MHz logic analyzer, SPI display, 2 SPI Eeproms, and external CAN & LIN analyzer connectors.   \
+**[Modular-S1 Board](https://embedded-house.ghost.io/tag/autosar-mcal-with-nxp-s32k1xx/)** - Board developed by Modular MX, comes with a whole new layer of additional peripherals customized specifically for NXP S32K144. Contains 2 potentiometers, 1 buzzer, 3 push buttons, 8 leds, general purpose inputs-outputs, USB Hub, CAN analyzer, 24 MHz logic analyzer, SPI display, 2 SPI Eeproms, and external CAN & LIN analyzer connectors.   
 
 ![Modular-S1_Board.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/Modular-S1_Board.png)
 
@@ -113,15 +113,17 @@ You can find here [**Documentation**](https://github.com/renatosoriano/AUTOSAR-M
 
 ## 6. Examples and Exercises
 
-You can find here [**Tresos_Workspace**](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Tresos_Workspace/) the base template file as weel as all the examples and exercises created for this Upskilling Bootcamp.
+You can find here [**Tresos Workspace**](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Tresos_Workspace/) the base template file as weel as all the examples and exercises created for this Upskilling Bootcamp.
 It is divided in folders for each of the MCAL drivers worked, and inside you will find 2 folders, Examples and Exercises.
-Will be uploading them as they are ready.
+
+_Will be uploading them as they are ready._
 
 ## 7. Results
 You can find here captures and media relevant to an example and/or exercise visible output in communication (software) or physical-world (board).
-Will be uploading them as they are ready.
 
-### **CAN Driver Examples**
+_Will be uploading them as they are ready._
+
+### **CAN Driver Examples Results**
 
 * #### CAN Example 3: Transmission using Interrupts (ISRs)
 Hardware board transmits (Tx) an 8-byte single message with ID 0x123 and specified Data payload: 01 02 03 04 05 06 11 12. Savvy CAN receiving (Rx) the data, evertime having byte 1 and 8 increased by value of 0x1 as per the example intentional behavior.
@@ -153,7 +155,7 @@ Hardware board receives (Rx) every second an 8-byte single message with ID 0x022
 
 ![CAN_Example6_Reception_with_Filters_ID_0x022.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/CAN_Driver_examples_results_screenshots/CAN_Example6_Reception_with_Filters_ID_0x022.png)
 
-### **CAN Interface (CANIF) Driver Examples**
+### **CAN Interface (CANIF) Driver Examples Results**
 
 * #### CANIF Example 1: Transmission single PDU
 Hardware board transmits (Tx) an 8-byte single message with ID 0x123 and specified Data payload: 01 02 03 04 05 06 11 12. Savvy CAN receiving (Rx) the data, evertime having byte 1 and 8 increased by value of 0x1 as per the example intentional behavior.
