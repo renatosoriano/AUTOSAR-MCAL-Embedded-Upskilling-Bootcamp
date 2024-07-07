@@ -1,0 +1,74 @@
+
+Marking local functions:
+
+
+Marking externally visible functions: EcuM_CheckWakeup/3 EcuM_ValidateWakeupEvent/2 EcuM_SetWakeupEvent/1
+
+
+Marking externally visible variables: EcuMLastWakeupEvent/0
+
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+Symbol table:
+
+EcuM_CheckWakeup/3 (EcuM_CheckWakeup) @0d9fd700
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+EcuM_ValidateWakeupEvent/2 (EcuM_ValidateWakeupEvent) @0d9fd460
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+EcuM_SetWakeupEvent/1 (EcuM_SetWakeupEvent) @0d9fd1c0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: EcuMLastWakeupEvent/0 (write) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+EcuMLastWakeupEvent/0 (EcuMLastWakeupEvent) @0d9f9f78
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: EcuM_SetWakeupEvent/1 (write) 
+  Availability: available
+  Varpool flags:
+EcuM_CheckWakeup (EcuM_WakeupSourceType wakeupSource)
+{
+  <bb 2> :
+  return;
+
+}
+
+
+EcuM_ValidateWakeupEvent (EcuM_WakeupSourceType events)
+{
+  <bb 2> :
+  return;
+
+}
+
+
+EcuM_SetWakeupEvent (EcuM_WakeupSourceType events)
+{
+  <bb 2> :
+  EcuMLastWakeupEvent = events_2(D);
+  return;
+
+}
+
+

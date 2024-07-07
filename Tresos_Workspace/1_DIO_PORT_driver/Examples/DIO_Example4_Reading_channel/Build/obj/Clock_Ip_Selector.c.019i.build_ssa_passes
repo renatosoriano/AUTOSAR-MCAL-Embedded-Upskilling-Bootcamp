@@ -1,0 +1,795 @@
+Clock_Ip_SetSimTraceSel_TrustedCall (const struct Clock_Ip_SelectorConfigType * Config)
+{
+  uint32 SelectorValue;
+  uint32 RegValue;
+
+  <bb 2> :
+  _1 = Config->Value;
+  _2 = Clock_Ip_au16SelectorEntryHardwareValue[_1];
+  SelectorValue = (uint32) _2;
+  _3 = 1074036736B;
+  RegValue = _3->CHIPCTL;
+  RegValue = RegValue & 4294963199;
+  _4 = SelectorValue << 12;
+  _5 = _4 & 4096;
+  RegValue = RegValue | _5;
+  _6 = 1074036736B;
+  _6->CHIPCTL = RegValue;
+  return;
+
+}
+
+
+Clock_Ip_ResetSimTraceSel_TrustedCall (const struct Clock_Ip_SelectorConfigType * Config)
+{
+  uint32 SelectorValue;
+  uint32 RegValue;
+
+  <bb 2> :
+  _1 = Clock_Ip_au16SelectorEntryHardwareValue[28];
+  SelectorValue = (uint32) _1;
+  _2 = 1074036736B;
+  RegValue = _2->CHIPCTL;
+  RegValue = RegValue & 4294963199;
+  _3 = SelectorValue << 12;
+  _4 = _3 & 4096;
+  RegValue = RegValue | _4;
+  _5 = 1074036736B;
+  _5->CHIPCTL = RegValue;
+  return;
+
+}
+
+
+Clock_Ip_SetPccPcsSelect_TrustedCall (const struct Clock_Ip_SelectorConfigType * Config)
+{
+  uint32 SelectorValue;
+  uint32 PccIndex;
+  uint32 RegValue;
+
+  <bb 2> :
+  _1 = Config->Name;
+  _2 = Clock_Ip_au8ClockFeatures[_1][4];
+  PccIndex = (uint32) _2;
+  _3 = Config->Value;
+  _4 = Clock_Ip_au8SelectorEntryPcsHardwareValue[_3];
+  SelectorValue = (uint32) _4;
+  _5 = 1074155520B;
+  RegValue = _5->PCCn[PccIndex];
+  RegValue = RegValue & 4177526783;
+  _6 = SelectorValue << 24;
+  _7 = _6 & 117440512;
+  RegValue = RegValue | _7;
+  _8 = 1074155520B;
+  _8->PCCn[PccIndex] = RegValue;
+  return;
+
+}
+
+
+Clock_Ip_ResetPccPcsSelect_TrustedCall (const struct Clock_Ip_SelectorConfigType * Config)
+{
+  uint32 PccIndex;
+
+  <bb 2> :
+  _1 = Config->Name;
+  _2 = Clock_Ip_au8ClockFeatures[_1][4];
+  PccIndex = (uint32) _2;
+  _3 = 1074155520B;
+  _4 = _3->PCCn[PccIndex];
+  _5 = 1074155520B;
+  _6 = _4 & 3221225471;
+  _5->PCCn[PccIndex] = _6;
+  _7 = 1074155520B;
+  _8 = _7->PCCn[PccIndex];
+  _9 = 1074155520B;
+  _10 = _8 & 4177526783;
+  _9->PCCn[PccIndex] = _10;
+  return;
+
+}
+
+
+Clock_Ip_SetSimClkoutSel_TrustedCall (const struct Clock_Ip_SelectorConfigType * Config)
+{
+  uint32 SelectorValue;
+  uint32 RegValue;
+
+  <bb 2> :
+  _1 = Config->Value;
+  _2 = Clock_Ip_au16SelectorEntryHardwareValue[_1];
+  SelectorValue = (uint32) _2;
+  _3 = 1074036736B;
+  RegValue = _3->CHIPCTL;
+  RegValue = RegValue & 4294967055;
+  _4 = SelectorValue << 4;
+  RegValue = RegValue | _4;
+  _5 = 1074036736B;
+  _5->CHIPCTL = RegValue;
+  return;
+
+}
+
+
+Clock_Ip_ResetSimClkoutSel_TrustedCall (const struct Clock_Ip_SelectorConfigType * Config)
+{
+  uint32 RegValue;
+
+  <bb 2> :
+  _1 = 1074036736B;
+  RegValue = _1->CHIPCTL;
+  RegValue = RegValue & 4294965007;
+  _2 = 1074036736B;
+  _2->CHIPCTL = RegValue;
+  return;
+
+}
+
+
+Clock_Ip_SetSimFtmoptSel_TrustedCall (const struct Clock_Ip_SelectorConfigType * Config)
+{
+  uint32 Instance;
+  uint32 SelectorValue;
+  uint32 RegValue;
+
+  <bb 2> :
+  _1 = Config->Value;
+  _2 = Clock_Ip_au16SelectorEntryHardwareValue[_1];
+  SelectorValue = (uint32) _2;
+  _3 = Config->Name;
+  _4 = Clock_Ip_au8ClockFeatures[_3][0];
+  Instance = (uint32) _4;
+  _5 = 1074036736B;
+  RegValue = _5->FTMOPT0;
+  if (Instance <= 3)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  _6 = Instance << 1;
+  _7 = _6 + 24;
+  _8 = 3 << _7;
+  _9 = ~_8;
+  RegValue = RegValue & _9;
+  _10 = Instance << 1;
+  _11 = _10 + 24;
+  _12 = SelectorValue << _11;
+  RegValue = RegValue | _12;
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  _13 = Instance + 4294967292;
+  _14 = _13 << 1;
+  _15 = _14 + 16;
+  _16 = 3 << _15;
+  _17 = ~_16;
+  RegValue = RegValue & _17;
+  _18 = Instance + 4294967292;
+  _19 = _18 << 1;
+  _20 = _19 + 16;
+  _21 = SelectorValue << _20;
+  RegValue = RegValue | _21;
+
+  <bb 5> :
+  _22 = 1074036736B;
+  _22->FTMOPT0 = RegValue;
+  return;
+
+}
+
+
+Clock_Ip_ResetSimFtmoptSel_TrustedCall (const struct Clock_Ip_SelectorConfigType * Config)
+{
+  uint32 Instance;
+  uint32 SelectorValue;
+  uint32 RegValue;
+
+  <bb 2> :
+  _1 = Clock_Ip_au16SelectorEntryHardwareValue[5];
+  SelectorValue = (uint32) _1;
+  _2 = Config->Name;
+  _3 = Clock_Ip_au8ClockFeatures[_2][0];
+  Instance = (uint32) _3;
+  _4 = 1074036736B;
+  RegValue = _4->FTMOPT0;
+  if (Instance <= 3)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  _5 = Instance << 1;
+  _6 = _5 + 24;
+  _7 = 3 << _6;
+  _8 = ~_7;
+  RegValue = RegValue & _8;
+  _9 = Instance << 1;
+  _10 = _9 + 24;
+  _11 = SelectorValue << _10;
+  RegValue = RegValue | _11;
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  _12 = Instance + 4294967292;
+  _13 = _12 << 1;
+  _14 = _13 + 16;
+  _15 = 3 << _14;
+  _16 = ~_15;
+  RegValue = RegValue & _16;
+  _17 = Instance + 4294967292;
+  _18 = _17 << 1;
+  _19 = _18 + 16;
+  _20 = SelectorValue << _19;
+  RegValue = RegValue | _20;
+
+  <bb 5> :
+  _21 = 1074036736B;
+  _21->FTMOPT0 = RegValue;
+  return;
+
+}
+
+
+Clock_Ip_SetScgClkoutSel_TrustedCall (const struct Clock_Ip_SelectorConfigType * Config)
+{
+  uint32 SelectorValue;
+  uint32 RegValue;
+
+  <bb 2> :
+  _1 = Config->Value;
+  _2 = Clock_Ip_au8SelectorEntryScsHardwareValue[_1];
+  SelectorValue = (uint32) _2;
+  _3 = 1074151424B;
+  RegValue = _3->CLKOUTCNFG;
+  RegValue = RegValue & 4043309055;
+  _4 = SelectorValue << 24;
+  RegValue = RegValue | _4;
+  _5 = 1074151424B;
+  _5->CLKOUTCNFG = RegValue;
+  return;
+
+}
+
+
+Clock_Ip_ResetScgClkoutSel_TrustedCall (const struct Clock_Ip_SelectorConfigType * Config)
+{
+  uint32 SelectorValue;
+  uint32 RegValue;
+
+  <bb 2> :
+  _1 = Clock_Ip_au8SelectorEntryScsHardwareValue[5];
+  SelectorValue = (uint32) _1;
+  _2 = 1074151424B;
+  RegValue = _2->CLKOUTCNFG;
+  RegValue = RegValue & 4043309055;
+  _3 = SelectorValue << 24;
+  RegValue = RegValue | _3;
+  _4 = 1074151424B;
+  _4->CLKOUTCNFG = RegValue;
+  return;
+
+}
+
+
+Clock_Ip_SetSimLpoSel_TrustedCall (const struct Clock_Ip_SelectorConfigType * Config)
+{
+  uint32 SelectorValue;
+  uint32 RegValue;
+
+  <bb 2> :
+  _1 = Config->Value;
+  _2 = Clock_Ip_au8SelectorEntrySIMHardwareValue[_1];
+  SelectorValue = (uint32) _2;
+  _3 = 1074036736B;
+  RegValue = _3->LPOCLKS;
+  RegValue = RegValue & 4294967283;
+  _4 = SelectorValue << 2;
+  RegValue = RegValue | _4;
+  _5 = 1074036736B;
+  _5->LPOCLKS = RegValue;
+  return;
+
+}
+
+
+Clock_Ip_ResetSimLpoSel_TrustedCall (const struct Clock_Ip_SelectorConfigType * Config)
+{
+  uint32 SelectorValue;
+  uint32 RegValue;
+
+  <bb 2> :
+  _1 = Clock_Ip_au8SelectorEntrySIMHardwareValue[1];
+  SelectorValue = (uint32) _1;
+  _2 = 1074036736B;
+  RegValue = _2->LPOCLKS;
+  RegValue = RegValue & 4294967283;
+  _3 = SelectorValue << 2;
+  RegValue = RegValue | _3;
+  _4 = 1074036736B;
+  _4->LPOCLKS = RegValue;
+  return;
+
+}
+
+
+Clock_Ip_SetSimRtcSel_TrustedCall (const struct Clock_Ip_SelectorConfigType * Config)
+{
+  uint32 SelectorValue;
+  uint32 RegValue;
+
+  <bb 2> :
+  _1 = Config->Value;
+  _2 = Clock_Ip_au16SelectorEntryHardwareValue[_1];
+  SelectorValue = (uint32) _2;
+  _3 = 1074036736B;
+  RegValue = _3->LPOCLKS;
+  RegValue = RegValue & 4294967247;
+  _4 = SelectorValue << 4;
+  RegValue = RegValue | _4;
+  _5 = 1074036736B;
+  _5->LPOCLKS = RegValue;
+  return;
+
+}
+
+
+Clock_Ip_ResetSimRtcSel_TrustedCall (const struct Clock_Ip_SelectorConfigType * Config)
+{
+  uint32 SelectorValue;
+  uint32 RegValue;
+
+  <bb 2> :
+  _1 = Clock_Ip_au16SelectorEntryHardwareValue[14];
+  SelectorValue = (uint32) _1;
+  _2 = 1074036736B;
+  RegValue = _2->LPOCLKS;
+  RegValue = RegValue & 4294967247;
+  _3 = SelectorValue << 4;
+  RegValue = RegValue | _3;
+  _4 = 1074036736B;
+  _4->LPOCLKS = RegValue;
+  return;
+
+}
+
+
+Clock_Ip_SetScgHsrunSel_TrustedCall (const struct Clock_Ip_SelectorConfigType * Config)
+{
+  uint32 SelectorValue;
+  uint32 RegValue;
+
+  <bb 2> :
+  _1 = Config->Value;
+  _2 = Clock_Ip_au8SelectorEntryScsHardwareValue[_1];
+  SelectorValue = (uint32) _2;
+  _3 = 1074151424B;
+  RegValue = _3->HCCR;
+  RegValue = RegValue & 4043309055;
+  _4 = SelectorValue << 24;
+  _5 = _4 & 251658240;
+  RegValue = RegValue | _5;
+  _6 = 1074151424B;
+  _6->HCCR = RegValue;
+  return;
+
+}
+
+
+Clock_Ip_ResetScgHsrunSel_TrustedCall (const struct Clock_Ip_SelectorConfigType * Config)
+{
+  uint32 SelectorValue;
+  uint32 RegValue;
+
+  <bb 2> :
+  _1 = Clock_Ip_au8SelectorEntryScsHardwareValue[5];
+  SelectorValue = (uint32) _1;
+  _2 = 1074151424B;
+  RegValue = _2->HCCR;
+  RegValue = RegValue & 4043309055;
+  _3 = SelectorValue << 24;
+  _4 = _3 & 251658240;
+  RegValue = RegValue | _4;
+  _5 = 1074151424B;
+  _5->HCCR = RegValue;
+  return;
+
+}
+
+
+Clock_Ip_SetScgVlprSel_TrustedCall (const struct Clock_Ip_SelectorConfigType * Config)
+{
+  uint32 SelectorValue;
+  uint32 RegValue;
+
+  <bb 2> :
+  _1 = Config->Value;
+  _2 = Clock_Ip_au8SelectorEntryScsHardwareValue[_1];
+  SelectorValue = (uint32) _2;
+  _3 = 1074151424B;
+  RegValue = _3->VCCR;
+  RegValue = RegValue & 4043309055;
+  _4 = SelectorValue << 24;
+  _5 = _4 & 251658240;
+  RegValue = RegValue | _5;
+  _6 = 1074151424B;
+  _6->VCCR = RegValue;
+  return;
+
+}
+
+
+Clock_Ip_SetScgRunSel_TrustedCall (const struct Clock_Ip_SelectorConfigType * Config)
+{
+  uint32 SelectorValue;
+  uint32 RegValue;
+
+  <bb 2> :
+  _1 = Config->Value;
+  _2 = Clock_Ip_au8SelectorEntryScsHardwareValue[_1];
+  SelectorValue = (uint32) _2;
+  _3 = 1074151424B;
+  RegValue = _3->RCCR;
+  RegValue = RegValue & 4043309055;
+  _4 = SelectorValue << 24;
+  _5 = _4 & 251658240;
+  RegValue = RegValue | _5;
+  _6 = 1074151424B;
+  _6->RCCR = RegValue;
+  return;
+
+}
+
+
+Clock_Ip_ResetScgRunSel_TrustedCall (const struct Clock_Ip_SelectorConfigType * Config)
+{
+  uint32 SelectorValue;
+  uint32 RegValue;
+
+  <bb 2> :
+  _1 = Clock_Ip_au8SelectorEntryScsHardwareValue[5];
+  SelectorValue = (uint32) _1;
+  _2 = 1074151424B;
+  RegValue = _2->RCCR;
+  RegValue = RegValue & 4043309055;
+  _3 = SelectorValue << 24;
+  _4 = _3 & 251658240;
+  RegValue = RegValue | _4;
+  _5 = 1074151424B;
+  _5->RCCR = RegValue;
+  return;
+
+}
+
+
+Clock_Ip_SetSimTraceSel (const struct Clock_Ip_SelectorConfigType * Config)
+{
+  <bb 2> :
+  if (Config != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  Clock_Ip_SetSimTraceSel_TrustedCall (Config);
+
+  <bb 4> :
+  return;
+
+}
+
+
+Clock_Ip_ResetSimTraceSel (const struct Clock_Ip_SelectorConfigType * Config)
+{
+  <bb 2> :
+  if (Config != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  Clock_Ip_ResetSimTraceSel_TrustedCall (Config);
+
+  <bb 4> :
+  return;
+
+}
+
+
+Clock_Ip_SetPccPcsSelect (const struct Clock_Ip_SelectorConfigType * Config)
+{
+  <bb 2> :
+  if (Config != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  Clock_Ip_SetPccPcsSelect_TrustedCall (Config);
+
+  <bb 4> :
+  return;
+
+}
+
+
+Clock_Ip_ResetPccPcsSelect (const struct Clock_Ip_SelectorConfigType * Config)
+{
+  <bb 2> :
+  if (Config != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  Clock_Ip_ResetPccPcsSelect_TrustedCall (Config);
+
+  <bb 4> :
+  return;
+
+}
+
+
+Clock_Ip_SetSimClkoutSel (const struct Clock_Ip_SelectorConfigType * Config)
+{
+  <bb 2> :
+  if (Config != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  Clock_Ip_SetSimClkoutSel_TrustedCall (Config);
+
+  <bb 4> :
+  return;
+
+}
+
+
+Clock_Ip_ResetSimClkoutSel (const struct Clock_Ip_SelectorConfigType * Config)
+{
+  <bb 2> :
+  if (Config != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  Clock_Ip_ResetSimClkoutSel_TrustedCall (Config);
+
+  <bb 4> :
+  return;
+
+}
+
+
+Clock_Ip_SetSimFtmoptSel (const struct Clock_Ip_SelectorConfigType * Config)
+{
+  <bb 2> :
+  if (Config != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  Clock_Ip_SetSimFtmoptSel_TrustedCall (Config);
+
+  <bb 4> :
+  return;
+
+}
+
+
+Clock_Ip_ResetSimFtmoptSel (const struct Clock_Ip_SelectorConfigType * Config)
+{
+  <bb 2> :
+  if (Config != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  Clock_Ip_ResetSimFtmoptSel_TrustedCall (Config);
+
+  <bb 4> :
+  return;
+
+}
+
+
+Clock_Ip_SetScgClkoutSel (const struct Clock_Ip_SelectorConfigType * Config)
+{
+  <bb 2> :
+  if (Config != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  Clock_Ip_SetScgClkoutSel_TrustedCall (Config);
+
+  <bb 4> :
+  return;
+
+}
+
+
+Clock_Ip_ResetScgClkoutSel (const struct Clock_Ip_SelectorConfigType * Config)
+{
+  <bb 2> :
+  if (Config != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  Clock_Ip_ResetScgClkoutSel_TrustedCall (Config);
+
+  <bb 4> :
+  return;
+
+}
+
+
+Clock_Ip_SetSimLpoSel (const struct Clock_Ip_SelectorConfigType * Config)
+{
+  <bb 2> :
+  if (Config != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  Clock_Ip_SetSimLpoSel_TrustedCall (Config);
+
+  <bb 4> :
+  return;
+
+}
+
+
+Clock_Ip_ResetSimLpoSel (const struct Clock_Ip_SelectorConfigType * Config)
+{
+  <bb 2> :
+  if (Config != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  Clock_Ip_ResetSimLpoSel_TrustedCall (Config);
+
+  <bb 4> :
+  return;
+
+}
+
+
+Clock_Ip_SetSimRtcSel (const struct Clock_Ip_SelectorConfigType * Config)
+{
+  <bb 2> :
+  if (Config != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  Clock_Ip_SetSimRtcSel_TrustedCall (Config);
+
+  <bb 4> :
+  return;
+
+}
+
+
+Clock_Ip_ResetSimRtcSel (const struct Clock_Ip_SelectorConfigType * Config)
+{
+  <bb 2> :
+  if (Config != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  Clock_Ip_ResetSimRtcSel_TrustedCall (Config);
+
+  <bb 4> :
+  return;
+
+}
+
+
+Clock_Ip_SetScgHsrunSel (const struct Clock_Ip_SelectorConfigType * Config)
+{
+  <bb 2> :
+  if (Config != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  Clock_Ip_SetScgHsrunSel_TrustedCall (Config);
+
+  <bb 4> :
+  return;
+
+}
+
+
+Clock_Ip_ResetScgHsrunSel (const struct Clock_Ip_SelectorConfigType * Config)
+{
+  <bb 2> :
+  if (Config != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  Clock_Ip_ResetScgHsrunSel_TrustedCall (Config);
+
+  <bb 4> :
+  return;
+
+}
+
+
+Clock_Ip_SetScgVlprSel (const struct Clock_Ip_SelectorConfigType * Config)
+{
+  <bb 2> :
+  if (Config != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  Clock_Ip_SetScgVlprSel_TrustedCall (Config);
+
+  <bb 4> :
+  return;
+
+}
+
+
+Clock_Ip_SetScgRunSel (const struct Clock_Ip_SelectorConfigType * Config)
+{
+  <bb 2> :
+  if (Config != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  Clock_Ip_SetScgRunSel_TrustedCall (Config);
+
+  <bb 4> :
+  return;
+
+}
+
+
+Clock_Ip_ResetScgRunSel (const struct Clock_Ip_SelectorConfigType * Config)
+{
+  <bb 2> :
+  if (Config != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  Clock_Ip_ResetScgRunSel_TrustedCall (Config);
+
+  <bb 4> :
+  return;
+
+}
+
+
+Clock_Ip_CallbackSelectorEmpty (const struct Clock_Ip_SelectorConfigType * Config)
+{
+  <bb 2> :
+  return;
+
+}
+
+

@@ -1,0 +1,49 @@
+EcuM_Init ()
+{
+  <bb 2> :
+  Mcu_Init (&Mcu_Config);
+  Mcu_InitClock (0);
+  Mcu_SetMode (0);
+  Port_Init (&Port_Config);
+  return;
+
+}
+
+
+main ()
+{
+  uint32 i;
+  int D.6065;
+
+  <bb 2> :
+  EcuM_Init ();
+
+  <bb 3> :
+  _1 = Dio_ReadChannel (113);
+  if (_1 != 1)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  Dio_FlipChannel (111);
+
+  <bb 5> :
+  i = 0;
+  goto <bb 7>; [INV]
+
+  <bb 6> :
+  i = i + 1;
+
+  <bb 7> :
+  if (i <= 999999)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 8> :
+  goto <bb 3>; [INV]
+
+}
+
+

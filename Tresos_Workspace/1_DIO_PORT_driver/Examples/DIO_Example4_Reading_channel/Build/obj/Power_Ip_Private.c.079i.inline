@@ -1,0 +1,183 @@
+IPA summary for Power_Ip_TimeoutExpired/3 is missing.
+IPA summary for Power_Ip_StartTimeout/2 is missing.
+IPA summary for Power_Ip_ReportPowerErrorsEmptyCallback/1 is missing.
+IPA summary for Power_Ip_ReportPowerErrors/0 is missing.
+
+Flattening functions:
+Overall time estimate: 0.000000 weighted by profile: 0.000000
+
+Deciding on inlining of small functions.  Starting with size 0.
+node context cache: 0 hits, 0 misses, 0 initializations
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+
+Deciding on functions to be inlined into all callers and removing useless speculations:
+Overall time estimate: 0.000000 weighted by profile: 0.000000
+
+Why inlining failed?
+function body not available                       :        3 calls, 3.000000 freq, 0 count
+IPA summary for Power_Ip_TimeoutExpired/3 is missing.
+IPA summary for Power_Ip_StartTimeout/2 is missing.
+IPA summary for Power_Ip_ReportPowerErrorsEmptyCallback/1 is missing.
+IPA summary for Power_Ip_ReportPowerErrors/0 is missing.
+Symbol table:
+
+OsIf_GetElapsed/7 (OsIf_GetElapsed) @0da75d20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Power_Ip_TimeoutExpired/3 
+  Calls: 
+OsIf_MicrosToTicks/6 (OsIf_MicrosToTicks) @0da75b60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Power_Ip_StartTimeout/2 
+  Calls: 
+OsIf_GetCounter/5 (OsIf_GetCounter) @0da75a80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Power_Ip_StartTimeout/2 
+  Calls: 
+Power_Ip_pfReportErrorsCallback/4 (Power_Ip_pfReportErrorsCallback) @0da763a8
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: Power_Ip_ReportPowerErrors/0 (read) 
+  Availability: not_available
+  Varpool flags:
+Power_Ip_TimeoutExpired/3 (Power_Ip_TimeoutExpired) @0da75460
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: OsIf_GetElapsed/7 
+Power_Ip_StartTimeout/2 (Power_Ip_StartTimeout) @0da751c0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: OsIf_MicrosToTicks/6 OsIf_GetCounter/5 
+Power_Ip_ReportPowerErrorsEmptyCallback/1 (Power_Ip_ReportPowerErrorsEmptyCallback) @0da6cd20
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+Power_Ip_ReportPowerErrors/0 (Power_Ip_ReportPowerErrors) @0da6cee0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Power_Ip_pfReportErrorsCallback/4 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+   Indirect call Num speculative call targets: 0
+
+;; Function Power_Ip_ReportPowerErrors (Power_Ip_ReportPowerErrors, funcdef_no=0, decl_uid=5492, cgraph_uid=1, symbol_order=0)
+
+Power_Ip_ReportPowerErrors (Power_Ip_ReportErrorType Error, uint8 ErrorCode)
+{
+  void (*<T514>) (Power_Ip_ReportErrorType, uint8) Power_Ip_pfReportErrorsCallback.0_1;
+
+  <bb 2> :
+  Power_Ip_pfReportErrorsCallback.0_1 = Power_Ip_pfReportErrorsCallback;
+  Power_Ip_pfReportErrorsCallback.0_1 (Error_3(D), ErrorCode_4(D));
+  return;
+
+}
+
+
+
+;; Function Power_Ip_ReportPowerErrorsEmptyCallback (Power_Ip_ReportPowerErrorsEmptyCallback, funcdef_no=1, decl_uid=5495, cgraph_uid=2, symbol_order=1)
+
+Power_Ip_ReportPowerErrorsEmptyCallback (Power_Ip_ReportErrorType Error, uint8 ErrorCode)
+{
+  <bb 2> :
+  return;
+
+}
+
+
+
+;; Function Power_Ip_StartTimeout (Power_Ip_StartTimeout, funcdef_no=2, decl_uid=5500, cgraph_uid=3, symbol_order=2)
+
+Power_Ip_StartTimeout (uint32 * StartTimeOut, uint32 * ElapsedTimeOut, uint32 * TimeoutTicksOut, uint32 TimeoutUs)
+{
+  long unsigned int _1;
+  long unsigned int _2;
+
+  <bb 2> :
+  _1 = OsIf_GetCounter (0);
+  *StartTimeOut_5(D) = _1;
+  *ElapsedTimeOut_7(D) = 0;
+  _2 = OsIf_MicrosToTicks (TimeoutUs_9(D), 0);
+  *TimeoutTicksOut_11(D) = _2;
+  return;
+
+}
+
+
+
+;; Function Power_Ip_TimeoutExpired (Power_Ip_TimeoutExpired, funcdef_no=3, decl_uid=5504, cgraph_uid=4, symbol_order=3)
+
+Power_Ip_TimeoutExpired (uint32 * StartTimeInOut, uint32 * ElapsedTimeInOut, uint32 TimeoutTicks)
+{
+  boolean RetVal;
+  boolean D.5549;
+  long unsigned int D.5546;
+  long unsigned int _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _9;
+  boolean _14;
+
+  <bb 2> :
+  RetVal_5 = 0;
+  _9 = OsIf_GetElapsed (StartTimeInOut_7(D), 0);
+  _1 = *ElapsedTimeInOut_10(D);
+  _2 = _9 + _1;
+  *ElapsedTimeInOut_10(D) = _2;
+  _3 = *ElapsedTimeInOut_10(D);
+  if (TimeoutTicks_12(D) <= _3)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  RetVal_13 = 1;
+
+  <bb 4> :
+  # RetVal_4 = PHI <RetVal_5(2), RetVal_13(3)>
+  _14 = RetVal_4;
+
+  <bb 5> :
+<L2>:
+  return _14;
+
+}
+
+

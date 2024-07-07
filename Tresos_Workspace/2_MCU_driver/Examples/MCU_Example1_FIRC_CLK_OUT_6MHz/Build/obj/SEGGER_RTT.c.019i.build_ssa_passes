@@ -1,0 +1,1868 @@
+SEGGER_RTT_GetBytesInBuffer (unsigned int BufferIndex)
+{
+  volatile struct SEGGER_RTT_CB * pRTTCB;
+  unsigned int r;
+  unsigned int WrOff;
+  unsigned int RdOff;
+  unsigned int D.6404;
+
+  <bb 2> :
+  pRTTCB = &_SEGGER_RTT;
+  RdOff = pRTTCB->aUp[BufferIndex].RdOff;
+  WrOff = pRTTCB->aUp[BufferIndex].WrOff;
+  if (RdOff <= WrOff)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  r = WrOff - RdOff;
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  _1 = pRTTCB->aUp[BufferIndex].SizeOfBuffer;
+  _2 = RdOff - WrOff;
+  r = _1 + _2;
+
+  <bb 5> :
+  D.6404 = r;
+
+  <bb 6> :
+<L3>:
+  return D.6404;
+
+}
+
+
+SEGGER_RTT_GetAvailWriteSpace (unsigned int BufferIndex)
+{
+  struct SEGGER_RTT_BUFFER_UP * pRing;
+  unsigned int D.6399;
+
+  <bb 2> :
+  pRing = &_SEGGER_RTT.aUp[BufferIndex];
+  D.6399 = _GetAvailWriteSpace (pRing);
+
+  <bb 3> :
+<L0>:
+  return D.6399;
+
+}
+
+
+SEGGER_RTT_TerminalOut (unsigned char TerminalId, const char * s)
+{
+  unsigned int _SEGGER_RTT__LockState;
+  volatile struct SEGGER_RTT_CB * pRTTCBInit;
+  struct SEGGER_RTT_BUFFER_UP * pRing;
+  unsigned int Avail;
+  unsigned int FragLen;
+  int Status;
+  int D.6397;
+
+  <bb 2> :
+  pRTTCBInit = &_SEGGER_RTT;
+  _1 = pRTTCBInit->acID[0];
+  if (_1 != 83)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  _DoInit ();
+
+  <bb 4> :
+  if (TerminalId <= 15)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 17>; [INV]
+
+  <bb 5> :
+  pRing = &_SEGGER_RTT.aUp[0];
+  FragLen = strlen (s);
+  __asm__ __volatile__("mrs   %0, basepri  
+	mov   r1, %1       
+	msr   basepri, r1  
+	" : "=r" _SEGGER_RTT__LockState : "i" 32 : "cc", "r1");
+  Avail = _GetAvailWriteSpace (pRing);
+  _2 = pRing->Flags;
+  _3 = _2 & 3;
+  switch (_3) <default: <L12> [INV], case 0: <L3> [INV], case 1: <L7> [INV], case 2: <L11> [INV]>
+
+  <bb 6> :
+<L3>:
+  _4 = FragLen + 4;
+  if (Avail < _4)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 7> :
+  Status = 0;
+  goto <bb 9>; [INV]
+
+  <bb 8> :
+  _PostTerminalSwitch (pRing, TerminalId);
+  _5 = _WriteBlocking (pRing, s, FragLen);
+  Status = (int) _5;
+  _ActiveTerminal.1_6 = _ActiveTerminal;
+  _PostTerminalSwitch (pRing, _ActiveTerminal.1_6);
+
+  <bb 9> :
+  goto <bb 16>; [INV]
+
+  <bb 10> :
+<L7>:
+  if (Avail <= 3)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 11> :
+  Status = -1;
+  goto <bb 13>; [INV]
+
+  <bb 12> :
+  _PostTerminalSwitch (pRing, TerminalId);
+  _7 = Avail + 4294967292;
+  _8 = MIN_EXPR <FragLen, _7>;
+  _9 = _WriteBlocking (pRing, s, _8);
+  Status = (int) _9;
+  _ActiveTerminal.2_10 = _ActiveTerminal;
+  _PostTerminalSwitch (pRing, _ActiveTerminal.2_10);
+
+  <bb 13> :
+  goto <bb 16>; [INV]
+
+  <bb 14> :
+<L11>:
+  _PostTerminalSwitch (pRing, TerminalId);
+  _11 = _WriteBlocking (pRing, s, FragLen);
+  Status = (int) _11;
+  _ActiveTerminal.3_12 = _ActiveTerminal;
+  _PostTerminalSwitch (pRing, _ActiveTerminal.3_12);
+  goto <bb 16>; [INV]
+
+  <bb 15> :
+<L12>:
+  Status = -1;
+
+  <bb 16> :
+  __asm__ __volatile__("msr   basepri, %0  
+	" :  : "r" _SEGGER_RTT__LockState);
+  goto <bb 18>; [INV]
+
+  <bb 17> :
+  Status = -1;
+
+  <bb 18> :
+  D.6397 = Status;
+
+  <bb 19> :
+<L16>:
+  return D.6397;
+
+}
+
+
+SEGGER_RTT_SetTerminal (unsigned char TerminalId)
+{
+  unsigned int _SEGGER_RTT__LockState;
+  volatile struct SEGGER_RTT_CB * pRTTCBInit;
+  int r;
+  unsigned int Avail;
+  struct SEGGER_RTT_BUFFER_UP * pRing;
+  unsigned char ac[2];
+  int D.6383;
+
+  <bb 2> :
+  pRTTCBInit = &_SEGGER_RTT;
+  _1 = pRTTCBInit->acID[0];
+  if (_1 != 83)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  _DoInit ();
+
+  <bb 4> :
+  r = 0;
+  ac[0] = 255;
+  if (TerminalId <= 15)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 5> :
+  _2 = (int) TerminalId;
+  _3 = _aTerminalId[_2];
+  ac[1] = _3;
+  pRing = &_SEGGER_RTT.aUp[0];
+  __asm__ __volatile__("mrs   %0, basepri  
+	mov   r1, %1       
+	msr   basepri, r1  
+	" : "=r" _SEGGER_RTT__LockState : "i" 32 : "cc", "r1");
+  _4 = pRing->Flags;
+  _5 = _4 & 3;
+  if (_5 == 2)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  _ActiveTerminal = TerminalId;
+  _WriteBlocking (pRing, &ac, 2);
+  goto <bb 10>; [INV]
+
+  <bb 7> :
+  Avail = _GetAvailWriteSpace (pRing);
+  if (Avail > 1)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 8> :
+  _ActiveTerminal = TerminalId;
+  _WriteNoCheck (pRing, &ac, 2);
+  goto <bb 10>; [INV]
+
+  <bb 9> :
+  r = -1;
+
+  <bb 10> :
+  __asm__ __volatile__("msr   basepri, %0  
+	" :  : "r" _SEGGER_RTT__LockState);
+  goto <bb 12>; [INV]
+
+  <bb 11> :
+  r = -1;
+
+  <bb 12> :
+  D.6383 = r;
+  ac = {CLOBBER};
+
+  <bb 13> :
+<L12>:
+  return D.6383;
+
+}
+
+
+SEGGER_RTT_Init ()
+{
+  <bb 2> :
+  _DoInit ();
+  return;
+
+}
+
+
+SEGGER_RTT_SetFlagsDownBuffer (unsigned int BufferIndex, unsigned int Flags)
+{
+  unsigned int _SEGGER_RTT__LockState;
+  volatile struct SEGGER_RTT_CB * pRTTCBInit;
+  volatile struct SEGGER_RTT_BUFFER_DOWN * pDown;
+  volatile struct SEGGER_RTT_CB * pRTTCB;
+  int r;
+  int D.6370;
+
+  <bb 2> :
+  pRTTCBInit = &_SEGGER_RTT;
+  _1 = pRTTCBInit->acID[0];
+  if (_1 != 83)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  _DoInit ();
+
+  <bb 4> :
+  pRTTCB = &_SEGGER_RTT;
+  if (BufferIndex <= 2)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  __asm__ __volatile__("mrs   %0, basepri  
+	mov   r1, %1       
+	msr   basepri, r1  
+	" : "=r" _SEGGER_RTT__LockState : "i" 32 : "cc", "r1");
+  pDown = &pRTTCB->aDown[BufferIndex];
+  pDown->Flags = Flags;
+  __asm__ __volatile__("msr   basepri, %0  
+	" :  : "r" _SEGGER_RTT__LockState);
+  r = 0;
+  goto <bb 7>; [INV]
+
+  <bb 6> :
+  r = -1;
+
+  <bb 7> :
+  D.6370 = r;
+
+  <bb 8> :
+<L5>:
+  return D.6370;
+
+}
+
+
+SEGGER_RTT_SetFlagsUpBuffer (unsigned int BufferIndex, unsigned int Flags)
+{
+  unsigned int _SEGGER_RTT__LockState;
+  volatile struct SEGGER_RTT_CB * pRTTCBInit;
+  volatile struct SEGGER_RTT_BUFFER_UP * pUp;
+  volatile struct SEGGER_RTT_CB * pRTTCB;
+  int r;
+  int D.6363;
+
+  <bb 2> :
+  pRTTCBInit = &_SEGGER_RTT;
+  _1 = pRTTCBInit->acID[0];
+  if (_1 != 83)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  _DoInit ();
+
+  <bb 4> :
+  pRTTCB = &_SEGGER_RTT;
+  if (BufferIndex <= 2)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  __asm__ __volatile__("mrs   %0, basepri  
+	mov   r1, %1       
+	msr   basepri, r1  
+	" : "=r" _SEGGER_RTT__LockState : "i" 32 : "cc", "r1");
+  pUp = &pRTTCB->aUp[BufferIndex];
+  pUp->Flags = Flags;
+  __asm__ __volatile__("msr   basepri, %0  
+	" :  : "r" _SEGGER_RTT__LockState);
+  r = 0;
+  goto <bb 7>; [INV]
+
+  <bb 6> :
+  r = -1;
+
+  <bb 7> :
+  D.6363 = r;
+
+  <bb 8> :
+<L5>:
+  return D.6363;
+
+}
+
+
+SEGGER_RTT_SetNameDownBuffer (unsigned int BufferIndex, const char * sName)
+{
+  unsigned int _SEGGER_RTT__LockState;
+  volatile struct SEGGER_RTT_CB * pRTTCBInit;
+  volatile struct SEGGER_RTT_BUFFER_DOWN * pDown;
+  volatile struct SEGGER_RTT_CB * pRTTCB;
+  int r;
+  int D.6356;
+
+  <bb 2> :
+  pRTTCBInit = &_SEGGER_RTT;
+  _1 = pRTTCBInit->acID[0];
+  if (_1 != 83)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  _DoInit ();
+
+  <bb 4> :
+  pRTTCB = &_SEGGER_RTT;
+  if (BufferIndex <= 2)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  __asm__ __volatile__("mrs   %0, basepri  
+	mov   r1, %1       
+	msr   basepri, r1  
+	" : "=r" _SEGGER_RTT__LockState : "i" 32 : "cc", "r1");
+  pDown = &pRTTCB->aDown[BufferIndex];
+  pDown->sName = sName;
+  __asm__ __volatile__("msr   basepri, %0  
+	" :  : "r" _SEGGER_RTT__LockState);
+  r = 0;
+  goto <bb 7>; [INV]
+
+  <bb 6> :
+  r = -1;
+
+  <bb 7> :
+  D.6356 = r;
+
+  <bb 8> :
+<L5>:
+  return D.6356;
+
+}
+
+
+SEGGER_RTT_SetNameUpBuffer (unsigned int BufferIndex, const char * sName)
+{
+  unsigned int _SEGGER_RTT__LockState;
+  volatile struct SEGGER_RTT_CB * pRTTCBInit;
+  volatile struct SEGGER_RTT_BUFFER_UP * pUp;
+  volatile struct SEGGER_RTT_CB * pRTTCB;
+  int r;
+  int D.6349;
+
+  <bb 2> :
+  pRTTCBInit = &_SEGGER_RTT;
+  _1 = pRTTCBInit->acID[0];
+  if (_1 != 83)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  _DoInit ();
+
+  <bb 4> :
+  pRTTCB = &_SEGGER_RTT;
+  if (BufferIndex <= 2)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  __asm__ __volatile__("mrs   %0, basepri  
+	mov   r1, %1       
+	msr   basepri, r1  
+	" : "=r" _SEGGER_RTT__LockState : "i" 32 : "cc", "r1");
+  pUp = &pRTTCB->aUp[BufferIndex];
+  pUp->sName = sName;
+  __asm__ __volatile__("msr   basepri, %0  
+	" :  : "r" _SEGGER_RTT__LockState);
+  r = 0;
+  goto <bb 7>; [INV]
+
+  <bb 6> :
+  r = -1;
+
+  <bb 7> :
+  D.6349 = r;
+
+  <bb 8> :
+<L5>:
+  return D.6349;
+
+}
+
+
+SEGGER_RTT_ConfigDownBuffer (unsigned int BufferIndex, const char * sName, void * pBuffer, unsigned int BufferSize, unsigned int Flags)
+{
+  unsigned int _SEGGER_RTT__LockState;
+  volatile struct SEGGER_RTT_CB * pRTTCBInit;
+  volatile struct SEGGER_RTT_BUFFER_DOWN * pDown;
+  volatile struct SEGGER_RTT_CB * pRTTCB;
+  int r;
+  int D.6342;
+
+  <bb 2> :
+  pRTTCBInit = &_SEGGER_RTT;
+  _1 = pRTTCBInit->acID[0];
+  if (_1 != 83)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  _DoInit ();
+
+  <bb 4> :
+  pRTTCB = &_SEGGER_RTT;
+  if (BufferIndex <= 2)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 5> :
+  __asm__ __volatile__("mrs   %0, basepri  
+	mov   r1, %1       
+	msr   basepri, r1  
+	" : "=r" _SEGGER_RTT__LockState : "i" 32 : "cc", "r1");
+  pDown = &pRTTCB->aDown[BufferIndex];
+  if (BufferIndex != 0)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  pDown->sName = sName;
+  pDown->pBuffer = pBuffer;
+  pDown->SizeOfBuffer = BufferSize;
+  pDown->RdOff = 0;
+  pDown->WrOff = 0;
+
+  <bb 7> :
+  pDown->Flags = Flags;
+  __asm__ __volatile__("dmb
+");
+  __asm__ __volatile__("msr   basepri, %0  
+	" :  : "r" _SEGGER_RTT__LockState);
+  r = 0;
+  goto <bb 9>; [INV]
+
+  <bb 8> :
+  r = -1;
+
+  <bb 9> :
+  D.6342 = r;
+
+  <bb 10> :
+<L7>:
+  return D.6342;
+
+}
+
+
+SEGGER_RTT_ConfigUpBuffer (unsigned int BufferIndex, const char * sName, void * pBuffer, unsigned int BufferSize, unsigned int Flags)
+{
+  unsigned int _SEGGER_RTT__LockState;
+  volatile struct SEGGER_RTT_CB * pRTTCBInit;
+  volatile struct SEGGER_RTT_BUFFER_UP * pUp;
+  volatile struct SEGGER_RTT_CB * pRTTCB;
+  int r;
+  int D.6333;
+
+  <bb 2> :
+  pRTTCBInit = &_SEGGER_RTT;
+  _1 = pRTTCBInit->acID[0];
+  if (_1 != 83)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  _DoInit ();
+
+  <bb 4> :
+  pRTTCB = &_SEGGER_RTT;
+  if (BufferIndex <= 2)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 5> :
+  __asm__ __volatile__("mrs   %0, basepri  
+	mov   r1, %1       
+	msr   basepri, r1  
+	" : "=r" _SEGGER_RTT__LockState : "i" 32 : "cc", "r1");
+  pUp = &pRTTCB->aUp[BufferIndex];
+  if (BufferIndex != 0)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  pUp->sName = sName;
+  pUp->pBuffer = pBuffer;
+  pUp->SizeOfBuffer = BufferSize;
+  pUp->RdOff = 0;
+  pUp->WrOff = 0;
+
+  <bb 7> :
+  pUp->Flags = Flags;
+  __asm__ __volatile__("msr   basepri, %0  
+	" :  : "r" _SEGGER_RTT__LockState);
+  r = 0;
+  goto <bb 9>; [INV]
+
+  <bb 8> :
+  r = -1;
+
+  <bb 9> :
+  D.6333 = r;
+
+  <bb 10> :
+<L7>:
+  return D.6333;
+
+}
+
+
+SEGGER_RTT_AllocUpBuffer (const char * sName, void * pBuffer, unsigned int BufferSize, unsigned int Flags)
+{
+  unsigned int _SEGGER_RTT__LockState;
+  volatile struct SEGGER_RTT_CB * pRTTCBInit;
+  volatile struct SEGGER_RTT_CB * pRTTCB;
+  int BufferIndex;
+  int D.6324;
+
+  <bb 2> :
+  pRTTCBInit = &_SEGGER_RTT;
+  _1 = pRTTCBInit->acID[0];
+  if (_1 != 83)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  _DoInit ();
+
+  <bb 4> :
+  __asm__ __volatile__("mrs   %0, basepri  
+	mov   r1, %1       
+	msr   basepri, r1  
+	" : "=r" _SEGGER_RTT__LockState : "i" 32 : "cc", "r1");
+  pRTTCB = &_SEGGER_RTT;
+  BufferIndex = 0;
+
+  <bb 5> :
+  _2 = pRTTCB->aUp[BufferIndex].pBuffer;
+  if (_2 == 0B)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  goto <bb 8>; [INV]
+
+  <bb 7> :
+  BufferIndex = BufferIndex + 1;
+  _3 = pRTTCB->MaxNumUpBuffers;
+  if (BufferIndex < _3)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 8> :
+  _4 = pRTTCB->MaxNumUpBuffers;
+  if (BufferIndex < _4)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 9> :
+  pRTTCB->aUp[BufferIndex].sName = sName;
+  pRTTCB->aUp[BufferIndex].pBuffer = pBuffer;
+  pRTTCB->aUp[BufferIndex].SizeOfBuffer = BufferSize;
+  pRTTCB->aUp[BufferIndex].RdOff = 0;
+  pRTTCB->aUp[BufferIndex].WrOff = 0;
+  pRTTCB->aUp[BufferIndex].Flags = Flags;
+  __asm__ __volatile__("dmb
+");
+  goto <bb 11>; [INV]
+
+  <bb 10> :
+  BufferIndex = -1;
+
+  <bb 11> :
+  __asm__ __volatile__("msr   basepri, %0  
+	" :  : "r" _SEGGER_RTT__LockState);
+  D.6324 = BufferIndex;
+
+  <bb 12> :
+<L9>:
+  return D.6324;
+
+}
+
+
+SEGGER_RTT_AllocDownBuffer (const char * sName, void * pBuffer, unsigned int BufferSize, unsigned int Flags)
+{
+  unsigned int _SEGGER_RTT__LockState;
+  volatile struct SEGGER_RTT_CB * pRTTCBInit;
+  volatile struct SEGGER_RTT_CB * pRTTCB;
+  int BufferIndex;
+  int D.6315;
+
+  <bb 2> :
+  pRTTCBInit = &_SEGGER_RTT;
+  _1 = pRTTCBInit->acID[0];
+  if (_1 != 83)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  _DoInit ();
+
+  <bb 4> :
+  __asm__ __volatile__("mrs   %0, basepri  
+	mov   r1, %1       
+	msr   basepri, r1  
+	" : "=r" _SEGGER_RTT__LockState : "i" 32 : "cc", "r1");
+  pRTTCB = &_SEGGER_RTT;
+  BufferIndex = 0;
+
+  <bb 5> :
+  _2 = pRTTCB->aDown[BufferIndex].pBuffer;
+  if (_2 == 0B)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  goto <bb 8>; [INV]
+
+  <bb 7> :
+  BufferIndex = BufferIndex + 1;
+  _3 = pRTTCB->MaxNumDownBuffers;
+  if (BufferIndex < _3)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 8> :
+  _4 = pRTTCB->MaxNumDownBuffers;
+  if (BufferIndex < _4)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 9> :
+  pRTTCB->aDown[BufferIndex].sName = sName;
+  pRTTCB->aDown[BufferIndex].pBuffer = pBuffer;
+  pRTTCB->aDown[BufferIndex].SizeOfBuffer = BufferSize;
+  pRTTCB->aDown[BufferIndex].RdOff = 0;
+  pRTTCB->aDown[BufferIndex].WrOff = 0;
+  pRTTCB->aDown[BufferIndex].Flags = Flags;
+  __asm__ __volatile__("dmb
+");
+  goto <bb 11>; [INV]
+
+  <bb 10> :
+  BufferIndex = -1;
+
+  <bb 11> :
+  __asm__ __volatile__("msr   basepri, %0  
+	" :  : "r" _SEGGER_RTT__LockState);
+  D.6315 = BufferIndex;
+
+  <bb 12> :
+<L9>:
+  return D.6315;
+
+}
+
+
+SEGGER_RTT_HasDataUp (unsigned int BufferIndex)
+{
+  unsigned int v;
+  struct SEGGER_RTT_BUFFER_UP * pRing;
+  unsigned int D.6306;
+
+  <bb 2> :
+  pRing = &_SEGGER_RTT.aUp[BufferIndex];
+  v = pRing->RdOff;
+  _1 = pRing->WrOff;
+  D.6306 = _1 - v;
+
+  <bb 3> :
+<L0>:
+  return D.6306;
+
+}
+
+
+SEGGER_RTT_HasData (unsigned int BufferIndex)
+{
+  unsigned int v;
+  struct SEGGER_RTT_BUFFER_DOWN * pRing;
+  unsigned int D.6304;
+
+  <bb 2> :
+  pRing = &_SEGGER_RTT.aDown[BufferIndex];
+  v = pRing->WrOff;
+  _1 = pRing->RdOff;
+  D.6304 = v - _1;
+
+  <bb 3> :
+<L0>:
+  return D.6304;
+
+}
+
+
+SEGGER_RTT_HasKey ()
+{
+  volatile struct SEGGER_RTT_CB * pRTTCBInit;
+  int r;
+  unsigned int RdOff;
+  struct SEGGER_RTT_BUFFER_DOWN * pRing;
+  int D.6302;
+
+  <bb 2> :
+  pRTTCBInit = &_SEGGER_RTT;
+  _1 = pRTTCBInit->acID[0];
+  if (_1 != 83)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  _DoInit ();
+
+  <bb 4> :
+  pRing = &_SEGGER_RTT.aDown[0];
+  RdOff = pRing->RdOff;
+  _2 = pRing->WrOff;
+  if (RdOff != _2)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  r = 1;
+  goto <bb 7>; [INV]
+
+  <bb 6> :
+  r = 0;
+
+  <bb 7> :
+  D.6302 = r;
+
+  <bb 8> :
+<L5>:
+  return D.6302;
+
+}
+
+
+SEGGER_RTT_WaitKey ()
+{
+  int r;
+  int D.6295;
+
+  <bb 2> :
+  r = SEGGER_RTT_GetKey ();
+  if (r < 0)
+    goto <bb 2>; [INV]
+  else
+    goto <bb 3>; [INV]
+
+  <bb 3> :
+  D.6295 = r;
+
+  <bb 4> :
+<L2>:
+  return D.6295;
+
+}
+
+
+SEGGER_RTT_GetKey ()
+{
+  int r;
+  char c;
+  int D.6292;
+
+  <bb 2> :
+  _1 = SEGGER_RTT_Read (0, &c, 1);
+  r = (int) _1;
+  if (r == 1)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  c.0_2 = c;
+  r = (int) c.0_2;
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  r = -1;
+
+  <bb 5> :
+  D.6292 = r;
+  c = {CLOBBER};
+
+  <bb 6> :
+<L4>:
+  return D.6292;
+
+}
+
+
+SEGGER_RTT_PutChar (unsigned int BufferIndex, char c)
+{
+  unsigned int _SEGGER_RTT__LockState;
+  volatile struct SEGGER_RTT_CB * pRTTCBInit;
+  volatile char * pDst;
+  unsigned int Status;
+  unsigned int WrOff;
+  struct SEGGER_RTT_BUFFER_UP * pRing;
+  unsigned int D.6287;
+
+  <bb 2> :
+  pRTTCBInit = &_SEGGER_RTT;
+  _1 = pRTTCBInit->acID[0];
+  if (_1 != 83)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  _DoInit ();
+
+  <bb 4> :
+  __asm__ __volatile__("mrs   %0, basepri  
+	mov   r1, %1       
+	msr   basepri, r1  
+	" : "=r" _SEGGER_RTT__LockState : "i" 32 : "cc", "r1");
+  pRing = &_SEGGER_RTT.aUp[BufferIndex];
+  _2 = pRing->WrOff;
+  WrOff = _2 + 1;
+  _3 = pRing->SizeOfBuffer;
+  if (WrOff == _3)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  WrOff = 0;
+
+  <bb 6> :
+  _4 = pRing->Flags;
+  if (_4 == 2)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 7> :
+
+  <bb 8> :
+  _5 = pRing->RdOff;
+  if (WrOff == _5)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 9> :
+  _6 = pRing->RdOff;
+  if (WrOff != _6)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 10> :
+  _7 = pRing->pBuffer;
+  _8 = pRing->WrOff;
+  pDst = _7 + _8;
+  *pDst = c;
+  __asm__ __volatile__("dmb
+");
+  pRing->WrOff = WrOff;
+  Status = 1;
+  goto <bb 12>; [INV]
+
+  <bb 11> :
+  Status = 0;
+
+  <bb 12> :
+  __asm__ __volatile__("msr   basepri, %0  
+	" :  : "r" _SEGGER_RTT__LockState);
+  D.6287 = Status;
+
+  <bb 13> :
+<L12>:
+  return D.6287;
+
+}
+
+
+SEGGER_RTT_PutCharSkip (unsigned int BufferIndex, char c)
+{
+  unsigned int _SEGGER_RTT__LockState;
+  volatile struct SEGGER_RTT_CB * pRTTCBInit;
+  volatile char * pDst;
+  unsigned int Status;
+  unsigned int WrOff;
+  struct SEGGER_RTT_BUFFER_UP * pRing;
+  unsigned int D.6276;
+
+  <bb 2> :
+  pRTTCBInit = &_SEGGER_RTT;
+  _1 = pRTTCBInit->acID[0];
+  if (_1 != 83)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  _DoInit ();
+
+  <bb 4> :
+  __asm__ __volatile__("mrs   %0, basepri  
+	mov   r1, %1       
+	msr   basepri, r1  
+	" : "=r" _SEGGER_RTT__LockState : "i" 32 : "cc", "r1");
+  pRing = &_SEGGER_RTT.aUp[BufferIndex];
+  _2 = pRing->WrOff;
+  WrOff = _2 + 1;
+  _3 = pRing->SizeOfBuffer;
+  if (WrOff == _3)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  WrOff = 0;
+
+  <bb 6> :
+  _4 = pRing->RdOff;
+  if (WrOff != _4)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 7> :
+  _5 = pRing->pBuffer;
+  _6 = pRing->WrOff;
+  pDst = _5 + _6;
+  *pDst = c;
+  __asm__ __volatile__("dmb
+");
+  pRing->WrOff = WrOff;
+  Status = 1;
+  goto <bb 9>; [INV]
+
+  <bb 8> :
+  Status = 0;
+
+  <bb 9> :
+  __asm__ __volatile__("msr   basepri, %0  
+	" :  : "r" _SEGGER_RTT__LockState);
+  D.6276 = Status;
+
+  <bb 10> :
+<L7>:
+  return D.6276;
+
+}
+
+
+SEGGER_RTT_PutCharSkipNoLock (unsigned int BufferIndex, char c)
+{
+  volatile char * pDst;
+  unsigned int Status;
+  unsigned int WrOff;
+  struct SEGGER_RTT_BUFFER_UP * pRing;
+  unsigned int D.6267;
+
+  <bb 2> :
+  pRing = &_SEGGER_RTT.aUp[BufferIndex];
+  _1 = pRing->WrOff;
+  WrOff = _1 + 1;
+  _2 = pRing->SizeOfBuffer;
+  if (WrOff == _2)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  WrOff = 0;
+
+  <bb 4> :
+  _3 = pRing->RdOff;
+  if (WrOff != _3)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  _4 = pRing->pBuffer;
+  _5 = pRing->WrOff;
+  pDst = _4 + _5;
+  *pDst = c;
+  __asm__ __volatile__("dmb
+");
+  pRing->WrOff = WrOff;
+  Status = 1;
+  goto <bb 7>; [INV]
+
+  <bb 6> :
+  Status = 0;
+
+  <bb 7> :
+  D.6267 = Status;
+
+  <bb 8> :
+<L5>:
+  return D.6267;
+
+}
+
+
+SEGGER_RTT_WriteString (unsigned int BufferIndex, const char * s)
+{
+  unsigned int Len;
+  unsigned int D.6260;
+
+  <bb 2> :
+  Len = strlen (s);
+  D.6260 = SEGGER_RTT_Write (BufferIndex, s, Len);
+
+  <bb 3> :
+<L0>:
+  return D.6260;
+
+}
+
+
+SEGGER_RTT_Write (unsigned int BufferIndex, const void * pBuffer, unsigned int NumBytes)
+{
+  unsigned int _SEGGER_RTT__LockState;
+  volatile struct SEGGER_RTT_CB * pRTTCBInit;
+  unsigned int Status;
+  unsigned int D.6258;
+
+  <bb 2> :
+  pRTTCBInit = &_SEGGER_RTT;
+  _1 = pRTTCBInit->acID[0];
+  if (_1 != 83)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  _DoInit ();
+
+  <bb 4> :
+  __asm__ __volatile__("mrs   %0, basepri  
+	mov   r1, %1       
+	msr   basepri, r1  
+	" : "=r" _SEGGER_RTT__LockState : "i" 32 : "cc", "r1");
+  Status = SEGGER_RTT_WriteNoLock (BufferIndex, pBuffer, NumBytes);
+  __asm__ __volatile__("msr   basepri, %0  
+	" :  : "r" _SEGGER_RTT__LockState);
+  D.6258 = Status;
+
+  <bb 5> :
+<L2>:
+  return D.6258;
+
+}
+
+
+SEGGER_RTT_WriteDownBuffer (unsigned int BufferIndex, const void * pBuffer, unsigned int NumBytes)
+{
+  unsigned int _SEGGER_RTT__LockState;
+  volatile struct SEGGER_RTT_CB * pRTTCBInit;
+  unsigned int Status;
+  unsigned int D.6254;
+
+  <bb 2> :
+  pRTTCBInit = &_SEGGER_RTT;
+  _1 = pRTTCBInit->acID[0];
+  if (_1 != 83)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  _DoInit ();
+
+  <bb 4> :
+  __asm__ __volatile__("mrs   %0, basepri  
+	mov   r1, %1       
+	msr   basepri, r1  
+	" : "=r" _SEGGER_RTT__LockState : "i" 32 : "cc", "r1");
+  Status = SEGGER_RTT_WriteDownBufferNoLock (BufferIndex, pBuffer, NumBytes);
+  __asm__ __volatile__("msr   basepri, %0  
+	" :  : "r" _SEGGER_RTT__LockState);
+  D.6254 = Status;
+
+  <bb 5> :
+<L2>:
+  return D.6254;
+
+}
+
+
+SEGGER_RTT_WriteNoLock (unsigned int BufferIndex, const void * pBuffer, unsigned int NumBytes)
+{
+  struct SEGGER_RTT_BUFFER_UP * pRing;
+  const char * pData;
+  unsigned int Avail;
+  unsigned int Status;
+  unsigned int D.6250;
+
+  <bb 2> :
+  pData = pBuffer;
+  pRing = &_SEGGER_RTT.aUp[BufferIndex];
+  _1 = pRing->Flags;
+  switch (_1) <default: <L6> [INV], case 0: <L0> [INV], case 1: <L4> [INV], case 2: <L5> [INV]>
+
+  <bb 3> :
+<L0>:
+  Avail = _GetAvailWriteSpace (pRing);
+  if (Avail < NumBytes)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  Status = 0;
+  goto <bb 6>; [INV]
+
+  <bb 5> :
+  Status = NumBytes;
+  _WriteNoCheck (pRing, pData, NumBytes);
+
+  <bb 6> :
+  goto <bb 10>; [INV]
+
+  <bb 7> :
+<L4>:
+  Avail = _GetAvailWriteSpace (pRing);
+  Status = MIN_EXPR <NumBytes, Avail>;
+  _WriteNoCheck (pRing, pData, Status);
+  goto <bb 10>; [INV]
+
+  <bb 8> :
+<L5>:
+  Status = _WriteBlocking (pRing, pData, NumBytes);
+  goto <bb 10>; [INV]
+
+  <bb 9> :
+<L6>:
+  Status = 0;
+
+  <bb 10> :
+  D.6250 = Status;
+
+  <bb 11> :
+<L8>:
+  return D.6250;
+
+}
+
+
+SEGGER_RTT_WriteDownBufferNoLock (unsigned int BufferIndex, const void * pBuffer, unsigned int NumBytes)
+{
+  struct SEGGER_RTT_BUFFER_UP * pRing;
+  const char * pData;
+  unsigned int Avail;
+  unsigned int Status;
+  unsigned int D.6245;
+
+  <bb 2> :
+  pData = pBuffer;
+  pRing = &_SEGGER_RTT.aDown[BufferIndex];
+  _1 = pRing->Flags;
+  switch (_1) <default: <L6> [INV], case 0: <L0> [INV], case 1: <L4> [INV], case 2: <L5> [INV]>
+
+  <bb 3> :
+<L0>:
+  Avail = _GetAvailWriteSpace (pRing);
+  if (Avail < NumBytes)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  Status = 0;
+  goto <bb 6>; [INV]
+
+  <bb 5> :
+  Status = NumBytes;
+  _WriteNoCheck (pRing, pData, NumBytes);
+
+  <bb 6> :
+  goto <bb 10>; [INV]
+
+  <bb 7> :
+<L4>:
+  Avail = _GetAvailWriteSpace (pRing);
+  Status = MIN_EXPR <NumBytes, Avail>;
+  _WriteNoCheck (pRing, pData, Status);
+  goto <bb 10>; [INV]
+
+  <bb 8> :
+<L5>:
+  Status = _WriteBlocking (pRing, pData, NumBytes);
+  goto <bb 10>; [INV]
+
+  <bb 9> :
+<L6>:
+  Status = 0;
+
+  <bb 10> :
+  D.6245 = Status;
+
+  <bb 11> :
+<L8>:
+  return D.6245;
+
+}
+
+
+SEGGER_RTT_WriteWithOverwriteNoLock (unsigned int BufferIndex, const void * pBuffer, unsigned int NumBytes)
+{
+  volatile char * pDst;
+  unsigned int Avail;
+  struct SEGGER_RTT_BUFFER_UP * pRing;
+  const char * pData;
+
+  <bb 2> :
+  pData = pBuffer;
+  pRing = &_SEGGER_RTT.aUp[BufferIndex];
+  _1 = pRing->WrOff;
+  _2 = pRing->RdOff;
+  if (_1 == _2)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  _3 = pRing->SizeOfBuffer;
+  Avail = _3 + 4294967295;
+  goto <bb 7>; [INV]
+
+  <bb 4> :
+  _4 = pRing->WrOff;
+  _5 = pRing->RdOff;
+  if (_4 < _5)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  _6 = pRing->RdOff;
+  _7 = pRing->WrOff;
+  _8 = _6 - _7;
+  Avail = _8 + 4294967295;
+  goto <bb 7>; [INV]
+
+  <bb 6> :
+  _9 = pRing->RdOff;
+  _10 = pRing->WrOff;
+  _11 = _9 - _10;
+  _12 = pRing->SizeOfBuffer;
+  _13 = _11 + _12;
+  Avail = _13 + 4294967295;
+
+  <bb 7> :
+  if (NumBytes > Avail)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 8> :
+  _14 = pRing->RdOff;
+  _15 = NumBytes - Avail;
+  _16 = _14 + _15;
+  pRing->RdOff = _16;
+  goto <bb 10>; [INV]
+
+  <bb 9> :
+  _17 = pRing->RdOff;
+  _18 = pRing->SizeOfBuffer;
+  _19 = _17 - _18;
+  pRing->RdOff = _19;
+
+  <bb 10> :
+  _20 = pRing->RdOff;
+  _21 = pRing->SizeOfBuffer;
+  if (_20 >= _21)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 11> :
+  _22 = pRing->SizeOfBuffer;
+  _23 = pRing->WrOff;
+  Avail = _22 - _23;
+
+  <bb 12> :
+  if (Avail > NumBytes)
+    goto <bb 13>; [INV]
+  else
+    goto <bb 14>; [INV]
+
+  <bb 13> :
+  _24 = pRing->pBuffer;
+  _25 = pRing->WrOff;
+  pDst = _24 + _25;
+  memcpy (pDst, pData, NumBytes);
+  __asm__ __volatile__("dmb
+");
+  _26 = pRing->WrOff;
+  _27 = NumBytes + _26;
+  pRing->WrOff = _27;
+  goto <bb 15>; [INV]
+
+  <bb 14> :
+  _28 = pRing->pBuffer;
+  _29 = pRing->WrOff;
+  pDst = _28 + _29;
+  memcpy (pDst, pData, Avail);
+  pData = pData + Avail;
+  __asm__ __volatile__("dmb
+");
+  pRing->WrOff = 0;
+  NumBytes = NumBytes - Avail;
+  _30 = pRing->SizeOfBuffer;
+  Avail = _30 + 4294967295;
+  if (NumBytes != 0)
+    goto <bb 12>; [INV]
+  else
+    goto <bb 15>; [INV]
+
+  <bb 15> :
+  return;
+
+}
+
+
+SEGGER_RTT_Read (unsigned int BufferIndex, void * pBuffer, unsigned int BufferSize)
+{
+  unsigned int _SEGGER_RTT__LockState;
+  unsigned int NumBytesRead;
+  unsigned int D.6230;
+
+  <bb 2> :
+  __asm__ __volatile__("mrs   %0, basepri  
+	mov   r1, %1       
+	msr   basepri, r1  
+	" : "=r" _SEGGER_RTT__LockState : "i" 32 : "cc", "r1");
+  NumBytesRead = SEGGER_RTT_ReadNoLock (BufferIndex, pBuffer, BufferSize);
+  __asm__ __volatile__("msr   basepri, %0  
+	" :  : "r" _SEGGER_RTT__LockState);
+  D.6230 = NumBytesRead;
+
+  <bb 3> :
+<L0>:
+  return D.6230;
+
+}
+
+
+SEGGER_RTT_ReadUpBuffer (unsigned int BufferIndex, void * pBuffer, unsigned int BufferSize)
+{
+  unsigned int _SEGGER_RTT__LockState;
+  unsigned int NumBytesRead;
+  unsigned int D.6228;
+
+  <bb 2> :
+  __asm__ __volatile__("mrs   %0, basepri  
+	mov   r1, %1       
+	msr   basepri, r1  
+	" : "=r" _SEGGER_RTT__LockState : "i" 32 : "cc", "r1");
+  NumBytesRead = SEGGER_RTT_ReadUpBufferNoLock (BufferIndex, pBuffer, BufferSize);
+  __asm__ __volatile__("msr   basepri, %0  
+	" :  : "r" _SEGGER_RTT__LockState);
+  D.6228 = NumBytesRead;
+
+  <bb 3> :
+<L0>:
+  return D.6228;
+
+}
+
+
+SEGGER_RTT_ReadNoLock (unsigned int BufferIndex, void * pData, unsigned int BufferSize)
+{
+  volatile struct SEGGER_RTT_CB * pRTTCBInit;
+  volatile char * pSrc;
+  struct SEGGER_RTT_BUFFER_DOWN * pRing;
+  unsigned char * pBuffer;
+  unsigned int WrOff;
+  unsigned int RdOff;
+  unsigned int NumBytesRead;
+  unsigned int NumBytesRem;
+  unsigned int D.6226;
+
+  <bb 2> :
+  pRTTCBInit = &_SEGGER_RTT;
+  _1 = pRTTCBInit->acID[0];
+  if (_1 != 83)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  _DoInit ();
+
+  <bb 4> :
+  pRing = &_SEGGER_RTT.aDown[BufferIndex];
+  pBuffer = pData;
+  RdOff = pRing->RdOff;
+  WrOff = pRing->WrOff;
+  NumBytesRead = 0;
+  if (RdOff > WrOff)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 5> :
+  _2 = pRing->SizeOfBuffer;
+  NumBytesRem = _2 - RdOff;
+  NumBytesRem = MIN_EXPR <BufferSize, NumBytesRem>;
+  _3 = pRing->pBuffer;
+  pSrc = _3 + RdOff;
+  memcpy (pBuffer, pSrc, NumBytesRem);
+  NumBytesRead = NumBytesRead + NumBytesRem;
+  pBuffer = pBuffer + NumBytesRem;
+  BufferSize = BufferSize - NumBytesRem;
+  RdOff = RdOff + NumBytesRem;
+  _4 = pRing->SizeOfBuffer;
+  if (RdOff == _4)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  RdOff = 0;
+
+  <bb 7> :
+  NumBytesRem = WrOff - RdOff;
+  NumBytesRem = MIN_EXPR <BufferSize, NumBytesRem>;
+  if (NumBytesRem != 0)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 8> :
+  _5 = pRing->pBuffer;
+  pSrc = _5 + RdOff;
+  memcpy (pBuffer, pSrc, NumBytesRem);
+  NumBytesRead = NumBytesRead + NumBytesRem;
+  pBuffer = pBuffer + NumBytesRem;
+  BufferSize = BufferSize - NumBytesRem;
+  RdOff = RdOff + NumBytesRem;
+
+  <bb 9> :
+  if (NumBytesRead != 0)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 10> :
+  pRing->RdOff = RdOff;
+
+  <bb 11> :
+  D.6226 = NumBytesRead;
+
+  <bb 12> :
+<L10>:
+  return D.6226;
+
+}
+
+
+SEGGER_RTT_ReadUpBufferNoLock (unsigned int BufferIndex, void * pData, unsigned int BufferSize)
+{
+  volatile struct SEGGER_RTT_CB * pRTTCBInit;
+  volatile char * pSrc;
+  struct SEGGER_RTT_BUFFER_UP * pRing;
+  unsigned char * pBuffer;
+  unsigned int WrOff;
+  unsigned int RdOff;
+  unsigned int NumBytesRead;
+  unsigned int NumBytesRem;
+  unsigned int D.6214;
+
+  <bb 2> :
+  pRTTCBInit = &_SEGGER_RTT;
+  _1 = pRTTCBInit->acID[0];
+  if (_1 != 83)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  _DoInit ();
+
+  <bb 4> :
+  pRing = &_SEGGER_RTT.aUp[BufferIndex];
+  pBuffer = pData;
+  RdOff = pRing->RdOff;
+  WrOff = pRing->WrOff;
+  NumBytesRead = 0;
+  if (RdOff > WrOff)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 5> :
+  _2 = pRing->SizeOfBuffer;
+  NumBytesRem = _2 - RdOff;
+  NumBytesRem = MIN_EXPR <BufferSize, NumBytesRem>;
+  _3 = pRing->pBuffer;
+  pSrc = _3 + RdOff;
+  memcpy (pBuffer, pSrc, NumBytesRem);
+  NumBytesRead = NumBytesRead + NumBytesRem;
+  pBuffer = pBuffer + NumBytesRem;
+  BufferSize = BufferSize - NumBytesRem;
+  RdOff = RdOff + NumBytesRem;
+  _4 = pRing->SizeOfBuffer;
+  if (RdOff == _4)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  RdOff = 0;
+
+  <bb 7> :
+  NumBytesRem = WrOff - RdOff;
+  NumBytesRem = MIN_EXPR <BufferSize, NumBytesRem>;
+  if (NumBytesRem != 0)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 8> :
+  _5 = pRing->pBuffer;
+  pSrc = _5 + RdOff;
+  memcpy (pBuffer, pSrc, NumBytesRem);
+  NumBytesRead = NumBytesRead + NumBytesRem;
+  pBuffer = pBuffer + NumBytesRem;
+  BufferSize = BufferSize - NumBytesRem;
+  RdOff = RdOff + NumBytesRem;
+
+  <bb 9> :
+  if (NumBytesRead != 0)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 10> :
+  pRing->RdOff = RdOff;
+
+  <bb 11> :
+  D.6214 = NumBytesRead;
+
+  <bb 12> :
+<L10>:
+  return D.6214;
+
+}
+
+
+_GetAvailWriteSpace (struct SEGGER_RTT_BUFFER_UP * pRing)
+{
+  unsigned int r;
+  unsigned int WrOff;
+  unsigned int RdOff;
+  unsigned int D.6202;
+
+  <bb 2> :
+  RdOff = pRing->RdOff;
+  WrOff = pRing->WrOff;
+  if (RdOff <= WrOff)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  _1 = pRing->SizeOfBuffer;
+  _2 = _1 - WrOff;
+  _3 = RdOff + _2;
+  r = _3 + 4294967295;
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  _4 = RdOff - WrOff;
+  r = _4 + 4294967295;
+
+  <bb 5> :
+  D.6202 = r;
+
+  <bb 6> :
+<L3>:
+  return D.6202;
+
+}
+
+
+_PostTerminalSwitch (struct SEGGER_RTT_BUFFER_UP * pRing, unsigned char TerminalId)
+{
+  unsigned char ac[2];
+
+  <bb 2> :
+  ac[0] = 255;
+  _1 = (int) TerminalId;
+  _2 = _aTerminalId[_1];
+  ac[1] = _2;
+  _WriteBlocking (pRing, &ac, 2);
+  ac = {CLOBBER};
+  return;
+
+}
+
+
+_WriteNoCheck (struct SEGGER_RTT_BUFFER_UP * pRing, const char * pData, unsigned int NumBytes)
+{
+  volatile char * pDst;
+  unsigned int Rem;
+  unsigned int WrOff;
+  unsigned int NumBytesAtOnce;
+
+  <bb 2> :
+  WrOff = pRing->WrOff;
+  _1 = pRing->SizeOfBuffer;
+  Rem = _1 - WrOff;
+  if (Rem > NumBytes)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  _2 = pRing->pBuffer;
+  pDst = _2 + WrOff;
+  memcpy (pDst, pData, NumBytes);
+  __asm__ __volatile__("dmb
+");
+  _3 = WrOff + NumBytes;
+  pRing->WrOff = _3;
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  NumBytesAtOnce = Rem;
+  _4 = pRing->pBuffer;
+  pDst = _4 + WrOff;
+  memcpy (pDst, pData, NumBytesAtOnce);
+  NumBytesAtOnce = NumBytes - Rem;
+  pDst = pRing->pBuffer;
+  _5 = pData + Rem;
+  memcpy (pDst, _5, NumBytesAtOnce);
+  __asm__ __volatile__("dmb
+");
+  pRing->WrOff = NumBytesAtOnce;
+
+  <bb 5> :
+  return;
+
+}
+
+
+_WriteBlocking (struct SEGGER_RTT_BUFFER_UP * pRing, const char * pBuffer, unsigned int NumBytes)
+{
+  volatile char * pDst;
+  unsigned int WrOff;
+  unsigned int RdOff;
+  unsigned int NumBytesWritten;
+  unsigned int NumBytesToWrite;
+  unsigned int D.6194;
+
+  <bb 2> :
+  NumBytesWritten = 0;
+  WrOff = pRing->WrOff;
+
+  <bb 3> :
+  RdOff = pRing->RdOff;
+  if (RdOff > WrOff)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  _1 = RdOff - WrOff;
+  NumBytesToWrite = _1 + 4294967295;
+  goto <bb 6>; [INV]
+
+  <bb 5> :
+  _2 = pRing->SizeOfBuffer;
+  _3 = RdOff - WrOff;
+  _4 = _2 + _3;
+  NumBytesToWrite = _4 + 4294967295;
+
+  <bb 6> :
+  _5 = pRing->SizeOfBuffer;
+  _6 = _5 - WrOff;
+  NumBytesToWrite = MIN_EXPR <NumBytesToWrite, _6>;
+  NumBytesToWrite = MIN_EXPR <NumBytes, NumBytesToWrite>;
+  _7 = pRing->pBuffer;
+  pDst = _7 + WrOff;
+  memcpy (pDst, pBuffer, NumBytesToWrite);
+  NumBytesWritten = NumBytesWritten + NumBytesToWrite;
+  pBuffer = pBuffer + NumBytesToWrite;
+  NumBytes = NumBytes - NumBytesToWrite;
+  WrOff = WrOff + NumBytesToWrite;
+  _8 = pRing->SizeOfBuffer;
+  if (WrOff == _8)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 7> :
+  WrOff = 0;
+
+  <bb 8> :
+  __asm__ __volatile__("dmb
+");
+  pRing->WrOff = WrOff;
+  if (NumBytes != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 9> :
+  D.6194 = NumBytesWritten;
+
+  <bb 10> :
+<L7>:
+  return D.6194;
+
+}
+
+
+_DoInit ()
+{
+  unsigned int i;
+  static const char _aInitStr[17] = "\x00\x00\x00\x00\x00\x00TTR REGGES";
+  volatile struct SEGGER_RTT_CB * p;
+
+  <bb 2> :
+  p = &_SEGGER_RTT;
+  memset (p, 0, 168);
+  p->MaxNumUpBuffers = 3;
+  p->MaxNumDownBuffers = 3;
+  p->aUp[0].sName = "Terminal";
+  p->aUp[0].pBuffer = &_acUpBuffer;
+  p->aUp[0].SizeOfBuffer = 1024;
+  p->aUp[0].RdOff = 0;
+  p->aUp[0].WrOff = 0;
+  p->aUp[0].Flags = 0;
+  p->aDown[0].sName = "Terminal";
+  p->aDown[0].pBuffer = &_acDownBuffer;
+  p->aDown[0].SizeOfBuffer = 16;
+  p->aDown[0].RdOff = 0;
+  p->aDown[0].WrOff = 0;
+  p->aDown[0].Flags = 0;
+  __asm__ __volatile__("dmb
+");
+  i = 0;
+  goto <bb 4>; [INV]
+
+  <bb 3> :
+  _1 = 15 - i;
+  _2 = _aInitStr[_1];
+  p->acID[i] = _2;
+  i = i + 1;
+
+  <bb 4> :
+  if (i <= 15)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 5> :
+  __asm__ __volatile__("dmb
+");
+  return;
+
+}
+
+

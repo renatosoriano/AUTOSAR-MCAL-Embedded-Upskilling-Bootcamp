@@ -1,0 +1,32 @@
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+Symbol table:
+
+CanTrcv_43_AE_schm_read_msr/0 (CanTrcv_43_AE_schm_read_msr) @0dacc380
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+CanTrcv_43_AE_schm_read_msr ()
+{
+  register uint32 reg_tmp;
+  uint32 D.5377;
+  uint32 _2;
+
+  <bb 2> :
+  __asm__ __volatile__(" mrs %0, primask " : "=r" reg_tmp_1);
+  _2 = reg_tmp_1;
+
+  <bb 3> :
+<L0>:
+  return _2;
+
+}
+
+
