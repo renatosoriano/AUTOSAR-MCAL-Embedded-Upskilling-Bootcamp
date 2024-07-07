@@ -118,6 +118,61 @@ Will be uploading them as they are ready.
 You can find here captures and media relevant to an example and/or exercise visible output in communication (software) or physical-world (board).
 Will be uploading them as they are ready.
 
-* ### Output from one of the CAN module's example:
+## **CAN Driver Examples**
 
-![SavvyCAN_Ozone_Example.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/SavvyCAN_Ozone_Example.png)
+* ### CAN Example 3: Transmission using Interrupts (ISRs)
+Hardware board transmits (Tx) an 8-byte single message with ID 0x123 and specified Data payload: 01 02 03 04 05 06 11 12. Savvy CAN receiving (Rx) the data, evertime having byte 1 and 8 increased by value of 0x1 as per the example intentional behavior.
+
+![CAN_Example3_Transmission_using_Interrupts.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/CAN_Driver_examples_results_screenshots/CAN_Example3_Transmission_using_Interrupts.png)
+
+* ### CAN_Example 4: Reception using Interrupts(ISRs), Dataset 1
+Hardware board receives (Rx) an 8-byte single message with ID 0x010 and specified Data payload: 32 01 01 01 01 01 01 01. Savvy CAN transmits (Tx) the data. Notice how in code we can establish a condition, in this case where the first byte must be 0x32 and once that is confirmed, can proceed and receive the rest of the data.
+
+![CAN_Example4_Reception_using_Interrupts_Dataset1.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/CAN_Driver_examples_results_screenshots/CAN_Example4_Reception_using_Interrupts_Dataset1.png)
+
+* ### CAN_Example 4: Reception using Interrupts(ISRs), Dataset 2
+Similar as previous, hardware board receives (Rx) an 8-byte single message with ID 0x010 and specified Data payload: 32 08 07 06 05 04 03 02. Savvy CAN transmits (Tx) the data. Notice how in code we can establish a condition, in this case where the first byte must be 0x32 and once that is confirmed, can proceed and receive the rest of the data.
+
+![CAN_Example4_Reception_using_Interrupts_Dataset2.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/CAN_Driver_examples_results_screenshots/CAN_Example4_Reception_using_Interrupts_Dataset2.png)
+
+* ### CAN Example 5: Transmission Mailboxes Buffers
+Hardware board transmits (Tx) three 8-byte messages with ID 0x123, 0x133 and 0x143, all having the same specified Data payload: 01 02 03 04 05 06 11 12. Savvy CAN receiving (Rx) the data, evertime having byte 1 and 8 increased by value of 0x1 as per the example intentional behavior.
+
+![CAN_Example5_Transmission_Mailboxes_Buffers.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/CAN_Driver_examples_results_screenshots/CAN_Example5_Transmission_Mailboxes_Buffers.png)
+
+* ### CAN Example 6: Reception with_Filters, ID 0x1EF
+Hardware board receives (Rx) every second an 8-byte single message with ID Ox1EF and specified Data payload: 32 00 00 00 01 02 03 04. Savvy CAN transmits (Tx) the data. Notice how in code we can establish a condition, in this case where the first byte must be 0x32 and once that is confirmed, can proceed and receive the rest of the data.
+
+![CAN_Example6_Reception_with_Filters_ID_0x1EF.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/CAN_Driver_examples_results_screenshots/CAN_Example6_Reception_with_Filters_ID_0x1EF.png)
+
+* ### CAN Example 6: Reception with_Filters, ID 0x022
+Hardware board receives (Rx) every second an 8-byte single message with ID 0x022 and specified Data payload: 32 00 00 00 05 06 07 08. Savvy CAN transmits (Tx) the data. Notice how in code we can establish a condition, in this case where the first byte must be 0x32 and once that is confirmed, can proceed and receive the rest of the data.
+
+![CAN_Example6_Reception_with_Filters_ID_0x022.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/CAN_Driver_examples_results_screenshots/CAN_Example6_Reception_with_Filters_ID_0x022.png)
+
+## **CAN Interface (CANIF) Driver Examples**
+
+* ### CANIF Example 1: Transmission single PDU
+Hardware board transmits (Tx) an 8-byte single message with ID 0x123 and specified Data payload: 01 02 03 04 05 06 11 12. Savvy CAN receiving (Rx) the data, evertime having byte 1 and 8 increased by value of 0x1 as per the example intentional behavior.
+
+![CANIF_Example1_Transmission_single_PDU.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/CANIF_Driver_examples_results_screenshots/CANIF_Example1_Transmission_single_PDU.png)
+
+* ### CANIF Example 2: Two PDUTx, one single HOH
+Hardware board transmits (Tx) two 8-byte messages with ID 0x123 and 0x124, all having the same specified Data payload: 01 02 03 04 05 06 11 12. Savvy CAN receiving (Rx) the data, evertime having byte 1 and 8 increased by value of 0x1 as per the example intentional behavior.
+
+![CANIF_Example2_Two_PDU_Tx_one_single_HOH.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/CANIF_Driver_examples_results_screenshots/CANIF_Example2_Two_PDU_Tx_one_single_HOH.png)
+
+* ### CANIF Example 3: Two PDUTx, Two HOH, Two Notifications
+Hardware board transmits (Tx) two 8-byte messages with ID 0x123 and 0x124, all having the same specified Data payload: 01 02 03 04 05 06 11 12. Each message has its own interrupt callback function to indicate that the message was transmitted. Savvy CAN receiving (Rx) the data, evertime having byte 1 and 8 increased by value of 0x1 as per the example intentional behavior.
+
+![CANIF_Example3_2_PDU_Tx_2_HOH_2_Notif.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/CANIF_Driver_examples_results_screenshots/CANIF_Example3_2_PDU_Tx_2_HOH_2_Notif.png)
+
+* ### CANIF Example 4: Reception single PDU, single Hrh, ID 0x1EF
+Hardware board receives (Rx) every second an 8-byte single message with ID 0x1EF and specified Data payload: 32 00 00 00 01 02 03 04. Savvy CAN transmits (Tx) the data. Notice how in code we can establish a condition, in this case where the first byte must be 0x32 and once that is confirmed, can proceed and receive the rest of the data.
+
+![CANIF_Example4_Reception_single_PDU_single_Hrh_ID_0x1EF.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/CANIF_Driver_examples_results_screenshots/CANIF_Example4_Reception_single_PDU_single_Hrh_ID_0x1EF.png)
+
+* ### CANIF Example 4: Reception single PDU, single Hrh, ID 0x010
+Hardware board receives (Rx) every second an 8-byte single message with ID 0x010 and specified Data payload: 32 08 07 06 05 04 03 02. Savvy CAN transmits (Tx) the data. Notice how in code we can establish a condition, in this case where the first byte must be 0x32 and once that is confirmed, can proceed and receive the rest of the data.
+
+![CANIF_Example4_Reception_single_PDU_single_Hrh_ID_0x010.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/CANIF_Driver_examples_results_screenshots/CANIF_Example4_Reception_single_PDU_single_Hrh_ID_0x010.png)
