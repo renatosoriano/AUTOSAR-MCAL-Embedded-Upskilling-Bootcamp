@@ -1,0 +1,65 @@
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+Symbol table:
+
+Lpspi_Ip_PhyUnitConfig_SpiPhyUnit_0/7 (Lpspi_Ip_PhyUnitConfig_SpiPhyUnit_0) @0dad2090
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: Spi_HwUnitConfig_SpiPhyUnit_0/3 (addr) 
+  Availability: not_available
+  Varpool flags: read-only
+Lpspi_Ip_DeviceAttributes_SpiExternalDevice_1/6 (Lpspi_Ip_DeviceAttributes_SpiExternalDevice_1) @0dad2048
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: Spi_ExternalDeviceConfig_SpiExternalDevice_1/1 (addr) 
+  Availability: not_available
+  Varpool flags: read-only
+Lpspi_Ip_DeviceAttributes_SpiExternalDevice_0/5 (Lpspi_Ip_DeviceAttributes_SpiExternalDevice_0) @0dad2000
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: Spi_ExternalDeviceConfig_SpiExternalDevice_0/0 (addr) 
+  Availability: not_available
+  Varpool flags: read-only
+Spi_aHwUnitConfigList/4 (Spi_aHwUnitConfigList) @0daceea0
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Spi_HwUnitConfig_SpiPhyUnit_0/3 (addr) 
+  Referring: 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+Spi_HwUnitConfig_SpiPhyUnit_0/3 (Spi_HwUnitConfig_SpiPhyUnit_0) @0dacee58
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: Lpspi_Ip_PhyUnitConfig_SpiPhyUnit_0/7 (addr) 
+  Referring: Spi_aHwUnitConfigList/4 (addr) 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+Spi_aExternalDeviceConfigList/2 (Spi_aExternalDeviceConfigList) @0daced80
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Spi_ExternalDeviceConfig_SpiExternalDevice_0/0 (addr) Spi_ExternalDeviceConfig_SpiExternalDevice_1/1 (addr) 
+  Referring: 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+Spi_ExternalDeviceConfig_SpiExternalDevice_1/1 (Spi_ExternalDeviceConfig_SpiExternalDevice_1) @0daced38
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: Lpspi_Ip_DeviceAttributes_SpiExternalDevice_1/6 (addr) 
+  Referring: Spi_aExternalDeviceConfigList/2 (addr) 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+Spi_ExternalDeviceConfig_SpiExternalDevice_0/0 (Spi_ExternalDeviceConfig_SpiExternalDevice_0) @0daceca8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: Lpspi_Ip_DeviceAttributes_SpiExternalDevice_0/5 (addr) 
+  Referring: Spi_aExternalDeviceConfigList/2 (addr) 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known

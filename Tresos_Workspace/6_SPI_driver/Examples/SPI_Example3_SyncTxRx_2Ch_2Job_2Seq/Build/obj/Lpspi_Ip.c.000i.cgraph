@@ -1,0 +1,1638 @@
+Trivially needed symbols: Lpspi_Ip_GetStatus/21 Lpspi_Ip_IrqHandler/20 Lpspi_Ip_Cancel/19 Lpspi_Ip_UpdateTransferMode/18 Lpspi_Ip_UpdateDefaultTransmitData/17 Lpspi_Ip_UpdateLsb/16 Lpspi_Ip_UpdateFrameSize/15 Lpspi_Ip_ManageBuffers/14 Lpspi_Ip_AsyncTransmit/13 Lpspi_TransmitRxInit/12 Lpspi_TransmitTxInit/11 Lpspi_Ip_SyncTransmit/9 Lpspi_Ip_DeInit/8 Lpspi_Ip_Init/7 Lpspi_Ip_TransferProcess/6 Lpspi_Ip_ChannelFinished/5 Lpspi_Ip_apxBases/2 Lpspi_Ip_apxStateStructureArray/1 Lpspi_Ip_axStateStructure/0
+
+
+Initial Symbol table:
+
+SchM_Exit_Spi_SPI_EXCLUSIVE_AREA_10/32 (SchM_Exit_Spi_SPI_EXCLUSIVE_AREA_10) @0dce8620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Lpspi_Ip_Cancel/19 
+  Calls: 
+SchM_Enter_Spi_SPI_EXCLUSIVE_AREA_10/31 (SchM_Enter_Spi_SPI_EXCLUSIVE_AREA_10) @0dce8540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Lpspi_Ip_Cancel/19 
+  Calls: 
+SchM_Exit_Spi_SPI_EXCLUSIVE_AREA_11/30 (SchM_Exit_Spi_SPI_EXCLUSIVE_AREA_11) @0dcd32a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Lpspi_Ip_AsyncTransmit/13 
+  Calls: 
+SchM_Enter_Spi_SPI_EXCLUSIVE_AREA_11/29 (SchM_Enter_Spi_SPI_EXCLUSIVE_AREA_11) @0dcd3ee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Lpspi_Ip_AsyncTransmit/13 
+  Calls: 
+SchM_Exit_Spi_SPI_EXCLUSIVE_AREA_09/28 (SchM_Exit_Spi_SPI_EXCLUSIVE_AREA_09) @0dcd3e00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Lpspi_Ip_AsyncTransmit/13 Lpspi_Ip_AsyncTransmit/13 
+  Calls: 
+SchM_Enter_Spi_SPI_EXCLUSIVE_AREA_09/27 (SchM_Enter_Spi_SPI_EXCLUSIVE_AREA_09) @0dcd3d20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Lpspi_Ip_AsyncTransmit/13 
+  Calls: 
+OsIf_GetElapsed/26 (OsIf_GetElapsed) @0dcd38c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Lpspi_Ip_SyncTransmit/9 
+  Calls: 
+OsIf_GetCounter/25 (OsIf_GetCounter) @0dcd37e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Lpspi_Ip_SyncTransmit/9 
+  Calls: 
+SchM_Exit_Spi_SPI_EXCLUSIVE_AREA_08/24 (SchM_Exit_Spi_SPI_EXCLUSIVE_AREA_08) @0dcd3700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Lpspi_Ip_SyncTransmit/9 Lpspi_Ip_SyncTransmit/9 
+  Calls: 
+SchM_Enter_Spi_SPI_EXCLUSIVE_AREA_08/23 (SchM_Enter_Spi_SPI_EXCLUSIVE_AREA_08) @0dcd3620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Lpspi_Ip_SyncTransmit/9 
+  Calls: 
+OsIf_MicrosToTicks/22 (OsIf_MicrosToTicks) @0dcd3540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Lpspi_Ip_SyncTransmit/9 
+  Calls: 
+Lpspi_Ip_GetStatus/21 (Lpspi_Ip_GetStatus) @0db1a8c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @01981040
+  References: Lpspi_Ip_apxStateStructureArray/1 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+Lpspi_Ip_IrqHandler/20 (Lpspi_Ip_IrqHandler) @0db1a620
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0db1a8c0
+  References: Lpspi_Ip_apxBases/2 (read) Lpspi_Ip_apxStateStructureArray/1 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Lpspi_Ip_TransferProcess/6 
+Lpspi_Ip_Cancel/19 (Lpspi_Ip_Cancel) @0db1a380
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0db1a620
+  References: Lpspi_Ip_apxBases/2 (read) Lpspi_Ip_apxStateStructureArray/1 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: SchM_Exit_Spi_SPI_EXCLUSIVE_AREA_10/32 SchM_Enter_Spi_SPI_EXCLUSIVE_AREA_10/31 
+Lpspi_Ip_UpdateTransferMode/18 (Lpspi_Ip_UpdateTransferMode) @0db1a000
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0db1a380
+  References: Lpspi_Ip_apxStateStructureArray/1 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Lpspi_Ip_Init/7 
+  Calls: 
+Lpspi_Ip_UpdateDefaultTransmitData/17 (Lpspi_Ip_UpdateDefaultTransmitData) @0db11a80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0db1a000
+  References: Lpspi_Ip_apxStateStructureArray/1 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+Lpspi_Ip_UpdateLsb/16 (Lpspi_Ip_UpdateLsb) @0db11540
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0db11a80
+  References: Lpspi_Ip_apxStateStructureArray/1 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+Lpspi_Ip_UpdateFrameSize/15 (Lpspi_Ip_UpdateFrameSize) @0db11ee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0db11540
+  References: Lpspi_Ip_apxStateStructureArray/1 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+Lpspi_Ip_ManageBuffers/14 (Lpspi_Ip_ManageBuffers) @0db11c40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0db11ee0
+  References: Lpspi_Ip_apxBases/2 (read) Lpspi_Ip_apxStateStructureArray/1 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Lpspi_Ip_TransferProcess/6 
+Lpspi_Ip_AsyncTransmit/13 (Lpspi_Ip_AsyncTransmit) @0db119a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0db11c40
+  References: Lpspi_Ip_apxStateStructureArray/1 (read) Lpspi_Ip_apxBases/2 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Lpspi_TransmitRxInit/12 SchM_Exit_Spi_SPI_EXCLUSIVE_AREA_11/30 Lpspi_TransmitTxInit/11 SchM_Enter_Spi_SPI_EXCLUSIVE_AREA_11/29 SchM_Exit_Spi_SPI_EXCLUSIVE_AREA_09/28 SchM_Exit_Spi_SPI_EXCLUSIVE_AREA_09/28 SchM_Enter_Spi_SPI_EXCLUSIVE_AREA_09/27 
+Lpspi_TransmitRxInit/12 (Lpspi_TransmitRxInit) @0db11700
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @0db119a0
+  References: Lpspi_Ip_apxStateStructureArray/1 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Lpspi_Ip_AsyncTransmit/13 Lpspi_Ip_SyncTransmit/9 
+  Calls: Lpspi_Ip_GetWordsFromLength/10 
+Lpspi_TransmitTxInit/11 (Lpspi_TransmitTxInit) @0db11460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @0db11700
+  References: Lpspi_Ip_apxBases/2 (read) Lpspi_Ip_apxStateStructureArray/1 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Lpspi_Ip_AsyncTransmit/13 Lpspi_Ip_SyncTransmit/9 Lpspi_Ip_SyncTransmit/9 Lpspi_Ip_TransferProcess/6 
+  Calls: Lpspi_Ip_GetWordsFromLength/10 
+Lpspi_Ip_GetWordsFromLength/10 (Lpspi_Ip_GetWordsFromLength) @0db11000
+  Type: function definition analyzed
+  Visibility: no_reorder
+  Aux: @0db11700
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: Lpspi_TransmitRxInit/12 Lpspi_TransmitTxInit/11 
+  Calls: 
+Lpspi_Ip_SyncTransmit/9 (Lpspi_Ip_SyncTransmit) @0daf48c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0db11460
+  References: Lpspi_Ip_apxStateStructureArray/1 (read) Lpspi_Ip_apxBases/2 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: OsIf_GetElapsed/26 Lpspi_TransmitTxInit/11 Lpspi_Ip_PushDataToFifo/4 Lpspi_Ip_ReadDataFromFifo/3 OsIf_GetCounter/25 Lpspi_TransmitRxInit/12 Lpspi_TransmitTxInit/11 SchM_Exit_Spi_SPI_EXCLUSIVE_AREA_08/24 SchM_Exit_Spi_SPI_EXCLUSIVE_AREA_08/24 SchM_Enter_Spi_SPI_EXCLUSIVE_AREA_08/23 OsIf_MicrosToTicks/22 
+Lpspi_Ip_DeInit/8 (Lpspi_Ip_DeInit) @0daf4380
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0daf48c0
+  References: Lpspi_Ip_apxBases/2 (read) Lpspi_Ip_apxStateStructureArray/1 (read) Lpspi_Ip_apxStateStructureArray/1 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+Lpspi_Ip_Init/7 (Lpspi_Ip_Init) @0daf4d20
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0daf4380
+  References: Lpspi_Ip_apxStateStructureArray/1 (read) Lpspi_Ip_apxBases/2 (read) Lpspi_Ip_axStateStructure/0 (addr) Lpspi_Ip_apxStateStructureArray/1 (write) Lpspi_Ip_apxStateStructureArray/1 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Lpspi_Ip_UpdateTransferMode/18 
+Lpspi_Ip_TransferProcess/6 (Lpspi_Ip_TransferProcess) @0daf4a80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @0daf4d20
+  References: Lpspi_Ip_apxBases/2 (read) Lpspi_Ip_apxStateStructureArray/1 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Lpspi_Ip_IrqHandler/20 Lpspi_Ip_ManageBuffers/14 
+  Calls: Lpspi_Ip_ChannelFinished/5 Lpspi_TransmitTxInit/11 Lpspi_Ip_PushDataToFifo/4 Lpspi_Ip_ReadDataFromFifo/3 
+Lpspi_Ip_ChannelFinished/5 (Lpspi_Ip_ChannelFinished) @0daf47e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @0daf4a80
+  References: Lpspi_Ip_apxStateStructureArray/1 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Lpspi_Ip_TransferProcess/6 
+  Calls: 
+   Indirect call Num speculative call targets: 0
+Lpspi_Ip_PushDataToFifo/4 (Lpspi_Ip_PushDataToFifo) @0daf4540
+  Type: function definition analyzed
+  Visibility: no_reorder
+  Aux: @0daf4d20
+  References: Lpspi_Ip_apxBases/2 (read) Lpspi_Ip_apxStateStructureArray/1 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Lpspi_Ip_SyncTransmit/9 Lpspi_Ip_TransferProcess/6 
+  Calls: 
+Lpspi_Ip_ReadDataFromFifo/3 (Lpspi_Ip_ReadDataFromFifo) @0daf42a0
+  Type: function definition analyzed
+  Visibility: no_reorder
+  Aux: @0daf4540
+  References: Lpspi_Ip_apxBases/2 (read) Lpspi_Ip_apxStateStructureArray/1 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Lpspi_Ip_SyncTransmit/9 Lpspi_Ip_TransferProcess/6 
+  Calls: 
+Lpspi_Ip_apxBases/2 (Lpspi_Ip_apxBases) @0da92b40
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @0daf47e0
+  References: 
+  Referring: Lpspi_Ip_TransferProcess/6 (read) Lpspi_Ip_ReadDataFromFifo/3 (read) Lpspi_Ip_PushDataToFifo/4 (read) Lpspi_Ip_Init/7 (read) Lpspi_Ip_DeInit/8 (read) Lpspi_Ip_SyncTransmit/9 (read) Lpspi_TransmitTxInit/11 (read) Lpspi_Ip_AsyncTransmit/13 (read) Lpspi_Ip_ManageBuffers/14 (read) Lpspi_Ip_Cancel/19 (read) Lpspi_Ip_IrqHandler/20 (read) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+Lpspi_Ip_apxStateStructureArray/1 (Lpspi_Ip_apxStateStructureArray) @0da92ab0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0da92b40
+  References: 
+  Referring: Lpspi_Ip_ChannelFinished/5 (read) Lpspi_Ip_TransferProcess/6 (read) Lpspi_Ip_ReadDataFromFifo/3 (read) Lpspi_Ip_PushDataToFifo/4 (read) Lpspi_Ip_Init/7 (read) Lpspi_Ip_Init/7 (write) Lpspi_Ip_Init/7 (read) Lpspi_Ip_DeInit/8 (read) Lpspi_Ip_DeInit/8 (write) Lpspi_Ip_SyncTransmit/9 (read) Lpspi_TransmitTxInit/11 (read) Lpspi_TransmitRxInit/12 (read) Lpspi_Ip_AsyncTransmit/13 (read) Lpspi_Ip_ManageBuffers/14 (read) Lpspi_Ip_UpdateFrameSize/15 (read) Lpspi_Ip_UpdateLsb/16 (read) Lpspi_Ip_UpdateDefaultTransmitData/17 (read) Lpspi_Ip_UpdateTransferMode/18 (read) Lpspi_Ip_Cancel/19 (read) Lpspi_Ip_IrqHandler/20 (read) Lpspi_Ip_GetStatus/21 (read) 
+  Availability: not-ready
+  Varpool flags:
+Lpspi_Ip_axStateStructure/0 (Lpspi_Ip_axStateStructure) @0da929d8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @0da92ab0
+  References: 
+  Referring: Lpspi_Ip_Init/7 (addr) 
+  Availability: not-ready
+  Varpool flags:
+
+Removing unused symbols:
+
+Reclaimed Symbol table:
+
+SchM_Exit_Spi_SPI_EXCLUSIVE_AREA_10/32 (SchM_Exit_Spi_SPI_EXCLUSIVE_AREA_10) @0dce8620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Lpspi_Ip_Cancel/19 
+  Calls: 
+SchM_Enter_Spi_SPI_EXCLUSIVE_AREA_10/31 (SchM_Enter_Spi_SPI_EXCLUSIVE_AREA_10) @0dce8540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Lpspi_Ip_Cancel/19 
+  Calls: 
+SchM_Exit_Spi_SPI_EXCLUSIVE_AREA_11/30 (SchM_Exit_Spi_SPI_EXCLUSIVE_AREA_11) @0dcd32a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Lpspi_Ip_AsyncTransmit/13 
+  Calls: 
+SchM_Enter_Spi_SPI_EXCLUSIVE_AREA_11/29 (SchM_Enter_Spi_SPI_EXCLUSIVE_AREA_11) @0dcd3ee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Lpspi_Ip_AsyncTransmit/13 
+  Calls: 
+SchM_Exit_Spi_SPI_EXCLUSIVE_AREA_09/28 (SchM_Exit_Spi_SPI_EXCLUSIVE_AREA_09) @0dcd3e00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Lpspi_Ip_AsyncTransmit/13 Lpspi_Ip_AsyncTransmit/13 
+  Calls: 
+SchM_Enter_Spi_SPI_EXCLUSIVE_AREA_09/27 (SchM_Enter_Spi_SPI_EXCLUSIVE_AREA_09) @0dcd3d20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Lpspi_Ip_AsyncTransmit/13 
+  Calls: 
+OsIf_GetElapsed/26 (OsIf_GetElapsed) @0dcd38c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Lpspi_Ip_SyncTransmit/9 
+  Calls: 
+OsIf_GetCounter/25 (OsIf_GetCounter) @0dcd37e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Lpspi_Ip_SyncTransmit/9 
+  Calls: 
+SchM_Exit_Spi_SPI_EXCLUSIVE_AREA_08/24 (SchM_Exit_Spi_SPI_EXCLUSIVE_AREA_08) @0dcd3700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Lpspi_Ip_SyncTransmit/9 Lpspi_Ip_SyncTransmit/9 
+  Calls: 
+SchM_Enter_Spi_SPI_EXCLUSIVE_AREA_08/23 (SchM_Enter_Spi_SPI_EXCLUSIVE_AREA_08) @0dcd3620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Lpspi_Ip_SyncTransmit/9 
+  Calls: 
+OsIf_MicrosToTicks/22 (OsIf_MicrosToTicks) @0dcd3540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Lpspi_Ip_SyncTransmit/9 
+  Calls: 
+Lpspi_Ip_GetStatus/21 (Lpspi_Ip_GetStatus) @0db1a8c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Lpspi_Ip_apxStateStructureArray/1 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+Lpspi_Ip_IrqHandler/20 (Lpspi_Ip_IrqHandler) @0db1a620
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Lpspi_Ip_apxBases/2 (read) Lpspi_Ip_apxStateStructureArray/1 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Lpspi_Ip_TransferProcess/6 
+Lpspi_Ip_Cancel/19 (Lpspi_Ip_Cancel) @0db1a380
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Lpspi_Ip_apxBases/2 (read) Lpspi_Ip_apxStateStructureArray/1 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: SchM_Exit_Spi_SPI_EXCLUSIVE_AREA_10/32 SchM_Enter_Spi_SPI_EXCLUSIVE_AREA_10/31 
+Lpspi_Ip_UpdateTransferMode/18 (Lpspi_Ip_UpdateTransferMode) @0db1a000
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Lpspi_Ip_apxStateStructureArray/1 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Lpspi_Ip_Init/7 
+  Calls: 
+Lpspi_Ip_UpdateDefaultTransmitData/17 (Lpspi_Ip_UpdateDefaultTransmitData) @0db11a80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Lpspi_Ip_apxStateStructureArray/1 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+Lpspi_Ip_UpdateLsb/16 (Lpspi_Ip_UpdateLsb) @0db11540
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Lpspi_Ip_apxStateStructureArray/1 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+Lpspi_Ip_UpdateFrameSize/15 (Lpspi_Ip_UpdateFrameSize) @0db11ee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Lpspi_Ip_apxStateStructureArray/1 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+Lpspi_Ip_ManageBuffers/14 (Lpspi_Ip_ManageBuffers) @0db11c40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Lpspi_Ip_apxBases/2 (read) Lpspi_Ip_apxStateStructureArray/1 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Lpspi_Ip_TransferProcess/6 
+Lpspi_Ip_AsyncTransmit/13 (Lpspi_Ip_AsyncTransmit) @0db119a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Lpspi_Ip_apxStateStructureArray/1 (read) Lpspi_Ip_apxBases/2 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Lpspi_TransmitRxInit/12 SchM_Exit_Spi_SPI_EXCLUSIVE_AREA_11/30 Lpspi_TransmitTxInit/11 SchM_Enter_Spi_SPI_EXCLUSIVE_AREA_11/29 SchM_Exit_Spi_SPI_EXCLUSIVE_AREA_09/28 SchM_Exit_Spi_SPI_EXCLUSIVE_AREA_09/28 SchM_Enter_Spi_SPI_EXCLUSIVE_AREA_09/27 
+Lpspi_TransmitRxInit/12 (Lpspi_TransmitRxInit) @0db11700
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: Lpspi_Ip_apxStateStructureArray/1 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Lpspi_Ip_AsyncTransmit/13 Lpspi_Ip_SyncTransmit/9 
+  Calls: Lpspi_Ip_GetWordsFromLength/10 
+Lpspi_TransmitTxInit/11 (Lpspi_TransmitTxInit) @0db11460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: Lpspi_Ip_apxBases/2 (read) Lpspi_Ip_apxStateStructureArray/1 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Lpspi_Ip_AsyncTransmit/13 Lpspi_Ip_SyncTransmit/9 Lpspi_Ip_SyncTransmit/9 Lpspi_Ip_TransferProcess/6 
+  Calls: Lpspi_Ip_GetWordsFromLength/10 
+Lpspi_Ip_GetWordsFromLength/10 (Lpspi_Ip_GetWordsFromLength) @0db11000
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: Lpspi_TransmitRxInit/12 Lpspi_TransmitTxInit/11 
+  Calls: 
+Lpspi_Ip_SyncTransmit/9 (Lpspi_Ip_SyncTransmit) @0daf48c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Lpspi_Ip_apxStateStructureArray/1 (read) Lpspi_Ip_apxBases/2 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: OsIf_GetElapsed/26 Lpspi_TransmitTxInit/11 Lpspi_Ip_PushDataToFifo/4 Lpspi_Ip_ReadDataFromFifo/3 OsIf_GetCounter/25 Lpspi_TransmitRxInit/12 Lpspi_TransmitTxInit/11 SchM_Exit_Spi_SPI_EXCLUSIVE_AREA_08/24 SchM_Exit_Spi_SPI_EXCLUSIVE_AREA_08/24 SchM_Enter_Spi_SPI_EXCLUSIVE_AREA_08/23 OsIf_MicrosToTicks/22 
+Lpspi_Ip_DeInit/8 (Lpspi_Ip_DeInit) @0daf4380
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Lpspi_Ip_apxBases/2 (read) Lpspi_Ip_apxStateStructureArray/1 (read) Lpspi_Ip_apxStateStructureArray/1 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+Lpspi_Ip_Init/7 (Lpspi_Ip_Init) @0daf4d20
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Lpspi_Ip_apxStateStructureArray/1 (read) Lpspi_Ip_apxBases/2 (read) Lpspi_Ip_axStateStructure/0 (addr) Lpspi_Ip_apxStateStructureArray/1 (write) Lpspi_Ip_apxStateStructureArray/1 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Lpspi_Ip_UpdateTransferMode/18 
+Lpspi_Ip_TransferProcess/6 (Lpspi_Ip_TransferProcess) @0daf4a80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: Lpspi_Ip_apxBases/2 (read) Lpspi_Ip_apxStateStructureArray/1 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Lpspi_Ip_IrqHandler/20 Lpspi_Ip_ManageBuffers/14 
+  Calls: Lpspi_Ip_ChannelFinished/5 Lpspi_TransmitTxInit/11 Lpspi_Ip_PushDataToFifo/4 Lpspi_Ip_ReadDataFromFifo/3 
+Lpspi_Ip_ChannelFinished/5 (Lpspi_Ip_ChannelFinished) @0daf47e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: Lpspi_Ip_apxStateStructureArray/1 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Lpspi_Ip_TransferProcess/6 
+  Calls: 
+   Indirect call Num speculative call targets: 0
+Lpspi_Ip_PushDataToFifo/4 (Lpspi_Ip_PushDataToFifo) @0daf4540
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: Lpspi_Ip_apxBases/2 (read) Lpspi_Ip_apxStateStructureArray/1 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Lpspi_Ip_SyncTransmit/9 Lpspi_Ip_TransferProcess/6 
+  Calls: 
+Lpspi_Ip_ReadDataFromFifo/3 (Lpspi_Ip_ReadDataFromFifo) @0daf42a0
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: Lpspi_Ip_apxBases/2 (read) Lpspi_Ip_apxStateStructureArray/1 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Lpspi_Ip_SyncTransmit/9 Lpspi_Ip_TransferProcess/6 
+  Calls: 
+Lpspi_Ip_apxBases/2 (Lpspi_Ip_apxBases) @0da92b40
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: Lpspi_Ip_TransferProcess/6 (read) Lpspi_Ip_ReadDataFromFifo/3 (read) Lpspi_Ip_PushDataToFifo/4 (read) Lpspi_Ip_Init/7 (read) Lpspi_Ip_DeInit/8 (read) Lpspi_Ip_SyncTransmit/9 (read) Lpspi_TransmitTxInit/11 (read) Lpspi_Ip_AsyncTransmit/13 (read) Lpspi_Ip_ManageBuffers/14 (read) Lpspi_Ip_Cancel/19 (read) Lpspi_Ip_IrqHandler/20 (read) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+Lpspi_Ip_apxStateStructureArray/1 (Lpspi_Ip_apxStateStructureArray) @0da92ab0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: Lpspi_Ip_ChannelFinished/5 (read) Lpspi_Ip_TransferProcess/6 (read) Lpspi_Ip_ReadDataFromFifo/3 (read) Lpspi_Ip_PushDataToFifo/4 (read) Lpspi_Ip_Init/7 (read) Lpspi_Ip_Init/7 (write) Lpspi_Ip_Init/7 (read) Lpspi_Ip_DeInit/8 (read) Lpspi_Ip_DeInit/8 (write) Lpspi_Ip_SyncTransmit/9 (read) Lpspi_TransmitTxInit/11 (read) Lpspi_TransmitRxInit/12 (read) Lpspi_Ip_AsyncTransmit/13 (read) Lpspi_Ip_ManageBuffers/14 (read) Lpspi_Ip_UpdateFrameSize/15 (read) Lpspi_Ip_UpdateLsb/16 (read) Lpspi_Ip_UpdateDefaultTransmitData/17 (read) Lpspi_Ip_UpdateTransferMode/18 (read) Lpspi_Ip_Cancel/19 (read) Lpspi_Ip_IrqHandler/20 (read) Lpspi_Ip_GetStatus/21 (read) 
+  Availability: not-ready
+  Varpool flags:
+Lpspi_Ip_axStateStructure/0 (Lpspi_Ip_axStateStructure) @0da929d8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: Lpspi_Ip_Init/7 (addr) 
+  Availability: not-ready
+  Varpool flags:
+
+
+Initial Symbol table:
+
+SchM_Exit_Spi_SPI_EXCLUSIVE_AREA_10/32 (SchM_Exit_Spi_SPI_EXCLUSIVE_AREA_10) @0dce8620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Lpspi_Ip_Cancel/19 
+  Calls: 
+SchM_Enter_Spi_SPI_EXCLUSIVE_AREA_10/31 (SchM_Enter_Spi_SPI_EXCLUSIVE_AREA_10) @0dce8540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Lpspi_Ip_Cancel/19 
+  Calls: 
+SchM_Exit_Spi_SPI_EXCLUSIVE_AREA_11/30 (SchM_Exit_Spi_SPI_EXCLUSIVE_AREA_11) @0dcd32a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Lpspi_Ip_AsyncTransmit/13 
+  Calls: 
+SchM_Enter_Spi_SPI_EXCLUSIVE_AREA_11/29 (SchM_Enter_Spi_SPI_EXCLUSIVE_AREA_11) @0dcd3ee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Lpspi_Ip_AsyncTransmit/13 
+  Calls: 
+SchM_Exit_Spi_SPI_EXCLUSIVE_AREA_09/28 (SchM_Exit_Spi_SPI_EXCLUSIVE_AREA_09) @0dcd3e00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Lpspi_Ip_AsyncTransmit/13 Lpspi_Ip_AsyncTransmit/13 
+  Calls: 
+SchM_Enter_Spi_SPI_EXCLUSIVE_AREA_09/27 (SchM_Enter_Spi_SPI_EXCLUSIVE_AREA_09) @0dcd3d20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Lpspi_Ip_AsyncTransmit/13 
+  Calls: 
+OsIf_GetElapsed/26 (OsIf_GetElapsed) @0dcd38c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Lpspi_Ip_SyncTransmit/9 
+  Calls: 
+OsIf_GetCounter/25 (OsIf_GetCounter) @0dcd37e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Lpspi_Ip_SyncTransmit/9 
+  Calls: 
+SchM_Exit_Spi_SPI_EXCLUSIVE_AREA_08/24 (SchM_Exit_Spi_SPI_EXCLUSIVE_AREA_08) @0dcd3700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Lpspi_Ip_SyncTransmit/9 Lpspi_Ip_SyncTransmit/9 
+  Calls: 
+SchM_Enter_Spi_SPI_EXCLUSIVE_AREA_08/23 (SchM_Enter_Spi_SPI_EXCLUSIVE_AREA_08) @0dcd3620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Lpspi_Ip_SyncTransmit/9 
+  Calls: 
+OsIf_MicrosToTicks/22 (OsIf_MicrosToTicks) @0dcd3540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Lpspi_Ip_SyncTransmit/9 
+  Calls: 
+Lpspi_Ip_GetStatus/21 (Lpspi_Ip_GetStatus) @0db1a8c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Lpspi_Ip_apxStateStructureArray/1 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+Lpspi_Ip_IrqHandler/20 (Lpspi_Ip_IrqHandler) @0db1a620
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Lpspi_Ip_apxBases/2 (read) Lpspi_Ip_apxStateStructureArray/1 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Lpspi_Ip_TransferProcess/6 
+Lpspi_Ip_Cancel/19 (Lpspi_Ip_Cancel) @0db1a380
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Lpspi_Ip_apxBases/2 (read) Lpspi_Ip_apxStateStructureArray/1 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: SchM_Exit_Spi_SPI_EXCLUSIVE_AREA_10/32 SchM_Enter_Spi_SPI_EXCLUSIVE_AREA_10/31 
+Lpspi_Ip_UpdateTransferMode/18 (Lpspi_Ip_UpdateTransferMode) @0db1a000
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Lpspi_Ip_apxStateStructureArray/1 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Lpspi_Ip_Init/7 
+  Calls: 
+Lpspi_Ip_UpdateDefaultTransmitData/17 (Lpspi_Ip_UpdateDefaultTransmitData) @0db11a80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Lpspi_Ip_apxStateStructureArray/1 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+Lpspi_Ip_UpdateLsb/16 (Lpspi_Ip_UpdateLsb) @0db11540
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Lpspi_Ip_apxStateStructureArray/1 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+Lpspi_Ip_UpdateFrameSize/15 (Lpspi_Ip_UpdateFrameSize) @0db11ee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Lpspi_Ip_apxStateStructureArray/1 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+Lpspi_Ip_ManageBuffers/14 (Lpspi_Ip_ManageBuffers) @0db11c40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Lpspi_Ip_apxBases/2 (read) Lpspi_Ip_apxStateStructureArray/1 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Lpspi_Ip_TransferProcess/6 
+Lpspi_Ip_AsyncTransmit/13 (Lpspi_Ip_AsyncTransmit) @0db119a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Lpspi_Ip_apxStateStructureArray/1 (read) Lpspi_Ip_apxBases/2 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Lpspi_TransmitRxInit/12 SchM_Exit_Spi_SPI_EXCLUSIVE_AREA_11/30 Lpspi_TransmitTxInit/11 SchM_Enter_Spi_SPI_EXCLUSIVE_AREA_11/29 SchM_Exit_Spi_SPI_EXCLUSIVE_AREA_09/28 SchM_Exit_Spi_SPI_EXCLUSIVE_AREA_09/28 SchM_Enter_Spi_SPI_EXCLUSIVE_AREA_09/27 
+Lpspi_TransmitRxInit/12 (Lpspi_TransmitRxInit) @0db11700
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: Lpspi_Ip_apxStateStructureArray/1 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Lpspi_Ip_AsyncTransmit/13 Lpspi_Ip_SyncTransmit/9 
+  Calls: Lpspi_Ip_GetWordsFromLength/10 
+Lpspi_TransmitTxInit/11 (Lpspi_TransmitTxInit) @0db11460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: Lpspi_Ip_apxBases/2 (read) Lpspi_Ip_apxStateStructureArray/1 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Lpspi_Ip_AsyncTransmit/13 Lpspi_Ip_SyncTransmit/9 Lpspi_Ip_SyncTransmit/9 Lpspi_Ip_TransferProcess/6 
+  Calls: Lpspi_Ip_GetWordsFromLength/10 
+Lpspi_Ip_GetWordsFromLength/10 (Lpspi_Ip_GetWordsFromLength) @0db11000
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: Lpspi_TransmitRxInit/12 Lpspi_TransmitTxInit/11 
+  Calls: 
+Lpspi_Ip_SyncTransmit/9 (Lpspi_Ip_SyncTransmit) @0daf48c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Lpspi_Ip_apxStateStructureArray/1 (read) Lpspi_Ip_apxBases/2 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: OsIf_GetElapsed/26 Lpspi_TransmitTxInit/11 Lpspi_Ip_PushDataToFifo/4 Lpspi_Ip_ReadDataFromFifo/3 OsIf_GetCounter/25 Lpspi_TransmitRxInit/12 Lpspi_TransmitTxInit/11 SchM_Exit_Spi_SPI_EXCLUSIVE_AREA_08/24 SchM_Exit_Spi_SPI_EXCLUSIVE_AREA_08/24 SchM_Enter_Spi_SPI_EXCLUSIVE_AREA_08/23 OsIf_MicrosToTicks/22 
+Lpspi_Ip_DeInit/8 (Lpspi_Ip_DeInit) @0daf4380
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Lpspi_Ip_apxBases/2 (read) Lpspi_Ip_apxStateStructureArray/1 (read) Lpspi_Ip_apxStateStructureArray/1 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+Lpspi_Ip_Init/7 (Lpspi_Ip_Init) @0daf4d20
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Lpspi_Ip_apxStateStructureArray/1 (read) Lpspi_Ip_apxBases/2 (read) Lpspi_Ip_axStateStructure/0 (addr) Lpspi_Ip_apxStateStructureArray/1 (write) Lpspi_Ip_apxStateStructureArray/1 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Lpspi_Ip_UpdateTransferMode/18 
+Lpspi_Ip_TransferProcess/6 (Lpspi_Ip_TransferProcess) @0daf4a80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: Lpspi_Ip_apxBases/2 (read) Lpspi_Ip_apxStateStructureArray/1 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Lpspi_Ip_IrqHandler/20 Lpspi_Ip_ManageBuffers/14 
+  Calls: Lpspi_Ip_ChannelFinished/5 Lpspi_TransmitTxInit/11 Lpspi_Ip_PushDataToFifo/4 Lpspi_Ip_ReadDataFromFifo/3 
+Lpspi_Ip_ChannelFinished/5 (Lpspi_Ip_ChannelFinished) @0daf47e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: Lpspi_Ip_apxStateStructureArray/1 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Lpspi_Ip_TransferProcess/6 
+  Calls: 
+   Indirect call Num speculative call targets: 0
+Lpspi_Ip_PushDataToFifo/4 (Lpspi_Ip_PushDataToFifo) @0daf4540
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: Lpspi_Ip_apxBases/2 (read) Lpspi_Ip_apxStateStructureArray/1 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Lpspi_Ip_SyncTransmit/9 Lpspi_Ip_TransferProcess/6 
+  Calls: 
+Lpspi_Ip_ReadDataFromFifo/3 (Lpspi_Ip_ReadDataFromFifo) @0daf42a0
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: Lpspi_Ip_apxBases/2 (read) Lpspi_Ip_apxStateStructureArray/1 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Lpspi_Ip_SyncTransmit/9 Lpspi_Ip_TransferProcess/6 
+  Calls: 
+Lpspi_Ip_apxBases/2 (Lpspi_Ip_apxBases) @0da92b40
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: Lpspi_Ip_TransferProcess/6 (read) Lpspi_Ip_ReadDataFromFifo/3 (read) Lpspi_Ip_PushDataToFifo/4 (read) Lpspi_Ip_Init/7 (read) Lpspi_Ip_DeInit/8 (read) Lpspi_Ip_SyncTransmit/9 (read) Lpspi_TransmitTxInit/11 (read) Lpspi_Ip_AsyncTransmit/13 (read) Lpspi_Ip_ManageBuffers/14 (read) Lpspi_Ip_Cancel/19 (read) Lpspi_Ip_IrqHandler/20 (read) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+Lpspi_Ip_apxStateStructureArray/1 (Lpspi_Ip_apxStateStructureArray) @0da92ab0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: Lpspi_Ip_ChannelFinished/5 (read) Lpspi_Ip_TransferProcess/6 (read) Lpspi_Ip_ReadDataFromFifo/3 (read) Lpspi_Ip_PushDataToFifo/4 (read) Lpspi_Ip_Init/7 (read) Lpspi_Ip_Init/7 (write) Lpspi_Ip_Init/7 (read) Lpspi_Ip_DeInit/8 (read) Lpspi_Ip_DeInit/8 (write) Lpspi_Ip_SyncTransmit/9 (read) Lpspi_TransmitTxInit/11 (read) Lpspi_TransmitRxInit/12 (read) Lpspi_Ip_AsyncTransmit/13 (read) Lpspi_Ip_ManageBuffers/14 (read) Lpspi_Ip_UpdateFrameSize/15 (read) Lpspi_Ip_UpdateLsb/16 (read) Lpspi_Ip_UpdateDefaultTransmitData/17 (read) Lpspi_Ip_UpdateTransferMode/18 (read) Lpspi_Ip_Cancel/19 (read) Lpspi_Ip_IrqHandler/20 (read) Lpspi_Ip_GetStatus/21 (read) 
+  Availability: not-ready
+  Varpool flags:
+Lpspi_Ip_axStateStructure/0 (Lpspi_Ip_axStateStructure) @0da929d8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: Lpspi_Ip_Init/7 (addr) 
+  Availability: not-ready
+  Varpool flags:
+
+Removing unused symbols:
+
+Reclaimed Symbol table:
+
+SchM_Exit_Spi_SPI_EXCLUSIVE_AREA_10/32 (SchM_Exit_Spi_SPI_EXCLUSIVE_AREA_10) @0dce8620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Lpspi_Ip_Cancel/19 
+  Calls: 
+SchM_Enter_Spi_SPI_EXCLUSIVE_AREA_10/31 (SchM_Enter_Spi_SPI_EXCLUSIVE_AREA_10) @0dce8540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Lpspi_Ip_Cancel/19 
+  Calls: 
+SchM_Exit_Spi_SPI_EXCLUSIVE_AREA_11/30 (SchM_Exit_Spi_SPI_EXCLUSIVE_AREA_11) @0dcd32a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Lpspi_Ip_AsyncTransmit/13 
+  Calls: 
+SchM_Enter_Spi_SPI_EXCLUSIVE_AREA_11/29 (SchM_Enter_Spi_SPI_EXCLUSIVE_AREA_11) @0dcd3ee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Lpspi_Ip_AsyncTransmit/13 
+  Calls: 
+SchM_Exit_Spi_SPI_EXCLUSIVE_AREA_09/28 (SchM_Exit_Spi_SPI_EXCLUSIVE_AREA_09) @0dcd3e00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Lpspi_Ip_AsyncTransmit/13 Lpspi_Ip_AsyncTransmit/13 
+  Calls: 
+SchM_Enter_Spi_SPI_EXCLUSIVE_AREA_09/27 (SchM_Enter_Spi_SPI_EXCLUSIVE_AREA_09) @0dcd3d20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Lpspi_Ip_AsyncTransmit/13 
+  Calls: 
+OsIf_GetElapsed/26 (OsIf_GetElapsed) @0dcd38c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Lpspi_Ip_SyncTransmit/9 
+  Calls: 
+OsIf_GetCounter/25 (OsIf_GetCounter) @0dcd37e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Lpspi_Ip_SyncTransmit/9 
+  Calls: 
+SchM_Exit_Spi_SPI_EXCLUSIVE_AREA_08/24 (SchM_Exit_Spi_SPI_EXCLUSIVE_AREA_08) @0dcd3700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Lpspi_Ip_SyncTransmit/9 Lpspi_Ip_SyncTransmit/9 
+  Calls: 
+SchM_Enter_Spi_SPI_EXCLUSIVE_AREA_08/23 (SchM_Enter_Spi_SPI_EXCLUSIVE_AREA_08) @0dcd3620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Lpspi_Ip_SyncTransmit/9 
+  Calls: 
+OsIf_MicrosToTicks/22 (OsIf_MicrosToTicks) @0dcd3540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Lpspi_Ip_SyncTransmit/9 
+  Calls: 
+Lpspi_Ip_GetStatus/21 (Lpspi_Ip_GetStatus) @0db1a8c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Lpspi_Ip_apxStateStructureArray/1 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+Lpspi_Ip_IrqHandler/20 (Lpspi_Ip_IrqHandler) @0db1a620
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Lpspi_Ip_apxBases/2 (read) Lpspi_Ip_apxStateStructureArray/1 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Lpspi_Ip_TransferProcess/6 
+Lpspi_Ip_Cancel/19 (Lpspi_Ip_Cancel) @0db1a380
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Lpspi_Ip_apxBases/2 (read) Lpspi_Ip_apxStateStructureArray/1 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: SchM_Exit_Spi_SPI_EXCLUSIVE_AREA_10/32 SchM_Enter_Spi_SPI_EXCLUSIVE_AREA_10/31 
+Lpspi_Ip_UpdateTransferMode/18 (Lpspi_Ip_UpdateTransferMode) @0db1a000
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Lpspi_Ip_apxStateStructureArray/1 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Lpspi_Ip_Init/7 
+  Calls: 
+Lpspi_Ip_UpdateDefaultTransmitData/17 (Lpspi_Ip_UpdateDefaultTransmitData) @0db11a80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Lpspi_Ip_apxStateStructureArray/1 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+Lpspi_Ip_UpdateLsb/16 (Lpspi_Ip_UpdateLsb) @0db11540
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Lpspi_Ip_apxStateStructureArray/1 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+Lpspi_Ip_UpdateFrameSize/15 (Lpspi_Ip_UpdateFrameSize) @0db11ee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Lpspi_Ip_apxStateStructureArray/1 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+Lpspi_Ip_ManageBuffers/14 (Lpspi_Ip_ManageBuffers) @0db11c40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Lpspi_Ip_apxBases/2 (read) Lpspi_Ip_apxStateStructureArray/1 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Lpspi_Ip_TransferProcess/6 
+Lpspi_Ip_AsyncTransmit/13 (Lpspi_Ip_AsyncTransmit) @0db119a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Lpspi_Ip_apxStateStructureArray/1 (read) Lpspi_Ip_apxBases/2 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Lpspi_TransmitRxInit/12 SchM_Exit_Spi_SPI_EXCLUSIVE_AREA_11/30 Lpspi_TransmitTxInit/11 SchM_Enter_Spi_SPI_EXCLUSIVE_AREA_11/29 SchM_Exit_Spi_SPI_EXCLUSIVE_AREA_09/28 SchM_Exit_Spi_SPI_EXCLUSIVE_AREA_09/28 SchM_Enter_Spi_SPI_EXCLUSIVE_AREA_09/27 
+Lpspi_TransmitRxInit/12 (Lpspi_TransmitRxInit) @0db11700
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: Lpspi_Ip_apxStateStructureArray/1 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Lpspi_Ip_AsyncTransmit/13 Lpspi_Ip_SyncTransmit/9 
+  Calls: Lpspi_Ip_GetWordsFromLength/10 
+Lpspi_TransmitTxInit/11 (Lpspi_TransmitTxInit) @0db11460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: Lpspi_Ip_apxBases/2 (read) Lpspi_Ip_apxStateStructureArray/1 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Lpspi_Ip_AsyncTransmit/13 Lpspi_Ip_SyncTransmit/9 Lpspi_Ip_SyncTransmit/9 Lpspi_Ip_TransferProcess/6 
+  Calls: Lpspi_Ip_GetWordsFromLength/10 
+Lpspi_Ip_GetWordsFromLength/10 (Lpspi_Ip_GetWordsFromLength) @0db11000
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: Lpspi_TransmitRxInit/12 Lpspi_TransmitTxInit/11 
+  Calls: 
+Lpspi_Ip_SyncTransmit/9 (Lpspi_Ip_SyncTransmit) @0daf48c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Lpspi_Ip_apxStateStructureArray/1 (read) Lpspi_Ip_apxBases/2 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: OsIf_GetElapsed/26 Lpspi_TransmitTxInit/11 Lpspi_Ip_PushDataToFifo/4 Lpspi_Ip_ReadDataFromFifo/3 OsIf_GetCounter/25 Lpspi_TransmitRxInit/12 Lpspi_TransmitTxInit/11 SchM_Exit_Spi_SPI_EXCLUSIVE_AREA_08/24 SchM_Exit_Spi_SPI_EXCLUSIVE_AREA_08/24 SchM_Enter_Spi_SPI_EXCLUSIVE_AREA_08/23 OsIf_MicrosToTicks/22 
+Lpspi_Ip_DeInit/8 (Lpspi_Ip_DeInit) @0daf4380
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Lpspi_Ip_apxBases/2 (read) Lpspi_Ip_apxStateStructureArray/1 (read) Lpspi_Ip_apxStateStructureArray/1 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+Lpspi_Ip_Init/7 (Lpspi_Ip_Init) @0daf4d20
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Lpspi_Ip_apxStateStructureArray/1 (read) Lpspi_Ip_apxBases/2 (read) Lpspi_Ip_axStateStructure/0 (addr) Lpspi_Ip_apxStateStructureArray/1 (write) Lpspi_Ip_apxStateStructureArray/1 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Lpspi_Ip_UpdateTransferMode/18 
+Lpspi_Ip_TransferProcess/6 (Lpspi_Ip_TransferProcess) @0daf4a80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: Lpspi_Ip_apxBases/2 (read) Lpspi_Ip_apxStateStructureArray/1 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Lpspi_Ip_IrqHandler/20 Lpspi_Ip_ManageBuffers/14 
+  Calls: Lpspi_Ip_ChannelFinished/5 Lpspi_TransmitTxInit/11 Lpspi_Ip_PushDataToFifo/4 Lpspi_Ip_ReadDataFromFifo/3 
+Lpspi_Ip_ChannelFinished/5 (Lpspi_Ip_ChannelFinished) @0daf47e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: Lpspi_Ip_apxStateStructureArray/1 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Lpspi_Ip_TransferProcess/6 
+  Calls: 
+   Indirect call Num speculative call targets: 0
+Lpspi_Ip_PushDataToFifo/4 (Lpspi_Ip_PushDataToFifo) @0daf4540
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: Lpspi_Ip_apxBases/2 (read) Lpspi_Ip_apxStateStructureArray/1 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Lpspi_Ip_SyncTransmit/9 Lpspi_Ip_TransferProcess/6 
+  Calls: 
+Lpspi_Ip_ReadDataFromFifo/3 (Lpspi_Ip_ReadDataFromFifo) @0daf42a0
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: Lpspi_Ip_apxBases/2 (read) Lpspi_Ip_apxStateStructureArray/1 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Lpspi_Ip_SyncTransmit/9 Lpspi_Ip_TransferProcess/6 
+  Calls: 
+Lpspi_Ip_apxBases/2 (Lpspi_Ip_apxBases) @0da92b40
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: Lpspi_Ip_TransferProcess/6 (read) Lpspi_Ip_ReadDataFromFifo/3 (read) Lpspi_Ip_PushDataToFifo/4 (read) Lpspi_Ip_Init/7 (read) Lpspi_Ip_DeInit/8 (read) Lpspi_Ip_SyncTransmit/9 (read) Lpspi_TransmitTxInit/11 (read) Lpspi_Ip_AsyncTransmit/13 (read) Lpspi_Ip_ManageBuffers/14 (read) Lpspi_Ip_Cancel/19 (read) Lpspi_Ip_IrqHandler/20 (read) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+Lpspi_Ip_apxStateStructureArray/1 (Lpspi_Ip_apxStateStructureArray) @0da92ab0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: Lpspi_Ip_ChannelFinished/5 (read) Lpspi_Ip_TransferProcess/6 (read) Lpspi_Ip_ReadDataFromFifo/3 (read) Lpspi_Ip_PushDataToFifo/4 (read) Lpspi_Ip_Init/7 (read) Lpspi_Ip_Init/7 (write) Lpspi_Ip_Init/7 (read) Lpspi_Ip_DeInit/8 (read) Lpspi_Ip_DeInit/8 (write) Lpspi_Ip_SyncTransmit/9 (read) Lpspi_TransmitTxInit/11 (read) Lpspi_TransmitRxInit/12 (read) Lpspi_Ip_AsyncTransmit/13 (read) Lpspi_Ip_ManageBuffers/14 (read) Lpspi_Ip_UpdateFrameSize/15 (read) Lpspi_Ip_UpdateLsb/16 (read) Lpspi_Ip_UpdateDefaultTransmitData/17 (read) Lpspi_Ip_UpdateTransferMode/18 (read) Lpspi_Ip_Cancel/19 (read) Lpspi_Ip_IrqHandler/20 (read) Lpspi_Ip_GetStatus/21 (read) 
+  Availability: not-ready
+  Varpool flags:
+Lpspi_Ip_axStateStructure/0 (Lpspi_Ip_axStateStructure) @0da929d8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: Lpspi_Ip_Init/7 (addr) 
+  Availability: not-ready
+  Varpool flags:
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+Optimized Symbol table:
+
+SchM_Exit_Spi_SPI_EXCLUSIVE_AREA_10/32 (SchM_Exit_Spi_SPI_EXCLUSIVE_AREA_10) @0dce8620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Lpspi_Ip_Cancel/19 
+  Calls: 
+SchM_Enter_Spi_SPI_EXCLUSIVE_AREA_10/31 (SchM_Enter_Spi_SPI_EXCLUSIVE_AREA_10) @0dce8540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Lpspi_Ip_Cancel/19 
+  Calls: 
+SchM_Exit_Spi_SPI_EXCLUSIVE_AREA_11/30 (SchM_Exit_Spi_SPI_EXCLUSIVE_AREA_11) @0dcd32a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Lpspi_Ip_AsyncTransmit/13 
+  Calls: 
+SchM_Enter_Spi_SPI_EXCLUSIVE_AREA_11/29 (SchM_Enter_Spi_SPI_EXCLUSIVE_AREA_11) @0dcd3ee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Lpspi_Ip_AsyncTransmit/13 
+  Calls: 
+SchM_Exit_Spi_SPI_EXCLUSIVE_AREA_09/28 (SchM_Exit_Spi_SPI_EXCLUSIVE_AREA_09) @0dcd3e00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Lpspi_Ip_AsyncTransmit/13 Lpspi_Ip_AsyncTransmit/13 
+  Calls: 
+SchM_Enter_Spi_SPI_EXCLUSIVE_AREA_09/27 (SchM_Enter_Spi_SPI_EXCLUSIVE_AREA_09) @0dcd3d20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Lpspi_Ip_AsyncTransmit/13 
+  Calls: 
+OsIf_GetElapsed/26 (OsIf_GetElapsed) @0dcd38c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Lpspi_Ip_SyncTransmit/9 
+  Calls: 
+OsIf_GetCounter/25 (OsIf_GetCounter) @0dcd37e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Lpspi_Ip_SyncTransmit/9 
+  Calls: 
+SchM_Exit_Spi_SPI_EXCLUSIVE_AREA_08/24 (SchM_Exit_Spi_SPI_EXCLUSIVE_AREA_08) @0dcd3700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Lpspi_Ip_SyncTransmit/9 Lpspi_Ip_SyncTransmit/9 
+  Calls: 
+SchM_Enter_Spi_SPI_EXCLUSIVE_AREA_08/23 (SchM_Enter_Spi_SPI_EXCLUSIVE_AREA_08) @0dcd3620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Lpspi_Ip_SyncTransmit/9 
+  Calls: 
+OsIf_MicrosToTicks/22 (OsIf_MicrosToTicks) @0dcd3540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Lpspi_Ip_SyncTransmit/9 
+  Calls: 
+Lpspi_Ip_GetStatus/21 (Lpspi_Ip_GetStatus) @0db1a8c0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Lpspi_Ip_apxStateStructureArray/1 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+Lpspi_Ip_IrqHandler/20 (Lpspi_Ip_IrqHandler) @0db1a620
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Lpspi_Ip_apxBases/2 (read) Lpspi_Ip_apxStateStructureArray/1 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Lpspi_Ip_TransferProcess/6 
+Lpspi_Ip_Cancel/19 (Lpspi_Ip_Cancel) @0db1a380
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Lpspi_Ip_apxBases/2 (read) Lpspi_Ip_apxStateStructureArray/1 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: SchM_Exit_Spi_SPI_EXCLUSIVE_AREA_10/32 SchM_Enter_Spi_SPI_EXCLUSIVE_AREA_10/31 
+Lpspi_Ip_UpdateTransferMode/18 (Lpspi_Ip_UpdateTransferMode) @0db1a000
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Lpspi_Ip_apxStateStructureArray/1 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: Lpspi_Ip_Init/7 
+  Calls: 
+Lpspi_Ip_UpdateDefaultTransmitData/17 (Lpspi_Ip_UpdateDefaultTransmitData) @0db11a80
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Lpspi_Ip_apxStateStructureArray/1 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+Lpspi_Ip_UpdateLsb/16 (Lpspi_Ip_UpdateLsb) @0db11540
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Lpspi_Ip_apxStateStructureArray/1 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+Lpspi_Ip_UpdateFrameSize/15 (Lpspi_Ip_UpdateFrameSize) @0db11ee0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Lpspi_Ip_apxStateStructureArray/1 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+Lpspi_Ip_ManageBuffers/14 (Lpspi_Ip_ManageBuffers) @0db11c40
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Lpspi_Ip_apxBases/2 (read) Lpspi_Ip_apxStateStructureArray/1 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Lpspi_Ip_TransferProcess/6 
+Lpspi_Ip_AsyncTransmit/13 (Lpspi_Ip_AsyncTransmit) @0db119a0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Lpspi_Ip_apxStateStructureArray/1 (read) Lpspi_Ip_apxBases/2 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Lpspi_TransmitRxInit/12 SchM_Exit_Spi_SPI_EXCLUSIVE_AREA_11/30 Lpspi_TransmitTxInit/11 SchM_Enter_Spi_SPI_EXCLUSIVE_AREA_11/29 SchM_Exit_Spi_SPI_EXCLUSIVE_AREA_09/28 SchM_Exit_Spi_SPI_EXCLUSIVE_AREA_09/28 SchM_Enter_Spi_SPI_EXCLUSIVE_AREA_09/27 
+Lpspi_TransmitRxInit/12 (Lpspi_TransmitRxInit) @0db11700
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: Lpspi_Ip_apxStateStructureArray/1 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: Lpspi_Ip_AsyncTransmit/13 Lpspi_Ip_SyncTransmit/9 
+  Calls: 
+Lpspi_TransmitTxInit/11 (Lpspi_TransmitTxInit) @0db11460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: Lpspi_Ip_apxBases/2 (read) Lpspi_Ip_apxStateStructureArray/1 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: Lpspi_Ip_AsyncTransmit/13 Lpspi_Ip_SyncTransmit/9 Lpspi_Ip_SyncTransmit/9 Lpspi_Ip_TransferProcess/6 
+  Calls: 
+Lpspi_Ip_SyncTransmit/9 (Lpspi_Ip_SyncTransmit) @0daf48c0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Lpspi_Ip_apxStateStructureArray/1 (read) Lpspi_Ip_apxBases/2 (read) Lpspi_Ip_apxBases/2 (read) Lpspi_Ip_apxStateStructureArray/1 (read) Lpspi_Ip_apxBases/2 (read) Lpspi_Ip_apxStateStructureArray/1 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: OsIf_GetElapsed/26 Lpspi_TransmitTxInit/11 OsIf_GetCounter/25 Lpspi_TransmitRxInit/12 Lpspi_TransmitTxInit/11 SchM_Exit_Spi_SPI_EXCLUSIVE_AREA_08/24 SchM_Exit_Spi_SPI_EXCLUSIVE_AREA_08/24 SchM_Enter_Spi_SPI_EXCLUSIVE_AREA_08/23 OsIf_MicrosToTicks/22 
+Lpspi_Ip_DeInit/8 (Lpspi_Ip_DeInit) @0daf4380
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Lpspi_Ip_apxBases/2 (read) Lpspi_Ip_apxStateStructureArray/1 (read) Lpspi_Ip_apxStateStructureArray/1 (write) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+Lpspi_Ip_Init/7 (Lpspi_Ip_Init) @0daf4d20
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Lpspi_Ip_apxStateStructureArray/1 (read) Lpspi_Ip_apxBases/2 (read) Lpspi_Ip_axStateStructure/0 (addr) Lpspi_Ip_apxStateStructureArray/1 (write) Lpspi_Ip_apxStateStructureArray/1 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Lpspi_Ip_UpdateTransferMode/18 
+Lpspi_Ip_TransferProcess/6 (Lpspi_Ip_TransferProcess) @0daf4a80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: Lpspi_Ip_apxBases/2 (read) Lpspi_Ip_apxStateStructureArray/1 (read) Lpspi_Ip_apxBases/2 (read) Lpspi_Ip_apxStateStructureArray/1 (read) Lpspi_Ip_apxBases/2 (read) Lpspi_Ip_apxStateStructureArray/1 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: Lpspi_Ip_IrqHandler/20 Lpspi_Ip_ManageBuffers/14 
+  Calls: Lpspi_Ip_ChannelFinished/5 Lpspi_TransmitTxInit/11 
+Lpspi_Ip_ChannelFinished/5 (Lpspi_Ip_ChannelFinished) @0daf47e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: Lpspi_Ip_apxStateStructureArray/1 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: Lpspi_Ip_TransferProcess/6 
+  Calls: 
+   Indirect call Num speculative call targets: 0
+Lpspi_Ip_apxBases/2 (Lpspi_Ip_apxBases) @0da92b40
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: Lpspi_Ip_DeInit/8 (read) Lpspi_Ip_Init/7 (read) Lpspi_Ip_Cancel/19 (read) Lpspi_Ip_AsyncTransmit/13 (read) Lpspi_Ip_TransferProcess/6 (read) Lpspi_TransmitTxInit/11 (read) Lpspi_Ip_TransferProcess/6 (read) Lpspi_Ip_TransferProcess/6 (read) Lpspi_Ip_SyncTransmit/9 (read) Lpspi_Ip_ManageBuffers/14 (read) Lpspi_Ip_SyncTransmit/9 (read) Lpspi_Ip_SyncTransmit/9 (read) Lpspi_Ip_IrqHandler/20 (read) 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+Lpspi_Ip_apxStateStructureArray/1 (Lpspi_Ip_apxStateStructureArray) @0da92ab0
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: Lpspi_Ip_TransferProcess/6 (read) Lpspi_Ip_DeInit/8 (write) Lpspi_Ip_Cancel/19 (read) Lpspi_Ip_IrqHandler/20 (read) Lpspi_Ip_UpdateTransferMode/18 (read) Lpspi_Ip_SyncTransmit/9 (read) Lpspi_Ip_UpdateDefaultTransmitData/17 (read) Lpspi_Ip_Init/7 (read) Lpspi_Ip_TransferProcess/6 (read) Lpspi_Ip_TransferProcess/6 (read) Lpspi_Ip_ChannelFinished/5 (read) Lpspi_TransmitTxInit/11 (read) Lpspi_TransmitRxInit/12 (read) Lpspi_Ip_SyncTransmit/9 (read) Lpspi_Ip_AsyncTransmit/13 (read) Lpspi_Ip_ManageBuffers/14 (read) Lpspi_Ip_UpdateFrameSize/15 (read) Lpspi_Ip_UpdateLsb/16 (read) Lpspi_Ip_SyncTransmit/9 (read) Lpspi_Ip_DeInit/8 (read) Lpspi_Ip_Init/7 (read) Lpspi_Ip_Init/7 (write) Lpspi_Ip_GetStatus/21 (read) 
+  Availability: available
+  Varpool flags:
+Lpspi_Ip_axStateStructure/0 (Lpspi_Ip_axStateStructure) @0da929d8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: Lpspi_Ip_Init/7 (addr) 
+  Availability: available
+  Varpool flags:
+Materializing clones
+Materialization Call site updates done.
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+Trivially needed variables: Lpspi_Ip_apxBases/2 Lpspi_Ip_apxStateStructureArray/1 Lpspi_Ip_axStateStructure/0
+Removing variables:
+
+Final Symbol table:
+
+SchM_Exit_Spi_SPI_EXCLUSIVE_AREA_10/32 (SchM_Exit_Spi_SPI_EXCLUSIVE_AREA_10) @0dce8620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+SchM_Enter_Spi_SPI_EXCLUSIVE_AREA_10/31 (SchM_Enter_Spi_SPI_EXCLUSIVE_AREA_10) @0dce8540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+SchM_Exit_Spi_SPI_EXCLUSIVE_AREA_11/30 (SchM_Exit_Spi_SPI_EXCLUSIVE_AREA_11) @0dcd32a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+SchM_Enter_Spi_SPI_EXCLUSIVE_AREA_11/29 (SchM_Enter_Spi_SPI_EXCLUSIVE_AREA_11) @0dcd3ee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+SchM_Exit_Spi_SPI_EXCLUSIVE_AREA_09/28 (SchM_Exit_Spi_SPI_EXCLUSIVE_AREA_09) @0dcd3e00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+SchM_Enter_Spi_SPI_EXCLUSIVE_AREA_09/27 (SchM_Enter_Spi_SPI_EXCLUSIVE_AREA_09) @0dcd3d20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+OsIf_GetElapsed/26 (OsIf_GetElapsed) @0dcd38c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+OsIf_GetCounter/25 (OsIf_GetCounter) @0dcd37e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+SchM_Exit_Spi_SPI_EXCLUSIVE_AREA_08/24 (SchM_Exit_Spi_SPI_EXCLUSIVE_AREA_08) @0dcd3700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+SchM_Enter_Spi_SPI_EXCLUSIVE_AREA_08/23 (SchM_Enter_Spi_SPI_EXCLUSIVE_AREA_08) @0dcd3620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+OsIf_MicrosToTicks/22 (OsIf_MicrosToTicks) @0dcd3540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+Lpspi_Ip_GetStatus/21 (Lpspi_Ip_GetStatus) @0db1a8c0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.Lpspi_Ip_GetStatus (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+Lpspi_Ip_IrqHandler/20 (Lpspi_Ip_IrqHandler) @0db1a620
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.Lpspi_Ip_IrqHandler (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+Lpspi_Ip_Cancel/19 (Lpspi_Ip_Cancel) @0db1a380
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.Lpspi_Ip_Cancel (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+Lpspi_Ip_UpdateTransferMode/18 (Lpspi_Ip_UpdateTransferMode) @0db1a000
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.Lpspi_Ip_UpdateTransferMode (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+Lpspi_Ip_UpdateDefaultTransmitData/17 (Lpspi_Ip_UpdateDefaultTransmitData) @0db11a80
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.Lpspi_Ip_UpdateDefaultTransmitData (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+Lpspi_Ip_UpdateLsb/16 (Lpspi_Ip_UpdateLsb) @0db11540
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.Lpspi_Ip_UpdateLsb (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+Lpspi_Ip_UpdateFrameSize/15 (Lpspi_Ip_UpdateFrameSize) @0db11ee0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.Lpspi_Ip_UpdateFrameSize (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+Lpspi_Ip_ManageBuffers/14 (Lpspi_Ip_ManageBuffers) @0db11c40
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.Lpspi_Ip_ManageBuffers (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+Lpspi_Ip_AsyncTransmit/13 (Lpspi_Ip_AsyncTransmit) @0db119a0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.Lpspi_Ip_AsyncTransmit (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+Lpspi_TransmitRxInit/12 (Lpspi_TransmitRxInit) @0db11700
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written section:.text.Lpspi_TransmitRxInit (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+Lpspi_TransmitTxInit/11 (Lpspi_TransmitTxInit) @0db11460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written section:.text.Lpspi_TransmitTxInit (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+Lpspi_Ip_SyncTransmit/9 (Lpspi_Ip_SyncTransmit) @0daf48c0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.Lpspi_Ip_SyncTransmit (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+Lpspi_Ip_DeInit/8 (Lpspi_Ip_DeInit) @0daf4380
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.Lpspi_Ip_DeInit (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+Lpspi_Ip_Init/7 (Lpspi_Ip_Init) @0daf4d20
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.Lpspi_Ip_Init (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+Lpspi_Ip_TransferProcess/6 (Lpspi_Ip_TransferProcess) @0daf4a80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written section:.text.Lpspi_Ip_TransferProcess (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+Lpspi_Ip_ChannelFinished/5 (Lpspi_Ip_ChannelFinished) @0daf47e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written section:.text.Lpspi_Ip_ChannelFinished (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+Lpspi_Ip_apxBases/2 (Lpspi_Ip_apxBases) @0da92b40
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written section:.rodata.Lpspi_Ip_apxBases (implicit_section)
+  Aux: @00000001
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+Lpspi_Ip_apxStateStructureArray/1 (Lpspi_Ip_apxStateStructureArray) @0da92ab0
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.bss.Lpspi_Ip_apxStateStructureArray (implicit_section)
+  Aux: @0da92b40
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags:
+Lpspi_Ip_axStateStructure/0 (Lpspi_Ip_axStateStructure) @0da929d8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written section:.bss.Lpspi_Ip_axStateStructure (implicit_section)
+  Aux: @0da92ab0
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags:

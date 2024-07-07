@@ -1,0 +1,117 @@
+EcuM_Init ()
+{
+  <bb 2> :
+  Mcu_Init (&Mcu_Config);
+  Mcu_InitClock (0);
+  Mcu_SetMode (0);
+  OsIf_Init (0B);
+  Platform_Init (0B);
+  Port_Init (&Port_Config);
+  Spi_Init (&Spi_Config);
+  return;
+
+}
+
+
+main ()
+{
+  Spi_DataBufferType RxBuffer2[4];
+  Spi_DataBufferType RxBuffer1[4];
+  Spi_DataBufferType TxBuffer2[4];
+  Spi_DataBufferType TxBuffer1[4];
+  int D.7621;
+  unsigned char _1;
+  unsigned char _2;
+  unsigned char _3;
+  unsigned char _4;
+  unsigned char _5;
+  unsigned char _6;
+  unsigned char _7;
+  unsigned char _8;
+  int _9;
+  unsigned char _10;
+  int _11;
+
+  <bb 2> :
+  EcuM_Init ();
+  SEGGER_RTT_Init ();
+  TxBuffer1[0] = 6;
+  _1 = TxBuffer1[0];
+  TxBuffer2[0] = _1;
+  Spi_SetupEB (0, &TxBuffer1, 0B, 1);
+  Spi_SetupEB (1, &TxBuffer2, 0B, 1);
+  Spi_SyncTransmit (0);
+  TxBuffer1[0] = 2;
+  _2 = TxBuffer1[0];
+  TxBuffer2[0] = _2;
+  TxBuffer1[1] = 0;
+  _3 = TxBuffer1[1];
+  TxBuffer2[1] = _3;
+  TxBuffer1[2] = 0;
+  _4 = TxBuffer1[2];
+  TxBuffer2[2] = _4;
+  TxBuffer1[3] = 56;
+  TxBuffer2[3] = 57;
+  Spi_SetupEB (0, &TxBuffer1, 0B, 4);
+  Spi_SetupEB (1, &TxBuffer2, 0B, 4);
+  Spi_SyncTransmit (0);
+  Delay (10);
+  TxBuffer1[0] = 3;
+  _5 = TxBuffer1[0];
+  TxBuffer2[0] = _5;
+  TxBuffer1[1] = 0;
+  _6 = TxBuffer1[1];
+  TxBuffer2[1] = _6;
+  TxBuffer1[2] = 0;
+  _7 = TxBuffer1[2];
+  TxBuffer2[2] = _7;
+  Spi_SetupEB (0, &TxBuffer1, &RxBuffer1, 4);
+  Spi_SetupEB (1, &TxBuffer2, &RxBuffer2, 4);
+  Spi_SyncTransmit (0);
+  _8 = RxBuffer1[3];
+  _9 = (int) _8;
+  SEGGER_RTT_printf (0, "Data read from eeprom 1: 0x%x\n", _9);
+  _10 = RxBuffer2[3];
+  _11 = (int) _10;
+  SEGGER_RTT_printf (0, "Data read from eeprom 2: 0x%x\n", _11);
+
+  <bb 3> :
+  Delay (10);
+  goto <bb 3>; [INV]
+
+}
+
+
+Delay (uint32 ms)
+{
+  uint32 ElapsedTime;
+  uint32 SeedTick;
+  uint32 Timeout;
+  long unsigned int D.7620;
+  long unsigned int _1;
+  long unsigned int _2;
+  long unsigned int _13;
+
+  <bb 2> :
+  _1 = ms_5(D) * 1000;
+  Timeout_8 = OsIf_MicrosToTicks (_1, 1);
+  _2 = OsIf_GetCounter (1);
+  SeedTick = _2;
+  ElapsedTime_11 = 0;
+
+  <bb 3> :
+  # ElapsedTime_3 = PHI <ElapsedTime_11(2), ElapsedTime_14(3)>
+  _13 = OsIf_GetElapsed (&SeedTick, 1);
+  ElapsedTime_14 = _13 + ElapsedTime_3;
+  if (ElapsedTime_14 < Timeout_8)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 4> :
+  SeedTick ={v} {CLOBBER};
+  return;
+
+}
+
+

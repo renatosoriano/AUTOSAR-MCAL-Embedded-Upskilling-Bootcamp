@@ -1,0 +1,1791 @@
+Lpspi_Ip_GetStatus (uint8 Instance)
+{
+  Lpspi_Ip_HwStatusType Status;
+  const struct Lpspi_Ip_StateStructureType * State;
+  Lpspi_Ip_HwStatusType D.5935;
+  int _1;
+  Lpspi_Ip_HwStatusType _8;
+
+  <bb 2> :
+  Status_3 = 0;
+  _1 = (int) Instance_4(D);
+  State_6 = Lpspi_Ip_apxStateStructureArray[_1];
+  if (State_6 != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  Status_7 = State_6->Status;
+
+  <bb 4> :
+  # Status_2 = PHI <Status_3(2), Status_7(3)>
+  _8 = Status_2;
+
+  <bb 5> :
+<L2>:
+  return _8;
+
+}
+
+
+Lpspi_Ip_IrqHandler (uint8 Instance)
+{
+  uint32 IrqFlags;
+  const struct Lpspi_Ip_StateStructureType * State;
+  struct LPSPI_Type * Base;
+  long unsigned int D.5928;
+  int _1;
+  int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _5;
+  long unsigned int _6;
+  long unsigned int _15;
+
+  <bb 2> :
+  _1 = (int) Instance_8(D);
+  Base_10 = Lpspi_Ip_apxBases[_1];
+  _2 = (int) Instance_8(D);
+  State_11 = Lpspi_Ip_apxStateStructureArray[_2];
+  IrqFlags_12 = 0;
+  if (State_11 != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 3> :
+  _3 ={v} Base_10->SR;
+  IrqFlags_14 = _3 & 6147;
+  _4 ={v} Base_10->IER;
+  _15 = _4 & 6147;
+  IrqFlags_16 = _15 & IrqFlags_14;
+  if (IrqFlags_16 != 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 4> :
+  Lpspi_Ip_TransferProcess (Instance_8(D));
+  goto <bb 6>; [INV]
+
+  <bb 5> :
+  _5 ={v} Base_10->SR;
+  _6 = _5 & 16128;
+  Base_10->SR ={v} _6;
+
+  <bb 6> :
+  return;
+
+}
+
+
+Lpspi_Ip_Cancel (uint8 Instance)
+{
+  uint32 Cfgr1;
+  struct Lpspi_Ip_StateStructureType * State;
+  struct LPSPI_Type * Base;
+  int _1;
+  int _2;
+  <unnamed type> _3;
+  long unsigned int _4;
+  long unsigned int _5;
+  long unsigned int _6;
+  long unsigned int _7;
+  long unsigned int _8;
+  long unsigned int _9;
+
+  <bb 2> :
+  Cfgr1_11 = 0;
+  _1 = (int) Instance_12(D);
+  Base_14 = Lpspi_Ip_apxBases[_1];
+  _2 = (int) Instance_12(D);
+  State_15 = Lpspi_Ip_apxStateStructureArray[_2];
+  SchM_Enter_Spi_SPI_EXCLUSIVE_AREA_10 ();
+  _3 = State_15->Status;
+  if (_3 == 2)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  _4 ={v} Base_14->TCR;
+  _5 = _4 | 524288;
+  Base_14->TCR ={v} _5;
+  Cfgr1_18 ={v} Base_14->CFGR1;
+  _6 ={v} Base_14->CR;
+  _7 = _6 | 2;
+  Base_14->CR ={v} _7;
+  _8 ={v} Base_14->CR;
+  _9 = _8 & 4294967293;
+  Base_14->CR ={v} _9;
+  Base_14->CFGR1 ={v} Cfgr1_18;
+  State_15->Status = 1;
+
+  <bb 4> :
+  SchM_Exit_Spi_SPI_EXCLUSIVE_AREA_10 ();
+  return;
+
+}
+
+
+Lpspi_Ip_UpdateTransferMode (uint8 Instance, Lpspi_Ip_ModeType Mode)
+{
+  Lpspi_Ip_StatusType Status;
+  struct Lpspi_Ip_StateStructureType * State;
+  Lpspi_Ip_StatusType D.5922;
+  int _1;
+  <unnamed type> _2;
+  Lpspi_Ip_StatusType _12;
+
+  <bb 2> :
+  Status_5 = 0;
+  _1 = (int) Instance_6(D);
+  State_8 = Lpspi_Ip_apxStateStructureArray[_1];
+  _2 = State_8->Status;
+  if (_2 != 2)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  State_8->TransferMode = Mode_10(D);
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  Status_9 = 1;
+
+  <bb 5> :
+  # Status_3 = PHI <Status_5(3), Status_9(4)>
+  _12 = Status_3;
+
+  <bb 6> :
+<L3>:
+  return _12;
+
+}
+
+
+Lpspi_Ip_UpdateDefaultTransmitData (const struct Lpspi_Ip_ExternalDeviceType * ExternalDevice, uint32 DefaultData)
+{
+  Lpspi_Ip_StatusType Status;
+  const struct Lpspi_Ip_StateStructureType * State;
+  Lpspi_Ip_StatusType D.5917;
+  unsigned char _1;
+  int _2;
+  <unnamed type> _3;
+  struct Lpspi_Ip_DeviceParamsType * _4;
+  Lpspi_Ip_StatusType _14;
+
+  <bb 2> :
+  Status_7 = 0;
+  _1 = ExternalDevice_9(D)->Instance;
+  _2 = (int) _1;
+  State_10 = Lpspi_Ip_apxStateStructureArray[_2];
+  _3 = State_10->Status;
+  if (_3 != 2)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  _4 = ExternalDevice_9(D)->DeviceParams;
+  _4->DefaultData = DefaultData_12(D);
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  Status_11 = 1;
+
+  <bb 5> :
+  # Status_5 = PHI <Status_7(3), Status_11(4)>
+  _14 = Status_5;
+
+  <bb 6> :
+<L3>:
+  return _14;
+
+}
+
+
+Lpspi_Ip_UpdateLsb (const struct Lpspi_Ip_ExternalDeviceType * ExternalDevice, boolean Lsb)
+{
+  Lpspi_Ip_StatusType Status;
+  const struct Lpspi_Ip_StateStructureType * State;
+  Lpspi_Ip_StatusType D.5912;
+  unsigned char _1;
+  int _2;
+  <unnamed type> _3;
+  struct Lpspi_Ip_DeviceParamsType * _4;
+  Lpspi_Ip_StatusType _14;
+
+  <bb 2> :
+  Status_7 = 0;
+  _1 = ExternalDevice_9(D)->Instance;
+  _2 = (int) _1;
+  State_10 = Lpspi_Ip_apxStateStructureArray[_2];
+  _3 = State_10->Status;
+  if (_3 != 2)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  _4 = ExternalDevice_9(D)->DeviceParams;
+  _4->Lsb = Lsb_12(D);
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  Status_11 = 1;
+
+  <bb 5> :
+  # Status_5 = PHI <Status_7(3), Status_11(4)>
+  _14 = Status_5;
+
+  <bb 6> :
+<L3>:
+  return _14;
+
+}
+
+
+Lpspi_Ip_UpdateFrameSize (const struct Lpspi_Ip_ExternalDeviceType * ExternalDevice, uint16 FrameSize)
+{
+  Lpspi_Ip_StatusType Status;
+  const struct Lpspi_Ip_StateStructureType * State;
+  Lpspi_Ip_StatusType D.5907;
+  unsigned char _1;
+  int _2;
+  <unnamed type> _3;
+  struct Lpspi_Ip_DeviceParamsType * _4;
+  Lpspi_Ip_StatusType _14;
+
+  <bb 2> :
+  Status_7 = 0;
+  _1 = ExternalDevice_9(D)->Instance;
+  _2 = (int) _1;
+  State_10 = Lpspi_Ip_apxStateStructureArray[_2];
+  _3 = State_10->Status;
+  if (_3 != 2)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  _4 = ExternalDevice_9(D)->DeviceParams;
+  _4->FrameSize = FrameSize_12(D);
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  Status_11 = 1;
+
+  <bb 5> :
+  # Status_5 = PHI <Status_7(3), Status_11(4)>
+  _14 = Status_5;
+
+  <bb 6> :
+<L3>:
+  return _14;
+
+}
+
+
+Lpspi_Ip_ManageBuffers (uint8 Instance)
+{
+  const struct Lpspi_Ip_StateStructureType * State;
+  const struct LPSPI_Type * Base;
+  int _1;
+  int _2;
+  <unnamed type> _3;
+  long unsigned int _4;
+  long unsigned int _5;
+  long unsigned int _6;
+  long unsigned int _7;
+  unsigned char _8;
+
+  <bb 2> :
+  _1 = (int) Instance_10(D);
+  Base_12 = Lpspi_Ip_apxBases[_1];
+  _2 = (int) Instance_10(D);
+  State_13 = Lpspi_Ip_apxStateStructureArray[_2];
+  _3 = State_13->TransferMode;
+  if (_3 == 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 3> :
+  _4 ={v} Base_12->SR;
+  _5 = _4 & 2;
+  if (_5 != 0)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 4> :
+  _6 ={v} Base_12->SR;
+  _7 = _6 & 1;
+  if (_7 != 0)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 5> :
+  _8 = State_13->CurrentTxFifoSlot;
+  if (_8 != 0)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  Lpspi_Ip_TransferProcess (Instance_10(D));
+
+  <bb 7> :
+  return;
+
+}
+
+
+Lpspi_Ip_AsyncTransmit (const struct Lpspi_Ip_ExternalDeviceType * ExternalDevice, const uint8 * TxBuffer, uint8 * RxBuffer, uint16 Length, void (*Lpspi_Ip_CallbackType) (uint8, Lpspi_Ip_EventType) EndCallback)
+{
+  uint8 Instance;
+  Lpspi_Ip_StatusType Status;
+  struct Lpspi_Ip_StateStructureType * State;
+  struct LPSPI_Type * Base;
+  Lpspi_Ip_StatusType D.5896;
+  int _1;
+  int _2;
+  <unnamed type> _3;
+  _Bool _4;
+  _Bool _5;
+  long unsigned int _6;
+  long unsigned int _7;
+  long unsigned int _8;
+  long unsigned int _9;
+  long unsigned int _10;
+  const struct Lpspi_Ip_ExternalDeviceType * _11;
+  struct Lpspi_Ip_DeviceParamsType * _12;
+  short unsigned int _13;
+  const struct Lpspi_Ip_ExternalDeviceType * _14;
+  struct Lpspi_Ip_DeviceParamsType * _15;
+  _Bool _16;
+  const struct Lpspi_Ip_ExternalDeviceType * _17;
+  struct Lpspi_Ip_DeviceParamsType * _18;
+  short unsigned int _19;
+  <unnamed type> _20;
+  Lpspi_Ip_StatusType _56;
+
+  <bb 2> :
+  Status_24 = 0;
+  Instance_25 = 0;
+  Instance_28 = ExternalDevice_27(D)->Instance;
+  _1 = (int) Instance_28;
+  State_29 = Lpspi_Ip_apxStateStructureArray[_1];
+  _2 = (int) Instance_28;
+  Base_30 = Lpspi_Ip_apxBases[_2];
+  SchM_Enter_Spi_SPI_EXCLUSIVE_AREA_09 ();
+  _3 = State_29->Status;
+  if (_3 == 2)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  SchM_Exit_Spi_SPI_EXCLUSIVE_AREA_09 ();
+  Status_55 = 1;
+  goto <bb 10>; [INV]
+
+  <bb 4> :
+  State_29->Status = 2;
+  State_29->ExternalDevice = ExternalDevice_27(D);
+  SchM_Exit_Spi_SPI_EXCLUSIVE_AREA_09 ();
+  State_29->Callback = EndCallback_35(D);
+  _4 = State_29->KeepCs;
+  State_29->NextTransferConfigAvailable = _4;
+  State_29->TxDoneFlag = 0;
+  _5 = State_29->FirstCmd;
+  if (_5 != 0)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  SchM_Enter_Spi_SPI_EXCLUSIVE_AREA_11 ();
+  _6 ={v} Base_30->CR;
+  _7 = _6 | 768;
+  Base_30->CR ={v} _7;
+  _8 ={v} Base_30->SR;
+  _9 = _8 & 16128;
+  Base_30->SR ={v} _9;
+  _10 = ExternalDevice_27(D)->Ccr;
+  Base_30->CCR ={v} _10;
+  State_29->CurrentTxFifoSlot = 4;
+  _11 = State_29->ExternalDevice;
+  _12 = _11->DeviceParams;
+  _13 = _12->FrameSize;
+  _14 = State_29->ExternalDevice;
+  _15 = _14->DeviceParams;
+  _16 = _15->Lsb;
+  Lpspi_TransmitTxInit (Instance_28, TxBuffer_44(D), _13, _16, Length_45(D));
+  SchM_Exit_Spi_SPI_EXCLUSIVE_AREA_11 ();
+
+  <bb 6> :
+  _17 = State_29->ExternalDevice;
+  _18 = _17->DeviceParams;
+  _19 = _18->FrameSize;
+  Lpspi_TransmitRxInit (Instance_28, RxBuffer_48(D), _19, Length_45(D));
+  Base_30->FCR ={v} 3;
+  Base_30->DER ={v} 0;
+  _20 = State_29->TransferMode;
+  switch (_20) <default: <L6> [INV], case 0: <L4> [INV], case 1: <L5> [INV]>
+
+  <bb 7> :
+<L4>:
+  Base_30->IER ={v} 0;
+  goto <bb 10>; [INV]
+
+  <bb 8> :
+<L5>:
+  Base_30->IER ={v} 6147;
+  goto <bb 10>; [INV]
+
+  <bb 9> :
+<L6>:
+
+  <bb 10> :
+  # Status_21 = PHI <Status_55(3), Status_24(7), Status_24(8), Status_24(9)>
+  _56 = Status_21;
+
+  <bb 11> :
+<L9>:
+  return _56;
+
+}
+
+
+Lpspi_TransmitRxInit (uint8 Instance, uint8 * RxBuffer, uint16 RxFrameSize, uint16 BufLen)
+{
+  struct Lpspi_Ip_StateStructureType * State;
+  int _1;
+  short unsigned int _2;
+
+  <bb 2> :
+  _1 = (int) Instance_3(D);
+  State_5 = Lpspi_Ip_apxStateStructureArray[_1];
+  State_5->RxIndex = 0;
+  State_5->RxBuffer = RxBuffer_7(D);
+  _2 = Lpspi_Ip_GetWordsFromLength (BufLen_9(D), RxFrameSize_10(D));
+  State_5->ExpectedFifoReads = _2;
+  return;
+
+}
+
+
+Lpspi_TransmitTxInit (uint8 Instance, const uint8 * TxBuffer, uint16 TxFrameSize, boolean TxLsb, uint16 BufLen)
+{
+  uint8 LsbWriteValue;
+  uint32 TransferCommand;
+  struct Lpspi_Ip_StateStructureType * State;
+  struct LPSPI_Type * Base;
+  uint8 iftmp.9;
+  int _1;
+  int _2;
+  const struct Lpspi_Ip_ExternalDeviceType * _3;
+  long unsigned int _4;
+  long unsigned int _5;
+  long unsigned int _6;
+  long unsigned int _7;
+  long unsigned int _8;
+  long unsigned int _9;
+  long unsigned int _10;
+  long unsigned int _11;
+  _Bool _12;
+  long unsigned int _13;
+  long unsigned int _14;
+  unsigned char _15;
+  unsigned char _16;
+  short unsigned int _17;
+  uint8 iftmp.9_18;
+  uint8 iftmp.9_26;
+  uint8 iftmp.9_27;
+
+  <bb 2> :
+  _1 = (int) Instance_20(D);
+  Base_22 = Lpspi_Ip_apxBases[_1];
+  _2 = (int) Instance_20(D);
+  State_23 = Lpspi_Ip_apxStateStructureArray[_2];
+  TransferCommand_24 = 0;
+  if (TxLsb_25(D) != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  iftmp.9_27 = 1;
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  iftmp.9_26 = 0;
+
+  <bb 5> :
+  # iftmp.9_18 = PHI <iftmp.9_27(3), iftmp.9_26(4)>
+  LsbWriteValue_28 = iftmp.9_18;
+  State_23->TxFrameSize = TxFrameSize_29(D);
+  State_23->TxLsb = TxLsb_25(D);
+  _3 = State_23->ExternalDevice;
+  _4 = _3->Tcr;
+  _5 = (long unsigned int) TxFrameSize_29(D);
+  _6 = _5 + 4294967295;
+  _7 = _6 & 4095;
+  _8 = _4 | _7;
+  _9 = (long unsigned int) LsbWriteValue_28;
+  _10 = _9 << 23;
+  _11 = _10 & 8388608;
+  TransferCommand_32 = _8 | _11;
+  _12 = State_23->FirstCmd;
+  if (_12 != 0)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  Base_22->TCR ={v} TransferCommand_32;
+  goto <bb 10>; [INV]
+
+  <bb 7> :
+  _13 = TransferCommand_32 & 2097152;
+  if (_13 != 0)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 8> :
+  _14 = TransferCommand_32 | 1048576;
+  Base_22->TCR ={v} _14;
+  goto <bb 10>; [INV]
+
+  <bb 9> :
+  Base_22->TCR ={v} TransferCommand_32;
+
+  <bb 10> :
+  _15 = State_23->CurrentTxFifoSlot;
+  _16 = _15 + 255;
+  State_23->CurrentTxFifoSlot = _16;
+  State_23->TxIndex = 0;
+  State_23->TxBuffer = TxBuffer_38(D);
+  _17 = Lpspi_Ip_GetWordsFromLength (BufLen_40(D), TxFrameSize_29(D));
+  State_23->ExpectedFifoWrites = _17;
+  return;
+
+}
+
+
+__attribute__((always_inline))
+Lpspi_Ip_GetWordsFromLength (uint16 Length, uint16 FrameSize)
+{
+  uint16 Ret;
+  uint16 D.5889;
+  short unsigned int _1;
+  short unsigned int _2;
+  short unsigned int _3;
+  short unsigned int _4;
+  _Bool _5;
+  int _6;
+  short unsigned int _7;
+  uint16 _14;
+
+  <bb 2> :
+  if (FrameSize_9(D) <= 8)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  Ret_13 = Length_10(D);
+  goto <bb 7>; [INV]
+
+  <bb 4> :
+  if (FrameSize_9(D) <= 16)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  _1 = Length_10(D) / 2;
+  _2 = Length_10(D) & 1;
+  Ret_12 = _1 + _2;
+  goto <bb 7>; [INV]
+
+  <bb 6> :
+  _3 = Length_10(D) / 4;
+  _4 = Length_10(D) & 3;
+  _5 = _4 != 0;
+  _6 = (int) _5;
+  _7 = (short unsigned int) _6;
+  Ret_11 = _3 + _7;
+
+  <bb 7> :
+  # Ret_8 = PHI <Ret_13(3), Ret_12(5), Ret_11(6)>
+  _14 = Ret_8;
+
+  <bb 8> :
+<L6>:
+  return _14;
+
+}
+
+
+Lpspi_Ip_SyncTransmit (const struct Lpspi_Ip_ExternalDeviceType * ExternalDevice, const uint8 * TxBuffer, uint8 * RxBuffer, uint16 Length, uint32 TimeOut)
+{
+  boolean TxDoneFlag;
+  uint32 Cfgr1;
+  uint8 Instance;
+  uint32 ElapsedTicks;
+  uint32 CurrentTicks;
+  uint32 TimeoutTicks;
+  Lpspi_Ip_StatusType Status;
+  uint8 NumberOfReads;
+  uint8 NumberOfWrites;
+  struct Lpspi_Ip_StateStructureType * State;
+  struct LPSPI_Type * Base;
+  Lpspi_Ip_StatusType D.5870;
+  long unsigned int D.5861;
+  int _1;
+  int _2;
+  <unnamed type> _3;
+  _Bool _4;
+  _Bool _5;
+  long unsigned int _6;
+  long unsigned int _7;
+  long unsigned int _8;
+  long unsigned int _9;
+  long unsigned int _10;
+  long unsigned int _11;
+  long unsigned int _12;
+  const struct Lpspi_Ip_ExternalDeviceType * _13;
+  struct Lpspi_Ip_DeviceParamsType * _14;
+  short unsigned int _15;
+  const struct Lpspi_Ip_ExternalDeviceType * _16;
+  struct Lpspi_Ip_DeviceParamsType * _17;
+  _Bool _18;
+  const struct Lpspi_Ip_ExternalDeviceType * _19;
+  struct Lpspi_Ip_DeviceParamsType * _20;
+  short unsigned int _21;
+  long unsigned int _22;
+  long unsigned int _23;
+  long unsigned int _24;
+  unsigned char _25;
+  int _26;
+  short unsigned int _27;
+  int _28;
+  short unsigned int _29;
+  int _30;
+  int _31;
+  short unsigned int _32;
+  unsigned char _33;
+  short unsigned int _34;
+  unsigned char _35;
+  short unsigned int _36;
+  unsigned char _37;
+  unsigned char _38;
+  unsigned char _39;
+  unsigned char _40;
+  unsigned char _41;
+  _Bool _42;
+  short unsigned int _43;
+  short unsigned int _44;
+  int _45;
+  short unsigned int _46;
+  int _47;
+  short unsigned int _48;
+  int _49;
+  int _50;
+  short unsigned int _51;
+  unsigned char _52;
+  short unsigned int _53;
+  unsigned char _54;
+  unsigned char _55;
+  unsigned char _56;
+  _Bool _57;
+  const struct Lpspi_Ip_ExternalDeviceType * _58;
+  struct Lpspi_Ip_DeviceParamsType * _59;
+  long unsigned int _60;
+  const uint8 * _61;
+  short unsigned int _62;
+  _Bool _63;
+  short unsigned int _64;
+  _Bool _65;
+  _Bool _66;
+  long unsigned int _67;
+  long unsigned int _68;
+  long unsigned int _69;
+  long unsigned int _70;
+  short unsigned int _71;
+  short unsigned int _72;
+  long unsigned int _143;
+  Lpspi_Ip_StatusType _151;
+
+  <bb 2> :
+  Status_90 = 0;
+  TimeoutTicks_94 = OsIf_MicrosToTicks (TimeOut_92(D), 0);
+  CurrentTicks = 0;
+  ElapsedTicks_96 = 0;
+  Instance_97 = 0;
+  Cfgr1_98 = 0;
+  TxDoneFlag_99 = 0;
+  Instance_101 = ExternalDevice_100(D)->Instance;
+  _1 = (int) Instance_101;
+  State_102 = Lpspi_Ip_apxStateStructureArray[_1];
+  _2 = (int) Instance_101;
+  Base_103 = Lpspi_Ip_apxBases[_2];
+  SchM_Enter_Spi_SPI_EXCLUSIVE_AREA_08 ();
+  _3 = State_102->Status;
+  if (_3 == 2)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  SchM_Exit_Spi_SPI_EXCLUSIVE_AREA_08 ();
+  Status_150 = 1;
+  goto <bb 33>; [INV]
+
+  <bb 4> :
+  State_102->Status = 2;
+  State_102->ExternalDevice = ExternalDevice_100(D);
+  SchM_Exit_Spi_SPI_EXCLUSIVE_AREA_08 ();
+  Base_103->DER ={v} 0;
+  Base_103->IER ={v} 0;
+  _4 = State_102->KeepCs;
+  State_102->NextTransferConfigAvailable = _4;
+  _5 = State_102->FirstCmd;
+  if (_5 != 0)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  Cfgr1_111 ={v} Base_103->CFGR1;
+  _6 ={v} Base_103->CR;
+  _7 = _6 | 2;
+  Base_103->CR ={v} _7;
+  _8 ={v} Base_103->CR;
+  _9 = _8 & 4294967293;
+  Base_103->CR ={v} _9;
+  Base_103->CFGR1 ={v} Cfgr1_111;
+  _10 ={v} Base_103->SR;
+  _11 = _10 & 16128;
+  Base_103->SR ={v} _11;
+  _12 = ExternalDevice_100(D)->Ccr;
+  Base_103->CCR ={v} _12;
+  State_102->CurrentTxFifoSlot = 4;
+  _13 = State_102->ExternalDevice;
+  _14 = _13->DeviceParams;
+  _15 = _14->FrameSize;
+  _16 = State_102->ExternalDevice;
+  _17 = _16->DeviceParams;
+  _18 = _17->Lsb;
+  Lpspi_TransmitTxInit (Instance_101, TxBuffer_118(D), _15, _18, Length_119(D));
+
+  <bb 6> :
+  _19 = State_102->ExternalDevice;
+  _20 = _19->DeviceParams;
+  _21 = _20->FrameSize;
+  Lpspi_TransmitRxInit (Instance_101, RxBuffer_121(D), _21, Length_119(D));
+  _22 = OsIf_GetCounter (0);
+  CurrentTicks = _22;
+  goto <bb 26>; [INV]
+
+  <bb 7> :
+  _23 ={v} Base_103->FSR;
+  _24 = _23 >> 16;
+  _25 = (unsigned char) _24;
+  NumberOfReads_125 = _25 & 7;
+  if (NumberOfReads_125 != 0)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 8> :
+  _26 = (int) NumberOfReads_125;
+  _27 = State_102->ExpectedFifoReads;
+  _28 = (int) _27;
+  _29 = State_102->RxIndex;
+  _30 = (int) _29;
+  _31 = _28 - _30;
+  if (_26 > _31)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 9> :
+  _32 = State_102->ExpectedFifoReads;
+  _33 = (unsigned char) _32;
+  _34 = State_102->RxIndex;
+  _35 = (unsigned char) _34;
+  NumberOfReads_126 = _33 - _35;
+
+  <bb 10> :
+  # NumberOfReads_74 = PHI <NumberOfReads_125(8), NumberOfReads_126(9)>
+  _36 = State_102->RxIndex;
+  if (_36 == 0)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 11> :
+  _37 = State_102->CurrentTxFifoSlot;
+  _38 = _37 + 1;
+  State_102->CurrentTxFifoSlot = _38;
+
+  <bb 12> :
+  Lpspi_Ip_ReadDataFromFifo (Instance_101, NumberOfReads_74);
+  _39 = State_102->CurrentTxFifoSlot;
+  _40 = NumberOfReads_74 + _39;
+  State_102->CurrentTxFifoSlot = _40;
+  ElapsedTicks_130 = 0;
+
+  <bb 13> :
+  # ElapsedTicks_78 = PHI <ElapsedTicks_80(7), ElapsedTicks_130(12)>
+  _41 = State_102->CurrentTxFifoSlot;
+  if (_41 != 0)
+    goto <bb 14>; [INV]
+  else
+    goto <bb 24>; [INV]
+
+  <bb 14> :
+  _42 = ~TxDoneFlag_82;
+  if (_42 != 0)
+    goto <bb 15>; [INV]
+  else
+    goto <bb 24>; [INV]
+
+  <bb 15> :
+  _43 = State_102->ExpectedFifoWrites;
+  _44 = State_102->TxIndex;
+  if (_43 != _44)
+    goto <bb 16>; [INV]
+  else
+    goto <bb 19>; [INV]
+
+  <bb 16> :
+  NumberOfWrites_137 = State_102->CurrentTxFifoSlot;
+  _45 = (int) NumberOfWrites_137;
+  _46 = State_102->ExpectedFifoWrites;
+  _47 = (int) _46;
+  _48 = State_102->TxIndex;
+  _49 = (int) _48;
+  _50 = _47 - _49;
+  if (_45 > _50)
+    goto <bb 17>; [INV]
+  else
+    goto <bb 18>; [INV]
+
+  <bb 17> :
+  _51 = State_102->ExpectedFifoWrites;
+  _52 = (unsigned char) _51;
+  _53 = State_102->TxIndex;
+  _54 = (unsigned char) _53;
+  NumberOfWrites_138 = _52 - _54;
+
+  <bb 18> :
+  # NumberOfWrites_73 = PHI <NumberOfWrites_137(16), NumberOfWrites_138(17)>
+  Lpspi_Ip_PushDataToFifo (Instance_101, NumberOfWrites_73);
+  _55 = State_102->CurrentTxFifoSlot;
+  _56 = _55 - NumberOfWrites_73;
+  State_102->CurrentTxFifoSlot = _56;
+  ElapsedTicks_141 = 0;
+  goto <bb 24>; [INV]
+
+  <bb 19> :
+  _57 = State_102->NextTransferConfigAvailable;
+  if (_57 != 0)
+    goto <bb 20>; [INV]
+  else
+    goto <bb 21>; [INV]
+
+  <bb 20> :
+  _58 = State_102->ExternalDevice;
+  _59 = _58->DeviceParams;
+  _60 = State_102->DefaultDataNext;
+  _59->DefaultData = _60;
+  State_102->FirstCmd = 0;
+  _61 = State_102->TxBufferNext;
+  _62 = State_102->FrameSizeNext;
+  _63 = State_102->LsbNext;
+  _64 = State_102->LengthNext;
+  Lpspi_TransmitTxInit (Instance_101, _61, _62, _63, _64);
+  State_102->NextTransferConfigAvailable = 0;
+  goto <bb 24>; [INV]
+
+  <bb 21> :
+  TxDoneFlag_131 = 1;
+  _65 = State_102->KeepCs;
+  _66 = ~_65;
+  if (_66 != 0)
+    goto <bb 22>; [INV]
+  else
+    goto <bb 24>; [INV]
+
+  <bb 22> :
+  _67 ={v} Base_103->TCR;
+  _68 = _67 & 2097152;
+  if (_68 != 0)
+    goto <bb 23>; [INV]
+  else
+    goto <bb 24>; [INV]
+
+  <bb 23> :
+  _69 ={v} Base_103->TCR;
+  _70 = _69 & 4291821567;
+  Base_103->TCR ={v} _70;
+
+  <bb 24> :
+  # ElapsedTicks_79 = PHI <ElapsedTicks_78(13), ElapsedTicks_78(14), ElapsedTicks_141(18), ElapsedTicks_78(20), ElapsedTicks_78(21), ElapsedTicks_78(22), ElapsedTicks_78(23)>
+  # TxDoneFlag_81 = PHI <TxDoneFlag_82(13), TxDoneFlag_82(14), TxDoneFlag_82(18), TxDoneFlag_82(20), TxDoneFlag_131(21), TxDoneFlag_131(22), TxDoneFlag_131(23)>
+  _143 = OsIf_GetElapsed (&CurrentTicks, 0);
+  ElapsedTicks_144 = _143 + ElapsedTicks_79;
+  if (ElapsedTicks_144 >= TimeoutTicks_94)
+    goto <bb 25>; [INV]
+  else
+    goto <bb 26>; [INV]
+
+  <bb 25> :
+  Status_145 = 3;
+  goto <bb 27>; [INV]
+
+  <bb 26> :
+  # ElapsedTicks_80 = PHI <ElapsedTicks_96(6), ElapsedTicks_144(24)>
+  # TxDoneFlag_82 = PHI <TxDoneFlag_99(6), TxDoneFlag_81(24)>
+  _71 = State_102->RxIndex;
+  _72 = State_102->ExpectedFifoReads;
+  if (_71 != _72)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 27>; [INV]
+
+  <bb 27> :
+  # Status_75 = PHI <Status_145(25), Status_90(26)>
+  if (Status_75 != 0)
+    goto <bb 29>; [INV]
+  else
+    goto <bb 28>; [INV]
+
+  <bb 28> :
+  if (Length_119(D) == 0)
+    goto <bb 29>; [INV]
+  else
+    goto <bb 32>; [INV]
+
+  <bb 29> :
+  if (Length_119(D) == 0)
+    goto <bb 30>; [INV]
+  else
+    goto <bb 31>; [INV]
+
+  <bb 30> :
+  Status_147 = 1;
+
+  <bb 31> :
+  # Status_76 = PHI <Status_75(29), Status_147(30)>
+  State_102->Status = 3;
+  goto <bb 33>; [INV]
+
+  <bb 32> :
+  State_102->Status = 1;
+
+  <bb 33> :
+  # Status_77 = PHI <Status_150(3), Status_76(31), Status_75(32)>
+  _151 = Status_77;
+  CurrentTicks ={v} {CLOBBER};
+
+  <bb 34> :
+<L39>:
+  return _151;
+
+}
+
+
+Lpspi_Ip_DeInit (uint8 Instance)
+{
+  Lpspi_Ip_StatusType Status;
+  const struct Lpspi_Ip_StateStructureType * State;
+  struct LPSPI_Type * Base;
+  Lpspi_Ip_StatusType D.5832;
+  int _1;
+  int _2;
+  <unnamed type> _3;
+  long unsigned int _4;
+  long unsigned int _5;
+  int _6;
+  Lpspi_Ip_StatusType _18;
+
+  <bb 2> :
+  Status_9 = 0;
+  _1 = (int) Instance_10(D);
+  Base_12 = Lpspi_Ip_apxBases[_1];
+  _2 = (int) Instance_10(D);
+  State_13 = Lpspi_Ip_apxStateStructureArray[_2];
+  _3 = State_13->Status;
+  if (_3 == 2)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  Status_17 = 1;
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  _4 ={v} Base_12->CR;
+  _5 = _4 | 2;
+  Base_12->CR ={v} _5;
+  Base_12->CR ={v} 0;
+  _6 = (int) Instance_10(D);
+  Lpspi_Ip_apxStateStructureArray[_6] = 0B;
+
+  <bb 5> :
+  # Status_7 = PHI <Status_17(3), Status_9(4)>
+  _18 = Status_7;
+
+  <bb 6> :
+<L3>:
+  return _18;
+
+}
+
+
+Lpspi_Ip_Init (const struct Lpspi_Ip_ConfigType * PhyUnitConfigPtr)
+{
+  uint8 Instance;
+  Lpspi_Ip_StatusType Status;
+  struct Lpspi_Ip_StateStructureType * State;
+  struct LPSPI_Type * Base;
+  Lpspi_Ip_StatusType D.5827;
+  int _1;
+  int _2;
+  unsigned char _3;
+  int _4;
+  int _5;
+  struct Lpspi_Ip_StateStructureType * _6;
+  int _7;
+  long unsigned int _8;
+  long unsigned int _9;
+  long unsigned int _10;
+  <unnamed type> _11;
+  long unsigned int _12;
+  long unsigned int _13;
+  Lpspi_Ip_StatusType _32;
+
+  <bb 2> :
+  Status_14 = 0;
+  Instance_15 = 0;
+  Instance_18 = PhyUnitConfigPtr_17(D)->Instance;
+  _1 = (int) Instance_18;
+  State_19 = Lpspi_Ip_apxStateStructureArray[_1];
+  _2 = (int) Instance_18;
+  Base_20 = Lpspi_Ip_apxBases[_2];
+  _3 = PhyUnitConfigPtr_17(D)->StateIndex;
+  _4 = (int) _3;
+  _5 = (int) Instance_18;
+  _6 = &Lpspi_Ip_axStateStructure[_4];
+  Lpspi_Ip_apxStateStructureArray[_5] = _6;
+  _7 = (int) Instance_18;
+  State_22 = Lpspi_Ip_apxStateStructureArray[_7];
+  State_22->PhyUnitConfig = PhyUnitConfigPtr_17(D);
+  _8 = PhyUnitConfigPtr_17(D)->Cr;
+  _9 = _8 | 8;
+  Base_20->CR ={v} _9;
+  _10 = PhyUnitConfigPtr_17(D)->Cfgr1;
+  Base_20->CFGR1 ={v} _10;
+  Base_20->FCR ={v} 3;
+  State_22->KeepCs = 0;
+  State_22->FirstCmd = 1;
+  State_22->Status = 1;
+  _11 = PhyUnitConfigPtr_17(D)->TransferMode;
+  Lpspi_Ip_UpdateTransferMode (Instance_18, _11);
+  _12 ={v} Base_20->CR;
+  _13 = _12 | 1;
+  Base_20->CR ={v} _13;
+  _32 = Status_14;
+
+  <bb 3> :
+<L0>:
+  return _32;
+
+}
+
+
+Lpspi_Ip_TransferProcess (uint8 Instance)
+{
+  boolean ErrorFlag;
+  uint8 NumberOfReads;
+  uint8 NumberOfWrites;
+  uint32 SrStatusRegister;
+  struct Lpspi_Ip_StateStructureType * State;
+  struct LPSPI_Type * Base;
+  int _1;
+  int _2;
+  <unnamed type> _3;
+  long unsigned int _4;
+  long unsigned int _5;
+  long unsigned int _6;
+  long unsigned int _7;
+  long unsigned int _8;
+  unsigned char _9;
+  int _10;
+  short unsigned int _11;
+  int _12;
+  short unsigned int _13;
+  int _14;
+  int _15;
+  short unsigned int _16;
+  unsigned char _17;
+  short unsigned int _18;
+  unsigned char _19;
+  short unsigned int _20;
+  unsigned char _21;
+  unsigned char _22;
+  unsigned char _23;
+  unsigned char _24;
+  unsigned char _25;
+  _Bool _26;
+  _Bool _27;
+  short unsigned int _28;
+  short unsigned int _29;
+  int _30;
+  short unsigned int _31;
+  int _32;
+  short unsigned int _33;
+  int _34;
+  int _35;
+  short unsigned int _36;
+  unsigned char _37;
+  short unsigned int _38;
+  unsigned char _39;
+  unsigned char _40;
+  unsigned char _41;
+  _Bool _42;
+  const struct Lpspi_Ip_ExternalDeviceType * _43;
+  struct Lpspi_Ip_DeviceParamsType * _44;
+  long unsigned int _45;
+  const uint8 * _46;
+  short unsigned int _47;
+  _Bool _48;
+  short unsigned int _49;
+  long unsigned int _50;
+  long unsigned int _51;
+  _Bool _52;
+  _Bool _53;
+  long unsigned int _54;
+  long unsigned int _55;
+  long unsigned int _56;
+  long unsigned int _57;
+  short unsigned int _58;
+  short unsigned int _59;
+
+  <bb 2> :
+  _1 = (int) Instance_67(D);
+  Base_69 = Lpspi_Ip_apxBases[_1];
+  _2 = (int) Instance_67(D);
+  State_70 = Lpspi_Ip_apxStateStructureArray[_2];
+  NumberOfWrites_71 = 0;
+  NumberOfReads_72 = 0;
+  ErrorFlag_73 = 0;
+  _3 = State_70->Status;
+  if (_3 == 2)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 25>; [INV]
+
+  <bb 3> :
+  SrStatusRegister_74 ={v} Base_69->SR;
+  _4 ={v} Base_69->SR;
+  _5 = _4 & 16128;
+  Base_69->SR ={v} _5;
+  _6 = SrStatusRegister_74 & 6144;
+  if (_6 != 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  ErrorFlag_92 = 1;
+  goto <bb 22>; [INV]
+
+  <bb 5> :
+  _7 ={v} Base_69->FSR;
+  _8 = _7 >> 16;
+  _9 = (unsigned char) _8;
+  NumberOfReads_76 = _9 & 7;
+  if (NumberOfReads_76 != 0)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 6> :
+  _10 = (int) NumberOfReads_76;
+  _11 = State_70->ExpectedFifoReads;
+  _12 = (int) _11;
+  _13 = State_70->RxIndex;
+  _14 = (int) _13;
+  _15 = _12 - _14;
+  if (_10 > _15)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 7> :
+  _16 = State_70->ExpectedFifoReads;
+  _17 = (unsigned char) _16;
+  _18 = State_70->RxIndex;
+  _19 = (unsigned char) _18;
+  NumberOfReads_77 = _17 - _19;
+
+  <bb 8> :
+  # NumberOfReads_61 = PHI <NumberOfReads_76(6), NumberOfReads_77(7)>
+  _20 = State_70->RxIndex;
+  if (_20 == 0)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 9> :
+  _21 = State_70->CurrentTxFifoSlot;
+  _22 = _21 + 1;
+  State_70->CurrentTxFifoSlot = _22;
+
+  <bb 10> :
+  Lpspi_Ip_ReadDataFromFifo (Instance_67(D), NumberOfReads_61);
+  _23 = State_70->CurrentTxFifoSlot;
+  _24 = NumberOfReads_61 + _23;
+  State_70->CurrentTxFifoSlot = _24;
+
+  <bb 11> :
+  _25 = State_70->CurrentTxFifoSlot;
+  if (_25 != 0)
+    goto <bb 12>; [INV]
+  else
+    goto <bb 22>; [INV]
+
+  <bb 12> :
+  _26 = State_70->TxDoneFlag;
+  _27 = ~_26;
+  if (_27 != 0)
+    goto <bb 13>; [INV]
+  else
+    goto <bb 22>; [INV]
+
+  <bb 13> :
+  _28 = State_70->ExpectedFifoWrites;
+  _29 = State_70->TxIndex;
+  if (_28 != _29)
+    goto <bb 14>; [INV]
+  else
+    goto <bb 17>; [INV]
+
+  <bb 14> :
+  NumberOfWrites_88 = State_70->CurrentTxFifoSlot;
+  _30 = (int) NumberOfWrites_88;
+  _31 = State_70->ExpectedFifoWrites;
+  _32 = (int) _31;
+  _33 = State_70->TxIndex;
+  _34 = (int) _33;
+  _35 = _32 - _34;
+  if (_30 > _35)
+    goto <bb 15>; [INV]
+  else
+    goto <bb 16>; [INV]
+
+  <bb 15> :
+  _36 = State_70->ExpectedFifoWrites;
+  _37 = (unsigned char) _36;
+  _38 = State_70->TxIndex;
+  _39 = (unsigned char) _38;
+  NumberOfWrites_89 = _37 - _39;
+
+  <bb 16> :
+  # NumberOfWrites_60 = PHI <NumberOfWrites_88(14), NumberOfWrites_89(15)>
+  Lpspi_Ip_PushDataToFifo (Instance_67(D), NumberOfWrites_60);
+  _40 = State_70->CurrentTxFifoSlot;
+  _41 = _40 - NumberOfWrites_60;
+  State_70->CurrentTxFifoSlot = _41;
+  goto <bb 22>; [INV]
+
+  <bb 17> :
+  _42 = State_70->NextTransferConfigAvailable;
+  if (_42 != 0)
+    goto <bb 18>; [INV]
+  else
+    goto <bb 19>; [INV]
+
+  <bb 18> :
+  _43 = State_70->ExternalDevice;
+  _44 = _43->DeviceParams;
+  _45 = State_70->DefaultDataNext;
+  _44->DefaultData = _45;
+  State_70->FirstCmd = 0;
+  _46 = State_70->TxBufferNext;
+  _47 = State_70->FrameSizeNext;
+  _48 = State_70->LsbNext;
+  _49 = State_70->LengthNext;
+  Lpspi_TransmitTxInit (Instance_67(D), _46, _47, _48, _49);
+  State_70->NextTransferConfigAvailable = 0;
+  goto <bb 22>; [INV]
+
+  <bb 19> :
+  State_70->TxDoneFlag = 1;
+  _50 ={v} Base_69->IER;
+  _51 = _50 & 4294967294;
+  Base_69->IER ={v} _51;
+  _52 = State_70->KeepCs;
+  _53 = ~_52;
+  if (_53 != 0)
+    goto <bb 20>; [INV]
+  else
+    goto <bb 22>; [INV]
+
+  <bb 20> :
+  _54 ={v} Base_69->TCR;
+  _55 = _54 & 2097152;
+  if (_55 != 0)
+    goto <bb 21>; [INV]
+  else
+    goto <bb 22>; [INV]
+
+  <bb 21> :
+  _56 ={v} Base_69->TCR;
+  _57 = _56 & 4291821567;
+  Base_69->TCR ={v} _57;
+
+  <bb 22> :
+  # ErrorFlag_62 = PHI <ErrorFlag_92(4), ErrorFlag_73(11), ErrorFlag_73(12), ErrorFlag_73(16), ErrorFlag_73(18), ErrorFlag_73(19), ErrorFlag_73(20), ErrorFlag_73(21)>
+  _58 = State_70->RxIndex;
+  _59 = State_70->ExpectedFifoReads;
+  if (_58 == _59)
+    goto <bb 24>; [INV]
+  else
+    goto <bb 23>; [INV]
+
+  <bb 23> :
+  if (ErrorFlag_62 != 0)
+    goto <bb 24>; [INV]
+  else
+    goto <bb 25>; [INV]
+
+  <bb 24> :
+  Base_69->IER ={v} 0;
+  Lpspi_Ip_ChannelFinished (Instance_67(D), ErrorFlag_62);
+
+  <bb 25> :
+  return;
+
+}
+
+
+Lpspi_Ip_ChannelFinished (uint8 Instance, boolean ErrorFlag)
+{
+  Lpspi_Ip_EventType EventState;
+  struct Lpspi_Ip_StateStructureType * State;
+  int _1;
+  void (*<T4f2>) (uint8, Lpspi_Ip_EventType) _2;
+  void (*<T4f2>) (uint8, Lpspi_Ip_EventType) _3;
+
+  <bb 2> :
+  _1 = (int) Instance_7(D);
+  State_9 = Lpspi_Ip_apxStateStructureArray[_1];
+  EventState_10 = 1;
+  if (ErrorFlag_11(D) != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  State_9->Status = 3;
+  EventState_15 = 1;
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  State_9->Status = 1;
+  EventState_13 = 0;
+
+  <bb 5> :
+  # EventState_4 = PHI <EventState_15(3), EventState_13(4)>
+  _2 = State_9->Callback;
+  if (_2 != 0B)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  _3 = State_9->Callback;
+  _3 (Instance_7(D), EventState_4);
+
+  <bb 7> :
+  return;
+
+}
+
+
+__attribute__((always_inline))
+Lpspi_Ip_PushDataToFifo (uint8 Instance, uint8 NumberOfWrites)
+{
+  uint8 Index;
+  uint32 Data;
+  struct Lpspi_Ip_StateStructureType * State;
+  struct LPSPI_Type * Base;
+  int _1;
+  int _2;
+  const struct Lpspi_Ip_ExternalDeviceType * _3;
+  struct Lpspi_Ip_DeviceParamsType * _4;
+  const uint8 * _5;
+  short unsigned int _6;
+  const uint8 * _7;
+  short unsigned int _8;
+  int _9;
+  int _10;
+  int _11;
+  sizetype _12;
+  const uint8 * _13;
+  unsigned char _14;
+  unsigned char Index.5_15;
+  short unsigned int _16;
+  const uint8 * _17;
+  short unsigned int _18;
+  int _19;
+  int _20;
+  int _21;
+  unsigned int _22;
+  unsigned int _23;
+  const uint8 * _24;
+  short unsigned int _25;
+  unsigned char Index.6_26;
+  const uint8 * _27;
+  short unsigned int _28;
+  int _29;
+  int _30;
+  int _31;
+  unsigned int _32;
+  unsigned int _33;
+  const uint8 * _34;
+  unsigned char Index.7_35;
+  unsigned char Index.8_36;
+  short unsigned int _37;
+  short unsigned int _38;
+  short unsigned int _39;
+
+  <bb 2> :
+  _1 = (int) Instance_49(D);
+  Base_51 = Lpspi_Ip_apxBases[_1];
+  _2 = (int) Instance_49(D);
+  State_52 = Lpspi_Ip_apxStateStructureArray[_2];
+  Data_53 = 0;
+  Index_54 = 0;
+  _3 = State_52->ExternalDevice;
+  _4 = _3->DeviceParams;
+  Data_55 = _4->DefaultData;
+  _5 = State_52->TxBuffer;
+  if (_5 != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 14>; [INV]
+
+  <bb 3> :
+  _6 = State_52->TxFrameSize;
+  if (_6 <= 8)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 4> :
+  Index_68 = 0;
+  goto <bb 6>; [INV]
+
+  <bb 5> :
+  _7 = State_52->TxBuffer;
+  _8 = State_52->TxIndex;
+  _9 = (int) _8;
+  _10 = (int) Index_40;
+  _11 = _9 + _10;
+  _12 = (sizetype) _11;
+  _13 = _7 + _12;
+  _14 = *_13;
+  Data_69 = (uint32) _14;
+  Base_51->TDR ={v} Data_69;
+  Index.5_15 = Index_40;
+  Index_71 = Index.5_15 + 1;
+
+  <bb 6> :
+  # Index_40 = PHI <Index_68(4), Index_71(5)>
+  if (Index_40 < NumberOfWrites_57(D))
+    goto <bb 5>; [INV]
+  else
+    goto <bb 17>; [INV]
+
+  <bb 7> :
+  _16 = State_52->TxFrameSize;
+  if (_16 <= 16)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 8> :
+  Index_64 = 0;
+  goto <bb 10>; [INV]
+
+  <bb 9> :
+  _17 = State_52->TxBuffer;
+  _18 = State_52->TxIndex;
+  _19 = (int) _18;
+  _20 = (int) Index_41;
+  _21 = _19 + _20;
+  _22 = (unsigned int) _21;
+  _23 = _22 * 2;
+  _24 = _17 + _23;
+  _25 = MEM[(const uint16 *)_24];
+  Data_65 = (uint32) _25;
+  Base_51->TDR ={v} Data_65;
+  Index.6_26 = Index_41;
+  Index_67 = Index.6_26 + 1;
+
+  <bb 10> :
+  # Index_41 = PHI <Index_64(8), Index_67(9)>
+  if (Index_41 < NumberOfWrites_57(D))
+    goto <bb 9>; [INV]
+  else
+    goto <bb 17>; [INV]
+
+  <bb 11> :
+  Index_60 = 0;
+  goto <bb 13>; [INV]
+
+  <bb 12> :
+  _27 = State_52->TxBuffer;
+  _28 = State_52->TxIndex;
+  _29 = (int) _28;
+  _30 = (int) Index_42;
+  _31 = _29 + _30;
+  _32 = (unsigned int) _31;
+  _33 = _32 * 4;
+  _34 = _27 + _33;
+  Data_61 = MEM[(const uint32 *)_34];
+  Base_51->TDR ={v} Data_61;
+  Index.7_35 = Index_42;
+  Index_63 = Index.7_35 + 1;
+
+  <bb 13> :
+  # Index_42 = PHI <Index_60(11), Index_63(12)>
+  if (Index_42 < NumberOfWrites_57(D))
+    goto <bb 12>; [INV]
+  else
+    goto <bb 17>; [INV]
+
+  <bb 14> :
+  Index_56 = 0;
+  goto <bb 16>; [INV]
+
+  <bb 15> :
+  Base_51->TDR ={v} Data_55;
+  Index.8_36 = Index_43;
+  Index_59 = Index.8_36 + 1;
+
+  <bb 16> :
+  # Index_43 = PHI <Index_56(14), Index_59(15)>
+  if (Index_43 < NumberOfWrites_57(D))
+    goto <bb 15>; [INV]
+  else
+    goto <bb 17>; [INV]
+
+  <bb 17> :
+  _37 = State_52->TxIndex;
+  _38 = (short unsigned int) NumberOfWrites_57(D);
+  _39 = _37 + _38;
+  State_52->TxIndex = _39;
+  return;
+
+}
+
+
+__attribute__((always_inline))
+Lpspi_Ip_ReadDataFromFifo (uint8 Instance, uint8 NumberOfReads)
+{
+  uint8 Index;
+  uint32 Data;
+  struct Lpspi_Ip_StateStructureType * State;
+  const struct LPSPI_Type * Base;
+  long unsigned int vol.3;
+  int _1;
+  int _2;
+  uint8 * _3;
+  const struct Lpspi_Ip_ExternalDeviceType * _4;
+  struct Lpspi_Ip_DeviceParamsType * _5;
+  short unsigned int _6;
+  uint8 * _7;
+  short unsigned int _8;
+  int _9;
+  int _10;
+  int _11;
+  sizetype _12;
+  uint8 * _13;
+  unsigned char _14;
+  unsigned char Index.0_15;
+  const struct Lpspi_Ip_ExternalDeviceType * _16;
+  struct Lpspi_Ip_DeviceParamsType * _17;
+  short unsigned int _18;
+  uint8 * _19;
+  short unsigned int _20;
+  int _21;
+  int _22;
+  int _23;
+  unsigned int _24;
+  unsigned int _25;
+  uint8 * _26;
+  short unsigned int _27;
+  unsigned char Index.1_28;
+  uint8 * _29;
+  short unsigned int _30;
+  int _31;
+  int _32;
+  int _33;
+  unsigned int _34;
+  unsigned int _35;
+  uint8 * _36;
+  unsigned char Index.2_37;
+  unsigned char Index.4_38;
+  short unsigned int _39;
+  short unsigned int _40;
+  short unsigned int _41;
+  long unsigned int vol.3_58;
+
+  <bb 2> :
+  _1 = (int) Instance_50(D);
+  Base_52 = Lpspi_Ip_apxBases[_1];
+  _2 = (int) Instance_50(D);
+  State_53 = Lpspi_Ip_apxStateStructureArray[_2];
+  Data_54 = 0;
+  Index_55 = 0;
+  _3 = State_53->RxBuffer;
+  if (_3 != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 14>; [INV]
+
+  <bb 3> :
+  _4 = State_53->ExternalDevice;
+  _5 = _4->DeviceParams;
+  _6 = _5->FrameSize;
+  if (_6 <= 8)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 4> :
+  Index_68 = 0;
+  goto <bb 6>; [INV]
+
+  <bb 5> :
+  Data_69 ={v} Base_52->RDR;
+  _7 = State_53->RxBuffer;
+  _8 = State_53->RxIndex;
+  _9 = (int) _8;
+  _10 = (int) Index_42;
+  _11 = _9 + _10;
+  _12 = (sizetype) _11;
+  _13 = _7 + _12;
+  _14 = (unsigned char) Data_69;
+  *_13 = _14;
+  Index.0_15 = Index_42;
+  Index_71 = Index.0_15 + 1;
+
+  <bb 6> :
+  # Index_42 = PHI <Index_68(4), Index_71(5)>
+  if (Index_42 < NumberOfReads_57(D))
+    goto <bb 5>; [INV]
+  else
+    goto <bb 17>; [INV]
+
+  <bb 7> :
+  _16 = State_53->ExternalDevice;
+  _17 = _16->DeviceParams;
+  _18 = _17->FrameSize;
+  if (_18 <= 16)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 8> :
+  Index_64 = 0;
+  goto <bb 10>; [INV]
+
+  <bb 9> :
+  Data_65 ={v} Base_52->RDR;
+  _19 = State_53->RxBuffer;
+  _20 = State_53->RxIndex;
+  _21 = (int) _20;
+  _22 = (int) Index_43;
+  _23 = _21 + _22;
+  _24 = (unsigned int) _23;
+  _25 = _24 * 2;
+  _26 = _19 + _25;
+  _27 = (short unsigned int) Data_65;
+  MEM[(uint16 *)_26] = _27;
+  Index.1_28 = Index_43;
+  Index_67 = Index.1_28 + 1;
+
+  <bb 10> :
+  # Index_43 = PHI <Index_64(8), Index_67(9)>
+  if (Index_43 < NumberOfReads_57(D))
+    goto <bb 9>; [INV]
+  else
+    goto <bb 17>; [INV]
+
+  <bb 11> :
+  Index_60 = 0;
+  goto <bb 13>; [INV]
+
+  <bb 12> :
+  Data_61 ={v} Base_52->RDR;
+  _29 = State_53->RxBuffer;
+  _30 = State_53->RxIndex;
+  _31 = (int) _30;
+  _32 = (int) Index_44;
+  _33 = _31 + _32;
+  _34 = (unsigned int) _33;
+  _35 = _34 * 4;
+  _36 = _29 + _35;
+  MEM[(uint32 *)_36] = Data_61;
+  Index.2_37 = Index_44;
+  Index_63 = Index.2_37 + 1;
+
+  <bb 13> :
+  # Index_44 = PHI <Index_60(11), Index_63(12)>
+  if (Index_44 < NumberOfReads_57(D))
+    goto <bb 12>; [INV]
+  else
+    goto <bb 17>; [INV]
+
+  <bb 14> :
+  Index_56 = 0;
+  goto <bb 16>; [INV]
+
+  <bb 15> :
+  vol.3_58 ={v} Base_52->RDR;
+  Index.4_38 = Index_45;
+  Index_59 = Index.4_38 + 1;
+
+  <bb 16> :
+  # Index_45 = PHI <Index_56(14), Index_59(15)>
+  if (Index_45 < NumberOfReads_57(D))
+    goto <bb 15>; [INV]
+  else
+    goto <bb 17>; [INV]
+
+  <bb 17> :
+  _39 = State_53->RxIndex;
+  _40 = (short unsigned int) NumberOfReads_57(D);
+  _41 = _39 + _40;
+  State_53->RxIndex = _41;
+  return;
+
+}
+
+

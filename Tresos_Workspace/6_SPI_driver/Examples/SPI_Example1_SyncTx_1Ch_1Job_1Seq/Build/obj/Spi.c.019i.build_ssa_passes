@@ -1,0 +1,952 @@
+Spi_MainFunction_Handling ()
+{
+  <bb 2> :
+  return;
+
+}
+
+
+Spi_Cancel (Spi_SequenceType Sequence)
+{
+  <bb 2> :
+  _1 = (int) Sequence;
+  Spi_axSpiSequenceState[_1].Result = 3;
+  return;
+
+}
+
+
+Spi_GetHWUnitStatus (Spi_HWUnitType HWUnit)
+{
+  Spi_StatusType Status;
+  Spi_StatusType D.6063;
+
+  <bb 2> :
+  Status = 0;
+  _1 = (int) HWUnit;
+  Status = Spi_axSpiHwUnitQueueArray[_1].Status;
+  D.6063 = Status;
+
+  <bb 3> :
+<L0>:
+  return D.6063;
+
+}
+
+
+Spi_SyncTransmit (Spi_SequenceType Sequence)
+{
+  uint32 SpiCoreID;
+  const struct Spi_JobConfigType * JobConfig;
+  Spi_JobType Job;
+  Spi_JobType NumJobsInSequence;
+  const struct Spi_SequenceConfigType * SequenceConfig;
+  Spi_JobType JobIndex;
+  Spi_HWUnitType HWUnit;
+  Std_ReturnType Status;
+  struct Spi_SequenceStateType * SequenceState;
+  Std_ReturnType D.6061;
+
+  <bb 2> :
+  Status = 0;
+  SpiCoreID = 0;
+  _1 = Spi_apxSpiConfigPtr[SpiCoreID];
+  _2 = _1->SequenceConfig;
+  _3 = (unsigned int) Sequence;
+  _4 = _3 * 4;
+  _5 = _2 + _4;
+  SequenceConfig = _5->SeqConfig;
+  NumJobsInSequence = SequenceConfig->NumJobs;
+  SchM_Enter_Spi_SPI_EXCLUSIVE_AREA_06 ();
+  HWUnit = 0;
+  goto <bb 6>; [INV]
+
+  <bb 3> :
+  _6 = (int) HWUnit;
+  _7 = Spi_au32SpiBusySyncHWUnitsStatus[_6];
+  _8 = (int) HWUnit;
+  _9 = _7 << _8;
+  _10 = (int) Sequence;
+  _11 = Spi_au32SpiSeqUsedHWUnits[_10];
+  _12 = _9 & _11;
+  if (_12 != 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  Status = 1;
+
+  <bb 5> :
+  HWUnit.6_13 = HWUnit;
+  HWUnit = HWUnit.6_13 + 1;
+
+  <bb 6> :
+  if (HWUnit == 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 7> :
+  if (Status != 1)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 19>; [INV]
+
+  <bb 8> :
+  _14 = (int) Sequence;
+  SequenceState = &Spi_axSpiSequenceState[_14];
+  SequenceState->Result = 1;
+  JobIndex = 0;
+  goto <bb 10>; [INV]
+
+  <bb 9> :
+  _15 = SequenceConfig->JobIndexList;
+  _16 = (unsigned int) JobIndex;
+  _17 = _16 * 2;
+  _18 = _15 + _17;
+  Job = *_18;
+  _19 = Spi_apxSpiConfigPtr[SpiCoreID];
+  _20 = _19->JobConfig;
+  _21 = (unsigned int) Job;
+  _22 = _21 * 4;
+  _23 = _20 + _22;
+  JobConfig = _23->JobCfg;
+  HWUnit = JobConfig->HWUnit;
+  _24 = (int) HWUnit;
+  Spi_au32SpiBusySyncHWUnitsStatus[_24] = 1;
+  JobIndex.7_25 = JobIndex;
+  JobIndex = JobIndex.7_25 + 1;
+
+  <bb 10> :
+  if (JobIndex < NumJobsInSequence)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 11> :
+  SchM_Exit_Spi_SPI_EXCLUSIVE_AREA_06 ();
+  Status = Spi_SyncJobsTranfer (SequenceConfig, SpiCoreID);
+  if (Status == 0)
+    goto <bb 12>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 12> :
+  SequenceState->Result = 0;
+  goto <bb 14>; [INV]
+
+  <bb 13> :
+  SequenceState->Result = 2;
+
+  <bb 14> :
+  SchM_Enter_Spi_SPI_EXCLUSIVE_AREA_07 ();
+  JobIndex = 0;
+  goto <bb 16>; [INV]
+
+  <bb 15> :
+  _26 = SequenceConfig->JobIndexList;
+  _27 = (unsigned int) JobIndex;
+  _28 = _27 * 2;
+  _29 = _26 + _28;
+  Job = *_29;
+  _30 = Spi_apxSpiConfigPtr[SpiCoreID];
+  _31 = _30->JobConfig;
+  _32 = (unsigned int) Job;
+  _33 = _32 * 4;
+  _34 = _31 + _33;
+  JobConfig = _34->JobCfg;
+  HWUnit = JobConfig->HWUnit;
+  _35 = (int) HWUnit;
+  Spi_au32SpiBusySyncHWUnitsStatus[_35] = 0;
+  JobIndex.8_36 = JobIndex;
+  JobIndex = JobIndex.8_36 + 1;
+
+  <bb 16> :
+  if (JobIndex < NumJobsInSequence)
+    goto <bb 15>; [INV]
+  else
+    goto <bb 17>; [INV]
+
+  <bb 17> :
+  SchM_Exit_Spi_SPI_EXCLUSIVE_AREA_07 ();
+  _37 = SequenceConfig->EndNotification;
+  if (_37 != 0B)
+    goto <bb 18>; [INV]
+  else
+    goto <bb 20>; [INV]
+
+  <bb 18> :
+  _38 = SequenceConfig->EndNotification;
+  _38 ();
+  goto <bb 20>; [INV]
+
+  <bb 19> :
+  SchM_Exit_Spi_SPI_EXCLUSIVE_AREA_06 ();
+
+  <bb 20> :
+  D.6061 = Status;
+
+  <bb 21> :
+<L21>:
+  return D.6061;
+
+}
+
+
+Spi_GetSequenceResult (Spi_SequenceType Sequence)
+{
+  Spi_SeqResultType SequenceResult;
+  Spi_SeqResultType D.6047;
+
+  <bb 2> :
+  _1 = (int) Sequence;
+  SequenceResult = Spi_axSpiSequenceState[_1].Result;
+  D.6047 = SequenceResult;
+
+  <bb 3> :
+<L0>:
+  return D.6047;
+
+}
+
+
+Spi_GetJobResult (Spi_JobType Job)
+{
+  Spi_JobResultType JobResult;
+  Spi_JobResultType D.6045;
+
+  <bb 2> :
+  _1 = (int) Job;
+  JobResult = Spi_axSpiJobState[_1].Result;
+  D.6045 = JobResult;
+
+  <bb 3> :
+<L0>:
+  return D.6045;
+
+}
+
+
+Spi_GetStatus ()
+{
+  uint32 SpiCoreID;
+  Spi_HWUnitType HWUnit;
+  Spi_StatusType StatusFlag;
+  Spi_StatusType D.6043;
+
+  <bb 2> :
+  StatusFlag = 1;
+  SpiCoreID = 0;
+  _1 = Spi_apxSpiConfigPtr[SpiCoreID];
+  if (_1 == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  StatusFlag = 0;
+  goto <bb 13>; [INV]
+
+  <bb 4> :
+  HWUnit = 0;
+  goto <bb 10>; [INV]
+
+  <bb 5> :
+  _2 = Spi_apxSpiConfigPtr[SpiCoreID];
+  _3 = _2->HWUnitConfig;
+  _4 = (unsigned int) HWUnit;
+  _5 = _4 * 4;
+  _6 = _3 + _5;
+  _7 = _6->PhyUnitConfig;
+  if (_7 != 0B)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 6> :
+  _8 = Spi_apxSpiConfigPtr[SpiCoreID];
+  _9 = _8->HWUnitConfig;
+  _10 = (unsigned int) HWUnit;
+  _11 = _10 * 4;
+  _12 = _9 + _11;
+  _13 = _12->PhyUnitConfig;
+  _14 = _13->SpiCoreUse;
+  if (SpiCoreID == _14)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 7> :
+  _15 = (int) HWUnit;
+  _16 = Spi_au32SpiBusySyncHWUnitsStatus[_15];
+  if (_16 == 1)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 8> :
+  StatusFlag = 2;
+  goto <bb 11>; [INV]
+
+  <bb 9> :
+  HWUnit.5_17 = HWUnit;
+  HWUnit = HWUnit.5_17 + 1;
+
+  <bb 10> :
+  if (HWUnit == 0)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 11> :
+  if (StatusFlag != 2)
+    goto <bb 12>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 12> :
+  StatusFlag = Spi_GetStatusAsyncCheckHwBusy (SpiCoreID);
+
+  <bb 13> :
+  D.6043 = StatusFlag;
+
+  <bb 14> :
+<L16>:
+  return D.6043;
+
+}
+
+
+Spi_SetupEB (Spi_ChannelType Channel, const Spi_DataBufferType * SrcDataBufferPtr, Spi_DataBufferType * DesDataBufferPtr, Spi_NumberOfDataType Length)
+{
+  uint32 SpiCoreID;
+  const struct Spi_ChannelConfigType * ChannelConfig;
+  struct Spi_ChannelStateType * ChannelState;
+  Std_ReturnType Status;
+  Std_ReturnType D.6028;
+
+  <bb 2> :
+  Status = 0;
+  SpiCoreID = 0;
+  _1 = (int) Channel;
+  ChannelState = &Spi_axSpiChannelState[_1];
+  _2 = Spi_apxSpiConfigPtr[SpiCoreID];
+  _3 = _2->ChannelConfig;
+  _4 = (unsigned int) Channel;
+  _5 = _4 * 4;
+  _6 = _3 + _5;
+  ChannelConfig = _6->ChannelCfg;
+  _7 = ChannelConfig->BufferType;
+  if (_7 == 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  Status = 1;
+  goto <bb 11>; [INV]
+
+  <bb 4> :
+  SchM_Enter_Spi_SPI_EXCLUSIVE_AREA_05 ();
+  _8 = ChannelConfig->BufferDescriptor;
+  _8->ExternalBufferTX = SrcDataBufferPtr;
+  _9 = ChannelConfig->BufferDescriptor;
+  _9->BufferRX = DesDataBufferPtr;
+  ChannelState->Length = Length;
+  if (SrcDataBufferPtr == 0B)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  _10 = ChannelState->Flags;
+  _11 = _10 | 1;
+  ChannelState->Flags = _11;
+  goto <bb 7>; [INV]
+
+  <bb 6> :
+  _12 = ChannelState->Flags;
+  _13 = _12 & 254;
+  ChannelState->Flags = _13;
+
+  <bb 7> :
+  if (DesDataBufferPtr == 0B)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 8> :
+  _14 = ChannelState->Flags;
+  _15 = _14 | 2;
+  ChannelState->Flags = _15;
+  goto <bb 10>; [INV]
+
+  <bb 9> :
+  _16 = ChannelState->Flags;
+  _17 = _16 & 253;
+  ChannelState->Flags = _17;
+
+  <bb 10> :
+  SchM_Exit_Spi_SPI_EXCLUSIVE_AREA_05 ();
+
+  <bb 11> :
+  D.6028 = Status;
+
+  <bb 12> :
+<L9>:
+  return D.6028;
+
+}
+
+
+Spi_DeInit ()
+{
+  uint32 SpiCoreID;
+  Spi_HWUnitType HWUnit;
+  Std_ReturnType TempExit;
+  Std_ReturnType D.6017;
+
+  <bb 2> :
+  TempExit = 0;
+  SpiCoreID = 0;
+  _1 = Spi_GetStatus ();
+  if (_1 == 2)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  TempExit = 1;
+  goto <bb 11>; [INV]
+
+  <bb 4> :
+  HWUnit = 0;
+  goto <bb 9>; [INV]
+
+  <bb 5> :
+  _2 = Spi_apxSpiConfigPtr[SpiCoreID];
+  _3 = _2->HWUnitConfig;
+  _4 = (unsigned int) HWUnit;
+  _5 = _4 * 4;
+  _6 = _3 + _5;
+  _7 = _6->PhyUnitConfig;
+  if (_7 != 0B)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 6> :
+  _8 = Spi_apxSpiConfigPtr[SpiCoreID];
+  _9 = _8->HWUnitConfig;
+  _10 = (unsigned int) HWUnit;
+  _11 = _10 * 4;
+  _12 = _9 + _11;
+  _13 = _12->PhyUnitConfig;
+  _14 = _13->SpiCoreUse;
+  if (SpiCoreID == _14)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 7> :
+  Spi_Ipw_DeInit (HWUnit, SpiCoreID);
+  _15 = (int) HWUnit;
+  Spi_axSpiHwUnitQueueArray[_15].Status = 0;
+
+  <bb 8> :
+  HWUnit.4_16 = HWUnit;
+  HWUnit = HWUnit.4_16 + 1;
+
+  <bb 9> :
+  if (HWUnit == 0)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 10> :
+  Spi_apxSpiConfigPtr[SpiCoreID] = 0B;
+
+  <bb 11> :
+  D.6017 = TempExit;
+
+  <bb 12> :
+<L11>:
+  return D.6017;
+
+}
+
+
+Spi_Init (const struct Spi_ConfigType * ConfigPtr)
+{
+  Std_ReturnType CheckStatus;
+  uint32 SpiCoreID;
+  Spi_HWUnitType HWUnit;
+
+  <bb 2> :
+  CheckStatus = 0;
+  SpiCoreID = 0;
+  CheckStatus = Spi_CheckInit (ConfigPtr, SpiCoreID);
+  if (CheckStatus == 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 3> :
+  Spi_apxSpiConfigPtr[SpiCoreID] = ConfigPtr;
+  Spi_InitChannelsJobsSeqsState (SpiCoreID);
+  HWUnit = 0;
+  goto <bb 8>; [INV]
+
+  <bb 4> :
+  _1 = Spi_apxSpiConfigPtr[SpiCoreID];
+  _2 = _1->HWUnitConfig;
+  _3 = (unsigned int) HWUnit;
+  _4 = _3 * 4;
+  _5 = _2 + _4;
+  _6 = _5->PhyUnitConfig;
+  if (_6 != 0B)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 5> :
+  _7 = Spi_apxSpiConfigPtr[SpiCoreID];
+  _8 = _7->HWUnitConfig;
+  _9 = (unsigned int) HWUnit;
+  _10 = _9 * 4;
+  _11 = _8 + _10;
+  _12 = _11->PhyUnitConfig;
+  _13 = _12->SpiCoreUse;
+  if (SpiCoreID == _13)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  _14 = Spi_apxSpiConfigPtr[SpiCoreID];
+  _15 = _14->HWUnitConfig;
+  _16 = (unsigned int) HWUnit;
+  _17 = _16 * 4;
+  _18 = _15 + _17;
+  _19 = _18->PhyUnitConfig;
+  Spi_Ipw_Init (HWUnit, _19);
+  _20 = (int) HWUnit;
+  Spi_axSpiHwUnitQueueArray[_20].Status = 1;
+
+  <bb 7> :
+  HWUnit.3_21 = HWUnit;
+  HWUnit = HWUnit.3_21 + 1;
+
+  <bb 8> :
+  if (HWUnit == 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 9> :
+  return;
+
+}
+
+
+Spi_GetVersionInfo (struct Std_VersionInfoType * versioninfo)
+{
+  <bb 2> :
+  versioninfo->vendorID = 43;
+  versioninfo->moduleID = 83;
+  versioninfo->sw_major_version = 2;
+  versioninfo->sw_minor_version = 0;
+  versioninfo->sw_patch_version = 0;
+  return;
+
+}
+
+
+Spi_GetStatusAsyncCheckHwBusy (uint32 SpiCoreID)
+{
+  Spi_HWUnitType HWUnit;
+  Spi_StatusType StatusFlag;
+  Spi_StatusType D.5992;
+
+  <bb 2> :
+  StatusFlag = 1;
+  HWUnit = 0;
+  goto <bb 8>; [INV]
+
+  <bb 3> :
+  _1 = Spi_apxSpiConfigPtr[SpiCoreID];
+  _2 = _1->HWUnitConfig;
+  _3 = (unsigned int) HWUnit;
+  _4 = _3 * 4;
+  _5 = _2 + _4;
+  _6 = _5->PhyUnitConfig;
+  if (_6 != 0B)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 4> :
+  _7 = Spi_apxSpiConfigPtr[SpiCoreID];
+  _8 = _7->HWUnitConfig;
+  _9 = (unsigned int) HWUnit;
+  _10 = _9 * 4;
+  _11 = _8 + _10;
+  _12 = _11->PhyUnitConfig;
+  _13 = _12->SpiCoreUse;
+  if (SpiCoreID == _13)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 5> :
+  _14 = (int) HWUnit;
+  _15 = Spi_axSpiHwUnitQueueArray[_14].Status;
+  if (_15 == 2)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  StatusFlag = 2;
+  goto <bb 9>; [INV]
+
+  <bb 7> :
+  HWUnit.2_16 = HWUnit;
+  HWUnit = HWUnit.2_16 + 1;
+
+  <bb 8> :
+  if (HWUnit == 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 9> :
+  D.5992 = StatusFlag;
+
+  <bb 10> :
+<L10>:
+  return D.5992;
+
+}
+
+
+Spi_InitChannelsJobsSeqsState (uint32 SpiCoreID)
+{
+  const struct Spi_SequenceConfigType * SequenceConfig;
+  const struct Spi_JobConfigType * JobConfig;
+  const struct Spi_ChannelConfigType * ChannelConfig;
+  uint32 Sequence;
+  uint32 Job;
+  uint32 Channel;
+
+  <bb 2> :
+  Channel = 0;
+  goto <bb 10>; [INV]
+
+  <bb 3> :
+  _1 = Spi_apxSpiConfigPtr[SpiCoreID];
+  _2 = _1->ChannelConfig;
+  _3 = Channel * 4;
+  _4 = _2 + _3;
+  ChannelConfig = _4->ChannelCfg;
+  if (ChannelConfig != 0B)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 4> :
+  _5 = ChannelConfig->SpiCoreUse;
+  if (SpiCoreID == _5)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 5> :
+  _6 = ChannelConfig->BufferType;
+  if (_6 == 1)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  _7 = ChannelConfig->BufferDescriptor;
+  _7->ExternalBufferTX = 0B;
+  _8 = ChannelConfig->BufferDescriptor;
+  _8->BufferRX = 0B;
+  Spi_axSpiChannelState[Channel].Length = 0;
+  goto <bb 8>; [INV]
+
+  <bb 7> :
+  _9 = ChannelConfig->Length;
+  Spi_axSpiChannelState[Channel].Length = _9;
+
+  <bb 8> :
+  Spi_axSpiChannelState[Channel].Flags = 1;
+
+  <bb 9> :
+  Channel = Channel + 1;
+
+  <bb 10> :
+  _10 = Spi_apxSpiConfigPtr[SpiCoreID];
+  _11 = _10->SpiMaxChannel;
+  _12 = (long unsigned int) _11;
+  if (Channel <= _12)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 11> :
+  Job = 0;
+  goto <bb 16>; [INV]
+
+  <bb 12> :
+  _13 = Spi_apxSpiConfigPtr[SpiCoreID];
+  _14 = _13->JobConfig;
+  _15 = Job * 4;
+  _16 = _14 + _15;
+  JobConfig = _16->JobCfg;
+  if (JobConfig != 0B)
+    goto <bb 13>; [INV]
+  else
+    goto <bb 15>; [INV]
+
+  <bb 13> :
+  _17 = JobConfig->SpiCoreUse;
+  if (SpiCoreID == _17)
+    goto <bb 14>; [INV]
+  else
+    goto <bb 15>; [INV]
+
+  <bb 14> :
+  Spi_axSpiJobState[Job].Result = 0;
+
+  <bb 15> :
+  Job = Job + 1;
+
+  <bb 16> :
+  _18 = Spi_apxSpiConfigPtr[SpiCoreID];
+  _19 = _18->SpiMaxJob;
+  _20 = (long unsigned int) _19;
+  if (Job <= _20)
+    goto <bb 12>; [INV]
+  else
+    goto <bb 17>; [INV]
+
+  <bb 17> :
+  Sequence = 0;
+  goto <bb 22>; [INV]
+
+  <bb 18> :
+  _21 = Spi_apxSpiConfigPtr[SpiCoreID];
+  _22 = _21->SequenceConfig;
+  _23 = Sequence * 4;
+  _24 = _22 + _23;
+  SequenceConfig = _24->SeqConfig;
+  if (SequenceConfig != 0B)
+    goto <bb 19>; [INV]
+  else
+    goto <bb 21>; [INV]
+
+  <bb 19> :
+  _25 = SequenceConfig->SpiCoreUse;
+  if (SpiCoreID == _25)
+    goto <bb 20>; [INV]
+  else
+    goto <bb 21>; [INV]
+
+  <bb 20> :
+  Spi_axSpiSequenceState[Sequence].Result = 0;
+  Spi_au32SpiSeqUsedHWUnits[Sequence] = 4294967295;
+
+  <bb 21> :
+  Sequence = Sequence + 1;
+
+  <bb 22> :
+  _26 = Spi_apxSpiConfigPtr[SpiCoreID];
+  _27 = _26->SpiMaxSequence;
+  _28 = (long unsigned int) _27;
+  if (Sequence <= _28)
+    goto <bb 18>; [INV]
+  else
+    goto <bb 23>; [INV]
+
+  <bb 23> :
+  return;
+
+}
+
+
+Spi_SyncJobsTranfer (const struct Spi_SequenceConfigType * SequenceConfig, uint32 SpiCoreID)
+{
+  Std_ReturnType Status;
+  const struct Spi_JobConfigType * JobConfig;
+  struct Spi_JobStateType * JobState;
+  Spi_JobType Job;
+  const Spi_JobType * JobIndexList;
+  Spi_JobType JobsCount;
+  Std_ReturnType D.5967;
+
+  <bb 2> :
+  Status = 0;
+  JobsCount = SequenceConfig->NumJobs;
+  JobIndexList = SequenceConfig->JobIndexList;
+  goto <bb 13>; [INV]
+
+  <bb 3> :
+  Job = *JobIndexList;
+  _1 = (int) Job;
+  JobState = &Spi_axSpiJobState[_1];
+  JobState->Result = 1;
+  _2 = Spi_apxSpiConfigPtr[SpiCoreID];
+  _3 = _2->JobConfig;
+  _4 = (unsigned int) Job;
+  _5 = _4 * 4;
+  _6 = _3 + _5;
+  JobConfig = _6->JobCfg;
+  _7 = JobConfig->StartNotification;
+  if (_7 != 0B)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  _8 = JobConfig->StartNotification;
+  _8 ();
+
+  <bb 5> :
+  _9 = JobConfig->HWUnit;
+  _10 = (int) _9;
+  Spi_axSpiHwUnitQueueArray[_10].Status = 2;
+  Status = Spi_Ipw_SyncTransmit (JobConfig, SpiCoreID);
+  _11 = JobConfig->HWUnit;
+  _12 = (int) _11;
+  Spi_axSpiHwUnitQueueArray[_12].Status = 1;
+  if (Status == 0)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 6> :
+  JobState->Result = 0;
+  _13 = JobConfig->EndNotification;
+  if (_13 != 0B)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 7> :
+  _14 = JobConfig->EndNotification;
+  _14 ();
+  goto <bb 12>; [INV]
+
+  <bb 8> :
+  _15 = *JobIndexList;
+  _16 = (int) _15;
+  Spi_axSpiJobState[_16].Result = 2;
+  _17 = Spi_apxSpiConfigPtr[SpiCoreID];
+  _18 = _17->JobConfig;
+  _19 = *JobIndexList;
+  _20 = (unsigned int) _19;
+  _21 = _20 * 4;
+  _22 = _18 + _21;
+  JobConfig = _22->JobCfg;
+  _23 = JobConfig->EndNotification;
+  if (_23 != 0B)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 9> :
+  _24 = JobConfig->EndNotification;
+  _24 ();
+
+  <bb 10> :
+  JobIndexList = JobIndexList + 2;
+  JobsCount.0_25 = JobsCount;
+  JobsCount = JobsCount.0_25 + 65535;
+  if (JobsCount != 0)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 11> :
+  JobsCount = 1;
+
+  <bb 12> :
+  JobIndexList = JobIndexList + 2;
+  JobsCount.1_26 = JobsCount;
+  JobsCount = JobsCount.1_26 + 65535;
+
+  <bb 13> :
+  if (JobsCount != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 14>; [INV]
+
+  <bb 14> :
+  D.5967 = Status;
+
+  <bb 15> :
+<L17>:
+  return D.5967;
+
+}
+
+
+Spi_CheckInit (const struct Spi_ConfigType * ConfigPtr, uint32 SpiCoreID)
+{
+  uint32 Sequence;
+  uint32 Job;
+  uint32 Channel;
+  Std_ReturnType CheckStatus;
+  Std_ReturnType D.6007;
+
+  <bb 2> :
+  CheckStatus = 0;
+  _1 = ConfigPtr->SpiMaxChannel;
+  Channel = (uint32) _1;
+  _2 = ConfigPtr->SpiMaxJob;
+  Job = (uint32) _2;
+  _3 = ConfigPtr->SpiMaxSequence;
+  Sequence = (uint32) _3;
+  if (Channel != 0)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 3>; [INV]
+
+  <bb 3> :
+  if (Job != 0)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 4> :
+  if (Sequence != 0)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  CheckStatus = 1;
+
+  <bb 6> :
+  _4 = ConfigPtr->SpiCoreUse;
+  if (SpiCoreID != _4)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 7> :
+  CheckStatus = 1;
+
+  <bb 8> :
+  D.6007 = CheckStatus;
+
+  <bb 9> :
+<L6>:
+  return D.6007;
+
+}
+
+

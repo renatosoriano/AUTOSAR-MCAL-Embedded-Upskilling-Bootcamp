@@ -1,0 +1,1006 @@
+Trivially needed symbols: EcuM_Init/7 main/6 Delay/5
+Trivially needed symbols: TxMasterBuffer/12
+
+
+Initial Symbol table:
+
+Spi_Config/23 (Spi_Config) @0e284e58
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: EcuM_Init/7 (addr) 
+  Availability: not-ready
+  Varpool flags: read-only
+Spi_Init/22 (Spi_Init) @0e28c380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: EcuM_Init/7 
+  Calls: 
+Port_Config/21 (Port_Config) @0e284dc8
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: EcuM_Init/7 (addr) 
+  Availability: not-ready
+  Varpool flags: read-only
+Port_Init/20 (Port_Init) @0e28c2a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: EcuM_Init/7 
+  Calls: 
+Platform_Init/19 (Platform_Init) @0e28c1c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: EcuM_Init/7 
+  Calls: 
+OsIf_Init/18 (OsIf_Init) @0e28c0e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: EcuM_Init/7 
+  Calls: 
+Mcu_SetMode/17 (Mcu_SetMode) @0e28c000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: EcuM_Init/7 
+  Calls: 
+Mcu_InitClock/16 (Mcu_InitClock) @0e2882a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: EcuM_Init/7 
+  Calls: 
+Mcu_Config/15 (Mcu_Config) @0e284c18
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: EcuM_Init/7 (addr) 
+  Availability: not-ready
+  Varpool flags: read-only
+Mcu_Init/14 (Mcu_Init) @0e288ee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: EcuM_Init/7 
+  Calls: 
+Spi_SyncTransmit/13 (Spi_SyncTransmit) @0e288d20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: main/6 
+  Calls: 
+TxMasterBuffer/12 (TxMasterBuffer) @0e284a20
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @0e288460
+  References: 
+  Referring: main/6 (addr) 
+  Availability: not-ready
+  Varpool flags: initialized
+Spi_SetupEB/11 (Spi_SetupEB) @0e288c40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: main/6 
+  Calls: 
+OsIf_GetElapsed/10 (OsIf_GetElapsed) @0e288a80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Delay/5 
+  Calls: 
+OsIf_GetCounter/9 (OsIf_GetCounter) @0e2889a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Delay/5 
+  Calls: 
+OsIf_MicrosToTicks/8 (OsIf_MicrosToTicks) @0e2888c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Delay/5 
+  Calls: 
+EcuM_Init/7 (EcuM_Init) @0e288460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @01981040
+  References: Mcu_Config/15 (addr) Port_Config/21 (addr) Spi_Config/23 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: main/6 
+  Calls: Spi_Init/22 Port_Init/20 Platform_Init/19 OsIf_Init/18 Mcu_SetMode/17 Mcu_InitClock/16 Mcu_Init/14 
+main/6 (main) @0e2881c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0e288460
+  References: TxMasterBuffer/12 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Delay/5 Spi_SyncTransmit/13 Spi_SetupEB/11 EcuM_Init/7 
+Delay/5 (Delay) @0e19e2a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0e2881c0
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: main/6 
+  Calls: OsIf_GetElapsed/10 OsIf_GetCounter/9 OsIf_MicrosToTicks/8 
+Platform_Ipw_InstallIrqHandler/4 (Platform_Ipw_InstallIrqHandler) @0e15e700
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+Platform_Ipw_GetIrqPriority/3 (Platform_Ipw_GetIrqPriority) @0e15e460
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+Platform_Ipw_SetIrqPriority/2 (Platform_Ipw_SetIrqPriority) @0e15e1c0
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+Platform_Ipw_SetIrq/1 (Platform_Ipw_SetIrq) @0e0fcd20
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+DevAssert/0 (DevAssert) @0dbd6a80
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+
+Removing unused symbols: Platform_Ipw_InstallIrqHandler/4 Platform_Ipw_GetIrqPriority/3 Platform_Ipw_SetIrqPriority/2 Platform_Ipw_SetIrq/1 DevAssert/0
+
+Reclaimed Symbol table:
+
+Spi_Config/23 (Spi_Config) @0e284e58
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: EcuM_Init/7 (addr) 
+  Availability: not-ready
+  Varpool flags: read-only
+Spi_Init/22 (Spi_Init) @0e28c380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: EcuM_Init/7 
+  Calls: 
+Port_Config/21 (Port_Config) @0e284dc8
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: EcuM_Init/7 (addr) 
+  Availability: not-ready
+  Varpool flags: read-only
+Port_Init/20 (Port_Init) @0e28c2a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: EcuM_Init/7 
+  Calls: 
+Platform_Init/19 (Platform_Init) @0e28c1c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: EcuM_Init/7 
+  Calls: 
+OsIf_Init/18 (OsIf_Init) @0e28c0e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: EcuM_Init/7 
+  Calls: 
+Mcu_SetMode/17 (Mcu_SetMode) @0e28c000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: EcuM_Init/7 
+  Calls: 
+Mcu_InitClock/16 (Mcu_InitClock) @0e2882a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: EcuM_Init/7 
+  Calls: 
+Mcu_Config/15 (Mcu_Config) @0e284c18
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: EcuM_Init/7 (addr) 
+  Availability: not-ready
+  Varpool flags: read-only
+Mcu_Init/14 (Mcu_Init) @0e288ee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: EcuM_Init/7 
+  Calls: 
+Spi_SyncTransmit/13 (Spi_SyncTransmit) @0e288d20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: main/6 
+  Calls: 
+TxMasterBuffer/12 (TxMasterBuffer) @0e284a20
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: main/6 (addr) 
+  Availability: not-ready
+  Varpool flags: initialized
+Spi_SetupEB/11 (Spi_SetupEB) @0e288c40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: main/6 
+  Calls: 
+OsIf_GetElapsed/10 (OsIf_GetElapsed) @0e288a80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Delay/5 
+  Calls: 
+OsIf_GetCounter/9 (OsIf_GetCounter) @0e2889a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Delay/5 
+  Calls: 
+OsIf_MicrosToTicks/8 (OsIf_MicrosToTicks) @0e2888c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Delay/5 
+  Calls: 
+EcuM_Init/7 (EcuM_Init) @0e288460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Mcu_Config/15 (addr) Port_Config/21 (addr) Spi_Config/23 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: main/6 
+  Calls: Spi_Init/22 Port_Init/20 Platform_Init/19 OsIf_Init/18 Mcu_SetMode/17 Mcu_InitClock/16 Mcu_Init/14 
+main/6 (main) @0e2881c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: TxMasterBuffer/12 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Delay/5 Spi_SyncTransmit/13 Spi_SetupEB/11 EcuM_Init/7 
+Delay/5 (Delay) @0e19e2a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: main/6 
+  Calls: OsIf_GetElapsed/10 OsIf_GetCounter/9 OsIf_MicrosToTicks/8 
+
+
+Initial Symbol table:
+
+Spi_Config/23 (Spi_Config) @0e284e58
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: EcuM_Init/7 (addr) 
+  Availability: not-ready
+  Varpool flags: read-only
+Spi_Init/22 (Spi_Init) @0e28c380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: EcuM_Init/7 
+  Calls: 
+Port_Config/21 (Port_Config) @0e284dc8
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: EcuM_Init/7 (addr) 
+  Availability: not-ready
+  Varpool flags: read-only
+Port_Init/20 (Port_Init) @0e28c2a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: EcuM_Init/7 
+  Calls: 
+Platform_Init/19 (Platform_Init) @0e28c1c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: EcuM_Init/7 
+  Calls: 
+OsIf_Init/18 (OsIf_Init) @0e28c0e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: EcuM_Init/7 
+  Calls: 
+Mcu_SetMode/17 (Mcu_SetMode) @0e28c000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: EcuM_Init/7 
+  Calls: 
+Mcu_InitClock/16 (Mcu_InitClock) @0e2882a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: EcuM_Init/7 
+  Calls: 
+Mcu_Config/15 (Mcu_Config) @0e284c18
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: EcuM_Init/7 (addr) 
+  Availability: not-ready
+  Varpool flags: read-only
+Mcu_Init/14 (Mcu_Init) @0e288ee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: EcuM_Init/7 
+  Calls: 
+Spi_SyncTransmit/13 (Spi_SyncTransmit) @0e288d20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: main/6 
+  Calls: 
+TxMasterBuffer.0/12 (TxMasterBuffer) @0e284a20
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: main/6 (addr) 
+  Availability: not-ready
+  Varpool flags: initialized
+Spi_SetupEB/11 (Spi_SetupEB) @0e288c40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: main/6 
+  Calls: 
+OsIf_GetElapsed/10 (OsIf_GetElapsed) @0e288a80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Delay/5 
+  Calls: 
+OsIf_GetCounter/9 (OsIf_GetCounter) @0e2889a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Delay/5 
+  Calls: 
+OsIf_MicrosToTicks/8 (OsIf_MicrosToTicks) @0e2888c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Delay/5 
+  Calls: 
+EcuM_Init/7 (EcuM_Init) @0e288460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Mcu_Config/15 (addr) Port_Config/21 (addr) Spi_Config/23 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: main/6 
+  Calls: Spi_Init/22 Port_Init/20 Platform_Init/19 OsIf_Init/18 Mcu_SetMode/17 Mcu_InitClock/16 Mcu_Init/14 
+main/6 (main) @0e2881c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: TxMasterBuffer.0/12 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Delay/5 Spi_SyncTransmit/13 Spi_SetupEB/11 EcuM_Init/7 
+Delay/5 (Delay) @0e19e2a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: main/6 
+  Calls: OsIf_GetElapsed/10 OsIf_GetCounter/9 OsIf_MicrosToTicks/8 
+
+Removing unused symbols:
+
+Reclaimed Symbol table:
+
+Spi_Config/23 (Spi_Config) @0e284e58
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: EcuM_Init/7 (addr) 
+  Availability: not-ready
+  Varpool flags: read-only
+Spi_Init/22 (Spi_Init) @0e28c380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: EcuM_Init/7 
+  Calls: 
+Port_Config/21 (Port_Config) @0e284dc8
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: EcuM_Init/7 (addr) 
+  Availability: not-ready
+  Varpool flags: read-only
+Port_Init/20 (Port_Init) @0e28c2a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: EcuM_Init/7 
+  Calls: 
+Platform_Init/19 (Platform_Init) @0e28c1c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: EcuM_Init/7 
+  Calls: 
+OsIf_Init/18 (OsIf_Init) @0e28c0e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: EcuM_Init/7 
+  Calls: 
+Mcu_SetMode/17 (Mcu_SetMode) @0e28c000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: EcuM_Init/7 
+  Calls: 
+Mcu_InitClock/16 (Mcu_InitClock) @0e2882a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: EcuM_Init/7 
+  Calls: 
+Mcu_Config/15 (Mcu_Config) @0e284c18
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: EcuM_Init/7 (addr) 
+  Availability: not-ready
+  Varpool flags: read-only
+Mcu_Init/14 (Mcu_Init) @0e288ee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: EcuM_Init/7 
+  Calls: 
+Spi_SyncTransmit/13 (Spi_SyncTransmit) @0e288d20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: main/6 
+  Calls: 
+TxMasterBuffer.0/12 (TxMasterBuffer) @0e284a20
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: main/6 (addr) 
+  Availability: not-ready
+  Varpool flags: initialized
+Spi_SetupEB/11 (Spi_SetupEB) @0e288c40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: main/6 
+  Calls: 
+OsIf_GetElapsed/10 (OsIf_GetElapsed) @0e288a80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Delay/5 
+  Calls: 
+OsIf_GetCounter/9 (OsIf_GetCounter) @0e2889a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Delay/5 
+  Calls: 
+OsIf_MicrosToTicks/8 (OsIf_MicrosToTicks) @0e2888c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Delay/5 
+  Calls: 
+EcuM_Init/7 (EcuM_Init) @0e288460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Mcu_Config/15 (addr) Port_Config/21 (addr) Spi_Config/23 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: main/6 
+  Calls: Spi_Init/22 Port_Init/20 Platform_Init/19 OsIf_Init/18 Mcu_SetMode/17 Mcu_InitClock/16 Mcu_Init/14 
+main/6 (main) @0e2881c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: TxMasterBuffer.0/12 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Delay/5 Spi_SyncTransmit/13 Spi_SetupEB/11 EcuM_Init/7 
+Delay/5 (Delay) @0e19e2a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: main/6 
+  Calls: OsIf_GetElapsed/10 OsIf_GetCounter/9 OsIf_MicrosToTicks/8 
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+Optimized Symbol table:
+
+Spi_Config/23 (Spi_Config) @0e284e58
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: EcuM_Init/7 (addr) 
+  Availability: not_available
+  Varpool flags: read-only
+Spi_Init/22 (Spi_Init) @0e28c380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: EcuM_Init/7 
+  Calls: 
+Port_Config/21 (Port_Config) @0e284dc8
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: EcuM_Init/7 (addr) 
+  Availability: not_available
+  Varpool flags: read-only
+Port_Init/20 (Port_Init) @0e28c2a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: EcuM_Init/7 
+  Calls: 
+Platform_Init/19 (Platform_Init) @0e28c1c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: EcuM_Init/7 
+  Calls: 
+OsIf_Init/18 (OsIf_Init) @0e28c0e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: EcuM_Init/7 
+  Calls: 
+Mcu_SetMode/17 (Mcu_SetMode) @0e28c000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: EcuM_Init/7 
+  Calls: 
+Mcu_InitClock/16 (Mcu_InitClock) @0e2882a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: EcuM_Init/7 
+  Calls: 
+Mcu_Config/15 (Mcu_Config) @0e284c18
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: EcuM_Init/7 (addr) 
+  Availability: not_available
+  Varpool flags: read-only
+Mcu_Init/14 (Mcu_Init) @0e288ee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: EcuM_Init/7 
+  Calls: 
+Spi_SyncTransmit/13 (Spi_SyncTransmit) @0e288d20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: main/6 
+  Calls: 
+TxMasterBuffer.0/12 (TxMasterBuffer) @0e284a20
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: main/6 (addr) 
+  Availability: available
+  Varpool flags: initialized
+Spi_SetupEB/11 (Spi_SetupEB) @0e288c40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: main/6 
+  Calls: 
+OsIf_GetElapsed/10 (OsIf_GetElapsed) @0e288a80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Delay/5 
+  Calls: 
+OsIf_GetCounter/9 (OsIf_GetCounter) @0e2889a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Delay/5 
+  Calls: 
+OsIf_MicrosToTicks/8 (OsIf_MicrosToTicks) @0e2888c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Delay/5 
+  Calls: 
+EcuM_Init/7 (EcuM_Init) @0e288460
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Mcu_Config/15 (addr) Port_Config/21 (addr) Spi_Config/23 (addr) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: main/6 
+  Calls: Spi_Init/22 Port_Init/20 Platform_Init/19 OsIf_Init/18 Mcu_SetMode/17 Mcu_InitClock/16 Mcu_Init/14 
+main/6 (main) @0e2881c0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: TxMasterBuffer.0/12 (addr) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Delay/5 Spi_SyncTransmit/13 Spi_SetupEB/11 EcuM_Init/7 
+Delay/5 (Delay) @0e19e2a0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: main/6 
+  Calls: OsIf_GetElapsed/10 OsIf_GetCounter/9 OsIf_MicrosToTicks/8 
+Materializing clones
+Materialization Call site updates done.
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+Trivially needed variables: TxMasterBuffer.0/12
+Removing variables:
+
+Final Symbol table:
+
+Spi_Config/23 (Spi_Config) @0e284e58
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Varpool flags: read-only
+Spi_Init/22 (Spi_Init) @0e28c380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+Port_Config/21 (Port_Config) @0e284dc8
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Varpool flags: read-only
+Port_Init/20 (Port_Init) @0e28c2a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+Platform_Init/19 (Platform_Init) @0e28c1c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+OsIf_Init/18 (OsIf_Init) @0e28c0e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+Mcu_SetMode/17 (Mcu_SetMode) @0e28c000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+Mcu_InitClock/16 (Mcu_InitClock) @0e2882a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+Mcu_Config/15 (Mcu_Config) @0e284c18
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Varpool flags: read-only
+Mcu_Init/14 (Mcu_Init) @0e288ee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+Spi_SyncTransmit/13 (Spi_SyncTransmit) @0e288d20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+TxMasterBuffer.0/12 (TxMasterBuffer) @0e284a20
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written section:.data.TxMasterBuffer.0 (implicit_section)
+  Aux: @00000001
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags: initialized
+Spi_SetupEB/11 (Spi_SetupEB) @0e288c40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+OsIf_GetElapsed/10 (OsIf_GetElapsed) @0e288a80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+OsIf_GetCounter/9 (OsIf_GetCounter) @0e2889a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+OsIf_MicrosToTicks/8 (OsIf_MicrosToTicks) @0e2888c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+EcuM_Init/7 (EcuM_Init) @0e288460
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.EcuM_Init (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+main/6 (main) @0e2881c0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.main (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+Delay/5 (Delay) @0e19e2a0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.Delay (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 

@@ -1,0 +1,161 @@
+
+Flattening functions:
+Overall time estimate: 0.000000 weighted by profile: 0.000000
+
+Deciding on inlining of small functions.  Starting with size 0.
+node context cache: 0 hits, 0 misses, 0 initializations
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+
+Deciding on functions to be inlined into all callers and removing useless speculations:
+Overall time estimate: 0.000000 weighted by profile: 0.000000
+
+Why inlining failed?
+Symbol table:
+
+Spi_aHwUnitConfigList/19 (Spi_aHwUnitConfigList) @0db3fa20
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: Spi_Config/15 (addr) 
+  Availability: not_available
+  Varpool flags: read-only
+Spi_aExternalDeviceConfigList/18 (Spi_aExternalDeviceConfigList) @0db3f9d8
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: Spi_JobConfig_SpiJob_0/7 (addr) Spi_JobConfig_SpiJob_1/8 (addr) Spi_Config/15 (addr) 
+  Availability: not_available
+  Varpool flags: read-only
+Spi_axSpiJobState/17 (Spi_axSpiJobState) @0db3f990
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: Spi_JobConfig_SpiJob_0/7 (addr) Spi_JobConfig_SpiJob_1/8 (addr) 
+  Availability: not_available
+  Varpool flags:
+Spi_axSpiChannelState/16 (Spi_axSpiChannelState) @0db3f948
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: Spi_ChannelConfig_SpiChannel_0/2 (addr) Spi_ChannelConfig_SpiChannel_1/3 (addr) 
+  Availability: not_available
+  Varpool flags:
+Spi_Config/15 (Spi_Config) @0db3f828
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Spi_aChannelConfigList/4 (addr) Spi_aJobConfigList/9 (addr) Spi_aSequenceConfigList/14 (addr) Spi_aExternalDeviceConfigList/18 (addr) Spi_aHwUnitConfigList/19 (addr) 
+  Referring: 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+Spi_aSequenceConfigList/14 (Spi_aSequenceConfigList) @0db3f798
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: Spi_SequenceConfig_SpiSequence_0/12 (addr) Spi_SequenceConfig_SpiSequence_1/13 (addr) 
+  Referring: Spi_Config/15 (addr) 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+Spi_SequenceConfig_SpiSequence_1/13 (Spi_SequenceConfig_SpiSequence_1) @0db3f708
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: Spi_SpiSequence_1_JobAssignment/11 (addr) 
+  Referring: Spi_aSequenceConfigList/14 (addr) 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+Spi_SequenceConfig_SpiSequence_0/12 (Spi_SequenceConfig_SpiSequence_0) @0db3f630
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: Spi_SpiSequence_0_JobAssignment/10 (addr) 
+  Referring: Spi_aSequenceConfigList/14 (addr) 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+Spi_SpiSequence_1_JobAssignment/11 (Spi_SpiSequence_1_JobAssignment) @0db3f558
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: Spi_SequenceConfig_SpiSequence_1/13 (addr) 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+Spi_SpiSequence_0_JobAssignment/10 (Spi_SpiSequence_0_JobAssignment) @0db3f4c8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: Spi_SequenceConfig_SpiSequence_0/12 (addr) 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+Spi_aJobConfigList/9 (Spi_aJobConfigList) @0db3f438
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: Spi_JobConfig_SpiJob_0/7 (addr) Spi_JobConfig_SpiJob_1/8 (addr) 
+  Referring: Spi_Config/15 (addr) 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+Spi_JobConfig_SpiJob_1/8 (Spi_JobConfig_SpiJob_1) @0db3f3a8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: Spi_SpiJob_1_ChannelAssignment/6 (addr) Spi_axSpiJobState/17 (addr) Spi_aExternalDeviceConfigList/18 (addr) 
+  Referring: Spi_aJobConfigList/9 (addr) 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+Spi_JobConfig_SpiJob_0/7 (Spi_JobConfig_SpiJob_0) @0db3f2d0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: Spi_SpiJob_0_ChannelAssignment/5 (addr) Spi_axSpiJobState/17 (addr) Spi_aExternalDeviceConfigList/18 (addr) 
+  Referring: Spi_aJobConfigList/9 (addr) 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+Spi_SpiJob_1_ChannelAssignment/6 (Spi_SpiJob_1_ChannelAssignment) @0db3f1f8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: Spi_JobConfig_SpiJob_1/8 (addr) 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+Spi_SpiJob_0_ChannelAssignment/5 (Spi_SpiJob_0_ChannelAssignment) @0db3f168
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: Spi_JobConfig_SpiJob_0/7 (addr) 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+Spi_aChannelConfigList/4 (Spi_aChannelConfigList) @0db3f0d8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: Spi_ChannelConfig_SpiChannel_0/2 (addr) Spi_ChannelConfig_SpiChannel_1/3 (addr) 
+  Referring: Spi_Config/15 (addr) 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+Spi_ChannelConfig_SpiChannel_1/3 (Spi_ChannelConfig_SpiChannel_1) @0db3f048
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: Spi_BufferSpiChannel_1/1 (addr) Spi_axSpiChannelState/16 (addr) 
+  Referring: Spi_aChannelConfigList/4 (addr) 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+Spi_ChannelConfig_SpiChannel_0/2 (Spi_ChannelConfig_SpiChannel_0) @0db3af30
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: Spi_BufferSpiChannel_0/0 (addr) Spi_axSpiChannelState/16 (addr) 
+  Referring: Spi_aChannelConfigList/4 (addr) 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+Spi_BufferSpiChannel_1/1 (Spi_BufferSpiChannel_1) @0db3ae58
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: Spi_ChannelConfig_SpiChannel_1/3 (addr) 
+  Availability: available
+  Varpool flags:
+Spi_BufferSpiChannel_0/0 (Spi_BufferSpiChannel_0) @0db3adc8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: Spi_ChannelConfig_SpiChannel_0/2 (addr) 
+  Availability: available
+  Varpool flags:

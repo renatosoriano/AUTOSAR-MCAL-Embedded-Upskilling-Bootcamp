@@ -1,0 +1,88 @@
+NVIC_SetPriority (uint8 IRQn, uint8 priority)
+{
+  uint8 shift;
+  long unsigned int _1;
+  int _2;
+  long unsigned int _3;
+  struct S32_NVIC_Type * _4;
+  long unsigned int _5;
+  unsigned char _6;
+
+  <bb 2> :
+  shift_7 = 4;
+  _1 = (long unsigned int) priority_8(D);
+  _2 = (int) shift_7;
+  _3 = _1 << _2;
+  _4 = 3758153984B;
+  _5 = (long unsigned int) IRQn_9(D);
+  _6 = (unsigned char) _3;
+  _4->IP[_5] ={v} _6;
+  return;
+
+}
+
+
+NVIC_DisableIRQ (uint8 IRQn)
+{
+  long unsigned int _1;
+  long unsigned int _2;
+  struct S32_NVIC_Type * _3;
+  unsigned char _4;
+  long unsigned int _5;
+  long unsigned int _6;
+
+  <bb 2> :
+  _1 = (long unsigned int) IRQn_7(D);
+  _2 = _1 & 31;
+  _3 = 3758153984B;
+  _4 = IRQn_7(D) >> 5;
+  _5 = (long unsigned int) _4;
+  _6 = 1 << _2;
+  _3->ICER[_5] ={v} _6;
+  return;
+
+}
+
+
+NVIC_EnableIRQ (uint8 IRQn)
+{
+  long unsigned int _1;
+  long unsigned int _2;
+  struct S32_NVIC_Type * _3;
+  unsigned char _4;
+  long unsigned int _5;
+  long unsigned int _6;
+
+  <bb 2> :
+  _1 = (long unsigned int) IRQn_7(D);
+  _2 = _1 & 31;
+  _3 = 3758153984B;
+  _4 = IRQn_7(D) >> 5;
+  _5 = (long unsigned int) _4;
+  _6 = 1 << _2;
+  _3->ISER[_5] ={v} _6;
+  return;
+
+}
+
+
+NVIC_SetPriorityGrouping (uint32 PriorityGroup)
+{
+  struct S32_SCB_Type * _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  struct S32_SCB_Type * _4;
+  long unsigned int _5;
+
+  <bb 2> :
+  _1 = 3758153728B;
+  _2 ={v} _1->AIRCR;
+  _3 = _2 & 4294965503;
+  _4 = 3758153728B;
+  _5 = PriorityGroup_7(D) | _3;
+  _4->AIRCR ={v} _5;
+  return;
+
+}
+
+

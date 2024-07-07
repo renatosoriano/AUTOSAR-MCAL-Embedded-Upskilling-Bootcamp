@@ -1,0 +1,296 @@
+
+Marking local functions:
+
+
+Marking externally visible functions: EcuM_Init/7 main/6 Delay/5
+
+
+Marking externally visible variables:
+
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+Symbol table:
+
+Spi_Config/24 (Spi_Config) @0e32c510
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: EcuM_Init/7 (addr) 
+  Availability: not_available
+  Varpool flags: read-only
+Spi_Init/23 (Spi_Init) @0e32d620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: EcuM_Init/7 
+  Calls: 
+Port_Config/22 (Port_Config) @0e32c480
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: EcuM_Init/7 (addr) 
+  Availability: not_available
+  Varpool flags: read-only
+Port_Init/21 (Port_Init) @0e32d540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: EcuM_Init/7 
+  Calls: 
+Platform_Init/20 (Platform_Init) @0e32d460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: EcuM_Init/7 
+  Calls: 
+OsIf_Init/19 (OsIf_Init) @0e32d380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: EcuM_Init/7 
+  Calls: 
+Mcu_SetMode/18 (Mcu_SetMode) @0e32d2a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: EcuM_Init/7 
+  Calls: 
+Mcu_InitClock/17 (Mcu_InitClock) @0e32d1c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: EcuM_Init/7 
+  Calls: 
+Mcu_Config/16 (Mcu_Config) @0e32c2d0
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: EcuM_Init/7 (addr) 
+  Availability: not_available
+  Varpool flags: read-only
+Mcu_Init/15 (Mcu_Init) @0e32d0e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: EcuM_Init/7 
+  Calls: 
+SEGGER_RTT_printf/14 (SEGGER_RTT_printf) @0e326380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: main/6 main/6 main/6 main/6 
+  Calls: 
+Spi_SyncTransmit/13 (Spi_SyncTransmit) @0e326ee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: main/6 main/6 
+  Calls: 
+Spi_SetupEB/12 (Spi_SetupEB) @0e326e00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: main/6 main/6 main/6 main/6 main/6 main/6 main/6 
+  Calls: 
+SEGGER_RTT_Init/11 (SEGGER_RTT_Init) @0e326d20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: main/6 
+  Calls: 
+OsIf_GetElapsed/10 (OsIf_GetElapsed) @0e326b60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Delay/5 
+  Calls: 
+OsIf_GetCounter/9 (OsIf_GetCounter) @0e326a80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Delay/5 
+  Calls: 
+OsIf_MicrosToTicks/8 (OsIf_MicrosToTicks) @0e3269a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Delay/5 
+  Calls: 
+EcuM_Init/7 (EcuM_Init) @0e326540
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Mcu_Config/16 (addr) Port_Config/22 (addr) Spi_Config/24 (addr) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: main/6 
+  Calls: Spi_Init/23 Port_Init/21 Platform_Init/20 OsIf_Init/19 Mcu_SetMode/18 Mcu_InitClock/17 Mcu_Init/15 
+main/6 (main) @0e3262a0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Delay/5 SEGGER_RTT_printf/14 SEGGER_RTT_printf/14 SEGGER_RTT_printf/14 SEGGER_RTT_printf/14 Spi_SyncTransmit/13 Spi_SetupEB/12 Spi_SetupEB/12 Spi_SetupEB/12 Delay/5 Spi_SyncTransmit/13 Spi_SetupEB/12 Spi_SetupEB/12 Spi_SetupEB/12 Spi_SetupEB/12 SEGGER_RTT_Init/11 EcuM_Init/7 
+Delay/5 (Delay) @0e326000
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: main/6 main/6 
+  Calls: OsIf_GetElapsed/10 OsIf_GetCounter/9 OsIf_MicrosToTicks/8 
+EcuM_Init ()
+{
+  <bb 2> :
+  Mcu_Init (&Mcu_Config);
+  Mcu_InitClock (0);
+  Mcu_SetMode (0);
+  OsIf_Init (0B);
+  Platform_Init (0B);
+  Port_Init (&Port_Config);
+  Spi_Init (&Spi_Config);
+  return;
+
+}
+
+
+main ()
+{
+  uint16 Address;
+  uint8 Cmd;
+  uint8 Wren;
+  Spi_DataBufferType RxBuffer[4];
+  Spi_DataBufferType TxBuffer[4];
+  int D.7622;
+  unsigned char _1;
+  int _2;
+  unsigned char _3;
+  int _4;
+  unsigned char _5;
+  int _6;
+  unsigned char _7;
+  int _8;
+
+  <bb 2> :
+  TxBuffer = "\x00\x01\x02\x03";
+  EcuM_Init ();
+  SEGGER_RTT_Init ();
+  Wren = 6;
+  Spi_SetupEB (0, &Wren, 0B, 1);
+  Cmd = 2;
+  Address = 160;
+  Spi_SetupEB (1, &Cmd, 0B, 1);
+  Spi_SetupEB (2, &Address, 0B, 1);
+  Spi_SetupEB (3, &TxBuffer, 0B, 4);
+  Spi_SyncTransmit (0);
+  Delay (5);
+  Cmd = 3;
+  Address = 160;
+  Spi_SetupEB (1, &Cmd, 0B, 1);
+  Spi_SetupEB (2, &Address, 0B, 1);
+  Spi_SetupEB (3, 0B, &RxBuffer, 4);
+  Spi_SyncTransmit (1);
+  _1 = RxBuffer[0];
+  _2 = (int) _1;
+  SEGGER_RTT_printf (0, "Data read from eeprom 1 - RxBuffer[0]: 0x%x\n", _2);
+  _3 = RxBuffer[1];
+  _4 = (int) _3;
+  SEGGER_RTT_printf (0, "Data read from eeprom 1 - RxBuffer[1]: 0x%x\n", _4);
+  _5 = RxBuffer[2];
+  _6 = (int) _5;
+  SEGGER_RTT_printf (0, "Data read from eeprom 1 - RxBuffer[2]: 0x%x\n", _6);
+  _7 = RxBuffer[3];
+  _8 = (int) _7;
+  SEGGER_RTT_printf (0, "Data read from eeprom 1 - RxBuffer[3]: 0x%x\n", _8);
+
+  <bb 3> :
+  Delay (10);
+  goto <bb 3>; [INV]
+
+}
+
+
+Delay (uint32 ms)
+{
+  uint32 ElapsedTime;
+  uint32 SeedTick;
+  uint32 Timeout;
+  long unsigned int D.7621;
+  long unsigned int _1;
+  long unsigned int _2;
+  long unsigned int _13;
+
+  <bb 2> :
+  _1 = ms_5(D) * 1000;
+  Timeout_8 = OsIf_MicrosToTicks (_1, 1);
+  _2 = OsIf_GetCounter (1);
+  SeedTick = _2;
+  ElapsedTime_11 = 0;
+
+  <bb 3> :
+  # ElapsedTime_3 = PHI <ElapsedTime_11(2), ElapsedTime_14(3)>
+  _13 = OsIf_GetElapsed (&SeedTick, 1);
+  ElapsedTime_14 = _13 + ElapsedTime_3;
+  if (ElapsedTime_14 < Timeout_8)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 4> :
+  SeedTick ={v} {CLOBBER};
+  return;
+
+}
+
+

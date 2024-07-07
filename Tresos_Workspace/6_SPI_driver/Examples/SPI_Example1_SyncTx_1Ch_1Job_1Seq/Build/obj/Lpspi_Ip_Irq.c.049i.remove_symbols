@@ -1,0 +1,34 @@
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+Symbol table:
+
+Lpspi_Ip_IrqHandler/1 (Lpspi_Ip_IrqHandler) @0d970460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Lpspi_Ip_LPSPI_0_IRQHandler/0 
+  Calls: 
+Lpspi_Ip_LPSPI_0_IRQHandler/0 (Lpspi_Ip_LPSPI_0_IRQHandler) @0d970000
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Lpspi_Ip_IrqHandler/1 
+Lpspi_Ip_LPSPI_0_IRQHandler ()
+{
+  <bb 2> :
+  Lpspi_Ip_IrqHandler (0);
+  __asm__ __volatile__(" DSB");
+  return;
+
+}
+
+

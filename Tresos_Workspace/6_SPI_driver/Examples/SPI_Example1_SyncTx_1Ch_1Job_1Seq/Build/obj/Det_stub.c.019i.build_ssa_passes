@@ -1,0 +1,372 @@
+Det_TestNoTransientFault ()
+{
+  uint32 u32CoreId;
+  boolean result;
+  boolean D.5510;
+  int iftmp.5;
+
+  <bb 2> :
+  result = 0;
+  _1 = Sys_GetCoreID ();
+  u32CoreId = (uint32) _1;
+  _2 = Det_TransientModuleId[u32CoreId];
+  if (_2 != 0)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 3>; [INV]
+
+  <bb 3> :
+  _3 = Det_TransientInstanceId[u32CoreId];
+  if (_3 != 0)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 4> :
+  _4 = Det_TransientApiId[u32CoreId];
+  if (_4 != 0)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 5> :
+  _5 = Det_TransientFaultId[u32CoreId];
+  if (_5 != 0)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  iftmp.5 = 1;
+  goto <bb 8>; [INV]
+
+  <bb 7> :
+  iftmp.5 = 0;
+
+  <bb 8> :
+  result = (boolean) iftmp.5;
+  Det_TransientModuleId[u32CoreId] = 0;
+  Det_TransientInstanceId[u32CoreId] = 0;
+  Det_TransientApiId[u32CoreId] = 0;
+  Det_TransientFaultId[u32CoreId] = 0;
+  _6 = (int) result;
+  _7 = _6 != 0;
+  _8 = ~_7;
+  _9 = (int) _8;
+  D.5510 = (boolean) _9;
+
+  <bb 9> :
+<L6>:
+  return D.5510;
+
+}
+
+
+Det_TestNoRuntimeError ()
+{
+  uint32 u32CoreId;
+  boolean result;
+  boolean D.5501;
+  int iftmp.4;
+
+  <bb 2> :
+  result = 0;
+  _1 = Sys_GetCoreID ();
+  u32CoreId = (uint32) _1;
+  _2 = Det_RuntimeModuleId[u32CoreId];
+  if (_2 != 0)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 3>; [INV]
+
+  <bb 3> :
+  _3 = Det_RuntimeInstanceId[u32CoreId];
+  if (_3 != 0)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 4> :
+  _4 = Det_RuntimeApiId[u32CoreId];
+  if (_4 != 0)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 5> :
+  _5 = Det_RuntimeErrorId[u32CoreId];
+  if (_5 != 0)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  iftmp.4 = 1;
+  goto <bb 8>; [INV]
+
+  <bb 7> :
+  iftmp.4 = 0;
+
+  <bb 8> :
+  result = (boolean) iftmp.4;
+  Det_RuntimeModuleId[u32CoreId] = 0;
+  Det_RuntimeInstanceId[u32CoreId] = 0;
+  Det_RuntimeApiId[u32CoreId] = 0;
+  Det_RuntimeErrorId[u32CoreId] = 0;
+  _6 = (int) result;
+  _7 = _6 != 0;
+  _8 = ~_7;
+  _9 = (int) _8;
+  D.5501 = (boolean) _9;
+
+  <bb 9> :
+<L6>:
+  return D.5501;
+
+}
+
+
+Det_TestNoError ()
+{
+  uint32 u32CoreId;
+  boolean result;
+  boolean D.5492;
+  int iftmp.3;
+
+  <bb 2> :
+  result = 0;
+  _1 = Sys_GetCoreID ();
+  u32CoreId = (uint32) _1;
+  _2 = Det_ModuleId[u32CoreId];
+  if (_2 != 0)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 3>; [INV]
+
+  <bb 3> :
+  _3 = Det_InstanceId[u32CoreId];
+  if (_3 != 0)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 4> :
+  _4 = Det_ApiId[u32CoreId];
+  if (_4 != 0)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 5> :
+  _5 = Det_ErrorId[u32CoreId];
+  if (_5 != 0)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  iftmp.3 = 1;
+  goto <bb 8>; [INV]
+
+  <bb 7> :
+  iftmp.3 = 0;
+
+  <bb 8> :
+  result = (boolean) iftmp.3;
+  Det_ModuleId[u32CoreId] = 0;
+  Det_InstanceId[u32CoreId] = 0;
+  Det_ApiId[u32CoreId] = 0;
+  Det_ErrorId[u32CoreId] = 0;
+  _6 = (int) result;
+  _7 = _6 != 0;
+  _8 = ~_7;
+  _9 = (int) _8;
+  D.5492 = (boolean) _9;
+
+  <bb 9> :
+<L6>:
+  return D.5492;
+
+}
+
+
+Det_TestLastReportTransientFault (uint16 ModuleId, uint8 InstanceId, uint8 ApiId, uint8 FaultId)
+{
+  uint32 u32CoreId;
+  boolean result;
+  boolean D.5483;
+  int iftmp.2;
+
+  <bb 2> :
+  result = 0;
+  _1 = Sys_GetCoreID ();
+  u32CoreId = (uint32) _1;
+  _2 = Det_TransientModuleId[u32CoreId];
+  if (ModuleId == _2)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 3> :
+  _3 = Det_TransientInstanceId[u32CoreId];
+  if (InstanceId == _3)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 4> :
+  _4 = Det_TransientApiId[u32CoreId];
+  if (ApiId == _4)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 5> :
+  _5 = Det_TransientFaultId[u32CoreId];
+  if (FaultId == _5)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  iftmp.2 = 1;
+  goto <bb 8>; [INV]
+
+  <bb 7> :
+  iftmp.2 = 0;
+
+  <bb 8> :
+  result = (boolean) iftmp.2;
+  Det_TransientModuleId[u32CoreId] = 0;
+  Det_TransientInstanceId[u32CoreId] = 0;
+  Det_TransientApiId[u32CoreId] = 0;
+  Det_TransientFaultId[u32CoreId] = 0;
+  D.5483 = result;
+
+  <bb 9> :
+<L6>:
+  return D.5483;
+
+}
+
+
+Det_TestLastReportRuntimeError (uint16 ModuleId, uint8 InstanceId, uint8 ApiId, uint8 ErrorId)
+{
+  uint32 u32CoreId;
+  boolean result;
+  boolean D.5474;
+  int iftmp.1;
+
+  <bb 2> :
+  result = 0;
+  _1 = Sys_GetCoreID ();
+  u32CoreId = (uint32) _1;
+  _2 = Det_RuntimeModuleId[u32CoreId];
+  if (ModuleId == _2)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 3> :
+  _3 = Det_RuntimeInstanceId[u32CoreId];
+  if (InstanceId == _3)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 4> :
+  _4 = Det_RuntimeApiId[u32CoreId];
+  if (ApiId == _4)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 5> :
+  _5 = Det_RuntimeErrorId[u32CoreId];
+  if (ErrorId == _5)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  iftmp.1 = 1;
+  goto <bb 8>; [INV]
+
+  <bb 7> :
+  iftmp.1 = 0;
+
+  <bb 8> :
+  result = (boolean) iftmp.1;
+  Det_RuntimeModuleId[u32CoreId] = 0;
+  Det_RuntimeInstanceId[u32CoreId] = 0;
+  Det_RuntimeApiId[u32CoreId] = 0;
+  Det_RuntimeErrorId[u32CoreId] = 0;
+  D.5474 = result;
+
+  <bb 9> :
+<L6>:
+  return D.5474;
+
+}
+
+
+Det_TestLastReportError (uint16 ModuleId, uint8 InstanceId, uint8 ApiId, uint8 ErrorId)
+{
+  uint32 u32CoreId;
+  boolean result;
+  boolean D.5465;
+  int iftmp.0;
+
+  <bb 2> :
+  result = 0;
+  _1 = Sys_GetCoreID ();
+  u32CoreId = (uint32) _1;
+  _2 = Det_ModuleId[u32CoreId];
+  if (ModuleId == _2)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 3> :
+  _3 = Det_InstanceId[u32CoreId];
+  if (InstanceId == _3)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 4> :
+  _4 = Det_ApiId[u32CoreId];
+  if (ApiId == _4)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 5> :
+  _5 = Det_ErrorId[u32CoreId];
+  if (ErrorId == _5)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  iftmp.0 = 1;
+  goto <bb 8>; [INV]
+
+  <bb 7> :
+  iftmp.0 = 0;
+
+  <bb 8> :
+  result = (boolean) iftmp.0;
+  Det_ModuleId[u32CoreId] = 0;
+  Det_InstanceId[u32CoreId] = 0;
+  Det_ApiId[u32CoreId] = 0;
+  Det_ErrorId[u32CoreId] = 0;
+  D.5465 = result;
+
+  <bb 9> :
+<L6>:
+  return D.5465;
+
+}
+
+

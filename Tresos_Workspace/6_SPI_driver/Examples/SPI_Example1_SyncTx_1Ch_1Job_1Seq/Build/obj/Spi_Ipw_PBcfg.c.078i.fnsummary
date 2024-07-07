@@ -1,0 +1,46 @@
+Symbol table:
+
+Lpspi_Ip_PhyUnitConfig_SpiPhyUnit_0/5 (Lpspi_Ip_PhyUnitConfig_SpiPhyUnit_0) @0da6ce58
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: Spi_HwUnitConfig_SpiPhyUnit_0/2 (addr) 
+  Availability: not_available
+  Varpool flags: read-only
+Lpspi_Ip_DeviceAttributes_SpiExternalDevice_0/4 (Lpspi_Ip_DeviceAttributes_SpiExternalDevice_0) @0da6ce10
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: Spi_ExternalDeviceConfig_SpiExternalDevice_0/0 (addr) 
+  Availability: not_available
+  Varpool flags: read-only
+Spi_aHwUnitConfigList/3 (Spi_aHwUnitConfigList) @0da6ccf0
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Spi_HwUnitConfig_SpiPhyUnit_0/2 (addr) 
+  Referring: 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+Spi_HwUnitConfig_SpiPhyUnit_0/2 (Spi_HwUnitConfig_SpiPhyUnit_0) @0da6cca8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: Lpspi_Ip_PhyUnitConfig_SpiPhyUnit_0/5 (addr) 
+  Referring: Spi_aHwUnitConfigList/3 (addr) 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+Spi_aExternalDeviceConfigList/1 (Spi_aExternalDeviceConfigList) @0da6cbd0
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Spi_ExternalDeviceConfig_SpiExternalDevice_0/0 (addr) 
+  Referring: 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+Spi_ExternalDeviceConfig_SpiExternalDevice_0/0 (Spi_ExternalDeviceConfig_SpiExternalDevice_0) @0da6cb88
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: Lpspi_Ip_DeviceAttributes_SpiExternalDevice_0/4 (addr) 
+  Referring: Spi_aExternalDeviceConfigList/1 (addr) 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
