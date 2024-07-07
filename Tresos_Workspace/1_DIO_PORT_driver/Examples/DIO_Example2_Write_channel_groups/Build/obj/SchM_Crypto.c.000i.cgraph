@@ -1,0 +1,1847 @@
+Trivially needed symbols: SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_12/36 SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_12/35 SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_11/34 SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_11/33 SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_10/32 SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_10/31 SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_05/30 SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_05/29 SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_04/28 SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_04/27 SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_03/26 SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_03/25 SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_02/24 SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_02/23 SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_01/22 SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_01/21 SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_00/20 SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_00/19 Crypto_schm_read_msr/18 reentry_guard_CRYPTO_EXCLUSIVE_AREA_12/17 msr_CRYPTO_EXCLUSIVE_AREA_12/16 reentry_guard_CRYPTO_EXCLUSIVE_AREA_11/15 msr_CRYPTO_EXCLUSIVE_AREA_11/14 reentry_guard_CRYPTO_EXCLUSIVE_AREA_10/13 msr_CRYPTO_EXCLUSIVE_AREA_10/12 reentry_guard_CRYPTO_EXCLUSIVE_AREA_05/11 msr_CRYPTO_EXCLUSIVE_AREA_05/10 reentry_guard_CRYPTO_EXCLUSIVE_AREA_04/9 msr_CRYPTO_EXCLUSIVE_AREA_04/8 reentry_guard_CRYPTO_EXCLUSIVE_AREA_03/7 msr_CRYPTO_EXCLUSIVE_AREA_03/6 reentry_guard_CRYPTO_EXCLUSIVE_AREA_02/5 msr_CRYPTO_EXCLUSIVE_AREA_02/4 reentry_guard_CRYPTO_EXCLUSIVE_AREA_01/3 msr_CRYPTO_EXCLUSIVE_AREA_01/2 reentry_guard_CRYPTO_EXCLUSIVE_AREA_00/1 msr_CRYPTO_EXCLUSIVE_AREA_00/0
+
+
+Initial Symbol table:
+
+Sys_GetCoreID/37 (Sys_GetCoreID) @0da012a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_12/36 SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_12/35 SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_11/34 SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_11/33 SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_10/32 SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_10/31 SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_05/30 SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_05/29 SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_04/28 SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_04/27 SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_03/26 SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_03/25 SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_02/24 SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_02/23 SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_01/22 SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_01/21 SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_00/20 SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_00/19 
+  Calls: 
+SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_12/36 (SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_12) @0d9fb700
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @01981040
+  References: reentry_guard_CRYPTO_EXCLUSIVE_AREA_12/17 (read) reentry_guard_CRYPTO_EXCLUSIVE_AREA_12/17 (write) msr_CRYPTO_EXCLUSIVE_AREA_12/16 (read) reentry_guard_CRYPTO_EXCLUSIVE_AREA_12/17 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Sys_GetCoreID/37 
+SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_12/35 (SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_12) @0d9fb0e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0d9fb700
+  References: reentry_guard_CRYPTO_EXCLUSIVE_AREA_12/17 (read) msr_CRYPTO_EXCLUSIVE_AREA_12/16 (write) reentry_guard_CRYPTO_EXCLUSIVE_AREA_12/17 (read) reentry_guard_CRYPTO_EXCLUSIVE_AREA_12/17 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Crypto_schm_read_msr/18 Sys_GetCoreID/37 
+SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_11/34 (SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_11) @0d9fbc40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0d9fb0e0
+  References: reentry_guard_CRYPTO_EXCLUSIVE_AREA_11/15 (read) reentry_guard_CRYPTO_EXCLUSIVE_AREA_11/15 (write) msr_CRYPTO_EXCLUSIVE_AREA_11/14 (read) reentry_guard_CRYPTO_EXCLUSIVE_AREA_11/15 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Sys_GetCoreID/37 
+SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_11/33 (SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_11) @0d9fb9a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0d9fbc40
+  References: reentry_guard_CRYPTO_EXCLUSIVE_AREA_11/15 (read) msr_CRYPTO_EXCLUSIVE_AREA_11/14 (write) reentry_guard_CRYPTO_EXCLUSIVE_AREA_11/15 (read) reentry_guard_CRYPTO_EXCLUSIVE_AREA_11/15 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Crypto_schm_read_msr/18 Sys_GetCoreID/37 
+SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_10/32 (SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_10) @0d9fb620
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0d9fb9a0
+  References: reentry_guard_CRYPTO_EXCLUSIVE_AREA_10/13 (read) reentry_guard_CRYPTO_EXCLUSIVE_AREA_10/13 (write) msr_CRYPTO_EXCLUSIVE_AREA_10/12 (read) reentry_guard_CRYPTO_EXCLUSIVE_AREA_10/13 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Sys_GetCoreID/37 
+SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_10/31 (SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_10) @0d9fb380
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0d9fb620
+  References: reentry_guard_CRYPTO_EXCLUSIVE_AREA_10/13 (read) msr_CRYPTO_EXCLUSIVE_AREA_10/12 (write) reentry_guard_CRYPTO_EXCLUSIVE_AREA_10/13 (read) reentry_guard_CRYPTO_EXCLUSIVE_AREA_10/13 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Crypto_schm_read_msr/18 Sys_GetCoreID/37 
+SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_05/30 (SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_05) @0d9fb000
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0d9fb380
+  References: reentry_guard_CRYPTO_EXCLUSIVE_AREA_05/11 (read) reentry_guard_CRYPTO_EXCLUSIVE_AREA_05/11 (write) msr_CRYPTO_EXCLUSIVE_AREA_05/10 (read) reentry_guard_CRYPTO_EXCLUSIVE_AREA_05/11 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Sys_GetCoreID/37 
+SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_05/29 (SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_05) @0da3ea80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0d9fb000
+  References: reentry_guard_CRYPTO_EXCLUSIVE_AREA_05/11 (read) msr_CRYPTO_EXCLUSIVE_AREA_05/10 (write) reentry_guard_CRYPTO_EXCLUSIVE_AREA_05/11 (read) reentry_guard_CRYPTO_EXCLUSIVE_AREA_05/11 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Crypto_schm_read_msr/18 Sys_GetCoreID/37 
+SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_04/28 (SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_04) @0da3e1c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0da3ea80
+  References: reentry_guard_CRYPTO_EXCLUSIVE_AREA_04/9 (read) reentry_guard_CRYPTO_EXCLUSIVE_AREA_04/9 (write) msr_CRYPTO_EXCLUSIVE_AREA_04/8 (read) reentry_guard_CRYPTO_EXCLUSIVE_AREA_04/9 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Sys_GetCoreID/37 
+SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_04/27 (SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_04) @0da3ed20
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0da3e1c0
+  References: reentry_guard_CRYPTO_EXCLUSIVE_AREA_04/9 (read) msr_CRYPTO_EXCLUSIVE_AREA_04/8 (write) reentry_guard_CRYPTO_EXCLUSIVE_AREA_04/9 (read) reentry_guard_CRYPTO_EXCLUSIVE_AREA_04/9 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Crypto_schm_read_msr/18 Sys_GetCoreID/37 
+SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_03/26 (SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_03) @0da3e9a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0da3ed20
+  References: reentry_guard_CRYPTO_EXCLUSIVE_AREA_03/7 (read) reentry_guard_CRYPTO_EXCLUSIVE_AREA_03/7 (write) msr_CRYPTO_EXCLUSIVE_AREA_03/6 (read) reentry_guard_CRYPTO_EXCLUSIVE_AREA_03/7 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Sys_GetCoreID/37 
+SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_03/25 (SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_03) @0da3e700
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0da3e9a0
+  References: reentry_guard_CRYPTO_EXCLUSIVE_AREA_03/7 (read) msr_CRYPTO_EXCLUSIVE_AREA_03/6 (write) reentry_guard_CRYPTO_EXCLUSIVE_AREA_03/7 (read) reentry_guard_CRYPTO_EXCLUSIVE_AREA_03/7 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Crypto_schm_read_msr/18 Sys_GetCoreID/37 
+SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_02/24 (SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_02) @0da3e380
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0da3e700
+  References: reentry_guard_CRYPTO_EXCLUSIVE_AREA_02/5 (read) reentry_guard_CRYPTO_EXCLUSIVE_AREA_02/5 (write) msr_CRYPTO_EXCLUSIVE_AREA_02/4 (read) reentry_guard_CRYPTO_EXCLUSIVE_AREA_02/5 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Sys_GetCoreID/37 
+SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_02/23 (SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_02) @0da3e0e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0da3e380
+  References: reentry_guard_CRYPTO_EXCLUSIVE_AREA_02/5 (read) msr_CRYPTO_EXCLUSIVE_AREA_02/4 (write) reentry_guard_CRYPTO_EXCLUSIVE_AREA_02/5 (read) reentry_guard_CRYPTO_EXCLUSIVE_AREA_02/5 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Crypto_schm_read_msr/18 Sys_GetCoreID/37 
+SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_01/22 (SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_01) @0da39a80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0da3e0e0
+  References: reentry_guard_CRYPTO_EXCLUSIVE_AREA_01/3 (read) reentry_guard_CRYPTO_EXCLUSIVE_AREA_01/3 (write) msr_CRYPTO_EXCLUSIVE_AREA_01/2 (read) reentry_guard_CRYPTO_EXCLUSIVE_AREA_01/3 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Sys_GetCoreID/37 
+SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_01/21 (SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_01) @0da39460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0da39a80
+  References: reentry_guard_CRYPTO_EXCLUSIVE_AREA_01/3 (read) msr_CRYPTO_EXCLUSIVE_AREA_01/2 (write) reentry_guard_CRYPTO_EXCLUSIVE_AREA_01/3 (read) reentry_guard_CRYPTO_EXCLUSIVE_AREA_01/3 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Crypto_schm_read_msr/18 Sys_GetCoreID/37 
+SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_00/20 (SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_00) @0da39c40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0da39460
+  References: reentry_guard_CRYPTO_EXCLUSIVE_AREA_00/1 (read) reentry_guard_CRYPTO_EXCLUSIVE_AREA_00/1 (write) msr_CRYPTO_EXCLUSIVE_AREA_00/0 (read) reentry_guard_CRYPTO_EXCLUSIVE_AREA_00/1 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Sys_GetCoreID/37 
+SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_00/19 (SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_00) @0da399a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0da39c40
+  References: reentry_guard_CRYPTO_EXCLUSIVE_AREA_00/1 (read) msr_CRYPTO_EXCLUSIVE_AREA_00/0 (write) reentry_guard_CRYPTO_EXCLUSIVE_AREA_00/1 (read) reentry_guard_CRYPTO_EXCLUSIVE_AREA_00/1 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Crypto_schm_read_msr/18 Sys_GetCoreID/37 
+Crypto_schm_read_msr/18 (Crypto_schm_read_msr) @0da39620
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0da399a0
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_12/35 SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_11/33 SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_10/31 SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_05/29 SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_04/27 SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_03/25 SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_02/23 SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_01/21 SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_00/19 
+  Calls: 
+reentry_guard_CRYPTO_EXCLUSIVE_AREA_12/17 (reentry_guard_CRYPTO_EXCLUSIVE_AREA_12) @0da35f30
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @0da39620
+  References: 
+  Referring: SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_12/35 (read) SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_12/35 (read) SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_12/35 (write) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_12/36 (read) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_12/36 (write) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_12/36 (read) 
+  Availability: not-ready
+  Varpool flags:
+msr_CRYPTO_EXCLUSIVE_AREA_12/16 (msr_CRYPTO_EXCLUSIVE_AREA_12) @0da35ea0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @0da35f30
+  References: 
+  Referring: SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_12/35 (write) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_12/36 (read) 
+  Availability: not-ready
+  Varpool flags:
+reentry_guard_CRYPTO_EXCLUSIVE_AREA_11/15 (reentry_guard_CRYPTO_EXCLUSIVE_AREA_11) @0da35e10
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @0da35ea0
+  References: 
+  Referring: SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_11/33 (read) SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_11/33 (read) SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_11/33 (write) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_11/34 (read) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_11/34 (write) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_11/34 (read) 
+  Availability: not-ready
+  Varpool flags:
+msr_CRYPTO_EXCLUSIVE_AREA_11/14 (msr_CRYPTO_EXCLUSIVE_AREA_11) @0da35d80
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @0da35e10
+  References: 
+  Referring: SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_11/33 (write) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_11/34 (read) 
+  Availability: not-ready
+  Varpool flags:
+reentry_guard_CRYPTO_EXCLUSIVE_AREA_10/13 (reentry_guard_CRYPTO_EXCLUSIVE_AREA_10) @0da35cf0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @0da35d80
+  References: 
+  Referring: SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_10/31 (read) SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_10/31 (read) SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_10/31 (write) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_10/32 (read) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_10/32 (write) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_10/32 (read) 
+  Availability: not-ready
+  Varpool flags:
+msr_CRYPTO_EXCLUSIVE_AREA_10/12 (msr_CRYPTO_EXCLUSIVE_AREA_10) @0da35c60
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @0da35cf0
+  References: 
+  Referring: SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_10/31 (write) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_10/32 (read) 
+  Availability: not-ready
+  Varpool flags:
+reentry_guard_CRYPTO_EXCLUSIVE_AREA_05/11 (reentry_guard_CRYPTO_EXCLUSIVE_AREA_05) @0da35bd0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @0da35c60
+  References: 
+  Referring: SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_05/29 (read) SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_05/29 (read) SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_05/29 (write) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_05/30 (read) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_05/30 (write) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_05/30 (read) 
+  Availability: not-ready
+  Varpool flags:
+msr_CRYPTO_EXCLUSIVE_AREA_05/10 (msr_CRYPTO_EXCLUSIVE_AREA_05) @0da35b40
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @0da35bd0
+  References: 
+  Referring: SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_05/29 (write) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_05/30 (read) 
+  Availability: not-ready
+  Varpool flags:
+reentry_guard_CRYPTO_EXCLUSIVE_AREA_04/9 (reentry_guard_CRYPTO_EXCLUSIVE_AREA_04) @0da35ab0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @0da35b40
+  References: 
+  Referring: SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_04/27 (read) SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_04/27 (read) SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_04/27 (write) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_04/28 (read) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_04/28 (write) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_04/28 (read) 
+  Availability: not-ready
+  Varpool flags:
+msr_CRYPTO_EXCLUSIVE_AREA_04/8 (msr_CRYPTO_EXCLUSIVE_AREA_04) @0da35a20
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @0da35ab0
+  References: 
+  Referring: SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_04/27 (write) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_04/28 (read) 
+  Availability: not-ready
+  Varpool flags:
+reentry_guard_CRYPTO_EXCLUSIVE_AREA_03/7 (reentry_guard_CRYPTO_EXCLUSIVE_AREA_03) @0da35990
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @0da35a20
+  References: 
+  Referring: SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_03/25 (read) SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_03/25 (read) SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_03/25 (write) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_03/26 (read) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_03/26 (write) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_03/26 (read) 
+  Availability: not-ready
+  Varpool flags:
+msr_CRYPTO_EXCLUSIVE_AREA_03/6 (msr_CRYPTO_EXCLUSIVE_AREA_03) @0da35900
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @0da35990
+  References: 
+  Referring: SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_03/25 (write) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_03/26 (read) 
+  Availability: not-ready
+  Varpool flags:
+reentry_guard_CRYPTO_EXCLUSIVE_AREA_02/5 (reentry_guard_CRYPTO_EXCLUSIVE_AREA_02) @0da35870
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @0da35900
+  References: 
+  Referring: SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_02/23 (read) SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_02/23 (read) SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_02/23 (write) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_02/24 (read) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_02/24 (write) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_02/24 (read) 
+  Availability: not-ready
+  Varpool flags:
+msr_CRYPTO_EXCLUSIVE_AREA_02/4 (msr_CRYPTO_EXCLUSIVE_AREA_02) @0da357e0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @0da35870
+  References: 
+  Referring: SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_02/23 (write) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_02/24 (read) 
+  Availability: not-ready
+  Varpool flags:
+reentry_guard_CRYPTO_EXCLUSIVE_AREA_01/3 (reentry_guard_CRYPTO_EXCLUSIVE_AREA_01) @0da35750
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @0da357e0
+  References: 
+  Referring: SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_01/21 (read) SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_01/21 (read) SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_01/21 (write) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_01/22 (read) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_01/22 (write) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_01/22 (read) 
+  Availability: not-ready
+  Varpool flags:
+msr_CRYPTO_EXCLUSIVE_AREA_01/2 (msr_CRYPTO_EXCLUSIVE_AREA_01) @0da356c0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @0da35750
+  References: 
+  Referring: SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_01/21 (write) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_01/22 (read) 
+  Availability: not-ready
+  Varpool flags:
+reentry_guard_CRYPTO_EXCLUSIVE_AREA_00/1 (reentry_guard_CRYPTO_EXCLUSIVE_AREA_00) @0da35630
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @0da356c0
+  References: 
+  Referring: SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_00/19 (read) SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_00/19 (read) SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_00/19 (write) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_00/20 (read) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_00/20 (write) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_00/20 (read) 
+  Availability: not-ready
+  Varpool flags:
+msr_CRYPTO_EXCLUSIVE_AREA_00/0 (msr_CRYPTO_EXCLUSIVE_AREA_00) @0da355a0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @0da35630
+  References: 
+  Referring: SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_00/19 (write) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_00/20 (read) 
+  Availability: not-ready
+  Varpool flags:
+
+Removing unused symbols:
+
+Reclaimed Symbol table:
+
+Sys_GetCoreID/37 (Sys_GetCoreID) @0da012a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_12/36 SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_12/35 SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_11/34 SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_11/33 SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_10/32 SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_10/31 SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_05/30 SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_05/29 SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_04/28 SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_04/27 SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_03/26 SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_03/25 SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_02/24 SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_02/23 SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_01/22 SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_01/21 SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_00/20 SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_00/19 
+  Calls: 
+SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_12/36 (SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_12) @0d9fb700
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: reentry_guard_CRYPTO_EXCLUSIVE_AREA_12/17 (read) reentry_guard_CRYPTO_EXCLUSIVE_AREA_12/17 (write) msr_CRYPTO_EXCLUSIVE_AREA_12/16 (read) reentry_guard_CRYPTO_EXCLUSIVE_AREA_12/17 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Sys_GetCoreID/37 
+SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_12/35 (SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_12) @0d9fb0e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: reentry_guard_CRYPTO_EXCLUSIVE_AREA_12/17 (read) msr_CRYPTO_EXCLUSIVE_AREA_12/16 (write) reentry_guard_CRYPTO_EXCLUSIVE_AREA_12/17 (read) reentry_guard_CRYPTO_EXCLUSIVE_AREA_12/17 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Crypto_schm_read_msr/18 Sys_GetCoreID/37 
+SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_11/34 (SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_11) @0d9fbc40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: reentry_guard_CRYPTO_EXCLUSIVE_AREA_11/15 (read) reentry_guard_CRYPTO_EXCLUSIVE_AREA_11/15 (write) msr_CRYPTO_EXCLUSIVE_AREA_11/14 (read) reentry_guard_CRYPTO_EXCLUSIVE_AREA_11/15 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Sys_GetCoreID/37 
+SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_11/33 (SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_11) @0d9fb9a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: reentry_guard_CRYPTO_EXCLUSIVE_AREA_11/15 (read) msr_CRYPTO_EXCLUSIVE_AREA_11/14 (write) reentry_guard_CRYPTO_EXCLUSIVE_AREA_11/15 (read) reentry_guard_CRYPTO_EXCLUSIVE_AREA_11/15 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Crypto_schm_read_msr/18 Sys_GetCoreID/37 
+SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_10/32 (SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_10) @0d9fb620
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: reentry_guard_CRYPTO_EXCLUSIVE_AREA_10/13 (read) reentry_guard_CRYPTO_EXCLUSIVE_AREA_10/13 (write) msr_CRYPTO_EXCLUSIVE_AREA_10/12 (read) reentry_guard_CRYPTO_EXCLUSIVE_AREA_10/13 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Sys_GetCoreID/37 
+SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_10/31 (SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_10) @0d9fb380
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: reentry_guard_CRYPTO_EXCLUSIVE_AREA_10/13 (read) msr_CRYPTO_EXCLUSIVE_AREA_10/12 (write) reentry_guard_CRYPTO_EXCLUSIVE_AREA_10/13 (read) reentry_guard_CRYPTO_EXCLUSIVE_AREA_10/13 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Crypto_schm_read_msr/18 Sys_GetCoreID/37 
+SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_05/30 (SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_05) @0d9fb000
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: reentry_guard_CRYPTO_EXCLUSIVE_AREA_05/11 (read) reentry_guard_CRYPTO_EXCLUSIVE_AREA_05/11 (write) msr_CRYPTO_EXCLUSIVE_AREA_05/10 (read) reentry_guard_CRYPTO_EXCLUSIVE_AREA_05/11 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Sys_GetCoreID/37 
+SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_05/29 (SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_05) @0da3ea80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: reentry_guard_CRYPTO_EXCLUSIVE_AREA_05/11 (read) msr_CRYPTO_EXCLUSIVE_AREA_05/10 (write) reentry_guard_CRYPTO_EXCLUSIVE_AREA_05/11 (read) reentry_guard_CRYPTO_EXCLUSIVE_AREA_05/11 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Crypto_schm_read_msr/18 Sys_GetCoreID/37 
+SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_04/28 (SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_04) @0da3e1c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: reentry_guard_CRYPTO_EXCLUSIVE_AREA_04/9 (read) reentry_guard_CRYPTO_EXCLUSIVE_AREA_04/9 (write) msr_CRYPTO_EXCLUSIVE_AREA_04/8 (read) reentry_guard_CRYPTO_EXCLUSIVE_AREA_04/9 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Sys_GetCoreID/37 
+SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_04/27 (SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_04) @0da3ed20
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: reentry_guard_CRYPTO_EXCLUSIVE_AREA_04/9 (read) msr_CRYPTO_EXCLUSIVE_AREA_04/8 (write) reentry_guard_CRYPTO_EXCLUSIVE_AREA_04/9 (read) reentry_guard_CRYPTO_EXCLUSIVE_AREA_04/9 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Crypto_schm_read_msr/18 Sys_GetCoreID/37 
+SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_03/26 (SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_03) @0da3e9a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: reentry_guard_CRYPTO_EXCLUSIVE_AREA_03/7 (read) reentry_guard_CRYPTO_EXCLUSIVE_AREA_03/7 (write) msr_CRYPTO_EXCLUSIVE_AREA_03/6 (read) reentry_guard_CRYPTO_EXCLUSIVE_AREA_03/7 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Sys_GetCoreID/37 
+SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_03/25 (SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_03) @0da3e700
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: reentry_guard_CRYPTO_EXCLUSIVE_AREA_03/7 (read) msr_CRYPTO_EXCLUSIVE_AREA_03/6 (write) reentry_guard_CRYPTO_EXCLUSIVE_AREA_03/7 (read) reentry_guard_CRYPTO_EXCLUSIVE_AREA_03/7 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Crypto_schm_read_msr/18 Sys_GetCoreID/37 
+SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_02/24 (SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_02) @0da3e380
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: reentry_guard_CRYPTO_EXCLUSIVE_AREA_02/5 (read) reentry_guard_CRYPTO_EXCLUSIVE_AREA_02/5 (write) msr_CRYPTO_EXCLUSIVE_AREA_02/4 (read) reentry_guard_CRYPTO_EXCLUSIVE_AREA_02/5 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Sys_GetCoreID/37 
+SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_02/23 (SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_02) @0da3e0e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: reentry_guard_CRYPTO_EXCLUSIVE_AREA_02/5 (read) msr_CRYPTO_EXCLUSIVE_AREA_02/4 (write) reentry_guard_CRYPTO_EXCLUSIVE_AREA_02/5 (read) reentry_guard_CRYPTO_EXCLUSIVE_AREA_02/5 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Crypto_schm_read_msr/18 Sys_GetCoreID/37 
+SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_01/22 (SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_01) @0da39a80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: reentry_guard_CRYPTO_EXCLUSIVE_AREA_01/3 (read) reentry_guard_CRYPTO_EXCLUSIVE_AREA_01/3 (write) msr_CRYPTO_EXCLUSIVE_AREA_01/2 (read) reentry_guard_CRYPTO_EXCLUSIVE_AREA_01/3 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Sys_GetCoreID/37 
+SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_01/21 (SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_01) @0da39460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: reentry_guard_CRYPTO_EXCLUSIVE_AREA_01/3 (read) msr_CRYPTO_EXCLUSIVE_AREA_01/2 (write) reentry_guard_CRYPTO_EXCLUSIVE_AREA_01/3 (read) reentry_guard_CRYPTO_EXCLUSIVE_AREA_01/3 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Crypto_schm_read_msr/18 Sys_GetCoreID/37 
+SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_00/20 (SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_00) @0da39c40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: reentry_guard_CRYPTO_EXCLUSIVE_AREA_00/1 (read) reentry_guard_CRYPTO_EXCLUSIVE_AREA_00/1 (write) msr_CRYPTO_EXCLUSIVE_AREA_00/0 (read) reentry_guard_CRYPTO_EXCLUSIVE_AREA_00/1 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Sys_GetCoreID/37 
+SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_00/19 (SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_00) @0da399a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: reentry_guard_CRYPTO_EXCLUSIVE_AREA_00/1 (read) msr_CRYPTO_EXCLUSIVE_AREA_00/0 (write) reentry_guard_CRYPTO_EXCLUSIVE_AREA_00/1 (read) reentry_guard_CRYPTO_EXCLUSIVE_AREA_00/1 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Crypto_schm_read_msr/18 Sys_GetCoreID/37 
+Crypto_schm_read_msr/18 (Crypto_schm_read_msr) @0da39620
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_12/35 SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_11/33 SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_10/31 SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_05/29 SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_04/27 SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_03/25 SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_02/23 SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_01/21 SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_00/19 
+  Calls: 
+reentry_guard_CRYPTO_EXCLUSIVE_AREA_12/17 (reentry_guard_CRYPTO_EXCLUSIVE_AREA_12) @0da35f30
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_12/35 (read) SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_12/35 (read) SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_12/35 (write) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_12/36 (read) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_12/36 (write) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_12/36 (read) 
+  Availability: not-ready
+  Varpool flags:
+msr_CRYPTO_EXCLUSIVE_AREA_12/16 (msr_CRYPTO_EXCLUSIVE_AREA_12) @0da35ea0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_12/35 (write) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_12/36 (read) 
+  Availability: not-ready
+  Varpool flags:
+reentry_guard_CRYPTO_EXCLUSIVE_AREA_11/15 (reentry_guard_CRYPTO_EXCLUSIVE_AREA_11) @0da35e10
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_11/33 (read) SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_11/33 (read) SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_11/33 (write) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_11/34 (read) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_11/34 (write) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_11/34 (read) 
+  Availability: not-ready
+  Varpool flags:
+msr_CRYPTO_EXCLUSIVE_AREA_11/14 (msr_CRYPTO_EXCLUSIVE_AREA_11) @0da35d80
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_11/33 (write) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_11/34 (read) 
+  Availability: not-ready
+  Varpool flags:
+reentry_guard_CRYPTO_EXCLUSIVE_AREA_10/13 (reentry_guard_CRYPTO_EXCLUSIVE_AREA_10) @0da35cf0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_10/31 (read) SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_10/31 (read) SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_10/31 (write) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_10/32 (read) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_10/32 (write) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_10/32 (read) 
+  Availability: not-ready
+  Varpool flags:
+msr_CRYPTO_EXCLUSIVE_AREA_10/12 (msr_CRYPTO_EXCLUSIVE_AREA_10) @0da35c60
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_10/31 (write) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_10/32 (read) 
+  Availability: not-ready
+  Varpool flags:
+reentry_guard_CRYPTO_EXCLUSIVE_AREA_05/11 (reentry_guard_CRYPTO_EXCLUSIVE_AREA_05) @0da35bd0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_05/29 (read) SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_05/29 (read) SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_05/29 (write) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_05/30 (read) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_05/30 (write) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_05/30 (read) 
+  Availability: not-ready
+  Varpool flags:
+msr_CRYPTO_EXCLUSIVE_AREA_05/10 (msr_CRYPTO_EXCLUSIVE_AREA_05) @0da35b40
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_05/29 (write) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_05/30 (read) 
+  Availability: not-ready
+  Varpool flags:
+reentry_guard_CRYPTO_EXCLUSIVE_AREA_04/9 (reentry_guard_CRYPTO_EXCLUSIVE_AREA_04) @0da35ab0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_04/27 (read) SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_04/27 (read) SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_04/27 (write) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_04/28 (read) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_04/28 (write) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_04/28 (read) 
+  Availability: not-ready
+  Varpool flags:
+msr_CRYPTO_EXCLUSIVE_AREA_04/8 (msr_CRYPTO_EXCLUSIVE_AREA_04) @0da35a20
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_04/27 (write) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_04/28 (read) 
+  Availability: not-ready
+  Varpool flags:
+reentry_guard_CRYPTO_EXCLUSIVE_AREA_03/7 (reentry_guard_CRYPTO_EXCLUSIVE_AREA_03) @0da35990
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_03/25 (read) SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_03/25 (read) SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_03/25 (write) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_03/26 (read) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_03/26 (write) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_03/26 (read) 
+  Availability: not-ready
+  Varpool flags:
+msr_CRYPTO_EXCLUSIVE_AREA_03/6 (msr_CRYPTO_EXCLUSIVE_AREA_03) @0da35900
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_03/25 (write) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_03/26 (read) 
+  Availability: not-ready
+  Varpool flags:
+reentry_guard_CRYPTO_EXCLUSIVE_AREA_02/5 (reentry_guard_CRYPTO_EXCLUSIVE_AREA_02) @0da35870
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_02/23 (read) SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_02/23 (read) SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_02/23 (write) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_02/24 (read) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_02/24 (write) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_02/24 (read) 
+  Availability: not-ready
+  Varpool flags:
+msr_CRYPTO_EXCLUSIVE_AREA_02/4 (msr_CRYPTO_EXCLUSIVE_AREA_02) @0da357e0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_02/23 (write) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_02/24 (read) 
+  Availability: not-ready
+  Varpool flags:
+reentry_guard_CRYPTO_EXCLUSIVE_AREA_01/3 (reentry_guard_CRYPTO_EXCLUSIVE_AREA_01) @0da35750
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_01/21 (read) SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_01/21 (read) SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_01/21 (write) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_01/22 (read) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_01/22 (write) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_01/22 (read) 
+  Availability: not-ready
+  Varpool flags:
+msr_CRYPTO_EXCLUSIVE_AREA_01/2 (msr_CRYPTO_EXCLUSIVE_AREA_01) @0da356c0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_01/21 (write) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_01/22 (read) 
+  Availability: not-ready
+  Varpool flags:
+reentry_guard_CRYPTO_EXCLUSIVE_AREA_00/1 (reentry_guard_CRYPTO_EXCLUSIVE_AREA_00) @0da35630
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_00/19 (read) SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_00/19 (read) SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_00/19 (write) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_00/20 (read) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_00/20 (write) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_00/20 (read) 
+  Availability: not-ready
+  Varpool flags:
+msr_CRYPTO_EXCLUSIVE_AREA_00/0 (msr_CRYPTO_EXCLUSIVE_AREA_00) @0da355a0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_00/19 (write) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_00/20 (read) 
+  Availability: not-ready
+  Varpool flags:
+
+
+Initial Symbol table:
+
+Sys_GetCoreID/37 (Sys_GetCoreID) @0da012a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_12/36 SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_12/35 SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_11/34 SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_11/33 SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_10/32 SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_10/31 SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_05/30 SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_05/29 SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_04/28 SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_04/27 SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_03/26 SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_03/25 SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_02/24 SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_02/23 SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_01/22 SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_01/21 SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_00/20 SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_00/19 
+  Calls: 
+SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_12/36 (SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_12) @0d9fb700
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: reentry_guard_CRYPTO_EXCLUSIVE_AREA_12/17 (read) reentry_guard_CRYPTO_EXCLUSIVE_AREA_12/17 (write) msr_CRYPTO_EXCLUSIVE_AREA_12/16 (read) reentry_guard_CRYPTO_EXCLUSIVE_AREA_12/17 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Sys_GetCoreID/37 
+SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_12/35 (SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_12) @0d9fb0e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: reentry_guard_CRYPTO_EXCLUSIVE_AREA_12/17 (read) msr_CRYPTO_EXCLUSIVE_AREA_12/16 (write) reentry_guard_CRYPTO_EXCLUSIVE_AREA_12/17 (read) reentry_guard_CRYPTO_EXCLUSIVE_AREA_12/17 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Crypto_schm_read_msr/18 Sys_GetCoreID/37 
+SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_11/34 (SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_11) @0d9fbc40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: reentry_guard_CRYPTO_EXCLUSIVE_AREA_11/15 (read) reentry_guard_CRYPTO_EXCLUSIVE_AREA_11/15 (write) msr_CRYPTO_EXCLUSIVE_AREA_11/14 (read) reentry_guard_CRYPTO_EXCLUSIVE_AREA_11/15 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Sys_GetCoreID/37 
+SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_11/33 (SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_11) @0d9fb9a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: reentry_guard_CRYPTO_EXCLUSIVE_AREA_11/15 (read) msr_CRYPTO_EXCLUSIVE_AREA_11/14 (write) reentry_guard_CRYPTO_EXCLUSIVE_AREA_11/15 (read) reentry_guard_CRYPTO_EXCLUSIVE_AREA_11/15 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Crypto_schm_read_msr/18 Sys_GetCoreID/37 
+SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_10/32 (SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_10) @0d9fb620
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: reentry_guard_CRYPTO_EXCLUSIVE_AREA_10/13 (read) reentry_guard_CRYPTO_EXCLUSIVE_AREA_10/13 (write) msr_CRYPTO_EXCLUSIVE_AREA_10/12 (read) reentry_guard_CRYPTO_EXCLUSIVE_AREA_10/13 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Sys_GetCoreID/37 
+SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_10/31 (SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_10) @0d9fb380
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: reentry_guard_CRYPTO_EXCLUSIVE_AREA_10/13 (read) msr_CRYPTO_EXCLUSIVE_AREA_10/12 (write) reentry_guard_CRYPTO_EXCLUSIVE_AREA_10/13 (read) reentry_guard_CRYPTO_EXCLUSIVE_AREA_10/13 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Crypto_schm_read_msr/18 Sys_GetCoreID/37 
+SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_05/30 (SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_05) @0d9fb000
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: reentry_guard_CRYPTO_EXCLUSIVE_AREA_05/11 (read) reentry_guard_CRYPTO_EXCLUSIVE_AREA_05/11 (write) msr_CRYPTO_EXCLUSIVE_AREA_05/10 (read) reentry_guard_CRYPTO_EXCLUSIVE_AREA_05/11 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Sys_GetCoreID/37 
+SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_05/29 (SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_05) @0da3ea80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: reentry_guard_CRYPTO_EXCLUSIVE_AREA_05/11 (read) msr_CRYPTO_EXCLUSIVE_AREA_05/10 (write) reentry_guard_CRYPTO_EXCLUSIVE_AREA_05/11 (read) reentry_guard_CRYPTO_EXCLUSIVE_AREA_05/11 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Crypto_schm_read_msr/18 Sys_GetCoreID/37 
+SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_04/28 (SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_04) @0da3e1c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: reentry_guard_CRYPTO_EXCLUSIVE_AREA_04/9 (read) reentry_guard_CRYPTO_EXCLUSIVE_AREA_04/9 (write) msr_CRYPTO_EXCLUSIVE_AREA_04/8 (read) reentry_guard_CRYPTO_EXCLUSIVE_AREA_04/9 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Sys_GetCoreID/37 
+SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_04/27 (SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_04) @0da3ed20
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: reentry_guard_CRYPTO_EXCLUSIVE_AREA_04/9 (read) msr_CRYPTO_EXCLUSIVE_AREA_04/8 (write) reentry_guard_CRYPTO_EXCLUSIVE_AREA_04/9 (read) reentry_guard_CRYPTO_EXCLUSIVE_AREA_04/9 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Crypto_schm_read_msr/18 Sys_GetCoreID/37 
+SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_03/26 (SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_03) @0da3e9a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: reentry_guard_CRYPTO_EXCLUSIVE_AREA_03/7 (read) reentry_guard_CRYPTO_EXCLUSIVE_AREA_03/7 (write) msr_CRYPTO_EXCLUSIVE_AREA_03/6 (read) reentry_guard_CRYPTO_EXCLUSIVE_AREA_03/7 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Sys_GetCoreID/37 
+SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_03/25 (SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_03) @0da3e700
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: reentry_guard_CRYPTO_EXCLUSIVE_AREA_03/7 (read) msr_CRYPTO_EXCLUSIVE_AREA_03/6 (write) reentry_guard_CRYPTO_EXCLUSIVE_AREA_03/7 (read) reentry_guard_CRYPTO_EXCLUSIVE_AREA_03/7 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Crypto_schm_read_msr/18 Sys_GetCoreID/37 
+SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_02/24 (SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_02) @0da3e380
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: reentry_guard_CRYPTO_EXCLUSIVE_AREA_02/5 (read) reentry_guard_CRYPTO_EXCLUSIVE_AREA_02/5 (write) msr_CRYPTO_EXCLUSIVE_AREA_02/4 (read) reentry_guard_CRYPTO_EXCLUSIVE_AREA_02/5 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Sys_GetCoreID/37 
+SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_02/23 (SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_02) @0da3e0e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: reentry_guard_CRYPTO_EXCLUSIVE_AREA_02/5 (read) msr_CRYPTO_EXCLUSIVE_AREA_02/4 (write) reentry_guard_CRYPTO_EXCLUSIVE_AREA_02/5 (read) reentry_guard_CRYPTO_EXCLUSIVE_AREA_02/5 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Crypto_schm_read_msr/18 Sys_GetCoreID/37 
+SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_01/22 (SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_01) @0da39a80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: reentry_guard_CRYPTO_EXCLUSIVE_AREA_01/3 (read) reentry_guard_CRYPTO_EXCLUSIVE_AREA_01/3 (write) msr_CRYPTO_EXCLUSIVE_AREA_01/2 (read) reentry_guard_CRYPTO_EXCLUSIVE_AREA_01/3 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Sys_GetCoreID/37 
+SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_01/21 (SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_01) @0da39460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: reentry_guard_CRYPTO_EXCLUSIVE_AREA_01/3 (read) msr_CRYPTO_EXCLUSIVE_AREA_01/2 (write) reentry_guard_CRYPTO_EXCLUSIVE_AREA_01/3 (read) reentry_guard_CRYPTO_EXCLUSIVE_AREA_01/3 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Crypto_schm_read_msr/18 Sys_GetCoreID/37 
+SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_00/20 (SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_00) @0da39c40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: reentry_guard_CRYPTO_EXCLUSIVE_AREA_00/1 (read) reentry_guard_CRYPTO_EXCLUSIVE_AREA_00/1 (write) msr_CRYPTO_EXCLUSIVE_AREA_00/0 (read) reentry_guard_CRYPTO_EXCLUSIVE_AREA_00/1 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Sys_GetCoreID/37 
+SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_00/19 (SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_00) @0da399a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: reentry_guard_CRYPTO_EXCLUSIVE_AREA_00/1 (read) msr_CRYPTO_EXCLUSIVE_AREA_00/0 (write) reentry_guard_CRYPTO_EXCLUSIVE_AREA_00/1 (read) reentry_guard_CRYPTO_EXCLUSIVE_AREA_00/1 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Crypto_schm_read_msr/18 Sys_GetCoreID/37 
+Crypto_schm_read_msr/18 (Crypto_schm_read_msr) @0da39620
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_12/35 SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_11/33 SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_10/31 SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_05/29 SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_04/27 SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_03/25 SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_02/23 SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_01/21 SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_00/19 
+  Calls: 
+reentry_guard_CRYPTO_EXCLUSIVE_AREA_12/17 (reentry_guard_CRYPTO_EXCLUSIVE_AREA_12) @0da35f30
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_12/35 (read) SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_12/35 (read) SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_12/35 (write) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_12/36 (read) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_12/36 (write) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_12/36 (read) 
+  Availability: not-ready
+  Varpool flags:
+msr_CRYPTO_EXCLUSIVE_AREA_12/16 (msr_CRYPTO_EXCLUSIVE_AREA_12) @0da35ea0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_12/35 (write) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_12/36 (read) 
+  Availability: not-ready
+  Varpool flags:
+reentry_guard_CRYPTO_EXCLUSIVE_AREA_11/15 (reentry_guard_CRYPTO_EXCLUSIVE_AREA_11) @0da35e10
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_11/33 (read) SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_11/33 (read) SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_11/33 (write) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_11/34 (read) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_11/34 (write) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_11/34 (read) 
+  Availability: not-ready
+  Varpool flags:
+msr_CRYPTO_EXCLUSIVE_AREA_11/14 (msr_CRYPTO_EXCLUSIVE_AREA_11) @0da35d80
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_11/33 (write) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_11/34 (read) 
+  Availability: not-ready
+  Varpool flags:
+reentry_guard_CRYPTO_EXCLUSIVE_AREA_10/13 (reentry_guard_CRYPTO_EXCLUSIVE_AREA_10) @0da35cf0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_10/31 (read) SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_10/31 (read) SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_10/31 (write) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_10/32 (read) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_10/32 (write) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_10/32 (read) 
+  Availability: not-ready
+  Varpool flags:
+msr_CRYPTO_EXCLUSIVE_AREA_10/12 (msr_CRYPTO_EXCLUSIVE_AREA_10) @0da35c60
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_10/31 (write) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_10/32 (read) 
+  Availability: not-ready
+  Varpool flags:
+reentry_guard_CRYPTO_EXCLUSIVE_AREA_05/11 (reentry_guard_CRYPTO_EXCLUSIVE_AREA_05) @0da35bd0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_05/29 (read) SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_05/29 (read) SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_05/29 (write) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_05/30 (read) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_05/30 (write) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_05/30 (read) 
+  Availability: not-ready
+  Varpool flags:
+msr_CRYPTO_EXCLUSIVE_AREA_05/10 (msr_CRYPTO_EXCLUSIVE_AREA_05) @0da35b40
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_05/29 (write) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_05/30 (read) 
+  Availability: not-ready
+  Varpool flags:
+reentry_guard_CRYPTO_EXCLUSIVE_AREA_04/9 (reentry_guard_CRYPTO_EXCLUSIVE_AREA_04) @0da35ab0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_04/27 (read) SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_04/27 (read) SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_04/27 (write) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_04/28 (read) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_04/28 (write) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_04/28 (read) 
+  Availability: not-ready
+  Varpool flags:
+msr_CRYPTO_EXCLUSIVE_AREA_04/8 (msr_CRYPTO_EXCLUSIVE_AREA_04) @0da35a20
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_04/27 (write) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_04/28 (read) 
+  Availability: not-ready
+  Varpool flags:
+reentry_guard_CRYPTO_EXCLUSIVE_AREA_03/7 (reentry_guard_CRYPTO_EXCLUSIVE_AREA_03) @0da35990
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_03/25 (read) SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_03/25 (read) SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_03/25 (write) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_03/26 (read) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_03/26 (write) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_03/26 (read) 
+  Availability: not-ready
+  Varpool flags:
+msr_CRYPTO_EXCLUSIVE_AREA_03/6 (msr_CRYPTO_EXCLUSIVE_AREA_03) @0da35900
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_03/25 (write) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_03/26 (read) 
+  Availability: not-ready
+  Varpool flags:
+reentry_guard_CRYPTO_EXCLUSIVE_AREA_02/5 (reentry_guard_CRYPTO_EXCLUSIVE_AREA_02) @0da35870
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_02/23 (read) SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_02/23 (read) SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_02/23 (write) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_02/24 (read) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_02/24 (write) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_02/24 (read) 
+  Availability: not-ready
+  Varpool flags:
+msr_CRYPTO_EXCLUSIVE_AREA_02/4 (msr_CRYPTO_EXCLUSIVE_AREA_02) @0da357e0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_02/23 (write) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_02/24 (read) 
+  Availability: not-ready
+  Varpool flags:
+reentry_guard_CRYPTO_EXCLUSIVE_AREA_01/3 (reentry_guard_CRYPTO_EXCLUSIVE_AREA_01) @0da35750
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_01/21 (read) SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_01/21 (read) SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_01/21 (write) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_01/22 (read) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_01/22 (write) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_01/22 (read) 
+  Availability: not-ready
+  Varpool flags:
+msr_CRYPTO_EXCLUSIVE_AREA_01/2 (msr_CRYPTO_EXCLUSIVE_AREA_01) @0da356c0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_01/21 (write) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_01/22 (read) 
+  Availability: not-ready
+  Varpool flags:
+reentry_guard_CRYPTO_EXCLUSIVE_AREA_00/1 (reentry_guard_CRYPTO_EXCLUSIVE_AREA_00) @0da35630
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_00/19 (read) SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_00/19 (read) SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_00/19 (write) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_00/20 (read) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_00/20 (write) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_00/20 (read) 
+  Availability: not-ready
+  Varpool flags:
+msr_CRYPTO_EXCLUSIVE_AREA_00/0 (msr_CRYPTO_EXCLUSIVE_AREA_00) @0da355a0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_00/19 (write) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_00/20 (read) 
+  Availability: not-ready
+  Varpool flags:
+
+Removing unused symbols:
+
+Reclaimed Symbol table:
+
+Sys_GetCoreID/37 (Sys_GetCoreID) @0da012a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_12/36 SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_12/35 SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_11/34 SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_11/33 SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_10/32 SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_10/31 SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_05/30 SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_05/29 SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_04/28 SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_04/27 SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_03/26 SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_03/25 SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_02/24 SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_02/23 SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_01/22 SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_01/21 SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_00/20 SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_00/19 
+  Calls: 
+SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_12/36 (SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_12) @0d9fb700
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: reentry_guard_CRYPTO_EXCLUSIVE_AREA_12/17 (read) reentry_guard_CRYPTO_EXCLUSIVE_AREA_12/17 (write) msr_CRYPTO_EXCLUSIVE_AREA_12/16 (read) reentry_guard_CRYPTO_EXCLUSIVE_AREA_12/17 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Sys_GetCoreID/37 
+SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_12/35 (SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_12) @0d9fb0e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: reentry_guard_CRYPTO_EXCLUSIVE_AREA_12/17 (read) msr_CRYPTO_EXCLUSIVE_AREA_12/16 (write) reentry_guard_CRYPTO_EXCLUSIVE_AREA_12/17 (read) reentry_guard_CRYPTO_EXCLUSIVE_AREA_12/17 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Crypto_schm_read_msr/18 Sys_GetCoreID/37 
+SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_11/34 (SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_11) @0d9fbc40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: reentry_guard_CRYPTO_EXCLUSIVE_AREA_11/15 (read) reentry_guard_CRYPTO_EXCLUSIVE_AREA_11/15 (write) msr_CRYPTO_EXCLUSIVE_AREA_11/14 (read) reentry_guard_CRYPTO_EXCLUSIVE_AREA_11/15 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Sys_GetCoreID/37 
+SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_11/33 (SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_11) @0d9fb9a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: reentry_guard_CRYPTO_EXCLUSIVE_AREA_11/15 (read) msr_CRYPTO_EXCLUSIVE_AREA_11/14 (write) reentry_guard_CRYPTO_EXCLUSIVE_AREA_11/15 (read) reentry_guard_CRYPTO_EXCLUSIVE_AREA_11/15 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Crypto_schm_read_msr/18 Sys_GetCoreID/37 
+SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_10/32 (SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_10) @0d9fb620
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: reentry_guard_CRYPTO_EXCLUSIVE_AREA_10/13 (read) reentry_guard_CRYPTO_EXCLUSIVE_AREA_10/13 (write) msr_CRYPTO_EXCLUSIVE_AREA_10/12 (read) reentry_guard_CRYPTO_EXCLUSIVE_AREA_10/13 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Sys_GetCoreID/37 
+SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_10/31 (SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_10) @0d9fb380
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: reentry_guard_CRYPTO_EXCLUSIVE_AREA_10/13 (read) msr_CRYPTO_EXCLUSIVE_AREA_10/12 (write) reentry_guard_CRYPTO_EXCLUSIVE_AREA_10/13 (read) reentry_guard_CRYPTO_EXCLUSIVE_AREA_10/13 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Crypto_schm_read_msr/18 Sys_GetCoreID/37 
+SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_05/30 (SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_05) @0d9fb000
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: reentry_guard_CRYPTO_EXCLUSIVE_AREA_05/11 (read) reentry_guard_CRYPTO_EXCLUSIVE_AREA_05/11 (write) msr_CRYPTO_EXCLUSIVE_AREA_05/10 (read) reentry_guard_CRYPTO_EXCLUSIVE_AREA_05/11 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Sys_GetCoreID/37 
+SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_05/29 (SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_05) @0da3ea80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: reentry_guard_CRYPTO_EXCLUSIVE_AREA_05/11 (read) msr_CRYPTO_EXCLUSIVE_AREA_05/10 (write) reentry_guard_CRYPTO_EXCLUSIVE_AREA_05/11 (read) reentry_guard_CRYPTO_EXCLUSIVE_AREA_05/11 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Crypto_schm_read_msr/18 Sys_GetCoreID/37 
+SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_04/28 (SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_04) @0da3e1c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: reentry_guard_CRYPTO_EXCLUSIVE_AREA_04/9 (read) reentry_guard_CRYPTO_EXCLUSIVE_AREA_04/9 (write) msr_CRYPTO_EXCLUSIVE_AREA_04/8 (read) reentry_guard_CRYPTO_EXCLUSIVE_AREA_04/9 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Sys_GetCoreID/37 
+SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_04/27 (SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_04) @0da3ed20
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: reentry_guard_CRYPTO_EXCLUSIVE_AREA_04/9 (read) msr_CRYPTO_EXCLUSIVE_AREA_04/8 (write) reentry_guard_CRYPTO_EXCLUSIVE_AREA_04/9 (read) reentry_guard_CRYPTO_EXCLUSIVE_AREA_04/9 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Crypto_schm_read_msr/18 Sys_GetCoreID/37 
+SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_03/26 (SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_03) @0da3e9a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: reentry_guard_CRYPTO_EXCLUSIVE_AREA_03/7 (read) reentry_guard_CRYPTO_EXCLUSIVE_AREA_03/7 (write) msr_CRYPTO_EXCLUSIVE_AREA_03/6 (read) reentry_guard_CRYPTO_EXCLUSIVE_AREA_03/7 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Sys_GetCoreID/37 
+SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_03/25 (SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_03) @0da3e700
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: reentry_guard_CRYPTO_EXCLUSIVE_AREA_03/7 (read) msr_CRYPTO_EXCLUSIVE_AREA_03/6 (write) reentry_guard_CRYPTO_EXCLUSIVE_AREA_03/7 (read) reentry_guard_CRYPTO_EXCLUSIVE_AREA_03/7 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Crypto_schm_read_msr/18 Sys_GetCoreID/37 
+SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_02/24 (SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_02) @0da3e380
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: reentry_guard_CRYPTO_EXCLUSIVE_AREA_02/5 (read) reentry_guard_CRYPTO_EXCLUSIVE_AREA_02/5 (write) msr_CRYPTO_EXCLUSIVE_AREA_02/4 (read) reentry_guard_CRYPTO_EXCLUSIVE_AREA_02/5 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Sys_GetCoreID/37 
+SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_02/23 (SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_02) @0da3e0e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: reentry_guard_CRYPTO_EXCLUSIVE_AREA_02/5 (read) msr_CRYPTO_EXCLUSIVE_AREA_02/4 (write) reentry_guard_CRYPTO_EXCLUSIVE_AREA_02/5 (read) reentry_guard_CRYPTO_EXCLUSIVE_AREA_02/5 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Crypto_schm_read_msr/18 Sys_GetCoreID/37 
+SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_01/22 (SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_01) @0da39a80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: reentry_guard_CRYPTO_EXCLUSIVE_AREA_01/3 (read) reentry_guard_CRYPTO_EXCLUSIVE_AREA_01/3 (write) msr_CRYPTO_EXCLUSIVE_AREA_01/2 (read) reentry_guard_CRYPTO_EXCLUSIVE_AREA_01/3 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Sys_GetCoreID/37 
+SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_01/21 (SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_01) @0da39460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: reentry_guard_CRYPTO_EXCLUSIVE_AREA_01/3 (read) msr_CRYPTO_EXCLUSIVE_AREA_01/2 (write) reentry_guard_CRYPTO_EXCLUSIVE_AREA_01/3 (read) reentry_guard_CRYPTO_EXCLUSIVE_AREA_01/3 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Crypto_schm_read_msr/18 Sys_GetCoreID/37 
+SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_00/20 (SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_00) @0da39c40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: reentry_guard_CRYPTO_EXCLUSIVE_AREA_00/1 (read) reentry_guard_CRYPTO_EXCLUSIVE_AREA_00/1 (write) msr_CRYPTO_EXCLUSIVE_AREA_00/0 (read) reentry_guard_CRYPTO_EXCLUSIVE_AREA_00/1 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Sys_GetCoreID/37 
+SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_00/19 (SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_00) @0da399a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: reentry_guard_CRYPTO_EXCLUSIVE_AREA_00/1 (read) msr_CRYPTO_EXCLUSIVE_AREA_00/0 (write) reentry_guard_CRYPTO_EXCLUSIVE_AREA_00/1 (read) reentry_guard_CRYPTO_EXCLUSIVE_AREA_00/1 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Crypto_schm_read_msr/18 Sys_GetCoreID/37 
+Crypto_schm_read_msr/18 (Crypto_schm_read_msr) @0da39620
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_12/35 SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_11/33 SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_10/31 SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_05/29 SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_04/27 SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_03/25 SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_02/23 SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_01/21 SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_00/19 
+  Calls: 
+reentry_guard_CRYPTO_EXCLUSIVE_AREA_12/17 (reentry_guard_CRYPTO_EXCLUSIVE_AREA_12) @0da35f30
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_12/35 (read) SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_12/35 (read) SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_12/35 (write) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_12/36 (read) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_12/36 (write) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_12/36 (read) 
+  Availability: not-ready
+  Varpool flags:
+msr_CRYPTO_EXCLUSIVE_AREA_12/16 (msr_CRYPTO_EXCLUSIVE_AREA_12) @0da35ea0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_12/35 (write) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_12/36 (read) 
+  Availability: not-ready
+  Varpool flags:
+reentry_guard_CRYPTO_EXCLUSIVE_AREA_11/15 (reentry_guard_CRYPTO_EXCLUSIVE_AREA_11) @0da35e10
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_11/33 (read) SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_11/33 (read) SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_11/33 (write) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_11/34 (read) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_11/34 (write) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_11/34 (read) 
+  Availability: not-ready
+  Varpool flags:
+msr_CRYPTO_EXCLUSIVE_AREA_11/14 (msr_CRYPTO_EXCLUSIVE_AREA_11) @0da35d80
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_11/33 (write) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_11/34 (read) 
+  Availability: not-ready
+  Varpool flags:
+reentry_guard_CRYPTO_EXCLUSIVE_AREA_10/13 (reentry_guard_CRYPTO_EXCLUSIVE_AREA_10) @0da35cf0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_10/31 (read) SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_10/31 (read) SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_10/31 (write) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_10/32 (read) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_10/32 (write) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_10/32 (read) 
+  Availability: not-ready
+  Varpool flags:
+msr_CRYPTO_EXCLUSIVE_AREA_10/12 (msr_CRYPTO_EXCLUSIVE_AREA_10) @0da35c60
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_10/31 (write) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_10/32 (read) 
+  Availability: not-ready
+  Varpool flags:
+reentry_guard_CRYPTO_EXCLUSIVE_AREA_05/11 (reentry_guard_CRYPTO_EXCLUSIVE_AREA_05) @0da35bd0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_05/29 (read) SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_05/29 (read) SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_05/29 (write) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_05/30 (read) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_05/30 (write) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_05/30 (read) 
+  Availability: not-ready
+  Varpool flags:
+msr_CRYPTO_EXCLUSIVE_AREA_05/10 (msr_CRYPTO_EXCLUSIVE_AREA_05) @0da35b40
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_05/29 (write) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_05/30 (read) 
+  Availability: not-ready
+  Varpool flags:
+reentry_guard_CRYPTO_EXCLUSIVE_AREA_04/9 (reentry_guard_CRYPTO_EXCLUSIVE_AREA_04) @0da35ab0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_04/27 (read) SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_04/27 (read) SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_04/27 (write) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_04/28 (read) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_04/28 (write) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_04/28 (read) 
+  Availability: not-ready
+  Varpool flags:
+msr_CRYPTO_EXCLUSIVE_AREA_04/8 (msr_CRYPTO_EXCLUSIVE_AREA_04) @0da35a20
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_04/27 (write) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_04/28 (read) 
+  Availability: not-ready
+  Varpool flags:
+reentry_guard_CRYPTO_EXCLUSIVE_AREA_03/7 (reentry_guard_CRYPTO_EXCLUSIVE_AREA_03) @0da35990
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_03/25 (read) SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_03/25 (read) SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_03/25 (write) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_03/26 (read) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_03/26 (write) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_03/26 (read) 
+  Availability: not-ready
+  Varpool flags:
+msr_CRYPTO_EXCLUSIVE_AREA_03/6 (msr_CRYPTO_EXCLUSIVE_AREA_03) @0da35900
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_03/25 (write) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_03/26 (read) 
+  Availability: not-ready
+  Varpool flags:
+reentry_guard_CRYPTO_EXCLUSIVE_AREA_02/5 (reentry_guard_CRYPTO_EXCLUSIVE_AREA_02) @0da35870
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_02/23 (read) SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_02/23 (read) SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_02/23 (write) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_02/24 (read) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_02/24 (write) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_02/24 (read) 
+  Availability: not-ready
+  Varpool flags:
+msr_CRYPTO_EXCLUSIVE_AREA_02/4 (msr_CRYPTO_EXCLUSIVE_AREA_02) @0da357e0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_02/23 (write) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_02/24 (read) 
+  Availability: not-ready
+  Varpool flags:
+reentry_guard_CRYPTO_EXCLUSIVE_AREA_01/3 (reentry_guard_CRYPTO_EXCLUSIVE_AREA_01) @0da35750
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_01/21 (read) SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_01/21 (read) SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_01/21 (write) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_01/22 (read) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_01/22 (write) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_01/22 (read) 
+  Availability: not-ready
+  Varpool flags:
+msr_CRYPTO_EXCLUSIVE_AREA_01/2 (msr_CRYPTO_EXCLUSIVE_AREA_01) @0da356c0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_01/21 (write) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_01/22 (read) 
+  Availability: not-ready
+  Varpool flags:
+reentry_guard_CRYPTO_EXCLUSIVE_AREA_00/1 (reentry_guard_CRYPTO_EXCLUSIVE_AREA_00) @0da35630
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_00/19 (read) SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_00/19 (read) SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_00/19 (write) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_00/20 (read) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_00/20 (write) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_00/20 (read) 
+  Availability: not-ready
+  Varpool flags:
+msr_CRYPTO_EXCLUSIVE_AREA_00/0 (msr_CRYPTO_EXCLUSIVE_AREA_00) @0da355a0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_00/19 (write) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_00/20 (read) 
+  Availability: not-ready
+  Varpool flags:
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+Optimized Symbol table:
+
+Sys_GetCoreID/37 (Sys_GetCoreID) @0da012a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_12/36 SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_12/35 SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_11/34 SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_11/33 SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_10/32 SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_10/31 SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_05/30 SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_05/29 SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_04/28 SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_04/27 SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_03/26 SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_03/25 SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_02/24 SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_02/23 SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_01/22 SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_01/21 SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_00/20 SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_00/19 
+  Calls: 
+SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_12/36 (SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_12) @0d9fb700
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: reentry_guard_CRYPTO_EXCLUSIVE_AREA_12/17 (read) reentry_guard_CRYPTO_EXCLUSIVE_AREA_12/17 (write) msr_CRYPTO_EXCLUSIVE_AREA_12/16 (read) reentry_guard_CRYPTO_EXCLUSIVE_AREA_12/17 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Sys_GetCoreID/37 
+SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_12/35 (SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_12) @0d9fb0e0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: reentry_guard_CRYPTO_EXCLUSIVE_AREA_12/17 (read) msr_CRYPTO_EXCLUSIVE_AREA_12/16 (write) reentry_guard_CRYPTO_EXCLUSIVE_AREA_12/17 (read) reentry_guard_CRYPTO_EXCLUSIVE_AREA_12/17 (write) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Crypto_schm_read_msr/18 Sys_GetCoreID/37 
+SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_11/34 (SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_11) @0d9fbc40
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: reentry_guard_CRYPTO_EXCLUSIVE_AREA_11/15 (read) reentry_guard_CRYPTO_EXCLUSIVE_AREA_11/15 (write) msr_CRYPTO_EXCLUSIVE_AREA_11/14 (read) reentry_guard_CRYPTO_EXCLUSIVE_AREA_11/15 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Sys_GetCoreID/37 
+SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_11/33 (SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_11) @0d9fb9a0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: reentry_guard_CRYPTO_EXCLUSIVE_AREA_11/15 (read) msr_CRYPTO_EXCLUSIVE_AREA_11/14 (write) reentry_guard_CRYPTO_EXCLUSIVE_AREA_11/15 (read) reentry_guard_CRYPTO_EXCLUSIVE_AREA_11/15 (write) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Crypto_schm_read_msr/18 Sys_GetCoreID/37 
+SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_10/32 (SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_10) @0d9fb620
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: reentry_guard_CRYPTO_EXCLUSIVE_AREA_10/13 (read) reentry_guard_CRYPTO_EXCLUSIVE_AREA_10/13 (write) msr_CRYPTO_EXCLUSIVE_AREA_10/12 (read) reentry_guard_CRYPTO_EXCLUSIVE_AREA_10/13 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Sys_GetCoreID/37 
+SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_10/31 (SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_10) @0d9fb380
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: reentry_guard_CRYPTO_EXCLUSIVE_AREA_10/13 (read) msr_CRYPTO_EXCLUSIVE_AREA_10/12 (write) reentry_guard_CRYPTO_EXCLUSIVE_AREA_10/13 (read) reentry_guard_CRYPTO_EXCLUSIVE_AREA_10/13 (write) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Crypto_schm_read_msr/18 Sys_GetCoreID/37 
+SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_05/30 (SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_05) @0d9fb000
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: reentry_guard_CRYPTO_EXCLUSIVE_AREA_05/11 (read) reentry_guard_CRYPTO_EXCLUSIVE_AREA_05/11 (write) msr_CRYPTO_EXCLUSIVE_AREA_05/10 (read) reentry_guard_CRYPTO_EXCLUSIVE_AREA_05/11 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Sys_GetCoreID/37 
+SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_05/29 (SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_05) @0da3ea80
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: reentry_guard_CRYPTO_EXCLUSIVE_AREA_05/11 (read) msr_CRYPTO_EXCLUSIVE_AREA_05/10 (write) reentry_guard_CRYPTO_EXCLUSIVE_AREA_05/11 (read) reentry_guard_CRYPTO_EXCLUSIVE_AREA_05/11 (write) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Crypto_schm_read_msr/18 Sys_GetCoreID/37 
+SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_04/28 (SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_04) @0da3e1c0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: reentry_guard_CRYPTO_EXCLUSIVE_AREA_04/9 (read) reentry_guard_CRYPTO_EXCLUSIVE_AREA_04/9 (write) msr_CRYPTO_EXCLUSIVE_AREA_04/8 (read) reentry_guard_CRYPTO_EXCLUSIVE_AREA_04/9 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Sys_GetCoreID/37 
+SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_04/27 (SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_04) @0da3ed20
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: reentry_guard_CRYPTO_EXCLUSIVE_AREA_04/9 (read) msr_CRYPTO_EXCLUSIVE_AREA_04/8 (write) reentry_guard_CRYPTO_EXCLUSIVE_AREA_04/9 (read) reentry_guard_CRYPTO_EXCLUSIVE_AREA_04/9 (write) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Crypto_schm_read_msr/18 Sys_GetCoreID/37 
+SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_03/26 (SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_03) @0da3e9a0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: reentry_guard_CRYPTO_EXCLUSIVE_AREA_03/7 (read) reentry_guard_CRYPTO_EXCLUSIVE_AREA_03/7 (write) msr_CRYPTO_EXCLUSIVE_AREA_03/6 (read) reentry_guard_CRYPTO_EXCLUSIVE_AREA_03/7 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Sys_GetCoreID/37 
+SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_03/25 (SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_03) @0da3e700
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: reentry_guard_CRYPTO_EXCLUSIVE_AREA_03/7 (read) msr_CRYPTO_EXCLUSIVE_AREA_03/6 (write) reentry_guard_CRYPTO_EXCLUSIVE_AREA_03/7 (read) reentry_guard_CRYPTO_EXCLUSIVE_AREA_03/7 (write) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Crypto_schm_read_msr/18 Sys_GetCoreID/37 
+SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_02/24 (SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_02) @0da3e380
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: reentry_guard_CRYPTO_EXCLUSIVE_AREA_02/5 (read) reentry_guard_CRYPTO_EXCLUSIVE_AREA_02/5 (write) msr_CRYPTO_EXCLUSIVE_AREA_02/4 (read) reentry_guard_CRYPTO_EXCLUSIVE_AREA_02/5 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Sys_GetCoreID/37 
+SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_02/23 (SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_02) @0da3e0e0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: reentry_guard_CRYPTO_EXCLUSIVE_AREA_02/5 (read) msr_CRYPTO_EXCLUSIVE_AREA_02/4 (write) reentry_guard_CRYPTO_EXCLUSIVE_AREA_02/5 (read) reentry_guard_CRYPTO_EXCLUSIVE_AREA_02/5 (write) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Crypto_schm_read_msr/18 Sys_GetCoreID/37 
+SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_01/22 (SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_01) @0da39a80
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: reentry_guard_CRYPTO_EXCLUSIVE_AREA_01/3 (read) reentry_guard_CRYPTO_EXCLUSIVE_AREA_01/3 (write) msr_CRYPTO_EXCLUSIVE_AREA_01/2 (read) reentry_guard_CRYPTO_EXCLUSIVE_AREA_01/3 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Sys_GetCoreID/37 
+SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_01/21 (SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_01) @0da39460
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: reentry_guard_CRYPTO_EXCLUSIVE_AREA_01/3 (read) msr_CRYPTO_EXCLUSIVE_AREA_01/2 (write) reentry_guard_CRYPTO_EXCLUSIVE_AREA_01/3 (read) reentry_guard_CRYPTO_EXCLUSIVE_AREA_01/3 (write) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Crypto_schm_read_msr/18 Sys_GetCoreID/37 
+SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_00/20 (SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_00) @0da39c40
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: reentry_guard_CRYPTO_EXCLUSIVE_AREA_00/1 (read) reentry_guard_CRYPTO_EXCLUSIVE_AREA_00/1 (write) msr_CRYPTO_EXCLUSIVE_AREA_00/0 (read) reentry_guard_CRYPTO_EXCLUSIVE_AREA_00/1 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Sys_GetCoreID/37 
+SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_00/19 (SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_00) @0da399a0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: reentry_guard_CRYPTO_EXCLUSIVE_AREA_00/1 (read) msr_CRYPTO_EXCLUSIVE_AREA_00/0 (write) reentry_guard_CRYPTO_EXCLUSIVE_AREA_00/1 (read) reentry_guard_CRYPTO_EXCLUSIVE_AREA_00/1 (write) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Crypto_schm_read_msr/18 Sys_GetCoreID/37 
+Crypto_schm_read_msr/18 (Crypto_schm_read_msr) @0da39620
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_12/35 SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_11/33 SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_10/31 SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_05/29 SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_04/27 SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_03/25 SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_02/23 SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_01/21 SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_00/19 
+  Calls: 
+reentry_guard_CRYPTO_EXCLUSIVE_AREA_12/17 (reentry_guard_CRYPTO_EXCLUSIVE_AREA_12) @0da35f30
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_12/35 (read) SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_12/35 (read) SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_12/35 (write) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_12/36 (read) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_12/36 (write) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_12/36 (read) 
+  Availability: available
+  Varpool flags:
+msr_CRYPTO_EXCLUSIVE_AREA_12/16 (msr_CRYPTO_EXCLUSIVE_AREA_12) @0da35ea0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_12/35 (write) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_12/36 (read) 
+  Availability: available
+  Varpool flags:
+reentry_guard_CRYPTO_EXCLUSIVE_AREA_11/15 (reentry_guard_CRYPTO_EXCLUSIVE_AREA_11) @0da35e10
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_11/33 (read) SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_11/33 (read) SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_11/33 (write) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_11/34 (read) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_11/34 (write) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_11/34 (read) 
+  Availability: available
+  Varpool flags:
+msr_CRYPTO_EXCLUSIVE_AREA_11/14 (msr_CRYPTO_EXCLUSIVE_AREA_11) @0da35d80
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_11/33 (write) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_11/34 (read) 
+  Availability: available
+  Varpool flags:
+reentry_guard_CRYPTO_EXCLUSIVE_AREA_10/13 (reentry_guard_CRYPTO_EXCLUSIVE_AREA_10) @0da35cf0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_10/31 (read) SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_10/31 (read) SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_10/31 (write) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_10/32 (read) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_10/32 (write) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_10/32 (read) 
+  Availability: available
+  Varpool flags:
+msr_CRYPTO_EXCLUSIVE_AREA_10/12 (msr_CRYPTO_EXCLUSIVE_AREA_10) @0da35c60
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_10/31 (write) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_10/32 (read) 
+  Availability: available
+  Varpool flags:
+reentry_guard_CRYPTO_EXCLUSIVE_AREA_05/11 (reentry_guard_CRYPTO_EXCLUSIVE_AREA_05) @0da35bd0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_05/29 (read) SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_05/29 (read) SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_05/29 (write) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_05/30 (read) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_05/30 (write) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_05/30 (read) 
+  Availability: available
+  Varpool flags:
+msr_CRYPTO_EXCLUSIVE_AREA_05/10 (msr_CRYPTO_EXCLUSIVE_AREA_05) @0da35b40
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_05/29 (write) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_05/30 (read) 
+  Availability: available
+  Varpool flags:
+reentry_guard_CRYPTO_EXCLUSIVE_AREA_04/9 (reentry_guard_CRYPTO_EXCLUSIVE_AREA_04) @0da35ab0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_04/27 (read) SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_04/27 (read) SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_04/27 (write) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_04/28 (read) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_04/28 (write) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_04/28 (read) 
+  Availability: available
+  Varpool flags:
+msr_CRYPTO_EXCLUSIVE_AREA_04/8 (msr_CRYPTO_EXCLUSIVE_AREA_04) @0da35a20
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_04/27 (write) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_04/28 (read) 
+  Availability: available
+  Varpool flags:
+reentry_guard_CRYPTO_EXCLUSIVE_AREA_03/7 (reentry_guard_CRYPTO_EXCLUSIVE_AREA_03) @0da35990
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_03/25 (read) SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_03/25 (read) SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_03/25 (write) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_03/26 (read) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_03/26 (write) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_03/26 (read) 
+  Availability: available
+  Varpool flags:
+msr_CRYPTO_EXCLUSIVE_AREA_03/6 (msr_CRYPTO_EXCLUSIVE_AREA_03) @0da35900
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_03/25 (write) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_03/26 (read) 
+  Availability: available
+  Varpool flags:
+reentry_guard_CRYPTO_EXCLUSIVE_AREA_02/5 (reentry_guard_CRYPTO_EXCLUSIVE_AREA_02) @0da35870
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_02/23 (read) SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_02/23 (read) SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_02/23 (write) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_02/24 (read) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_02/24 (write) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_02/24 (read) 
+  Availability: available
+  Varpool flags:
+msr_CRYPTO_EXCLUSIVE_AREA_02/4 (msr_CRYPTO_EXCLUSIVE_AREA_02) @0da357e0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_02/23 (write) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_02/24 (read) 
+  Availability: available
+  Varpool flags:
+reentry_guard_CRYPTO_EXCLUSIVE_AREA_01/3 (reentry_guard_CRYPTO_EXCLUSIVE_AREA_01) @0da35750
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_01/21 (read) SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_01/21 (read) SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_01/21 (write) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_01/22 (read) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_01/22 (write) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_01/22 (read) 
+  Availability: available
+  Varpool flags:
+msr_CRYPTO_EXCLUSIVE_AREA_01/2 (msr_CRYPTO_EXCLUSIVE_AREA_01) @0da356c0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_01/21 (write) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_01/22 (read) 
+  Availability: available
+  Varpool flags:
+reentry_guard_CRYPTO_EXCLUSIVE_AREA_00/1 (reentry_guard_CRYPTO_EXCLUSIVE_AREA_00) @0da35630
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_00/19 (read) SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_00/19 (read) SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_00/19 (write) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_00/20 (read) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_00/20 (write) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_00/20 (read) 
+  Availability: available
+  Varpool flags:
+msr_CRYPTO_EXCLUSIVE_AREA_00/0 (msr_CRYPTO_EXCLUSIVE_AREA_00) @0da355a0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_00/19 (write) SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_00/20 (read) 
+  Availability: available
+  Varpool flags:
+Materializing clones
+Materialization Call site updates done.
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+Trivially needed variables: reentry_guard_CRYPTO_EXCLUSIVE_AREA_12/17 msr_CRYPTO_EXCLUSIVE_AREA_12/16 reentry_guard_CRYPTO_EXCLUSIVE_AREA_11/15 msr_CRYPTO_EXCLUSIVE_AREA_11/14 reentry_guard_CRYPTO_EXCLUSIVE_AREA_10/13 msr_CRYPTO_EXCLUSIVE_AREA_10/12 reentry_guard_CRYPTO_EXCLUSIVE_AREA_05/11 msr_CRYPTO_EXCLUSIVE_AREA_05/10 reentry_guard_CRYPTO_EXCLUSIVE_AREA_04/9 msr_CRYPTO_EXCLUSIVE_AREA_04/8 reentry_guard_CRYPTO_EXCLUSIVE_AREA_03/7 msr_CRYPTO_EXCLUSIVE_AREA_03/6 reentry_guard_CRYPTO_EXCLUSIVE_AREA_02/5 msr_CRYPTO_EXCLUSIVE_AREA_02/4 reentry_guard_CRYPTO_EXCLUSIVE_AREA_01/3 msr_CRYPTO_EXCLUSIVE_AREA_01/2 reentry_guard_CRYPTO_EXCLUSIVE_AREA_00/1 msr_CRYPTO_EXCLUSIVE_AREA_00/0
+Removing variables:
+
+Final Symbol table:
+
+Sys_GetCoreID/37 (Sys_GetCoreID) @0da012a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_12/36 (SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_12) @0d9fb700
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_12 (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_12/35 (SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_12) @0d9fb0e0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_12 (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_11/34 (SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_11) @0d9fbc40
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_11 (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_11/33 (SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_11) @0d9fb9a0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_11 (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_10/32 (SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_10) @0d9fb620
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_10 (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_10/31 (SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_10) @0d9fb380
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_10 (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_05/30 (SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_05) @0d9fb000
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_05 (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_05/29 (SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_05) @0da3ea80
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_05 (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_04/28 (SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_04) @0da3e1c0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_04 (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_04/27 (SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_04) @0da3ed20
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_04 (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_03/26 (SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_03) @0da3e9a0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_03 (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_03/25 (SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_03) @0da3e700
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_03 (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_02/24 (SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_02) @0da3e380
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_02 (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_02/23 (SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_02) @0da3e0e0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_02 (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_01/22 (SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_01) @0da39a80
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_01 (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_01/21 (SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_01) @0da39460
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_01 (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_00/20 (SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_00) @0da39c40
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.SchM_Exit_Crypto_CRYPTO_EXCLUSIVE_AREA_00 (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_00/19 (SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_00) @0da399a0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.SchM_Enter_Crypto_CRYPTO_EXCLUSIVE_AREA_00 (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+Crypto_schm_read_msr/18 (Crypto_schm_read_msr) @0da39620
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.Crypto_schm_read_msr (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+reentry_guard_CRYPTO_EXCLUSIVE_AREA_12/17 (reentry_guard_CRYPTO_EXCLUSIVE_AREA_12) @0da35f30
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written section:.bss.reentry_guard_CRYPTO_EXCLUSIVE_AREA_12 (implicit_section)
+  Aux: @00000001
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags:
+msr_CRYPTO_EXCLUSIVE_AREA_12/16 (msr_CRYPTO_EXCLUSIVE_AREA_12) @0da35ea0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written section:.bss.msr_CRYPTO_EXCLUSIVE_AREA_12 (implicit_section)
+  Aux: @0da35f30
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags:
+reentry_guard_CRYPTO_EXCLUSIVE_AREA_11/15 (reentry_guard_CRYPTO_EXCLUSIVE_AREA_11) @0da35e10
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written section:.bss.reentry_guard_CRYPTO_EXCLUSIVE_AREA_11 (implicit_section)
+  Aux: @0da35ea0
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags:
+msr_CRYPTO_EXCLUSIVE_AREA_11/14 (msr_CRYPTO_EXCLUSIVE_AREA_11) @0da35d80
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written section:.bss.msr_CRYPTO_EXCLUSIVE_AREA_11 (implicit_section)
+  Aux: @0da35e10
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags:
+reentry_guard_CRYPTO_EXCLUSIVE_AREA_10/13 (reentry_guard_CRYPTO_EXCLUSIVE_AREA_10) @0da35cf0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written section:.bss.reentry_guard_CRYPTO_EXCLUSIVE_AREA_10 (implicit_section)
+  Aux: @0da35d80
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags:
+msr_CRYPTO_EXCLUSIVE_AREA_10/12 (msr_CRYPTO_EXCLUSIVE_AREA_10) @0da35c60
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written section:.bss.msr_CRYPTO_EXCLUSIVE_AREA_10 (implicit_section)
+  Aux: @0da35cf0
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags:
+reentry_guard_CRYPTO_EXCLUSIVE_AREA_05/11 (reentry_guard_CRYPTO_EXCLUSIVE_AREA_05) @0da35bd0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written section:.bss.reentry_guard_CRYPTO_EXCLUSIVE_AREA_05 (implicit_section)
+  Aux: @0da35c60
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags:
+msr_CRYPTO_EXCLUSIVE_AREA_05/10 (msr_CRYPTO_EXCLUSIVE_AREA_05) @0da35b40
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written section:.bss.msr_CRYPTO_EXCLUSIVE_AREA_05 (implicit_section)
+  Aux: @0da35bd0
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags:
+reentry_guard_CRYPTO_EXCLUSIVE_AREA_04/9 (reentry_guard_CRYPTO_EXCLUSIVE_AREA_04) @0da35ab0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written section:.bss.reentry_guard_CRYPTO_EXCLUSIVE_AREA_04 (implicit_section)
+  Aux: @0da35b40
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags:
+msr_CRYPTO_EXCLUSIVE_AREA_04/8 (msr_CRYPTO_EXCLUSIVE_AREA_04) @0da35a20
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written section:.bss.msr_CRYPTO_EXCLUSIVE_AREA_04 (implicit_section)
+  Aux: @0da35ab0
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags:
+reentry_guard_CRYPTO_EXCLUSIVE_AREA_03/7 (reentry_guard_CRYPTO_EXCLUSIVE_AREA_03) @0da35990
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written section:.bss.reentry_guard_CRYPTO_EXCLUSIVE_AREA_03 (implicit_section)
+  Aux: @0da35a20
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags:
+msr_CRYPTO_EXCLUSIVE_AREA_03/6 (msr_CRYPTO_EXCLUSIVE_AREA_03) @0da35900
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written section:.bss.msr_CRYPTO_EXCLUSIVE_AREA_03 (implicit_section)
+  Aux: @0da35990
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags:
+reentry_guard_CRYPTO_EXCLUSIVE_AREA_02/5 (reentry_guard_CRYPTO_EXCLUSIVE_AREA_02) @0da35870
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written section:.bss.reentry_guard_CRYPTO_EXCLUSIVE_AREA_02 (implicit_section)
+  Aux: @0da35900
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags:
+msr_CRYPTO_EXCLUSIVE_AREA_02/4 (msr_CRYPTO_EXCLUSIVE_AREA_02) @0da357e0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written section:.bss.msr_CRYPTO_EXCLUSIVE_AREA_02 (implicit_section)
+  Aux: @0da35870
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags:
+reentry_guard_CRYPTO_EXCLUSIVE_AREA_01/3 (reentry_guard_CRYPTO_EXCLUSIVE_AREA_01) @0da35750
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written section:.bss.reentry_guard_CRYPTO_EXCLUSIVE_AREA_01 (implicit_section)
+  Aux: @0da357e0
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags:
+msr_CRYPTO_EXCLUSIVE_AREA_01/2 (msr_CRYPTO_EXCLUSIVE_AREA_01) @0da356c0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written section:.bss.msr_CRYPTO_EXCLUSIVE_AREA_01 (implicit_section)
+  Aux: @0da35750
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags:
+reentry_guard_CRYPTO_EXCLUSIVE_AREA_00/1 (reentry_guard_CRYPTO_EXCLUSIVE_AREA_00) @0da35630
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written section:.bss.reentry_guard_CRYPTO_EXCLUSIVE_AREA_00 (implicit_section)
+  Aux: @0da356c0
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags:
+msr_CRYPTO_EXCLUSIVE_AREA_00/0 (msr_CRYPTO_EXCLUSIVE_AREA_00) @0da355a0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written section:.bss.msr_CRYPTO_EXCLUSIVE_AREA_00 (implicit_section)
+  Aux: @0da35630
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags:

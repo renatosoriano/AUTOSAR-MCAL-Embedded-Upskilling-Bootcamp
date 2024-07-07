@@ -1,0 +1,152 @@
+Symbol table:
+
+Port_Config/10 (Port_Config) @0dded2d0
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: EcuM_Init/2 (addr) 
+  Availability: not_available
+  Varpool flags: read-only
+Port_Init/9 (Port_Init) @0ddee000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: EcuM_Init/2 
+  Calls: 
+Mcu_SetMode/8 (Mcu_SetMode) @0dde8620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: EcuM_Init/2 
+  Calls: 
+Mcu_InitClock/7 (Mcu_InitClock) @0dde8ee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: EcuM_Init/2 
+  Calls: 
+Mcu_Config/6 (Mcu_Config) @0dded1b0
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: EcuM_Init/2 (addr) 
+  Availability: not_available
+  Varpool flags: read-only
+Mcu_Init/5 (Mcu_Init) @0dde8e00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: EcuM_Init/2 
+  Calls: 
+DioConfig_aChannelGroupList/4 (DioConfig_aChannelGroupList) @0dded000
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: main/1 (addr) main/1 (addr) 
+  Availability: not_available
+  Varpool flags: read-only
+Dio_WriteChannelGroup/3 (Dio_WriteChannelGroup) @0dde8c40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: main/1 main/1 
+  Calls: 
+EcuM_Init/2 (EcuM_Init) @0dde87e0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Mcu_Config/6 (addr) Port_Config/10 (addr) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: main/1 
+  Calls: Port_Init/9 Mcu_SetMode/8 Mcu_InitClock/7 Mcu_Init/5 
+main/1 (main) @0dde8540
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: DioConfig_aChannelGroupList/4 (addr) DioConfig_aChannelGroupList/4 (addr) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Dio_WriteChannelGroup/3 Dio_WriteChannelGroup/3 EcuM_Init/2 
+EcuM_Init ()
+{
+  <bb 2> :
+  Mcu_Init (&Mcu_Config);
+  Mcu_InitClock (0);
+  Mcu_SetMode (0);
+  Port_Init (&Port_Config);
+  return;
+
+}
+
+
+main ()
+{
+  uint32 i;
+  uint8 i;
+  int D.6067;
+  int _1;
+  unsigned int _2;
+  unsigned char i.0_3;
+
+  <bb 2> :
+  EcuM_Init ();
+
+  <bb 3> :
+  i_10 = 0;
+  goto <bb 8>; [INV]
+
+  <bb 4> :
+  Dio_WriteChannelGroup (&DioConfig_aChannelGroupList[0], 0);
+  _1 = (int) i_4;
+  _2 = 1 << _1;
+  Dio_WriteChannelGroup (&DioConfig_aChannelGroupList[0], _2);
+  i_13 = 0;
+  goto <bb 6>; [INV]
+
+  <bb 5> :
+  i_15 = i_5 + 1;
+
+  <bb 6> :
+  # i_5 = PHI <i_13(4), i_15(5)>
+  if (i_5 <= 499999)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 7> :
+  i.0_3 = i_4;
+  i_14 = i.0_3 + 1;
+
+  <bb 8> :
+  # i_4 = PHI <i_10(3), i_14(7)>
+  if (i_4 <= 3)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 9> :
+  goto <bb 3>; [INV]
+
+}
+
+

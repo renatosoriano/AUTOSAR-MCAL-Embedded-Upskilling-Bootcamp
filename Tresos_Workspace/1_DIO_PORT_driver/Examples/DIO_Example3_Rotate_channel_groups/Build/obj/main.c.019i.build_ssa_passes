@@ -1,0 +1,58 @@
+EcuM_Init ()
+{
+  <bb 2> :
+  Mcu_Init (&Mcu_Config);
+  Mcu_InitClock (0);
+  Mcu_SetMode (0);
+  Port_Init (&Port_Config);
+  return;
+
+}
+
+
+main ()
+{
+  uint32 i;
+  uint8 i;
+  int D.6067;
+
+  <bb 2> :
+  EcuM_Init ();
+
+  <bb 3> :
+  i = 0;
+  goto <bb 8>; [INV]
+
+  <bb 4> :
+  Dio_WriteChannelGroup (&DioConfig_aChannelGroupList[0], 0);
+  _1 = (int) i;
+  _2 = 1 << _1;
+  Dio_WriteChannelGroup (&DioConfig_aChannelGroupList[0], _2);
+  i = 0;
+  goto <bb 6>; [INV]
+
+  <bb 5> :
+  i = i + 1;
+
+  <bb 6> :
+  if (i <= 499999)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 7> :
+  i.0_3 = i;
+  i = i.0_3 + 1;
+
+  <bb 8> :
+  if (i <= 3)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 9> :
+  goto <bb 3>; [INV]
+
+}
+
+

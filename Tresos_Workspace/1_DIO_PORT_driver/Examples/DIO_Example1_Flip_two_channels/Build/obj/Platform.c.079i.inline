@@ -1,0 +1,353 @@
+IPA summary for Platform_InstallIrqHandler/9 is missing.
+IPA summary for Platform_GetIrqPriority/8 is missing.
+IPA summary for Platform_SetIrqPriority/7 is missing.
+IPA summary for Platform_SetIrq/6 is missing.
+IPA summary for Platform_Init/5 is missing.
+IPA summary for Platform_Ipw_InstallIrqHandler/4 is missing.
+IPA summary for Platform_Ipw_GetIrqPriority/3 is missing.
+IPA summary for Platform_Ipw_SetIrqPriority/2 is missing.
+IPA summary for Platform_Ipw_SetIrq/1 is missing.
+
+Flattening functions:
+Overall time estimate: 0.000000 weighted by profile: 0.000000
+
+Deciding on inlining of small functions.  Starting with size 0.
+node context cache: 0 hits, 0 misses, 0 initializations
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+
+Deciding on functions to be inlined into all callers and removing useless speculations:
+Overall time estimate: 0.000000 weighted by profile: 0.000000
+
+Why inlining failed?
+function not considered for inlining              :        4 calls, 4.000000 freq, 0 count
+function body not available                       :        6 calls, 6.000000 freq, 0 count
+IPA summary for Platform_InstallIrqHandler/9 is missing.
+IPA summary for Platform_GetIrqPriority/8 is missing.
+IPA summary for Platform_SetIrqPriority/7 is missing.
+IPA summary for Platform_SetIrq/6 is missing.
+IPA summary for Platform_Init/5 is missing.
+IPA summary for Platform_Ipw_InstallIrqHandler/4 is missing.
+IPA summary for Platform_Ipw_GetIrqPriority/3 is missing.
+IPA summary for Platform_Ipw_SetIrqPriority/2 is missing.
+IPA summary for Platform_Ipw_SetIrq/1 is missing.
+Symbol table:
+
+IntCtrl_Ip_InstallHandler/16 (IntCtrl_Ip_InstallHandler) @0de45c40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Platform_Ipw_InstallIrqHandler/4 
+  Calls: 
+IntCtrl_Ip_GetPriority/15 (IntCtrl_Ip_GetPriority) @0de459a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Platform_Ipw_GetIrqPriority/3 
+  Calls: 
+IntCtrl_Ip_SetPriority/14 (IntCtrl_Ip_SetPriority) @0de45700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Platform_Ipw_SetIrqPriority/2 
+  Calls: 
+IntCtrl_Ip_DisableIrq/13 (IntCtrl_Ip_DisableIrq) @0de45460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Platform_Ipw_SetIrq/1 
+  Calls: 
+IntCtrl_Ip_EnableIrq/12 (IntCtrl_Ip_EnableIrq) @0de45380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Platform_Ipw_SetIrq/1 
+  Calls: 
+Platform_Ipw_Init/11 (Platform_Ipw_Init) @0de450e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Platform_Init/5 
+  Calls: 
+Platform_Config/10 (Platform_Config) @0de41828
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: Platform_Init/5 (read) 
+  Availability: not_available
+  Varpool flags: read-only
+Platform_InstallIrqHandler/9 (Platform_InstallIrqHandler) @0de42540
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Platform_Ipw_InstallIrqHandler/4 
+Platform_GetIrqPriority/8 (Platform_GetIrqPriority) @0de42ee0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Platform_Ipw_GetIrqPriority/3 
+Platform_SetIrqPriority/7 (Platform_SetIrqPriority) @0de42c40
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Platform_Ipw_SetIrqPriority/2 
+Platform_SetIrq/6 (Platform_SetIrq) @0de429a0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Platform_Ipw_SetIrq/1 
+Platform_Init/5 (Platform_Init) @0de42700
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Platform_Config/10 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Platform_Ipw_Init/11 
+Platform_Ipw_InstallIrqHandler/4 (Platform_Ipw_InstallIrqHandler) @0de3b9a0
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: Platform_InstallIrqHandler/9 
+  Calls: IntCtrl_Ip_InstallHandler/16 
+Platform_Ipw_GetIrqPriority/3 (Platform_Ipw_GetIrqPriority) @0de3b700
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: Platform_GetIrqPriority/8 
+  Calls: IntCtrl_Ip_GetPriority/15 
+Platform_Ipw_SetIrqPriority/2 (Platform_Ipw_SetIrqPriority) @0de3b460
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: Platform_SetIrqPriority/7 
+  Calls: IntCtrl_Ip_SetPriority/14 
+Platform_Ipw_SetIrq/1 (Platform_Ipw_SetIrq) @0de3b1c0
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: Platform_SetIrq/6 
+  Calls: IntCtrl_Ip_DisableIrq/13 IntCtrl_Ip_EnableIrq/12 
+
+;; Function Platform_Ipw_SetIrq (Platform_Ipw_SetIrq, funcdef_no=1, decl_uid=6133, cgraph_uid=2, symbol_order=1)
+
+Platform_Ipw_SetIrq (IRQn_Type eIrqNumber, boolean bEnable)
+{
+  <bb 2> :
+  if (bEnable_2(D) != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  IntCtrl_Ip_EnableIrq (eIrqNumber_4(D));
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  IntCtrl_Ip_DisableIrq (eIrqNumber_4(D));
+
+  <bb 5> :
+  return;
+
+}
+
+
+
+;; Function Platform_Ipw_SetIrqPriority (Platform_Ipw_SetIrqPriority, funcdef_no=2, decl_uid=6137, cgraph_uid=3, symbol_order=2)
+
+Platform_Ipw_SetIrqPriority (IRQn_Type eIrqNumber, uint8 u8Priority)
+{
+  <bb 2> :
+  IntCtrl_Ip_SetPriority (eIrqNumber_2(D), u8Priority_3(D));
+  return;
+
+}
+
+
+
+;; Function Platform_Ipw_GetIrqPriority (Platform_Ipw_GetIrqPriority, funcdef_no=3, decl_uid=6140, cgraph_uid=4, symbol_order=3)
+
+Platform_Ipw_GetIrqPriority (IRQn_Type eIrqNumber)
+{
+  uint8 D.6201;
+  uint8 _4;
+
+  <bb 2> :
+  _4 = IntCtrl_Ip_GetPriority (eIrqNumber_2(D));
+
+  <bb 3> :
+<L0>:
+  return _4;
+
+}
+
+
+
+;; Function Platform_Ipw_InstallIrqHandler (Platform_Ipw_InstallIrqHandler, funcdef_no=4, decl_uid=6145, cgraph_uid=5, symbol_order=4)
+
+Platform_Ipw_InstallIrqHandler (IRQn_Type eIrqNumber, void (*IntCtrl_Ip_IrqHandlerType) (void) pfNewHandler, void (*IntCtrl_Ip_IrqHandlerType) (void) * const pfOldHandler)
+{
+  <bb 2> :
+  IntCtrl_Ip_InstallHandler (eIrqNumber_2(D), pfNewHandler_3(D), pfOldHandler_4(D));
+  return;
+
+}
+
+
+
+;; Function Platform_Init (Platform_Init, funcdef_no=5, decl_uid=6148, cgraph_uid=6, symbol_order=5)
+
+Platform_Init (const struct Platform_ConfigType * pConfig)
+{
+  uint8 u8CoreId;
+  int _1;
+  const struct Platform_ConfigType * _2;
+  const struct Platform_Ipw_ConfigType * _3;
+
+  <bb 2> :
+  u8CoreId_4 = 0;
+  _1 = (int) u8CoreId_4;
+  _2 = Platform_Config[_1];
+  _3 = _2->pIpwConfig;
+  Platform_Ipw_Init (_3);
+  return;
+
+}
+
+
+
+;; Function Platform_SetIrq (Platform_SetIrq, funcdef_no=6, decl_uid=6151, cgraph_uid=7, symbol_order=6)
+
+Platform_SetIrq (IRQn_Type eIrqNumber, boolean bEnable)
+{
+  Std_ReturnType RetValue;
+  Std_ReturnType D.6192;
+  Std_ReturnType _6;
+
+  <bb 2> :
+  RetValue_1 = 0;
+  Platform_Ipw_SetIrq (eIrqNumber_3(D), bEnable_4(D));
+  _6 = RetValue_1;
+
+  <bb 3> :
+<L0>:
+  return _6;
+
+}
+
+
+
+;; Function Platform_SetIrqPriority (Platform_SetIrqPriority, funcdef_no=7, decl_uid=6154, cgraph_uid=8, symbol_order=7)
+
+Platform_SetIrqPriority (IRQn_Type eIrqNumber, uint8 u8Priority)
+{
+  Std_ReturnType RetValue;
+  Std_ReturnType D.6197;
+  Std_ReturnType _6;
+
+  <bb 2> :
+  RetValue_1 = 0;
+  Platform_Ipw_SetIrqPriority (eIrqNumber_3(D), u8Priority_4(D));
+  _6 = RetValue_1;
+
+  <bb 3> :
+<L0>:
+  return _6;
+
+}
+
+
+
+;; Function Platform_GetIrqPriority (Platform_GetIrqPriority, funcdef_no=8, decl_uid=6157, cgraph_uid=9, symbol_order=8)
+
+Platform_GetIrqPriority (IRQn_Type eIrqNumber, uint8 * u8Priority)
+{
+  Std_ReturnType RetValue;
+  Std_ReturnType D.6199;
+  unsigned char _1;
+  Std_ReturnType _8;
+
+  <bb 2> :
+  RetValue_2 = 0;
+  _1 = Platform_Ipw_GetIrqPriority (eIrqNumber_4(D));
+  *u8Priority_6(D) = _1;
+  _8 = RetValue_2;
+
+  <bb 3> :
+<L0>:
+  return _8;
+
+}
+
+
+
+;; Function Platform_InstallIrqHandler (Platform_InstallIrqHandler, funcdef_no=9, decl_uid=6161, cgraph_uid=10, symbol_order=9)
+
+Platform_InstallIrqHandler (IRQn_Type eIrqNumber, void (*Platform_IrqHandlerType) (void) pfNewHandler, void (*Platform_IrqHandlerType) (void) * const pfOldHandler)
+{
+  Std_ReturnType RetValue;
+  Std_ReturnType D.6203;
+  Std_ReturnType _7;
+
+  <bb 2> :
+  RetValue_1 = 0;
+  Platform_Ipw_InstallIrqHandler (eIrqNumber_3(D), pfNewHandler_4(D), pfOldHandler_5(D));
+  _7 = RetValue_1;
+
+  <bb 3> :
+<L0>:
+  return _7;
+
+}
+
+
