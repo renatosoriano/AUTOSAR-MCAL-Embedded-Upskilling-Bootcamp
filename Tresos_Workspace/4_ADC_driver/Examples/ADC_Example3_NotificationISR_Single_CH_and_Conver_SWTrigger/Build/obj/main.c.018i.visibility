@@ -1,0 +1,330 @@
+
+Marking local functions:
+
+
+Marking externally visible functions: Delay/10 EcuM_Init/9 main/8 IoHwAb_AdcNotification_0/7
+
+
+Marking externally visible variables: AdcReadGroupBuffer/6 AdcFlag/5
+
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+Symbol table:
+
+OsIf_GetElapsed/30 (OsIf_GetElapsed) @0e3990e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Delay/10 
+  Calls: 
+OsIf_GetCounter/29 (OsIf_GetCounter) @0e399000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Delay/10 
+  Calls: 
+OsIf_MicrosToTicks/28 (OsIf_MicrosToTicks) @0e397ee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Delay/10 
+  Calls: 
+Adc_Config/27 (Adc_Config) @0e396b88
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: EcuM_Init/9 (addr) 
+  Availability: not_available
+  Varpool flags: read-only
+Adc_Init/26 (Adc_Init) @0e397d20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: EcuM_Init/9 
+  Calls: 
+Port_Config/25 (Port_Config) @0e396af8
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: EcuM_Init/9 (addr) 
+  Availability: not_available
+  Varpool flags: read-only
+Port_Init/24 (Port_Init) @0e397c40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: EcuM_Init/9 
+  Calls: 
+Platform_Init/23 (Platform_Init) @0e397b60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: EcuM_Init/9 
+  Calls: 
+OsIf_Init/22 (OsIf_Init) @0e397a80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: EcuM_Init/9 
+  Calls: 
+Mcu_SetMode/21 (Mcu_SetMode) @0e3979a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: EcuM_Init/9 
+  Calls: 
+Mcu_InitClock/20 (Mcu_InitClock) @0e3978c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: EcuM_Init/9 
+  Calls: 
+Mcu_Config/19 (Mcu_Config) @0e396948
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: EcuM_Init/9 (addr) 
+  Availability: not_available
+  Varpool flags: read-only
+Mcu_Init/18 (Mcu_Init) @0e3977e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: EcuM_Init/9 
+  Calls: 
+SEGGER_RTT_printf/17 (SEGGER_RTT_printf) @0e397620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: main/8 
+  Calls: 
+Adc_StartGroupConversion/16 (Adc_StartGroupConversion) @0e397540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: main/8 
+  Calls: 
+Adc_EnableGroupNotification/15 (Adc_EnableGroupNotification) @0e397460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: main/8 
+  Calls: 
+Adc_SetupResultBuffer/14 (Adc_SetupResultBuffer) @0e397380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: main/8 
+  Calls: 
+Adc_Calibrate/13 (Adc_Calibrate) @0e3972a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: main/8 
+  Calls: 
+SEGGER_RTT_Init/12 (SEGGER_RTT_Init) @0e3971c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: main/8 
+  Calls: 
+Adc_ReadGroup/11 (Adc_ReadGroup) @0e397000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: IoHwAb_AdcNotification_0/7 
+  Calls: 
+Delay/10 (Delay) @0e391e00
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: main/8 
+  Calls: OsIf_GetElapsed/30 OsIf_GetCounter/29 OsIf_MicrosToTicks/28 
+EcuM_Init/9 (EcuM_Init) @0e391b60
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Mcu_Config/19 (addr) Port_Config/25 (addr) Adc_Config/27 (addr) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: main/8 
+  Calls: Adc_Init/26 Port_Init/24 Platform_Init/23 OsIf_Init/22 Mcu_SetMode/21 Mcu_InitClock/20 Mcu_Init/18 
+main/8 (main) @0e3918c0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: AdcFlag/5 (read) AdcFlag/5 (write) AdcReadGroupBuffer/6 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Delay/10 SEGGER_RTT_printf/17 Adc_StartGroupConversion/16 Adc_EnableGroupNotification/15 Adc_SetupResultBuffer/14 Adc_Calibrate/13 SEGGER_RTT_Init/12 EcuM_Init/9 
+IoHwAb_AdcNotification_0/7 (IoHwAb_AdcNotification_0) @0e391460
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: AdcFlag/5 (write) AdcReadGroupBuffer/6 (addr) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Adc_ReadGroup/11 
+AdcReadGroupBuffer/6 (AdcReadGroupBuffer) @0e390b88
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: IoHwAb_AdcNotification_0/7 (addr) main/8 (read) 
+  Availability: available
+  Varpool flags:
+AdcFlag/5 (AdcFlag) @0e390af8
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: IoHwAb_AdcNotification_0/7 (write) main/8 (read) main/8 (write) 
+  Availability: available
+  Varpool flags: initialized
+Delay (uint32 ms)
+{
+  uint32 ElapsedTime;
+  uint32 SeedTick;
+  uint32 Timeout;
+  long unsigned int D.7734;
+
+  <bb 2> :
+  _1 = ms * 1000;
+  Timeout = OsIf_MicrosToTicks (_1, 1);
+  _2 = OsIf_GetCounter (1);
+  SeedTick = _2;
+  ElapsedTime = 0;
+
+  <bb 3> :
+  D.7734 = OsIf_GetElapsed (&SeedTick, 1);
+  ElapsedTime = D.7734 + ElapsedTime;
+  if (ElapsedTime < Timeout)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 4> :
+  SeedTick = {CLOBBER};
+  return;
+
+}
+
+
+EcuM_Init ()
+{
+  <bb 2> :
+  Mcu_Init (&Mcu_Config);
+  Mcu_InitClock (0);
+  Mcu_SetMode (0);
+  OsIf_Init (0B);
+  Platform_Init (0B);
+  Port_Init (&Port_Config);
+  Adc_Init (&Adc_Config);
+  return;
+
+}
+
+
+main ()
+{
+  Adc_ValueGroupType ResultBuffer[1];
+  struct Adc_CalibrationStatusType CalibStatus;
+  int D.7731;
+
+  <bb 2> :
+  EcuM_Init ();
+  SEGGER_RTT_Init ();
+  Adc_Calibrate (0, &CalibStatus);
+  Adc_SetupResultBuffer (0, &ResultBuffer);
+  Adc_EnableGroupNotification (0);
+
+  <bb 3> :
+  Adc_StartGroupConversion (0);
+
+  <bb 4> :
+  AdcFlag.0_1 = AdcFlag;
+  if (AdcFlag.0_1 == 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 5> :
+  AdcFlag = 0;
+  _2 = AdcReadGroupBuffer[0];
+  _3 = (int) _2;
+  SEGGER_RTT_printf (0, "Adc Channel value: %d\n", _3);
+  Delay (2000);
+  goto <bb 3>; [INV]
+
+}
+
+
+IoHwAb_AdcNotification_0 ()
+{
+  <bb 2> :
+  AdcFlag = 1;
+  Adc_ReadGroup (0, &AdcReadGroupBuffer);
+  return;
+
+}
+
+

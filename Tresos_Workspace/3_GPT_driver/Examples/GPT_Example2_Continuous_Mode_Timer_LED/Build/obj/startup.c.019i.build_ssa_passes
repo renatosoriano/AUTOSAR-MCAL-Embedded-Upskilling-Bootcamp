@@ -1,0 +1,116 @@
+init_data_bss ()
+{
+  const uint32 * zeroTable_Ptr;
+  const uint32 * initTable_Ptr;
+  uint32 j;
+  uint32 i;
+  uint32 size;
+  uint32 len;
+  uint8 * ram;
+  const uint8 * rom;
+  const struct Sys_ZeroLayoutType * zero_layout;
+  const struct Sys_CopyLayoutType * copy_layout;
+
+  <bb 2> :
+  len = 0;
+  size = 0;
+  i = 0;
+  j = 0;
+  initTable_Ptr = &__INIT_TABLE;
+  zeroTable_Ptr = &__ZERO_TABLE;
+  len = *initTable_Ptr;
+  initTable_Ptr = initTable_Ptr + 4;
+  copy_layout = initTable_Ptr;
+  i = 0;
+  goto <bb 7>; [INV]
+
+  <bb 3> :
+  _1 = i * 12;
+  _2 = copy_layout + _1;
+  rom = _2->rom_start;
+  _3 = i * 12;
+  _4 = copy_layout + _3;
+  ram = _4->ram_start;
+  _5 = i * 12;
+  _6 = copy_layout + _5;
+  _7 = _6->rom_end;
+  _8 = (long unsigned int) _7;
+  _9 = i * 12;
+  _10 = copy_layout + _9;
+  _11 = _10->rom_start;
+  _12 = (long unsigned int) _11;
+  size = _8 - _12;
+  j = 0;
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  _13 = rom + j;
+  _14 = ram + j;
+  _15 = *_13;
+  *_14 = _15;
+  j = j + 1;
+
+  <bb 5> :
+  if (j < size)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 6> :
+  i = i + 1;
+
+  <bb 7> :
+  if (i < len)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 8> :
+  len = *zeroTable_Ptr;
+  zeroTable_Ptr = zeroTable_Ptr + 4;
+  zero_layout = zeroTable_Ptr;
+  i = 0;
+  goto <bb 13>; [INV]
+
+  <bb 9> :
+  _16 = i * 8;
+  _17 = zero_layout + _16;
+  ram = _17->ram_start;
+  _18 = i * 8;
+  _19 = zero_layout + _18;
+  _20 = _19->ram_end;
+  _21 = (long unsigned int) _20;
+  _22 = i * 8;
+  _23 = zero_layout + _22;
+  _24 = _23->ram_start;
+  _25 = (long unsigned int) _24;
+  size = _21 - _25;
+  j = 0;
+  goto <bb 11>; [INV]
+
+  <bb 10> :
+  _26 = ram + j;
+  *_26 = 0;
+  j = j + 1;
+
+  <bb 11> :
+  if (j < size)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 12> :
+  i = i + 1;
+
+  <bb 13> :
+  if (i < len)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 14>; [INV]
+
+  <bb 14> :
+  return;
+
+}
+
+

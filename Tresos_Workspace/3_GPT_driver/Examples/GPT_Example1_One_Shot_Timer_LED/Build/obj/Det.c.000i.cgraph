@@ -1,0 +1,869 @@
+Trivially needed symbols: Det_Start/16 Det_ReportTransientFault/15 Det_ReportRuntimeError/14 Det_ReportError/13 Det_Init/12 Det_RuntimeModuleId/11 Det_ModuleId/10 Det_TransientModuleId/9 Det_TransientFaultId/8 Det_TransientApiId/7 Det_TransientInstanceId/6 Det_RuntimeErrorId/5 Det_RuntimeApiId/4 Det_RuntimeInstanceId/3 Det_ErrorId/2 Det_ApiId/1 Det_InstanceId/0
+
+
+Initial Symbol table:
+
+Sys_GetCoreID/17 (Sys_GetCoreID) @0db3c000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Det_ReportTransientFault/15 Det_ReportRuntimeError/14 Det_ReportError/13 
+  Calls: 
+Det_Start/16 (Det_Start) @0db37ee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @01981040
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+Det_ReportTransientFault/15 (Det_ReportTransientFault) @0db37c40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0db37ee0
+  References: Det_TransientModuleId/9 (write) Det_TransientInstanceId/6 (write) Det_TransientApiId/7 (write) Det_TransientFaultId/8 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Sys_GetCoreID/17 
+Det_ReportRuntimeError/14 (Det_ReportRuntimeError) @0db379a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0db37c40
+  References: Det_RuntimeModuleId/11 (write) Det_RuntimeInstanceId/3 (write) Det_RuntimeApiId/4 (write) Det_RuntimeErrorId/5 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Sys_GetCoreID/17 
+Det_ReportError/13 (Det_ReportError) @0db37700
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0db379a0
+  References: Det_ModuleId/10 (write) Det_InstanceId/0 (write) Det_ApiId/1 (write) Det_ErrorId/2 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Sys_GetCoreID/17 
+Det_Init/12 (Det_Init) @0db37460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0db37700
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+Det_RuntimeModuleId/11 (Det_RuntimeModuleId) @0db33828
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0db37460
+  References: 
+  Referring: Det_ReportRuntimeError/14 (write) 
+  Availability: not-ready
+  Varpool flags:
+Det_ModuleId/10 (Det_ModuleId) @0db337e0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0db33828
+  References: 
+  Referring: Det_ReportError/13 (write) 
+  Availability: not-ready
+  Varpool flags:
+Det_TransientModuleId/9 (Det_TransientModuleId) @0db33798
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0db337e0
+  References: 
+  Referring: Det_ReportTransientFault/15 (write) 
+  Availability: not-ready
+  Varpool flags:
+Det_TransientFaultId/8 (Det_TransientFaultId) @0db33750
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0db33798
+  References: 
+  Referring: Det_ReportTransientFault/15 (write) 
+  Availability: not-ready
+  Varpool flags:
+Det_TransientApiId/7 (Det_TransientApiId) @0db33708
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0db33750
+  References: 
+  Referring: Det_ReportTransientFault/15 (write) 
+  Availability: not-ready
+  Varpool flags:
+Det_TransientInstanceId/6 (Det_TransientInstanceId) @0db336c0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0db33708
+  References: 
+  Referring: Det_ReportTransientFault/15 (write) 
+  Availability: not-ready
+  Varpool flags:
+Det_RuntimeErrorId/5 (Det_RuntimeErrorId) @0db33678
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0db336c0
+  References: 
+  Referring: Det_ReportRuntimeError/14 (write) 
+  Availability: not-ready
+  Varpool flags:
+Det_RuntimeApiId/4 (Det_RuntimeApiId) @0db33630
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0db33678
+  References: 
+  Referring: Det_ReportRuntimeError/14 (write) 
+  Availability: not-ready
+  Varpool flags:
+Det_RuntimeInstanceId/3 (Det_RuntimeInstanceId) @0db335e8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0db33630
+  References: 
+  Referring: Det_ReportRuntimeError/14 (write) 
+  Availability: not-ready
+  Varpool flags:
+Det_ErrorId/2 (Det_ErrorId) @0db335a0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0db335e8
+  References: 
+  Referring: Det_ReportError/13 (write) 
+  Availability: not-ready
+  Varpool flags:
+Det_ApiId/1 (Det_ApiId) @0db33558
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0db335a0
+  References: 
+  Referring: Det_ReportError/13 (write) 
+  Availability: not-ready
+  Varpool flags:
+Det_InstanceId/0 (Det_InstanceId) @0db33510
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0db33558
+  References: 
+  Referring: Det_ReportError/13 (write) 
+  Availability: not-ready
+  Varpool flags:
+
+Removing unused symbols:
+
+Reclaimed Symbol table:
+
+Sys_GetCoreID/17 (Sys_GetCoreID) @0db3c000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Det_ReportTransientFault/15 Det_ReportRuntimeError/14 Det_ReportError/13 
+  Calls: 
+Det_Start/16 (Det_Start) @0db37ee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+Det_ReportTransientFault/15 (Det_ReportTransientFault) @0db37c40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Det_TransientModuleId/9 (write) Det_TransientInstanceId/6 (write) Det_TransientApiId/7 (write) Det_TransientFaultId/8 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Sys_GetCoreID/17 
+Det_ReportRuntimeError/14 (Det_ReportRuntimeError) @0db379a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Det_RuntimeModuleId/11 (write) Det_RuntimeInstanceId/3 (write) Det_RuntimeApiId/4 (write) Det_RuntimeErrorId/5 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Sys_GetCoreID/17 
+Det_ReportError/13 (Det_ReportError) @0db37700
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Det_ModuleId/10 (write) Det_InstanceId/0 (write) Det_ApiId/1 (write) Det_ErrorId/2 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Sys_GetCoreID/17 
+Det_Init/12 (Det_Init) @0db37460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+Det_RuntimeModuleId/11 (Det_RuntimeModuleId) @0db33828
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: Det_ReportRuntimeError/14 (write) 
+  Availability: not-ready
+  Varpool flags:
+Det_ModuleId/10 (Det_ModuleId) @0db337e0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: Det_ReportError/13 (write) 
+  Availability: not-ready
+  Varpool flags:
+Det_TransientModuleId/9 (Det_TransientModuleId) @0db33798
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: Det_ReportTransientFault/15 (write) 
+  Availability: not-ready
+  Varpool flags:
+Det_TransientFaultId/8 (Det_TransientFaultId) @0db33750
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: Det_ReportTransientFault/15 (write) 
+  Availability: not-ready
+  Varpool flags:
+Det_TransientApiId/7 (Det_TransientApiId) @0db33708
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: Det_ReportTransientFault/15 (write) 
+  Availability: not-ready
+  Varpool flags:
+Det_TransientInstanceId/6 (Det_TransientInstanceId) @0db336c0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: Det_ReportTransientFault/15 (write) 
+  Availability: not-ready
+  Varpool flags:
+Det_RuntimeErrorId/5 (Det_RuntimeErrorId) @0db33678
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: Det_ReportRuntimeError/14 (write) 
+  Availability: not-ready
+  Varpool flags:
+Det_RuntimeApiId/4 (Det_RuntimeApiId) @0db33630
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: Det_ReportRuntimeError/14 (write) 
+  Availability: not-ready
+  Varpool flags:
+Det_RuntimeInstanceId/3 (Det_RuntimeInstanceId) @0db335e8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: Det_ReportRuntimeError/14 (write) 
+  Availability: not-ready
+  Varpool flags:
+Det_ErrorId/2 (Det_ErrorId) @0db335a0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: Det_ReportError/13 (write) 
+  Availability: not-ready
+  Varpool flags:
+Det_ApiId/1 (Det_ApiId) @0db33558
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: Det_ReportError/13 (write) 
+  Availability: not-ready
+  Varpool flags:
+Det_InstanceId/0 (Det_InstanceId) @0db33510
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: Det_ReportError/13 (write) 
+  Availability: not-ready
+  Varpool flags:
+
+
+Initial Symbol table:
+
+Sys_GetCoreID/17 (Sys_GetCoreID) @0db3c000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Det_ReportTransientFault/15 Det_ReportRuntimeError/14 Det_ReportError/13 
+  Calls: 
+Det_Start/16 (Det_Start) @0db37ee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+Det_ReportTransientFault/15 (Det_ReportTransientFault) @0db37c40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Det_TransientModuleId/9 (write) Det_TransientInstanceId/6 (write) Det_TransientApiId/7 (write) Det_TransientFaultId/8 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Sys_GetCoreID/17 
+Det_ReportRuntimeError/14 (Det_ReportRuntimeError) @0db379a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Det_RuntimeModuleId/11 (write) Det_RuntimeInstanceId/3 (write) Det_RuntimeApiId/4 (write) Det_RuntimeErrorId/5 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Sys_GetCoreID/17 
+Det_ReportError/13 (Det_ReportError) @0db37700
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Det_ModuleId/10 (write) Det_InstanceId/0 (write) Det_ApiId/1 (write) Det_ErrorId/2 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Sys_GetCoreID/17 
+Det_Init/12 (Det_Init) @0db37460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+Det_RuntimeModuleId/11 (Det_RuntimeModuleId) @0db33828
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: Det_ReportRuntimeError/14 (write) 
+  Availability: not-ready
+  Varpool flags:
+Det_ModuleId/10 (Det_ModuleId) @0db337e0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: Det_ReportError/13 (write) 
+  Availability: not-ready
+  Varpool flags:
+Det_TransientModuleId/9 (Det_TransientModuleId) @0db33798
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: Det_ReportTransientFault/15 (write) 
+  Availability: not-ready
+  Varpool flags:
+Det_TransientFaultId/8 (Det_TransientFaultId) @0db33750
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: Det_ReportTransientFault/15 (write) 
+  Availability: not-ready
+  Varpool flags:
+Det_TransientApiId/7 (Det_TransientApiId) @0db33708
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: Det_ReportTransientFault/15 (write) 
+  Availability: not-ready
+  Varpool flags:
+Det_TransientInstanceId/6 (Det_TransientInstanceId) @0db336c0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: Det_ReportTransientFault/15 (write) 
+  Availability: not-ready
+  Varpool flags:
+Det_RuntimeErrorId/5 (Det_RuntimeErrorId) @0db33678
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: Det_ReportRuntimeError/14 (write) 
+  Availability: not-ready
+  Varpool flags:
+Det_RuntimeApiId/4 (Det_RuntimeApiId) @0db33630
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: Det_ReportRuntimeError/14 (write) 
+  Availability: not-ready
+  Varpool flags:
+Det_RuntimeInstanceId/3 (Det_RuntimeInstanceId) @0db335e8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: Det_ReportRuntimeError/14 (write) 
+  Availability: not-ready
+  Varpool flags:
+Det_ErrorId/2 (Det_ErrorId) @0db335a0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: Det_ReportError/13 (write) 
+  Availability: not-ready
+  Varpool flags:
+Det_ApiId/1 (Det_ApiId) @0db33558
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: Det_ReportError/13 (write) 
+  Availability: not-ready
+  Varpool flags:
+Det_InstanceId/0 (Det_InstanceId) @0db33510
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: Det_ReportError/13 (write) 
+  Availability: not-ready
+  Varpool flags:
+
+Removing unused symbols:
+
+Reclaimed Symbol table:
+
+Sys_GetCoreID/17 (Sys_GetCoreID) @0db3c000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Det_ReportTransientFault/15 Det_ReportRuntimeError/14 Det_ReportError/13 
+  Calls: 
+Det_Start/16 (Det_Start) @0db37ee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+Det_ReportTransientFault/15 (Det_ReportTransientFault) @0db37c40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Det_TransientModuleId/9 (write) Det_TransientInstanceId/6 (write) Det_TransientApiId/7 (write) Det_TransientFaultId/8 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Sys_GetCoreID/17 
+Det_ReportRuntimeError/14 (Det_ReportRuntimeError) @0db379a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Det_RuntimeModuleId/11 (write) Det_RuntimeInstanceId/3 (write) Det_RuntimeApiId/4 (write) Det_RuntimeErrorId/5 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Sys_GetCoreID/17 
+Det_ReportError/13 (Det_ReportError) @0db37700
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Det_ModuleId/10 (write) Det_InstanceId/0 (write) Det_ApiId/1 (write) Det_ErrorId/2 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Sys_GetCoreID/17 
+Det_Init/12 (Det_Init) @0db37460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+Det_RuntimeModuleId/11 (Det_RuntimeModuleId) @0db33828
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: Det_ReportRuntimeError/14 (write) 
+  Availability: not-ready
+  Varpool flags:
+Det_ModuleId/10 (Det_ModuleId) @0db337e0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: Det_ReportError/13 (write) 
+  Availability: not-ready
+  Varpool flags:
+Det_TransientModuleId/9 (Det_TransientModuleId) @0db33798
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: Det_ReportTransientFault/15 (write) 
+  Availability: not-ready
+  Varpool flags:
+Det_TransientFaultId/8 (Det_TransientFaultId) @0db33750
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: Det_ReportTransientFault/15 (write) 
+  Availability: not-ready
+  Varpool flags:
+Det_TransientApiId/7 (Det_TransientApiId) @0db33708
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: Det_ReportTransientFault/15 (write) 
+  Availability: not-ready
+  Varpool flags:
+Det_TransientInstanceId/6 (Det_TransientInstanceId) @0db336c0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: Det_ReportTransientFault/15 (write) 
+  Availability: not-ready
+  Varpool flags:
+Det_RuntimeErrorId/5 (Det_RuntimeErrorId) @0db33678
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: Det_ReportRuntimeError/14 (write) 
+  Availability: not-ready
+  Varpool flags:
+Det_RuntimeApiId/4 (Det_RuntimeApiId) @0db33630
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: Det_ReportRuntimeError/14 (write) 
+  Availability: not-ready
+  Varpool flags:
+Det_RuntimeInstanceId/3 (Det_RuntimeInstanceId) @0db335e8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: Det_ReportRuntimeError/14 (write) 
+  Availability: not-ready
+  Varpool flags:
+Det_ErrorId/2 (Det_ErrorId) @0db335a0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: Det_ReportError/13 (write) 
+  Availability: not-ready
+  Varpool flags:
+Det_ApiId/1 (Det_ApiId) @0db33558
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: Det_ReportError/13 (write) 
+  Availability: not-ready
+  Varpool flags:
+Det_InstanceId/0 (Det_InstanceId) @0db33510
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: Det_ReportError/13 (write) 
+  Availability: not-ready
+  Varpool flags:
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+Optimized Symbol table:
+
+Sys_GetCoreID/17 (Sys_GetCoreID) @0db3c000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Det_ReportTransientFault/15 Det_ReportRuntimeError/14 Det_ReportError/13 
+  Calls: 
+Det_Start/16 (Det_Start) @0db37ee0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+Det_ReportTransientFault/15 (Det_ReportTransientFault) @0db37c40
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Det_TransientModuleId/9 (write) Det_TransientInstanceId/6 (write) Det_TransientApiId/7 (write) Det_TransientFaultId/8 (write) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Sys_GetCoreID/17 
+Det_ReportRuntimeError/14 (Det_ReportRuntimeError) @0db379a0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Det_RuntimeModuleId/11 (write) Det_RuntimeInstanceId/3 (write) Det_RuntimeApiId/4 (write) Det_RuntimeErrorId/5 (write) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Sys_GetCoreID/17 
+Det_ReportError/13 (Det_ReportError) @0db37700
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Det_ModuleId/10 (write) Det_InstanceId/0 (write) Det_ApiId/1 (write) Det_ErrorId/2 (write) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Sys_GetCoreID/17 
+Det_Init/12 (Det_Init) @0db37460
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+Det_RuntimeModuleId/11 (Det_RuntimeModuleId) @0db33828
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: Det_ReportRuntimeError/14 (write) 
+  Availability: available
+  Varpool flags:
+Det_ModuleId/10 (Det_ModuleId) @0db337e0
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: Det_ReportError/13 (write) 
+  Availability: available
+  Varpool flags:
+Det_TransientModuleId/9 (Det_TransientModuleId) @0db33798
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: Det_ReportTransientFault/15 (write) 
+  Availability: available
+  Varpool flags:
+Det_TransientFaultId/8 (Det_TransientFaultId) @0db33750
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: Det_ReportTransientFault/15 (write) 
+  Availability: available
+  Varpool flags:
+Det_TransientApiId/7 (Det_TransientApiId) @0db33708
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: Det_ReportTransientFault/15 (write) 
+  Availability: available
+  Varpool flags:
+Det_TransientInstanceId/6 (Det_TransientInstanceId) @0db336c0
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: Det_ReportTransientFault/15 (write) 
+  Availability: available
+  Varpool flags:
+Det_RuntimeErrorId/5 (Det_RuntimeErrorId) @0db33678
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: Det_ReportRuntimeError/14 (write) 
+  Availability: available
+  Varpool flags:
+Det_RuntimeApiId/4 (Det_RuntimeApiId) @0db33630
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: Det_ReportRuntimeError/14 (write) 
+  Availability: available
+  Varpool flags:
+Det_RuntimeInstanceId/3 (Det_RuntimeInstanceId) @0db335e8
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: Det_ReportRuntimeError/14 (write) 
+  Availability: available
+  Varpool flags:
+Det_ErrorId/2 (Det_ErrorId) @0db335a0
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: Det_ReportError/13 (write) 
+  Availability: available
+  Varpool flags:
+Det_ApiId/1 (Det_ApiId) @0db33558
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: Det_ReportError/13 (write) 
+  Availability: available
+  Varpool flags:
+Det_InstanceId/0 (Det_InstanceId) @0db33510
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: Det_ReportError/13 (write) 
+  Availability: available
+  Varpool flags:
+Materializing clones
+Materialization Call site updates done.
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+Trivially needed variables: Det_RuntimeModuleId/11 Det_ModuleId/10 Det_TransientModuleId/9 Det_TransientFaultId/8 Det_TransientApiId/7 Det_TransientInstanceId/6 Det_RuntimeErrorId/5 Det_RuntimeApiId/4 Det_RuntimeInstanceId/3 Det_ErrorId/2 Det_ApiId/1 Det_InstanceId/0
+Removing variables:
+
+Final Symbol table:
+
+Sys_GetCoreID/17 (Sys_GetCoreID) @0db3c000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+Det_Start/16 (Det_Start) @0db37ee0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.Det_Start (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+Det_ReportTransientFault/15 (Det_ReportTransientFault) @0db37c40
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.Det_ReportTransientFault (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+Det_ReportRuntimeError/14 (Det_ReportRuntimeError) @0db379a0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.Det_ReportRuntimeError (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+Det_ReportError/13 (Det_ReportError) @0db37700
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.Det_ReportError (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+Det_Init/12 (Det_Init) @0db37460
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.Det_Init (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+Det_RuntimeModuleId/11 (Det_RuntimeModuleId) @0db33828
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.bss.Det_RuntimeModuleId (implicit_section)
+  Aux: @00000001
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags:
+Det_ModuleId/10 (Det_ModuleId) @0db337e0
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.bss.Det_ModuleId (implicit_section)
+  Aux: @0db33828
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags:
+Det_TransientModuleId/9 (Det_TransientModuleId) @0db33798
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.bss.Det_TransientModuleId (implicit_section)
+  Aux: @0db337e0
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags:
+Det_TransientFaultId/8 (Det_TransientFaultId) @0db33750
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.bss.Det_TransientFaultId (implicit_section)
+  Aux: @0db33798
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags:
+Det_TransientApiId/7 (Det_TransientApiId) @0db33708
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.bss.Det_TransientApiId (implicit_section)
+  Aux: @0db33750
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags:
+Det_TransientInstanceId/6 (Det_TransientInstanceId) @0db336c0
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.bss.Det_TransientInstanceId (implicit_section)
+  Aux: @0db33708
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags:
+Det_RuntimeErrorId/5 (Det_RuntimeErrorId) @0db33678
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.bss.Det_RuntimeErrorId (implicit_section)
+  Aux: @0db336c0
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags:
+Det_RuntimeApiId/4 (Det_RuntimeApiId) @0db33630
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.bss.Det_RuntimeApiId (implicit_section)
+  Aux: @0db33678
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags:
+Det_RuntimeInstanceId/3 (Det_RuntimeInstanceId) @0db335e8
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.bss.Det_RuntimeInstanceId (implicit_section)
+  Aux: @0db33630
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags:
+Det_ErrorId/2 (Det_ErrorId) @0db335a0
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.bss.Det_ErrorId (implicit_section)
+  Aux: @0db335e8
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags:
+Det_ApiId/1 (Det_ApiId) @0db33558
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.bss.Det_ApiId (implicit_section)
+  Aux: @0db335a0
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags:
+Det_InstanceId/0 (Det_InstanceId) @0db33510
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.bss.Det_InstanceId (implicit_section)
+  Aux: @0db33558
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags:

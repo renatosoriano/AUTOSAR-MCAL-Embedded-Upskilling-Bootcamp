@@ -1,0 +1,39 @@
+EcuM_Init ()
+{
+  <bb 2> :
+  Mcu_Init (&Mcu_Config);
+  Mcu_InitClock (0);
+  Mcu_SetMode (0);
+  Port_Init (&Port_Config);
+  Gpt_Init (&Gpt_Config);
+  return;
+
+}
+
+
+main ()
+{
+  int D.6689;
+
+  <bb 2> :
+  EcuM_Init ();
+  Gpt_StartTimer (0, 37500);
+
+  <bb 3> :
+  _1 = Gpt_GetTimeRemaining (0);
+  if (_1 == 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  Gpt_StopTimer (0);
+  Dio_FlipChannel (96);
+  Gpt_StartTimer (0, 37500);
+
+  <bb 5> :
+  goto <bb 3>; [INV]
+
+}
+
+

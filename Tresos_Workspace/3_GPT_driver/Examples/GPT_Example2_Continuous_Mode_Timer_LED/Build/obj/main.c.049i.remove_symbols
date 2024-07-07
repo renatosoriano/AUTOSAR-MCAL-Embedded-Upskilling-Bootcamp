@@ -1,0 +1,176 @@
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+Symbol table:
+
+Gpt_Config/22 (Gpt_Config) @0e37cea0
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: EcuM_Init/10 (addr) 
+  Availability: not_available
+  Varpool flags: read-only
+Gpt_Init/21 (Gpt_Init) @0e3800e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: EcuM_Init/10 
+  Calls: 
+Port_Config/20 (Port_Config) @0e37ce10
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: EcuM_Init/10 (addr) 
+  Availability: not_available
+  Varpool flags: read-only
+Port_Init/19 (Port_Init) @0e380ee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: EcuM_Init/10 
+  Calls: 
+Platform_Init/18 (Platform_Init) @0e380e00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: EcuM_Init/10 
+  Calls: 
+Mcu_SetMode/17 (Mcu_SetMode) @0e380d20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: EcuM_Init/10 
+  Calls: 
+Mcu_InitClock/16 (Mcu_InitClock) @0e380c40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: EcuM_Init/10 
+  Calls: 
+Mcu_Config/15 (Mcu_Config) @0e37cca8
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: EcuM_Init/10 (addr) 
+  Availability: not_available
+  Varpool flags: read-only
+Mcu_Init/14 (Mcu_Init) @0e380b60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: EcuM_Init/10 
+  Calls: 
+Gpt_EnableNotification/13 (Gpt_EnableNotification) @0e3809a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: main/9 
+  Calls: 
+Gpt_StartTimer/12 (Gpt_StartTimer) @0e3808c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: main/9 
+  Calls: 
+Dio_FlipChannel/11 (Dio_FlipChannel) @0e380700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Gpt_Notification_0/8 
+  Calls: 
+EcuM_Init/10 (EcuM_Init) @0e3802a0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Mcu_Config/15 (addr) Port_Config/20 (addr) Gpt_Config/22 (addr) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: main/9 
+  Calls: Gpt_Init/21 Port_Init/19 Platform_Init/18 Mcu_SetMode/17 Mcu_InitClock/16 Mcu_Init/14 
+main/9 (main) @0e380000
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Gpt_EnableNotification/13 Gpt_StartTimer/12 EcuM_Init/10 
+Gpt_Notification_0/8 (Gpt_Notification_0) @0e379d20
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Dio_FlipChannel/11 
+EcuM_Init ()
+{
+  <bb 2> :
+  Mcu_Init (&Mcu_Config);
+  Mcu_InitClock (0);
+  Mcu_SetMode (0);
+  Platform_Init (0B);
+  Port_Init (&Port_Config);
+  Gpt_Init (&Gpt_Config);
+  return;
+
+}
+
+
+main ()
+{
+  int D.7325;
+
+  <bb 2> :
+  EcuM_Init ();
+  Gpt_StartTimer (0, 37500);
+  Gpt_EnableNotification (0);
+
+  <bb 3> :
+  goto <bb 3>; [INV]
+
+}
+
+
+Gpt_Notification_0 ()
+{
+  <bb 2> :
+  Dio_FlipChannel (96);
+  return;
+
+}
+
+

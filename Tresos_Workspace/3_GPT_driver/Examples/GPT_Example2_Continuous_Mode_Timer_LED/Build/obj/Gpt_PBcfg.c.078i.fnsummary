@@ -1,0 +1,56 @@
+Symbol table:
+
+Gpt_Ipw_HwInstanceConfig_PB/9 (Gpt_Ipw_HwInstanceConfig_PB) @0d9a2a68
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: Gpt_Config/6 (addr) 
+  Availability: not_available
+  Varpool flags:
+Gpt_Ipw_ChannelConfig_PB/8 (Gpt_Ipw_ChannelConfig_PB) @0d9a2a20
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: Gpt_InitChannelPB/5 (addr) 
+  Availability: not_available
+  Varpool flags:
+Gpt_Notification_0/7 (Gpt_Notification_0) @0d9a5a80
+  Type: function
+  Visibility: external public
+  Address is taken.
+  References: 
+  Referring: Gpt_InitChannelPB/5 (addr) 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+Gpt_Config/6 (Gpt_Config) @0d9a2900
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Gpt_InitChannelPB/5 (addr) Gpt_Ipw_HwInstanceConfig_PB/9 (addr) Gpt_pInitPredefTimerChannelPB/3 (addr) u8GptChannelIdToIndexMap/4 (addr) 
+  Referring: 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+Gpt_InitChannelPB/5 (Gpt_InitChannelPB) @0d9a2870
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: Gpt_Notification_0/7 (addr) Gpt_Ipw_ChannelConfig_PB/8 (addr) 
+  Referring: Gpt_Config/6 (addr) 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+u8GptChannelIdToIndexMap/4 (u8GptChannelIdToIndexMap) @0d9a2798
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: Gpt_Config/6 (addr) 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+Gpt_pInitPredefTimerChannelPB/3 (Gpt_pInitPredefTimerChannelPB) @0d9faca8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: Gpt_Config/6 (addr) 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known

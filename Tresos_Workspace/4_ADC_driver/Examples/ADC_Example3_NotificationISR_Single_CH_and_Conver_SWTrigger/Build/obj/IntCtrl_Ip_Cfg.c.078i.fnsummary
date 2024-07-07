@@ -1,0 +1,26 @@
+Symbol table:
+
+Adc_0_Isr/2 (Adc_0_Isr) @0ddf18c0
+  Type: function
+  Visibility: external public
+  Address is taken.
+  References: 
+  Referring: aIrqConfiguration/0 (addr) 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+intCtrlConfig/1 (intCtrlConfig) @0ddf6f78
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: aIrqConfiguration/0 (addr) 
+  Referring: 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+aIrqConfiguration/0 (aIrqConfiguration) @0ddf6f30
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: Adc_0_Isr/2 (addr) 
+  Referring: intCtrlConfig/1 (addr) 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known

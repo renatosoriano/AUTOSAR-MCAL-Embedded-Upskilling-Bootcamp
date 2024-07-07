@@ -1,0 +1,1277 @@
+Trivially needed symbols: SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_15/24 SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_15/23 SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_14/22 SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_14/21 SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_13/20 SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_13/19 SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_12/18 SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_12/17 SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_11/16 SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_11/15 SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_10/14 SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_10/13 MemAcc_schm_read_msr/12 reentry_guard_MEMACC_EXCLUSIVE_AREA_15/11 msr_MEMACC_EXCLUSIVE_AREA_15/10 reentry_guard_MEMACC_EXCLUSIVE_AREA_14/9 msr_MEMACC_EXCLUSIVE_AREA_14/8 reentry_guard_MEMACC_EXCLUSIVE_AREA_13/7 msr_MEMACC_EXCLUSIVE_AREA_13/6 reentry_guard_MEMACC_EXCLUSIVE_AREA_12/5 msr_MEMACC_EXCLUSIVE_AREA_12/4 reentry_guard_MEMACC_EXCLUSIVE_AREA_11/3 msr_MEMACC_EXCLUSIVE_AREA_11/2 reentry_guard_MEMACC_EXCLUSIVE_AREA_10/1 msr_MEMACC_EXCLUSIVE_AREA_10/0
+
+
+Initial Symbol table:
+
+Sys_GetCoreID/25 (Sys_GetCoreID) @0da4cd20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_15/24 SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_15/23 SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_14/22 SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_14/21 SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_13/20 SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_13/19 SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_12/18 SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_12/17 SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_11/16 SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_11/15 SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_10/14 SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_10/13 
+  Calls: 
+SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_15/24 (SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_15) @0da4c7e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @01981040
+  References: reentry_guard_MEMACC_EXCLUSIVE_AREA_15/11 (read) reentry_guard_MEMACC_EXCLUSIVE_AREA_15/11 (write) msr_MEMACC_EXCLUSIVE_AREA_15/10 (read) reentry_guard_MEMACC_EXCLUSIVE_AREA_15/11 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Sys_GetCoreID/25 
+SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_15/23 (SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_15) @0da4c540
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0da4c7e0
+  References: reentry_guard_MEMACC_EXCLUSIVE_AREA_15/11 (read) msr_MEMACC_EXCLUSIVE_AREA_15/10 (write) reentry_guard_MEMACC_EXCLUSIVE_AREA_15/11 (read) reentry_guard_MEMACC_EXCLUSIVE_AREA_15/11 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: MemAcc_schm_read_msr/12 Sys_GetCoreID/25 
+SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_14/22 (SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_14) @0da4c1c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0da4c540
+  References: reentry_guard_MEMACC_EXCLUSIVE_AREA_14/9 (read) reentry_guard_MEMACC_EXCLUSIVE_AREA_14/9 (write) msr_MEMACC_EXCLUSIVE_AREA_14/8 (read) reentry_guard_MEMACC_EXCLUSIVE_AREA_14/9 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Sys_GetCoreID/25 
+SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_14/21 (SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_14) @0dae6c40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0da4c1c0
+  References: reentry_guard_MEMACC_EXCLUSIVE_AREA_14/9 (read) msr_MEMACC_EXCLUSIVE_AREA_14/8 (write) reentry_guard_MEMACC_EXCLUSIVE_AREA_14/9 (read) reentry_guard_MEMACC_EXCLUSIVE_AREA_14/9 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: MemAcc_schm_read_msr/12 Sys_GetCoreID/25 
+SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_13/20 (SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_13) @0dae6380
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0dae6c40
+  References: reentry_guard_MEMACC_EXCLUSIVE_AREA_13/7 (read) reentry_guard_MEMACC_EXCLUSIVE_AREA_13/7 (write) msr_MEMACC_EXCLUSIVE_AREA_13/6 (read) reentry_guard_MEMACC_EXCLUSIVE_AREA_13/7 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Sys_GetCoreID/25 
+SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_13/19 (SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_13) @0dae6ee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0dae6380
+  References: reentry_guard_MEMACC_EXCLUSIVE_AREA_13/7 (read) msr_MEMACC_EXCLUSIVE_AREA_13/6 (write) reentry_guard_MEMACC_EXCLUSIVE_AREA_13/7 (read) reentry_guard_MEMACC_EXCLUSIVE_AREA_13/7 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: MemAcc_schm_read_msr/12 Sys_GetCoreID/25 
+SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_12/18 (SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_12) @0dae6b60
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0dae6ee0
+  References: reentry_guard_MEMACC_EXCLUSIVE_AREA_12/5 (read) reentry_guard_MEMACC_EXCLUSIVE_AREA_12/5 (write) msr_MEMACC_EXCLUSIVE_AREA_12/4 (read) reentry_guard_MEMACC_EXCLUSIVE_AREA_12/5 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Sys_GetCoreID/25 
+SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_12/17 (SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_12) @0dae68c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0dae6b60
+  References: reentry_guard_MEMACC_EXCLUSIVE_AREA_12/5 (read) msr_MEMACC_EXCLUSIVE_AREA_12/4 (write) reentry_guard_MEMACC_EXCLUSIVE_AREA_12/5 (read) reentry_guard_MEMACC_EXCLUSIVE_AREA_12/5 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: MemAcc_schm_read_msr/12 Sys_GetCoreID/25 
+SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_11/16 (SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_11) @0dae6540
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0dae68c0
+  References: reentry_guard_MEMACC_EXCLUSIVE_AREA_11/3 (read) reentry_guard_MEMACC_EXCLUSIVE_AREA_11/3 (write) msr_MEMACC_EXCLUSIVE_AREA_11/2 (read) reentry_guard_MEMACC_EXCLUSIVE_AREA_11/3 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Sys_GetCoreID/25 
+SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_11/15 (SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_11) @0dae62a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0dae6540
+  References: reentry_guard_MEMACC_EXCLUSIVE_AREA_11/3 (read) msr_MEMACC_EXCLUSIVE_AREA_11/2 (write) reentry_guard_MEMACC_EXCLUSIVE_AREA_11/3 (read) reentry_guard_MEMACC_EXCLUSIVE_AREA_11/3 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: MemAcc_schm_read_msr/12 Sys_GetCoreID/25 
+SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_10/14 (SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_10) @0dae1c40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0dae62a0
+  References: reentry_guard_MEMACC_EXCLUSIVE_AREA_10/1 (read) reentry_guard_MEMACC_EXCLUSIVE_AREA_10/1 (write) msr_MEMACC_EXCLUSIVE_AREA_10/0 (read) reentry_guard_MEMACC_EXCLUSIVE_AREA_10/1 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Sys_GetCoreID/25 
+SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_10/13 (SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_10) @0dae1ee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0dae1c40
+  References: reentry_guard_MEMACC_EXCLUSIVE_AREA_10/1 (read) msr_MEMACC_EXCLUSIVE_AREA_10/0 (write) reentry_guard_MEMACC_EXCLUSIVE_AREA_10/1 (read) reentry_guard_MEMACC_EXCLUSIVE_AREA_10/1 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: MemAcc_schm_read_msr/12 Sys_GetCoreID/25 
+MemAcc_schm_read_msr/12 (MemAcc_schm_read_msr) @0dae1b60
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0dae1ee0
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_15/23 SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_14/21 SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_13/19 SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_12/17 SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_11/15 SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_10/13 
+  Calls: 
+reentry_guard_MEMACC_EXCLUSIVE_AREA_15/11 (reentry_guard_MEMACC_EXCLUSIVE_AREA_15) @0dadfa20
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @0dae1b60
+  References: 
+  Referring: SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_15/23 (read) SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_15/23 (read) SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_15/23 (write) SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_15/24 (read) SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_15/24 (write) SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_15/24 (read) 
+  Availability: not-ready
+  Varpool flags:
+msr_MEMACC_EXCLUSIVE_AREA_15/10 (msr_MEMACC_EXCLUSIVE_AREA_15) @0dadf990
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @0dadfa20
+  References: 
+  Referring: SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_15/23 (write) SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_15/24 (read) 
+  Availability: not-ready
+  Varpool flags:
+reentry_guard_MEMACC_EXCLUSIVE_AREA_14/9 (reentry_guard_MEMACC_EXCLUSIVE_AREA_14) @0dadf900
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @0dadf990
+  References: 
+  Referring: SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_14/21 (read) SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_14/21 (read) SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_14/21 (write) SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_14/22 (read) SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_14/22 (write) SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_14/22 (read) 
+  Availability: not-ready
+  Varpool flags:
+msr_MEMACC_EXCLUSIVE_AREA_14/8 (msr_MEMACC_EXCLUSIVE_AREA_14) @0dadf870
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @0dadf900
+  References: 
+  Referring: SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_14/21 (write) SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_14/22 (read) 
+  Availability: not-ready
+  Varpool flags:
+reentry_guard_MEMACC_EXCLUSIVE_AREA_13/7 (reentry_guard_MEMACC_EXCLUSIVE_AREA_13) @0dadf7e0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @0dadf870
+  References: 
+  Referring: SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_13/19 (read) SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_13/19 (read) SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_13/19 (write) SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_13/20 (read) SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_13/20 (write) SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_13/20 (read) 
+  Availability: not-ready
+  Varpool flags:
+msr_MEMACC_EXCLUSIVE_AREA_13/6 (msr_MEMACC_EXCLUSIVE_AREA_13) @0dadf750
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @0dadf7e0
+  References: 
+  Referring: SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_13/19 (write) SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_13/20 (read) 
+  Availability: not-ready
+  Varpool flags:
+reentry_guard_MEMACC_EXCLUSIVE_AREA_12/5 (reentry_guard_MEMACC_EXCLUSIVE_AREA_12) @0dadf6c0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @0dadf750
+  References: 
+  Referring: SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_12/17 (read) SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_12/17 (read) SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_12/17 (write) SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_12/18 (read) SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_12/18 (write) SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_12/18 (read) 
+  Availability: not-ready
+  Varpool flags:
+msr_MEMACC_EXCLUSIVE_AREA_12/4 (msr_MEMACC_EXCLUSIVE_AREA_12) @0dadf630
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @0dadf6c0
+  References: 
+  Referring: SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_12/17 (write) SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_12/18 (read) 
+  Availability: not-ready
+  Varpool flags:
+reentry_guard_MEMACC_EXCLUSIVE_AREA_11/3 (reentry_guard_MEMACC_EXCLUSIVE_AREA_11) @0dadf5a0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @0dadf630
+  References: 
+  Referring: SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_11/15 (read) SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_11/15 (read) SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_11/15 (write) SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_11/16 (read) SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_11/16 (write) SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_11/16 (read) 
+  Availability: not-ready
+  Varpool flags:
+msr_MEMACC_EXCLUSIVE_AREA_11/2 (msr_MEMACC_EXCLUSIVE_AREA_11) @0dadf510
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @0dadf5a0
+  References: 
+  Referring: SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_11/15 (write) SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_11/16 (read) 
+  Availability: not-ready
+  Varpool flags:
+reentry_guard_MEMACC_EXCLUSIVE_AREA_10/1 (reentry_guard_MEMACC_EXCLUSIVE_AREA_10) @0dadf480
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @0dadf510
+  References: 
+  Referring: SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_10/13 (read) SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_10/13 (read) SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_10/13 (write) SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_10/14 (read) SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_10/14 (write) SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_10/14 (read) 
+  Availability: not-ready
+  Varpool flags:
+msr_MEMACC_EXCLUSIVE_AREA_10/0 (msr_MEMACC_EXCLUSIVE_AREA_10) @0dadf3f0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @0dadf480
+  References: 
+  Referring: SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_10/13 (write) SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_10/14 (read) 
+  Availability: not-ready
+  Varpool flags:
+
+Removing unused symbols:
+
+Reclaimed Symbol table:
+
+Sys_GetCoreID/25 (Sys_GetCoreID) @0da4cd20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_15/24 SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_15/23 SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_14/22 SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_14/21 SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_13/20 SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_13/19 SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_12/18 SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_12/17 SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_11/16 SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_11/15 SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_10/14 SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_10/13 
+  Calls: 
+SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_15/24 (SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_15) @0da4c7e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: reentry_guard_MEMACC_EXCLUSIVE_AREA_15/11 (read) reentry_guard_MEMACC_EXCLUSIVE_AREA_15/11 (write) msr_MEMACC_EXCLUSIVE_AREA_15/10 (read) reentry_guard_MEMACC_EXCLUSIVE_AREA_15/11 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Sys_GetCoreID/25 
+SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_15/23 (SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_15) @0da4c540
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: reentry_guard_MEMACC_EXCLUSIVE_AREA_15/11 (read) msr_MEMACC_EXCLUSIVE_AREA_15/10 (write) reentry_guard_MEMACC_EXCLUSIVE_AREA_15/11 (read) reentry_guard_MEMACC_EXCLUSIVE_AREA_15/11 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: MemAcc_schm_read_msr/12 Sys_GetCoreID/25 
+SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_14/22 (SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_14) @0da4c1c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: reentry_guard_MEMACC_EXCLUSIVE_AREA_14/9 (read) reentry_guard_MEMACC_EXCLUSIVE_AREA_14/9 (write) msr_MEMACC_EXCLUSIVE_AREA_14/8 (read) reentry_guard_MEMACC_EXCLUSIVE_AREA_14/9 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Sys_GetCoreID/25 
+SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_14/21 (SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_14) @0dae6c40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: reentry_guard_MEMACC_EXCLUSIVE_AREA_14/9 (read) msr_MEMACC_EXCLUSIVE_AREA_14/8 (write) reentry_guard_MEMACC_EXCLUSIVE_AREA_14/9 (read) reentry_guard_MEMACC_EXCLUSIVE_AREA_14/9 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: MemAcc_schm_read_msr/12 Sys_GetCoreID/25 
+SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_13/20 (SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_13) @0dae6380
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: reentry_guard_MEMACC_EXCLUSIVE_AREA_13/7 (read) reentry_guard_MEMACC_EXCLUSIVE_AREA_13/7 (write) msr_MEMACC_EXCLUSIVE_AREA_13/6 (read) reentry_guard_MEMACC_EXCLUSIVE_AREA_13/7 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Sys_GetCoreID/25 
+SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_13/19 (SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_13) @0dae6ee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: reentry_guard_MEMACC_EXCLUSIVE_AREA_13/7 (read) msr_MEMACC_EXCLUSIVE_AREA_13/6 (write) reentry_guard_MEMACC_EXCLUSIVE_AREA_13/7 (read) reentry_guard_MEMACC_EXCLUSIVE_AREA_13/7 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: MemAcc_schm_read_msr/12 Sys_GetCoreID/25 
+SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_12/18 (SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_12) @0dae6b60
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: reentry_guard_MEMACC_EXCLUSIVE_AREA_12/5 (read) reentry_guard_MEMACC_EXCLUSIVE_AREA_12/5 (write) msr_MEMACC_EXCLUSIVE_AREA_12/4 (read) reentry_guard_MEMACC_EXCLUSIVE_AREA_12/5 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Sys_GetCoreID/25 
+SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_12/17 (SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_12) @0dae68c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: reentry_guard_MEMACC_EXCLUSIVE_AREA_12/5 (read) msr_MEMACC_EXCLUSIVE_AREA_12/4 (write) reentry_guard_MEMACC_EXCLUSIVE_AREA_12/5 (read) reentry_guard_MEMACC_EXCLUSIVE_AREA_12/5 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: MemAcc_schm_read_msr/12 Sys_GetCoreID/25 
+SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_11/16 (SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_11) @0dae6540
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: reentry_guard_MEMACC_EXCLUSIVE_AREA_11/3 (read) reentry_guard_MEMACC_EXCLUSIVE_AREA_11/3 (write) msr_MEMACC_EXCLUSIVE_AREA_11/2 (read) reentry_guard_MEMACC_EXCLUSIVE_AREA_11/3 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Sys_GetCoreID/25 
+SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_11/15 (SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_11) @0dae62a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: reentry_guard_MEMACC_EXCLUSIVE_AREA_11/3 (read) msr_MEMACC_EXCLUSIVE_AREA_11/2 (write) reentry_guard_MEMACC_EXCLUSIVE_AREA_11/3 (read) reentry_guard_MEMACC_EXCLUSIVE_AREA_11/3 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: MemAcc_schm_read_msr/12 Sys_GetCoreID/25 
+SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_10/14 (SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_10) @0dae1c40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: reentry_guard_MEMACC_EXCLUSIVE_AREA_10/1 (read) reentry_guard_MEMACC_EXCLUSIVE_AREA_10/1 (write) msr_MEMACC_EXCLUSIVE_AREA_10/0 (read) reentry_guard_MEMACC_EXCLUSIVE_AREA_10/1 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Sys_GetCoreID/25 
+SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_10/13 (SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_10) @0dae1ee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: reentry_guard_MEMACC_EXCLUSIVE_AREA_10/1 (read) msr_MEMACC_EXCLUSIVE_AREA_10/0 (write) reentry_guard_MEMACC_EXCLUSIVE_AREA_10/1 (read) reentry_guard_MEMACC_EXCLUSIVE_AREA_10/1 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: MemAcc_schm_read_msr/12 Sys_GetCoreID/25 
+MemAcc_schm_read_msr/12 (MemAcc_schm_read_msr) @0dae1b60
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_15/23 SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_14/21 SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_13/19 SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_12/17 SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_11/15 SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_10/13 
+  Calls: 
+reentry_guard_MEMACC_EXCLUSIVE_AREA_15/11 (reentry_guard_MEMACC_EXCLUSIVE_AREA_15) @0dadfa20
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_15/23 (read) SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_15/23 (read) SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_15/23 (write) SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_15/24 (read) SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_15/24 (write) SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_15/24 (read) 
+  Availability: not-ready
+  Varpool flags:
+msr_MEMACC_EXCLUSIVE_AREA_15/10 (msr_MEMACC_EXCLUSIVE_AREA_15) @0dadf990
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_15/23 (write) SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_15/24 (read) 
+  Availability: not-ready
+  Varpool flags:
+reentry_guard_MEMACC_EXCLUSIVE_AREA_14/9 (reentry_guard_MEMACC_EXCLUSIVE_AREA_14) @0dadf900
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_14/21 (read) SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_14/21 (read) SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_14/21 (write) SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_14/22 (read) SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_14/22 (write) SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_14/22 (read) 
+  Availability: not-ready
+  Varpool flags:
+msr_MEMACC_EXCLUSIVE_AREA_14/8 (msr_MEMACC_EXCLUSIVE_AREA_14) @0dadf870
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_14/21 (write) SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_14/22 (read) 
+  Availability: not-ready
+  Varpool flags:
+reentry_guard_MEMACC_EXCLUSIVE_AREA_13/7 (reentry_guard_MEMACC_EXCLUSIVE_AREA_13) @0dadf7e0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_13/19 (read) SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_13/19 (read) SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_13/19 (write) SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_13/20 (read) SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_13/20 (write) SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_13/20 (read) 
+  Availability: not-ready
+  Varpool flags:
+msr_MEMACC_EXCLUSIVE_AREA_13/6 (msr_MEMACC_EXCLUSIVE_AREA_13) @0dadf750
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_13/19 (write) SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_13/20 (read) 
+  Availability: not-ready
+  Varpool flags:
+reentry_guard_MEMACC_EXCLUSIVE_AREA_12/5 (reentry_guard_MEMACC_EXCLUSIVE_AREA_12) @0dadf6c0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_12/17 (read) SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_12/17 (read) SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_12/17 (write) SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_12/18 (read) SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_12/18 (write) SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_12/18 (read) 
+  Availability: not-ready
+  Varpool flags:
+msr_MEMACC_EXCLUSIVE_AREA_12/4 (msr_MEMACC_EXCLUSIVE_AREA_12) @0dadf630
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_12/17 (write) SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_12/18 (read) 
+  Availability: not-ready
+  Varpool flags:
+reentry_guard_MEMACC_EXCLUSIVE_AREA_11/3 (reentry_guard_MEMACC_EXCLUSIVE_AREA_11) @0dadf5a0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_11/15 (read) SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_11/15 (read) SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_11/15 (write) SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_11/16 (read) SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_11/16 (write) SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_11/16 (read) 
+  Availability: not-ready
+  Varpool flags:
+msr_MEMACC_EXCLUSIVE_AREA_11/2 (msr_MEMACC_EXCLUSIVE_AREA_11) @0dadf510
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_11/15 (write) SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_11/16 (read) 
+  Availability: not-ready
+  Varpool flags:
+reentry_guard_MEMACC_EXCLUSIVE_AREA_10/1 (reentry_guard_MEMACC_EXCLUSIVE_AREA_10) @0dadf480
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_10/13 (read) SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_10/13 (read) SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_10/13 (write) SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_10/14 (read) SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_10/14 (write) SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_10/14 (read) 
+  Availability: not-ready
+  Varpool flags:
+msr_MEMACC_EXCLUSIVE_AREA_10/0 (msr_MEMACC_EXCLUSIVE_AREA_10) @0dadf3f0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_10/13 (write) SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_10/14 (read) 
+  Availability: not-ready
+  Varpool flags:
+
+
+Initial Symbol table:
+
+Sys_GetCoreID/25 (Sys_GetCoreID) @0da4cd20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_15/24 SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_15/23 SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_14/22 SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_14/21 SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_13/20 SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_13/19 SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_12/18 SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_12/17 SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_11/16 SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_11/15 SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_10/14 SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_10/13 
+  Calls: 
+SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_15/24 (SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_15) @0da4c7e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: reentry_guard_MEMACC_EXCLUSIVE_AREA_15/11 (read) reentry_guard_MEMACC_EXCLUSIVE_AREA_15/11 (write) msr_MEMACC_EXCLUSIVE_AREA_15/10 (read) reentry_guard_MEMACC_EXCLUSIVE_AREA_15/11 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Sys_GetCoreID/25 
+SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_15/23 (SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_15) @0da4c540
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: reentry_guard_MEMACC_EXCLUSIVE_AREA_15/11 (read) msr_MEMACC_EXCLUSIVE_AREA_15/10 (write) reentry_guard_MEMACC_EXCLUSIVE_AREA_15/11 (read) reentry_guard_MEMACC_EXCLUSIVE_AREA_15/11 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: MemAcc_schm_read_msr/12 Sys_GetCoreID/25 
+SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_14/22 (SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_14) @0da4c1c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: reentry_guard_MEMACC_EXCLUSIVE_AREA_14/9 (read) reentry_guard_MEMACC_EXCLUSIVE_AREA_14/9 (write) msr_MEMACC_EXCLUSIVE_AREA_14/8 (read) reentry_guard_MEMACC_EXCLUSIVE_AREA_14/9 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Sys_GetCoreID/25 
+SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_14/21 (SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_14) @0dae6c40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: reentry_guard_MEMACC_EXCLUSIVE_AREA_14/9 (read) msr_MEMACC_EXCLUSIVE_AREA_14/8 (write) reentry_guard_MEMACC_EXCLUSIVE_AREA_14/9 (read) reentry_guard_MEMACC_EXCLUSIVE_AREA_14/9 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: MemAcc_schm_read_msr/12 Sys_GetCoreID/25 
+SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_13/20 (SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_13) @0dae6380
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: reentry_guard_MEMACC_EXCLUSIVE_AREA_13/7 (read) reentry_guard_MEMACC_EXCLUSIVE_AREA_13/7 (write) msr_MEMACC_EXCLUSIVE_AREA_13/6 (read) reentry_guard_MEMACC_EXCLUSIVE_AREA_13/7 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Sys_GetCoreID/25 
+SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_13/19 (SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_13) @0dae6ee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: reentry_guard_MEMACC_EXCLUSIVE_AREA_13/7 (read) msr_MEMACC_EXCLUSIVE_AREA_13/6 (write) reentry_guard_MEMACC_EXCLUSIVE_AREA_13/7 (read) reentry_guard_MEMACC_EXCLUSIVE_AREA_13/7 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: MemAcc_schm_read_msr/12 Sys_GetCoreID/25 
+SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_12/18 (SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_12) @0dae6b60
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: reentry_guard_MEMACC_EXCLUSIVE_AREA_12/5 (read) reentry_guard_MEMACC_EXCLUSIVE_AREA_12/5 (write) msr_MEMACC_EXCLUSIVE_AREA_12/4 (read) reentry_guard_MEMACC_EXCLUSIVE_AREA_12/5 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Sys_GetCoreID/25 
+SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_12/17 (SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_12) @0dae68c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: reentry_guard_MEMACC_EXCLUSIVE_AREA_12/5 (read) msr_MEMACC_EXCLUSIVE_AREA_12/4 (write) reentry_guard_MEMACC_EXCLUSIVE_AREA_12/5 (read) reentry_guard_MEMACC_EXCLUSIVE_AREA_12/5 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: MemAcc_schm_read_msr/12 Sys_GetCoreID/25 
+SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_11/16 (SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_11) @0dae6540
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: reentry_guard_MEMACC_EXCLUSIVE_AREA_11/3 (read) reentry_guard_MEMACC_EXCLUSIVE_AREA_11/3 (write) msr_MEMACC_EXCLUSIVE_AREA_11/2 (read) reentry_guard_MEMACC_EXCLUSIVE_AREA_11/3 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Sys_GetCoreID/25 
+SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_11/15 (SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_11) @0dae62a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: reentry_guard_MEMACC_EXCLUSIVE_AREA_11/3 (read) msr_MEMACC_EXCLUSIVE_AREA_11/2 (write) reentry_guard_MEMACC_EXCLUSIVE_AREA_11/3 (read) reentry_guard_MEMACC_EXCLUSIVE_AREA_11/3 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: MemAcc_schm_read_msr/12 Sys_GetCoreID/25 
+SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_10/14 (SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_10) @0dae1c40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: reentry_guard_MEMACC_EXCLUSIVE_AREA_10/1 (read) reentry_guard_MEMACC_EXCLUSIVE_AREA_10/1 (write) msr_MEMACC_EXCLUSIVE_AREA_10/0 (read) reentry_guard_MEMACC_EXCLUSIVE_AREA_10/1 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Sys_GetCoreID/25 
+SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_10/13 (SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_10) @0dae1ee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: reentry_guard_MEMACC_EXCLUSIVE_AREA_10/1 (read) msr_MEMACC_EXCLUSIVE_AREA_10/0 (write) reentry_guard_MEMACC_EXCLUSIVE_AREA_10/1 (read) reentry_guard_MEMACC_EXCLUSIVE_AREA_10/1 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: MemAcc_schm_read_msr/12 Sys_GetCoreID/25 
+MemAcc_schm_read_msr/12 (MemAcc_schm_read_msr) @0dae1b60
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_15/23 SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_14/21 SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_13/19 SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_12/17 SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_11/15 SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_10/13 
+  Calls: 
+reentry_guard_MEMACC_EXCLUSIVE_AREA_15/11 (reentry_guard_MEMACC_EXCLUSIVE_AREA_15) @0dadfa20
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_15/23 (read) SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_15/23 (read) SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_15/23 (write) SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_15/24 (read) SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_15/24 (write) SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_15/24 (read) 
+  Availability: not-ready
+  Varpool flags:
+msr_MEMACC_EXCLUSIVE_AREA_15/10 (msr_MEMACC_EXCLUSIVE_AREA_15) @0dadf990
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_15/23 (write) SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_15/24 (read) 
+  Availability: not-ready
+  Varpool flags:
+reentry_guard_MEMACC_EXCLUSIVE_AREA_14/9 (reentry_guard_MEMACC_EXCLUSIVE_AREA_14) @0dadf900
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_14/21 (read) SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_14/21 (read) SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_14/21 (write) SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_14/22 (read) SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_14/22 (write) SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_14/22 (read) 
+  Availability: not-ready
+  Varpool flags:
+msr_MEMACC_EXCLUSIVE_AREA_14/8 (msr_MEMACC_EXCLUSIVE_AREA_14) @0dadf870
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_14/21 (write) SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_14/22 (read) 
+  Availability: not-ready
+  Varpool flags:
+reentry_guard_MEMACC_EXCLUSIVE_AREA_13/7 (reentry_guard_MEMACC_EXCLUSIVE_AREA_13) @0dadf7e0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_13/19 (read) SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_13/19 (read) SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_13/19 (write) SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_13/20 (read) SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_13/20 (write) SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_13/20 (read) 
+  Availability: not-ready
+  Varpool flags:
+msr_MEMACC_EXCLUSIVE_AREA_13/6 (msr_MEMACC_EXCLUSIVE_AREA_13) @0dadf750
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_13/19 (write) SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_13/20 (read) 
+  Availability: not-ready
+  Varpool flags:
+reentry_guard_MEMACC_EXCLUSIVE_AREA_12/5 (reentry_guard_MEMACC_EXCLUSIVE_AREA_12) @0dadf6c0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_12/17 (read) SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_12/17 (read) SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_12/17 (write) SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_12/18 (read) SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_12/18 (write) SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_12/18 (read) 
+  Availability: not-ready
+  Varpool flags:
+msr_MEMACC_EXCLUSIVE_AREA_12/4 (msr_MEMACC_EXCLUSIVE_AREA_12) @0dadf630
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_12/17 (write) SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_12/18 (read) 
+  Availability: not-ready
+  Varpool flags:
+reentry_guard_MEMACC_EXCLUSIVE_AREA_11/3 (reentry_guard_MEMACC_EXCLUSIVE_AREA_11) @0dadf5a0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_11/15 (read) SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_11/15 (read) SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_11/15 (write) SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_11/16 (read) SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_11/16 (write) SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_11/16 (read) 
+  Availability: not-ready
+  Varpool flags:
+msr_MEMACC_EXCLUSIVE_AREA_11/2 (msr_MEMACC_EXCLUSIVE_AREA_11) @0dadf510
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_11/15 (write) SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_11/16 (read) 
+  Availability: not-ready
+  Varpool flags:
+reentry_guard_MEMACC_EXCLUSIVE_AREA_10/1 (reentry_guard_MEMACC_EXCLUSIVE_AREA_10) @0dadf480
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_10/13 (read) SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_10/13 (read) SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_10/13 (write) SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_10/14 (read) SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_10/14 (write) SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_10/14 (read) 
+  Availability: not-ready
+  Varpool flags:
+msr_MEMACC_EXCLUSIVE_AREA_10/0 (msr_MEMACC_EXCLUSIVE_AREA_10) @0dadf3f0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_10/13 (write) SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_10/14 (read) 
+  Availability: not-ready
+  Varpool flags:
+
+Removing unused symbols:
+
+Reclaimed Symbol table:
+
+Sys_GetCoreID/25 (Sys_GetCoreID) @0da4cd20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_15/24 SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_15/23 SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_14/22 SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_14/21 SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_13/20 SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_13/19 SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_12/18 SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_12/17 SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_11/16 SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_11/15 SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_10/14 SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_10/13 
+  Calls: 
+SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_15/24 (SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_15) @0da4c7e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: reentry_guard_MEMACC_EXCLUSIVE_AREA_15/11 (read) reentry_guard_MEMACC_EXCLUSIVE_AREA_15/11 (write) msr_MEMACC_EXCLUSIVE_AREA_15/10 (read) reentry_guard_MEMACC_EXCLUSIVE_AREA_15/11 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Sys_GetCoreID/25 
+SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_15/23 (SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_15) @0da4c540
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: reentry_guard_MEMACC_EXCLUSIVE_AREA_15/11 (read) msr_MEMACC_EXCLUSIVE_AREA_15/10 (write) reentry_guard_MEMACC_EXCLUSIVE_AREA_15/11 (read) reentry_guard_MEMACC_EXCLUSIVE_AREA_15/11 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: MemAcc_schm_read_msr/12 Sys_GetCoreID/25 
+SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_14/22 (SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_14) @0da4c1c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: reentry_guard_MEMACC_EXCLUSIVE_AREA_14/9 (read) reentry_guard_MEMACC_EXCLUSIVE_AREA_14/9 (write) msr_MEMACC_EXCLUSIVE_AREA_14/8 (read) reentry_guard_MEMACC_EXCLUSIVE_AREA_14/9 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Sys_GetCoreID/25 
+SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_14/21 (SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_14) @0dae6c40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: reentry_guard_MEMACC_EXCLUSIVE_AREA_14/9 (read) msr_MEMACC_EXCLUSIVE_AREA_14/8 (write) reentry_guard_MEMACC_EXCLUSIVE_AREA_14/9 (read) reentry_guard_MEMACC_EXCLUSIVE_AREA_14/9 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: MemAcc_schm_read_msr/12 Sys_GetCoreID/25 
+SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_13/20 (SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_13) @0dae6380
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: reentry_guard_MEMACC_EXCLUSIVE_AREA_13/7 (read) reentry_guard_MEMACC_EXCLUSIVE_AREA_13/7 (write) msr_MEMACC_EXCLUSIVE_AREA_13/6 (read) reentry_guard_MEMACC_EXCLUSIVE_AREA_13/7 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Sys_GetCoreID/25 
+SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_13/19 (SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_13) @0dae6ee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: reentry_guard_MEMACC_EXCLUSIVE_AREA_13/7 (read) msr_MEMACC_EXCLUSIVE_AREA_13/6 (write) reentry_guard_MEMACC_EXCLUSIVE_AREA_13/7 (read) reentry_guard_MEMACC_EXCLUSIVE_AREA_13/7 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: MemAcc_schm_read_msr/12 Sys_GetCoreID/25 
+SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_12/18 (SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_12) @0dae6b60
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: reentry_guard_MEMACC_EXCLUSIVE_AREA_12/5 (read) reentry_guard_MEMACC_EXCLUSIVE_AREA_12/5 (write) msr_MEMACC_EXCLUSIVE_AREA_12/4 (read) reentry_guard_MEMACC_EXCLUSIVE_AREA_12/5 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Sys_GetCoreID/25 
+SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_12/17 (SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_12) @0dae68c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: reentry_guard_MEMACC_EXCLUSIVE_AREA_12/5 (read) msr_MEMACC_EXCLUSIVE_AREA_12/4 (write) reentry_guard_MEMACC_EXCLUSIVE_AREA_12/5 (read) reentry_guard_MEMACC_EXCLUSIVE_AREA_12/5 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: MemAcc_schm_read_msr/12 Sys_GetCoreID/25 
+SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_11/16 (SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_11) @0dae6540
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: reentry_guard_MEMACC_EXCLUSIVE_AREA_11/3 (read) reentry_guard_MEMACC_EXCLUSIVE_AREA_11/3 (write) msr_MEMACC_EXCLUSIVE_AREA_11/2 (read) reentry_guard_MEMACC_EXCLUSIVE_AREA_11/3 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Sys_GetCoreID/25 
+SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_11/15 (SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_11) @0dae62a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: reentry_guard_MEMACC_EXCLUSIVE_AREA_11/3 (read) msr_MEMACC_EXCLUSIVE_AREA_11/2 (write) reentry_guard_MEMACC_EXCLUSIVE_AREA_11/3 (read) reentry_guard_MEMACC_EXCLUSIVE_AREA_11/3 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: MemAcc_schm_read_msr/12 Sys_GetCoreID/25 
+SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_10/14 (SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_10) @0dae1c40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: reentry_guard_MEMACC_EXCLUSIVE_AREA_10/1 (read) reentry_guard_MEMACC_EXCLUSIVE_AREA_10/1 (write) msr_MEMACC_EXCLUSIVE_AREA_10/0 (read) reentry_guard_MEMACC_EXCLUSIVE_AREA_10/1 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Sys_GetCoreID/25 
+SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_10/13 (SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_10) @0dae1ee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: reentry_guard_MEMACC_EXCLUSIVE_AREA_10/1 (read) msr_MEMACC_EXCLUSIVE_AREA_10/0 (write) reentry_guard_MEMACC_EXCLUSIVE_AREA_10/1 (read) reentry_guard_MEMACC_EXCLUSIVE_AREA_10/1 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: MemAcc_schm_read_msr/12 Sys_GetCoreID/25 
+MemAcc_schm_read_msr/12 (MemAcc_schm_read_msr) @0dae1b60
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_15/23 SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_14/21 SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_13/19 SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_12/17 SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_11/15 SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_10/13 
+  Calls: 
+reentry_guard_MEMACC_EXCLUSIVE_AREA_15/11 (reentry_guard_MEMACC_EXCLUSIVE_AREA_15) @0dadfa20
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_15/23 (read) SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_15/23 (read) SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_15/23 (write) SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_15/24 (read) SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_15/24 (write) SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_15/24 (read) 
+  Availability: not-ready
+  Varpool flags:
+msr_MEMACC_EXCLUSIVE_AREA_15/10 (msr_MEMACC_EXCLUSIVE_AREA_15) @0dadf990
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_15/23 (write) SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_15/24 (read) 
+  Availability: not-ready
+  Varpool flags:
+reentry_guard_MEMACC_EXCLUSIVE_AREA_14/9 (reentry_guard_MEMACC_EXCLUSIVE_AREA_14) @0dadf900
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_14/21 (read) SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_14/21 (read) SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_14/21 (write) SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_14/22 (read) SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_14/22 (write) SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_14/22 (read) 
+  Availability: not-ready
+  Varpool flags:
+msr_MEMACC_EXCLUSIVE_AREA_14/8 (msr_MEMACC_EXCLUSIVE_AREA_14) @0dadf870
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_14/21 (write) SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_14/22 (read) 
+  Availability: not-ready
+  Varpool flags:
+reentry_guard_MEMACC_EXCLUSIVE_AREA_13/7 (reentry_guard_MEMACC_EXCLUSIVE_AREA_13) @0dadf7e0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_13/19 (read) SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_13/19 (read) SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_13/19 (write) SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_13/20 (read) SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_13/20 (write) SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_13/20 (read) 
+  Availability: not-ready
+  Varpool flags:
+msr_MEMACC_EXCLUSIVE_AREA_13/6 (msr_MEMACC_EXCLUSIVE_AREA_13) @0dadf750
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_13/19 (write) SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_13/20 (read) 
+  Availability: not-ready
+  Varpool flags:
+reentry_guard_MEMACC_EXCLUSIVE_AREA_12/5 (reentry_guard_MEMACC_EXCLUSIVE_AREA_12) @0dadf6c0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_12/17 (read) SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_12/17 (read) SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_12/17 (write) SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_12/18 (read) SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_12/18 (write) SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_12/18 (read) 
+  Availability: not-ready
+  Varpool flags:
+msr_MEMACC_EXCLUSIVE_AREA_12/4 (msr_MEMACC_EXCLUSIVE_AREA_12) @0dadf630
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_12/17 (write) SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_12/18 (read) 
+  Availability: not-ready
+  Varpool flags:
+reentry_guard_MEMACC_EXCLUSIVE_AREA_11/3 (reentry_guard_MEMACC_EXCLUSIVE_AREA_11) @0dadf5a0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_11/15 (read) SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_11/15 (read) SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_11/15 (write) SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_11/16 (read) SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_11/16 (write) SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_11/16 (read) 
+  Availability: not-ready
+  Varpool flags:
+msr_MEMACC_EXCLUSIVE_AREA_11/2 (msr_MEMACC_EXCLUSIVE_AREA_11) @0dadf510
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_11/15 (write) SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_11/16 (read) 
+  Availability: not-ready
+  Varpool flags:
+reentry_guard_MEMACC_EXCLUSIVE_AREA_10/1 (reentry_guard_MEMACC_EXCLUSIVE_AREA_10) @0dadf480
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_10/13 (read) SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_10/13 (read) SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_10/13 (write) SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_10/14 (read) SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_10/14 (write) SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_10/14 (read) 
+  Availability: not-ready
+  Varpool flags:
+msr_MEMACC_EXCLUSIVE_AREA_10/0 (msr_MEMACC_EXCLUSIVE_AREA_10) @0dadf3f0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_10/13 (write) SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_10/14 (read) 
+  Availability: not-ready
+  Varpool flags:
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+Optimized Symbol table:
+
+Sys_GetCoreID/25 (Sys_GetCoreID) @0da4cd20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_15/24 SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_15/23 SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_14/22 SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_14/21 SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_13/20 SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_13/19 SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_12/18 SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_12/17 SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_11/16 SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_11/15 SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_10/14 SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_10/13 
+  Calls: 
+SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_15/24 (SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_15) @0da4c7e0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: reentry_guard_MEMACC_EXCLUSIVE_AREA_15/11 (read) reentry_guard_MEMACC_EXCLUSIVE_AREA_15/11 (write) msr_MEMACC_EXCLUSIVE_AREA_15/10 (read) reentry_guard_MEMACC_EXCLUSIVE_AREA_15/11 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Sys_GetCoreID/25 
+SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_15/23 (SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_15) @0da4c540
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: reentry_guard_MEMACC_EXCLUSIVE_AREA_15/11 (read) msr_MEMACC_EXCLUSIVE_AREA_15/10 (write) reentry_guard_MEMACC_EXCLUSIVE_AREA_15/11 (read) reentry_guard_MEMACC_EXCLUSIVE_AREA_15/11 (write) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: MemAcc_schm_read_msr/12 Sys_GetCoreID/25 
+SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_14/22 (SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_14) @0da4c1c0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: reentry_guard_MEMACC_EXCLUSIVE_AREA_14/9 (read) reentry_guard_MEMACC_EXCLUSIVE_AREA_14/9 (write) msr_MEMACC_EXCLUSIVE_AREA_14/8 (read) reentry_guard_MEMACC_EXCLUSIVE_AREA_14/9 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Sys_GetCoreID/25 
+SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_14/21 (SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_14) @0dae6c40
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: reentry_guard_MEMACC_EXCLUSIVE_AREA_14/9 (read) msr_MEMACC_EXCLUSIVE_AREA_14/8 (write) reentry_guard_MEMACC_EXCLUSIVE_AREA_14/9 (read) reentry_guard_MEMACC_EXCLUSIVE_AREA_14/9 (write) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: MemAcc_schm_read_msr/12 Sys_GetCoreID/25 
+SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_13/20 (SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_13) @0dae6380
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: reentry_guard_MEMACC_EXCLUSIVE_AREA_13/7 (read) reentry_guard_MEMACC_EXCLUSIVE_AREA_13/7 (write) msr_MEMACC_EXCLUSIVE_AREA_13/6 (read) reentry_guard_MEMACC_EXCLUSIVE_AREA_13/7 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Sys_GetCoreID/25 
+SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_13/19 (SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_13) @0dae6ee0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: reentry_guard_MEMACC_EXCLUSIVE_AREA_13/7 (read) msr_MEMACC_EXCLUSIVE_AREA_13/6 (write) reentry_guard_MEMACC_EXCLUSIVE_AREA_13/7 (read) reentry_guard_MEMACC_EXCLUSIVE_AREA_13/7 (write) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: MemAcc_schm_read_msr/12 Sys_GetCoreID/25 
+SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_12/18 (SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_12) @0dae6b60
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: reentry_guard_MEMACC_EXCLUSIVE_AREA_12/5 (read) reentry_guard_MEMACC_EXCLUSIVE_AREA_12/5 (write) msr_MEMACC_EXCLUSIVE_AREA_12/4 (read) reentry_guard_MEMACC_EXCLUSIVE_AREA_12/5 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Sys_GetCoreID/25 
+SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_12/17 (SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_12) @0dae68c0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: reentry_guard_MEMACC_EXCLUSIVE_AREA_12/5 (read) msr_MEMACC_EXCLUSIVE_AREA_12/4 (write) reentry_guard_MEMACC_EXCLUSIVE_AREA_12/5 (read) reentry_guard_MEMACC_EXCLUSIVE_AREA_12/5 (write) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: MemAcc_schm_read_msr/12 Sys_GetCoreID/25 
+SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_11/16 (SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_11) @0dae6540
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: reentry_guard_MEMACC_EXCLUSIVE_AREA_11/3 (read) reentry_guard_MEMACC_EXCLUSIVE_AREA_11/3 (write) msr_MEMACC_EXCLUSIVE_AREA_11/2 (read) reentry_guard_MEMACC_EXCLUSIVE_AREA_11/3 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Sys_GetCoreID/25 
+SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_11/15 (SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_11) @0dae62a0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: reentry_guard_MEMACC_EXCLUSIVE_AREA_11/3 (read) msr_MEMACC_EXCLUSIVE_AREA_11/2 (write) reentry_guard_MEMACC_EXCLUSIVE_AREA_11/3 (read) reentry_guard_MEMACC_EXCLUSIVE_AREA_11/3 (write) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: MemAcc_schm_read_msr/12 Sys_GetCoreID/25 
+SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_10/14 (SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_10) @0dae1c40
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: reentry_guard_MEMACC_EXCLUSIVE_AREA_10/1 (read) reentry_guard_MEMACC_EXCLUSIVE_AREA_10/1 (write) msr_MEMACC_EXCLUSIVE_AREA_10/0 (read) reentry_guard_MEMACC_EXCLUSIVE_AREA_10/1 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Sys_GetCoreID/25 
+SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_10/13 (SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_10) @0dae1ee0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: reentry_guard_MEMACC_EXCLUSIVE_AREA_10/1 (read) msr_MEMACC_EXCLUSIVE_AREA_10/0 (write) reentry_guard_MEMACC_EXCLUSIVE_AREA_10/1 (read) reentry_guard_MEMACC_EXCLUSIVE_AREA_10/1 (write) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: MemAcc_schm_read_msr/12 Sys_GetCoreID/25 
+MemAcc_schm_read_msr/12 (MemAcc_schm_read_msr) @0dae1b60
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_15/23 SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_14/21 SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_13/19 SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_12/17 SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_11/15 SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_10/13 
+  Calls: 
+reentry_guard_MEMACC_EXCLUSIVE_AREA_15/11 (reentry_guard_MEMACC_EXCLUSIVE_AREA_15) @0dadfa20
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_15/23 (read) SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_15/23 (read) SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_15/23 (write) SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_15/24 (read) SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_15/24 (write) SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_15/24 (read) 
+  Availability: available
+  Varpool flags:
+msr_MEMACC_EXCLUSIVE_AREA_15/10 (msr_MEMACC_EXCLUSIVE_AREA_15) @0dadf990
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_15/23 (write) SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_15/24 (read) 
+  Availability: available
+  Varpool flags:
+reentry_guard_MEMACC_EXCLUSIVE_AREA_14/9 (reentry_guard_MEMACC_EXCLUSIVE_AREA_14) @0dadf900
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_14/21 (read) SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_14/21 (read) SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_14/21 (write) SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_14/22 (read) SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_14/22 (write) SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_14/22 (read) 
+  Availability: available
+  Varpool flags:
+msr_MEMACC_EXCLUSIVE_AREA_14/8 (msr_MEMACC_EXCLUSIVE_AREA_14) @0dadf870
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_14/21 (write) SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_14/22 (read) 
+  Availability: available
+  Varpool flags:
+reentry_guard_MEMACC_EXCLUSIVE_AREA_13/7 (reentry_guard_MEMACC_EXCLUSIVE_AREA_13) @0dadf7e0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_13/19 (read) SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_13/19 (read) SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_13/19 (write) SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_13/20 (read) SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_13/20 (write) SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_13/20 (read) 
+  Availability: available
+  Varpool flags:
+msr_MEMACC_EXCLUSIVE_AREA_13/6 (msr_MEMACC_EXCLUSIVE_AREA_13) @0dadf750
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_13/19 (write) SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_13/20 (read) 
+  Availability: available
+  Varpool flags:
+reentry_guard_MEMACC_EXCLUSIVE_AREA_12/5 (reentry_guard_MEMACC_EXCLUSIVE_AREA_12) @0dadf6c0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_12/17 (read) SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_12/17 (read) SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_12/17 (write) SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_12/18 (read) SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_12/18 (write) SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_12/18 (read) 
+  Availability: available
+  Varpool flags:
+msr_MEMACC_EXCLUSIVE_AREA_12/4 (msr_MEMACC_EXCLUSIVE_AREA_12) @0dadf630
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_12/17 (write) SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_12/18 (read) 
+  Availability: available
+  Varpool flags:
+reentry_guard_MEMACC_EXCLUSIVE_AREA_11/3 (reentry_guard_MEMACC_EXCLUSIVE_AREA_11) @0dadf5a0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_11/15 (read) SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_11/15 (read) SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_11/15 (write) SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_11/16 (read) SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_11/16 (write) SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_11/16 (read) 
+  Availability: available
+  Varpool flags:
+msr_MEMACC_EXCLUSIVE_AREA_11/2 (msr_MEMACC_EXCLUSIVE_AREA_11) @0dadf510
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_11/15 (write) SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_11/16 (read) 
+  Availability: available
+  Varpool flags:
+reentry_guard_MEMACC_EXCLUSIVE_AREA_10/1 (reentry_guard_MEMACC_EXCLUSIVE_AREA_10) @0dadf480
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_10/13 (read) SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_10/13 (read) SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_10/13 (write) SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_10/14 (read) SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_10/14 (write) SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_10/14 (read) 
+  Availability: available
+  Varpool flags:
+msr_MEMACC_EXCLUSIVE_AREA_10/0 (msr_MEMACC_EXCLUSIVE_AREA_10) @0dadf3f0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_10/13 (write) SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_10/14 (read) 
+  Availability: available
+  Varpool flags:
+Materializing clones
+Materialization Call site updates done.
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+Trivially needed variables: reentry_guard_MEMACC_EXCLUSIVE_AREA_15/11 msr_MEMACC_EXCLUSIVE_AREA_15/10 reentry_guard_MEMACC_EXCLUSIVE_AREA_14/9 msr_MEMACC_EXCLUSIVE_AREA_14/8 reentry_guard_MEMACC_EXCLUSIVE_AREA_13/7 msr_MEMACC_EXCLUSIVE_AREA_13/6 reentry_guard_MEMACC_EXCLUSIVE_AREA_12/5 msr_MEMACC_EXCLUSIVE_AREA_12/4 reentry_guard_MEMACC_EXCLUSIVE_AREA_11/3 msr_MEMACC_EXCLUSIVE_AREA_11/2 reentry_guard_MEMACC_EXCLUSIVE_AREA_10/1 msr_MEMACC_EXCLUSIVE_AREA_10/0
+Removing variables:
+
+Final Symbol table:
+
+Sys_GetCoreID/25 (Sys_GetCoreID) @0da4cd20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_15/24 (SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_15) @0da4c7e0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_15 (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_15/23 (SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_15) @0da4c540
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_15 (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_14/22 (SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_14) @0da4c1c0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_14 (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_14/21 (SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_14) @0dae6c40
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_14 (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_13/20 (SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_13) @0dae6380
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_13 (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_13/19 (SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_13) @0dae6ee0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_13 (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_12/18 (SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_12) @0dae6b60
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_12 (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_12/17 (SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_12) @0dae68c0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_12 (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_11/16 (SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_11) @0dae6540
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_11 (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_11/15 (SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_11) @0dae62a0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_11 (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_10/14 (SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_10) @0dae1c40
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.SchM_Exit_MemAcc_MEMACC_EXCLUSIVE_AREA_10 (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_10/13 (SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_10) @0dae1ee0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.SchM_Enter_MemAcc_MEMACC_EXCLUSIVE_AREA_10 (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+MemAcc_schm_read_msr/12 (MemAcc_schm_read_msr) @0dae1b60
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.MemAcc_schm_read_msr (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+reentry_guard_MEMACC_EXCLUSIVE_AREA_15/11 (reentry_guard_MEMACC_EXCLUSIVE_AREA_15) @0dadfa20
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written section:.bss.reentry_guard_MEMACC_EXCLUSIVE_AREA_15 (implicit_section)
+  Aux: @00000001
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags:
+msr_MEMACC_EXCLUSIVE_AREA_15/10 (msr_MEMACC_EXCLUSIVE_AREA_15) @0dadf990
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written section:.bss.msr_MEMACC_EXCLUSIVE_AREA_15 (implicit_section)
+  Aux: @0dadfa20
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags:
+reentry_guard_MEMACC_EXCLUSIVE_AREA_14/9 (reentry_guard_MEMACC_EXCLUSIVE_AREA_14) @0dadf900
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written section:.bss.reentry_guard_MEMACC_EXCLUSIVE_AREA_14 (implicit_section)
+  Aux: @0dadf990
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags:
+msr_MEMACC_EXCLUSIVE_AREA_14/8 (msr_MEMACC_EXCLUSIVE_AREA_14) @0dadf870
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written section:.bss.msr_MEMACC_EXCLUSIVE_AREA_14 (implicit_section)
+  Aux: @0dadf900
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags:
+reentry_guard_MEMACC_EXCLUSIVE_AREA_13/7 (reentry_guard_MEMACC_EXCLUSIVE_AREA_13) @0dadf7e0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written section:.bss.reentry_guard_MEMACC_EXCLUSIVE_AREA_13 (implicit_section)
+  Aux: @0dadf870
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags:
+msr_MEMACC_EXCLUSIVE_AREA_13/6 (msr_MEMACC_EXCLUSIVE_AREA_13) @0dadf750
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written section:.bss.msr_MEMACC_EXCLUSIVE_AREA_13 (implicit_section)
+  Aux: @0dadf7e0
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags:
+reentry_guard_MEMACC_EXCLUSIVE_AREA_12/5 (reentry_guard_MEMACC_EXCLUSIVE_AREA_12) @0dadf6c0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written section:.bss.reentry_guard_MEMACC_EXCLUSIVE_AREA_12 (implicit_section)
+  Aux: @0dadf750
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags:
+msr_MEMACC_EXCLUSIVE_AREA_12/4 (msr_MEMACC_EXCLUSIVE_AREA_12) @0dadf630
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written section:.bss.msr_MEMACC_EXCLUSIVE_AREA_12 (implicit_section)
+  Aux: @0dadf6c0
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags:
+reentry_guard_MEMACC_EXCLUSIVE_AREA_11/3 (reentry_guard_MEMACC_EXCLUSIVE_AREA_11) @0dadf5a0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written section:.bss.reentry_guard_MEMACC_EXCLUSIVE_AREA_11 (implicit_section)
+  Aux: @0dadf630
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags:
+msr_MEMACC_EXCLUSIVE_AREA_11/2 (msr_MEMACC_EXCLUSIVE_AREA_11) @0dadf510
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written section:.bss.msr_MEMACC_EXCLUSIVE_AREA_11 (implicit_section)
+  Aux: @0dadf5a0
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags:
+reentry_guard_MEMACC_EXCLUSIVE_AREA_10/1 (reentry_guard_MEMACC_EXCLUSIVE_AREA_10) @0dadf480
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written section:.bss.reentry_guard_MEMACC_EXCLUSIVE_AREA_10 (implicit_section)
+  Aux: @0dadf510
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags:
+msr_MEMACC_EXCLUSIVE_AREA_10/0 (msr_MEMACC_EXCLUSIVE_AREA_10) @0dadf3f0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written section:.bss.msr_MEMACC_EXCLUSIVE_AREA_10 (implicit_section)
+  Aux: @0dadf480
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags:

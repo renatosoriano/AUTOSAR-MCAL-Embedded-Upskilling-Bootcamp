@@ -1,0 +1,169 @@
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+Symbol table:
+
+Gpt_Config/17 (Gpt_Config) @0e061ab0
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: EcuM_Init/5 (addr) 
+  Availability: not_available
+  Varpool flags: read-only
+Gpt_Init/16 (Gpt_Init) @0e1370e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: EcuM_Init/5 
+  Calls: 
+Port_Config/15 (Port_Config) @0e061a20
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: EcuM_Init/5 (addr) 
+  Availability: not_available
+  Varpool flags: read-only
+Port_Init/14 (Port_Init) @0e137000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: EcuM_Init/5 
+  Calls: 
+Mcu_SetMode/13 (Mcu_SetMode) @0e063380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: EcuM_Init/5 
+  Calls: 
+Mcu_InitClock/12 (Mcu_InitClock) @0e063ee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: EcuM_Init/5 
+  Calls: 
+Mcu_Config/11 (Mcu_Config) @0e061900
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: EcuM_Init/5 (addr) 
+  Availability: not_available
+  Varpool flags: read-only
+Mcu_Init/10 (Mcu_Init) @0e063e00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: EcuM_Init/5 
+  Calls: 
+Dio_FlipChannel/9 (Dio_FlipChannel) @0e063c40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: main/4 
+  Calls: 
+Gpt_StopTimer/8 (Gpt_StopTimer) @0e063b60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: main/4 
+  Calls: 
+Gpt_GetTimeRemaining/7 (Gpt_GetTimeRemaining) @0e063a80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: main/4 
+  Calls: 
+Gpt_StartTimer/6 (Gpt_StartTimer) @0e0639a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: main/4 main/4 
+  Calls: 
+EcuM_Init/5 (EcuM_Init) @0e063540
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Mcu_Config/11 (addr) Port_Config/15 (addr) Gpt_Config/17 (addr) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: main/4 
+  Calls: Gpt_Init/16 Port_Init/14 Mcu_SetMode/13 Mcu_InitClock/12 Mcu_Init/10 
+main/4 (main) @0e0632a0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Gpt_StartTimer/6 Dio_FlipChannel/9 Gpt_StopTimer/8 Gpt_GetTimeRemaining/7 Gpt_StartTimer/6 EcuM_Init/5 
+EcuM_Init ()
+{
+  <bb 2> :
+  Mcu_Init (&Mcu_Config);
+  Mcu_InitClock (0);
+  Mcu_SetMode (0);
+  Port_Init (&Port_Config);
+  Gpt_Init (&Gpt_Config);
+  return;
+
+}
+
+
+main ()
+{
+  int D.6689;
+  long unsigned int _1;
+
+  <bb 2> :
+  EcuM_Init ();
+  Gpt_StartTimer (0, 37500);
+
+  <bb 3> :
+  _1 = Gpt_GetTimeRemaining (0);
+  if (_1 == 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  Gpt_StopTimer (0);
+  Dio_FlipChannel (96);
+  Gpt_StartTimer (0, 37500);
+
+  <bb 5> :
+  goto <bb 3>; [INV]
+
+}
+
+

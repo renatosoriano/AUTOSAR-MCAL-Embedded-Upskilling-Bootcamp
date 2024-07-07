@@ -13,7 +13,7 @@ Date: July, 2024.
 ## Table of Contents
 1. [**Description**](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp?tab=readme-ov-file#description)
 2. [**Hardware Requirements**](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp?tab=readme-ov-file#hardware-requirements)
-3. [**Software Requirements**]
+3. [**Software Requirements**](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp?tab=readme-ov-file#software-requirements)
 4. [**Notes**](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp?tab=readme-ov-file#notes)
 5. [**Documentation**](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp?tab=readme-ov-file#documentation)
 6. [**Examples and Exercises**](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp?tab=readme-ov-file#examples-and-exercises)
@@ -63,7 +63,7 @@ The Upskilling Bootcamp covers:
 
 You can find here [**Setup AUTOSAR Tools**](https://embedded-house.ghost.io/part-0-setup-your-autosar-tools/) the section where Modular MX explains the right procedure to download, install and configure all needed tools, including its dependencies, how to import the template project file and flash it to the device.
 
-* ### 4.2 Ozone .jdebug files made portable for running correctly debugger:
+* ### 4.2 Ozone .jdebug files made portable for running debugger correctly:
 After generating MCAL source files with EB Tresos Studio IDE and building the project, we need to make use of the .jdebug files that I'm providing in order to be capable or flashing the board with Ozone as well as for debugging. 
 These files after generated were modified to be portable (using $(ProjectDir)), hence no need to be modified again and are ready to be executed.
 

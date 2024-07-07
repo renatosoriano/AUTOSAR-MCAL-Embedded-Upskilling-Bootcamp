@@ -1,0 +1,409 @@
+Clock_Ip_ClockSetSimTraceEnable_TrustedCall (const struct Clock_Ip_GateConfigType * Config)
+{
+  uint32 RegValue;
+
+  <bb 2> :
+  _1 = 1074036736B;
+  RegValue = _1->CLKDIV4;
+  _2 = Config->Enable;
+  if (_2 == 1)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  RegValue = RegValue | 268435456;
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  RegValue = RegValue & 4026531839;
+
+  <bb 5> :
+  _3 = 1074036736B;
+  _3->CLKDIV4 = RegValue;
+  return;
+
+}
+
+
+Clock_Ip_ClockSetSimGate_TrustedCall (const struct Clock_Ip_GateConfigType * Config)
+{
+  uint32 RegValue;
+  uint32 GateIndex;
+  uint32 Enable;
+
+  <bb 2> :
+  _1 = Config->Enable;
+  Enable = (uint32) _1;
+  _2 = Config->Name;
+  _3 = Clock_Ip_au8ClockFeatures[_2][6];
+  GateIndex = (uint32) _3;
+  _4 = 1074036736B;
+  RegValue = _4->PLATCGC;
+  _5 = 1 << GateIndex;
+  _6 = ~_5;
+  RegValue = RegValue & _6;
+  _7 = Enable << GateIndex;
+  RegValue = RegValue | _7;
+  _8 = 1074036736B;
+  _8->PLATCGC = RegValue;
+  return;
+
+}
+
+
+Clock_Ip_ClockSetPccCgcEnable_TrustedCall (const struct Clock_Ip_GateConfigType * Config)
+{
+  uint32 RegValue;
+
+  <bb 2> :
+  _1 = 1074155520B;
+  _2 = Config->Name;
+  _3 = Clock_Ip_au8ClockFeatures[_2][6];
+  _4 = (int) _3;
+  RegValue = _1->PCCn[_4];
+  RegValue = RegValue & 3221225471;
+  _5 = Config->Enable;
+  _6 = (long unsigned int) _5;
+  _7 = _6 << 30;
+  RegValue = RegValue | _7;
+  _8 = 1074155520B;
+  _9 = Config->Name;
+  _10 = Clock_Ip_au8ClockFeatures[_9][6];
+  _11 = (int) _10;
+  _8->PCCn[_11] = RegValue;
+  return;
+
+}
+
+
+Clock_Ip_ClockSetSimClkoutEnable_TrustedCall (const struct Clock_Ip_GateConfigType * Config)
+{
+  uint32 RegValue;
+
+  <bb 2> :
+  _1 = 1074036736B;
+  RegValue = _1->CHIPCTL;
+  RegValue = RegValue & 4294965247;
+  _2 = Config->Enable;
+  _3 = (long unsigned int) _2;
+  _4 = _3 << 11;
+  RegValue = RegValue | _4;
+  _5 = 1074036736B;
+  _5->CHIPCTL = RegValue;
+  return;
+
+}
+
+
+Clock_Ip_ClockSetSimLPO32KEnable_TrustedCall (const struct Clock_Ip_GateConfigType * Config)
+{
+  uint32 RegValue;
+
+  <bb 2> :
+  _1 = 1074036736B;
+  RegValue = _1->LPOCLKS;
+  RegValue = RegValue & 4294967293;
+  _2 = Config->Enable;
+  _3 = (long unsigned int) _2;
+  _4 = _3 << 1;
+  RegValue = RegValue | _4;
+  _5 = 1074036736B;
+  _5->LPOCLKS = RegValue;
+  return;
+
+}
+
+
+Clock_Ip_ClockSetSimLPO1KEnable_TrustedCall (const struct Clock_Ip_GateConfigType * Config)
+{
+  uint32 RegValue;
+
+  <bb 2> :
+  _1 = 1074036736B;
+  RegValue = _1->LPOCLKS;
+  RegValue = RegValue & 4294967294;
+  _2 = Config->Enable;
+  _3 = (long unsigned int) _2;
+  RegValue = RegValue | _3;
+  _4 = 1074036736B;
+  _4->LPOCLKS = RegValue;
+  return;
+
+}
+
+
+Clock_Ip_ClockUpdateSimTraceEnable (Clock_Ip_NameType ClockName, boolean Gate)
+{
+  struct Clock_Ip_GateConfigType Config;
+
+  <bb 2> :
+  Config.Name = ClockName;
+  if (Gate != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  Config.Enable = 0;
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  Config.Enable = 1;
+
+  <bb 5> :
+  Clock_Ip_ClockSetSimTraceEnable (&Config);
+  Config = {CLOBBER};
+  return;
+
+}
+
+
+Clock_Ip_ClockSetSimTraceEnable (const struct Clock_Ip_GateConfigType * Config)
+{
+  <bb 2> :
+  if (Config != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  Clock_Ip_ClockSetSimTraceEnable_TrustedCall (Config);
+
+  <bb 4> :
+  return;
+
+}
+
+
+Clock_Ip_ClockUpdateSimGate (Clock_Ip_NameType ClockName, boolean Gate)
+{
+  struct Clock_Ip_GateConfigType Config;
+
+  <bb 2> :
+  Config.Name = ClockName;
+  if (Gate != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  Config.Enable = 0;
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  Config.Enable = 1;
+
+  <bb 5> :
+  Clock_Ip_ClockSetSimGate (&Config);
+  Config = {CLOBBER};
+  return;
+
+}
+
+
+Clock_Ip_ClockSetSimGate (const struct Clock_Ip_GateConfigType * Config)
+{
+  <bb 2> :
+  if (Config != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  Clock_Ip_ClockSetSimGate_TrustedCall (Config);
+
+  <bb 4> :
+  return;
+
+}
+
+
+Clock_Ip_ClockUpdatePccCgcEnable (Clock_Ip_NameType ClockName, boolean Gate)
+{
+  struct Clock_Ip_GateConfigType Config;
+
+  <bb 2> :
+  Config.Name = ClockName;
+  if (Gate != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  Config.Enable = 0;
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  Config.Enable = 1;
+
+  <bb 5> :
+  Clock_Ip_ClockSetPccCgcEnable (&Config);
+  Config = {CLOBBER};
+  return;
+
+}
+
+
+Clock_Ip_ClockSetPccCgcEnable (const struct Clock_Ip_GateConfigType * Config)
+{
+  <bb 2> :
+  if (Config != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  Clock_Ip_ClockSetPccCgcEnable_TrustedCall (Config);
+
+  <bb 4> :
+  return;
+
+}
+
+
+Clock_Ip_ClockUpdateSimClkoutEnable (Clock_Ip_NameType ClockName, boolean Gate)
+{
+  struct Clock_Ip_GateConfigType Config;
+
+  <bb 2> :
+  Config.Name = ClockName;
+  if (Gate != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  Config.Enable = 0;
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  Config.Enable = 1;
+
+  <bb 5> :
+  Clock_Ip_ClockSetSimClkoutEnable (&Config);
+  Config = {CLOBBER};
+  return;
+
+}
+
+
+Clock_Ip_ClockSetSimClkoutEnable (const struct Clock_Ip_GateConfigType * Config)
+{
+  <bb 2> :
+  if (Config != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  Clock_Ip_ClockSetSimClkoutEnable_TrustedCall (Config);
+
+  <bb 4> :
+  return;
+
+}
+
+
+Clock_Ip_ClockUpdateSimLPO32KEnable (Clock_Ip_NameType ClockName, boolean Gate)
+{
+  struct Clock_Ip_GateConfigType Config;
+
+  <bb 2> :
+  Config.Name = ClockName;
+  if (Gate != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  Config.Enable = 0;
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  Config.Enable = 1;
+
+  <bb 5> :
+  Clock_Ip_ClockSetSimLPO32KEnable (&Config);
+  Config = {CLOBBER};
+  return;
+
+}
+
+
+Clock_Ip_ClockSetSimLPO32KEnable (const struct Clock_Ip_GateConfigType * Config)
+{
+  <bb 2> :
+  if (Config != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  Clock_Ip_ClockSetSimLPO32KEnable_TrustedCall (Config);
+
+  <bb 4> :
+  return;
+
+}
+
+
+Clock_Ip_ClockUpdateSimLPO1KEnable (Clock_Ip_NameType ClockName, boolean Gate)
+{
+  struct Clock_Ip_GateConfigType Config;
+
+  <bb 2> :
+  Config.Name = ClockName;
+  if (Gate != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  Config.Enable = 0;
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  Config.Enable = 1;
+
+  <bb 5> :
+  Clock_Ip_ClockSetSimLPO1KEnable (&Config);
+  Config = {CLOBBER};
+  return;
+
+}
+
+
+Clock_Ip_ClockSetSimLPO1KEnable (const struct Clock_Ip_GateConfigType * Config)
+{
+  <bb 2> :
+  if (Config != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  Clock_Ip_ClockSetSimLPO1KEnable_TrustedCall (Config);
+
+  <bb 4> :
+  return;
+
+}
+
+
+Clock_Ip_ClockUpdateGateEmpty (Clock_Ip_NameType ClockName, boolean Gate)
+{
+  <bb 2> :
+  return;
+
+}
+
+
+Clock_Ip_ClockSetGateEmpty (const struct Clock_Ip_GateConfigType * Config)
+{
+  <bb 2> :
+  return;
+
+}
+
+

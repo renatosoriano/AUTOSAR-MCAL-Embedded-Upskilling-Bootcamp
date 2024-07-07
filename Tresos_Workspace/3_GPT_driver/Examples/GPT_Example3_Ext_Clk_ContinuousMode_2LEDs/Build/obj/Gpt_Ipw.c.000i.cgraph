@@ -1,0 +1,1239 @@
+Trivially needed symbols: Gpt_Ipw_StopPredefTimer/14 Gpt_Ipw_GetPredefTimerValue/13 Gpt_Ipw_StartPredefTimer/12 Gpt_Ipw_DisableInterrupt/11 Gpt_Ipw_DeInit/10 Gpt_Ipw_EnableInterrupt/9 Gpt_Ipw_StopTimer/8 Gpt_Ipw_GetTimeElapsed/7 Gpt_Ipw_StartTimer/6 Gpt_Ipw_Init/5 Gpt_Ipw_InitInstances/4 Gpt_Ipw_FtmGetTimeElapsed/3
+
+
+Initial Symbol table:
+
+Ftm_Gpt_Ip_StopPredefTimer/23 (Ftm_Gpt_Ip_StopPredefTimer) @0dd23620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Gpt_Ipw_StopPredefTimer/14 
+  Calls: 
+Ftm_Gpt_Ip_StartPredefTimer/22 (Ftm_Gpt_Ip_StartPredefTimer) @0dd23380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Gpt_Ipw_StartPredefTimer/12 
+  Calls: 
+Ftm_Gpt_Ip_Deinit/21 (Ftm_Gpt_Ip_Deinit) @0dd230e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Gpt_Ipw_DeInit/10 
+  Calls: 
+Ftm_Gpt_Ip_DisableChannelInterrupt/20 (Ftm_Gpt_Ip_DisableChannelInterrupt) @0dd18e00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Gpt_Ipw_StopTimer/8 
+  Calls: 
+Ftm_Gpt_Ip_StartCounting/19 (Ftm_Gpt_Ip_StartCounting) @0dd18b60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Gpt_Ipw_StartTimer/6 
+  Calls: 
+Ftm_Gpt_Ip_InitChannel/18 (Ftm_Gpt_Ip_InitChannel) @0dd189a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Gpt_Ipw_Init/5 
+  Calls: 
+Ftm_Gpt_Ip_Init/17 (Ftm_Gpt_Ip_Init) @0dd187e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Gpt_Ipw_InitInstances/4 
+  Calls: 
+ftmGptBase/16 (ftmGptBase) @0dd1b3a8
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: Ftm_Gpt_Ip_GetCntValue/1 (read) Ftm_Gpt_Ip_GetCompareValue/2 (read) Ftm_Gpt_Ip_GetChInterruptStatusFlag/0 (read) 
+  Availability: not-ready
+  Varpool flags: read-only
+Ftm_Gpt_Ip_u32TargetValue/15 (Ftm_Gpt_Ip_u32TargetValue) @0dd1b1f8
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: Gpt_Ipw_FtmGetTimeElapsed/3 (read) 
+  Availability: not-ready
+  Varpool flags:
+Gpt_Ipw_StopPredefTimer/14 (Gpt_Ipw_StopPredefTimer) @0dd18000
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @01981040
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Ftm_Gpt_Ip_StopPredefTimer/23 
+Gpt_Ipw_GetPredefTimerValue/13 (Gpt_Ipw_GetPredefTimerValue) @0dcbcb60
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0dd18000
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Ftm_Gpt_Ip_GetCntValue/1 
+Gpt_Ipw_StartPredefTimer/12 (Gpt_Ipw_StartPredefTimer) @0dcbc620
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0dcbcb60
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Ftm_Gpt_Ip_StartPredefTimer/22 
+Gpt_Ipw_DisableInterrupt/11 (Gpt_Ipw_DisableInterrupt) @0dcbc0e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0dcbc620
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+Gpt_Ipw_DeInit/10 (Gpt_Ipw_DeInit) @0dcbcd20
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0dcbc0e0
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Ftm_Gpt_Ip_Deinit/21 
+Gpt_Ipw_EnableInterrupt/9 (Gpt_Ipw_EnableInterrupt) @0dcbca80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0dcbcd20
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+Gpt_Ipw_StopTimer/8 (Gpt_Ipw_StopTimer) @0dcbc7e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0dcbca80
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Ftm_Gpt_Ip_DisableChannelInterrupt/20 
+Gpt_Ipw_GetTimeElapsed/7 (Gpt_Ipw_GetTimeElapsed) @0dcbc540
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0dcbc7e0
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Gpt_Ipw_FtmGetTimeElapsed/3 
+Gpt_Ipw_StartTimer/6 (Gpt_Ipw_StartTimer) @0dcbc2a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0dcbc540
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Ftm_Gpt_Ip_StartCounting/19 
+Gpt_Ipw_Init/5 (Gpt_Ipw_Init) @0dcbc000
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0dcbc2a0
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Ftm_Gpt_Ip_InitChannel/18 
+Gpt_Ipw_InitInstances/4 (Gpt_Ipw_InitInstances) @0dcb1b60
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0dcbc000
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Ftm_Gpt_Ip_Init/17 
+Gpt_Ipw_FtmGetTimeElapsed/3 (Gpt_Ipw_FtmGetTimeElapsed) @0dcb1d20
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @0dcb1b60
+  References: Ftm_Gpt_Ip_u32TargetValue/15 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Gpt_Ipw_GetTimeElapsed/7 
+  Calls: Ftm_Gpt_Ip_GetChInterruptStatusFlag/0 Ftm_Gpt_Ip_GetCompareValue/2 Ftm_Gpt_Ip_GetCntValue/1 
+Ftm_Gpt_Ip_GetCompareValue/2 (Ftm_Gpt_Ip_GetCompareValue) @0dbd67e0
+  Type: function definition analyzed
+  Visibility: no_reorder
+  Aux: @0dbd62a0
+  References: ftmGptBase/16 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Gpt_Ipw_FtmGetTimeElapsed/3 
+  Calls: 
+Ftm_Gpt_Ip_GetCntValue/1 (Ftm_Gpt_Ip_GetCntValue) @0dbd6540
+  Type: function definition analyzed
+  Visibility: no_reorder
+  Aux: @0dbd67e0
+  References: ftmGptBase/16 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Gpt_Ipw_GetPredefTimerValue/13 Gpt_Ipw_FtmGetTimeElapsed/3 
+  Calls: 
+Ftm_Gpt_Ip_GetChInterruptStatusFlag/0 (Ftm_Gpt_Ip_GetChInterruptStatusFlag) @0dbd62a0
+  Type: function definition analyzed
+  Visibility: no_reorder
+  Aux: @0dcb1b60
+  References: ftmGptBase/16 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Gpt_Ipw_FtmGetTimeElapsed/3 
+  Calls: 
+
+Removing unused symbols:
+
+Reclaimed Symbol table:
+
+Ftm_Gpt_Ip_StopPredefTimer/23 (Ftm_Gpt_Ip_StopPredefTimer) @0dd23620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Gpt_Ipw_StopPredefTimer/14 
+  Calls: 
+Ftm_Gpt_Ip_StartPredefTimer/22 (Ftm_Gpt_Ip_StartPredefTimer) @0dd23380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Gpt_Ipw_StartPredefTimer/12 
+  Calls: 
+Ftm_Gpt_Ip_Deinit/21 (Ftm_Gpt_Ip_Deinit) @0dd230e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Gpt_Ipw_DeInit/10 
+  Calls: 
+Ftm_Gpt_Ip_DisableChannelInterrupt/20 (Ftm_Gpt_Ip_DisableChannelInterrupt) @0dd18e00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Gpt_Ipw_StopTimer/8 
+  Calls: 
+Ftm_Gpt_Ip_StartCounting/19 (Ftm_Gpt_Ip_StartCounting) @0dd18b60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Gpt_Ipw_StartTimer/6 
+  Calls: 
+Ftm_Gpt_Ip_InitChannel/18 (Ftm_Gpt_Ip_InitChannel) @0dd189a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Gpt_Ipw_Init/5 
+  Calls: 
+Ftm_Gpt_Ip_Init/17 (Ftm_Gpt_Ip_Init) @0dd187e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Gpt_Ipw_InitInstances/4 
+  Calls: 
+ftmGptBase/16 (ftmGptBase) @0dd1b3a8
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: Ftm_Gpt_Ip_GetCntValue/1 (read) Ftm_Gpt_Ip_GetCompareValue/2 (read) Ftm_Gpt_Ip_GetChInterruptStatusFlag/0 (read) 
+  Availability: not-ready
+  Varpool flags: read-only
+Ftm_Gpt_Ip_u32TargetValue/15 (Ftm_Gpt_Ip_u32TargetValue) @0dd1b1f8
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: Gpt_Ipw_FtmGetTimeElapsed/3 (read) 
+  Availability: not-ready
+  Varpool flags:
+Gpt_Ipw_StopPredefTimer/14 (Gpt_Ipw_StopPredefTimer) @0dd18000
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Ftm_Gpt_Ip_StopPredefTimer/23 
+Gpt_Ipw_GetPredefTimerValue/13 (Gpt_Ipw_GetPredefTimerValue) @0dcbcb60
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Ftm_Gpt_Ip_GetCntValue/1 
+Gpt_Ipw_StartPredefTimer/12 (Gpt_Ipw_StartPredefTimer) @0dcbc620
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Ftm_Gpt_Ip_StartPredefTimer/22 
+Gpt_Ipw_DisableInterrupt/11 (Gpt_Ipw_DisableInterrupt) @0dcbc0e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+Gpt_Ipw_DeInit/10 (Gpt_Ipw_DeInit) @0dcbcd20
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Ftm_Gpt_Ip_Deinit/21 
+Gpt_Ipw_EnableInterrupt/9 (Gpt_Ipw_EnableInterrupt) @0dcbca80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+Gpt_Ipw_StopTimer/8 (Gpt_Ipw_StopTimer) @0dcbc7e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Ftm_Gpt_Ip_DisableChannelInterrupt/20 
+Gpt_Ipw_GetTimeElapsed/7 (Gpt_Ipw_GetTimeElapsed) @0dcbc540
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Gpt_Ipw_FtmGetTimeElapsed/3 
+Gpt_Ipw_StartTimer/6 (Gpt_Ipw_StartTimer) @0dcbc2a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Ftm_Gpt_Ip_StartCounting/19 
+Gpt_Ipw_Init/5 (Gpt_Ipw_Init) @0dcbc000
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Ftm_Gpt_Ip_InitChannel/18 
+Gpt_Ipw_InitInstances/4 (Gpt_Ipw_InitInstances) @0dcb1b60
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Ftm_Gpt_Ip_Init/17 
+Gpt_Ipw_FtmGetTimeElapsed/3 (Gpt_Ipw_FtmGetTimeElapsed) @0dcb1d20
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: Ftm_Gpt_Ip_u32TargetValue/15 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Gpt_Ipw_GetTimeElapsed/7 
+  Calls: Ftm_Gpt_Ip_GetChInterruptStatusFlag/0 Ftm_Gpt_Ip_GetCompareValue/2 Ftm_Gpt_Ip_GetCntValue/1 
+Ftm_Gpt_Ip_GetCompareValue/2 (Ftm_Gpt_Ip_GetCompareValue) @0dbd67e0
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: ftmGptBase/16 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Gpt_Ipw_FtmGetTimeElapsed/3 
+  Calls: 
+Ftm_Gpt_Ip_GetCntValue/1 (Ftm_Gpt_Ip_GetCntValue) @0dbd6540
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: ftmGptBase/16 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Gpt_Ipw_GetPredefTimerValue/13 Gpt_Ipw_FtmGetTimeElapsed/3 
+  Calls: 
+Ftm_Gpt_Ip_GetChInterruptStatusFlag/0 (Ftm_Gpt_Ip_GetChInterruptStatusFlag) @0dbd62a0
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: ftmGptBase/16 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Gpt_Ipw_FtmGetTimeElapsed/3 
+  Calls: 
+
+
+Initial Symbol table:
+
+Ftm_Gpt_Ip_StopPredefTimer/23 (Ftm_Gpt_Ip_StopPredefTimer) @0dd23620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Gpt_Ipw_StopPredefTimer/14 
+  Calls: 
+Ftm_Gpt_Ip_StartPredefTimer/22 (Ftm_Gpt_Ip_StartPredefTimer) @0dd23380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Gpt_Ipw_StartPredefTimer/12 
+  Calls: 
+Ftm_Gpt_Ip_Deinit/21 (Ftm_Gpt_Ip_Deinit) @0dd230e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Gpt_Ipw_DeInit/10 
+  Calls: 
+Ftm_Gpt_Ip_DisableChannelInterrupt/20 (Ftm_Gpt_Ip_DisableChannelInterrupt) @0dd18e00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Gpt_Ipw_StopTimer/8 
+  Calls: 
+Ftm_Gpt_Ip_StartCounting/19 (Ftm_Gpt_Ip_StartCounting) @0dd18b60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Gpt_Ipw_StartTimer/6 
+  Calls: 
+Ftm_Gpt_Ip_InitChannel/18 (Ftm_Gpt_Ip_InitChannel) @0dd189a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Gpt_Ipw_Init/5 
+  Calls: 
+Ftm_Gpt_Ip_Init/17 (Ftm_Gpt_Ip_Init) @0dd187e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Gpt_Ipw_InitInstances/4 
+  Calls: 
+ftmGptBase/16 (ftmGptBase) @0dd1b3a8
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: Ftm_Gpt_Ip_GetCntValue/1 (read) Ftm_Gpt_Ip_GetCompareValue/2 (read) Ftm_Gpt_Ip_GetChInterruptStatusFlag/0 (read) 
+  Availability: not-ready
+  Varpool flags: read-only
+Ftm_Gpt_Ip_u32TargetValue/15 (Ftm_Gpt_Ip_u32TargetValue) @0dd1b1f8
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: Gpt_Ipw_FtmGetTimeElapsed/3 (read) 
+  Availability: not-ready
+  Varpool flags:
+Gpt_Ipw_StopPredefTimer/14 (Gpt_Ipw_StopPredefTimer) @0dd18000
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Ftm_Gpt_Ip_StopPredefTimer/23 
+Gpt_Ipw_GetPredefTimerValue/13 (Gpt_Ipw_GetPredefTimerValue) @0dcbcb60
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Ftm_Gpt_Ip_GetCntValue/1 
+Gpt_Ipw_StartPredefTimer/12 (Gpt_Ipw_StartPredefTimer) @0dcbc620
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Ftm_Gpt_Ip_StartPredefTimer/22 
+Gpt_Ipw_DisableInterrupt/11 (Gpt_Ipw_DisableInterrupt) @0dcbc0e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+Gpt_Ipw_DeInit/10 (Gpt_Ipw_DeInit) @0dcbcd20
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Ftm_Gpt_Ip_Deinit/21 
+Gpt_Ipw_EnableInterrupt/9 (Gpt_Ipw_EnableInterrupt) @0dcbca80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+Gpt_Ipw_StopTimer/8 (Gpt_Ipw_StopTimer) @0dcbc7e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Ftm_Gpt_Ip_DisableChannelInterrupt/20 
+Gpt_Ipw_GetTimeElapsed/7 (Gpt_Ipw_GetTimeElapsed) @0dcbc540
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Gpt_Ipw_FtmGetTimeElapsed/3 
+Gpt_Ipw_StartTimer/6 (Gpt_Ipw_StartTimer) @0dcbc2a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Ftm_Gpt_Ip_StartCounting/19 
+Gpt_Ipw_Init/5 (Gpt_Ipw_Init) @0dcbc000
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Ftm_Gpt_Ip_InitChannel/18 
+Gpt_Ipw_InitInstances/4 (Gpt_Ipw_InitInstances) @0dcb1b60
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Ftm_Gpt_Ip_Init/17 
+Gpt_Ipw_FtmGetTimeElapsed/3 (Gpt_Ipw_FtmGetTimeElapsed) @0dcb1d20
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: Ftm_Gpt_Ip_u32TargetValue/15 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Gpt_Ipw_GetTimeElapsed/7 
+  Calls: Ftm_Gpt_Ip_GetChInterruptStatusFlag/0 Ftm_Gpt_Ip_GetCompareValue/2 Ftm_Gpt_Ip_GetCntValue/1 
+Ftm_Gpt_Ip_GetCompareValue/2 (Ftm_Gpt_Ip_GetCompareValue) @0dbd67e0
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: ftmGptBase/16 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Gpt_Ipw_FtmGetTimeElapsed/3 
+  Calls: 
+Ftm_Gpt_Ip_GetCntValue/1 (Ftm_Gpt_Ip_GetCntValue) @0dbd6540
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: ftmGptBase/16 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Gpt_Ipw_GetPredefTimerValue/13 Gpt_Ipw_FtmGetTimeElapsed/3 
+  Calls: 
+Ftm_Gpt_Ip_GetChInterruptStatusFlag/0 (Ftm_Gpt_Ip_GetChInterruptStatusFlag) @0dbd62a0
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: ftmGptBase/16 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Gpt_Ipw_FtmGetTimeElapsed/3 
+  Calls: 
+
+Removing unused symbols:
+
+Reclaimed Symbol table:
+
+Ftm_Gpt_Ip_StopPredefTimer/23 (Ftm_Gpt_Ip_StopPredefTimer) @0dd23620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Gpt_Ipw_StopPredefTimer/14 
+  Calls: 
+Ftm_Gpt_Ip_StartPredefTimer/22 (Ftm_Gpt_Ip_StartPredefTimer) @0dd23380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Gpt_Ipw_StartPredefTimer/12 
+  Calls: 
+Ftm_Gpt_Ip_Deinit/21 (Ftm_Gpt_Ip_Deinit) @0dd230e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Gpt_Ipw_DeInit/10 
+  Calls: 
+Ftm_Gpt_Ip_DisableChannelInterrupt/20 (Ftm_Gpt_Ip_DisableChannelInterrupt) @0dd18e00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Gpt_Ipw_StopTimer/8 
+  Calls: 
+Ftm_Gpt_Ip_StartCounting/19 (Ftm_Gpt_Ip_StartCounting) @0dd18b60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Gpt_Ipw_StartTimer/6 
+  Calls: 
+Ftm_Gpt_Ip_InitChannel/18 (Ftm_Gpt_Ip_InitChannel) @0dd189a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Gpt_Ipw_Init/5 
+  Calls: 
+Ftm_Gpt_Ip_Init/17 (Ftm_Gpt_Ip_Init) @0dd187e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Gpt_Ipw_InitInstances/4 
+  Calls: 
+ftmGptBase/16 (ftmGptBase) @0dd1b3a8
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: Ftm_Gpt_Ip_GetCntValue/1 (read) Ftm_Gpt_Ip_GetCompareValue/2 (read) Ftm_Gpt_Ip_GetChInterruptStatusFlag/0 (read) 
+  Availability: not-ready
+  Varpool flags: read-only
+Ftm_Gpt_Ip_u32TargetValue/15 (Ftm_Gpt_Ip_u32TargetValue) @0dd1b1f8
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: Gpt_Ipw_FtmGetTimeElapsed/3 (read) 
+  Availability: not-ready
+  Varpool flags:
+Gpt_Ipw_StopPredefTimer/14 (Gpt_Ipw_StopPredefTimer) @0dd18000
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Ftm_Gpt_Ip_StopPredefTimer/23 
+Gpt_Ipw_GetPredefTimerValue/13 (Gpt_Ipw_GetPredefTimerValue) @0dcbcb60
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Ftm_Gpt_Ip_GetCntValue/1 
+Gpt_Ipw_StartPredefTimer/12 (Gpt_Ipw_StartPredefTimer) @0dcbc620
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Ftm_Gpt_Ip_StartPredefTimer/22 
+Gpt_Ipw_DisableInterrupt/11 (Gpt_Ipw_DisableInterrupt) @0dcbc0e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+Gpt_Ipw_DeInit/10 (Gpt_Ipw_DeInit) @0dcbcd20
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Ftm_Gpt_Ip_Deinit/21 
+Gpt_Ipw_EnableInterrupt/9 (Gpt_Ipw_EnableInterrupt) @0dcbca80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+Gpt_Ipw_StopTimer/8 (Gpt_Ipw_StopTimer) @0dcbc7e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Ftm_Gpt_Ip_DisableChannelInterrupt/20 
+Gpt_Ipw_GetTimeElapsed/7 (Gpt_Ipw_GetTimeElapsed) @0dcbc540
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Gpt_Ipw_FtmGetTimeElapsed/3 
+Gpt_Ipw_StartTimer/6 (Gpt_Ipw_StartTimer) @0dcbc2a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Ftm_Gpt_Ip_StartCounting/19 
+Gpt_Ipw_Init/5 (Gpt_Ipw_Init) @0dcbc000
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Ftm_Gpt_Ip_InitChannel/18 
+Gpt_Ipw_InitInstances/4 (Gpt_Ipw_InitInstances) @0dcb1b60
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Ftm_Gpt_Ip_Init/17 
+Gpt_Ipw_FtmGetTimeElapsed/3 (Gpt_Ipw_FtmGetTimeElapsed) @0dcb1d20
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: Ftm_Gpt_Ip_u32TargetValue/15 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Gpt_Ipw_GetTimeElapsed/7 
+  Calls: Ftm_Gpt_Ip_GetChInterruptStatusFlag/0 Ftm_Gpt_Ip_GetCompareValue/2 Ftm_Gpt_Ip_GetCntValue/1 
+Ftm_Gpt_Ip_GetCompareValue/2 (Ftm_Gpt_Ip_GetCompareValue) @0dbd67e0
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: ftmGptBase/16 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Gpt_Ipw_FtmGetTimeElapsed/3 
+  Calls: 
+Ftm_Gpt_Ip_GetCntValue/1 (Ftm_Gpt_Ip_GetCntValue) @0dbd6540
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: ftmGptBase/16 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Gpt_Ipw_GetPredefTimerValue/13 Gpt_Ipw_FtmGetTimeElapsed/3 
+  Calls: 
+Ftm_Gpt_Ip_GetChInterruptStatusFlag/0 (Ftm_Gpt_Ip_GetChInterruptStatusFlag) @0dbd62a0
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: ftmGptBase/16 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Gpt_Ipw_FtmGetTimeElapsed/3 
+  Calls: 
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+Optimized Symbol table:
+
+Ftm_Gpt_Ip_StopPredefTimer/23 (Ftm_Gpt_Ip_StopPredefTimer) @0dd23620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Gpt_Ipw_StopPredefTimer/14 
+  Calls: 
+Ftm_Gpt_Ip_StartPredefTimer/22 (Ftm_Gpt_Ip_StartPredefTimer) @0dd23380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Gpt_Ipw_StartPredefTimer/12 
+  Calls: 
+Ftm_Gpt_Ip_Deinit/21 (Ftm_Gpt_Ip_Deinit) @0dd230e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Gpt_Ipw_DeInit/10 
+  Calls: 
+Ftm_Gpt_Ip_DisableChannelInterrupt/20 (Ftm_Gpt_Ip_DisableChannelInterrupt) @0dd18e00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Gpt_Ipw_StopTimer/8 
+  Calls: 
+Ftm_Gpt_Ip_StartCounting/19 (Ftm_Gpt_Ip_StartCounting) @0dd18b60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Gpt_Ipw_StartTimer/6 
+  Calls: 
+Ftm_Gpt_Ip_InitChannel/18 (Ftm_Gpt_Ip_InitChannel) @0dd189a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Gpt_Ipw_Init/5 
+  Calls: 
+Ftm_Gpt_Ip_Init/17 (Ftm_Gpt_Ip_Init) @0dd187e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Gpt_Ipw_InitInstances/4 
+  Calls: 
+ftmGptBase/16 (ftmGptBase) @0dd1b3a8
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: Ftm_Gpt_Ip_GetCntValue/1 (read) Ftm_Gpt_Ip_GetChInterruptStatusFlag/0 (read) Ftm_Gpt_Ip_GetCompareValue/2 (read) 
+  Availability: not_available
+  Varpool flags: read-only
+Ftm_Gpt_Ip_u32TargetValue/15 (Ftm_Gpt_Ip_u32TargetValue) @0dd1b1f8
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: Gpt_Ipw_FtmGetTimeElapsed/3 (read) 
+  Availability: not_available
+  Varpool flags:
+Gpt_Ipw_StopPredefTimer/14 (Gpt_Ipw_StopPredefTimer) @0dd18000
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Ftm_Gpt_Ip_StopPredefTimer/23 
+Gpt_Ipw_GetPredefTimerValue/13 (Gpt_Ipw_GetPredefTimerValue) @0dcbcb60
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Ftm_Gpt_Ip_GetCntValue/1 
+Gpt_Ipw_StartPredefTimer/12 (Gpt_Ipw_StartPredefTimer) @0dcbc620
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Ftm_Gpt_Ip_StartPredefTimer/22 
+Gpt_Ipw_DisableInterrupt/11 (Gpt_Ipw_DisableInterrupt) @0dcbc0e0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+Gpt_Ipw_DeInit/10 (Gpt_Ipw_DeInit) @0dcbcd20
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Ftm_Gpt_Ip_Deinit/21 
+Gpt_Ipw_EnableInterrupt/9 (Gpt_Ipw_EnableInterrupt) @0dcbca80
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+Gpt_Ipw_StopTimer/8 (Gpt_Ipw_StopTimer) @0dcbc7e0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Ftm_Gpt_Ip_DisableChannelInterrupt/20 
+Gpt_Ipw_GetTimeElapsed/7 (Gpt_Ipw_GetTimeElapsed) @0dcbc540
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Gpt_Ipw_FtmGetTimeElapsed/3 
+Gpt_Ipw_StartTimer/6 (Gpt_Ipw_StartTimer) @0dcbc2a0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Ftm_Gpt_Ip_StartCounting/19 
+Gpt_Ipw_Init/5 (Gpt_Ipw_Init) @0dcbc000
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Ftm_Gpt_Ip_InitChannel/18 
+Gpt_Ipw_InitInstances/4 (Gpt_Ipw_InitInstances) @0dcb1b60
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Ftm_Gpt_Ip_Init/17 
+Gpt_Ipw_FtmGetTimeElapsed/3 (Gpt_Ipw_FtmGetTimeElapsed) @0dcb1d20
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: Ftm_Gpt_Ip_u32TargetValue/15 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: Gpt_Ipw_GetTimeElapsed/7 
+  Calls: Ftm_Gpt_Ip_GetChInterruptStatusFlag/0 Ftm_Gpt_Ip_GetCompareValue/2 Ftm_Gpt_Ip_GetCntValue/1 
+Ftm_Gpt_Ip_GetCompareValue/2 (Ftm_Gpt_Ip_GetCompareValue) @0dbd67e0
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: ftmGptBase/16 (read) 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: Gpt_Ipw_FtmGetTimeElapsed/3 
+  Calls: 
+Ftm_Gpt_Ip_GetCntValue/1 (Ftm_Gpt_Ip_GetCntValue) @0dbd6540
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: ftmGptBase/16 (read) 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: Gpt_Ipw_GetPredefTimerValue/13 Gpt_Ipw_FtmGetTimeElapsed/3 
+  Calls: 
+Ftm_Gpt_Ip_GetChInterruptStatusFlag/0 (Ftm_Gpt_Ip_GetChInterruptStatusFlag) @0dbd62a0
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: ftmGptBase/16 (read) 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: Gpt_Ipw_FtmGetTimeElapsed/3 
+  Calls: 
+Materializing clones
+Materialization Call site updates done.
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+Trivially needed variables:
+Removing variables:
+
+Final Symbol table:
+
+Ftm_Gpt_Ip_StopPredefTimer/23 (Ftm_Gpt_Ip_StopPredefTimer) @0dd23620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+Ftm_Gpt_Ip_StartPredefTimer/22 (Ftm_Gpt_Ip_StartPredefTimer) @0dd23380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+Ftm_Gpt_Ip_Deinit/21 (Ftm_Gpt_Ip_Deinit) @0dd230e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+Ftm_Gpt_Ip_DisableChannelInterrupt/20 (Ftm_Gpt_Ip_DisableChannelInterrupt) @0dd18e00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+Ftm_Gpt_Ip_StartCounting/19 (Ftm_Gpt_Ip_StartCounting) @0dd18b60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+Ftm_Gpt_Ip_InitChannel/18 (Ftm_Gpt_Ip_InitChannel) @0dd189a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+Ftm_Gpt_Ip_Init/17 (Ftm_Gpt_Ip_Init) @0dd187e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+ftmGptBase/16 (ftmGptBase) @0dd1b3a8
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Varpool flags: read-only
+Ftm_Gpt_Ip_u32TargetValue/15 (Ftm_Gpt_Ip_u32TargetValue) @0dd1b1f8
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Varpool flags:
+Gpt_Ipw_StopPredefTimer/14 (Gpt_Ipw_StopPredefTimer) @0dd18000
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.Gpt_Ipw_StopPredefTimer (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+Gpt_Ipw_GetPredefTimerValue/13 (Gpt_Ipw_GetPredefTimerValue) @0dcbcb60
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.Gpt_Ipw_GetPredefTimerValue (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+Gpt_Ipw_StartPredefTimer/12 (Gpt_Ipw_StartPredefTimer) @0dcbc620
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.Gpt_Ipw_StartPredefTimer (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+Gpt_Ipw_DisableInterrupt/11 (Gpt_Ipw_DisableInterrupt) @0dcbc0e0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.Gpt_Ipw_DisableInterrupt (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+Gpt_Ipw_DeInit/10 (Gpt_Ipw_DeInit) @0dcbcd20
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.Gpt_Ipw_DeInit (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+Gpt_Ipw_EnableInterrupt/9 (Gpt_Ipw_EnableInterrupt) @0dcbca80
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.Gpt_Ipw_EnableInterrupt (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+Gpt_Ipw_StopTimer/8 (Gpt_Ipw_StopTimer) @0dcbc7e0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.Gpt_Ipw_StopTimer (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+Gpt_Ipw_GetTimeElapsed/7 (Gpt_Ipw_GetTimeElapsed) @0dcbc540
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.Gpt_Ipw_GetTimeElapsed (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+Gpt_Ipw_StartTimer/6 (Gpt_Ipw_StartTimer) @0dcbc2a0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.Gpt_Ipw_StartTimer (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+Gpt_Ipw_Init/5 (Gpt_Ipw_Init) @0dcbc000
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.Gpt_Ipw_Init (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+Gpt_Ipw_InitInstances/4 (Gpt_Ipw_InitInstances) @0dcb1b60
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.Gpt_Ipw_InitInstances (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+Gpt_Ipw_FtmGetTimeElapsed/3 (Gpt_Ipw_FtmGetTimeElapsed) @0dcb1d20
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written section:.text.Gpt_Ipw_FtmGetTimeElapsed (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+Ftm_Gpt_Ip_GetCompareValue/2 (Ftm_Gpt_Ip_GetCompareValue) @0dbd67e0
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly asm_written section:.text.Ftm_Gpt_Ip_GetCompareValue (implicit_section)
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: local
+  Called by: 
+  Calls: 
+Ftm_Gpt_Ip_GetCntValue/1 (Ftm_Gpt_Ip_GetCntValue) @0dbd6540
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly asm_written section:.text.Ftm_Gpt_Ip_GetCntValue (implicit_section)
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: local
+  Called by: 
+  Calls: 
+Ftm_Gpt_Ip_GetChInterruptStatusFlag/0 (Ftm_Gpt_Ip_GetChInterruptStatusFlag) @0dbd62a0
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly asm_written section:.text.Ftm_Gpt_Ip_GetChInterruptStatusFlag (implicit_section)
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: local
+  Called by: 
+  Calls: 

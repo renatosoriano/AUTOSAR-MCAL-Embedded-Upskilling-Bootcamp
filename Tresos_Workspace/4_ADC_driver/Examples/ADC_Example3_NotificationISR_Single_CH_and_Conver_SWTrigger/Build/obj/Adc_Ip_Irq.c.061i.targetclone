@@ -1,0 +1,20 @@
+Adc_1_Isr ()
+{
+  <bb 2> :
+  Adc_Ip_IRQHandler (1);
+  __asm__ __volatile__(" DSB");
+  return;
+
+}
+
+
+Adc_0_Isr ()
+{
+  <bb 2> :
+  Adc_Ip_IRQHandler (0);
+  __asm__ __volatile__(" DSB");
+  return;
+
+}
+
+
