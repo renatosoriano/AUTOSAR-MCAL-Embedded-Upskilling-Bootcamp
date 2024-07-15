@@ -1,0 +1,49 @@
+Symbol table:
+
+Adc_Ip_IRQHandler/2 (Adc_Ip_IRQHandler) @0e21e620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Adc_1_Isr/1 Adc_0_Isr/0 
+  Calls: 
+Adc_1_Isr/1 (Adc_1_Isr) @0e21e1c0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Adc_Ip_IRQHandler/2 
+Adc_0_Isr/0 (Adc_0_Isr) @0e1f8e00
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Adc_Ip_IRQHandler/2 
+Adc_1_Isr ()
+{
+  <bb 2> :
+  Adc_Ip_IRQHandler (1);
+  __asm__ __volatile__(" DSB");
+  return;
+
+}
+
+
+Adc_0_Isr ()
+{
+  <bb 2> :
+  Adc_Ip_IRQHandler (0);
+  __asm__ __volatile__(" DSB");
+  return;
+
+}
+
+

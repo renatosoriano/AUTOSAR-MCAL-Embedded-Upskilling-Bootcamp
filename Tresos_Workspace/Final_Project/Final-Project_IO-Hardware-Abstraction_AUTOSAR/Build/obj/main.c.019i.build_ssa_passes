@@ -1,0 +1,278 @@
+Os_BuzzerTask ()
+{
+  <bb 2> :
+  return;
+
+}
+
+
+Os_CanTask ()
+{
+  <bb 2> :
+  return;
+
+}
+
+
+Os_EepromsTask ()
+{
+  <bb 2> :
+  return;
+
+}
+
+
+Os_PotsTask ()
+{
+  <bb 2> :
+  return;
+
+}
+
+
+Os_ButtonsTask ()
+{
+  <bb 2> :
+  return;
+
+}
+
+
+Os_LedsTask ()
+{
+  <bb 2> :
+  return;
+
+}
+
+
+Os_100ms_Task ()
+{
+  uint8 CurrentButton;
+  uint8 RealEvent;
+
+  <bb 2> :
+  RealEvent = 0;
+  CurrentButton = 0;
+  goto <bb 28>; [INV]
+
+  <bb 3> :
+  RealEvent = HwIoAb_Buttons_GetEvent (CurrentButton);
+  if (RealEvent != 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 27>; [INV]
+
+  <bb 4> :
+  _1 = (int) CurrentButton;
+  switch (_1) <default: <L23> [INV], case 0: <L2> [INV], case 1: <L9> [INV], case 2: <L16> [INV]>
+
+  <bb 5> :
+<L2>:
+  _2 = (int) RealEvent;
+  switch (_2) <default: <L7> [INV], case 1: <L3> [INV], case 2: <L4> [INV], case 3: <L5> [INV], case 4: <L6> [INV]>
+
+  <bb 6> :
+<L3>:
+  SEGGER_RTT_printf (0, "Button 1 action: SINGLE_CLICK \n");
+  HwIoAb_Leds_TurnToggle (0);
+  SEGGER_RTT_printf (0, "Blue RGB LED Toggle \n");
+  HwIoAb_Leds_TurnToggle (5);
+  goto <bb 11>; [INV]
+
+  <bb 7> :
+<L4>:
+  SEGGER_RTT_printf (0, "Button 1 action: DOUBLE_CLICK \n");
+  PotsControl_Ptr.0_3 = PotsControl_Ptr;
+  _4 = &PotsControl_Ptr.0_3->Ohms_results_main;
+  HwIoAb_Pots_GetValue (_4);
+  PotsControl_Ptr.1_5 = PotsControl_Ptr;
+  _6 = PotsControl_Ptr.1_5->Ohms_results_main[0];
+  _7 = (int) _6;
+  SEGGER_RTT_printf (0, "Pot 1 ADC0 resistance value in ohms: %d\n", _7);
+  HwIoAb_Leds_TurnToggle (8);
+  HwIoAb_Leds_TurnToggle (9);
+  goto <bb 11>; [INV]
+
+  <bb 8> :
+<L5>:
+  SEGGER_RTT_printf (0, "Button 1 action: HOLD_CLICK \n");
+  HwIoAb_Buzzer_Beep (0);
+  SEGGER_RTT_printf (0, "Buzzer playing Tone 1 at 3Khz \n");
+  goto <bb 11>; [INV]
+
+  <bb 9> :
+<L6>:
+  SEGGER_RTT_printf (0, "Button 1 action: RELEASE \n");
+  HwIoAb_Buzzer_Stop ();
+  SEGGER_RTT_printf (0, "Buzzer stopped \n");
+  goto <bb 11>; [INV]
+
+  <bb 10> :
+<L7>:
+
+  <bb 11> :
+  goto <bb 27>; [INV]
+
+  <bb 12> :
+<L9>:
+  _8 = (int) RealEvent;
+  switch (_8) <default: <L14> [INV], case 1: <L10> [INV], case 2: <L11> [INV], case 3: <L12> [INV], case 4: <L13> [INV]>
+
+  <bb 13> :
+<L10>:
+  SEGGER_RTT_printf (0, "Button 2 action: SINGLE_CLICK \n");
+  HwIoAb_Leds_TurnToggle (1);
+  SEGGER_RTT_printf (0, "Red RGB LED Toggle \n");
+  HwIoAb_Leds_TurnToggle (4);
+  goto <bb 18>; [INV]
+
+  <bb 14> :
+<L11>:
+  SEGGER_RTT_printf (0, "Button 2 action: DOUBLE_CLICK \n");
+  PotsControl_Ptr.2_9 = PotsControl_Ptr;
+  _10 = &PotsControl_Ptr.2_9->Ohms_results_main;
+  HwIoAb_Pots_GetValue (_10);
+  PotsControl_Ptr.3_11 = PotsControl_Ptr;
+  _12 = PotsControl_Ptr.3_11->Ohms_results_main[1];
+  _13 = (int) _12;
+  SEGGER_RTT_printf (0, "Pot 2 ADC0 resistance value in ohms: %d\n", _13);
+  HwIoAb_Leds_TurnToggle (7);
+  HwIoAb_Leds_TurnToggle (10);
+  goto <bb 18>; [INV]
+
+  <bb 15> :
+<L12>:
+  SEGGER_RTT_printf (0, "Button 2 action: HOLD_CLICK \n");
+  HwIoAb_Buzzer_Beep (1);
+  SEGGER_RTT_printf (0, "Buzzer playing Tone 2 at 5Khz \n");
+  goto <bb 18>; [INV]
+
+  <bb 16> :
+<L13>:
+  SEGGER_RTT_printf (0, "Button 2 action: RELEASE \n");
+  HwIoAb_Buzzer_Stop ();
+  SEGGER_RTT_printf (0, "Buzzer stopped \n");
+  goto <bb 18>; [INV]
+
+  <bb 17> :
+<L14>:
+
+  <bb 18> :
+  goto <bb 27>; [INV]
+
+  <bb 19> :
+<L16>:
+  _14 = (int) RealEvent;
+  switch (_14) <default: <L21> [INV], case 1: <L17> [INV], case 2: <L18> [INV], case 3: <L19> [INV], case 4: <L20> [INV]>
+
+  <bb 20> :
+<L17>:
+  SEGGER_RTT_printf (0, "Button 3 action: SINGLE_CLICK \n");
+  HwIoAb_Leds_TurnToggle (2);
+  SEGGER_RTT_printf (0, "Green RGB LED Toggle \n");
+  HwIoAb_Leds_TurnToggle (3);
+  goto <bb 25>; [INV]
+
+  <bb 21> :
+<L18>:
+  SEGGER_RTT_printf (0, "Button 3 action: DOUBLE_CLICK \n");
+  PotsControl_Ptr.4_15 = PotsControl_Ptr;
+  _16 = &PotsControl_Ptr.4_15->Ohms_results_alter;
+  HwIoAb_Pots_GetAltValue (_16);
+  PotsControl_Ptr.5_17 = PotsControl_Ptr;
+  _18 = PotsControl_Ptr.5_17->Ohms_results_alter[0];
+  _19 = (int) _18;
+  SEGGER_RTT_printf (0, "Pot 1 ADC1 resistance value in ohms: %d\n", _19);
+  PotsControl_Ptr.6_20 = PotsControl_Ptr;
+  _21 = PotsControl_Ptr.6_20->Ohms_results_alter[1];
+  _22 = (int) _21;
+  SEGGER_RTT_printf (0, "Pot 2 ADC1 resistance value in ohms: %d\n", _22);
+  HwIoAb_Leds_TurnToggle (6);
+  HwIoAb_Leds_TurnToggle (9);
+  HwIoAb_Leds_TurnToggle (10);
+  goto <bb 25>; [INV]
+
+  <bb 22> :
+<L19>:
+  SEGGER_RTT_printf (0, "Button 3 action: HOLD_CLICK \n");
+  HwIoAb_Buzzer_Beep (2);
+  SEGGER_RTT_printf (0, "Buzzer playing Tone 3 at 7.5Khz \n");
+  goto <bb 25>; [INV]
+
+  <bb 23> :
+<L20>:
+  SEGGER_RTT_printf (0, "Button 3 action: RELEASE \n");
+  HwIoAb_Buzzer_Stop ();
+  SEGGER_RTT_printf (0, "Buzzer stopped \n");
+  goto <bb 25>; [INV]
+
+  <bb 24> :
+<L21>:
+
+  <bb 25> :
+  goto <bb 27>; [INV]
+
+  <bb 26> :
+<L23>:
+
+  <bb 27> :
+  CurrentButton.7_23 = CurrentButton;
+  CurrentButton = CurrentButton.7_23 + 1;
+
+  <bb 28> :
+  if (CurrentButton <= 2)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 29>; [INV]
+
+  <bb 29> :
+  return;
+
+}
+
+
+Os_50ms_Task ()
+{
+  <bb 2> :
+  HwIoAb_Buttons_MainFunction ();
+  return;
+
+}
+
+
+EcuM_Init ()
+{
+  <bb 2> :
+  Mcu_Init (&Mcu_Config);
+  Mcu_SetMode (0);
+  Mcu_InitClock (0);
+  OsIf_Init (0B);
+  Platform_Init (0B);
+  Port_Init (&Port_Config);
+  Adc_Init (&Adc_Config);
+  Port_Ci_Port_Ip_SetMuxModeSel (1074044928B, 1, 8);
+  Port_Ci_Port_Ip_SetMuxModeSel (1074044928B, 13, 8);
+  Pwm_Init (&Pwm_Config);
+  IoHwAb_Init0 (0B);
+  return;
+
+}
+
+
+main ()
+{
+  int D.7695;
+
+  <bb 2> :
+  EcuM_Init ();
+  SEGGER_RTT_Init ();
+  Scheduler_Init (&Scheduler_Config);
+
+  <bb 3> :
+  Scheduler_MainFunction ();
+  goto <bb 3>; [INV]
+
+}
+
+

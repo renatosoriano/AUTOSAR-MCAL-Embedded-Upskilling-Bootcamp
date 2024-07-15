@@ -1,0 +1,72 @@
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+Symbol table:
+
+AdcIpwCfg/8 (AdcIpwCfg) @0d4e15a0
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: Adc_Config/5 (addr) 
+  Availability: not_available
+  Varpool flags: read-only
+AdcIpwGroupConfig_1/7 (AdcIpwGroupConfig_1) @0d4e1558
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: Adc_GroupsCfg/2 (addr) 
+  Availability: not_available
+  Varpool flags: read-only
+AdcIpwGroupConfig_0/6 (AdcIpwGroupConfig_0) @0d4e1510
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: Adc_GroupsCfg/2 (addr) 
+  Availability: not_available
+  Varpool flags: read-only
+Adc_Config/5 (Adc_Config) @0d4e13f0
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: AdcIpwCfg/8 (addr) Adc_GroupsCfg/2 (addr) Adc_au16GroupIdToIndexMap/3 (addr) Adc_Partition_Assignment/4 (addr) 
+  Referring: 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+Adc_Partition_Assignment/4 (Adc_Partition_Assignment) @0d4e1360
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: Adc_Config/5 (addr) 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+Adc_au16GroupIdToIndexMap/3 (Adc_au16GroupIdToIndexMap) @0d4e12d0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: Adc_Config/5 (addr) 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+Adc_GroupsCfg/2 (Adc_GroupsCfg) @0d41f438
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: Adc_Group0_Assignment_0/0 (addr) AdcIpwGroupConfig_0/6 (addr) Adc_Group1_Assignment_1/1 (addr) AdcIpwGroupConfig_1/7 (addr) 
+  Referring: Adc_Config/5 (addr) 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+Adc_Group1_Assignment_1/1 (Adc_Group1_Assignment_1) @0d4e1168
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: Adc_GroupsCfg/2 (addr) 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+Adc_Group0_Assignment_0/0 (Adc_Group0_Assignment_0) @0d4e10d8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: Adc_GroupsCfg/2 (addr) 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known

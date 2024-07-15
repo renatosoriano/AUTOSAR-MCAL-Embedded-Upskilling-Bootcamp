@@ -1,0 +1,73 @@
+HwIoAb_Leds_TurnToggle (uint8 Led)
+{
+  <bb 2> :
+  LedsControl_Ptr.7_1 = LedsControl_Ptr;
+  _2 = LedsControl_Ptr.7_1->LedsConfig_Ptr;
+  _3 = (unsigned int) Led;
+  _4 = _3 * 4;
+  _5 = _2 + _4;
+  _6 = _5->Led;
+  Dio_FlipChannel (_6);
+  return;
+
+}
+
+
+HwIoAb_Leds_TurnOff (uint8 Led)
+{
+  <bb 2> :
+  LedsControl_Ptr.5_1 = LedsControl_Ptr;
+  _2 = LedsControl_Ptr.5_1->LedsConfig_Ptr;
+  _3 = (unsigned int) Led;
+  _4 = _3 * 4;
+  _5 = _2 + _4;
+  _6 = _5->Led;
+  LedsControl_Ptr.6_7 = LedsControl_Ptr;
+  _8 = LedsControl_Ptr.6_7->LedsConfig_Ptr;
+  _9 = (unsigned int) Led;
+  _10 = _9 * 4;
+  _11 = _8 + _10;
+  _12 = _11->Active;
+  _13 = _12 == 0;
+  _14 = (unsigned char) _13;
+  Dio_WriteChannel (_6, _14);
+  return;
+
+}
+
+
+HwIoAb_Leds_TurnOn (uint8 Led)
+{
+  <bb 2> :
+  LedsControl_Ptr.3_1 = LedsControl_Ptr;
+  _2 = LedsControl_Ptr.3_1->LedsConfig_Ptr;
+  _3 = (unsigned int) Led;
+  _4 = _3 * 4;
+  _5 = _2 + _4;
+  _6 = _5->Led;
+  LedsControl_Ptr.4_7 = LedsControl_Ptr;
+  _8 = LedsControl_Ptr.4_7->LedsConfig_Ptr;
+  _9 = (unsigned int) Led;
+  _10 = _9 * 4;
+  _11 = _8 + _10;
+  _12 = _11->Active;
+  Dio_WriteChannel (_6, _12);
+  return;
+
+}
+
+
+HwIoAb_Leds_Init (const struct HwIoAb_Leds_Config * Leds_Config)
+{
+  <bb 2> :
+  LedsControl_Ptr.0_1 = LedsControl_Ptr;
+  LedsControl_Ptr.0_1->Leds = 11;
+  LedsControl_Ptr.1_2 = LedsControl_Ptr;
+  LedsControl_Ptr.1_2->LedsConfig_Ptr = Leds_Config;
+  LedsControl_Ptr.2_3 = LedsControl_Ptr;
+  LedsControl_Ptr.2_3->Leds_init = 1;
+  return;
+
+}
+
+

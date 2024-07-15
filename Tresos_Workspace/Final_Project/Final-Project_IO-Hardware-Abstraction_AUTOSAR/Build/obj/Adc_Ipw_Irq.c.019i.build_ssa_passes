@@ -1,0 +1,478 @@
+Adc_Ipw_Adc1EndConversionNotification (const uint8 ControlChanIdx)
+{
+  const Adc_HwUnitType PhysicalAdcUnit;
+
+  <bb 2> :
+  PhysicalAdcUnit = 1;
+  Adc_Ipw_EndConversionNotification (PhysicalAdcUnit);
+  return;
+
+}
+
+
+Adc_Ipw_Adc0EndConversionNotification (const uint8 ControlChanIdx)
+{
+  const Adc_HwUnitType PhysicalAdcUnit;
+
+  <bb 2> :
+  PhysicalAdcUnit = 0;
+  Adc_Ipw_EndConversionNotification (PhysicalAdcUnit);
+  return;
+
+}
+
+
+Adc_Ipw_EndConversionNotification (const Adc_HwUnitType PhysicalAdcUnit)
+{
+  const Adc_GroupType SwGroupId;
+  const Adc_HwUnitType LogicalHwUnitId;
+  const uint8 CoreId;
+
+  <bb 2> :
+  _1 = Adc_GetCoreID ();
+  CoreId = _1;
+  CoreId.0_2 = CoreId;
+  _3 = (int) CoreId.0_2;
+  _4 = Adc_apxCfgPtr[_3];
+  _5 = _4->AdcIpwConfigPtr;
+  _6 = (int) PhysicalAdcUnit;
+  LogicalHwUnitId = _5->Mapping.HwLogicalId[_6];
+  _7 = (int) LogicalHwUnitId;
+  SwGroupId = Adc_axUnitStatus[_7].SwNormalQueue[0];
+  _8 = (int) LogicalHwUnitId;
+  _9 = Adc_axUnitStatus[_8].SwNormalQueueIndex;
+  if (_9 != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  CoreId.1_10 = CoreId;
+  Adc_Ipw_EndConversion (LogicalHwUnitId, SwGroupId, 1, CoreId.1_10);
+
+  <bb 4> :
+  return;
+
+}
+
+
+Adc_Ipw_ReadData (const struct Adc_GroupConfigurationType * GroupPtr, Adc_ValueGroupType * ResultPtr, const Adc_StreamNumSampleType GroupSamples, const Adc_ChannelIndexType Index, const uint16 ConvResult)
+{
+  <bb 2> :
+  _1 = (int) Index;
+  _2 = (int) GroupSamples;
+  _3 = _1 * _2;
+  _4 = (unsigned int) _3;
+  _5 = _4 * 2;
+  _6 = ResultPtr + _5;
+  *_6 = ConvResult;
+  return;
+
+}
+
+
+Adc_Ipw_EndConversion (Adc_HwUnitType Unit, Adc_GroupType Group, boolean IsSoftwareConversion, uint8 CoreId)
+{
+  Adc_ChannelIndexType ChannelCount;
+  uint8 LeftChannel;
+  Adc_ChannelIndexType NumChannel;
+  const struct Adc_GroupConfigurationType * GroupPtr;
+  const Adc_GroupType GroupIndex;
+  unsigned char iftmp.2;
+
+  <bb 2> :
+  _1 = (int) CoreId;
+  _2 = Adc_apxCfgPtr[_1];
+  _3 = _2->GroupIdToIndexMapPtr;
+  _4 = (unsigned int) Group;
+  _5 = _4 * 2;
+  _6 = _3 + _5;
+  GroupIndex = *_6;
+  _7 = (int) CoreId;
+  _8 = Adc_apxCfgPtr[_7];
+  _9 = _8->GroupsPtr;
+  _10 = (unsigned int) GroupIndex;
+  _11 = _10 * 52;
+  GroupPtr = _9 + _11;
+  _12 = GroupPtr->NumSamples;
+  _13 = Adc_Ipw_CheckConversionChannels (Unit, Group, _12, CoreId);
+  if (_13 == 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 3> :
+  ChannelCount = GroupPtr->AssignedChannelCount;
+  _14 = (int) Group;
+  _15 = Adc_axGroupStatus[_14].CurrentChannel;
+  if (ChannelCount > _15)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 4> :
+  _16 = (int) Group;
+  _17 = Adc_axGroupStatus[_16].CurrentChannel;
+  NumChannel = ChannelCount - _17;
+  if (NumChannel <= 15)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  iftmp.2 = NumChannel & 15;
+  goto <bb 7>; [INV]
+
+  <bb 6> :
+  iftmp.2 = 16;
+
+  <bb 7> :
+  LeftChannel = iftmp.2;
+  Adc_Ipw_ConfigureConversion (Unit, Group, 15, LeftChannel, CoreId);
+  goto <bb 10>; [INV]
+
+  <bb 8> :
+  _18 = (int) Group;
+  _19 = Adc_axGroupStatus[_18].ResultIndex;
+  _20 = _19;
+  _21 = _20 + 1;
+  Adc_axGroupStatus[_18].ResultIndex = _21;
+  if (IsSoftwareConversion != 0)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 9> :
+  _22 = GroupPtr->NumSamples;
+  Adc_Ipw_UpdateSoftwareGroupState (Unit, Group, _22, CoreId);
+
+  <bb 10> :
+  return;
+
+}
+
+
+Adc_Ipw_UpdateSoftwareGroupState (Adc_HwUnitType Unit, Adc_GroupType Group, Adc_StreamNumSampleType GroupSamples, uint8 CoreId)
+{
+  const Adc_GroupType GroupIndex;
+  uint32 CurrentSampleCount;
+
+  <bb 2> :
+  _1 = (int) CoreId;
+  _2 = Adc_apxCfgPtr[_1];
+  _3 = _2->GroupIdToIndexMapPtr;
+  _4 = (unsigned int) Group;
+  _5 = _4 * 2;
+  _6 = _3 + _5;
+  GroupIndex = *_6;
+  _7 = (int) Group;
+  Adc_axGroupStatus[_7].AlreadyConverted = 1;
+  _8 = (int) Group;
+  _9 = Adc_axGroupStatus[_8].Conversion;
+  if (_9 == 1)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  _10 = (int) Group;
+  Adc_axGroupStatus[_10].Conversion = 2;
+
+  <bb 4> :
+  CurrentSampleCount = Adc_Ipw_GetCurrentSampleCount (Group);
+  _11 = (long unsigned int) GroupSamples;
+  if (CurrentSampleCount >= _11)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 5> :
+  _12 = (int) Group;
+  Adc_axGroupStatus[_12].Conversion = 3;
+  _13 = (int) CoreId;
+  _14 = Adc_apxCfgPtr[_13];
+  _15 = _14->GroupsPtr;
+  _16 = (unsigned int) GroupIndex;
+  _17 = _16 * 52;
+  _18 = _15 + _17;
+  _19 = _18->BufferMode;
+  if (_19 == 0)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 6> :
+  _20 = (int) CoreId;
+  _21 = Adc_apxCfgPtr[_20];
+  _22 = _21->GroupsPtr;
+  _23 = (unsigned int) GroupIndex;
+  _24 = _23 * 52;
+  _25 = _22 + _24;
+  _26 = _25->AccessMode;
+  if (_26 == 1)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 7> :
+  Adc_Ipw_UpdateQueue (Unit, CoreId);
+  goto <bb 11>; [INV]
+
+  <bb 8> :
+  _27 = (int) CoreId;
+  _28 = Adc_apxCfgPtr[_27];
+  _29 = _28->GroupsPtr;
+  _30 = (unsigned int) GroupIndex;
+  _31 = _30 * 52;
+  _32 = _29 + _31;
+  _33 = _32->Mode;
+  if (_33 == 1)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 9> :
+  _34 = (int) Group;
+  Adc_axGroupStatus[_34].ResultIndex = 0;
+  Adc_Ipw_RestartConversion (Unit, Group, CoreId);
+  goto <bb 11>; [INV]
+
+  <bb 10> :
+  Adc_Ipw_UpdateQueue (Unit, CoreId);
+
+  <bb 11> :
+  goto <bb 13>; [INV]
+
+  <bb 12> :
+  Adc_Ipw_RestartConversion (Unit, Group, CoreId);
+
+  <bb 13> :
+  return;
+
+}
+
+
+Adc_Ipw_GetCurrentSampleCount (Adc_GroupType Group)
+{
+  Adc_StreamNumSampleType CurrentSampleCount;
+  uint32 D.6088;
+
+  <bb 2> :
+  _1 = (int) Group;
+  CurrentSampleCount = Adc_axGroupStatus[_1].ResultIndex;
+  D.6088 = (uint32) CurrentSampleCount;
+
+  <bb 3> :
+<L0>:
+  return D.6088;
+
+}
+
+
+Adc_Ipw_RestartConversion (Adc_HwUnitType Unit, Adc_GroupType Group, uint8 CoreId)
+{
+  Adc_HwUnitType PhysicalHwUnitId;
+  Adc_ChannelIndexType ChannelCount;
+  uint8 NumChannel;
+  const Adc_GroupType GroupIndex;
+  unsigned char iftmp.5;
+
+  <bb 2> :
+  _1 = (int) CoreId;
+  _2 = Adc_apxCfgPtr[_1];
+  _3 = _2->GroupIdToIndexMapPtr;
+  _4 = (unsigned int) Group;
+  _5 = _4 * 2;
+  _6 = _3 + _5;
+  GroupIndex = *_6;
+  _7 = (int) CoreId;
+  _8 = Adc_apxCfgPtr[_7];
+  _9 = _8->AdcIpwConfigPtr;
+  _10 = (int) Unit;
+  PhysicalHwUnitId = _9->AdcPhysicalIdArr[_10];
+  _11 = (int) CoreId;
+  _12 = Adc_apxCfgPtr[_11];
+  _13 = _12->GroupsPtr;
+  _14 = (unsigned int) GroupIndex;
+  _15 = _14 * 52;
+  _16 = _13 + _15;
+  ChannelCount = _16->AssignedChannelCount;
+  if (ChannelCount <= 15)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  iftmp.5 = ChannelCount & 15;
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  iftmp.5 = 16;
+
+  <bb 5> :
+  NumChannel = iftmp.5;
+  if (ChannelCount <= 16)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  _17 = (int) Group;
+  Adc_axGroupStatus[_17].CurrentChannel = ChannelCount;
+  _18 = (long unsigned int) PhysicalHwUnitId;
+  Pdb_Adc_Ip_SwTrigger (_18);
+  goto <bb 8>; [INV]
+
+  <bb 7> :
+  _19 = (int) Group;
+  Adc_axGroupStatus[_19].CurrentChannel = 0;
+  Adc_Ipw_ConfigureConversion (Unit, Group, 15, NumChannel, CoreId);
+
+  <bb 8> :
+  return;
+
+}
+
+
+Adc_Ipw_CheckConversionChannels (Adc_HwUnitType Unit, Adc_GroupType Group, Adc_StreamNumSampleType GroupSamples, uint8 CoreId)
+{
+  boolean ValidConversion;
+  const uint8 NumsBitShift;
+  Std_ReturnType Status;
+  Adc_HwUnitType PhysicalHwUnitId;
+  Adc_ValueGroupType * ResultIndex;
+  uint16 ConvResult;
+  Adc_ChannelIndexType Index;
+  Adc_ChannelIndexType Temp;
+  Adc_ChannelIndexType CurrentChannel;
+  const struct Adc_GroupConfigurationType * GroupPtr;
+  const Adc_GroupType GroupIndex;
+  Std_ReturnType D.6074;
+  unsigned char iftmp.3;
+
+  <bb 2> :
+  _1 = (int) CoreId;
+  _2 = Adc_apxCfgPtr[_1];
+  _3 = _2->GroupIdToIndexMapPtr;
+  _4 = (unsigned int) Group;
+  _5 = _4 * 2;
+  _6 = _3 + _5;
+  GroupIndex = *_6;
+  _7 = (int) Group;
+  CurrentChannel = Adc_axGroupStatus[_7].CurrentChannel;
+  ResultIndex = 0B;
+  _8 = (int) CoreId;
+  _9 = Adc_apxCfgPtr[_8];
+  _10 = _9->AdcIpwConfigPtr;
+  _11 = (int) Unit;
+  PhysicalHwUnitId = _10->AdcPhysicalIdArr[_11];
+  Status = 0;
+  _12 = (int) CoreId;
+  _13 = Adc_apxCfgPtr[_12];
+  _14 = _13->AdcIpwConfigPtr;
+  _15 = (int) Unit;
+  _16 = _14->AdcConfigPtrArr[_15];
+  _17 = _16->Resolution;
+  NumsBitShift = Adc_Ipw_CalculateNumsBitShift (_17);
+  _18 = (int) CoreId;
+  _19 = Adc_apxCfgPtr[_18];
+  _20 = _19->GroupsPtr;
+  _21 = (unsigned int) GroupIndex;
+  _22 = _21 * 52;
+  _23 = _20 + _22;
+  Index = _23->AssignedChannelCount;
+  _24 = (int) CoreId;
+  _25 = Adc_apxCfgPtr[_24];
+  _26 = _25->GroupsPtr;
+  _27 = (unsigned int) GroupIndex;
+  _28 = _27 * 52;
+  GroupPtr = _26 + _28;
+  if (CurrentChannel <= Index)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 3> :
+  _29 = CurrentChannel & 15;
+  if (_29 == 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  iftmp.3 = CurrentChannel + 240;
+  goto <bb 6>; [INV]
+
+  <bb 5> :
+  iftmp.3 = CurrentChannel & 240;
+
+  <bb 6> :
+  Temp = iftmp.3;
+  _30 = (int) Group;
+  _31 = Adc_axGroupStatus[_30].ResultsBufferPtr;
+  _32 = (int) Group;
+  _33 = Adc_axGroupStatus[_32].ResultIndex;
+  _34 = (unsigned int) _33;
+  _35 = _34 * 2;
+  ResultIndex = _31 + _35;
+  ValidConversion = Adc_Ipw_CheckValidConversion (PhysicalHwUnitId, Temp, CurrentChannel);
+  if (ValidConversion != 0)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 7> :
+  Index = Temp;
+  goto <bb 9>; [INV]
+
+  <bb 8> :
+  _36 = (long unsigned int) PhysicalHwUnitId;
+  _37 = Index - Temp;
+  ConvResult = Adc_Ip_GetConvData (_36, _37);
+  _38 = (int) ConvResult;
+  _39 = (int) NumsBitShift;
+  _40 = _38 << _39;
+  ConvResult = (uint16) _40;
+  Adc_Ipw_ReadData (GroupPtr, ResultIndex, GroupSamples, Index, ConvResult);
+  Index.4_41 = Index;
+  Index = Index.4_41 + 1;
+
+  <bb 9> :
+  if (Index < CurrentChannel)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 10> :
+  Status = 1;
+
+  <bb 11> :
+  D.6074 = Status;
+
+  <bb 12> :
+<L11>:
+  return D.6074;
+
+}
+
+
+Adc_Ipw_UpdateQueue (Adc_HwUnitType Unit, uint8 CoreId)
+{
+  <bb 2> :
+  Adc_Ipw_RemoveFromQueue (Unit, 0);
+  _1 = (int) Unit;
+  _2 = Adc_axUnitStatus[_1].SwNormalQueueIndex;
+  if (_2 != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  Adc_Ipw_StartNormalConversion (Unit, CoreId);
+
+  <bb 4> :
+  return;
+
+}
+
+

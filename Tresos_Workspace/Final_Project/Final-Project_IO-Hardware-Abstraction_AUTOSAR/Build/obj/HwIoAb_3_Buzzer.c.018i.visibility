@@ -1,0 +1,107 @@
+
+Marking local functions:
+
+
+Marking externally visible functions: HwIoAb_Buzzer_Stop/3 HwIoAb_Buzzer_Beep/2 HwIoAb_Buzzer_Init/1
+
+
+Marking externally visible variables:
+
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+Symbol table:
+
+Pwm_SetOutputToIdle/5 (Pwm_SetOutputToIdle) @0e64e540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: HwIoAb_Buzzer_Stop/3 
+  Calls: 
+Pwm_SetPeriodAndDuty/4 (Pwm_SetPeriodAndDuty) @0e64e380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: HwIoAb_Buzzer_Beep/2 HwIoAb_Buzzer_Beep/2 HwIoAb_Buzzer_Beep/2 
+  Calls: 
+HwIoAb_Buzzer_Stop/3 (HwIoAb_Buzzer_Stop) @0e64ac40
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Pwm_SetOutputToIdle/5 
+HwIoAb_Buzzer_Beep/2 (HwIoAb_Buzzer_Beep) @0e64ae00
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Pwm_SetPeriodAndDuty/4 Pwm_SetPeriodAndDuty/4 Pwm_SetPeriodAndDuty/4 
+HwIoAb_Buzzer_Init/1 (HwIoAb_Buzzer_Init) @0e64ab60
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+HwIoAb_Buzzer_Stop ()
+{
+  <bb 2> :
+  Pwm_SetOutputToIdle (0);
+  return;
+
+}
+
+
+HwIoAb_Buzzer_Beep (uint8 Tone)
+{
+  <bb 2> :
+  _1 = (int) Tone;
+  switch (_1) <default: <L3> [INV], case 0: <L0> [INV], case 1: <L1> [INV], case 2: <L2> [INV]>
+
+  <bb 3> :
+<L0>:
+  Pwm_SetPeriodAndDuty (0, 2666, 16384);
+  goto <bb 7>; [INV]
+
+  <bb 4> :
+<L1>:
+  Pwm_SetPeriodAndDuty (0, 1600, 16384);
+  goto <bb 7>; [INV]
+
+  <bb 5> :
+<L2>:
+  Pwm_SetPeriodAndDuty (0, 1066, 16384);
+  goto <bb 7>; [INV]
+
+  <bb 6> :
+<L3>:
+
+  <bb 7> :
+  return;
+
+}
+
+
+HwIoAb_Buzzer_Init (const struct HwIoAb_Buzzer_Config * Buzzer_Config)
+{
+  <bb 2> :
+  return;
+
+}
+
+
