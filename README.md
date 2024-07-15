@@ -127,16 +127,16 @@ _Will be uploading them as they are ready._
 You can find here the [**Final Project**](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Tresos_Workspace/Final_Project) created for this Upskilling Bootcamp.
 It consists on an AUTOSAR I/O Hardware Abstraction for the on board Buttons and LEDs (PORT and DIO Drivers), Potentiometers (MCU and ADC Drivers), and Buzzer (PW Driver), all together with the Scheduler and a state machine with specific application events and tasks requirements.
 
-![AUTOSAR_layered_view.jpeg](AUTOSAR_layered_view.jpeg)
+![AUTOSAR_layered_view.jpeg](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/Final_Project/AUTOSAR_layered_view.jpeg)
 
 ### **Outputs**
 
 * #### Button 1: Single click
 Shall toggle ON/OFF RGB_LED_BLUE (D0) and C10_LED2 (as SINGLE_CLICK visual indicator).
 
-![Button_1_Single_click.gif](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/Final_Project/Button_1_Single_click.gif)
-![Button_1_Single_click.mov](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/Final_Project/Button_1_Single_click.mov)
-![Button_1_Single_click_Terminal.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/Final_Project/Button_1_Single_click.gif)
+![Button_1_Single_click.GIF](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/Final_Project/Button_1_Single_click.GIF)
+![Button_1_Single_click.MOV](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/Final_Project/Button_1_Single_click.MOV)
+![Button_1_Single_click_Terminal.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/Final_Project/Button_1_Single_click_Terminal.png)
 
 
 ## 8. Results
