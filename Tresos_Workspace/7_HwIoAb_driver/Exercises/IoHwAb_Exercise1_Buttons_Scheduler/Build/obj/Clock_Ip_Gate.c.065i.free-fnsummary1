@@ -1,0 +1,446 @@
+Clock_Ip_ClockSetSimTraceEnable_TrustedCall (const struct Clock_Ip_GateConfigType * Config)
+{
+  uint32 RegValue;
+  struct SIM_Type * _1;
+  short unsigned int _2;
+  struct SIM_Type * _3;
+
+  <bb 2> :
+  _1 = 1074036736B;
+  RegValue_6 ={v} _1->CLKDIV4;
+  _2 = Config_7(D)->Enable;
+  if (_2 == 1)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  RegValue_9 = RegValue_6 | 268435456;
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  RegValue_8 = RegValue_6 & 4026531839;
+
+  <bb 5> :
+  # RegValue_4 = PHI <RegValue_9(3), RegValue_8(4)>
+  _3 = 1074036736B;
+  _3->CLKDIV4 ={v} RegValue_4;
+  return;
+
+}
+
+
+Clock_Ip_ClockSetSimGate_TrustedCall (const struct Clock_Ip_GateConfigType * Config)
+{
+  uint32 RegValue;
+  uint32 GateIndex;
+  uint32 Enable;
+  short unsigned int _1;
+  <unnamed type> _2;
+  unsigned char _3;
+  struct SIM_Type * _4;
+  long unsigned int _5;
+  long unsigned int _6;
+  long unsigned int _7;
+  struct SIM_Type * _8;
+
+  <bb 2> :
+  _1 = Config_10(D)->Enable;
+  Enable_11 = (uint32) _1;
+  _2 = Config_10(D)->Name;
+  _3 = Clock_Ip_au8ClockFeatures[_2][6];
+  GateIndex_12 = (uint32) _3;
+  _4 = 1074036736B;
+  RegValue_13 ={v} _4->PLATCGC;
+  _5 = 1 << GateIndex_12;
+  _6 = ~_5;
+  RegValue_14 = RegValue_13 & _6;
+  _7 = Enable_11 << GateIndex_12;
+  RegValue_15 = RegValue_14 | _7;
+  _8 = 1074036736B;
+  _8->PLATCGC ={v} RegValue_15;
+  return;
+
+}
+
+
+Clock_Ip_ClockSetPccCgcEnable_TrustedCall (const struct Clock_Ip_GateConfigType * Config)
+{
+  uint32 RegValue;
+  struct PCC_Type * _1;
+  <unnamed type> _2;
+  unsigned char _3;
+  int _4;
+  short unsigned int _5;
+  long unsigned int _6;
+  long unsigned int _7;
+  struct PCC_Type * _8;
+  <unnamed type> _9;
+  unsigned char _10;
+  int _11;
+
+  <bb 2> :
+  _1 = 1074155520B;
+  _2 = Config_13(D)->Name;
+  _3 = Clock_Ip_au8ClockFeatures[_2][6];
+  _4 = (int) _3;
+  RegValue_14 ={v} _1->PCCn[_4];
+  RegValue_15 = RegValue_14 & 3221225471;
+  _5 = Config_13(D)->Enable;
+  _6 = (long unsigned int) _5;
+  _7 = _6 << 30;
+  RegValue_16 = RegValue_15 | _7;
+  _8 = 1074155520B;
+  _9 = Config_13(D)->Name;
+  _10 = Clock_Ip_au8ClockFeatures[_9][6];
+  _11 = (int) _10;
+  _8->PCCn[_11] ={v} RegValue_16;
+  return;
+
+}
+
+
+Clock_Ip_ClockSetSimClkoutEnable_TrustedCall (const struct Clock_Ip_GateConfigType * Config)
+{
+  uint32 RegValue;
+  struct SIM_Type * _1;
+  short unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  struct SIM_Type * _5;
+
+  <bb 2> :
+  _1 = 1074036736B;
+  RegValue_7 ={v} _1->CHIPCTL;
+  RegValue_8 = RegValue_7 & 4294965247;
+  _2 = Config_9(D)->Enable;
+  _3 = (long unsigned int) _2;
+  _4 = _3 << 11;
+  RegValue_10 = RegValue_8 | _4;
+  _5 = 1074036736B;
+  _5->CHIPCTL ={v} RegValue_10;
+  return;
+
+}
+
+
+Clock_Ip_ClockSetSimLPO32KEnable_TrustedCall (const struct Clock_Ip_GateConfigType * Config)
+{
+  uint32 RegValue;
+  struct SIM_Type * _1;
+  short unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  struct SIM_Type * _5;
+
+  <bb 2> :
+  _1 = 1074036736B;
+  RegValue_7 ={v} _1->LPOCLKS;
+  RegValue_8 = RegValue_7 & 4294967293;
+  _2 = Config_9(D)->Enable;
+  _3 = (long unsigned int) _2;
+  _4 = _3 << 1;
+  RegValue_10 = RegValue_8 | _4;
+  _5 = 1074036736B;
+  _5->LPOCLKS ={v} RegValue_10;
+  return;
+
+}
+
+
+Clock_Ip_ClockSetSimLPO1KEnable_TrustedCall (const struct Clock_Ip_GateConfigType * Config)
+{
+  uint32 RegValue;
+  struct SIM_Type * _1;
+  short unsigned int _2;
+  long unsigned int _3;
+  struct SIM_Type * _4;
+
+  <bb 2> :
+  _1 = 1074036736B;
+  RegValue_6 ={v} _1->LPOCLKS;
+  RegValue_7 = RegValue_6 & 4294967294;
+  _2 = Config_8(D)->Enable;
+  _3 = (long unsigned int) _2;
+  RegValue_9 = RegValue_7 | _3;
+  _4 = 1074036736B;
+  _4->LPOCLKS ={v} RegValue_9;
+  return;
+
+}
+
+
+Clock_Ip_ClockUpdateSimTraceEnable (Clock_Ip_NameType ClockName, boolean Gate)
+{
+  struct Clock_Ip_GateConfigType Config;
+
+  <bb 2> :
+  Config.Name = ClockName_3(D);
+  if (Gate_5(D) != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  Config.Enable = 0;
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  Config.Enable = 1;
+
+  <bb 5> :
+  Clock_Ip_ClockSetSimTraceEnable (&Config);
+  Config ={v} {CLOBBER};
+  return;
+
+}
+
+
+Clock_Ip_ClockSetSimTraceEnable (const struct Clock_Ip_GateConfigType * Config)
+{
+  <bb 2> :
+  if (Config_2(D) != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  Clock_Ip_ClockSetSimTraceEnable_TrustedCall (Config_2(D));
+
+  <bb 4> :
+  return;
+
+}
+
+
+Clock_Ip_ClockUpdateSimGate (Clock_Ip_NameType ClockName, boolean Gate)
+{
+  struct Clock_Ip_GateConfigType Config;
+
+  <bb 2> :
+  Config.Name = ClockName_3(D);
+  if (Gate_5(D) != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  Config.Enable = 0;
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  Config.Enable = 1;
+
+  <bb 5> :
+  Clock_Ip_ClockSetSimGate (&Config);
+  Config ={v} {CLOBBER};
+  return;
+
+}
+
+
+Clock_Ip_ClockSetSimGate (const struct Clock_Ip_GateConfigType * Config)
+{
+  <bb 2> :
+  if (Config_2(D) != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  Clock_Ip_ClockSetSimGate_TrustedCall (Config_2(D));
+
+  <bb 4> :
+  return;
+
+}
+
+
+Clock_Ip_ClockUpdatePccCgcEnable (Clock_Ip_NameType ClockName, boolean Gate)
+{
+  struct Clock_Ip_GateConfigType Config;
+
+  <bb 2> :
+  Config.Name = ClockName_3(D);
+  if (Gate_5(D) != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  Config.Enable = 0;
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  Config.Enable = 1;
+
+  <bb 5> :
+  Clock_Ip_ClockSetPccCgcEnable (&Config);
+  Config ={v} {CLOBBER};
+  return;
+
+}
+
+
+Clock_Ip_ClockSetPccCgcEnable (const struct Clock_Ip_GateConfigType * Config)
+{
+  <bb 2> :
+  if (Config_2(D) != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  Clock_Ip_ClockSetPccCgcEnable_TrustedCall (Config_2(D));
+
+  <bb 4> :
+  return;
+
+}
+
+
+Clock_Ip_ClockUpdateSimClkoutEnable (Clock_Ip_NameType ClockName, boolean Gate)
+{
+  struct Clock_Ip_GateConfigType Config;
+
+  <bb 2> :
+  Config.Name = ClockName_3(D);
+  if (Gate_5(D) != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  Config.Enable = 0;
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  Config.Enable = 1;
+
+  <bb 5> :
+  Clock_Ip_ClockSetSimClkoutEnable (&Config);
+  Config ={v} {CLOBBER};
+  return;
+
+}
+
+
+Clock_Ip_ClockSetSimClkoutEnable (const struct Clock_Ip_GateConfigType * Config)
+{
+  <bb 2> :
+  if (Config_2(D) != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  Clock_Ip_ClockSetSimClkoutEnable_TrustedCall (Config_2(D));
+
+  <bb 4> :
+  return;
+
+}
+
+
+Clock_Ip_ClockUpdateSimLPO32KEnable (Clock_Ip_NameType ClockName, boolean Gate)
+{
+  struct Clock_Ip_GateConfigType Config;
+
+  <bb 2> :
+  Config.Name = ClockName_3(D);
+  if (Gate_5(D) != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  Config.Enable = 0;
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  Config.Enable = 1;
+
+  <bb 5> :
+  Clock_Ip_ClockSetSimLPO32KEnable (&Config);
+  Config ={v} {CLOBBER};
+  return;
+
+}
+
+
+Clock_Ip_ClockSetSimLPO32KEnable (const struct Clock_Ip_GateConfigType * Config)
+{
+  <bb 2> :
+  if (Config_2(D) != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  Clock_Ip_ClockSetSimLPO32KEnable_TrustedCall (Config_2(D));
+
+  <bb 4> :
+  return;
+
+}
+
+
+Clock_Ip_ClockUpdateSimLPO1KEnable (Clock_Ip_NameType ClockName, boolean Gate)
+{
+  struct Clock_Ip_GateConfigType Config;
+
+  <bb 2> :
+  Config.Name = ClockName_3(D);
+  if (Gate_5(D) != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  Config.Enable = 0;
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  Config.Enable = 1;
+
+  <bb 5> :
+  Clock_Ip_ClockSetSimLPO1KEnable (&Config);
+  Config ={v} {CLOBBER};
+  return;
+
+}
+
+
+Clock_Ip_ClockSetSimLPO1KEnable (const struct Clock_Ip_GateConfigType * Config)
+{
+  <bb 2> :
+  if (Config_2(D) != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  Clock_Ip_ClockSetSimLPO1KEnable_TrustedCall (Config_2(D));
+
+  <bb 4> :
+  return;
+
+}
+
+
+Clock_Ip_ClockUpdateGateEmpty (Clock_Ip_NameType ClockName, boolean Gate)
+{
+  <bb 2> :
+  return;
+
+}
+
+
+Clock_Ip_ClockSetGateEmpty (const struct Clock_Ip_GateConfigType * Config)
+{
+  <bb 2> :
+  return;
+
+}
+
+

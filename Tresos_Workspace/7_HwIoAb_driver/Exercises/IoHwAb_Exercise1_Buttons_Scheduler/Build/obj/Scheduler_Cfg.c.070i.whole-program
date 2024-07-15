@@ -1,0 +1,103 @@
+
+Marking local functions:
+
+
+Marking externally visible functions:
+
+
+Marking externally visible variables: Scheduler_Config/3 Queue_Config/2 Timer_Config/1 Task_Config/0
+
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+Symbol table:
+
+Os_BuzzerTask/9 (Os_BuzzerTask) @0d460460
+  Type: function
+  Visibility: external public
+  Address is taken.
+  References: 
+  Referring: Task_Config/0 (addr) 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+Os_CanTask/8 (Os_CanTask) @0d4602a0
+  Type: function
+  Visibility: external public
+  Address is taken.
+  References: 
+  Referring: Task_Config/0 (addr) 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+Os_EepromsTask/7 (Os_EepromsTask) @0d4601c0
+  Type: function
+  Visibility: external public
+  Address is taken.
+  References: 
+  Referring: Task_Config/0 (addr) 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+Os_PotsTask/6 (Os_PotsTask) @0d4600e0
+  Type: function
+  Visibility: external public
+  Address is taken.
+  References: 
+  Referring: Task_Config/0 (addr) 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+Os_100ms_Task/5 (Os_100ms_Task) @0d460000
+  Type: function
+  Visibility: external public
+  Address is taken.
+  References: 
+  Referring: Task_Config/0 (addr) 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+Os_50ms_Task/4 (Os_50ms_Task) @0d42dee0
+  Type: function
+  Visibility: external public
+  Address is taken.
+  References: 
+  Referring: Task_Config/0 (addr) 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+Scheduler_Config/3 (Scheduler_Config) @0d428bd0
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Task_Config/0 (addr) Timer_Config/1 (addr) Queue_Config/2 (addr) 
+  Referring: 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+Queue_Config/2 (Queue_Config) @0d428b40
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: Scheduler_Config/3 (addr) 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+Timer_Config/1 (Timer_Config) @0d428ab0
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: Scheduler_Config/3 (addr) 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+Task_Config/0 (Task_Config) @0d428a20
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Os_50ms_Task/4 (addr) Os_100ms_Task/5 (addr) Os_PotsTask/6 (addr) Os_EepromsTask/7 (addr) Os_CanTask/8 (addr) Os_BuzzerTask/9 (addr) 
+  Referring: Scheduler_Config/3 (addr) 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known

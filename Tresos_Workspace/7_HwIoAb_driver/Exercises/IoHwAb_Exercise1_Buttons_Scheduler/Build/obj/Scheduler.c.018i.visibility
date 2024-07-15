@@ -1,0 +1,1647 @@
+
+Marking local functions:
+
+
+Marking externally visible functions: Scheduler_GetStatusQueue/64 Scheduler_FlushQueue/63 Scheduler_ReadQueue/62 Scheduler_WriteQueue/61 Scheduler_StopTimer/60 Scheduler_StartTimer/59 Scheduler_ReloadTimer/58 Scheduler_GetTimer/57 Scheduler_PeriodTask/56 Scheduler_StartTask/55 Scheduler_StopTask/54 Scheduler_MainFunction/53 Scheduler_Init/52 Bfx_CountLeadingZeros_u32/49 Bfx_CountLeadingSigns_s32/48 Bfx_CountLeadingOnes_u32/47 Bfx_PutBit_u32u8u8/44 Bfx_PutBitsMask_u32u32u32/43 Bfx_PutBits_u32u8u8u32/42 Bfx_CopyBit_u32u8u32u8/41 Bfx_RotBitLt_u32u8/40 Bfx_RotBitRt_u32u8/39 Bfx_ShiftBitLt_u32u8/38 Bfx_ShiftBitRt_u32u8/37 Bfx_ToggleBitMask_u32u32/36 Bfx_ToggleBits_u32/35 Bfx_TstParityEven_u32_u8/34 Bfx_TstBitLnMask_u32u32_u8/33 Bfx_TstBitMask_u32u32_u8/32 Bfx_ClrBitMask_u32u32/31 Bfx_SetBitMask_u32u32/30 Bfx_GetBits_u32u8u8_u32/29 Bfx_SetBits_u32u8u8u8/28 Bfx_GetBit_u32u8_u8/27 Bfx_ClrBit_u32u8/26 Bfx_SetBit_u32u8/25
+
+
+Marking externally visible variables:
+
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+Symbol table:
+
+OsIf_GetElapsed/70 (OsIf_GetElapsed) @0d504d20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Scheduler_MainFunction/53 
+  Calls: 
+OsIf_GetCounter/69 (OsIf_GetCounter) @0d504c40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Scheduler_MainFunction/53 
+  Calls: 
+OsIf_MicrosToTicks/68 (OsIf_MicrosToTicks) @0d504b60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Scheduler_MainFunction/53 
+  Calls: 
+MemCopy/67 (MemCopy) @0d4fb1c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: Scheduler_ReadQueue/62 Scheduler_WriteQueue/61 
+  Calls: 
+Timers_Dispatch/66 (Timers_Dispatch) @0d4f0d20
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: SchedulerControl/51 (read) SchedulerControl/51 (read) SchedulerLocal/50 (read) SchedulerControl/51 (write) SchedulerControl/51 (read) SchedulerControl/51 (addr) SchedulerLocal/50 (read) SchedulerLocal/50 (read) SchedulerLocal/50 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: Scheduler_MainFunction/53 
+  Calls: Bfx_ClrBit_u32u8/26 Bfx_GetBit_u32u8_u8/27 
+   Indirect call Num speculative call targets: 0
+Tasks_Dispatch/65 (Tasks_Dispatch) @0d4f07e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: SchedulerControl/51 (read) SchedulerControl/51 (read) SchedulerControl/51 (read) SchedulerControl/51 (write) SchedulerLocal/50 (read) SchedulerControl/51 (read) SchedulerLocal/50 (read) SchedulerControl/51 (write) SchedulerLocal/50 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: Scheduler_MainFunction/53 
+  Calls: Bfx_GetBit_u32u8_u8/27 
+   Indirect call Num speculative call targets: 0
+Scheduler_GetStatusQueue/64 (Scheduler_GetStatusQueue) @0d4f02a0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: SchedulerControl/51 (read) SchedulerControl/51 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Bfx_GetBit_u32u8_u8/27 Bfx_GetBit_u32u8_u8/27 
+Scheduler_FlushQueue/63 (Scheduler_FlushQueue) @0d4f0ee0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: SchedulerControl/51 (read) SchedulerControl/51 (write) SchedulerControl/51 (write) SchedulerControl/51 (addr) SchedulerControl/51 (addr) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Bfx_ClrBit_u32u8/26 Bfx_SetBit_u32u8/25 Bfx_GetBit_u32u8_u8/27 
+Scheduler_ReadQueue/62 (Scheduler_ReadQueue) @0d4f0c40
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: SchedulerControl/51 (read) SchedulerControl/51 (read) SchedulerLocal/50 (read) SchedulerLocal/50 (read) SchedulerLocal/50 (read) SchedulerControl/51 (addr) SchedulerControl/51 (read) SchedulerControl/51 (write) SchedulerControl/51 (read) SchedulerLocal/50 (read) SchedulerControl/51 (write) SchedulerControl/51 (read) SchedulerControl/51 (read) SchedulerControl/51 (addr) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Bfx_SetBit_u32u8/25 Bfx_ClrBit_u32u8/26 MemCopy/67 Bfx_GetBit_u32u8_u8/27 
+Scheduler_WriteQueue/61 (Scheduler_WriteQueue) @0d4f09a0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: SchedulerControl/51 (read) SchedulerControl/51 (read) SchedulerLocal/50 (read) SchedulerLocal/50 (read) SchedulerLocal/50 (read) SchedulerControl/51 (addr) SchedulerControl/51 (read) SchedulerControl/51 (write) SchedulerControl/51 (read) SchedulerLocal/50 (read) SchedulerControl/51 (write) SchedulerControl/51 (read) SchedulerControl/51 (read) SchedulerControl/51 (addr) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Bfx_SetBit_u32u8/25 Bfx_ClrBit_u32u8/26 MemCopy/67 Bfx_GetBit_u32u8_u8/27 
+Scheduler_StopTimer/60 (Scheduler_StopTimer) @0d4f0700
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: SchedulerLocal/50 (read) SchedulerControl/51 (addr) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Bfx_ClrBit_u32u8/26 
+Scheduler_StartTimer/59 (Scheduler_StartTimer) @0d4f0460
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: SchedulerLocal/50 (read) SchedulerControl/51 (read) SchedulerControl/51 (write) SchedulerControl/51 (addr) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Bfx_SetBit_u32u8/25 
+Scheduler_ReloadTimer/58 (Scheduler_ReloadTimer) @0d4f01c0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: SchedulerLocal/50 (read) SchedulerControl/51 (write) SchedulerControl/51 (read) SchedulerControl/51 (read) SchedulerControl/51 (write) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Bfx_GetBit_u32u8_u8/27 
+Scheduler_GetTimer/57 (Scheduler_GetTimer) @0d4e7d20
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: SchedulerLocal/50 (read) SchedulerControl/51 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+Scheduler_PeriodTask/56 (Scheduler_PeriodTask) @0d4e77e0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: SchedulerLocal/50 (read) SchedulerControl/51 (write) SchedulerControl/51 (write) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+Scheduler_StartTask/55 (Scheduler_StartTask) @0d4e7ee0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: SchedulerLocal/50 (read) SchedulerControl/51 (addr) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Bfx_SetBit_u32u8/25 
+Scheduler_StopTask/54 (Scheduler_StopTask) @0d4e7c40
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: SchedulerLocal/50 (read) SchedulerControl/51 (addr) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Bfx_ClrBit_u32u8/26 
+Scheduler_MainFunction/53 (Scheduler_MainFunction) @0d4e79a0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: SchedulerLocal/50 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Tasks_Dispatch/65 Timers_Dispatch/66 OsIf_GetElapsed/70 OsIf_GetCounter/69 OsIf_MicrosToTicks/68 
+Scheduler_Init/52 (Scheduler_Init) @0d4e7700
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: SchedulerControl/51 (write) SchedulerControl/51 (write) SchedulerControl/51 (write) SchedulerControl/51 (write) SchedulerControl/51 (addr) SchedulerControl/51 (write) SchedulerControl/51 (write) SchedulerControl/51 (addr) SchedulerControl/51 (write) SchedulerControl/51 (write) SchedulerControl/51 (addr) SchedulerControl/51 (addr) SchedulerLocal/50 (write) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Bfx_ClrBit_u32u8/26 Bfx_SetBit_u32u8/25 Bfx_PutBit_u32u8u8/44 Bfx_PutBit_u32u8u8/44 
+SchedulerControl/51 (SchedulerControl) @0d4d5ee8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: Scheduler_Init/52 (write) Scheduler_Init/52 (write) Scheduler_Init/52 (write) Scheduler_Init/52 (write) Scheduler_Init/52 (addr) Scheduler_Init/52 (write) Scheduler_Init/52 (write) Scheduler_Init/52 (addr) Scheduler_Init/52 (write) Scheduler_Init/52 (write) Scheduler_Init/52 (addr) Scheduler_Init/52 (addr) Scheduler_StopTask/54 (addr) Scheduler_StartTask/55 (addr) Scheduler_PeriodTask/56 (write) Scheduler_PeriodTask/56 (write) Scheduler_GetTimer/57 (read) Scheduler_ReloadTimer/58 (write) Scheduler_ReloadTimer/58 (read) Scheduler_ReloadTimer/58 (read) Scheduler_ReloadTimer/58 (write) Scheduler_StartTimer/59 (read) Scheduler_StartTimer/59 (write) Scheduler_StartTimer/59 (addr) Scheduler_StopTimer/60 (addr) Scheduler_WriteQueue/61 (read) Scheduler_WriteQueue/61 (read) Scheduler_WriteQueue/61 (addr) Scheduler_WriteQueue/61 (read) Scheduler_WriteQueue/61 (write) Scheduler_WriteQueue/61 (read) Scheduler_WriteQueue/61 (write) Scheduler_WriteQueue/61 (read) Scheduler_WriteQueue/61 (read) Scheduler_WriteQueue/61 (addr) Scheduler_ReadQueue/62 (read) Scheduler_ReadQueue/62 (read) Scheduler_ReadQueue/62 (addr) Scheduler_ReadQueue/62 (read) Scheduler_ReadQueue/62 (write) Scheduler_ReadQueue/62 (read) Scheduler_ReadQueue/62 (write) Scheduler_ReadQueue/62 (read) Scheduler_ReadQueue/62 (read) Scheduler_ReadQueue/62 (addr) Scheduler_FlushQueue/63 (read) Scheduler_FlushQueue/63 (write) Scheduler_FlushQueue/63 (write) Scheduler_FlushQueue/63 (addr) Scheduler_FlushQueue/63 (addr) Scheduler_GetStatusQueue/64 (read) Scheduler_GetStatusQueue/64 (read) Tasks_Dispatch/65 (read) Tasks_Dispatch/65 (read) Tasks_Dispatch/65 (read) Tasks_Dispatch/65 (write) Tasks_Dispatch/65 (read) Tasks_Dispatch/65 (write) Timers_Dispatch/66 (read) Timers_Dispatch/66 (read) Timers_Dispatch/66 (write) Timers_Dispatch/66 (read) Timers_Dispatch/66 (addr) 
+  Availability: available
+  Varpool flags:
+SchedulerLocal/50 (SchedulerLocal) @0d4d5e58
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: Scheduler_Init/52 (write) Scheduler_MainFunction/53 (read) Scheduler_StopTask/54 (read) Scheduler_StartTask/55 (read) Scheduler_PeriodTask/56 (read) Scheduler_GetTimer/57 (read) Scheduler_ReloadTimer/58 (read) Scheduler_StartTimer/59 (read) Scheduler_StopTimer/60 (read) Scheduler_WriteQueue/61 (read) Scheduler_WriteQueue/61 (read) Scheduler_WriteQueue/61 (read) Scheduler_WriteQueue/61 (read) Scheduler_ReadQueue/62 (read) Scheduler_ReadQueue/62 (read) Scheduler_ReadQueue/62 (read) Scheduler_ReadQueue/62 (read) Tasks_Dispatch/65 (read) Tasks_Dispatch/65 (read) Tasks_Dispatch/65 (read) Timers_Dispatch/66 (read) Timers_Dispatch/66 (read) Timers_Dispatch/66 (read) Timers_Dispatch/66 (read) 
+  Availability: available
+  Varpool flags: initialized
+Bfx_CountLeadingZeros_u32/49 (Bfx_CountLeadingZeros_u32) @0d4e30e0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+Bfx_CountLeadingSigns_s32/48 (Bfx_CountLeadingSigns_s32) @0d4dfe00
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+Bfx_CountLeadingOnes_u32/47 (Bfx_CountLeadingOnes_u32) @0d4dfb60
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+Bfx_PutBit_u32u8u8/44 (Bfx_PutBit_u32u8u8) @0d4df380
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: Scheduler_Init/52 Scheduler_Init/52 
+  Calls: 
+Bfx_PutBitsMask_u32u32u32/43 (Bfx_PutBitsMask_u32u32u32) @0d4df0e0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+Bfx_PutBits_u32u8u8u32/42 (Bfx_PutBits_u32u8u8u32) @0d4dce00
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+Bfx_CopyBit_u32u8u32u8/41 (Bfx_CopyBit_u32u8u32u8) @0d4dcb60
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+Bfx_RotBitLt_u32u8/40 (Bfx_RotBitLt_u32u8) @0d4dc8c0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+Bfx_RotBitRt_u32u8/39 (Bfx_RotBitRt_u32u8) @0d4dc620
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+Bfx_ShiftBitLt_u32u8/38 (Bfx_ShiftBitLt_u32u8) @0d4dc380
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+Bfx_ShiftBitRt_u32u8/37 (Bfx_ShiftBitRt_u32u8) @0d4dc0e0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+Bfx_ToggleBitMask_u32u32/36 (Bfx_ToggleBitMask_u32u32) @0d4d4e00
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+Bfx_ToggleBits_u32/35 (Bfx_ToggleBits_u32) @0d4d4b60
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+Bfx_TstParityEven_u32_u8/34 (Bfx_TstParityEven_u32_u8) @0d4d48c0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+Bfx_TstBitLnMask_u32u32_u8/33 (Bfx_TstBitLnMask_u32u32_u8) @0d4d4620
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+Bfx_TstBitMask_u32u32_u8/32 (Bfx_TstBitMask_u32u32_u8) @0d4d4380
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+Bfx_ClrBitMask_u32u32/31 (Bfx_ClrBitMask_u32u32) @0d4d40e0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+Bfx_SetBitMask_u32u32/30 (Bfx_SetBitMask_u32u32) @0d4d2e00
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+Bfx_GetBits_u32u8u8_u32/29 (Bfx_GetBits_u32u8u8_u32) @0d4d2b60
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+Bfx_SetBits_u32u8u8u8/28 (Bfx_SetBits_u32u8u8u8) @0d4d28c0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+Bfx_GetBit_u32u8_u8/27 (Bfx_GetBit_u32u8_u8) @0d4d2620
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: Timers_Dispatch/66 Tasks_Dispatch/65 Scheduler_GetStatusQueue/64 Scheduler_GetStatusQueue/64 Scheduler_FlushQueue/63 Scheduler_ReadQueue/62 Scheduler_WriteQueue/61 Scheduler_ReloadTimer/58 
+  Calls: 
+Bfx_ClrBit_u32u8/26 (Bfx_ClrBit_u32u8) @0d4d2380
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: Timers_Dispatch/66 Scheduler_FlushQueue/63 Scheduler_ReadQueue/62 Scheduler_WriteQueue/61 Scheduler_StopTimer/60 Scheduler_StopTask/54 Scheduler_Init/52 
+  Calls: 
+Bfx_SetBit_u32u8/25 (Bfx_SetBit_u32u8) @0d4d20e0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: Scheduler_FlushQueue/63 Scheduler_ReadQueue/62 Scheduler_WriteQueue/61 Scheduler_StartTimer/59 Scheduler_StartTask/55 Scheduler_Init/52 
+  Calls: 
+MemCopy (void * Dest, void * Src, uint32 Size)
+{
+  uint32 i;
+  uint8 * SrcPtr;
+  uint8 * DestPtr;
+
+  <bb 2> :
+  DestPtr = Dest;
+  SrcPtr = Src;
+  i = 0;
+  goto <bb 4>; [INV]
+
+  <bb 3> :
+  _1 = SrcPtr + i;
+  _2 = DestPtr + i;
+  _3 = *_1;
+  *_2 = _3;
+  i = i + 1;
+
+  <bb 4> :
+  if (i < Size)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 5> :
+  return;
+
+}
+
+
+Timers_Dispatch ()
+{
+  uint8 i;
+
+  <bb 2> :
+  i = 0;
+  goto <bb 8>; [INV]
+
+  <bb 3> :
+  _1 = SchedulerControl.TimerFlags;
+  _2 = Bfx_GetBit_u32u8_u8 (_1, i);
+  if (_2 != 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 4> :
+  _3 = (int) i;
+  _4 = SchedulerControl.TimerCount[_3];
+  SchedulerLocal.27_5 = SchedulerLocal;
+  _6 = SchedulerLocal.27_5->Tick;
+  _7 = (int) i;
+  _8 = _4 - _6;
+  SchedulerControl.TimerCount[_7] = _8;
+  _9 = (int) i;
+  _10 = SchedulerControl.TimerCount[_9];
+  if (_10 == 0)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 5> :
+  Bfx_ClrBit_u32u8 (&SchedulerControl.TimerFlags, i);
+  SchedulerLocal.28_11 = SchedulerLocal;
+  _12 = SchedulerLocal.28_11->TimerPtr;
+  _13 = (unsigned int) i;
+  _14 = _13 * 12;
+  _15 = _12 + _14;
+  _16 = _15->CallbackFunc;
+  if (_16 != 0B)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  SchedulerLocal.29_17 = SchedulerLocal;
+  _18 = SchedulerLocal.29_17->TimerPtr;
+  _19 = (unsigned int) i;
+  _20 = _19 * 12;
+  _21 = _18 + _20;
+  _22 = _21->CallbackFunc;
+  _22 ();
+
+  <bb 7> :
+  i.30_23 = i;
+  i = i.30_23 + 1;
+
+  <bb 8> :
+  SchedulerLocal.31_24 = SchedulerLocal;
+  _25 = SchedulerLocal.31_24->Timers;
+  if (i < _25)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 9> :
+  return;
+
+}
+
+
+Tasks_Dispatch ()
+{
+  uint8 i;
+
+  <bb 2> :
+  i = 0;
+  goto <bb 7>; [INV]
+
+  <bb 3> :
+  _1 = SchedulerControl.TaskFlags;
+  _2 = Bfx_GetBit_u32u8_u8 (_1, i);
+  if (_2 != 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 4> :
+  _3 = (int) i;
+  _4 = SchedulerControl.TaskElapsed[_3];
+  _5 = (int) i;
+  _6 = SchedulerControl.TaskPeriod[_5];
+  if (_4 >= _6)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  _7 = (int) i;
+  SchedulerControl.TaskElapsed[_7] = 0;
+  SchedulerLocal.23_8 = SchedulerLocal;
+  _9 = SchedulerLocal.23_8->TaskPtr;
+  _10 = (unsigned int) i;
+  _11 = _10 * 12;
+  _12 = _9 + _11;
+  _13 = _12->TaskFunc;
+  _13 ();
+
+  <bb 6> :
+  _14 = (int) i;
+  _15 = SchedulerControl.TaskElapsed[_14];
+  SchedulerLocal.24_16 = SchedulerLocal;
+  _17 = SchedulerLocal.24_16->Tick;
+  _18 = (int) i;
+  _19 = _15 + _17;
+  SchedulerControl.TaskElapsed[_18] = _19;
+  i.25_20 = i;
+  i = i.25_20 + 1;
+
+  <bb 7> :
+  SchedulerLocal.26_21 = SchedulerLocal;
+  _22 = SchedulerLocal.26_21->Tasks;
+  if (i < _22)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 8> :
+  return;
+
+}
+
+
+Scheduler_GetStatusQueue (QueueType Queue, uint8 Status)
+{
+  uint8 Result;
+  uint8 D.5888;
+
+  <bb 2> :
+  Result = 0;
+  if (Status == 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  _1 = SchedulerControl.QueueEmpties;
+  _2 = Bfx_GetBit_u32u8_u8 (_1, Queue);
+  Result = (uint8) _2;
+  goto <bb 6>; [INV]
+
+  <bb 4> :
+  if (Status == 1)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  _3 = SchedulerControl.QueueFulls;
+  _4 = Bfx_GetBit_u32u8_u8 (_3, Queue);
+  Result = (uint8) _4;
+
+  <bb 6> :
+  D.5888 = Result;
+
+  <bb 7> :
+<L5>:
+  return D.5888;
+
+}
+
+
+Scheduler_FlushQueue (QueueType Queue)
+{
+  Std_ReturnType Error;
+  Std_ReturnType D.5881;
+
+  <bb 2> :
+  Error = 1;
+  _1 = SchedulerControl.QueueFulls;
+  _2 = Bfx_GetBit_u32u8_u8 (_1, Queue);
+  if (_2 != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  _3 = (int) Queue;
+  SchedulerControl.QueueHeads[_3] = 0;
+  _4 = (int) Queue;
+  SchedulerControl.QueueTails[_4] = 0;
+  Bfx_SetBit_u32u8 (&SchedulerControl.QueueEmpties, Queue);
+  Bfx_ClrBit_u32u8 (&SchedulerControl.QueueFulls, Queue);
+  Error = 0;
+
+  <bb 4> :
+  D.5881 = Error;
+
+  <bb 5> :
+<L2>:
+  return D.5881;
+
+}
+
+
+Scheduler_ReadQueue (QueueType Queue, void * Data)
+{
+  uint8 Offset;
+  Std_ReturnType Error;
+  Std_ReturnType D.5877;
+
+  <bb 2> :
+  Error = 1;
+  _1 = SchedulerControl.QueueEmpties;
+  _2 = Bfx_GetBit_u32u8_u8 (_1, Queue);
+  if (_2 != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 3> :
+  _3 = (int) Queue;
+  _4 = SchedulerControl.QueueTails[_3];
+  _5 = (unsigned char) _4;
+  SchedulerLocal.19_6 = SchedulerLocal;
+  _7 = SchedulerLocal.19_6->QueuePtr;
+  _8 = (unsigned int) Queue;
+  _9 = _8 * 12;
+  _10 = _7 + _9;
+  _11 = _10->Size;
+  Offset = _5 * _11;
+  SchedulerLocal.20_12 = SchedulerLocal;
+  _13 = SchedulerLocal.20_12->QueuePtr;
+  _14 = (unsigned int) Queue;
+  _15 = _14 * 12;
+  _16 = _13 + _15;
+  _17 = _16->Buffer;
+  _18 = (sizetype) Offset;
+  _19 = _17 + _18;
+  SchedulerLocal.21_20 = SchedulerLocal;
+  _21 = SchedulerLocal.21_20->QueuePtr;
+  _22 = (unsigned int) Queue;
+  _23 = _22 * 12;
+  _24 = _21 + _23;
+  _25 = _24->Size;
+  _26 = (long unsigned int) _25;
+  MemCopy (Data, _19, _26);
+  Bfx_ClrBit_u32u8 (&SchedulerControl.QueueFulls, Queue);
+  _27 = (int) Queue;
+  _28 = SchedulerControl.QueueTails[_27];
+  _29 = _28 + 1;
+  SchedulerControl.QueueTails[_27] = _29;
+  _30 = (int) Queue;
+  _31 = SchedulerControl.QueueTails[_30];
+  SchedulerLocal.22_32 = SchedulerLocal;
+  _33 = SchedulerLocal.22_32->QueuePtr;
+  _34 = (unsigned int) Queue;
+  _35 = _34 * 12;
+  _36 = _33 + _35;
+  _37 = _36->Elements;
+  _38 = (int) Queue;
+  _39 = _31 % _37;
+  SchedulerControl.QueueTails[_38] = _39;
+  _40 = (int) Queue;
+  _41 = SchedulerControl.QueueTails[_40];
+  _42 = (int) Queue;
+  _43 = SchedulerControl.QueueHeads[_42];
+  if (_41 == _43)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  Bfx_SetBit_u32u8 (&SchedulerControl.QueueEmpties, Queue);
+
+  <bb 5> :
+  Error = 0;
+
+  <bb 6> :
+  D.5877 = Error;
+
+  <bb 7> :
+<L4>:
+  return D.5877;
+
+}
+
+
+Scheduler_WriteQueue (QueueType Queue, void * Data)
+{
+  uint8 Offset;
+  Std_ReturnType Error;
+  Std_ReturnType D.5871;
+
+  <bb 2> :
+  Error = 1;
+  _1 = SchedulerControl.QueueFulls;
+  _2 = Bfx_GetBit_u32u8_u8 (_1, Queue);
+  if (_2 != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 3> :
+  _3 = (int) Queue;
+  _4 = SchedulerControl.QueueHeads[_3];
+  _5 = (unsigned char) _4;
+  SchedulerLocal.15_6 = SchedulerLocal;
+  _7 = SchedulerLocal.15_6->QueuePtr;
+  _8 = (unsigned int) Queue;
+  _9 = _8 * 12;
+  _10 = _7 + _9;
+  _11 = _10->Size;
+  Offset = _5 * _11;
+  SchedulerLocal.16_12 = SchedulerLocal;
+  _13 = SchedulerLocal.16_12->QueuePtr;
+  _14 = (unsigned int) Queue;
+  _15 = _14 * 12;
+  _16 = _13 + _15;
+  _17 = _16->Buffer;
+  _18 = (sizetype) Offset;
+  _19 = _17 + _18;
+  SchedulerLocal.17_20 = SchedulerLocal;
+  _21 = SchedulerLocal.17_20->QueuePtr;
+  _22 = (unsigned int) Queue;
+  _23 = _22 * 12;
+  _24 = _21 + _23;
+  _25 = _24->Size;
+  _26 = (long unsigned int) _25;
+  MemCopy (_19, Data, _26);
+  Bfx_ClrBit_u32u8 (&SchedulerControl.QueueEmpties, Queue);
+  _27 = (int) Queue;
+  _28 = SchedulerControl.QueueHeads[_27];
+  _29 = _28 + 1;
+  SchedulerControl.QueueHeads[_27] = _29;
+  _30 = (int) Queue;
+  _31 = SchedulerControl.QueueHeads[_30];
+  SchedulerLocal.18_32 = SchedulerLocal;
+  _33 = SchedulerLocal.18_32->QueuePtr;
+  _34 = (unsigned int) Queue;
+  _35 = _34 * 12;
+  _36 = _33 + _35;
+  _37 = _36->Elements;
+  _38 = (int) Queue;
+  _39 = _31 % _37;
+  SchedulerControl.QueueHeads[_38] = _39;
+  _40 = (int) Queue;
+  _41 = SchedulerControl.QueueHeads[_40];
+  _42 = (int) Queue;
+  _43 = SchedulerControl.QueueTails[_42];
+  if (_41 == _43)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  Bfx_SetBit_u32u8 (&SchedulerControl.QueueFulls, Queue);
+
+  <bb 5> :
+  Error = 0;
+
+  <bb 6> :
+  D.5871 = Error;
+
+  <bb 7> :
+<L4>:
+  return D.5871;
+
+}
+
+
+Scheduler_StopTimer (TimerType Timer)
+{
+  Std_ReturnType Error;
+  Std_ReturnType D.5865;
+
+  <bb 2> :
+  Error = 1;
+  SchedulerLocal.14_1 = SchedulerLocal;
+  _2 = SchedulerLocal.14_1->Timers;
+  if (Timer < _2)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  Bfx_ClrBit_u32u8 (&SchedulerControl.TimerFlags, Timer);
+  Error = 0;
+
+  <bb 4> :
+  D.5865 = Error;
+
+  <bb 5> :
+<L2>:
+  return D.5865;
+
+}
+
+
+Scheduler_StartTimer (TimerType Timer)
+{
+  Std_ReturnType Error;
+  Std_ReturnType D.5861;
+
+  <bb 2> :
+  Error = 1;
+  SchedulerLocal.13_1 = SchedulerLocal;
+  _2 = SchedulerLocal.13_1->Timers;
+  if (Timer < _2)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  _3 = (int) Timer;
+  _4 = (int) Timer;
+  _5 = SchedulerControl.TimerTimeout[_3];
+  SchedulerControl.TimerCount[_4] = _5;
+  Bfx_SetBit_u32u8 (&SchedulerControl.TimerFlags, Timer);
+  Error = 0;
+
+  <bb 4> :
+  D.5861 = Error;
+
+  <bb 5> :
+<L2>:
+  return D.5861;
+
+}
+
+
+Scheduler_ReloadTimer (TimerType Timer, uint32 NewTimeout)
+{
+  Std_ReturnType Error;
+  Std_ReturnType D.5857;
+
+  <bb 2> :
+  Error = 1;
+  SchedulerLocal.12_1 = SchedulerLocal;
+  _2 = SchedulerLocal.12_1->Timers;
+  if (Timer < _2)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 3> :
+  _3 = (int) Timer;
+  SchedulerControl.TimerTimeout[_3] = NewTimeout;
+  _4 = SchedulerControl.TimerFlags;
+  _5 = Bfx_GetBit_u32u8_u8 (_4, Timer);
+  if (_5 != 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  _6 = (int) Timer;
+  _7 = (int) Timer;
+  _8 = SchedulerControl.TimerTimeout[_6];
+  SchedulerControl.TimerCount[_7] = _8;
+
+  <bb 5> :
+  Error = 0;
+
+  <bb 6> :
+  D.5857 = Error;
+
+  <bb 7> :
+<L4>:
+  return D.5857;
+
+}
+
+
+Scheduler_GetTimer (TimerType Timer)
+{
+  uint32 Time;
+  uint32 D.5851;
+
+  <bb 2> :
+  Time = 0;
+  SchedulerLocal.11_1 = SchedulerLocal;
+  _2 = SchedulerLocal.11_1->Timers;
+  if (Timer < _2)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  _3 = (int) Timer;
+  Time = SchedulerControl.TimerCount[_3];
+
+  <bb 4> :
+  D.5851 = Time;
+
+  <bb 5> :
+<L2>:
+  return D.5851;
+
+}
+
+
+Scheduler_PeriodTask (TaskType Task, uint32 NewPeriod)
+{
+  Std_ReturnType Error;
+  Std_ReturnType D.5847;
+
+  <bb 2> :
+  Error = 1;
+  SchedulerLocal.10_1 = SchedulerLocal;
+  _2 = SchedulerLocal.10_1->Tasks;
+  if (Task <= _2)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  _3 = (int) Task;
+  SchedulerControl.TaskPeriod[_3] = NewPeriod;
+  _4 = (int) Task;
+  SchedulerControl.TaskElapsed[_4] = NewPeriod;
+  Error = 0;
+
+  <bb 4> :
+  D.5847 = Error;
+
+  <bb 5> :
+<L2>:
+  return D.5847;
+
+}
+
+
+Scheduler_StartTask (TaskType Task)
+{
+  Std_ReturnType Error;
+  Std_ReturnType D.5843;
+
+  <bb 2> :
+  Error = 1;
+  SchedulerLocal.9_1 = SchedulerLocal;
+  _2 = SchedulerLocal.9_1->Tasks;
+  if (Task < _2)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  Bfx_SetBit_u32u8 (&SchedulerControl.TaskFlags, Task);
+  Error = 0;
+
+  <bb 4> :
+  D.5843 = Error;
+
+  <bb 5> :
+<L2>:
+  return D.5843;
+
+}
+
+
+Scheduler_StopTask (TaskType Task)
+{
+  Std_ReturnType Error;
+  Std_ReturnType D.5839;
+
+  <bb 2> :
+  Error = 1;
+  SchedulerLocal.8_1 = SchedulerLocal;
+  _2 = SchedulerLocal.8_1->Tasks;
+  if (Task < _2)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  Bfx_ClrBit_u32u8 (&SchedulerControl.TaskFlags, Task);
+  Error = 0;
+
+  <bb 4> :
+  D.5839 = Error;
+
+  <bb 5> :
+<L2>:
+  return D.5839;
+
+}
+
+
+Scheduler_MainFunction ()
+{
+  uint32 ElapsedTime;
+  uint32 SeedTick;
+  uint32 Timeout;
+  long unsigned int D.5834;
+
+  <bb 2> :
+  SchedulerLocal.7_1 = SchedulerLocal;
+  _2 = SchedulerLocal.7_1->Tick;
+  _3 = _2 * 1000;
+  Timeout = OsIf_MicrosToTicks (_3, 1);
+  _4 = OsIf_GetCounter (1);
+  SeedTick = _4;
+  ElapsedTime = 0;
+
+  <bb 3> :
+  D.5834 = OsIf_GetElapsed (&SeedTick, 1);
+  ElapsedTime = D.5834 + ElapsedTime;
+  if (ElapsedTime >= Timeout)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  ElapsedTime = 0;
+  Timers_Dispatch ();
+  Tasks_Dispatch ();
+
+  <bb 5> :
+  goto <bb 3>; [INV]
+
+}
+
+
+Scheduler_Init (const struct Scheduler_ConfigType * SchedulerPtr)
+{
+  uint8 i;
+  uint8 i;
+  uint8 i;
+
+  <bb 2> :
+  SchedulerControl.TaskFlags = 0;
+  SchedulerControl.TimerFlags = 0;
+  i = 0;
+  goto <bb 4>; [INV]
+
+  <bb 3> :
+  _1 = (int) i;
+  SchedulerControl.TaskElapsed[_1] = 0;
+  _2 = SchedulerPtr->TaskPtr;
+  _3 = (unsigned int) i;
+  _4 = _3 * 12;
+  _5 = _2 + _4;
+  _6 = (int) i;
+  _7 = _5->InitPeriod;
+  SchedulerControl.TaskPeriod[_6] = _7;
+  _8 = SchedulerPtr->TaskPtr;
+  _9 = (unsigned int) i;
+  _10 = _9 * 12;
+  _11 = _8 + _10;
+  _12 = _11->InitFlag;
+  _13 = _12 != 0;
+  Bfx_PutBit_u32u8u8 (&SchedulerControl.TaskFlags, i, _13);
+  i.4_14 = i;
+  i = i.4_14 + 1;
+
+  <bb 4> :
+  _15 = SchedulerPtr->Tasks;
+  if (i < _15)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 5> :
+  i = 0;
+  goto <bb 7>; [INV]
+
+  <bb 6> :
+  _16 = (int) i;
+  SchedulerControl.TimerCount[_16] = 0;
+  _17 = SchedulerPtr->TimerPtr;
+  _18 = (unsigned int) i;
+  _19 = _18 * 12;
+  _20 = _17 + _19;
+  _21 = (int) i;
+  _22 = _20->InitTimeout;
+  SchedulerControl.TimerTimeout[_21] = _22;
+  _23 = SchedulerPtr->TimerPtr;
+  _24 = (unsigned int) i;
+  _25 = _24 * 12;
+  _26 = _23 + _25;
+  _27 = _26->InitFlag;
+  _28 = _27 != 0;
+  Bfx_PutBit_u32u8u8 (&SchedulerControl.TimerFlags, i, _28);
+  i.5_29 = i;
+  i = i.5_29 + 1;
+
+  <bb 7> :
+  _30 = SchedulerPtr->Timers;
+  if (i < _30)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 8> :
+  i = 0;
+  goto <bb 10>; [INV]
+
+  <bb 9> :
+  _31 = (int) i;
+  SchedulerControl.QueueHeads[_31] = 0;
+  _32 = (int) i;
+  SchedulerControl.QueueTails[_32] = 0;
+  Bfx_SetBit_u32u8 (&SchedulerControl.QueueEmpties, i);
+  Bfx_ClrBit_u32u8 (&SchedulerControl.QueueFulls, i);
+  i.6_33 = i;
+  i = i.6_33 + 1;
+
+  <bb 10> :
+  _34 = SchedulerPtr->Queues;
+  if (i < _34)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 11> :
+  SchedulerLocal = SchedulerPtr;
+  return;
+
+}
+
+
+Bfx_CountLeadingZeros_u32 (uint32 Data)
+{
+  uint32 BitChecker;
+  uint8 Count;
+  uint8 D.5832;
+
+  <bb 2> :
+  Count = 0;
+  BitChecker = 2147483648;
+  goto <bb 4>; [INV]
+
+  <bb 3> :
+  Count.3_1 = Count;
+  Count = Count.3_1 + 1;
+  BitChecker = BitChecker >> 1;
+
+  <bb 4> :
+  _2 = Data & BitChecker;
+  if (_2 == 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 5> :
+  D.5832 = Count;
+
+  <bb 6> :
+<L3>:
+  return D.5832;
+
+}
+
+
+Bfx_CountLeadingSigns_s32 (sint32 Data)
+{
+  uint8 i;
+  uint8 Count;
+  uint8 D.5830;
+
+  <bb 2> :
+  Count = 0;
+  i = 30;
+  goto <bb 6>; [INV]
+
+  <bb 3> :
+  _1 = (int) i;
+  _2 = Data >> _1;
+  _3 = (int) i;
+  _4 = _3 + 1;
+  _5 = Data >> _4;
+  _6 = _2 ^ _5;
+  _7 = _6 & 1;
+  if (_7 != 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  goto <bb 7>; [INV]
+
+  <bb 5> :
+  Count.1_8 = Count;
+  Count = Count.1_8 + 1;
+  i.2_9 = i;
+  i = i.2_9 + 255;
+
+  <bb 6> :
+  if (i <= 31)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 7> :
+  D.5830 = Count;
+
+  <bb 8> :
+<L5>:
+  return D.5830;
+
+}
+
+
+Bfx_CountLeadingOnes_u32 (uint32 Data)
+{
+  uint32 BitChecker;
+  uint8 Count;
+  uint8 D.5826;
+
+  <bb 2> :
+  Count = 0;
+  BitChecker = 2147483648;
+  goto <bb 4>; [INV]
+
+  <bb 3> :
+  Count.0_1 = Count;
+  Count = Count.0_1 + 1;
+  BitChecker = BitChecker >> 1;
+
+  <bb 4> :
+  _2 = Data & BitChecker;
+  if (_2 != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 5> :
+  D.5826 = Count;
+
+  <bb 6> :
+<L3>:
+  return D.5826;
+
+}
+
+
+Bfx_PutBit_u32u8u8 (uint32 * Data, uint8 BitPn, boolean Status)
+{
+  <bb 2> :
+  if (Status != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  _1 = *Data;
+  _2 = (int) BitPn;
+  _3 = 1 << _2;
+  _4 = _1 | _3;
+  *Data = _4;
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  _5 = *Data;
+  _6 = (int) BitPn;
+  _7 = 1 << _6;
+  _8 = ~_7;
+  _9 = _5 & _8;
+  *Data = _9;
+
+  <bb 5> :
+  return;
+
+}
+
+
+Bfx_PutBitsMask_u32u32u32 (uint32 * Data, uint32 Pattern, uint32 Mask)
+{
+  <bb 2> :
+  _1 = Pattern & Mask;
+  _2 = *Data;
+  _3 = ~Mask;
+  _4 = _2 & _3;
+  _5 = _1 | _4;
+  *Data = _5;
+  return;
+
+}
+
+
+Bfx_PutBits_u32u8u8u32 (uint32 * Data, uint8 BitStartPn, uint8 BitLn, uint32 Pattern)
+{
+  uint32 Mask;
+
+  <bb 2> :
+  _1 = (int) BitLn;
+  _2 = 1 << _1;
+  Mask = _2 + 4294967295;
+  _3 = *Data;
+  _4 = (int) BitStartPn;
+  _5 = Mask << _4;
+  _6 = ~_5;
+  _7 = _3 & _6;
+  *Data = _7;
+  _8 = *Data;
+  _9 = Pattern & Mask;
+  _10 = (int) BitStartPn;
+  _11 = _9 << _10;
+  _12 = _8 | _11;
+  *Data = _12;
+  return;
+
+}
+
+
+Bfx_CopyBit_u32u8u32u8 (uint32 * DestinationData, uint8 DestinationPosition, uint32 SourceData, uint8 SourcePosition)
+{
+  <bb 2> :
+  _1 = (int) SourcePosition;
+  _2 = 1 << _1;
+  _3 = SourceData & _2;
+  if (_3 == 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  _4 = *DestinationData;
+  _5 = (int) DestinationPosition;
+  _6 = 1 << _5;
+  _7 = ~_6;
+  _8 = _4 & _7;
+  *DestinationData = _8;
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  _9 = *DestinationData;
+  _10 = (int) DestinationPosition;
+  _11 = 1 << _10;
+  _12 = _9 | _11;
+  *DestinationData = _12;
+
+  <bb 5> :
+  return;
+
+}
+
+
+Bfx_RotBitLt_u32u8 (uint32 * Data, uint8 ShiftCnt)
+{
+  <bb 2> :
+  _1 = *Data;
+  _2 = (unsigned int) ShiftCnt;
+  _3 = 32 - _2;
+  _4 = _1 >> _3;
+  _5 = *Data;
+  _6 = (int) ShiftCnt;
+  _7 = _5 << _6;
+  _8 = _4 | _7;
+  *Data = _8;
+  return;
+
+}
+
+
+Bfx_RotBitRt_u32u8 (uint32 * Data, uint8 ShiftCnt)
+{
+  <bb 2> :
+  _1 = *Data;
+  _2 = (unsigned int) ShiftCnt;
+  _3 = 32 - _2;
+  _4 = _1 << _3;
+  _5 = *Data;
+  _6 = (int) ShiftCnt;
+  _7 = _5 >> _6;
+  _8 = _4 | _7;
+  *Data = _8;
+  return;
+
+}
+
+
+Bfx_ShiftBitLt_u32u8 (uint32 * Data, uint8 ShiftCnt)
+{
+  <bb 2> :
+  _1 = *Data;
+  _2 = (int) ShiftCnt;
+  _3 = _1 << _2;
+  *Data = _3;
+  return;
+
+}
+
+
+Bfx_ShiftBitRt_u32u8 (uint32 * Data, uint8 ShiftCnt)
+{
+  <bb 2> :
+  _1 = *Data;
+  _2 = (int) ShiftCnt;
+  _3 = _1 >> _2;
+  *Data = _3;
+  return;
+
+}
+
+
+Bfx_ToggleBitMask_u32u32 (uint32 * Data, uint32 Mask)
+{
+  <bb 2> :
+  _1 = *Data;
+  _2 = Mask ^ _1;
+  *Data = _2;
+  return;
+
+}
+
+
+Bfx_ToggleBits_u32 (uint32 * Data)
+{
+  <bb 2> :
+  _1 = *Data;
+  _2 = ~_1;
+  *Data = _2;
+  return;
+
+}
+
+
+Bfx_TstParityEven_u32_u8 (uint32 Data)
+{
+  uint32 Temp;
+  uint8 Count;
+  boolean D.5818;
+
+  <bb 2> :
+  Count = 0;
+  Temp = Data;
+  goto <bb 4>; [INV]
+
+  <bb 3> :
+  _1 = (unsigned char) Temp;
+  _2 = _1 & 1;
+  Count = Count + _2;
+  Temp = Temp >> 1;
+
+  <bb 4> :
+  if (Temp != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 5> :
+  _3 = Count & 1;
+  D.5818 = _3 == 0;
+
+  <bb 6> :
+<L3>:
+  return D.5818;
+
+}
+
+
+Bfx_TstBitLnMask_u32u32_u8 (uint32 Data, uint32 Mask)
+{
+  boolean D.5816;
+
+  <bb 2> :
+  _1 = Data & Mask;
+  D.5816 = _1 != 0;
+
+  <bb 3> :
+<L0>:
+  return D.5816;
+
+}
+
+
+Bfx_TstBitMask_u32u32_u8 (uint32 Data, uint32 Mask)
+{
+  boolean D.5814;
+
+  <bb 2> :
+  _1 = Data & Mask;
+  D.5814 = Mask == _1;
+
+  <bb 3> :
+<L0>:
+  return D.5814;
+
+}
+
+
+Bfx_ClrBitMask_u32u32 (uint32 * Data, uint32 Mask)
+{
+  <bb 2> :
+  _1 = *Data;
+  _2 = ~Mask;
+  _3 = _1 & _2;
+  *Data = _3;
+  return;
+
+}
+
+
+Bfx_SetBitMask_u32u32 (uint32 * Data, uint32 Mask)
+{
+  <bb 2> :
+  _1 = *Data;
+  _2 = Mask | _1;
+  *Data = _2;
+  return;
+
+}
+
+
+Bfx_GetBits_u32u8u8_u32 (uint32 Data, uint8 BitStartPn, uint8 BitLn)
+{
+  uint32 Bits;
+  uint32 D.5812;
+
+  <bb 2> :
+  _1 = (int) BitStartPn;
+  Bits = Data >> _1;
+  _2 = (int) BitLn;
+  _3 = 4294967295 << _2;
+  _4 = ~_3;
+  Bits = Bits & _4;
+  D.5812 = Bits;
+
+  <bb 3> :
+<L0>:
+  return D.5812;
+
+}
+
+
+Bfx_SetBits_u32u8u8u8 (uint32 * Data, uint8 BitStartPn, uint8 BitLn, uint8 Status)
+{
+  uint32 Mask;
+
+  <bb 2> :
+  _1 = (int) BitStartPn;
+  Mask = 4294967295 << _1;
+  _2 = (int) BitStartPn;
+  _3 = (int) BitLn;
+  _4 = _2 + _3;
+  _5 = 4294967295 << _4;
+  _6 = ~_5;
+  Mask = Mask & _6;
+  if (Status == 1)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  _7 = *Data;
+  _8 = Mask | _7;
+  *Data = _8;
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  _9 = *Data;
+  _10 = ~Mask;
+  _11 = _9 & _10;
+  *Data = _11;
+
+  <bb 5> :
+  return;
+
+}
+
+
+Bfx_GetBit_u32u8_u8 (uint32 Data, uint8 BitPn)
+{
+  boolean D.5807;
+
+  <bb 2> :
+  _1 = (int) BitPn;
+  _2 = 1 << _1;
+  _3 = Data & _2;
+  D.5807 = _3 != 0;
+
+  <bb 3> :
+<L0>:
+  return D.5807;
+
+}
+
+
+Bfx_ClrBit_u32u8 (uint32 * Data, uint8 BitPn)
+{
+  <bb 2> :
+  _1 = *Data;
+  _2 = (int) BitPn;
+  _3 = 1 << _2;
+  _4 = ~_3;
+  _5 = _1 & _4;
+  *Data = _5;
+  return;
+
+}
+
+
+Bfx_SetBit_u32u8 (uint32 * Data, uint8 BitPn)
+{
+  <bb 2> :
+  _1 = *Data;
+  _2 = (int) BitPn;
+  _3 = 1 << _2;
+  _4 = _1 | _3;
+  *Data = _4;
+  return;
+
+}
+
+

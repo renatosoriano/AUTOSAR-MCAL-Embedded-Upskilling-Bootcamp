@@ -1,0 +1,130 @@
+/*==================================================================================================
+*   Project              : RTD AUTOSAR 4.7
+*   Platform             : CORTEXM
+*   Peripheral           : 
+*   Dependencies         : none
+*
+*   Autosar Version      : 4.7.0
+*   Autosar Revision     : ASR_REL_4_7_REV_0000
+*   Autosar Conf.Variant :
+*   SW Version           : 2.0.0
+*   Build Version        : S32K1_RTD_2_0_0_D2308_ASR_REL_4_7_REV_0000_20230804
+*
+*   (c) Copyright 2020-2023 NXP Semiconductors
+*   All Rights Reserved.
+*
+*   NXP Confidential. This software is owned or controlled by NXP and may only be
+*   used strictly in accordance with the applicable license terms. By expressly
+*   accepting such terms or by downloading, installing, activating and/or otherwise
+*   using the software, you are agreeing that you have read, and that you agree to
+*   comply with and are bound by, such license terms. If you do not agree to be
+*   bound by the applicable license terms, then you may not retain, install,
+*   activate or otherwise use the software.
+==================================================================================================*/
+/*
+* IAR Linker Command File: This linker is demo and  is not part of the production code deliverables.
+* 0x00000000    0x0001FFFF  128KB  Flash
+* 0x1FFFC000    0x1FFFFFFF  16384  SRAM_L
+* 0x20000000    0x20002FFF  12288  SRAM_U
+*/
+
+define symbol int_flash_interrupts_start    = 0x00000000;
+define symbol int_flash_interrupts_size     = 0x00000400;   /* 1K */    /* Do not change this section */
+
+define symbol int_flash_config_start        = 0x00000400;
+define symbol int_flash_config_size         = 0x00000010;   /* 16bytes */ /* Do not change this section */
+
+define symbol int_flash_start               = 0x00000410;
+define symbol int_flash_size                = 0x0001FA70;   /* ~126 KB */
+
+define symbol int_flash_fls_rsv_start       = 0x0001FE80;
+define symbol int_flash_fls_rsv_size        = 0x00000060;    /* 96words = 384bytes for ac_fls_code_rom */
+
+define symbol int_sram_results_start        = 0x1FFFC000;
+define symbol int_sram_results_size         = 0x00000100;    /* 256bytes */
+
+define symbol int_sram_start                = 0x1FFFC100;
+define symbol int_sram_size                 = 0x00005D80;    /* ~23.375K */
+
+define symbol int_sram_fls_rsv_start        = 0x20001E80;
+define symbol int_sram_fls_rsv_size         = 0x00000060;    /*  96words = 384bytes for ac_fls_code_ram */
+
+define symbol int_sram_stack_c0_start       = 0x20002000;
+define symbol int_sram_stack_c0_size        = 0x00001000;    /* 4KB  */
+
+define symbol ram_rsvd2                     = 0x20003000;
+
+define exported symbol __Stack_end_c0       = int_sram_stack_c0_start;
+define exported symbol __Stack_start_c0     = int_sram_stack_c0_start + int_sram_stack_c0_size;
+
+define exported symbol __RAM_INIT           = 1;
+define exported symbol __INT_SRAM_START     = int_sram_results_start;
+define exported symbol __INT_SRAM_END       = ram_rsvd2;
+
+/* Fls module access code support */
+define exported symbol Fls_ACEraseRomStart  = int_flash_fls_rsv_start;
+define exported symbol Fls_ACEraseRomEnd    = int_flash_fls_rsv_start + int_sram_results_size;
+define exported symbol Fls_ACEraseSize      = (int_flash_fls_rsv_size + 3)/4;       /* Copy 4 bytes at a time*/
+
+define exported symbol Fls_ACWriteRomStart  = int_flash_fls_rsv_start;
+define exported symbol Fls_ACWriteRomEnd    = int_flash_fls_rsv_start + int_flash_fls_rsv_size ;
+define exported symbol Fls_ACWriteSize      = (int_flash_fls_rsv_size + 3)/4;       /* Copy 4 bytes at a time*/
+
+define exported symbol _ERASE_FUNC_ADDRESS_ = int_sram_fls_rsv_start;
+define exported symbol _WRITE_FUNC_ADDRESS_ = int_sram_fls_rsv_start;
+
+define memory mem with size = 4G;
+
+define region int_sram_results_region       = mem:[from int_sram_results_start size int_sram_results_size];
+define region int_sram_region               = mem:[from int_sram_start size int_sram_size];
+define region int_flash_interrupts_region   = mem:[from int_flash_interrupts_start size int_flash_interrupts_size];
+define region int_flash_config_region       = mem:[from int_flash_config_start size int_flash_config_size];
+define region int_flash_region              = mem:[from int_flash_start size int_flash_size];
+define region int_flash_fls_rsv_region      = mem:[from int_flash_fls_rsv_start size int_flash_fls_rsv_size];
+
+initialize manually {
+                     section .data,
+                     section .mcal_data,
+                     section .mcal_data_no_cacheable,
+                     section .acmcu_code_rom,
+                     section .ramcode,
+                     section .intvec
+                    };
+
+do not initialize {section .data, section .mcal_data, section .mcal_data_no_cacheable, section .bss, section .mcal_bss, section .mcal_bss_no_cacheable, section .acmcu_code_rom};
+
+/* Internal SRAM */
+define block startupBlock with fixed order                  { section .startup, section .systeminit };
+define block codeBlock with fixed order                     { section .text, section .mcal_text };
+define block roBlock with fixed order                       { section .rodata, section .mcal_const_cfg, section .mcal_const, section .mcal_const_no_cacheable };
+define block rwBlock with fixed order                       { section .data, section .mcal_data, section .mcal_data_no_cacheable};
+define block initBlock with fixed order                     { section .init_table, section .zero_table, section .iar.* };
+define block AppACFLSCode with fixed order                  { section .acfls_code_rom, section .acmem_43_INFLS_code_rom};
+define block ramCodeBlock with fixed order                  { section .acmcu_code_rom, section .ramcode};
+define block bssBlock with fixed order, alignment = 64      { section .bss, section .mcal_bss, section .mcal_bss_no_cacheable };
+
+/* Non cacheable */
+define block intResultsBlock with fixed order, alignment = 4, size = 0x100 { section .intresult };
+define block intcVectorBlock with fixed order, alignment = 2048            { section .intvec };
+
+/* Initialized data copy (dummies) */
+define block interrupt_vector_init with fixed order, alignment = 64      { section .intvec_init };
+define block data_init             with fixed order, alignment = 4       { section .data_init, section .mcal_data_init, section .mcal_data_no_cacheable_init };
+define block ramCode_init          with fixed order, alignment = 4       { section .acfls_code_rom_init, section .acmcu_code_rom_init, section .ramcode_init};
+
+define block flash_config with fixed order, alignment = 4 { section .flash_config };
+
+keep { block intResultsBlock, block intcVectorBlock, block flash_config };
+
+place in int_flash_interrupts_region { first block interrupt_vector_init };
+place in int_flash_config_region     { first block flash_config };
+place in int_flash_region            { block startupBlock, block codeBlock, block roBlock, block initBlock};
+place in int_flash_region            { block data_init, block ramCode_init };
+place in int_flash_fls_rsv_region    { block AppACFLSCode};
+place in int_sram_region             { first block intcVectorBlock };
+place in int_sram_region             { block ramCodeBlock, block rwBlock};
+place in int_sram_region             { block bssBlock };
+
+place in int_sram_results_region { first block intResultsBlock };
+
+define exported symbol __ENTRY_VTABLE = start(int_sram_region);
