@@ -145,7 +145,7 @@ Shall toggle ON/OFF RGB_LED_RED (D15) and C9_LED1.
 
 ![Button_2_Single_click.GIF](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/Final_Project/Button_2_Single_click.GIF)
 
-https://github.com/user-attachments/assets/ffe089e5-f13d-485f-9dba-d6f1a3d633f0
+https://github.com/user-attachments/assets/b4d3c5dc-a298-42aa-b5f8-e419363fc6f3
 
 ![Button_2_Single_click_Terminal.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/Final_Project/Button_2_Single_click_Terminal.png)
 
