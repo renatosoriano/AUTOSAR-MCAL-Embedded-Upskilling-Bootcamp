@@ -145,7 +145,7 @@ Shall display (SEGGER_RTT_printf) Pot 1 ADC0 value in ohms, toggle C13_LED5 (as 
 
 ![Button_1_Double_click.GIF](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/Final_Project/Button_1_Double_click.GIF)
 
-
+https://github.com/user-attachments/assets/9f66e0b6-36a8-45d1-8fdf-4e0b84e6d62f
 
 ![Button_1_Double_click_Terminal.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/Final_Project/Button_1_Double_click_Terminal.png)
 
