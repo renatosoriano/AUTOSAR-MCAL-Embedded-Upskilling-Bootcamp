@@ -1,0 +1,765 @@
+SEGGER_RTT_printf (unsigned int BufferIndex, const char * sFormat)
+{
+  struct va_list ParamList;
+  int r;
+  int D.5978;
+
+  <bb 2> :
+  __builtin_va_start (&ParamList, 0);
+  r = SEGGER_RTT_vprintf (BufferIndex, sFormat, &ParamList);
+  __builtin_va_end (&ParamList);
+  D.5978 = r;
+  ParamList = {CLOBBER};
+
+  <bb 3> :
+<L1>:
+  return D.5978;
+
+}
+
+
+SEGGER_RTT_vprintf (unsigned int BufferIndex, const char * sFormat, struct va_list * pParamList)
+{
+  const char * s;
+  char c0;
+  char acBuffer[64];
+  unsigned int FieldWidth;
+  unsigned int FormatFlags;
+  unsigned int NumDigits;
+  int v;
+  struct SEGGER_RTT_PRINTF_DESC BufferDesc;
+  char c;
+  int D.5975;
+
+  <bb 2> :
+  BufferDesc.pBuffer = &acBuffer;
+  BufferDesc.BufferSize = 64;
+  BufferDesc.Cnt = 0;
+  BufferDesc.RTTBufferIndex = BufferIndex;
+  BufferDesc.ReturnValue = 0;
+
+  <bb 3> :
+  c = *sFormat;
+  sFormat = sFormat + 1;
+  if (c == 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  goto <bb 44>; [INV]
+
+  <bb 5> :
+  if (c == 37)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 42>; [INV]
+
+  <bb 6> :
+  FormatFlags = 0;
+  v = 1;
+
+  <bb 7> :
+  c = *sFormat;
+  _1 = (int) c;
+  switch (_1) <default: <L9> [INV], case 35: <L8> [INV], case 43: <L7> [INV], case 45: <L5> [INV], case 48: <L6> [INV]>
+
+  <bb 8> :
+<L5>:
+  FormatFlags = FormatFlags | 1;
+  sFormat = sFormat + 1;
+  goto <bb 13>; [INV]
+
+  <bb 9> :
+<L6>:
+  FormatFlags = FormatFlags | 2;
+  sFormat = sFormat + 1;
+  goto <bb 13>; [INV]
+
+  <bb 10> :
+<L7>:
+  FormatFlags = FormatFlags | 4;
+  sFormat = sFormat + 1;
+  goto <bb 13>; [INV]
+
+  <bb 11> :
+<L8>:
+  FormatFlags = FormatFlags | 8;
+  sFormat = sFormat + 1;
+  goto <bb 13>; [INV]
+
+  <bb 12> :
+<L9>:
+  v = 0;
+
+  <bb 13> :
+  if (v != 0)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 14>; [INV]
+
+  <bb 14> :
+  FieldWidth = 0;
+
+  <bb 15> :
+  c = *sFormat;
+  if (c <= 47)
+    goto <bb 18>; [INV]
+  else
+    goto <bb 16>; [INV]
+
+  <bb 16> :
+  if (c > 57)
+    goto <bb 18>; [INV]
+  else
+    goto <bb 17>; [INV]
+
+  <bb 17> :
+  sFormat = sFormat + 1;
+  _2 = FieldWidth * 10;
+  _3 = (unsigned int) c;
+  _4 = _2 + _3;
+  FieldWidth = _4 + 4294967248;
+  goto <bb 15>; [INV]
+
+  <bb 18> :
+  NumDigits = 0;
+  c = *sFormat;
+  if (c == 46)
+    goto <bb 19>; [INV]
+  else
+    goto <bb 23>; [INV]
+
+  <bb 19> :
+  sFormat = sFormat + 1;
+
+  <bb 20> :
+  c = *sFormat;
+  if (c <= 47)
+    goto <bb 23>; [INV]
+  else
+    goto <bb 21>; [INV]
+
+  <bb 21> :
+  if (c > 57)
+    goto <bb 23>; [INV]
+  else
+    goto <bb 22>; [INV]
+
+  <bb 22> :
+  sFormat = sFormat + 1;
+  _5 = NumDigits * 10;
+  _6 = (unsigned int) c;
+  _7 = _5 + _6;
+  NumDigits = _7 + 4294967248;
+  goto <bb 20>; [INV]
+
+  <bb 23> :
+  c = *sFormat;
+
+  <bb 24> :
+  if (c == 108)
+    goto <bb 26>; [INV]
+  else
+    goto <bb 25>; [INV]
+
+  <bb 25> :
+  if (c == 104)
+    goto <bb 26>; [INV]
+  else
+    goto <bb 27>; [INV]
+
+  <bb 26> :
+  sFormat = sFormat + 1;
+  c = *sFormat;
+  goto <bb 24>; [INV]
+
+  <bb 27> :
+  _8 = (int) c;
+  switch (_8) <default: <L40> [INV], case 37: <L39> [INV], case 88: <L29> [INV], case 99: <L26> [INV], case 100: <L27> [INV], case 112: <L38> [INV], case 115: <L31> [INV], case 117: <L28> [INV], case 120: <L29> [INV]>
+
+  <bb 28> :
+<L26>:
+  v = .VA_ARG (pParamList, 0B, 0B);
+  c0 = (char) v;
+  _StoreChar (&BufferDesc, c0);
+  goto <bb 41>; [INV]
+
+  <bb 29> :
+<L27>:
+  v = .VA_ARG (pParamList, 0B, 0B);
+  _PrintInt (&BufferDesc, v, 10, NumDigits, FieldWidth, FormatFlags);
+  goto <bb 41>; [INV]
+
+  <bb 30> :
+<L28>:
+  v = .VA_ARG (pParamList, 0B, 0B);
+  v.3_9 = (unsigned int) v;
+  _PrintUnsigned (&BufferDesc, v.3_9, 10, NumDigits, FieldWidth, FormatFlags);
+  goto <bb 41>; [INV]
+
+  <bb 31> :
+<L29>:
+  v = .VA_ARG (pParamList, 0B, 0B);
+  v.4_10 = (unsigned int) v;
+  _PrintUnsigned (&BufferDesc, v.4_10, 16, NumDigits, FieldWidth, FormatFlags);
+  goto <bb 41>; [INV]
+
+  <bb 32> :
+<L31>:
+  s = .VA_ARG (pParamList, 0B, 0B);
+  if (s == 0B)
+    goto <bb 33>; [INV]
+  else
+    goto <bb 34>; [INV]
+
+  <bb 33> :
+  s = "(NULL)";
+
+  <bb 34> :
+  c = *s;
+  s = s + 1;
+  if (c == 0)
+    goto <bb 35>; [INV]
+  else
+    goto <bb 36>; [INV]
+
+  <bb 35> :
+  goto <bb 37>; [INV]
+
+  <bb 36> :
+  _StoreChar (&BufferDesc, c);
+  _11 = BufferDesc.ReturnValue;
+  if (_11 >= 0)
+    goto <bb 34>; [INV]
+  else
+    goto <bb 37>; [INV]
+
+  <bb 37> :
+  goto <bb 41>; [INV]
+
+  <bb 38> :
+<L38>:
+  v = .VA_ARG (pParamList, 0B, 0B);
+  v.5_12 = (unsigned int) v;
+  _PrintUnsigned (&BufferDesc, v.5_12, 16, 8, 8, 0);
+  goto <bb 41>; [INV]
+
+  <bb 39> :
+<L39>:
+  _StoreChar (&BufferDesc, 37);
+  goto <bb 41>; [INV]
+
+  <bb 40> :
+<L40>:
+
+  <bb 41> :
+  sFormat = sFormat + 1;
+  goto <bb 43>; [INV]
+
+  <bb 42> :
+  _StoreChar (&BufferDesc, c);
+
+  <bb 43> :
+  _13 = BufferDesc.ReturnValue;
+  if (_13 >= 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 44>; [INV]
+
+  <bb 44> :
+  _14 = BufferDesc.ReturnValue;
+  if (_14 > 0)
+    goto <bb 45>; [INV]
+  else
+    goto <bb 48>; [INV]
+
+  <bb 45> :
+  _15 = BufferDesc.Cnt;
+  if (_15 != 0)
+    goto <bb 46>; [INV]
+  else
+    goto <bb 47>; [INV]
+
+  <bb 46> :
+  _16 = BufferDesc.Cnt;
+  SEGGER_RTT_Write (BufferIndex, &acBuffer, _16);
+
+  <bb 47> :
+  _17 = BufferDesc.ReturnValue;
+  _18 = BufferDesc.Cnt;
+  _19 = (int) _18;
+  _20 = _17 + _19;
+  BufferDesc.ReturnValue = _20;
+
+  <bb 48> :
+  D.5975 = BufferDesc.ReturnValue;
+  BufferDesc = {CLOBBER};
+  acBuffer = {CLOBBER};
+
+  <bb 49> :
+<L50>:
+  return D.5975;
+
+}
+
+
+_PrintInt (struct SEGGER_RTT_PRINTF_DESC * pBufferDesc, int v, unsigned int Base, unsigned int NumDigits, unsigned int FieldWidth, unsigned int FormatFlags)
+{
+  int Number;
+  unsigned int Width;
+
+  <bb 2> :
+  Number = ABS_EXPR <v>;
+  Width = 1;
+  goto <bb 4>; [INV]
+
+  <bb 3> :
+  Base.0_1 = (int) Base;
+  Number = Number / Base.0_1;
+  Width = Width + 1;
+
+  <bb 4> :
+  Base.1_2 = (int) Base;
+  if (Number >= Base.1_2)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 5> :
+  if (NumDigits > Width)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  Width = NumDigits;
+
+  <bb 7> :
+  if (FieldWidth != 0)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 8> :
+  if (v < 0)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 9> :
+  _3 = FormatFlags & 4;
+  if (_3 != 0)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 10> :
+  FieldWidth = FieldWidth + 4294967295;
+
+  <bb 11> :
+  _4 = FormatFlags & 2;
+  if (_4 == 0)
+    goto <bb 13>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 12> :
+  if (NumDigits != 0)
+    goto <bb 13>; [INV]
+  else
+    goto <bb 20>; [INV]
+
+  <bb 13> :
+  _5 = FormatFlags & 1;
+  if (_5 == 0)
+    goto <bb 14>; [INV]
+  else
+    goto <bb 20>; [INV]
+
+  <bb 14> :
+  if (FieldWidth != 0)
+    goto <bb 15>; [INV]
+  else
+    goto <bb 20>; [INV]
+
+  <bb 15> :
+  goto <bb 18>; [INV]
+
+  <bb 16> :
+  FieldWidth = FieldWidth + 4294967295;
+  _StoreChar (pBufferDesc, 32);
+  _6 = pBufferDesc->ReturnValue;
+  if (_6 < 0)
+    goto <bb 17>; [INV]
+  else
+    goto <bb 18>; [INV]
+
+  <bb 17> :
+  goto <bb 20>; [INV]
+
+  <bb 18> :
+  if (FieldWidth != 0)
+    goto <bb 19>; [INV]
+  else
+    goto <bb 20>; [INV]
+
+  <bb 19> :
+  if (Width < FieldWidth)
+    goto <bb 16>; [INV]
+  else
+    goto <bb 20>; [INV]
+
+  <bb 20> :
+  _7 = pBufferDesc->ReturnValue;
+  if (_7 >= 0)
+    goto <bb 21>; [INV]
+  else
+    goto <bb 37>; [INV]
+
+  <bb 21> :
+  if (v < 0)
+    goto <bb 22>; [INV]
+  else
+    goto <bb 23>; [INV]
+
+  <bb 22> :
+  v = -v;
+  _StoreChar (pBufferDesc, 45);
+  goto <bb 25>; [INV]
+
+  <bb 23> :
+  _8 = FormatFlags & 4;
+  if (_8 != 0)
+    goto <bb 24>; [INV]
+  else
+    goto <bb 25>; [INV]
+
+  <bb 24> :
+  _StoreChar (pBufferDesc, 43);
+
+  <bb 25> :
+  _9 = pBufferDesc->ReturnValue;
+  if (_9 >= 0)
+    goto <bb 26>; [INV]
+  else
+    goto <bb 37>; [INV]
+
+  <bb 26> :
+  _10 = FormatFlags & 2;
+  if (_10 != 0)
+    goto <bb 27>; [INV]
+  else
+    goto <bb 35>; [INV]
+
+  <bb 27> :
+  _11 = FormatFlags & 1;
+  if (_11 == 0)
+    goto <bb 28>; [INV]
+  else
+    goto <bb 35>; [INV]
+
+  <bb 28> :
+  if (NumDigits == 0)
+    goto <bb 29>; [INV]
+  else
+    goto <bb 35>; [INV]
+
+  <bb 29> :
+  if (FieldWidth != 0)
+    goto <bb 30>; [INV]
+  else
+    goto <bb 35>; [INV]
+
+  <bb 30> :
+  goto <bb 33>; [INV]
+
+  <bb 31> :
+  FieldWidth = FieldWidth + 4294967295;
+  _StoreChar (pBufferDesc, 48);
+  _12 = pBufferDesc->ReturnValue;
+  if (_12 < 0)
+    goto <bb 32>; [INV]
+  else
+    goto <bb 33>; [INV]
+
+  <bb 32> :
+  goto <bb 35>; [INV]
+
+  <bb 33> :
+  if (FieldWidth != 0)
+    goto <bb 34>; [INV]
+  else
+    goto <bb 35>; [INV]
+
+  <bb 34> :
+  if (Width < FieldWidth)
+    goto <bb 31>; [INV]
+  else
+    goto <bb 35>; [INV]
+
+  <bb 35> :
+  _13 = pBufferDesc->ReturnValue;
+  if (_13 >= 0)
+    goto <bb 36>; [INV]
+  else
+    goto <bb 37>; [INV]
+
+  <bb 36> :
+  v.2_14 = (unsigned int) v;
+  _PrintUnsigned (pBufferDesc, v.2_14, Base, NumDigits, FieldWidth, FormatFlags);
+
+  <bb 37> :
+  return;
+
+}
+
+
+_PrintUnsigned (struct SEGGER_RTT_PRINTF_DESC * pBufferDesc, unsigned int v, unsigned int Base, unsigned int NumDigits, unsigned int FieldWidth, unsigned int FormatFlags)
+{
+  char c;
+  unsigned int Width;
+  unsigned int Number;
+  unsigned int Digit;
+  unsigned int Div;
+  static const char _aV2C[16] = "0123456789ABCDEF";
+
+  <bb 2> :
+  Number = v;
+  Digit = 1;
+  Width = 1;
+  goto <bb 4>; [INV]
+
+  <bb 3> :
+  Number = Number / Base;
+  Width = Width + 1;
+
+  <bb 4> :
+  if (Number >= Base)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 5> :
+  if (NumDigits > Width)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  Width = NumDigits;
+
+  <bb 7> :
+  _1 = FormatFlags & 1;
+  if (_1 == 0)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 18>; [INV]
+
+  <bb 8> :
+  if (FieldWidth != 0)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 18>; [INV]
+
+  <bb 9> :
+  _2 = FormatFlags & 2;
+  if (_2 != 0)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 10> :
+  if (NumDigits == 0)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 11> :
+  c = 48;
+  goto <bb 13>; [INV]
+
+  <bb 12> :
+  c = 32;
+
+  <bb 13> :
+  goto <bb 16>; [INV]
+
+  <bb 14> :
+  FieldWidth = FieldWidth + 4294967295;
+  _StoreChar (pBufferDesc, c);
+  _3 = pBufferDesc->ReturnValue;
+  if (_3 < 0)
+    goto <bb 15>; [INV]
+  else
+    goto <bb 16>; [INV]
+
+  <bb 15> :
+  goto <bb 18>; [INV]
+
+  <bb 16> :
+  if (FieldWidth != 0)
+    goto <bb 17>; [INV]
+  else
+    goto <bb 18>; [INV]
+
+  <bb 17> :
+  if (Width < FieldWidth)
+    goto <bb 14>; [INV]
+  else
+    goto <bb 18>; [INV]
+
+  <bb 18> :
+  _4 = pBufferDesc->ReturnValue;
+  if (_4 >= 0)
+    goto <bb 19>; [INV]
+  else
+    goto <bb 34>; [INV]
+
+  <bb 19> :
+  if (NumDigits > 1)
+    goto <bb 20>; [INV]
+  else
+    goto <bb 21>; [INV]
+
+  <bb 20> :
+  NumDigits = NumDigits + 4294967295;
+  goto <bb 23>; [INV]
+
+  <bb 21> :
+  Div = v / Digit;
+  if (Div < Base)
+    goto <bb 22>; [INV]
+  else
+    goto <bb 23>; [INV]
+
+  <bb 22> :
+  goto <bb 24>; [INV]
+
+  <bb 23> :
+  Digit = Digit * Base;
+  goto <bb 19>; [INV]
+
+  <bb 24> :
+  Div = v / Digit;
+  _5 = Div * Digit;
+  v = v - _5;
+  _6 = _aV2C[Div];
+  _StoreChar (pBufferDesc, _6);
+  _7 = pBufferDesc->ReturnValue;
+  if (_7 < 0)
+    goto <bb 25>; [INV]
+  else
+    goto <bb 26>; [INV]
+
+  <bb 25> :
+  goto <bb 27>; [INV]
+
+  <bb 26> :
+  Digit = Digit / Base;
+  if (Digit != 0)
+    goto <bb 24>; [INV]
+  else
+    goto <bb 27>; [INV]
+
+  <bb 27> :
+  _8 = FormatFlags & 1;
+  if (_8 != 0)
+    goto <bb 28>; [INV]
+  else
+    goto <bb 34>; [INV]
+
+  <bb 28> :
+  if (FieldWidth != 0)
+    goto <bb 29>; [INV]
+  else
+    goto <bb 34>; [INV]
+
+  <bb 29> :
+  goto <bb 32>; [INV]
+
+  <bb 30> :
+  FieldWidth = FieldWidth + 4294967295;
+  _StoreChar (pBufferDesc, 32);
+  _9 = pBufferDesc->ReturnValue;
+  if (_9 < 0)
+    goto <bb 31>; [INV]
+  else
+    goto <bb 32>; [INV]
+
+  <bb 31> :
+  goto <bb 34>; [INV]
+
+  <bb 32> :
+  if (FieldWidth != 0)
+    goto <bb 33>; [INV]
+  else
+    goto <bb 34>; [INV]
+
+  <bb 33> :
+  if (Width < FieldWidth)
+    goto <bb 30>; [INV]
+  else
+    goto <bb 34>; [INV]
+
+  <bb 34> :
+  return;
+
+}
+
+
+_StoreChar (struct SEGGER_RTT_PRINTF_DESC * p, char c)
+{
+  unsigned int Cnt;
+
+  <bb 2> :
+  Cnt = p->Cnt;
+  _1 = Cnt + 1;
+  _2 = p->BufferSize;
+  if (_1 <= _2)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  _3 = p->pBuffer;
+  _4 = _3 + Cnt;
+  *_4 = c;
+  _5 = Cnt + 1;
+  p->Cnt = _5;
+  _6 = p->ReturnValue;
+  _7 = _6 + 1;
+  p->ReturnValue = _7;
+
+  <bb 4> :
+  _8 = p->Cnt;
+  _9 = p->BufferSize;
+  if (_8 == _9)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 5> :
+  _10 = p->RTTBufferIndex;
+  _11 = p->pBuffer;
+  _12 = p->Cnt;
+  _13 = SEGGER_RTT_Write (_10, _11, _12);
+  _14 = p->Cnt;
+  if (_13 != _14)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  p->ReturnValue = -1;
+  goto <bb 8>; [INV]
+
+  <bb 7> :
+  p->Cnt = 0;
+
+  <bb 8> :
+  return;
+
+}
+
+

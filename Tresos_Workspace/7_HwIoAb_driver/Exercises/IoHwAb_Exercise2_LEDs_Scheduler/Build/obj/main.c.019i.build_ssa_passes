@@ -1,0 +1,239 @@
+Os_BuzzerTask ()
+{
+  <bb 2> :
+  return;
+
+}
+
+
+Os_CanTask ()
+{
+  <bb 2> :
+  return;
+
+}
+
+
+Os_EepromsTask ()
+{
+  <bb 2> :
+  return;
+
+}
+
+
+Os_PotsTask ()
+{
+  <bb 2> :
+  return;
+
+}
+
+
+Os_ButtonsTask ()
+{
+  <bb 2> :
+  return;
+
+}
+
+
+Os_LedsTask ()
+{
+  <bb 2> :
+  return;
+
+}
+
+
+Os_100ms_Task ()
+{
+  uint8 CurrentButton;
+  uint8 RealEvent;
+
+  <bb 2> :
+  RealEvent = 0;
+  CurrentButton = 0;
+  goto <bb 28>; [INV]
+
+  <bb 3> :
+  RealEvent = HwIoAb_Buttons_GetEvent (CurrentButton);
+  if (RealEvent != 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 27>; [INV]
+
+  <bb 4> :
+  _1 = (int) CurrentButton;
+  switch (_1) <default: <L23> [INV], case 0: <L2> [INV], case 1: <L9> [INV], case 2: <L16> [INV]>
+
+  <bb 5> :
+<L2>:
+  _2 = (int) RealEvent;
+  switch (_2) <default: <L7> [INV], case 1: <L3> [INV], case 2: <L4> [INV], case 3: <L5> [INV], case 4: <L6> [INV]>
+
+  <bb 6> :
+<L3>:
+  HwIoAb_Leds_TurnToggle (0);
+  SEGGER_RTT_printf (0, "Button 1 action: SINGLE_CLICK \n");
+  goto <bb 11>; [INV]
+
+  <bb 7> :
+<L4>:
+  HwIoAb_Leds_TurnToggle (1);
+  SEGGER_RTT_printf (0, "Button 1 action: DOUBLE_CLICK \n");
+  goto <bb 11>; [INV]
+
+  <bb 8> :
+<L5>:
+  HwIoAb_Leds_TurnToggle (2);
+  SEGGER_RTT_printf (0, "Button 1 action: HOLD_CLICK \n");
+  goto <bb 11>; [INV]
+
+  <bb 9> :
+<L6>:
+  HwIoAb_Leds_TurnOff (0);
+  HwIoAb_Leds_TurnOff (1);
+  HwIoAb_Leds_TurnOff (2);
+  SEGGER_RTT_printf (0, "Button 1 action: RELEASE \n");
+  goto <bb 11>; [INV]
+
+  <bb 10> :
+<L7>:
+
+  <bb 11> :
+  goto <bb 27>; [INV]
+
+  <bb 12> :
+<L9>:
+  _3 = (int) RealEvent;
+  switch (_3) <default: <L14> [INV], case 1: <L10> [INV], case 2: <L11> [INV], case 3: <L12> [INV], case 4: <L13> [INV]>
+
+  <bb 13> :
+<L10>:
+  HwIoAb_Leds_TurnToggle (0);
+  SEGGER_RTT_printf (0, "Button 2 action: SINGLE_CLICK \n");
+  goto <bb 18>; [INV]
+
+  <bb 14> :
+<L11>:
+  HwIoAb_Leds_TurnToggle (1);
+  SEGGER_RTT_printf (0, "Button 2 action: DOUBLE_CLICK \n");
+  goto <bb 18>; [INV]
+
+  <bb 15> :
+<L12>:
+  HwIoAb_Leds_TurnToggle (2);
+  SEGGER_RTT_printf (0, "Button 2 action: HOLD_CLICK \n");
+  goto <bb 18>; [INV]
+
+  <bb 16> :
+<L13>:
+  HwIoAb_Leds_TurnOff (0);
+  HwIoAb_Leds_TurnOff (1);
+  HwIoAb_Leds_TurnOff (2);
+  SEGGER_RTT_printf (0, "Button 2 action: RELEASE \n");
+  goto <bb 18>; [INV]
+
+  <bb 17> :
+<L14>:
+
+  <bb 18> :
+  goto <bb 27>; [INV]
+
+  <bb 19> :
+<L16>:
+  _4 = (int) RealEvent;
+  switch (_4) <default: <L21> [INV], case 1: <L17> [INV], case 2: <L18> [INV], case 3: <L19> [INV], case 4: <L20> [INV]>
+
+  <bb 20> :
+<L17>:
+  HwIoAb_Leds_TurnToggle (0);
+  SEGGER_RTT_printf (0, "Button 3 action: SINGLE_CLICK \n");
+  goto <bb 25>; [INV]
+
+  <bb 21> :
+<L18>:
+  HwIoAb_Leds_TurnToggle (1);
+  SEGGER_RTT_printf (0, "Button 3 action: DOUBLE_CLICK \n");
+  goto <bb 25>; [INV]
+
+  <bb 22> :
+<L19>:
+  HwIoAb_Leds_TurnToggle (2);
+  SEGGER_RTT_printf (0, "Button 3 action: HOLD_CLICK \n");
+  goto <bb 25>; [INV]
+
+  <bb 23> :
+<L20>:
+  HwIoAb_Leds_TurnOff (0);
+  HwIoAb_Leds_TurnOff (1);
+  HwIoAb_Leds_TurnOff (2);
+  SEGGER_RTT_printf (0, "Button 3 action: RELEASE \n");
+  goto <bb 25>; [INV]
+
+  <bb 24> :
+<L21>:
+
+  <bb 25> :
+  goto <bb 27>; [INV]
+
+  <bb 26> :
+<L23>:
+
+  <bb 27> :
+  CurrentButton.0_5 = CurrentButton;
+  CurrentButton = CurrentButton.0_5 + 1;
+
+  <bb 28> :
+  if (CurrentButton <= 2)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 29>; [INV]
+
+  <bb 29> :
+  return;
+
+}
+
+
+Os_50ms_Task ()
+{
+  <bb 2> :
+  HwIoAb_Buttons_MainFunction ();
+  return;
+
+}
+
+
+EcuM_Init ()
+{
+  <bb 2> :
+  Mcu_Init (&Mcu_Config);
+  Mcu_SetMode (0);
+  Mcu_InitClock (0);
+  OsIf_Init (0B);
+  Port_Init (&Port_Config);
+  HwIoAb_Buttons_Init (&ButtonsCfg);
+  HwIoAb_Leds_Init (&LedsCfg);
+  return;
+
+}
+
+
+main ()
+{
+  int D.6858;
+
+  <bb 2> :
+  EcuM_Init ();
+  SEGGER_RTT_Init ();
+  Scheduler_Init (&Scheduler_Config);
+
+  <bb 3> :
+  Scheduler_MainFunction ();
+  goto <bb 3>; [INV]
+
+}
+
+
