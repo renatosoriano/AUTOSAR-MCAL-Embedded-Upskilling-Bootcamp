@@ -135,7 +135,9 @@ It consists on an AUTOSAR I/O Hardware Abstraction for the on board Buttons and 
 Shall toggle ON/OFF RGB_LED_BLUE (D0) and C10_LED2.
 
 ![Button_1_Single_click.GIF](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/Final_Project/Button_1_Single_click.GIF)
-![Button_1_Single_click.mp4](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/Final_Project/Button_1_Single_click.mp4)
+
+https://github.com/user-attachments/assets/7e254285-5b00-4ca3-b0b7-083ebd013bfa
+
 ![Button_1_Single_click_Terminal.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/Final_Project/Button_1_Single_click_Terminal.png)
 
 
