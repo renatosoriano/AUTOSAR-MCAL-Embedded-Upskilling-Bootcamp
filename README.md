@@ -17,7 +17,8 @@ Date: July, 2024.
 4. [**Notes**](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp?tab=readme-ov-file#notes)
 5. [**Documentation**](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp?tab=readme-ov-file#documentation)
 6. [**Examples and Exercises**](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp?tab=readme-ov-file#examples-and-exercises)
-7. [**Results**](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp?tab=readme-ov-file#results)
+7. [**Final Project**](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp?tab=readme-ov-file#final-project)
+8. [**Results**](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp?tab=readme-ov-file#results)
 
 ## 1. Description
 
@@ -39,6 +40,7 @@ The Upskilling Bootcamp covers:
 10. I/O Hardware Abstraction.
 11. CAN driver.
 12. CANIF driver.
+13. Final Project
 
 ## 2. Hardware Requirements
 
@@ -115,12 +117,17 @@ You can find here [**Documentation**](https://github.com/renatosoriano/AUTOSAR-M
 
 ## 6. Examples and Exercises
 
-You can find here [**Tresos Workspace**](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Tresos_Workspace/) the base template file as weel as all the examples and exercises created for this Upskilling Bootcamp.
+You can find here [**Tresos Workspace**](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Tresos_Workspace/) the base template file as well as all the examples and exercises created for this Upskilling Bootcamp.
 It is divided in folders for each of the MCAL drivers worked, and inside you will find 2 folders, Examples and Exercises.
 
 _Will be uploading them as they are ready._
 
-## 7. Results
+## 7. Final Project
+
+You can find here [**Final Project**](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Tresos_Workspace/Final_Project) the final project created for this Upskilling Bootcamp.
+It consists on a full AUTOSAR I/O Hardware Abstraction for the on board Buttons, LEDs, Potentiometers and Buzzer, all together with the Scheduler and a state machine with specific application event and tasks requirements.
+
+## 8. Results
 You can find here captures and media relevant to an example and/or exercise visible output in communication (software) or physical-world (board).
 
 _Will be uploading them as they are ready._
