@@ -132,7 +132,7 @@ It consists on an AUTOSAR I/O Hardware Abstraction for the on board Buttons and 
 ### **Outputs**
 
 * #### Button 1: Single click
-Shall toggle ON/OFF RGB_LED_BLUE (D0) and C10_LED2.
+Shall toggle ON/OFF RGB_LED_BLUE (D0) and C10_LED2 (as SINGLE_CLICK visual indicator).
 
 ![Button_1_Single_click.GIF](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/Final_Project/Button_1_Single_click.GIF)
 
@@ -140,8 +140,17 @@ https://github.com/user-attachments/assets/7e254285-5b00-4ca3-b0b7-083ebd013bfa
 
 ![Button_1_Single_click_Terminal.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/Final_Project/Button_1_Single_click_Terminal.png)
 
+* #### Button 1: Double click
+Shall display (SEGGER_RTT_printf) Pot 1 ADC0 value in ohms, toggle C13_LED5 (as DOUBLE_CLICK visual indicator), and toggle C14_LED6 (as Pot 1 visual indicator).
+
+![Button_1_Double_click.GIF](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/Final_Project/Button_1_Double_click.GIF)
+
+
+
+![Button_1_Double_click_Terminal.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/Final_Project/Button_1_Double_click_Terminal.png)
+
 * #### Button 2: Single click
-Shall toggle ON/OFF RGB_LED_RED (D15) and C9_LED1.
+Shall toggle ON/OFF RGB_LED_RED (D15) and C9_LED1 (as SINGLE_CLICK visual indicator).
 
 ![Button_2_Single_click.GIF](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/Final_Project/Button_2_Single_click.GIF)
 
