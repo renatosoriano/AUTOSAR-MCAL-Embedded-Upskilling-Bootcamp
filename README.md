@@ -124,11 +124,23 @@ _Will be uploading them as they are ready._
 
 ## 7. Final Project
 
-You can find here [**Final Project**](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Tresos_Workspace/Final_Project) the final project created for this Upskilling Bootcamp.
-It consists on a full AUTOSAR I/O Hardware Abstraction for the on board Buttons, LEDs, Potentiometers and Buzzer, all together with the Scheduler and a state machine with specific application events and tasks requirements.
+You can find here the [**Final Project**](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Tresos_Workspace/Final_Project) created for this Upskilling Bootcamp.
+It consists on an AUTOSAR I/O Hardware Abstraction for the on board Buttons and LEDs (PORT and DIO Drivers), Potentiometers (MCU and ADC Drivers), and Buzzer (PW Driver), all together with the Scheduler and a state machine with specific application events and tasks requirements.
+
+![AUTOSAR_layered_view.jpeg](AUTOSAR_layered_view.jpeg)
+
+### **Outputs**
+
+* #### Button 1: Single click
+Shall toggle ON/OFF RGB_LED_BLUE (D0) and C10_LED2 (as SINGLE_CLICK visual indicator).
+
+![Button_1_Single_click.gif](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/Final_Project/Button_1_Single_click.gif)
+![Button_1_Single_click.mov](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/Final_Project/Button_1_Single_click.mov)
+![Button_1_Single_click_Terminal.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/Final_Project/Button_1_Single_click.gif)
+
 
 ## 8. Results
-You can find here captures and media relevant to an example and/or exercise visible output in communication (software) or physical-world (board).
+You can find here captures and media relevant to examples and/or exercises visible output in communication (software) or physical-world (board).
 
 _Will be uploading them as they are ready._
 
