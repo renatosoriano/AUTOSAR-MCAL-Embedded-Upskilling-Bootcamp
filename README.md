@@ -140,6 +140,14 @@ https://github.com/user-attachments/assets/7e254285-5b00-4ca3-b0b7-083ebd013bfa
 
 ![Button_1_Single_click_Terminal.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/Final_Project/Button_1_Single_click_Terminal.png)
 
+* #### Button 2: Single click
+Shall toggle ON/OFF RGB_LED_RED (D15) and C9_LED1.
+
+![Button_2_Single_click.GIF](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/Final_Project/Button_2_Single_click.GIF)
+
+
+
+![Button_2_Single_click_Terminal.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/Final_Project/Button_2_Single_click_Terminal.png)
 
 ## 8. Results
 You can find here captures and media relevant to examples and/or exercises visible output in communication (software) or physical-world (board).
