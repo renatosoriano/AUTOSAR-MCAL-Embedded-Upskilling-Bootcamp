@@ -1,0 +1,243 @@
+IPA summary for Mcu_Ipw_SleepOnExit/5 is missing.
+IPA summary for Mcu_Ipw_GetResetRawValue/4 is missing.
+IPA summary for Mcu_Ipw_GetResetReason/3 is missing.
+IPA summary for Mcu_Ipw_SetMode/2 is missing.
+IPA summary for Mcu_Ipw_InitClock/1 is missing.
+IPA summary for Mcu_Ipw_Init/0 is missing.
+
+Flattening functions:
+Overall time estimate: 0.000000 weighted by profile: 0.000000
+
+Deciding on inlining of small functions.  Starting with size 0.
+node context cache: 0 hits, 0 misses, 0 initializations
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+
+Deciding on functions to be inlined into all callers and removing useless speculations:
+Overall time estimate: 0.000000 weighted by profile: 0.000000
+
+Why inlining failed?
+function body not available                       :        7 calls, 7.000000 freq, 0 count
+IPA summary for Mcu_Ipw_SleepOnExit/5 is missing.
+IPA summary for Mcu_Ipw_GetResetRawValue/4 is missing.
+IPA summary for Mcu_Ipw_GetResetReason/3 is missing.
+IPA summary for Mcu_Ipw_SetMode/2 is missing.
+IPA summary for Mcu_Ipw_InitClock/1 is missing.
+IPA summary for Mcu_Ipw_Init/0 is missing.
+Symbol table:
+
+Power_Ip_EnableSleepOnExit/12 (Power_Ip_EnableSleepOnExit) @0e1ea700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Mcu_Ipw_SleepOnExit/5 
+  Calls: 
+Power_Ip_DisableSleepOnExit/11 (Power_Ip_DisableSleepOnExit) @0e1ea620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Mcu_Ipw_SleepOnExit/5 
+  Calls: 
+Power_Ip_GetResetRawValue/10 (Power_Ip_GetResetRawValue) @0e1ea460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Mcu_Ipw_GetResetRawValue/4 
+  Calls: 
+Power_Ip_GetResetReason/9 (Power_Ip_GetResetReason) @0e1ea2a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Mcu_Ipw_GetResetReason/3 
+  Calls: 
+Power_Ip_SetMode/8 (Power_Ip_SetMode) @0e1ea0e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Mcu_Ipw_SetMode/2 
+  Calls: 
+Clock_Ip_InitClock/7 (Clock_Ip_InitClock) @0e1e6b60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Mcu_Ipw_InitClock/1 
+  Calls: 
+Power_Ip_Init/6 (Power_Ip_Init) @0e1e6620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Mcu_Ipw_Init/0 
+  Calls: 
+Mcu_Ipw_SleepOnExit/5 (Mcu_Ipw_SleepOnExit) @0e1e6d20
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Power_Ip_EnableSleepOnExit/12 Power_Ip_DisableSleepOnExit/11 
+Mcu_Ipw_GetResetRawValue/4 (Mcu_Ipw_GetResetRawValue) @0e1e6a80
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Power_Ip_GetResetRawValue/10 
+Mcu_Ipw_GetResetReason/3 (Mcu_Ipw_GetResetReason) @0e1e67e0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Power_Ip_GetResetReason/9 
+Mcu_Ipw_SetMode/2 (Mcu_Ipw_SetMode) @0e1e6540
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Power_Ip_SetMode/8 
+Mcu_Ipw_InitClock/1 (Mcu_Ipw_InitClock) @0e1e62a0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Clock_Ip_InitClock/7 
+Mcu_Ipw_Init/0 (Mcu_Ipw_Init) @0e1e6000
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Power_Ip_Init/6 
+
+;; Function Mcu_Ipw_Init (Mcu_Ipw_Init, funcdef_no=0, decl_uid=5817, cgraph_uid=1, symbol_order=0)
+
+Mcu_Ipw_Init (const struct Mcu_HwIPsConfigType * HwIPsConfigPtr)
+{
+  <bb 2> :
+  Power_Ip_Init (HwIPsConfigPtr_2(D));
+  return;
+
+}
+
+
+
+;; Function Mcu_Ipw_InitClock (Mcu_Ipw_InitClock, funcdef_no=1, decl_uid=5821, cgraph_uid=2, symbol_order=1)
+
+Mcu_Ipw_InitClock (const struct Mcu_ClockConfigType * ClockConfigPtr)
+{
+  <bb 2> :
+  Clock_Ip_InitClock (ClockConfigPtr_2(D));
+  return;
+
+}
+
+
+
+;; Function Mcu_Ipw_SetMode (Mcu_Ipw_SetMode, funcdef_no=2, decl_uid=5819, cgraph_uid=3, symbol_order=2)
+
+Mcu_Ipw_SetMode (const struct Mcu_ModeConfigType * ModeConfigPtr)
+{
+  <bb 2> :
+  Power_Ip_SetMode (ModeConfigPtr_2(D));
+  return;
+
+}
+
+
+
+;; Function Mcu_Ipw_GetResetReason (Mcu_Ipw_GetResetReason, funcdef_no=3, decl_uid=5823, cgraph_uid=4, symbol_order=3)
+
+Mcu_Ipw_GetResetReason ()
+{
+  Mcu_ResetType D.5885;
+  Mcu_ResetType _3;
+
+  <bb 2> :
+  _3 = Power_Ip_GetResetReason ();
+
+  <bb 3> :
+<L0>:
+  return _3;
+
+}
+
+
+
+;; Function Mcu_Ipw_GetResetRawValue (Mcu_Ipw_GetResetRawValue, funcdef_no=4, decl_uid=5825, cgraph_uid=5, symbol_order=4)
+
+Mcu_Ipw_GetResetRawValue ()
+{
+  Mcu_RawResetType D.5887;
+  Mcu_RawResetType _3;
+
+  <bb 2> :
+  _3 = Power_Ip_GetResetRawValue ();
+
+  <bb 3> :
+<L0>:
+  return _3;
+
+}
+
+
+
+;; Function Mcu_Ipw_SleepOnExit (Mcu_Ipw_SleepOnExit, funcdef_no=5, decl_uid=5827, cgraph_uid=6, symbol_order=5)
+
+Mcu_Ipw_SleepOnExit (Mcu_SleepOnExitType SleepOnExit)
+{
+  <bb 2> :
+  if (SleepOnExit_2(D) == 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  Power_Ip_DisableSleepOnExit ();
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  Power_Ip_EnableSleepOnExit ();
+
+  <bb 5> :
+  return;
+
+}
+
+

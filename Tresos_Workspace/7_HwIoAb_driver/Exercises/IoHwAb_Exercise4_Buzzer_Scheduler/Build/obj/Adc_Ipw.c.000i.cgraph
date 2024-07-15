@@ -1,0 +1,2236 @@
+Trivially needed symbols: Adc_GetCoreID/17 Adc_Ipw_Calibrate/16 Adc_Ipw_ReadGroup/15 Adc_Ipw_CheckValidConversion/14 Adc_Ipw_StopCurrentConversion/13 Adc_Ipw_StartNormalConversion/12 Adc_Ipw_DeInit/11 Adc_Ipw_Init/10 Adc_Ipw_ConfigureConversion/9 Adc_Ipw_CalculateNumsBitShift/8 Adc_Ipw_RemoveFromQueue/0
+
+
+Initial Symbol table:
+
+Adc_Ip_DoCalibration/43 (Adc_Ip_DoCalibration) @0e665000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_Ipw_Calibrate/16 
+  Calls: 
+Adc_Ip_GetConvCompleteFlag/42 (Adc_Ip_GetConvCompleteFlag) @0e37e9a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_Ipw_CheckValidConversion/14 
+  Calls: 
+Adc_Ip_SetContinuousMode/41 (Adc_Ip_SetContinuousMode) @0e37e700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_Ipw_StopConversionCheckTimeout/6 
+  Calls: 
+Pdb_Adc_Ip_DisableAndClearPdb/40 (Pdb_Adc_Ip_DisableAndClearPdb) @0e37e620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_Ipw_StopConversionCheckTimeout/6 
+  Calls: 
+Adc_Ip_SetDisabledChannel/39 (Adc_Ip_SetDisabledChannel) @0e37e460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_Ipw_StopConversionCheckTimeout/6 Adc_Ipw_StopCurrentConversion/13 
+  Calls: 
+Adc_Ip_SetSampleTime/38 (Adc_Ip_SetSampleTime) @0e37e2a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_Ipw_PrepareGroupStart/7 
+  Calls: 
+Adc_Ip_SetAveraging/37 (Adc_Ip_SetAveraging) @0e37e1c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_Ipw_PrepareGroupStart/7 
+  Calls: 
+Adc_Ip_SetTriggerMode/36 (Adc_Ip_SetTriggerMode) @0e37e000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_Ipw_StartNormalConversion/12 
+  Calls: 
+Adc_Ip_GetConvData/35 (Adc_Ip_GetConvData) @0e370540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_Ipw_ReadGroupConvData/1 Adc_Ipw_StopCurrentConversion/13 Adc_Ipw_StartNormalConversion/12 
+  Calls: 
+Pdb_Adc_Ip_DeInit/34 (Pdb_Adc_Ip_DeInit) @0e370d20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_Ipw_DeInit/11 
+  Calls: 
+Adc_Ip_DeInit/33 (Adc_Ip_DeInit) @0e370c40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_Ipw_DeInit/11 
+  Calls: 
+Pdb_Adc_Ip_Init/32 (Pdb_Adc_Ip_Init) @0e370a80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_Ipw_Init/10 
+  Calls: 
+Adc_Ip_Init/31 (Adc_Ip_Init) @0e3709a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_Ipw_Init/10 
+  Calls: 
+Pdb_Adc_Ip_SetAdcPretriggerDelayValue/30 (Pdb_Adc_Ip_SetAdcPretriggerDelayValue) @0e3707e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_Ipw_ConfigurePdbChannels/4 Adc_Ipw_ConfigurePdbChannels/4 Adc_Ipw_ConfigurePdbChannels/4 Adc_Ipw_ConfigurePdbChannels/4 Adc_Ipw_ConfigurePdbChannels/4 
+  Calls: 
+Pdb_Adc_Ip_SwTrigger/29 (Pdb_Adc_Ip_SwTrigger) @0e370460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_Ipw_ConfigurePdbConversion/5 
+  Calls: 
+Pdb_Adc_Ip_ConfigAdcPretriggers/28 (Pdb_Adc_Ip_ConfigAdcPretriggers) @0e370380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_Ipw_ConfigurePdbChannels/4 Adc_Ipw_ConfigurePdbConversion/5 
+  Calls: 
+Pdb_Adc_Ip_LoadRegValues/27 (Pdb_Adc_Ip_LoadRegValues) @0e3702a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_Ipw_ConfigurePdbChannels/4 Adc_Ipw_ConfigurePdbConversion/5 
+  Calls: 
+Pdb_Adc_Ip_SetModulus/26 (Pdb_Adc_Ip_SetModulus) @0e3701c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_Ipw_ConfigurePdbConversion/5 
+  Calls: 
+Pdb_Adc_Ip_SetTriggerInput/25 (Pdb_Adc_Ip_SetTriggerInput) @0e3700e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_Ipw_ConfigurePdbConversion/5 
+  Calls: 
+Pdb_Adc_Ip_Enable/24 (Pdb_Adc_Ip_Enable) @0e370000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_Ipw_ConfigurePdbConversion/5 
+  Calls: 
+Adc_Ip_ConfigChannel/23 (Adc_Ip_ConfigChannel) @0e2df380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_Ipw_ConfigureConversion/9 Adc_Ipw_ConfigureConversion/9 Adc_Ipw_ConfigureConversion/9 
+  Calls: 
+Adc_axGroupStatus/22 (Adc_axGroupStatus) @0e2e29d8
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: Adc_Ipw_ConfigureConversion/9 (read) Adc_Ipw_ConfigurePdbConversion/5 (read) Adc_Ipw_ConfigurePdbConversion/5 (read) Adc_Ipw_ConfigurePdbConversion/5 (write) Adc_Ipw_ConfigurePdbChannels/4 (read) Adc_Ipw_DeInit/11 (write) Adc_Ipw_StartNormalConversion/12 (write) Adc_Ipw_StopCurrentConversion/13 (write) Adc_Ipw_ReadGroup/15 (read) Adc_Ipw_WriteDataBuffer/3 (read) Adc_Ipw_WriteDataBuffer/3 (read) Adc_Ipw_WriteDataBuffer/3 (read) 
+  Availability: not-ready
+  Varpool flags:
+Adc_apxCfgPtr/21 (Adc_apxCfgPtr) @0e2e2990
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: Adc_Ipw_ConfigureConversion/9 (read) Adc_Ipw_ConfigureConversion/9 (read) Adc_Ipw_ConfigureConversion/9 (read) Adc_Ipw_ConfigureConversion/9 (read) Adc_Ipw_ConfigureConversion/9 (read) Adc_Ipw_ConfigurePdbConversion/5 (read) Adc_Ipw_ConfigurePdbChannels/4 (read) Adc_Ipw_DeInit/11 (read) Adc_Ipw_DeInit/11 (read) Adc_Ipw_DeInit/11 (read) Adc_Ipw_DeInit/11 (read) Adc_Ipw_StartNormalConversion/12 (read) Adc_Ipw_StartNormalConversion/12 (read) Adc_Ipw_StartNormalConversion/12 (read) Adc_Ipw_PrepareGroupStart/7 (read) Adc_Ipw_StopCurrentConversion/13 (read) Adc_Ipw_StopConversionCheckTimeout/6 (read) Adc_Ipw_StopConversionCheckTimeout/6 (read) Adc_Ipw_StopConversionCheckTimeout/6 (read) Adc_Ipw_StopConversionCheckTimeout/6 (read) Adc_Ipw_ReadGroup/15 (read) Adc_Ipw_ReadGroup/15 (read) Adc_Ipw_ReadGroupNoInt/2 (read) Adc_Ipw_ReadGroupConvData/1 (read) Adc_Ipw_ReadGroupConvData/1 (read) Adc_Ipw_WriteDataBuffer/3 (read) Adc_Ipw_WriteDataBuffer/3 (read) Adc_Ipw_Calibrate/16 (read) 
+  Availability: not-ready
+  Varpool flags:
+SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_00/20 (SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_00) @0e2dfe00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_Ipw_RemoveFromQueue/0 
+  Calls: 
+Adc_axUnitStatus/19 (Adc_axUnitStatus) @0e2e23f0
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: Adc_Ipw_RemoveFromQueue/0 (read) Adc_Ipw_RemoveFromQueue/0 (write) Adc_Ipw_RemoveFromQueue/0 (read) Adc_Ipw_RemoveFromQueue/0 (write) Adc_Ipw_RemoveFromQueue/0 (read) Adc_Ipw_RemoveFromQueue/0 (write) Adc_Ipw_ConfigureConversion/9 (write) Adc_Ipw_StartNormalConversion/12 (read) Adc_Ipw_StartNormalConversion/12 (read) Adc_Ipw_StartNormalConversion/12 (read) Adc_Ipw_StartNormalConversion/12 (write) Adc_Ipw_StartNormalConversion/12 (read) Adc_Ipw_StopCurrentConversion/13 (read) Adc_Ipw_StopConversionCheckTimeout/6 (read) Adc_Ipw_ReadGroup/15 (read) 
+  Availability: not-ready
+  Varpool flags:
+SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_00/18 (SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_00) @0e2dfc40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_Ipw_RemoveFromQueue/0 
+  Calls: 
+Adc_GetCoreID/17 (Adc_GetCoreID) @0e2df7e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @01981040
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+Adc_Ipw_Calibrate/16 (Adc_Ipw_Calibrate) @0e2df540
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0e2df7e0
+  References: Adc_apxCfgPtr/21 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Adc_Ip_DoCalibration/43 
+Adc_Ipw_ReadGroup/15 (Adc_Ipw_ReadGroup) @0e2df2a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0e2df540
+  References: Adc_apxCfgPtr/21 (read) Adc_apxCfgPtr/21 (read) Adc_axUnitStatus/19 (read) Adc_axGroupStatus/22 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Adc_Ipw_WriteDataBuffer/3 Adc_Ipw_ReadGroupNoInt/2 
+Adc_Ipw_CheckValidConversion/14 (Adc_Ipw_CheckValidConversion) @0e2df000
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0e2df2a0
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: Adc_Ipw_ReadGroupNoInt/2 
+  Calls: Adc_Ip_GetConvCompleteFlag/42 
+Adc_Ipw_StopCurrentConversion/13 (Adc_Ipw_StopCurrentConversion) @0e2cba80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0e2df000
+  References: Adc_apxCfgPtr/21 (read) Adc_axUnitStatus/19 (read) Adc_axGroupStatus/22 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Adc_Ipw_StopConversionCheckTimeout/6 Adc_Ip_GetConvData/35 Adc_Ip_SetDisabledChannel/39 
+Adc_Ipw_StartNormalConversion/12 (Adc_Ipw_StartNormalConversion) @0e2cb540
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0e2cba80
+  References: Adc_axUnitStatus/19 (read) Adc_apxCfgPtr/21 (read) Adc_apxCfgPtr/21 (read) Adc_apxCfgPtr/21 (read) Adc_axUnitStatus/19 (read) Adc_axGroupStatus/22 (write) Adc_axUnitStatus/19 (read) Adc_axUnitStatus/19 (write) Adc_axUnitStatus/19 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Adc_Ipw_ConfigureConversion/9 Adc_Ip_SetTriggerMode/36 Adc_Ip_GetConvData/35 Adc_Ipw_PrepareGroupStart/7 
+Adc_Ipw_DeInit/11 (Adc_Ipw_DeInit) @0e2cbee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0e2cb540
+  References: Adc_apxCfgPtr/21 (read) Adc_apxCfgPtr/21 (read) Adc_apxCfgPtr/21 (read) Adc_axGroupStatus/22 (write) Adc_apxCfgPtr/21 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Pdb_Adc_Ip_DeInit/34 Adc_Ip_DeInit/33 
+Adc_Ipw_Init/10 (Adc_Ipw_Init) @0e2cbc40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0e2cbee0
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Pdb_Adc_Ip_Init/32 Adc_Ip_Init/31 
+Adc_Ipw_ConfigureConversion/9 (Adc_Ipw_ConfigureConversion) @0e2cb9a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0e2cbc40
+  References: Adc_apxCfgPtr/21 (read) Adc_apxCfgPtr/21 (read) Adc_apxCfgPtr/21 (read) Adc_axGroupStatus/22 (read) Adc_apxCfgPtr/21 (read) Adc_apxCfgPtr/21 (read) Adc_axUnitStatus/19 (write) 
+  Referring: 
+  Function flags: body
+  Called by: Adc_Ipw_StartNormalConversion/12 
+  Calls: Adc_Ipw_ConfigurePdbConversion/5 Adc_Ip_ConfigChannel/23 Adc_Ip_ConfigChannel/23 Adc_Ip_ConfigChannel/23 
+Adc_Ipw_CalculateNumsBitShift/8 (Adc_Ipw_CalculateNumsBitShift) @0e2cb700
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0e2cb9a0
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: Adc_Ipw_ReadGroupConvData/1 
+  Calls: 
+Adc_Ipw_PrepareGroupStart/7 (Adc_Ipw_PrepareGroupStart) @0e2cb460
+  Type: function definition analyzed
+  Visibility: no_reorder
+  Aux: @0e2cba80
+  References: Adc_apxCfgPtr/21 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Adc_Ipw_StartNormalConversion/12 
+  Calls: Adc_Ip_SetSampleTime/38 Adc_Ip_SetAveraging/37 
+Adc_Ipw_StopConversionCheckTimeout/6 (Adc_Ipw_StopConversionCheckTimeout) @0e2cb1c0
+  Type: function definition analyzed
+  Visibility: no_reorder
+  Aux: @0e2df000
+  References: Adc_apxCfgPtr/21 (read) Adc_apxCfgPtr/21 (read) Adc_apxCfgPtr/21 (read) Adc_apxCfgPtr/21 (read) Adc_axUnitStatus/19 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Adc_Ipw_StopCurrentConversion/13 
+  Calls: Adc_Ip_SetDisabledChannel/39 Adc_Ip_SetContinuousMode/41 Pdb_Adc_Ip_DisableAndClearPdb/40 
+Adc_Ipw_ConfigurePdbConversion/5 (Adc_Ipw_ConfigurePdbConversion) @0e1d3ee0
+  Type: function definition analyzed
+  Visibility: no_reorder
+  Aux: @0e2cbc40
+  References: Adc_apxCfgPtr/21 (read) Adc_axGroupStatus/22 (read) Adc_axGroupStatus/22 (read) Adc_axGroupStatus/22 (write) 
+  Referring: 
+  Function flags: body
+  Called by: Adc_Ipw_ConfigureConversion/9 
+  Calls: Pdb_Adc_Ip_SwTrigger/29 Pdb_Adc_Ip_ConfigAdcPretriggers/28 Pdb_Adc_Ip_LoadRegValues/27 Pdb_Adc_Ip_SetModulus/26 Adc_Ipw_ConfigurePdbChannels/4 Pdb_Adc_Ip_SetTriggerInput/25 Pdb_Adc_Ip_Enable/24 
+Adc_Ipw_ConfigurePdbChannels/4 (Adc_Ipw_ConfigurePdbChannels) @0e1d39a0
+  Type: function definition analyzed
+  Visibility: no_reorder
+  Aux: @0e2cbc40
+  References: Adc_axGroupStatus/22 (read) Adc_apxCfgPtr/21 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Adc_Ipw_ConfigurePdbConversion/5 
+  Calls: Pdb_Adc_Ip_ConfigAdcPretriggers/28 Pdb_Adc_Ip_LoadRegValues/27 Pdb_Adc_Ip_SetAdcPretriggerDelayValue/30 Pdb_Adc_Ip_SetAdcPretriggerDelayValue/30 Pdb_Adc_Ip_SetAdcPretriggerDelayValue/30 Pdb_Adc_Ip_SetAdcPretriggerDelayValue/30 Pdb_Adc_Ip_SetAdcPretriggerDelayValue/30 
+Adc_Ipw_WriteDataBuffer/3 (Adc_Ipw_WriteDataBuffer) @0e1d3e00
+  Type: function definition analyzed
+  Visibility: no_reorder
+  Aux: @0e2df540
+  References: Adc_apxCfgPtr/21 (read) Adc_apxCfgPtr/21 (read) Adc_axGroupStatus/22 (read) Adc_axGroupStatus/22 (read) Adc_axGroupStatus/22 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Adc_Ipw_ReadGroup/15 
+  Calls: 
+Adc_Ipw_ReadGroupNoInt/2 (Adc_Ipw_ReadGroupNoInt) @0e1d3b60
+  Type: function definition analyzed
+  Visibility: no_reorder
+  Aux: @0e1d3e00
+  References: Adc_apxCfgPtr/21 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Adc_Ipw_ReadGroup/15 
+  Calls: Adc_Ipw_ReadGroupConvData/1 Adc_Ipw_CheckValidConversion/14 
+Adc_Ipw_ReadGroupConvData/1 (Adc_Ipw_ReadGroupConvData) @0e1d38c0
+  Type: function definition analyzed
+  Visibility: no_reorder
+  Aux: @0e1d3e00
+  References: Adc_apxCfgPtr/21 (read) Adc_apxCfgPtr/21 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Adc_Ipw_ReadGroupNoInt/2 
+  Calls: Adc_Ip_GetConvData/35 Adc_Ipw_CalculateNumsBitShift/8 
+Adc_Ipw_RemoveFromQueue/0 (Adc_Ipw_RemoveFromQueue) @0e1d3620
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0e2cb700
+  References: Adc_axUnitStatus/19 (read) Adc_axUnitStatus/19 (write) Adc_axUnitStatus/19 (read) Adc_axUnitStatus/19 (write) Adc_axUnitStatus/19 (read) Adc_axUnitStatus/19 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_00/20 SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_00/18 
+
+Removing unused symbols:
+
+Reclaimed Symbol table:
+
+Adc_Ip_DoCalibration/43 (Adc_Ip_DoCalibration) @0e665000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_Ipw_Calibrate/16 
+  Calls: 
+Adc_Ip_GetConvCompleteFlag/42 (Adc_Ip_GetConvCompleteFlag) @0e37e9a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_Ipw_CheckValidConversion/14 
+  Calls: 
+Adc_Ip_SetContinuousMode/41 (Adc_Ip_SetContinuousMode) @0e37e700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_Ipw_StopConversionCheckTimeout/6 
+  Calls: 
+Pdb_Adc_Ip_DisableAndClearPdb/40 (Pdb_Adc_Ip_DisableAndClearPdb) @0e37e620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_Ipw_StopConversionCheckTimeout/6 
+  Calls: 
+Adc_Ip_SetDisabledChannel/39 (Adc_Ip_SetDisabledChannel) @0e37e460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_Ipw_StopConversionCheckTimeout/6 Adc_Ipw_StopCurrentConversion/13 
+  Calls: 
+Adc_Ip_SetSampleTime/38 (Adc_Ip_SetSampleTime) @0e37e2a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_Ipw_PrepareGroupStart/7 
+  Calls: 
+Adc_Ip_SetAveraging/37 (Adc_Ip_SetAveraging) @0e37e1c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_Ipw_PrepareGroupStart/7 
+  Calls: 
+Adc_Ip_SetTriggerMode/36 (Adc_Ip_SetTriggerMode) @0e37e000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_Ipw_StartNormalConversion/12 
+  Calls: 
+Adc_Ip_GetConvData/35 (Adc_Ip_GetConvData) @0e370540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_Ipw_ReadGroupConvData/1 Adc_Ipw_StopCurrentConversion/13 Adc_Ipw_StartNormalConversion/12 
+  Calls: 
+Pdb_Adc_Ip_DeInit/34 (Pdb_Adc_Ip_DeInit) @0e370d20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_Ipw_DeInit/11 
+  Calls: 
+Adc_Ip_DeInit/33 (Adc_Ip_DeInit) @0e370c40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_Ipw_DeInit/11 
+  Calls: 
+Pdb_Adc_Ip_Init/32 (Pdb_Adc_Ip_Init) @0e370a80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_Ipw_Init/10 
+  Calls: 
+Adc_Ip_Init/31 (Adc_Ip_Init) @0e3709a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_Ipw_Init/10 
+  Calls: 
+Pdb_Adc_Ip_SetAdcPretriggerDelayValue/30 (Pdb_Adc_Ip_SetAdcPretriggerDelayValue) @0e3707e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_Ipw_ConfigurePdbChannels/4 Adc_Ipw_ConfigurePdbChannels/4 Adc_Ipw_ConfigurePdbChannels/4 Adc_Ipw_ConfigurePdbChannels/4 Adc_Ipw_ConfigurePdbChannels/4 
+  Calls: 
+Pdb_Adc_Ip_SwTrigger/29 (Pdb_Adc_Ip_SwTrigger) @0e370460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_Ipw_ConfigurePdbConversion/5 
+  Calls: 
+Pdb_Adc_Ip_ConfigAdcPretriggers/28 (Pdb_Adc_Ip_ConfigAdcPretriggers) @0e370380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_Ipw_ConfigurePdbChannels/4 Adc_Ipw_ConfigurePdbConversion/5 
+  Calls: 
+Pdb_Adc_Ip_LoadRegValues/27 (Pdb_Adc_Ip_LoadRegValues) @0e3702a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_Ipw_ConfigurePdbChannels/4 Adc_Ipw_ConfigurePdbConversion/5 
+  Calls: 
+Pdb_Adc_Ip_SetModulus/26 (Pdb_Adc_Ip_SetModulus) @0e3701c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_Ipw_ConfigurePdbConversion/5 
+  Calls: 
+Pdb_Adc_Ip_SetTriggerInput/25 (Pdb_Adc_Ip_SetTriggerInput) @0e3700e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_Ipw_ConfigurePdbConversion/5 
+  Calls: 
+Pdb_Adc_Ip_Enable/24 (Pdb_Adc_Ip_Enable) @0e370000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_Ipw_ConfigurePdbConversion/5 
+  Calls: 
+Adc_Ip_ConfigChannel/23 (Adc_Ip_ConfigChannel) @0e2df380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_Ipw_ConfigureConversion/9 Adc_Ipw_ConfigureConversion/9 Adc_Ipw_ConfigureConversion/9 
+  Calls: 
+Adc_axGroupStatus/22 (Adc_axGroupStatus) @0e2e29d8
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: Adc_Ipw_ConfigureConversion/9 (read) Adc_Ipw_ConfigurePdbConversion/5 (read) Adc_Ipw_ConfigurePdbConversion/5 (read) Adc_Ipw_ConfigurePdbConversion/5 (write) Adc_Ipw_ConfigurePdbChannels/4 (read) Adc_Ipw_DeInit/11 (write) Adc_Ipw_StartNormalConversion/12 (write) Adc_Ipw_StopCurrentConversion/13 (write) Adc_Ipw_ReadGroup/15 (read) Adc_Ipw_WriteDataBuffer/3 (read) Adc_Ipw_WriteDataBuffer/3 (read) Adc_Ipw_WriteDataBuffer/3 (read) 
+  Availability: not-ready
+  Varpool flags:
+Adc_apxCfgPtr/21 (Adc_apxCfgPtr) @0e2e2990
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: Adc_Ipw_ConfigureConversion/9 (read) Adc_Ipw_ConfigureConversion/9 (read) Adc_Ipw_ConfigureConversion/9 (read) Adc_Ipw_ConfigureConversion/9 (read) Adc_Ipw_ConfigureConversion/9 (read) Adc_Ipw_ConfigurePdbConversion/5 (read) Adc_Ipw_ConfigurePdbChannels/4 (read) Adc_Ipw_DeInit/11 (read) Adc_Ipw_DeInit/11 (read) Adc_Ipw_DeInit/11 (read) Adc_Ipw_DeInit/11 (read) Adc_Ipw_StartNormalConversion/12 (read) Adc_Ipw_StartNormalConversion/12 (read) Adc_Ipw_StartNormalConversion/12 (read) Adc_Ipw_PrepareGroupStart/7 (read) Adc_Ipw_StopCurrentConversion/13 (read) Adc_Ipw_StopConversionCheckTimeout/6 (read) Adc_Ipw_StopConversionCheckTimeout/6 (read) Adc_Ipw_StopConversionCheckTimeout/6 (read) Adc_Ipw_StopConversionCheckTimeout/6 (read) Adc_Ipw_ReadGroup/15 (read) Adc_Ipw_ReadGroup/15 (read) Adc_Ipw_ReadGroupNoInt/2 (read) Adc_Ipw_ReadGroupConvData/1 (read) Adc_Ipw_ReadGroupConvData/1 (read) Adc_Ipw_WriteDataBuffer/3 (read) Adc_Ipw_WriteDataBuffer/3 (read) Adc_Ipw_Calibrate/16 (read) 
+  Availability: not-ready
+  Varpool flags:
+SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_00/20 (SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_00) @0e2dfe00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_Ipw_RemoveFromQueue/0 
+  Calls: 
+Adc_axUnitStatus/19 (Adc_axUnitStatus) @0e2e23f0
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: Adc_Ipw_RemoveFromQueue/0 (read) Adc_Ipw_RemoveFromQueue/0 (write) Adc_Ipw_RemoveFromQueue/0 (read) Adc_Ipw_RemoveFromQueue/0 (write) Adc_Ipw_RemoveFromQueue/0 (read) Adc_Ipw_RemoveFromQueue/0 (write) Adc_Ipw_ConfigureConversion/9 (write) Adc_Ipw_StartNormalConversion/12 (read) Adc_Ipw_StartNormalConversion/12 (read) Adc_Ipw_StartNormalConversion/12 (read) Adc_Ipw_StartNormalConversion/12 (write) Adc_Ipw_StartNormalConversion/12 (read) Adc_Ipw_StopCurrentConversion/13 (read) Adc_Ipw_StopConversionCheckTimeout/6 (read) Adc_Ipw_ReadGroup/15 (read) 
+  Availability: not-ready
+  Varpool flags:
+SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_00/18 (SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_00) @0e2dfc40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_Ipw_RemoveFromQueue/0 
+  Calls: 
+Adc_GetCoreID/17 (Adc_GetCoreID) @0e2df7e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+Adc_Ipw_Calibrate/16 (Adc_Ipw_Calibrate) @0e2df540
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Adc_apxCfgPtr/21 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Adc_Ip_DoCalibration/43 
+Adc_Ipw_ReadGroup/15 (Adc_Ipw_ReadGroup) @0e2df2a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Adc_apxCfgPtr/21 (read) Adc_apxCfgPtr/21 (read) Adc_axUnitStatus/19 (read) Adc_axGroupStatus/22 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Adc_Ipw_WriteDataBuffer/3 Adc_Ipw_ReadGroupNoInt/2 
+Adc_Ipw_CheckValidConversion/14 (Adc_Ipw_CheckValidConversion) @0e2df000
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: Adc_Ipw_ReadGroupNoInt/2 
+  Calls: Adc_Ip_GetConvCompleteFlag/42 
+Adc_Ipw_StopCurrentConversion/13 (Adc_Ipw_StopCurrentConversion) @0e2cba80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Adc_apxCfgPtr/21 (read) Adc_axUnitStatus/19 (read) Adc_axGroupStatus/22 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Adc_Ipw_StopConversionCheckTimeout/6 Adc_Ip_GetConvData/35 Adc_Ip_SetDisabledChannel/39 
+Adc_Ipw_StartNormalConversion/12 (Adc_Ipw_StartNormalConversion) @0e2cb540
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Adc_axUnitStatus/19 (read) Adc_apxCfgPtr/21 (read) Adc_apxCfgPtr/21 (read) Adc_apxCfgPtr/21 (read) Adc_axUnitStatus/19 (read) Adc_axGroupStatus/22 (write) Adc_axUnitStatus/19 (read) Adc_axUnitStatus/19 (write) Adc_axUnitStatus/19 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Adc_Ipw_ConfigureConversion/9 Adc_Ip_SetTriggerMode/36 Adc_Ip_GetConvData/35 Adc_Ipw_PrepareGroupStart/7 
+Adc_Ipw_DeInit/11 (Adc_Ipw_DeInit) @0e2cbee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Adc_apxCfgPtr/21 (read) Adc_apxCfgPtr/21 (read) Adc_apxCfgPtr/21 (read) Adc_axGroupStatus/22 (write) Adc_apxCfgPtr/21 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Pdb_Adc_Ip_DeInit/34 Adc_Ip_DeInit/33 
+Adc_Ipw_Init/10 (Adc_Ipw_Init) @0e2cbc40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Pdb_Adc_Ip_Init/32 Adc_Ip_Init/31 
+Adc_Ipw_ConfigureConversion/9 (Adc_Ipw_ConfigureConversion) @0e2cb9a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Adc_apxCfgPtr/21 (read) Adc_apxCfgPtr/21 (read) Adc_apxCfgPtr/21 (read) Adc_axGroupStatus/22 (read) Adc_apxCfgPtr/21 (read) Adc_apxCfgPtr/21 (read) Adc_axUnitStatus/19 (write) 
+  Referring: 
+  Function flags: body
+  Called by: Adc_Ipw_StartNormalConversion/12 
+  Calls: Adc_Ipw_ConfigurePdbConversion/5 Adc_Ip_ConfigChannel/23 Adc_Ip_ConfigChannel/23 Adc_Ip_ConfigChannel/23 
+Adc_Ipw_CalculateNumsBitShift/8 (Adc_Ipw_CalculateNumsBitShift) @0e2cb700
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: Adc_Ipw_ReadGroupConvData/1 
+  Calls: 
+Adc_Ipw_PrepareGroupStart/7 (Adc_Ipw_PrepareGroupStart) @0e2cb460
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: Adc_apxCfgPtr/21 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Adc_Ipw_StartNormalConversion/12 
+  Calls: Adc_Ip_SetSampleTime/38 Adc_Ip_SetAveraging/37 
+Adc_Ipw_StopConversionCheckTimeout/6 (Adc_Ipw_StopConversionCheckTimeout) @0e2cb1c0
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: Adc_apxCfgPtr/21 (read) Adc_apxCfgPtr/21 (read) Adc_apxCfgPtr/21 (read) Adc_apxCfgPtr/21 (read) Adc_axUnitStatus/19 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Adc_Ipw_StopCurrentConversion/13 
+  Calls: Adc_Ip_SetDisabledChannel/39 Adc_Ip_SetContinuousMode/41 Pdb_Adc_Ip_DisableAndClearPdb/40 
+Adc_Ipw_ConfigurePdbConversion/5 (Adc_Ipw_ConfigurePdbConversion) @0e1d3ee0
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: Adc_apxCfgPtr/21 (read) Adc_axGroupStatus/22 (read) Adc_axGroupStatus/22 (read) Adc_axGroupStatus/22 (write) 
+  Referring: 
+  Function flags: body
+  Called by: Adc_Ipw_ConfigureConversion/9 
+  Calls: Pdb_Adc_Ip_SwTrigger/29 Pdb_Adc_Ip_ConfigAdcPretriggers/28 Pdb_Adc_Ip_LoadRegValues/27 Pdb_Adc_Ip_SetModulus/26 Adc_Ipw_ConfigurePdbChannels/4 Pdb_Adc_Ip_SetTriggerInput/25 Pdb_Adc_Ip_Enable/24 
+Adc_Ipw_ConfigurePdbChannels/4 (Adc_Ipw_ConfigurePdbChannels) @0e1d39a0
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: Adc_axGroupStatus/22 (read) Adc_apxCfgPtr/21 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Adc_Ipw_ConfigurePdbConversion/5 
+  Calls: Pdb_Adc_Ip_ConfigAdcPretriggers/28 Pdb_Adc_Ip_LoadRegValues/27 Pdb_Adc_Ip_SetAdcPretriggerDelayValue/30 Pdb_Adc_Ip_SetAdcPretriggerDelayValue/30 Pdb_Adc_Ip_SetAdcPretriggerDelayValue/30 Pdb_Adc_Ip_SetAdcPretriggerDelayValue/30 Pdb_Adc_Ip_SetAdcPretriggerDelayValue/30 
+Adc_Ipw_WriteDataBuffer/3 (Adc_Ipw_WriteDataBuffer) @0e1d3e00
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: Adc_apxCfgPtr/21 (read) Adc_apxCfgPtr/21 (read) Adc_axGroupStatus/22 (read) Adc_axGroupStatus/22 (read) Adc_axGroupStatus/22 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Adc_Ipw_ReadGroup/15 
+  Calls: 
+Adc_Ipw_ReadGroupNoInt/2 (Adc_Ipw_ReadGroupNoInt) @0e1d3b60
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: Adc_apxCfgPtr/21 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Adc_Ipw_ReadGroup/15 
+  Calls: Adc_Ipw_ReadGroupConvData/1 Adc_Ipw_CheckValidConversion/14 
+Adc_Ipw_ReadGroupConvData/1 (Adc_Ipw_ReadGroupConvData) @0e1d38c0
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: Adc_apxCfgPtr/21 (read) Adc_apxCfgPtr/21 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Adc_Ipw_ReadGroupNoInt/2 
+  Calls: Adc_Ip_GetConvData/35 Adc_Ipw_CalculateNumsBitShift/8 
+Adc_Ipw_RemoveFromQueue/0 (Adc_Ipw_RemoveFromQueue) @0e1d3620
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Adc_axUnitStatus/19 (read) Adc_axUnitStatus/19 (write) Adc_axUnitStatus/19 (read) Adc_axUnitStatus/19 (write) Adc_axUnitStatus/19 (read) Adc_axUnitStatus/19 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_00/20 SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_00/18 
+
+
+Initial Symbol table:
+
+Adc_Ip_DoCalibration/43 (Adc_Ip_DoCalibration) @0e665000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_Ipw_Calibrate/16 
+  Calls: 
+Adc_Ip_GetConvCompleteFlag/42 (Adc_Ip_GetConvCompleteFlag) @0e37e9a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_Ipw_CheckValidConversion/14 
+  Calls: 
+Adc_Ip_SetContinuousMode/41 (Adc_Ip_SetContinuousMode) @0e37e700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_Ipw_StopConversionCheckTimeout/6 
+  Calls: 
+Pdb_Adc_Ip_DisableAndClearPdb/40 (Pdb_Adc_Ip_DisableAndClearPdb) @0e37e620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_Ipw_StopConversionCheckTimeout/6 
+  Calls: 
+Adc_Ip_SetDisabledChannel/39 (Adc_Ip_SetDisabledChannel) @0e37e460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_Ipw_StopConversionCheckTimeout/6 Adc_Ipw_StopCurrentConversion/13 
+  Calls: 
+Adc_Ip_SetSampleTime/38 (Adc_Ip_SetSampleTime) @0e37e2a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_Ipw_PrepareGroupStart/7 
+  Calls: 
+Adc_Ip_SetAveraging/37 (Adc_Ip_SetAveraging) @0e37e1c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_Ipw_PrepareGroupStart/7 
+  Calls: 
+Adc_Ip_SetTriggerMode/36 (Adc_Ip_SetTriggerMode) @0e37e000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_Ipw_StartNormalConversion/12 
+  Calls: 
+Adc_Ip_GetConvData/35 (Adc_Ip_GetConvData) @0e370540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_Ipw_ReadGroupConvData/1 Adc_Ipw_StopCurrentConversion/13 Adc_Ipw_StartNormalConversion/12 
+  Calls: 
+Pdb_Adc_Ip_DeInit/34 (Pdb_Adc_Ip_DeInit) @0e370d20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_Ipw_DeInit/11 
+  Calls: 
+Adc_Ip_DeInit/33 (Adc_Ip_DeInit) @0e370c40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_Ipw_DeInit/11 
+  Calls: 
+Pdb_Adc_Ip_Init/32 (Pdb_Adc_Ip_Init) @0e370a80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_Ipw_Init/10 
+  Calls: 
+Adc_Ip_Init/31 (Adc_Ip_Init) @0e3709a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_Ipw_Init/10 
+  Calls: 
+Pdb_Adc_Ip_SetAdcPretriggerDelayValue/30 (Pdb_Adc_Ip_SetAdcPretriggerDelayValue) @0e3707e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_Ipw_ConfigurePdbChannels/4 Adc_Ipw_ConfigurePdbChannels/4 Adc_Ipw_ConfigurePdbChannels/4 Adc_Ipw_ConfigurePdbChannels/4 Adc_Ipw_ConfigurePdbChannels/4 
+  Calls: 
+Pdb_Adc_Ip_SwTrigger/29 (Pdb_Adc_Ip_SwTrigger) @0e370460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_Ipw_ConfigurePdbConversion/5 
+  Calls: 
+Pdb_Adc_Ip_ConfigAdcPretriggers/28 (Pdb_Adc_Ip_ConfigAdcPretriggers) @0e370380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_Ipw_ConfigurePdbChannels/4 Adc_Ipw_ConfigurePdbConversion/5 
+  Calls: 
+Pdb_Adc_Ip_LoadRegValues/27 (Pdb_Adc_Ip_LoadRegValues) @0e3702a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_Ipw_ConfigurePdbChannels/4 Adc_Ipw_ConfigurePdbConversion/5 
+  Calls: 
+Pdb_Adc_Ip_SetModulus/26 (Pdb_Adc_Ip_SetModulus) @0e3701c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_Ipw_ConfigurePdbConversion/5 
+  Calls: 
+Pdb_Adc_Ip_SetTriggerInput/25 (Pdb_Adc_Ip_SetTriggerInput) @0e3700e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_Ipw_ConfigurePdbConversion/5 
+  Calls: 
+Pdb_Adc_Ip_Enable/24 (Pdb_Adc_Ip_Enable) @0e370000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_Ipw_ConfigurePdbConversion/5 
+  Calls: 
+Adc_Ip_ConfigChannel/23 (Adc_Ip_ConfigChannel) @0e2df380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_Ipw_ConfigureConversion/9 Adc_Ipw_ConfigureConversion/9 Adc_Ipw_ConfigureConversion/9 
+  Calls: 
+Adc_axGroupStatus/22 (Adc_axGroupStatus) @0e2e29d8
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: Adc_Ipw_ConfigureConversion/9 (read) Adc_Ipw_ConfigurePdbConversion/5 (read) Adc_Ipw_ConfigurePdbConversion/5 (read) Adc_Ipw_ConfigurePdbConversion/5 (write) Adc_Ipw_ConfigurePdbChannels/4 (read) Adc_Ipw_DeInit/11 (write) Adc_Ipw_StartNormalConversion/12 (write) Adc_Ipw_StopCurrentConversion/13 (write) Adc_Ipw_ReadGroup/15 (read) Adc_Ipw_WriteDataBuffer/3 (read) Adc_Ipw_WriteDataBuffer/3 (read) Adc_Ipw_WriteDataBuffer/3 (read) 
+  Availability: not-ready
+  Varpool flags:
+Adc_apxCfgPtr/21 (Adc_apxCfgPtr) @0e2e2990
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: Adc_Ipw_ConfigureConversion/9 (read) Adc_Ipw_ConfigureConversion/9 (read) Adc_Ipw_ConfigureConversion/9 (read) Adc_Ipw_ConfigureConversion/9 (read) Adc_Ipw_ConfigureConversion/9 (read) Adc_Ipw_ConfigurePdbConversion/5 (read) Adc_Ipw_ConfigurePdbChannels/4 (read) Adc_Ipw_DeInit/11 (read) Adc_Ipw_DeInit/11 (read) Adc_Ipw_DeInit/11 (read) Adc_Ipw_DeInit/11 (read) Adc_Ipw_StartNormalConversion/12 (read) Adc_Ipw_StartNormalConversion/12 (read) Adc_Ipw_StartNormalConversion/12 (read) Adc_Ipw_PrepareGroupStart/7 (read) Adc_Ipw_StopCurrentConversion/13 (read) Adc_Ipw_StopConversionCheckTimeout/6 (read) Adc_Ipw_StopConversionCheckTimeout/6 (read) Adc_Ipw_StopConversionCheckTimeout/6 (read) Adc_Ipw_StopConversionCheckTimeout/6 (read) Adc_Ipw_ReadGroup/15 (read) Adc_Ipw_ReadGroup/15 (read) Adc_Ipw_ReadGroupNoInt/2 (read) Adc_Ipw_ReadGroupConvData/1 (read) Adc_Ipw_ReadGroupConvData/1 (read) Adc_Ipw_WriteDataBuffer/3 (read) Adc_Ipw_WriteDataBuffer/3 (read) Adc_Ipw_Calibrate/16 (read) 
+  Availability: not-ready
+  Varpool flags:
+SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_00/20 (SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_00) @0e2dfe00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_Ipw_RemoveFromQueue/0 
+  Calls: 
+Adc_axUnitStatus/19 (Adc_axUnitStatus) @0e2e23f0
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: Adc_Ipw_RemoveFromQueue/0 (read) Adc_Ipw_RemoveFromQueue/0 (write) Adc_Ipw_RemoveFromQueue/0 (read) Adc_Ipw_RemoveFromQueue/0 (write) Adc_Ipw_RemoveFromQueue/0 (read) Adc_Ipw_RemoveFromQueue/0 (write) Adc_Ipw_ConfigureConversion/9 (write) Adc_Ipw_StartNormalConversion/12 (read) Adc_Ipw_StartNormalConversion/12 (read) Adc_Ipw_StartNormalConversion/12 (read) Adc_Ipw_StartNormalConversion/12 (write) Adc_Ipw_StartNormalConversion/12 (read) Adc_Ipw_StopCurrentConversion/13 (read) Adc_Ipw_StopConversionCheckTimeout/6 (read) Adc_Ipw_ReadGroup/15 (read) 
+  Availability: not-ready
+  Varpool flags:
+SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_00/18 (SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_00) @0e2dfc40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_Ipw_RemoveFromQueue/0 
+  Calls: 
+Adc_GetCoreID/17 (Adc_GetCoreID) @0e2df7e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+Adc_Ipw_Calibrate/16 (Adc_Ipw_Calibrate) @0e2df540
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Adc_apxCfgPtr/21 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Adc_Ip_DoCalibration/43 
+Adc_Ipw_ReadGroup/15 (Adc_Ipw_ReadGroup) @0e2df2a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Adc_apxCfgPtr/21 (read) Adc_apxCfgPtr/21 (read) Adc_axUnitStatus/19 (read) Adc_axGroupStatus/22 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Adc_Ipw_WriteDataBuffer/3 Adc_Ipw_ReadGroupNoInt/2 
+Adc_Ipw_CheckValidConversion/14 (Adc_Ipw_CheckValidConversion) @0e2df000
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: Adc_Ipw_ReadGroupNoInt/2 
+  Calls: Adc_Ip_GetConvCompleteFlag/42 
+Adc_Ipw_StopCurrentConversion/13 (Adc_Ipw_StopCurrentConversion) @0e2cba80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Adc_apxCfgPtr/21 (read) Adc_axUnitStatus/19 (read) Adc_axGroupStatus/22 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Adc_Ipw_StopConversionCheckTimeout/6 Adc_Ip_GetConvData/35 Adc_Ip_SetDisabledChannel/39 
+Adc_Ipw_StartNormalConversion/12 (Adc_Ipw_StartNormalConversion) @0e2cb540
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Adc_axUnitStatus/19 (read) Adc_apxCfgPtr/21 (read) Adc_apxCfgPtr/21 (read) Adc_apxCfgPtr/21 (read) Adc_axUnitStatus/19 (read) Adc_axGroupStatus/22 (write) Adc_axUnitStatus/19 (read) Adc_axUnitStatus/19 (write) Adc_axUnitStatus/19 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Adc_Ipw_ConfigureConversion/9 Adc_Ip_SetTriggerMode/36 Adc_Ip_GetConvData/35 Adc_Ipw_PrepareGroupStart/7 
+Adc_Ipw_DeInit/11 (Adc_Ipw_DeInit) @0e2cbee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Adc_apxCfgPtr/21 (read) Adc_apxCfgPtr/21 (read) Adc_apxCfgPtr/21 (read) Adc_axGroupStatus/22 (write) Adc_apxCfgPtr/21 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Pdb_Adc_Ip_DeInit/34 Adc_Ip_DeInit/33 
+Adc_Ipw_Init/10 (Adc_Ipw_Init) @0e2cbc40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Pdb_Adc_Ip_Init/32 Adc_Ip_Init/31 
+Adc_Ipw_ConfigureConversion/9 (Adc_Ipw_ConfigureConversion) @0e2cb9a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Adc_apxCfgPtr/21 (read) Adc_apxCfgPtr/21 (read) Adc_apxCfgPtr/21 (read) Adc_axGroupStatus/22 (read) Adc_apxCfgPtr/21 (read) Adc_apxCfgPtr/21 (read) Adc_axUnitStatus/19 (write) 
+  Referring: 
+  Function flags: body
+  Called by: Adc_Ipw_StartNormalConversion/12 
+  Calls: Adc_Ipw_ConfigurePdbConversion/5 Adc_Ip_ConfigChannel/23 Adc_Ip_ConfigChannel/23 Adc_Ip_ConfigChannel/23 
+Adc_Ipw_CalculateNumsBitShift/8 (Adc_Ipw_CalculateNumsBitShift) @0e2cb700
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: Adc_Ipw_ReadGroupConvData/1 
+  Calls: 
+Adc_Ipw_PrepareGroupStart/7 (Adc_Ipw_PrepareGroupStart) @0e2cb460
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: Adc_apxCfgPtr/21 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Adc_Ipw_StartNormalConversion/12 
+  Calls: Adc_Ip_SetSampleTime/38 Adc_Ip_SetAveraging/37 
+Adc_Ipw_StopConversionCheckTimeout/6 (Adc_Ipw_StopConversionCheckTimeout) @0e2cb1c0
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: Adc_apxCfgPtr/21 (read) Adc_apxCfgPtr/21 (read) Adc_apxCfgPtr/21 (read) Adc_apxCfgPtr/21 (read) Adc_axUnitStatus/19 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Adc_Ipw_StopCurrentConversion/13 
+  Calls: Adc_Ip_SetDisabledChannel/39 Adc_Ip_SetContinuousMode/41 Pdb_Adc_Ip_DisableAndClearPdb/40 
+Adc_Ipw_ConfigurePdbConversion/5 (Adc_Ipw_ConfigurePdbConversion) @0e1d3ee0
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: Adc_apxCfgPtr/21 (read) Adc_axGroupStatus/22 (read) Adc_axGroupStatus/22 (read) Adc_axGroupStatus/22 (write) 
+  Referring: 
+  Function flags: body
+  Called by: Adc_Ipw_ConfigureConversion/9 
+  Calls: Pdb_Adc_Ip_SwTrigger/29 Pdb_Adc_Ip_ConfigAdcPretriggers/28 Pdb_Adc_Ip_LoadRegValues/27 Pdb_Adc_Ip_SetModulus/26 Adc_Ipw_ConfigurePdbChannels/4 Pdb_Adc_Ip_SetTriggerInput/25 Pdb_Adc_Ip_Enable/24 
+Adc_Ipw_ConfigurePdbChannels/4 (Adc_Ipw_ConfigurePdbChannels) @0e1d39a0
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: Adc_axGroupStatus/22 (read) Adc_apxCfgPtr/21 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Adc_Ipw_ConfigurePdbConversion/5 
+  Calls: Pdb_Adc_Ip_ConfigAdcPretriggers/28 Pdb_Adc_Ip_LoadRegValues/27 Pdb_Adc_Ip_SetAdcPretriggerDelayValue/30 Pdb_Adc_Ip_SetAdcPretriggerDelayValue/30 Pdb_Adc_Ip_SetAdcPretriggerDelayValue/30 Pdb_Adc_Ip_SetAdcPretriggerDelayValue/30 Pdb_Adc_Ip_SetAdcPretriggerDelayValue/30 
+Adc_Ipw_WriteDataBuffer/3 (Adc_Ipw_WriteDataBuffer) @0e1d3e00
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: Adc_apxCfgPtr/21 (read) Adc_apxCfgPtr/21 (read) Adc_axGroupStatus/22 (read) Adc_axGroupStatus/22 (read) Adc_axGroupStatus/22 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Adc_Ipw_ReadGroup/15 
+  Calls: 
+Adc_Ipw_ReadGroupNoInt/2 (Adc_Ipw_ReadGroupNoInt) @0e1d3b60
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: Adc_apxCfgPtr/21 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Adc_Ipw_ReadGroup/15 
+  Calls: Adc_Ipw_ReadGroupConvData/1 Adc_Ipw_CheckValidConversion/14 
+Adc_Ipw_ReadGroupConvData/1 (Adc_Ipw_ReadGroupConvData) @0e1d38c0
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: Adc_apxCfgPtr/21 (read) Adc_apxCfgPtr/21 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Adc_Ipw_ReadGroupNoInt/2 
+  Calls: Adc_Ip_GetConvData/35 Adc_Ipw_CalculateNumsBitShift/8 
+Adc_Ipw_RemoveFromQueue/0 (Adc_Ipw_RemoveFromQueue) @0e1d3620
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Adc_axUnitStatus/19 (read) Adc_axUnitStatus/19 (write) Adc_axUnitStatus/19 (read) Adc_axUnitStatus/19 (write) Adc_axUnitStatus/19 (read) Adc_axUnitStatus/19 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_00/20 SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_00/18 
+
+Removing unused symbols:
+
+Reclaimed Symbol table:
+
+Adc_Ip_DoCalibration/43 (Adc_Ip_DoCalibration) @0e665000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_Ipw_Calibrate/16 
+  Calls: 
+Adc_Ip_GetConvCompleteFlag/42 (Adc_Ip_GetConvCompleteFlag) @0e37e9a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_Ipw_CheckValidConversion/14 
+  Calls: 
+Adc_Ip_SetContinuousMode/41 (Adc_Ip_SetContinuousMode) @0e37e700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_Ipw_StopConversionCheckTimeout/6 
+  Calls: 
+Pdb_Adc_Ip_DisableAndClearPdb/40 (Pdb_Adc_Ip_DisableAndClearPdb) @0e37e620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_Ipw_StopConversionCheckTimeout/6 
+  Calls: 
+Adc_Ip_SetDisabledChannel/39 (Adc_Ip_SetDisabledChannel) @0e37e460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_Ipw_StopConversionCheckTimeout/6 Adc_Ipw_StopCurrentConversion/13 
+  Calls: 
+Adc_Ip_SetSampleTime/38 (Adc_Ip_SetSampleTime) @0e37e2a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_Ipw_PrepareGroupStart/7 
+  Calls: 
+Adc_Ip_SetAveraging/37 (Adc_Ip_SetAveraging) @0e37e1c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_Ipw_PrepareGroupStart/7 
+  Calls: 
+Adc_Ip_SetTriggerMode/36 (Adc_Ip_SetTriggerMode) @0e37e000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_Ipw_StartNormalConversion/12 
+  Calls: 
+Adc_Ip_GetConvData/35 (Adc_Ip_GetConvData) @0e370540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_Ipw_ReadGroupConvData/1 Adc_Ipw_StopCurrentConversion/13 Adc_Ipw_StartNormalConversion/12 
+  Calls: 
+Pdb_Adc_Ip_DeInit/34 (Pdb_Adc_Ip_DeInit) @0e370d20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_Ipw_DeInit/11 
+  Calls: 
+Adc_Ip_DeInit/33 (Adc_Ip_DeInit) @0e370c40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_Ipw_DeInit/11 
+  Calls: 
+Pdb_Adc_Ip_Init/32 (Pdb_Adc_Ip_Init) @0e370a80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_Ipw_Init/10 
+  Calls: 
+Adc_Ip_Init/31 (Adc_Ip_Init) @0e3709a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_Ipw_Init/10 
+  Calls: 
+Pdb_Adc_Ip_SetAdcPretriggerDelayValue/30 (Pdb_Adc_Ip_SetAdcPretriggerDelayValue) @0e3707e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_Ipw_ConfigurePdbChannels/4 Adc_Ipw_ConfigurePdbChannels/4 Adc_Ipw_ConfigurePdbChannels/4 Adc_Ipw_ConfigurePdbChannels/4 Adc_Ipw_ConfigurePdbChannels/4 
+  Calls: 
+Pdb_Adc_Ip_SwTrigger/29 (Pdb_Adc_Ip_SwTrigger) @0e370460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_Ipw_ConfigurePdbConversion/5 
+  Calls: 
+Pdb_Adc_Ip_ConfigAdcPretriggers/28 (Pdb_Adc_Ip_ConfigAdcPretriggers) @0e370380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_Ipw_ConfigurePdbChannels/4 Adc_Ipw_ConfigurePdbConversion/5 
+  Calls: 
+Pdb_Adc_Ip_LoadRegValues/27 (Pdb_Adc_Ip_LoadRegValues) @0e3702a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_Ipw_ConfigurePdbChannels/4 Adc_Ipw_ConfigurePdbConversion/5 
+  Calls: 
+Pdb_Adc_Ip_SetModulus/26 (Pdb_Adc_Ip_SetModulus) @0e3701c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_Ipw_ConfigurePdbConversion/5 
+  Calls: 
+Pdb_Adc_Ip_SetTriggerInput/25 (Pdb_Adc_Ip_SetTriggerInput) @0e3700e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_Ipw_ConfigurePdbConversion/5 
+  Calls: 
+Pdb_Adc_Ip_Enable/24 (Pdb_Adc_Ip_Enable) @0e370000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_Ipw_ConfigurePdbConversion/5 
+  Calls: 
+Adc_Ip_ConfigChannel/23 (Adc_Ip_ConfigChannel) @0e2df380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_Ipw_ConfigureConversion/9 Adc_Ipw_ConfigureConversion/9 Adc_Ipw_ConfigureConversion/9 
+  Calls: 
+Adc_axGroupStatus/22 (Adc_axGroupStatus) @0e2e29d8
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: Adc_Ipw_ConfigureConversion/9 (read) Adc_Ipw_ConfigurePdbConversion/5 (read) Adc_Ipw_ConfigurePdbConversion/5 (read) Adc_Ipw_ConfigurePdbConversion/5 (write) Adc_Ipw_ConfigurePdbChannels/4 (read) Adc_Ipw_DeInit/11 (write) Adc_Ipw_StartNormalConversion/12 (write) Adc_Ipw_StopCurrentConversion/13 (write) Adc_Ipw_ReadGroup/15 (read) Adc_Ipw_WriteDataBuffer/3 (read) Adc_Ipw_WriteDataBuffer/3 (read) Adc_Ipw_WriteDataBuffer/3 (read) 
+  Availability: not-ready
+  Varpool flags:
+Adc_apxCfgPtr/21 (Adc_apxCfgPtr) @0e2e2990
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: Adc_Ipw_ConfigureConversion/9 (read) Adc_Ipw_ConfigureConversion/9 (read) Adc_Ipw_ConfigureConversion/9 (read) Adc_Ipw_ConfigureConversion/9 (read) Adc_Ipw_ConfigureConversion/9 (read) Adc_Ipw_ConfigurePdbConversion/5 (read) Adc_Ipw_ConfigurePdbChannels/4 (read) Adc_Ipw_DeInit/11 (read) Adc_Ipw_DeInit/11 (read) Adc_Ipw_DeInit/11 (read) Adc_Ipw_DeInit/11 (read) Adc_Ipw_StartNormalConversion/12 (read) Adc_Ipw_StartNormalConversion/12 (read) Adc_Ipw_StartNormalConversion/12 (read) Adc_Ipw_PrepareGroupStart/7 (read) Adc_Ipw_StopCurrentConversion/13 (read) Adc_Ipw_StopConversionCheckTimeout/6 (read) Adc_Ipw_StopConversionCheckTimeout/6 (read) Adc_Ipw_StopConversionCheckTimeout/6 (read) Adc_Ipw_StopConversionCheckTimeout/6 (read) Adc_Ipw_ReadGroup/15 (read) Adc_Ipw_ReadGroup/15 (read) Adc_Ipw_ReadGroupNoInt/2 (read) Adc_Ipw_ReadGroupConvData/1 (read) Adc_Ipw_ReadGroupConvData/1 (read) Adc_Ipw_WriteDataBuffer/3 (read) Adc_Ipw_WriteDataBuffer/3 (read) Adc_Ipw_Calibrate/16 (read) 
+  Availability: not-ready
+  Varpool flags:
+SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_00/20 (SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_00) @0e2dfe00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_Ipw_RemoveFromQueue/0 
+  Calls: 
+Adc_axUnitStatus/19 (Adc_axUnitStatus) @0e2e23f0
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: Adc_Ipw_RemoveFromQueue/0 (read) Adc_Ipw_RemoveFromQueue/0 (write) Adc_Ipw_RemoveFromQueue/0 (read) Adc_Ipw_RemoveFromQueue/0 (write) Adc_Ipw_RemoveFromQueue/0 (read) Adc_Ipw_RemoveFromQueue/0 (write) Adc_Ipw_ConfigureConversion/9 (write) Adc_Ipw_StartNormalConversion/12 (read) Adc_Ipw_StartNormalConversion/12 (read) Adc_Ipw_StartNormalConversion/12 (read) Adc_Ipw_StartNormalConversion/12 (write) Adc_Ipw_StartNormalConversion/12 (read) Adc_Ipw_StopCurrentConversion/13 (read) Adc_Ipw_StopConversionCheckTimeout/6 (read) Adc_Ipw_ReadGroup/15 (read) 
+  Availability: not-ready
+  Varpool flags:
+SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_00/18 (SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_00) @0e2dfc40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_Ipw_RemoveFromQueue/0 
+  Calls: 
+Adc_GetCoreID/17 (Adc_GetCoreID) @0e2df7e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+Adc_Ipw_Calibrate/16 (Adc_Ipw_Calibrate) @0e2df540
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Adc_apxCfgPtr/21 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Adc_Ip_DoCalibration/43 
+Adc_Ipw_ReadGroup/15 (Adc_Ipw_ReadGroup) @0e2df2a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Adc_apxCfgPtr/21 (read) Adc_apxCfgPtr/21 (read) Adc_axUnitStatus/19 (read) Adc_axGroupStatus/22 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Adc_Ipw_WriteDataBuffer/3 Adc_Ipw_ReadGroupNoInt/2 
+Adc_Ipw_CheckValidConversion/14 (Adc_Ipw_CheckValidConversion) @0e2df000
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: Adc_Ipw_ReadGroupNoInt/2 
+  Calls: Adc_Ip_GetConvCompleteFlag/42 
+Adc_Ipw_StopCurrentConversion/13 (Adc_Ipw_StopCurrentConversion) @0e2cba80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Adc_apxCfgPtr/21 (read) Adc_axUnitStatus/19 (read) Adc_axGroupStatus/22 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Adc_Ipw_StopConversionCheckTimeout/6 Adc_Ip_GetConvData/35 Adc_Ip_SetDisabledChannel/39 
+Adc_Ipw_StartNormalConversion/12 (Adc_Ipw_StartNormalConversion) @0e2cb540
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Adc_axUnitStatus/19 (read) Adc_apxCfgPtr/21 (read) Adc_apxCfgPtr/21 (read) Adc_apxCfgPtr/21 (read) Adc_axUnitStatus/19 (read) Adc_axGroupStatus/22 (write) Adc_axUnitStatus/19 (read) Adc_axUnitStatus/19 (write) Adc_axUnitStatus/19 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Adc_Ipw_ConfigureConversion/9 Adc_Ip_SetTriggerMode/36 Adc_Ip_GetConvData/35 Adc_Ipw_PrepareGroupStart/7 
+Adc_Ipw_DeInit/11 (Adc_Ipw_DeInit) @0e2cbee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Adc_apxCfgPtr/21 (read) Adc_apxCfgPtr/21 (read) Adc_apxCfgPtr/21 (read) Adc_axGroupStatus/22 (write) Adc_apxCfgPtr/21 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Pdb_Adc_Ip_DeInit/34 Adc_Ip_DeInit/33 
+Adc_Ipw_Init/10 (Adc_Ipw_Init) @0e2cbc40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Pdb_Adc_Ip_Init/32 Adc_Ip_Init/31 
+Adc_Ipw_ConfigureConversion/9 (Adc_Ipw_ConfigureConversion) @0e2cb9a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Adc_apxCfgPtr/21 (read) Adc_apxCfgPtr/21 (read) Adc_apxCfgPtr/21 (read) Adc_axGroupStatus/22 (read) Adc_apxCfgPtr/21 (read) Adc_apxCfgPtr/21 (read) Adc_axUnitStatus/19 (write) 
+  Referring: 
+  Function flags: body
+  Called by: Adc_Ipw_StartNormalConversion/12 
+  Calls: Adc_Ipw_ConfigurePdbConversion/5 Adc_Ip_ConfigChannel/23 Adc_Ip_ConfigChannel/23 Adc_Ip_ConfigChannel/23 
+Adc_Ipw_CalculateNumsBitShift/8 (Adc_Ipw_CalculateNumsBitShift) @0e2cb700
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: Adc_Ipw_ReadGroupConvData/1 
+  Calls: 
+Adc_Ipw_PrepareGroupStart/7 (Adc_Ipw_PrepareGroupStart) @0e2cb460
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: Adc_apxCfgPtr/21 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Adc_Ipw_StartNormalConversion/12 
+  Calls: Adc_Ip_SetSampleTime/38 Adc_Ip_SetAveraging/37 
+Adc_Ipw_StopConversionCheckTimeout/6 (Adc_Ipw_StopConversionCheckTimeout) @0e2cb1c0
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: Adc_apxCfgPtr/21 (read) Adc_apxCfgPtr/21 (read) Adc_apxCfgPtr/21 (read) Adc_apxCfgPtr/21 (read) Adc_axUnitStatus/19 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Adc_Ipw_StopCurrentConversion/13 
+  Calls: Adc_Ip_SetDisabledChannel/39 Adc_Ip_SetContinuousMode/41 Pdb_Adc_Ip_DisableAndClearPdb/40 
+Adc_Ipw_ConfigurePdbConversion/5 (Adc_Ipw_ConfigurePdbConversion) @0e1d3ee0
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: Adc_apxCfgPtr/21 (read) Adc_axGroupStatus/22 (read) Adc_axGroupStatus/22 (read) Adc_axGroupStatus/22 (write) 
+  Referring: 
+  Function flags: body
+  Called by: Adc_Ipw_ConfigureConversion/9 
+  Calls: Pdb_Adc_Ip_SwTrigger/29 Pdb_Adc_Ip_ConfigAdcPretriggers/28 Pdb_Adc_Ip_LoadRegValues/27 Pdb_Adc_Ip_SetModulus/26 Adc_Ipw_ConfigurePdbChannels/4 Pdb_Adc_Ip_SetTriggerInput/25 Pdb_Adc_Ip_Enable/24 
+Adc_Ipw_ConfigurePdbChannels/4 (Adc_Ipw_ConfigurePdbChannels) @0e1d39a0
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: Adc_axGroupStatus/22 (read) Adc_apxCfgPtr/21 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Adc_Ipw_ConfigurePdbConversion/5 
+  Calls: Pdb_Adc_Ip_ConfigAdcPretriggers/28 Pdb_Adc_Ip_LoadRegValues/27 Pdb_Adc_Ip_SetAdcPretriggerDelayValue/30 Pdb_Adc_Ip_SetAdcPretriggerDelayValue/30 Pdb_Adc_Ip_SetAdcPretriggerDelayValue/30 Pdb_Adc_Ip_SetAdcPretriggerDelayValue/30 Pdb_Adc_Ip_SetAdcPretriggerDelayValue/30 
+Adc_Ipw_WriteDataBuffer/3 (Adc_Ipw_WriteDataBuffer) @0e1d3e00
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: Adc_apxCfgPtr/21 (read) Adc_apxCfgPtr/21 (read) Adc_axGroupStatus/22 (read) Adc_axGroupStatus/22 (read) Adc_axGroupStatus/22 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Adc_Ipw_ReadGroup/15 
+  Calls: 
+Adc_Ipw_ReadGroupNoInt/2 (Adc_Ipw_ReadGroupNoInt) @0e1d3b60
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: Adc_apxCfgPtr/21 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Adc_Ipw_ReadGroup/15 
+  Calls: Adc_Ipw_ReadGroupConvData/1 Adc_Ipw_CheckValidConversion/14 
+Adc_Ipw_ReadGroupConvData/1 (Adc_Ipw_ReadGroupConvData) @0e1d38c0
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: Adc_apxCfgPtr/21 (read) Adc_apxCfgPtr/21 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Adc_Ipw_ReadGroupNoInt/2 
+  Calls: Adc_Ip_GetConvData/35 Adc_Ipw_CalculateNumsBitShift/8 
+Adc_Ipw_RemoveFromQueue/0 (Adc_Ipw_RemoveFromQueue) @0e1d3620
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Adc_axUnitStatus/19 (read) Adc_axUnitStatus/19 (write) Adc_axUnitStatus/19 (read) Adc_axUnitStatus/19 (write) Adc_axUnitStatus/19 (read) Adc_axUnitStatus/19 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_00/20 SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_00/18 
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+Optimized Symbol table:
+
+Adc_Ip_DoCalibration/43 (Adc_Ip_DoCalibration) @0e665000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Adc_Ipw_Calibrate/16 
+  Calls: 
+Adc_Ip_GetConvCompleteFlag/42 (Adc_Ip_GetConvCompleteFlag) @0e37e9a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Adc_Ipw_CheckValidConversion/14 
+  Calls: 
+Adc_Ip_SetContinuousMode/41 (Adc_Ip_SetContinuousMode) @0e37e700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Adc_Ipw_StopConversionCheckTimeout/6 
+  Calls: 
+Pdb_Adc_Ip_DisableAndClearPdb/40 (Pdb_Adc_Ip_DisableAndClearPdb) @0e37e620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Adc_Ipw_StopConversionCheckTimeout/6 
+  Calls: 
+Adc_Ip_SetDisabledChannel/39 (Adc_Ip_SetDisabledChannel) @0e37e460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Adc_Ipw_StopCurrentConversion/13 Adc_Ipw_StopConversionCheckTimeout/6 
+  Calls: 
+Adc_Ip_SetSampleTime/38 (Adc_Ip_SetSampleTime) @0e37e2a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Adc_Ipw_PrepareGroupStart/7 
+  Calls: 
+Adc_Ip_SetAveraging/37 (Adc_Ip_SetAveraging) @0e37e1c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Adc_Ipw_PrepareGroupStart/7 
+  Calls: 
+Adc_Ip_SetTriggerMode/36 (Adc_Ip_SetTriggerMode) @0e37e000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Adc_Ipw_StartNormalConversion/12 
+  Calls: 
+Adc_Ip_GetConvData/35 (Adc_Ip_GetConvData) @0e370540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Adc_Ipw_StopCurrentConversion/13 Adc_Ipw_StartNormalConversion/12 Adc_Ipw_ReadGroupConvData/1 
+  Calls: 
+Pdb_Adc_Ip_DeInit/34 (Pdb_Adc_Ip_DeInit) @0e370d20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Adc_Ipw_DeInit/11 
+  Calls: 
+Adc_Ip_DeInit/33 (Adc_Ip_DeInit) @0e370c40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Adc_Ipw_DeInit/11 
+  Calls: 
+Pdb_Adc_Ip_Init/32 (Pdb_Adc_Ip_Init) @0e370a80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Adc_Ipw_Init/10 
+  Calls: 
+Adc_Ip_Init/31 (Adc_Ip_Init) @0e3709a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Adc_Ipw_Init/10 
+  Calls: 
+Pdb_Adc_Ip_SetAdcPretriggerDelayValue/30 (Pdb_Adc_Ip_SetAdcPretriggerDelayValue) @0e3707e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Adc_Ipw_ConfigurePdbChannels/4 Adc_Ipw_ConfigurePdbChannels/4 Adc_Ipw_ConfigurePdbChannels/4 Adc_Ipw_ConfigurePdbChannels/4 Adc_Ipw_ConfigurePdbChannels/4 
+  Calls: 
+Pdb_Adc_Ip_SwTrigger/29 (Pdb_Adc_Ip_SwTrigger) @0e370460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Adc_Ipw_ConfigurePdbConversion/5 
+  Calls: 
+Pdb_Adc_Ip_ConfigAdcPretriggers/28 (Pdb_Adc_Ip_ConfigAdcPretriggers) @0e370380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Adc_Ipw_ConfigurePdbConversion/5 Adc_Ipw_ConfigurePdbChannels/4 
+  Calls: 
+Pdb_Adc_Ip_LoadRegValues/27 (Pdb_Adc_Ip_LoadRegValues) @0e3702a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Adc_Ipw_ConfigurePdbConversion/5 Adc_Ipw_ConfigurePdbChannels/4 
+  Calls: 
+Pdb_Adc_Ip_SetModulus/26 (Pdb_Adc_Ip_SetModulus) @0e3701c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Adc_Ipw_ConfigurePdbConversion/5 
+  Calls: 
+Pdb_Adc_Ip_SetTriggerInput/25 (Pdb_Adc_Ip_SetTriggerInput) @0e3700e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Adc_Ipw_ConfigurePdbConversion/5 
+  Calls: 
+Pdb_Adc_Ip_Enable/24 (Pdb_Adc_Ip_Enable) @0e370000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Adc_Ipw_ConfigurePdbConversion/5 
+  Calls: 
+Adc_Ip_ConfigChannel/23 (Adc_Ip_ConfigChannel) @0e2df380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Adc_Ipw_ConfigureConversion/9 Adc_Ipw_ConfigureConversion/9 Adc_Ipw_ConfigureConversion/9 
+  Calls: 
+Adc_axGroupStatus/22 (Adc_axGroupStatus) @0e2e29d8
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: Adc_Ipw_ConfigurePdbChannels/4 (read) Adc_Ipw_WriteDataBuffer/3 (read) Adc_Ipw_WriteDataBuffer/3 (read) Adc_Ipw_WriteDataBuffer/3 (read) Adc_Ipw_StopCurrentConversion/13 (write) Adc_Ipw_ConfigurePdbConversion/5 (write) Adc_Ipw_ConfigureConversion/9 (read) Adc_Ipw_DeInit/11 (write) Adc_Ipw_StartNormalConversion/12 (write) Adc_Ipw_ConfigurePdbConversion/5 (read) Adc_Ipw_ConfigurePdbConversion/5 (read) Adc_Ipw_ReadGroup/15 (read) 
+  Availability: not_available
+  Varpool flags:
+Adc_apxCfgPtr/21 (Adc_apxCfgPtr) @0e2e2990
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: Adc_Ipw_WriteDataBuffer/3 (read) Adc_Ipw_ConfigureConversion/9 (read) Adc_Ipw_DeInit/11 (read) Adc_Ipw_StopConversionCheckTimeout/6 (read) Adc_Ipw_StopConversionCheckTimeout/6 (read) Adc_Ipw_WriteDataBuffer/3 (read) Adc_Ipw_ReadGroup/15 (read) Adc_Ipw_StopConversionCheckTimeout/6 (read) Adc_Ipw_StopConversionCheckTimeout/6 (read) Adc_Ipw_ReadGroupConvData/1 (read) Adc_Ipw_ReadGroupConvData/1 (read) Adc_Ipw_ConfigureConversion/9 (read) Adc_Ipw_ConfigureConversion/9 (read) Adc_Ipw_ConfigureConversion/9 (read) Adc_Ipw_ConfigurePdbChannels/4 (read) Adc_Ipw_DeInit/11 (read) Adc_Ipw_PrepareGroupStart/7 (read) Adc_Ipw_ReadGroupNoInt/2 (read) Adc_Ipw_StartNormalConversion/12 (read) Adc_Ipw_ConfigurePdbConversion/5 (read) Adc_Ipw_DeInit/11 (read) Adc_Ipw_StopCurrentConversion/13 (read) Adc_Ipw_StartNormalConversion/12 (read) Adc_Ipw_ConfigureConversion/9 (read) Adc_Ipw_DeInit/11 (read) Adc_Ipw_StartNormalConversion/12 (read) Adc_Ipw_ReadGroup/15 (read) Adc_Ipw_Calibrate/16 (read) 
+  Availability: not_available
+  Varpool flags:
+SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_00/20 (SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_00) @0e2dfe00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Adc_Ipw_RemoveFromQueue/0 
+  Calls: 
+Adc_axUnitStatus/19 (Adc_axUnitStatus) @0e2e23f0
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: Adc_Ipw_RemoveFromQueue/0 (write) Adc_Ipw_RemoveFromQueue/0 (read) Adc_Ipw_RemoveFromQueue/0 (write) Adc_Ipw_ConfigureConversion/9 (write) Adc_Ipw_StartNormalConversion/12 (read) Adc_Ipw_StopCurrentConversion/13 (read) Adc_Ipw_StopConversionCheckTimeout/6 (read) Adc_Ipw_RemoveFromQueue/0 (write) Adc_Ipw_RemoveFromQueue/0 (read) Adc_Ipw_RemoveFromQueue/0 (read) Adc_Ipw_StartNormalConversion/12 (read) Adc_Ipw_StartNormalConversion/12 (read) Adc_Ipw_StartNormalConversion/12 (read) Adc_Ipw_StartNormalConversion/12 (write) Adc_Ipw_ReadGroup/15 (read) 
+  Availability: not_available
+  Varpool flags:
+SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_00/18 (SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_00) @0e2dfc40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Adc_Ipw_RemoveFromQueue/0 
+  Calls: 
+Adc_GetCoreID/17 (Adc_GetCoreID) @0e2df7e0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+Adc_Ipw_Calibrate/16 (Adc_Ipw_Calibrate) @0e2df540
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Adc_apxCfgPtr/21 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Adc_Ip_DoCalibration/43 
+Adc_Ipw_ReadGroup/15 (Adc_Ipw_ReadGroup) @0e2df2a0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Adc_apxCfgPtr/21 (read) Adc_apxCfgPtr/21 (read) Adc_axUnitStatus/19 (read) Adc_axGroupStatus/22 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Adc_Ipw_WriteDataBuffer/3 Adc_Ipw_ReadGroupNoInt/2 
+Adc_Ipw_CheckValidConversion/14 (Adc_Ipw_CheckValidConversion) @0e2df000
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: Adc_Ipw_ReadGroupNoInt/2 
+  Calls: Adc_Ip_GetConvCompleteFlag/42 
+Adc_Ipw_StopCurrentConversion/13 (Adc_Ipw_StopCurrentConversion) @0e2cba80
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Adc_apxCfgPtr/21 (read) Adc_axUnitStatus/19 (read) Adc_axGroupStatus/22 (write) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Adc_Ipw_StopConversionCheckTimeout/6 Adc_Ip_GetConvData/35 Adc_Ip_SetDisabledChannel/39 
+Adc_Ipw_StartNormalConversion/12 (Adc_Ipw_StartNormalConversion) @0e2cb540
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Adc_axUnitStatus/19 (read) Adc_apxCfgPtr/21 (read) Adc_apxCfgPtr/21 (read) Adc_apxCfgPtr/21 (read) Adc_axUnitStatus/19 (read) Adc_axGroupStatus/22 (write) Adc_axUnitStatus/19 (read) Adc_axUnitStatus/19 (write) Adc_axUnitStatus/19 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Adc_Ipw_ConfigureConversion/9 Adc_Ip_SetTriggerMode/36 Adc_Ip_GetConvData/35 Adc_Ipw_PrepareGroupStart/7 
+Adc_Ipw_DeInit/11 (Adc_Ipw_DeInit) @0e2cbee0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Adc_apxCfgPtr/21 (read) Adc_apxCfgPtr/21 (read) Adc_apxCfgPtr/21 (read) Adc_axGroupStatus/22 (write) Adc_apxCfgPtr/21 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Pdb_Adc_Ip_DeInit/34 Adc_Ip_DeInit/33 
+Adc_Ipw_Init/10 (Adc_Ipw_Init) @0e2cbc40
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Pdb_Adc_Ip_Init/32 Adc_Ip_Init/31 
+Adc_Ipw_ConfigureConversion/9 (Adc_Ipw_ConfigureConversion) @0e2cb9a0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Adc_apxCfgPtr/21 (read) Adc_apxCfgPtr/21 (read) Adc_apxCfgPtr/21 (read) Adc_axGroupStatus/22 (read) Adc_apxCfgPtr/21 (read) Adc_apxCfgPtr/21 (read) Adc_axUnitStatus/19 (write) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: Adc_Ipw_StartNormalConversion/12 
+  Calls: Adc_Ipw_ConfigurePdbConversion/5 Adc_Ip_ConfigChannel/23 Adc_Ip_ConfigChannel/23 Adc_Ip_ConfigChannel/23 
+Adc_Ipw_CalculateNumsBitShift/8 (Adc_Ipw_CalculateNumsBitShift) @0e2cb700
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: Adc_Ipw_ReadGroupConvData/1 
+  Calls: 
+Adc_Ipw_PrepareGroupStart/7 (Adc_Ipw_PrepareGroupStart) @0e2cb460
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: Adc_apxCfgPtr/21 (read) 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: Adc_Ipw_StartNormalConversion/12 
+  Calls: Adc_Ip_SetSampleTime/38 Adc_Ip_SetAveraging/37 
+Adc_Ipw_StopConversionCheckTimeout/6 (Adc_Ipw_StopConversionCheckTimeout) @0e2cb1c0
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: Adc_apxCfgPtr/21 (read) Adc_apxCfgPtr/21 (read) Adc_apxCfgPtr/21 (read) Adc_apxCfgPtr/21 (read) Adc_axUnitStatus/19 (read) 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: Adc_Ipw_StopCurrentConversion/13 
+  Calls: Adc_Ip_SetDisabledChannel/39 Adc_Ip_SetContinuousMode/41 Pdb_Adc_Ip_DisableAndClearPdb/40 
+Adc_Ipw_ConfigurePdbConversion/5 (Adc_Ipw_ConfigurePdbConversion) @0e1d3ee0
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: Adc_apxCfgPtr/21 (read) Adc_axGroupStatus/22 (read) Adc_axGroupStatus/22 (read) Adc_axGroupStatus/22 (write) 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: Adc_Ipw_ConfigureConversion/9 
+  Calls: Pdb_Adc_Ip_SwTrigger/29 Pdb_Adc_Ip_ConfigAdcPretriggers/28 Pdb_Adc_Ip_LoadRegValues/27 Pdb_Adc_Ip_SetModulus/26 Adc_Ipw_ConfigurePdbChannels/4 Pdb_Adc_Ip_SetTriggerInput/25 Pdb_Adc_Ip_Enable/24 
+Adc_Ipw_ConfigurePdbChannels/4 (Adc_Ipw_ConfigurePdbChannels) @0e1d39a0
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: Adc_axGroupStatus/22 (read) Adc_apxCfgPtr/21 (read) 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: Adc_Ipw_ConfigurePdbConversion/5 
+  Calls: Pdb_Adc_Ip_ConfigAdcPretriggers/28 Pdb_Adc_Ip_LoadRegValues/27 Pdb_Adc_Ip_SetAdcPretriggerDelayValue/30 Pdb_Adc_Ip_SetAdcPretriggerDelayValue/30 Pdb_Adc_Ip_SetAdcPretriggerDelayValue/30 Pdb_Adc_Ip_SetAdcPretriggerDelayValue/30 Pdb_Adc_Ip_SetAdcPretriggerDelayValue/30 
+Adc_Ipw_WriteDataBuffer/3 (Adc_Ipw_WriteDataBuffer) @0e1d3e00
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: Adc_apxCfgPtr/21 (read) Adc_apxCfgPtr/21 (read) Adc_axGroupStatus/22 (read) Adc_axGroupStatus/22 (read) Adc_axGroupStatus/22 (read) 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: Adc_Ipw_ReadGroup/15 
+  Calls: 
+Adc_Ipw_ReadGroupNoInt/2 (Adc_Ipw_ReadGroupNoInt) @0e1d3b60
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: Adc_apxCfgPtr/21 (read) 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: Adc_Ipw_ReadGroup/15 
+  Calls: Adc_Ipw_ReadGroupConvData/1 Adc_Ipw_CheckValidConversion/14 
+Adc_Ipw_ReadGroupConvData/1 (Adc_Ipw_ReadGroupConvData) @0e1d38c0
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: Adc_apxCfgPtr/21 (read) Adc_apxCfgPtr/21 (read) 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: Adc_Ipw_ReadGroupNoInt/2 
+  Calls: Adc_Ip_GetConvData/35 Adc_Ipw_CalculateNumsBitShift/8 
+Adc_Ipw_RemoveFromQueue/0 (Adc_Ipw_RemoveFromQueue) @0e1d3620
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Adc_axUnitStatus/19 (read) Adc_axUnitStatus/19 (write) Adc_axUnitStatus/19 (read) Adc_axUnitStatus/19 (write) Adc_axUnitStatus/19 (read) Adc_axUnitStatus/19 (write) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_00/20 SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_00/18 
+Materializing clones
+Materialization Call site updates done.
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+Trivially needed variables:
+Removing variables:
+
+Final Symbol table:
+
+Adc_Ip_DoCalibration/43 (Adc_Ip_DoCalibration) @0e665000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+Adc_Ip_GetConvCompleteFlag/42 (Adc_Ip_GetConvCompleteFlag) @0e37e9a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+Adc_Ip_SetContinuousMode/41 (Adc_Ip_SetContinuousMode) @0e37e700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+Pdb_Adc_Ip_DisableAndClearPdb/40 (Pdb_Adc_Ip_DisableAndClearPdb) @0e37e620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+Adc_Ip_SetDisabledChannel/39 (Adc_Ip_SetDisabledChannel) @0e37e460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+Adc_Ip_SetSampleTime/38 (Adc_Ip_SetSampleTime) @0e37e2a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+Adc_Ip_SetAveraging/37 (Adc_Ip_SetAveraging) @0e37e1c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+Adc_Ip_SetTriggerMode/36 (Adc_Ip_SetTriggerMode) @0e37e000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+Adc_Ip_GetConvData/35 (Adc_Ip_GetConvData) @0e370540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+Pdb_Adc_Ip_DeInit/34 (Pdb_Adc_Ip_DeInit) @0e370d20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+Adc_Ip_DeInit/33 (Adc_Ip_DeInit) @0e370c40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+Pdb_Adc_Ip_Init/32 (Pdb_Adc_Ip_Init) @0e370a80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+Adc_Ip_Init/31 (Adc_Ip_Init) @0e3709a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+Pdb_Adc_Ip_SetAdcPretriggerDelayValue/30 (Pdb_Adc_Ip_SetAdcPretriggerDelayValue) @0e3707e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+Pdb_Adc_Ip_SwTrigger/29 (Pdb_Adc_Ip_SwTrigger) @0e370460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+Pdb_Adc_Ip_ConfigAdcPretriggers/28 (Pdb_Adc_Ip_ConfigAdcPretriggers) @0e370380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+Pdb_Adc_Ip_LoadRegValues/27 (Pdb_Adc_Ip_LoadRegValues) @0e3702a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+Pdb_Adc_Ip_SetModulus/26 (Pdb_Adc_Ip_SetModulus) @0e3701c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+Pdb_Adc_Ip_SetTriggerInput/25 (Pdb_Adc_Ip_SetTriggerInput) @0e3700e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+Pdb_Adc_Ip_Enable/24 (Pdb_Adc_Ip_Enable) @0e370000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+Adc_Ip_ConfigChannel/23 (Adc_Ip_ConfigChannel) @0e2df380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+Adc_axGroupStatus/22 (Adc_axGroupStatus) @0e2e29d8
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Varpool flags:
+Adc_apxCfgPtr/21 (Adc_apxCfgPtr) @0e2e2990
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Varpool flags:
+SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_00/20 (SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_00) @0e2dfe00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+Adc_axUnitStatus/19 (Adc_axUnitStatus) @0e2e23f0
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Varpool flags:
+SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_00/18 (SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_00) @0e2dfc40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+Adc_GetCoreID/17 (Adc_GetCoreID) @0e2df7e0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.Adc_GetCoreID (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+Adc_Ipw_Calibrate/16 (Adc_Ipw_Calibrate) @0e2df540
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.Adc_Ipw_Calibrate (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+Adc_Ipw_ReadGroup/15 (Adc_Ipw_ReadGroup) @0e2df2a0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.Adc_Ipw_ReadGroup (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+Adc_Ipw_CheckValidConversion/14 (Adc_Ipw_CheckValidConversion) @0e2df000
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.Adc_Ipw_CheckValidConversion (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+Adc_Ipw_StopCurrentConversion/13 (Adc_Ipw_StopCurrentConversion) @0e2cba80
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.Adc_Ipw_StopCurrentConversion (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+Adc_Ipw_StartNormalConversion/12 (Adc_Ipw_StartNormalConversion) @0e2cb540
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.Adc_Ipw_StartNormalConversion (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+Adc_Ipw_DeInit/11 (Adc_Ipw_DeInit) @0e2cbee0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.Adc_Ipw_DeInit (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+Adc_Ipw_Init/10 (Adc_Ipw_Init) @0e2cbc40
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.Adc_Ipw_Init (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+Adc_Ipw_ConfigureConversion/9 (Adc_Ipw_ConfigureConversion) @0e2cb9a0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.Adc_Ipw_ConfigureConversion (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+Adc_Ipw_CalculateNumsBitShift/8 (Adc_Ipw_CalculateNumsBitShift) @0e2cb700
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.Adc_Ipw_CalculateNumsBitShift (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+Adc_Ipw_PrepareGroupStart/7 (Adc_Ipw_PrepareGroupStart) @0e2cb460
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly asm_written section:.text.Adc_Ipw_PrepareGroupStart (implicit_section)
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: local
+  Called by: 
+  Calls: 
+Adc_Ipw_StopConversionCheckTimeout/6 (Adc_Ipw_StopConversionCheckTimeout) @0e2cb1c0
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly asm_written section:.text.Adc_Ipw_StopConversionCheckTimeout (implicit_section)
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: local
+  Called by: 
+  Calls: 
+Adc_Ipw_ConfigurePdbConversion/5 (Adc_Ipw_ConfigurePdbConversion) @0e1d3ee0
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly asm_written section:.text.Adc_Ipw_ConfigurePdbConversion (implicit_section)
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: local
+  Called by: 
+  Calls: 
+Adc_Ipw_ConfigurePdbChannels/4 (Adc_Ipw_ConfigurePdbChannels) @0e1d39a0
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly asm_written section:.text.Adc_Ipw_ConfigurePdbChannels (implicit_section)
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: local
+  Called by: 
+  Calls: 
+Adc_Ipw_WriteDataBuffer/3 (Adc_Ipw_WriteDataBuffer) @0e1d3e00
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly asm_written section:.text.Adc_Ipw_WriteDataBuffer (implicit_section)
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: local
+  Called by: 
+  Calls: 
+Adc_Ipw_ReadGroupNoInt/2 (Adc_Ipw_ReadGroupNoInt) @0e1d3b60
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly asm_written section:.text.Adc_Ipw_ReadGroupNoInt (implicit_section)
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: local
+  Called by: 
+  Calls: 
+Adc_Ipw_ReadGroupConvData/1 (Adc_Ipw_ReadGroupConvData) @0e1d38c0
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly asm_written section:.text.Adc_Ipw_ReadGroupConvData (implicit_section)
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: local
+  Called by: 
+  Calls: 
+Adc_Ipw_RemoveFromQueue/0 (Adc_Ipw_RemoveFromQueue) @0e1d3620
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.Adc_Ipw_RemoveFromQueue (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 

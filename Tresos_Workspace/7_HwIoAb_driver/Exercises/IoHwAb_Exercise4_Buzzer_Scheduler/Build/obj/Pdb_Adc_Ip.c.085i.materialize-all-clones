@@ -1,0 +1,829 @@
+PDB_ADC_ResetChannel (struct PDB_Type * const Base, const uint8 ChanIdx, const struct Pdb_Adc_Ip_PretriggersConfigType * PdbPretriggsConfig)
+{
+  int _1;
+  long unsigned int _2;
+  int _3;
+  long unsigned int _4;
+
+  <bb 2> :
+  SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_45 ();
+  Pdb_Adc_HwAcc_ConfigAdcPretriggers (Base_7(D), ChanIdx_8(D), PdbPretriggsConfig_9(D));
+  SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_45 ();
+  SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_47 ();
+  Pdb_Adc_HwAcc_ClearAdcPretriggerFlags (Base_7(D), ChanIdx_8(D), 255);
+  _1 = (int) ChanIdx_8(D);
+  _2 ={v} Base_7(D)->CH[_1].S;
+  _3 = (int) ChanIdx_8(D);
+  _4 = _2 & 4294967040;
+  Base_7(D)->CH[_3].S ={v} _4;
+  SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_47 ();
+  return;
+
+}
+
+
+Pdb_Adc_Ip_IRQHandler (const uint32 Instance)
+{
+  uint16 SeqErrMask;
+  uint8 ChanIdx;
+  struct PDB_Type * const Base;
+  _Bool _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  void (*<T519>) (uint8, uint16) _4;
+  int _5;
+  long unsigned int _6;
+  short unsigned int _7;
+  int _8;
+  long unsigned int _9;
+  int _10;
+  long unsigned int _11;
+  void (*<T519>) (uint8, uint16) _12;
+  unsigned char ChanIdx.5_13;
+  int _14;
+  long unsigned int _15;
+  int _16;
+  long unsigned int _17;
+  unsigned char ChanIdx.6_18;
+
+  <bb 2> :
+  Base_27 = Pdb_Adc_Ip_apxBase[Instance_26(D)];
+  _1 = Pdb_Adc_Ip_axState[Instance_26(D)].Init;
+  if (_1 != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 3> :
+  _2 ={v} Base_27->SC;
+  _3 = _2 & 131072;
+  if (_3 != 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 4> :
+  _4 = Pdb_Adc_Ip_axState[Instance_26(D)].SeqErrNotification;
+  if (_4 != 0B)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 5> :
+  ChanIdx_31 = 0;
+  goto <bb 9>; [INV]
+
+  <bb 6> :
+  _5 = (int) ChanIdx_19;
+  _6 ={v} Base_27->CH[_5].S;
+  _7 = (short unsigned int) _6;
+  SeqErrMask_32 = _7 & 255;
+  if (SeqErrMask_32 != 0)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 7> :
+  _8 = (int) ChanIdx_19;
+  _9 ={v} Base_27->CH[_8].S;
+  _10 = (int) ChanIdx_19;
+  _11 = _9 & 4294967040;
+  Base_27->CH[_10].S ={v} _11;
+  _12 = Pdb_Adc_Ip_axState[Instance_26(D)].SeqErrNotification;
+  _12 (ChanIdx_19, SeqErrMask_32);
+
+  <bb 8> :
+  ChanIdx.5_13 = ChanIdx_19;
+  ChanIdx_35 = ChanIdx.5_13 + 1;
+
+  <bb 9> :
+  # ChanIdx_19 = PHI <ChanIdx_31(5), ChanIdx_35(8)>
+  if (ChanIdx_19 <= 1)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 10> :
+  ChanIdx_28 = 0;
+  goto <bb 12>; [INV]
+
+  <bb 11> :
+  _14 = (int) ChanIdx_20;
+  _15 ={v} Base_27->CH[_14].S;
+  _16 = (int) ChanIdx_20;
+  _17 = _15 & 4294967040;
+  Base_27->CH[_16].S ={v} _17;
+  ChanIdx.6_18 = ChanIdx_20;
+  ChanIdx_30 = ChanIdx.6_18 + 1;
+
+  <bb 12> :
+  # ChanIdx_20 = PHI <ChanIdx_28(10), ChanIdx_30(11)>
+  if (ChanIdx_20 <= 1)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 13> :
+  return;
+
+}
+
+
+Pdb_Adc_Ip_DisableAndClearPdb (const uint32 Instance)
+{
+  const struct Pdb_Adc_Ip_PretriggersConfigType PdbPretriggsConfig;
+  uint8 ChanIdx;
+  struct PDB_Type * const Base;
+  unsigned char ChanIdx.4_1;
+
+  <bb 2> :
+  Base_6 = Pdb_Adc_Ip_apxBase[Instance_5(D)];
+  PdbPretriggsConfig.EnableMask = 0;
+  PdbPretriggsConfig.EnableDelayMask = 0;
+  PdbPretriggsConfig.BackToBackEnableMask = 0;
+  SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_40 ();
+  Pdb_Adc_HwAcc_DisablePdb (Base_6);
+  Pdb_Adc_HwAcc_SetContinuousMode (Base_6, 0);
+  SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_40 ();
+  ChanIdx_14 = 0;
+  goto <bb 4>; [INV]
+
+  <bb 3> :
+  PDB_ADC_ResetChannel (Base_6, ChanIdx_2, &PdbPretriggsConfig);
+  ChanIdx.4_1 = ChanIdx_2;
+  ChanIdx_17 = ChanIdx.4_1 + 1;
+
+  <bb 4> :
+  # ChanIdx_2 = PHI <ChanIdx_14(2), ChanIdx_17(3)>
+  if (ChanIdx_2 <= 1)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 5> :
+  PdbPretriggsConfig ={v} {CLOBBER};
+  return;
+
+}
+
+
+Pdb_Adc_Ip_SetAdcPretriggerDelayValue (const uint32 Instance, const uint8 ChanIdx, const uint8 PretriggIdx, const uint16 DelayValue)
+{
+  struct PDB_Type * const Base;
+  int _1;
+  int _2;
+  long unsigned int _3;
+
+  <bb 2> :
+  Base_6 = Pdb_Adc_Ip_apxBase[Instance_5(D)];
+  _1 = (int) ChanIdx_7(D);
+  _2 = (int) PretriggIdx_8(D);
+  _3 = (long unsigned int) DelayValue_9(D);
+  Base_6->CH[_1].DLY[_2] ={v} _3;
+  return;
+
+}
+
+
+Pdb_Adc_Ip_SetAdcPretriggerDelayEnable (const uint32 Instance, const uint8 ChanIdx, const uint8 PretriggIdx, const boolean Value)
+{
+  uint32 Mask;
+  struct PDB_Type * const Base;
+  int _1;
+  long unsigned int _2;
+
+  <bb 2> :
+  Base_5 = Pdb_Adc_Ip_apxBase[Instance_4(D)];
+  _1 = (int) PretriggIdx_6(D);
+  Mask_7 = 1 << _1;
+  _2 = Mask_7 << 8;
+  Mask_8 = _2 & 65535;
+  SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_44 ();
+  Pdb_Adc_HwAcc_SetAdcPretriggerMask (Base_5, ChanIdx_10(D), Mask_8, Value_11(D));
+  SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_44 ();
+  return;
+
+}
+
+
+Pdb_Adc_Ip_SetAdcPretriggerEnable (const uint32 Instance, const uint8 ChanIdx, const uint8 PretriggIdx, const boolean Value)
+{
+  uint32 Mask;
+  struct PDB_Type * const Base;
+  int _1;
+
+  <bb 2> :
+  Base_4 = Pdb_Adc_Ip_apxBase[Instance_3(D)];
+  _1 = (int) PretriggIdx_5(D);
+  Mask_6 = 1 << _1;
+  Mask_7 = Mask_6 & 255;
+  SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_43 ();
+  Pdb_Adc_HwAcc_SetAdcPretriggerMask (Base_4, ChanIdx_9(D), Mask_7, Value_10(D));
+  SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_43 ();
+  return;
+
+}
+
+
+Pdb_Adc_Ip_SetAdcPretriggerBackToBack (const uint32 Instance, const uint8 ChanIdx, const uint8 PretriggIdx, const boolean Value)
+{
+  uint32 Mask;
+  struct PDB_Type * const Base;
+  int _1;
+  long unsigned int _2;
+
+  <bb 2> :
+  Base_5 = Pdb_Adc_Ip_apxBase[Instance_4(D)];
+  _1 = (int) PretriggIdx_6(D);
+  Mask_7 = 1 << _1;
+  _2 = Mask_7 << 16;
+  Mask_8 = _2 & 16711680;
+  SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_42 ();
+  Pdb_Adc_HwAcc_SetAdcPretriggerMask (Base_5, ChanIdx_10(D), Mask_8, Value_11(D));
+  SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_42 ();
+  return;
+
+}
+
+
+Pdb_Adc_Ip_ClearAdcPretriggerFlags (const uint32 Instance, const uint8 ChanIdx, const uint16 PretriggMask)
+{
+  struct PDB_Type * const Base;
+
+  <bb 2> :
+  Base_3 = Pdb_Adc_Ip_apxBase[Instance_2(D)];
+  SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_46 ();
+  Pdb_Adc_HwAcc_ClearAdcPretriggerFlags (Base_3, ChanIdx_5(D), PretriggMask_6(D));
+  SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_46 ();
+  return;
+
+}
+
+
+Pdb_Adc_Ip_GetAdcPretriggerFlags (const uint32 Instance, const uint8 ChanIdx)
+{
+  uint32 Result;
+  const struct PDB_Type * const Base;
+  uint32 D.6106;
+  int _1;
+  long unsigned int _2;
+  uint32 _9;
+
+  <bb 2> :
+  Base_5 = Pdb_Adc_Ip_apxBase[Instance_4(D)];
+  _1 = (int) ChanIdx_6(D);
+  Result_7 ={v} Base_5->CH[_1].S;
+  _2 = Result_7 >> 16;
+  Result_8 = _2 & 255;
+  _9 = Result_8;
+
+  <bb 3> :
+<L0>:
+  return _9;
+
+}
+
+
+Pdb_Adc_Ip_ConfigAdcPretriggers (const uint32 Instance, const uint8 ChanIdx, const struct Pdb_Adc_Ip_PretriggersConfigType * const Config)
+{
+  struct PDB_Type * const Base;
+
+  <bb 2> :
+  Base_3 = Pdb_Adc_Ip_apxBase[Instance_2(D)];
+  SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_41 ();
+  Pdb_Adc_HwAcc_ConfigAdcPretriggers (Base_3, ChanIdx_5(D), Config_6(D));
+  SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_41 ();
+  return;
+
+}
+
+
+Pdb_Adc_Ip_SetModulus (const uint32 Instance, const uint16 ModVal)
+{
+  uint32 ModReg;
+  struct PDB_Type * const Base;
+  long unsigned int _1;
+
+  <bb 2> :
+  Base_4 = Pdb_Adc_Ip_apxBase[Instance_3(D)];
+  SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_48 ();
+  ModReg_6 ={v} Base_4->MOD;
+  ModReg_7 = ModReg_6 & 4294901760;
+  _1 = (long unsigned int) ModVal_8(D);
+  ModReg_9 = ModReg_7 | _1;
+  Base_4->MOD ={v} ModReg_9;
+  SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_48 ();
+  return;
+
+}
+
+
+Pdb_Adc_Ip_LoadRegValues (const uint32 Instance)
+{
+  struct PDB_Type * const Base;
+  long unsigned int _1;
+  long unsigned int _2;
+
+  <bb 2> :
+  Base_5 = Pdb_Adc_Ip_apxBase[Instance_4(D)];
+  SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_39 ();
+  _1 ={v} Base_5->SC;
+  _2 = _1 | 1;
+  Base_5->SC ={v} _2;
+  SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_39 ();
+  return;
+
+}
+
+
+Pdb_Adc_Ip_GetTimerValue (const uint32 Instance)
+{
+  const struct PDB_Type * const Base;
+  uint32 D.6104;
+  long unsigned int _1;
+  uint32 _5;
+
+  <bb 2> :
+  Base_4 = Pdb_Adc_Ip_apxBase[Instance_3(D)];
+  _1 ={v} Base_4->CNT;
+  _5 = _1 & 65535;
+
+  <bb 3> :
+<L0>:
+  return _5;
+
+}
+
+
+Pdb_Adc_Ip_SwTrigger (const uint32 Instance)
+{
+  struct PDB_Type * const Base;
+  long unsigned int _1;
+  long unsigned int _2;
+
+  <bb 2> :
+  Base_5 = Pdb_Adc_Ip_apxBase[Instance_4(D)];
+  SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_38 ();
+  _1 ={v} Base_5->SC;
+  _2 = _1 | 65536;
+  Base_5->SC ={v} _2;
+  SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_38 ();
+  return;
+
+}
+
+
+Pdb_Adc_Ip_SetContinuousMode (const uint32 Instance, const boolean State)
+{
+  struct PDB_Type * const Base;
+
+  <bb 2> :
+  Base_3 = Pdb_Adc_Ip_apxBase[Instance_2(D)];
+  SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_37 ();
+  Pdb_Adc_HwAcc_SetContinuousMode (Base_3, State_5(D));
+  SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_37 ();
+  return;
+
+}
+
+
+Pdb_Adc_Ip_SetTriggerInput (const uint32 Instance, const Pdb_Adc_Ip_TriggerSrcType TriggerSource)
+{
+  uint32 SCReg;
+  struct PDB_Type * const Base;
+  long unsigned int _1;
+  long unsigned int _2;
+
+  <bb 2> :
+  Base_5 = Pdb_Adc_Ip_apxBase[Instance_4(D)];
+  SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_36 ();
+  SCReg_7 ={v} Base_5->SC;
+  SCReg_8 = SCReg_7 & 4294963455;
+  _1 = TriggerSource_9(D) << 8;
+  _2 = _1 & 3840;
+  SCReg_10 = SCReg_8 | _2;
+  Base_5->SC ={v} SCReg_10;
+  SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_36 ();
+  return;
+
+}
+
+
+Pdb_Adc_Ip_Disable (const uint32 Instance)
+{
+  struct PDB_Type * const Base;
+
+  <bb 2> :
+  Base_3 = Pdb_Adc_Ip_apxBase[Instance_2(D)];
+  SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_35 ();
+  Pdb_Adc_HwAcc_DisablePdb (Base_3);
+  SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_35 ();
+  return;
+
+}
+
+
+Pdb_Adc_Ip_Enable (const uint32 Instance)
+{
+  struct PDB_Type * const Base;
+  long unsigned int _1;
+  long unsigned int _2;
+
+  <bb 2> :
+  Base_5 = Pdb_Adc_Ip_apxBase[Instance_4(D)];
+  SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_34 ();
+  _1 ={v} Base_5->SC;
+  _2 = _1 | 128;
+  Base_5->SC ={v} _2;
+  SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_34 ();
+  return;
+
+}
+
+
+Pdb_Adc_Ip_DeInit (const uint32 Instance)
+{
+  uint8 PretriggerIndex;
+  uint8 ChannelIndex;
+  struct Pdb_Adc_Ip_ChanConfigType ChanConfigs[2];
+  struct Pdb_Adc_Ip_ConfigType DefaultConfig;
+  int _1;
+  int _2;
+  int _3;
+  int _4;
+  int _5;
+  int _6;
+  unsigned char PretriggerIndex.2_7;
+  unsigned char ChannelIndex.3_8;
+
+  <bb 2> :
+  DefaultConfig.LoadValueMode = 0;
+  DefaultConfig.PrescalerDiv = 0;
+  DefaultConfig.ClkPreMultFactor = 0;
+  DefaultConfig.TriggerSource = 0;
+  DefaultConfig.ContinuousModeEnable = 0;
+  DefaultConfig.DmaEnable = 0;
+  DefaultConfig.ModValue = 0;
+  DefaultConfig.NumChans = 2;
+  ChannelIndex_22 = 0;
+  goto <bb 7>; [INV]
+
+  <bb 3> :
+  _1 = (int) ChannelIndex_9;
+  ChanConfigs[_1].ChnIdx = ChannelIndex_9;
+  _2 = (int) ChannelIndex_9;
+  ChanConfigs[_2].PretriggersConfig.EnableMask = 0;
+  _3 = (int) ChannelIndex_9;
+  ChanConfigs[_3].PretriggersConfig.EnableDelayMask = 0;
+  _4 = (int) ChannelIndex_9;
+  ChanConfigs[_4].PretriggersConfig.BackToBackEnableMask = 0;
+  PretriggerIndex_35 = 0;
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  _5 = (int) ChannelIndex_9;
+  _6 = (int) PretriggerIndex_10;
+  ChanConfigs[_5].PretriggerDelays[_6] = 0;
+  PretriggerIndex.2_7 = PretriggerIndex_10;
+  PretriggerIndex_38 = PretriggerIndex.2_7 + 1;
+
+  <bb 5> :
+  # PretriggerIndex_10 = PHI <PretriggerIndex_35(3), PretriggerIndex_38(4)>
+  if (PretriggerIndex_10 <= 7)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 6> :
+  ChannelIndex.3_8 = ChannelIndex_9;
+  ChannelIndex_36 = ChannelIndex.3_8 + 1;
+
+  <bb 7> :
+  # ChannelIndex_9 = PHI <ChannelIndex_22(2), ChannelIndex_36(6)>
+  if (ChannelIndex_9 <= 1)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 8> :
+  DefaultConfig.ChanConfigs = &ChanConfigs;
+  DefaultConfig.SeqErrNotification = 0B;
+  Pdb_Adc_Ip_Init (Instance_25(D), &DefaultConfig);
+  Pdb_Adc_Ip_Disable (Instance_25(D));
+  Pdb_Adc_Ip_axState[Instance_25(D)].Init = 0;
+  DefaultConfig ={v} {CLOBBER};
+  ChanConfigs ={v} {CLOBBER};
+  return;
+
+}
+
+
+Pdb_Adc_Ip_Init (const uint32 Instance, const struct Pdb_Adc_Ip_ConfigType * const Config)
+{
+  const struct Pdb_Adc_Ip_ChanConfigType * ChanConfig;
+  uint32 Reg;
+  uint8 PretriggerIndex;
+  uint8 ChannelIndex;
+  struct PDB_Type * const Base;
+  <unnamed type> _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  <unnamed type> _4;
+  long unsigned int _5;
+  long unsigned int _6;
+  <unnamed type> _7;
+  long unsigned int _8;
+  long unsigned int _9;
+  <unnamed type> _10;
+  long unsigned int _11;
+  long unsigned int _12;
+  _Bool _13;
+  _Bool _14;
+  void (*<T519>) (uint8, uint16) _15;
+  short unsigned int _16;
+  unsigned char _17;
+  const struct Pdb_Adc_Ip_ChanConfigType * _18;
+  const struct Pdb_Adc_Ip_ChanConfigType * _19;
+  unsigned int _20;
+  unsigned int _21;
+  unsigned char _22;
+  const struct Pdb_Adc_Ip_PretriggersConfigType * _23;
+  unsigned char _24;
+  int _25;
+  short unsigned int _26;
+  unsigned char PretriggerIndex.0_27;
+  unsigned char ChannelIndex.1_28;
+  unsigned char _29;
+  void (*<T519>) (uint8, uint16) _30;
+
+  <bb 2> :
+  Base_41 = Pdb_Adc_Ip_apxBase[Instance_40(D)];
+  Reg_42 = 0;
+  _1 = Config_43(D)->LoadValueMode;
+  _2 = _1 << 18;
+  _3 = _2 & 786432;
+  Reg_44 = Reg_42 | _3;
+  _4 = Config_43(D)->PrescalerDiv;
+  _5 = _4 << 12;
+  _6 = _5 & 28672;
+  Reg_45 = Reg_44 | _6;
+  _7 = Config_43(D)->ClkPreMultFactor;
+  _8 = _7 << 2;
+  _9 = _8 & 12;
+  Reg_46 = Reg_45 | _9;
+  _10 = Config_43(D)->TriggerSource;
+  _11 = _10 << 8;
+  _12 = _11 & 3840;
+  Reg_47 = Reg_46 | _12;
+  _13 = Config_43(D)->ContinuousModeEnable;
+  if (_13 != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  Reg_48 = Reg_47 | 2;
+
+  <bb 4> :
+  # Reg_33 = PHI <Reg_47(2), Reg_48(3)>
+  _14 = Config_43(D)->DmaEnable;
+  if (_14 != 0)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  Reg_49 = Reg_33 | 32768;
+
+  <bb 6> :
+  # Reg_34 = PHI <Reg_33(4), Reg_49(5)>
+  _15 = Config_43(D)->SeqErrNotification;
+  if (_15 != 0B)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 7> :
+  Reg_50 = Reg_34 | 131072;
+
+  <bb 8> :
+  # Reg_35 = PHI <Reg_34(6), Reg_50(7)>
+  Base_41->SC ={v} Reg_35;
+  _16 = Config_43(D)->ModValue;
+  Pdb_Adc_Ip_SetModulus (Instance_40(D), _16);
+  _17 = Config_43(D)->NumChans;
+  if (_17 != 0)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 16>; [INV]
+
+  <bb 9> :
+  _18 = Config_43(D)->ChanConfigs;
+  if (_18 != 0B)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 16>; [INV]
+
+  <bb 10> :
+  ChannelIndex_53 = 0;
+  goto <bb 15>; [INV]
+
+  <bb 11> :
+  _19 = Config_43(D)->ChanConfigs;
+  _20 = (unsigned int) ChannelIndex_31;
+  _21 = _20 * 20;
+  ChanConfig_54 = _19 + _21;
+  _22 = ChanConfig_54->ChnIdx;
+  _23 = &ChanConfig_54->PretriggersConfig;
+  Pdb_Adc_HwAcc_ConfigAdcPretriggers (Base_41, _22, _23);
+  PretriggerIndex_56 = 0;
+  goto <bb 13>; [INV]
+
+  <bb 12> :
+  _24 = ChanConfig_54->ChnIdx;
+  _25 = (int) PretriggerIndex_32;
+  _26 = ChanConfig_54->PretriggerDelays[_25];
+  Pdb_Adc_Ip_SetAdcPretriggerDelayValue (Instance_40(D), _24, PretriggerIndex_32, _26);
+  PretriggerIndex.0_27 = PretriggerIndex_32;
+  PretriggerIndex_59 = PretriggerIndex.0_27 + 1;
+
+  <bb 13> :
+  # PretriggerIndex_32 = PHI <PretriggerIndex_56(11), PretriggerIndex_59(12)>
+  if (PretriggerIndex_32 <= 7)
+    goto <bb 12>; [INV]
+  else
+    goto <bb 14>; [INV]
+
+  <bb 14> :
+  ChannelIndex.1_28 = ChannelIndex_31;
+  ChannelIndex_57 = ChannelIndex.1_28 + 1;
+
+  <bb 15> :
+  # ChannelIndex_31 = PHI <ChannelIndex_53(10), ChannelIndex_57(14)>
+  _29 = Config_43(D)->NumChans;
+  if (ChannelIndex_31 < _29)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 16>; [INV]
+
+  <bb 16> :
+  Pdb_Adc_Ip_Enable (Instance_40(D));
+  Pdb_Adc_Ip_LoadRegValues (Instance_40(D));
+  _30 = Config_43(D)->SeqErrNotification;
+  Pdb_Adc_Ip_axState[Instance_40(D)].SeqErrNotification = _30;
+  Pdb_Adc_Ip_axState[Instance_40(D)].Init = 1;
+  return;
+
+}
+
+
+Pdb_Adc_HwAcc_ClearAdcPretriggerFlags (struct PDB_Type * const Base, const uint8 ChanIdx, const uint16 PretriggMask)
+{
+  int _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _5;
+  long unsigned int _6;
+  int _7;
+  long unsigned int _8;
+
+  <bb 2> :
+  _1 = (int) ChanIdx_9(D);
+  _2 ={v} Base_11(D)->CH[_1].S;
+  _3 = (long unsigned int) PretriggMask_12(D);
+  _4 = _3 << 16;
+  _5 = _4 & 16711680;
+  _6 = ~_5;
+  _7 = (int) ChanIdx_9(D);
+  _8 = _2 & _6;
+  Base_11(D)->CH[_7].S ={v} _8;
+  return;
+
+}
+
+
+Pdb_Adc_HwAcc_ConfigAdcPretriggers (struct PDB_Type * const Base, const uint8 ChanIdx, const struct Pdb_Adc_Ip_PretriggersConfigType * const Config)
+{
+  uint32 C1Reg;
+  int _1;
+  unsigned char _2;
+  long unsigned int _3;
+  unsigned char _4;
+  long unsigned int _5;
+  long unsigned int _6;
+  long unsigned int _7;
+  unsigned char _8;
+  long unsigned int _9;
+  long unsigned int _10;
+  long unsigned int _11;
+  int _12;
+
+  <bb 2> :
+  _1 = (int) ChanIdx_13(D);
+  C1Reg_16 ={v} Base_15(D)->CH[_1].C1;
+  C1Reg_17 = C1Reg_16 & 4278190080;
+  _2 = Config_18(D)->EnableMask;
+  _3 = (long unsigned int) _2;
+  C1Reg_19 = C1Reg_17 | _3;
+  _4 = Config_18(D)->EnableDelayMask;
+  _5 = (long unsigned int) _4;
+  _6 = _5 << 8;
+  _7 = _6 & 65535;
+  C1Reg_20 = C1Reg_19 | _7;
+  _8 = Config_18(D)->BackToBackEnableMask;
+  _9 = (long unsigned int) _8;
+  _10 = _9 << 16;
+  _11 = _10 & 16711680;
+  C1Reg_21 = C1Reg_20 | _11;
+  _12 = (int) ChanIdx_13(D);
+  Base_15(D)->CH[_12].C1 ={v} C1Reg_21;
+  return;
+
+}
+
+
+Pdb_Adc_HwAcc_SetContinuousMode (struct PDB_Type * const Base, const boolean State)
+{
+  long unsigned int _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+
+  <bb 2> :
+  if (State_6(D) != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  _1 ={v} Base_8(D)->SC;
+  _2 = _1 | 2;
+  Base_8(D)->SC ={v} _2;
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  _3 ={v} Base_8(D)->SC;
+  _4 = _3 & 4294967293;
+  Base_8(D)->SC ={v} _4;
+
+  <bb 5> :
+  return;
+
+}
+
+
+Pdb_Adc_HwAcc_DisablePdb (struct PDB_Type * const Base)
+{
+  long unsigned int _1;
+  long unsigned int _2;
+
+  <bb 2> :
+  _1 ={v} Base_4(D)->SC;
+  _2 = _1 & 4294967167;
+  Base_4(D)->SC ={v} _2;
+  return;
+
+}
+
+
+Pdb_Adc_HwAcc_SetAdcPretriggerMask (struct PDB_Type * const Base, const uint8 ChanIdx, const uint32 Mask, const boolean Value)
+{
+  int _1;
+  long unsigned int _2;
+  int _3;
+  long unsigned int _4;
+  int _5;
+  long unsigned int _6;
+  long unsigned int _7;
+  int _8;
+  long unsigned int _9;
+
+  <bb 2> :
+  if (Value_11(D) != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  _1 = (int) ChanIdx_12(D);
+  _2 ={v} Base_14(D)->CH[_1].C1;
+  _3 = (int) ChanIdx_12(D);
+  _4 = Mask_15(D) | _2;
+  Base_14(D)->CH[_3].C1 ={v} _4;
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  _5 = (int) ChanIdx_12(D);
+  _6 ={v} Base_14(D)->CH[_5].C1;
+  _7 = ~Mask_15(D);
+  _8 = (int) ChanIdx_12(D);
+  _9 = _6 & _7;
+  Base_14(D)->CH[_8].C1 ={v} _9;
+
+  <bb 5> :
+  return;
+
+}
+
+

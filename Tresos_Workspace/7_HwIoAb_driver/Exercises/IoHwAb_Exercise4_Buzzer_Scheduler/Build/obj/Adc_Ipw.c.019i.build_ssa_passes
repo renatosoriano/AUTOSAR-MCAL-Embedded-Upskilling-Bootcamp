@@ -1,0 +1,1325 @@
+Adc_GetCoreID ()
+{
+  uint8 D.6689;
+
+  <bb 2> :
+  D.6689 = 0;
+
+  <bb 3> :
+<L0>:
+  return D.6689;
+
+}
+
+
+Adc_Ipw_Calibrate (Adc_HwUnitType Unit, struct Adc_CalibrationStatusType * Status, uint8 CoreId)
+{
+  const Adc_HwUnitType PhysicalHwUnitId;
+  Adc_Ip_StatusType IpStatus;
+
+  <bb 2> :
+  _1 = (int) CoreId;
+  _2 = Adc_apxCfgPtr[_1];
+  _3 = _2->AdcIpwConfigPtr;
+  _4 = (int) Unit;
+  PhysicalHwUnitId = _3->AdcPhysicalIdArr[_4];
+  Status->AdcUnitSelfTestStatus = 0;
+  _5 = (long unsigned int) PhysicalHwUnitId;
+  IpStatus = Adc_Ip_DoCalibration (_5);
+  if (IpStatus != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  Status->AdcUnitSelfTestStatus = 1;
+
+  <bb 4> :
+  return;
+
+}
+
+
+Adc_Ipw_ReadGroup (const Adc_GroupType Group, Adc_ValueGroupType * DataPtr, boolean * Flag, uint8 CoreId)
+{
+  const Adc_HwUnitType LogicalHwUnitId;
+  const struct Adc_GroupConfigurationType * GroupPtr;
+  const Adc_GroupType GroupIndex;
+  Std_ReturnType ReadGroupRet;
+  Std_ReturnType D.6676;
+
+  <bb 2> :
+  ReadGroupRet = 0;
+  _1 = (int) CoreId;
+  _2 = Adc_apxCfgPtr[_1];
+  _3 = _2->GroupIdToIndexMapPtr;
+  _4 = (unsigned int) Group;
+  _5 = _4 * 2;
+  _6 = _3 + _5;
+  GroupIndex = *_6;
+  _7 = (int) CoreId;
+  _8 = Adc_apxCfgPtr[_7];
+  _9 = _8->GroupsPtr;
+  _10 = (unsigned int) GroupIndex;
+  _11 = _10 * 52;
+  GroupPtr = _9 + _11;
+  LogicalHwUnitId = GroupPtr->AdcLogicalUnitId;
+  _12 = GroupPtr->AdcWithoutInterrupt;
+  if (_12 == 1)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 3> :
+  _13 = GroupPtr->Type;
+  if (_13 == 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 4> :
+  _14 = GroupPtr->TriggerSource;
+  if (_14 == 0)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 5> :
+  _15 = (int) LogicalHwUnitId;
+  _16 = Adc_axUnitStatus[_15].SwNormalQueue[0];
+  if (Group != _16)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  ReadGroupRet = 1;
+
+  <bb 7> :
+  if (ReadGroupRet == 0)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 8> :
+  ReadGroupRet = Adc_Ipw_ReadGroupNoInt (GroupPtr, DataPtr, Flag, CoreId);
+  goto <bb 13>; [INV]
+
+  <bb 9> :
+  _17 = (int) Group;
+  _18 = Adc_axGroupStatus[_17].Conversion;
+  if (_18 == 1)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 10> :
+  ReadGroupRet = 1;
+
+  <bb 11> :
+  if (ReadGroupRet == 0)
+    goto <bb 12>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 12> :
+  Adc_Ipw_WriteDataBuffer (Group, DataPtr, CoreId);
+
+  <bb 13> :
+  D.6676 = ReadGroupRet;
+
+  <bb 14> :
+<L15>:
+  return D.6676;
+
+}
+
+
+Adc_Ipw_CheckValidConversion (Adc_HwUnitType PhysicalHwUnitId, Adc_ChannelIndexType StartIndex, Adc_ChannelIndexType EndIndex)
+{
+  boolean ValidConversion;
+  Adc_ChannelIndexType Index;
+  boolean D.6659;
+
+  <bb 2> :
+  ValidConversion = 1;
+  Index = StartIndex;
+  goto <bb 6>; [INV]
+
+  <bb 3> :
+  _1 = (long unsigned int) PhysicalHwUnitId;
+  _2 = Index - StartIndex;
+  ValidConversion = Adc_Ip_GetConvCompleteFlag (_1, _2);
+  _3 = ~ValidConversion;
+  if (_3 != 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  goto <bb 7>; [INV]
+
+  <bb 5> :
+  Index.16_4 = Index;
+  Index = Index.16_4 + 1;
+
+  <bb 6> :
+  if (Index < EndIndex)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 7> :
+  D.6659 = ValidConversion;
+
+  <bb 8> :
+<L5>:
+  return D.6659;
+
+}
+
+
+Adc_Ipw_StopCurrentConversion (Adc_HwUnitType Unit, Adc_GroupType Group, uint8 CoreId)
+{
+  uint8 ChIndex;
+  const Adc_HwUnitType PhysicalHwUnitId;
+  Std_ReturnType Status;
+  Std_ReturnType D.6647;
+
+  <bb 2> :
+  Status = 0;
+  _1 = (int) CoreId;
+  _2 = Adc_apxCfgPtr[_1];
+  _3 = _2->AdcIpwConfigPtr;
+  _4 = (int) Unit;
+  PhysicalHwUnitId = _3->AdcPhysicalIdArr[_4];
+  ChIndex = 0;
+  goto <bb 4>; [INV]
+
+  <bb 3> :
+  _5 = (long unsigned int) PhysicalHwUnitId;
+  Adc_Ip_SetDisabledChannel (_5, ChIndex, 0);
+  _6 = (long unsigned int) PhysicalHwUnitId;
+  Adc_Ip_GetConvData (_6, ChIndex);
+  ChIndex.14_7 = ChIndex;
+  ChIndex = ChIndex.14_7 + 1;
+
+  <bb 4> :
+  _8 = (int) Unit;
+  _9 = Adc_axUnitStatus[_8].Sc1Used;
+  if (ChIndex < _9)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 5> :
+  _10 = (int) Group;
+  Adc_axGroupStatus[_10].CurrentChannel = 0;
+  Status = Adc_Ipw_StopConversionCheckTimeout (Unit, Group, CoreId);
+  D.6647 = Status;
+
+  <bb 6> :
+<L3>:
+  return D.6647;
+
+}
+
+
+Adc_Ipw_StartNormalConversion (Adc_HwUnitType Unit, uint8 CoreId)
+{
+  uint8 ChIndex;
+  uint8 NumChannel;
+  const Adc_HwUnitType PhysicalHwUnitId;
+  const struct Adc_GroupConfigurationType * GroupPtr;
+  Adc_GroupType GroupIndex;
+  Adc_GroupType Group;
+  unsigned char iftmp.12;
+
+  <bb 2> :
+  _1 = (int) Unit;
+  Group = Adc_axUnitStatus[_1].SwNormalQueue[0];
+  _2 = (int) CoreId;
+  _3 = Adc_apxCfgPtr[_2];
+  _4 = _3->GroupIdToIndexMapPtr;
+  _5 = (unsigned int) Group;
+  _6 = _5 * 2;
+  _7 = _4 + _6;
+  GroupIndex = *_7;
+  _8 = (int) CoreId;
+  _9 = Adc_apxCfgPtr[_8];
+  _10 = _9->GroupsPtr;
+  _11 = (unsigned int) GroupIndex;
+  _12 = _11 * 52;
+  GroupPtr = _10 + _12;
+  _13 = (int) CoreId;
+  _14 = Adc_apxCfgPtr[_13];
+  _15 = _14->AdcIpwConfigPtr;
+  _16 = (int) Unit;
+  PhysicalHwUnitId = _15->AdcPhysicalIdArr[_16];
+  _17 = (int) Unit;
+  _18 = Adc_axUnitStatus[_17].SwNormalQueueIndex;
+  if (_18 != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 3> :
+  Adc_Ipw_PrepareGroupStart (Unit, GroupPtr, CoreId);
+  _19 = (int) Group;
+  Adc_axGroupStatus[_19].CurrentChannel = 0;
+  _20 = GroupPtr->AssignedChannelCount;
+  if (_20 <= 15)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  _21 = GroupPtr->AssignedChannelCount;
+  iftmp.12 = _21 & 15;
+  goto <bb 6>; [INV]
+
+  <bb 5> :
+  iftmp.12 = 16;
+
+  <bb 6> :
+  NumChannel = iftmp.12;
+  _22 = (int) Unit;
+  _23 = Adc_axUnitStatus[_22].Sc1Used;
+  if (_23 == 0)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 7> :
+  _24 = (int) Unit;
+  Adc_axUnitStatus[_24].Sc1Used = NumChannel;
+
+  <bb 8> :
+  ChIndex = 0;
+  goto <bb 10>; [INV]
+
+  <bb 9> :
+  _25 = (long unsigned int) PhysicalHwUnitId;
+  Adc_Ip_GetConvData (_25, ChIndex);
+  ChIndex.13_26 = ChIndex;
+  ChIndex = ChIndex.13_26 + 1;
+
+  <bb 10> :
+  _27 = (int) Unit;
+  _28 = Adc_axUnitStatus[_27].Sc1Used;
+  if (ChIndex < _28)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 11> :
+  _29 = (long unsigned int) PhysicalHwUnitId;
+  Adc_Ip_SetTriggerMode (_29, 1);
+  Adc_Ipw_ConfigureConversion (Unit, Group, 15, NumChannel, CoreId);
+
+  <bb 12> :
+  return;
+
+}
+
+
+Adc_Ipw_DeInit (uint8 CoreId)
+{
+  Std_ReturnType ReturnStatus;
+  Adc_GroupType GroupIter;
+  Adc_GroupType GroupId;
+  Adc_HwUnitType LogicalHwUnitId;
+  Adc_HwUnitType PhysicalHwUnitId;
+  Std_ReturnType D.6635;
+
+  <bb 2> :
+  PhysicalHwUnitId = 0;
+  LogicalHwUnitId = 0;
+  GroupId = 0;
+  GroupIter = 0;
+  ReturnStatus = 0;
+  LogicalHwUnitId = 0;
+  goto <bb 6>; [INV]
+
+  <bb 3> :
+  _1 = (int) CoreId;
+  _2 = Adc_apxCfgPtr[_1];
+  _3 = _2->AdcIpwConfigPtr;
+  _4 = (int) LogicalHwUnitId;
+  _5 = _3->Mapping.AdcHwUnitArr[_4];
+  if (_5 == 1)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  _6 = (int) CoreId;
+  _7 = Adc_apxCfgPtr[_6];
+  _8 = _7->AdcIpwConfigPtr;
+  _9 = (int) LogicalHwUnitId;
+  PhysicalHwUnitId = _8->AdcPhysicalIdArr[_9];
+  _10 = (long unsigned int) PhysicalHwUnitId;
+  Adc_Ip_DeInit (_10);
+  _11 = (long unsigned int) PhysicalHwUnitId;
+  Pdb_Adc_Ip_DeInit (_11);
+
+  <bb 5> :
+  LogicalHwUnitId.10_12 = LogicalHwUnitId;
+  LogicalHwUnitId = LogicalHwUnitId.10_12 + 1;
+
+  <bb 6> :
+  if (LogicalHwUnitId <= 1)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 7> :
+  GroupIter = 0;
+  goto <bb 9>; [INV]
+
+  <bb 8> :
+  _13 = (int) CoreId;
+  _14 = Adc_apxCfgPtr[_13];
+  _15 = _14->GroupsPtr;
+  _16 = (unsigned int) GroupIter;
+  _17 = _16 * 52;
+  _18 = _15 + _17;
+  GroupId = _18->GroupId;
+  _19 = (int) GroupId;
+  Adc_axGroupStatus[_19].ResultsBufferPtr = 0B;
+  GroupIter.11_20 = GroupIter;
+  GroupIter = GroupIter.11_20 + 1;
+
+  <bb 9> :
+  _21 = (int) CoreId;
+  _22 = Adc_apxCfgPtr[_21];
+  _23 = _22->GroupCount;
+  if (GroupIter < _23)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 10> :
+  D.6635 = ReturnStatus;
+
+  <bb 11> :
+<L8>:
+  return D.6635;
+
+}
+
+
+Adc_Ipw_Init (const struct Adc_Ipw_Config * AdcIpwCfgPtr, const uint8 CoreId)
+{
+  Std_ReturnType TimeOutStatus;
+  Adc_HwUnitType PhysicalHwUnitId;
+  Adc_HwUnitType LogicalHwUnitId;
+  Std_ReturnType D.6631;
+
+  <bb 2> :
+  LogicalHwUnitId = 0;
+  PhysicalHwUnitId = 0;
+  TimeOutStatus = 0;
+  LogicalHwUnitId = 0;
+  goto <bb 6>; [INV]
+
+  <bb 3> :
+  _1 = (int) LogicalHwUnitId;
+  _2 = AdcIpwCfgPtr->Mapping.AdcHwUnitArr[_1];
+  if (_2 == 1)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  _3 = (int) LogicalHwUnitId;
+  PhysicalHwUnitId = AdcIpwCfgPtr->AdcPhysicalIdArr[_3];
+  _4 = (long unsigned int) PhysicalHwUnitId;
+  _5 = (int) LogicalHwUnitId;
+  _6 = AdcIpwCfgPtr->AdcConfigPtrArr[_5];
+  Adc_Ip_Init (_4, _6);
+  _7 = (long unsigned int) PhysicalHwUnitId;
+  _8 = (int) LogicalHwUnitId;
+  _9 = AdcIpwCfgPtr->PdbConfig[_8];
+  Pdb_Adc_Ip_Init (_7, _9);
+
+  <bb 5> :
+  LogicalHwUnitId.9_10 = LogicalHwUnitId;
+  LogicalHwUnitId = LogicalHwUnitId.9_10 + 1;
+
+  <bb 6> :
+  if (LogicalHwUnitId <= 1)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 7> :
+  D.6631 = TimeOutStatus;
+
+  <bb 8> :
+<L5>:
+  return D.6631;
+
+}
+
+
+Adc_Ipw_ConfigureConversion (Adc_HwUnitType Unit, Adc_GroupType Group, Adc_HwTriggerTimerType Trigger, uint8 NumChannel, uint8 CoreId)
+{
+  const Adc_GroupDefType * ChannelsDefinition;
+  Adc_Ip_InputChannelType Channel;
+  const Adc_HwUnitType PhysicalHwUnitId;
+  const struct Adc_GroupConfigurationType * GroupPtr;
+  const Adc_GroupType GroupIndex;
+  struct Adc_Ip_ChanConfigType ChannelConfig;
+  Adc_ChannelIndexType CurrentChannel;
+  uint8 ChIndex;
+
+  <bb 2> :
+  _1 = (int) CoreId;
+  _2 = Adc_apxCfgPtr[_1];
+  _3 = _2->GroupIdToIndexMapPtr;
+  _4 = (unsigned int) Group;
+  _5 = _4 * 2;
+  _6 = _3 + _5;
+  GroupIndex = *_6;
+  _7 = (int) CoreId;
+  _8 = Adc_apxCfgPtr[_7];
+  _9 = _8->GroupsPtr;
+  _10 = (unsigned int) GroupIndex;
+  _11 = _10 * 52;
+  GroupPtr = _9 + _11;
+  _12 = (int) CoreId;
+  _13 = Adc_apxCfgPtr[_12];
+  _14 = _13->AdcIpwConfigPtr;
+  _15 = (int) Unit;
+  PhysicalHwUnitId = _14->AdcPhysicalIdArr[_15];
+  ChannelsDefinition = 0B;
+  _16 = (int) Group;
+  CurrentChannel = Adc_axGroupStatus[_16].CurrentChannel;
+  ChannelsDefinition = GroupPtr->AssignmentPtr;
+  ChIndex = 0;
+  goto <bb 4>; [INV]
+
+  <bb 3> :
+  _17 = (int) CoreId;
+  _18 = Adc_apxCfgPtr[_17];
+  _19 = _18->AdcIpwConfigPtr;
+  _20 = (int) Unit;
+  _21 = _19->AdcConfigPtrArr[_20];
+  _22 = _21->ChannelConfigs;
+  _23 = (int) CurrentChannel;
+  _24 = (int) ChIndex;
+  _25 = _23 + _24;
+  _26 = (unsigned int) _25;
+  _27 = _26 * 2;
+  _28 = ChannelsDefinition + _27;
+  _29 = *_28;
+  _30 = (unsigned int) _29;
+  _31 = _30 * 12;
+  _32 = _22 + _31;
+  Channel = _32->Channel;
+  ChannelConfig.ChnIdx = ChIndex;
+  ChannelConfig.Channel = Channel;
+  ChannelConfig.InterruptEnable = 0;
+  _33 = (long unsigned int) PhysicalHwUnitId;
+  Adc_Ip_ConfigChannel (_33, &ChannelConfig);
+  ChIndex.1_34 = ChIndex;
+  ChIndex = ChIndex.1_34 + 1;
+
+  <bb 4> :
+  _35 = (unsigned int) ChIndex;
+  _36 = (unsigned int) NumChannel;
+  _37 = _36 + 4294967295;
+  if (_35 < _37)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 5> :
+  _38 = (int) CoreId;
+  _39 = Adc_apxCfgPtr[_38];
+  _40 = _39->AdcIpwConfigPtr;
+  _41 = (int) Unit;
+  _42 = _40->AdcConfigPtrArr[_41];
+  _43 = _42->ChannelConfigs;
+  _44 = (int) CurrentChannel;
+  _45 = (int) ChIndex;
+  _46 = _44 + _45;
+  _47 = (unsigned int) _46;
+  _48 = _47 * 2;
+  _49 = ChannelsDefinition + _48;
+  _50 = *_49;
+  _51 = (unsigned int) _50;
+  _52 = _51 * 12;
+  _53 = _43 + _52;
+  Channel = _53->Channel;
+  ChannelConfig.ChnIdx = ChIndex;
+  ChannelConfig.Channel = Channel;
+  _54 = GroupPtr->AdcWithoutInterrupt;
+  if (_54 == 0)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  ChannelConfig.InterruptEnable = 1;
+  goto <bb 8>; [INV]
+
+  <bb 7> :
+  ChannelConfig.InterruptEnable = 0;
+
+  <bb 8> :
+  _55 = (long unsigned int) PhysicalHwUnitId;
+  Adc_Ip_ConfigChannel (_55, &ChannelConfig);
+  ChIndex = NumChannel;
+  goto <bb 10>; [INV]
+
+  <bb 9> :
+  ChannelConfig.ChnIdx = ChIndex;
+  ChannelConfig.Channel = 31;
+  ChannelConfig.InterruptEnable = 0;
+  _56 = (long unsigned int) PhysicalHwUnitId;
+  Adc_Ip_ConfigChannel (_56, &ChannelConfig);
+  ChIndex.2_57 = ChIndex;
+  ChIndex = ChIndex.2_57 + 1;
+
+  <bb 10> :
+  if (ChIndex <= 15)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 11> :
+  _58 = (int) Unit;
+  Adc_axUnitStatus[_58].Sc1Used = NumChannel;
+  Adc_Ipw_ConfigurePdbConversion (Unit, Group, GroupPtr, Trigger, NumChannel);
+  ChannelConfig = {CLOBBER};
+  return;
+
+}
+
+
+Adc_Ipw_CalculateNumsBitShift (Adc_Ip_ResolutionType Resolution)
+{
+  uint8 NumsBitShift;
+  uint8 D.6583;
+
+  <bb 2> :
+  NumsBitShift = 0;
+  D.6583 = NumsBitShift;
+
+  <bb 3> :
+<L0>:
+  return D.6583;
+
+}
+
+
+Adc_Ipw_PrepareGroupStart (Adc_HwUnitType Unit, const struct Adc_GroupConfigurationType * GroupPtr, uint8 CoreId)
+{
+  Adc_HwUnitType PhysicalHwUnitId;
+  Adc_ConversionTimeType ConvTime;
+
+  <bb 2> :
+  _1 = (int) CoreId;
+  _2 = Adc_apxCfgPtr[_1];
+  _3 = _2->AdcIpwConfigPtr;
+  _4 = (int) Unit;
+  PhysicalHwUnitId = _3->AdcPhysicalIdArr[_4];
+  _5 = GroupPtr->AdcIpwGroupConfigPtr;
+  _6 = _5->GroupAvgEnable;
+  if (_6 == 1)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  _7 = (long unsigned int) PhysicalHwUnitId;
+  _8 = GroupPtr->AdcIpwGroupConfigPtr;
+  _9 = _8->GroupAvgSelect;
+  Adc_Ip_SetAveraging (_7, 1, _9);
+
+  <bb 4> :
+  _10 = GroupPtr->AdcIpwGroupConfigPtr;
+  ConvTime = _10->ConvTime;
+  _11 = (long unsigned int) PhysicalHwUnitId;
+  Adc_Ip_SetSampleTime (_11, ConvTime);
+  return;
+
+}
+
+
+Adc_Ipw_StopConversionCheckTimeout (Adc_HwUnitType Unit, Adc_GroupType Group, uint8 CoreId)
+{
+  uint8 ChIndex;
+  Adc_Ip_StatusType AdcIpStatus;
+  Std_ReturnType Status;
+  const Adc_HwUnitType PhysicalHwUnitId;
+  const Adc_GroupType GroupIndex;
+  Std_ReturnType D.6655;
+
+  <bb 2> :
+  _1 = (int) CoreId;
+  _2 = Adc_apxCfgPtr[_1];
+  _3 = _2->GroupIdToIndexMapPtr;
+  _4 = (unsigned int) Group;
+  _5 = _4 * 2;
+  _6 = _3 + _5;
+  GroupIndex = *_6;
+  _7 = (int) CoreId;
+  _8 = Adc_apxCfgPtr[_7];
+  _9 = _8->AdcIpwConfigPtr;
+  _10 = (int) Unit;
+  PhysicalHwUnitId = _9->AdcPhysicalIdArr[_10];
+  Status = 0;
+  _11 = (long unsigned int) PhysicalHwUnitId;
+  Pdb_Adc_Ip_DisableAndClearPdb (_11);
+  _12 = (int) CoreId;
+  _13 = Adc_apxCfgPtr[_12];
+  _14 = _13->GroupsPtr;
+  _15 = (unsigned int) GroupIndex;
+  _16 = _15 * 52;
+  _17 = _14 + _16;
+  _18 = _17->AdcWithoutInterrupt;
+  if (_18 == 1)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 3> :
+  _19 = (int) CoreId;
+  _20 = Adc_apxCfgPtr[_19];
+  _21 = _20->GroupsPtr;
+  _22 = (unsigned int) GroupIndex;
+  _23 = _22 * 52;
+  _24 = _21 + _23;
+  _25 = _24->Mode;
+  if (_25 == 1)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  _26 = (long unsigned int) PhysicalHwUnitId;
+  Adc_Ip_SetContinuousMode (_26, 0);
+
+  <bb 5> :
+  ChIndex = 0;
+  goto <bb 9>; [INV]
+
+  <bb 6> :
+  _27 = (long unsigned int) PhysicalHwUnitId;
+  AdcIpStatus = Adc_Ip_SetDisabledChannel (_27, ChIndex, 1);
+  if (AdcIpStatus == 2)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 7> :
+  Status = 1;
+
+  <bb 8> :
+  ChIndex.15_28 = ChIndex;
+  ChIndex = ChIndex.15_28 + 1;
+
+  <bb 9> :
+  _29 = (int) Unit;
+  _30 = Adc_axUnitStatus[_29].Sc1Used;
+  if (ChIndex < _30)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 10> :
+  D.6655 = Status;
+
+  <bb 11> :
+<L9>:
+  return D.6655;
+
+}
+
+
+Adc_Ipw_ConfigurePdbConversion (Adc_HwUnitType Unit, Adc_GroupType Group, const struct Adc_GroupConfigurationType * GroupPtr, Adc_HwTriggerTimerType Trigger, uint8 NumChannel)
+{
+  const uint16 * GroupDelay;
+  Adc_HwUnitType PhysicalHwUnitId;
+  struct Pdb_Adc_Ip_PretriggersConfigType PdbPretriggsConfig;
+  uint16 PdbPeriod;
+  uint8 PdbChannelUsed;
+  uint8 PdbIndex;
+  unsigned char iftmp.3;
+
+  <bb 2> :
+  PdbPeriod = 0;
+  _1 = Adc_apxCfgPtr[0];
+  _2 = _1->AdcIpwConfigPtr;
+  _3 = (int) Unit;
+  PhysicalHwUnitId = _2->AdcPhysicalIdArr[_3];
+  _4 = GroupPtr->AdcIpwGroupConfigPtr;
+  GroupDelay = _4->DelayPtr;
+  _5 = NumChannel & 7;
+  if (_5 != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  _6 = NumChannel / 8;
+  iftmp.3 = _6 + 1;
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  iftmp.3 = NumChannel / 8;
+
+  <bb 5> :
+  PdbChannelUsed = iftmp.3;
+  _7 = (long unsigned int) PhysicalHwUnitId;
+  Pdb_Adc_Ip_Enable (_7);
+  _8 = (long unsigned int) PhysicalHwUnitId;
+  Pdb_Adc_Ip_SetTriggerInput (_8, Trigger);
+  PdbIndex = Adc_Ipw_ConfigurePdbChannels (Unit, Group, GroupPtr, NumChannel);
+  _9 = GroupPtr->AdcIpwGroupConfigPtr;
+  _10 = _9->AdcGroupEnableChannelDelays;
+  if (_10 != 0)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 6> :
+  _11 = GroupPtr->AdcIpwGroupConfigPtr;
+  _12 = _11->AdcGroupEnableBackToBack;
+  _13 = ~_12;
+  if (_13 != 0)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 7> :
+  _14 = (int) Group;
+  _15 = Adc_axGroupStatus[_14].CurrentChannel;
+  _16 = (int) _15;
+  _17 = (int) NumChannel;
+  _18 = _16 + _17;
+  _19 = (sizetype) _18;
+  _20 = _19 + 2147483647;
+  _21 = _20 * 2;
+  _22 = GroupDelay + _21;
+  PdbPeriod = *_22;
+  goto <bb 10>; [INV]
+
+  <bb 8> :
+  _23 = *GroupDelay;
+  _24 = GroupPtr->AdcIpwGroupConfigPtr;
+  _25 = _24->PdbDelay;
+  _26 = (unsigned int) PdbChannelUsed;
+  _27 = _26 + 4294967295;
+  _28 = (short unsigned int) _27;
+  _29 = _25 * _28;
+  PdbPeriod = _23 + _29;
+  goto <bb 10>; [INV]
+
+  <bb 9> :
+  _30 = GroupPtr->AdcIpwGroupConfigPtr;
+  _31 = _30->PdbDelay;
+  _32 = (unsigned int) PdbChannelUsed;
+  _33 = _32 + 4294967295;
+  _34 = (short unsigned int) _33;
+  PdbPeriod = _31 * _34;
+
+  <bb 10> :
+  _35 = (long unsigned int) PhysicalHwUnitId;
+  Pdb_Adc_Ip_SetModulus (_35, PdbPeriod);
+  _36 = (long unsigned int) PhysicalHwUnitId;
+  Pdb_Adc_Ip_LoadRegValues (_36);
+  PdbPretriggsConfig.EnableMask = 0;
+  PdbPretriggsConfig.EnableDelayMask = 0;
+  PdbPretriggsConfig.BackToBackEnableMask = 0;
+  goto <bb 12>; [INV]
+
+  <bb 11> :
+  _37 = (long unsigned int) PhysicalHwUnitId;
+  Pdb_Adc_Ip_ConfigAdcPretriggers (_37, PdbIndex, &PdbPretriggsConfig);
+  PdbIndex.4_38 = PdbIndex;
+  PdbIndex = PdbIndex.4_38 + 1;
+
+  <bb 12> :
+  if (PdbIndex <= 1)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 13> :
+  _39 = (int) Group;
+  _40 = Adc_axGroupStatus[_39].CurrentChannel;
+  _41 = (int) Group;
+  _42 = NumChannel + _40;
+  Adc_axGroupStatus[_41].CurrentChannel = _42;
+  if (Trigger == 15)
+    goto <bb 14>; [INV]
+  else
+    goto <bb 15>; [INV]
+
+  <bb 14> :
+  _43 = (long unsigned int) PhysicalHwUnitId;
+  Pdb_Adc_Ip_SwTrigger (_43);
+
+  <bb 15> :
+  PdbPretriggsConfig = {CLOBBER};
+  return;
+
+}
+
+
+Adc_Ipw_ConfigurePdbChannels (Adc_HwUnitType Unit, Adc_GroupType Group, const struct Adc_GroupConfigurationType * GroupPtr, uint8 NumChannel)
+{
+  const uint16 * GroupDelay;
+  Adc_HwUnitType PhysicalHwUnitId;
+  struct Pdb_Adc_Ip_PretriggersConfigType PdbPretriggsConfig;
+  uint16 CurrentCh;
+  uint16 PdbDelay;
+  uint8 PdbChannelUsed;
+  uint8 LeftChannel;
+  uint8 ChUsed;
+  uint8 PreTriggerCtr;
+  uint8 PdbIndex;
+  uint8 D.6626;
+  uint8 iftmp.6;
+  unsigned char iftmp.5;
+
+  <bb 2> :
+  LeftChannel = NumChannel;
+  _1 = NumChannel & 7;
+  if (_1 != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  _2 = NumChannel / 8;
+  iftmp.5 = _2 + 1;
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  iftmp.5 = NumChannel / 8;
+
+  <bb 5> :
+  PdbChannelUsed = iftmp.5;
+  _3 = (int) Group;
+  _4 = Adc_axGroupStatus[_3].CurrentChannel;
+  CurrentCh = (uint16) _4;
+  _5 = Adc_apxCfgPtr[0];
+  _6 = _5->AdcIpwConfigPtr;
+  _7 = (int) Unit;
+  PhysicalHwUnitId = _6->AdcPhysicalIdArr[_7];
+  _8 = GroupPtr->AdcIpwGroupConfigPtr;
+  GroupDelay = _8->DelayPtr;
+  PdbIndex = 0;
+  goto <bb 26>; [INV]
+
+  <bb 6> :
+  _9 = LeftChannel >> 3;
+  if (_9 == 0)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 7> :
+  iftmp.6 = LeftChannel;
+  goto <bb 9>; [INV]
+
+  <bb 8> :
+  iftmp.6 = 8;
+
+  <bb 9> :
+  ChUsed = iftmp.6;
+  _10 = GroupPtr->AdcIpwGroupConfigPtr;
+  _11 = _10->AdcGroupEnableChannelDelays;
+  if (_11 != 0)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 17>; [INV]
+
+  <bb 10> :
+  _12 = GroupPtr->AdcIpwGroupConfigPtr;
+  _13 = _12->AdcGroupEnableBackToBack;
+  _14 = ~_13;
+  if (_14 != 0)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 14>; [INV]
+
+  <bb 11> :
+  _15 = (unsigned int) ChUsed;
+  _16 = 8 - _15;
+  _17 = 255 >> _16;
+  _18 = (unsigned char) _17;
+  PdbPretriggsConfig.EnableDelayMask = _18;
+  PreTriggerCtr = 0;
+  goto <bb 13>; [INV]
+
+  <bb 12> :
+  _19 = (long unsigned int) PhysicalHwUnitId;
+  _20 = (int) CurrentCh;
+  _21 = (int) PreTriggerCtr;
+  _22 = _20 + _21;
+  _23 = (unsigned int) _22;
+  _24 = _23 * 2;
+  _25 = GroupDelay + _24;
+  _26 = *_25;
+  Pdb_Adc_Ip_SetAdcPretriggerDelayValue (_19, PdbIndex, PreTriggerCtr, _26);
+  PreTriggerCtr.7_27 = PreTriggerCtr;
+  PreTriggerCtr = PreTriggerCtr.7_27 + 1;
+
+  <bb 13> :
+  if (PreTriggerCtr < ChUsed)
+    goto <bb 12>; [INV]
+  else
+    goto <bb 20>; [INV]
+
+  <bb 14> :
+  if (PdbIndex == 0)
+    goto <bb 15>; [INV]
+  else
+    goto <bb 16>; [INV]
+
+  <bb 15> :
+  PdbPretriggsConfig.EnableDelayMask = 1;
+  PdbDelay = *GroupDelay;
+  _28 = (long unsigned int) PhysicalHwUnitId;
+  Pdb_Adc_Ip_SetAdcPretriggerDelayValue (_28, PdbIndex, 0, PdbDelay);
+  goto <bb 20>; [INV]
+
+  <bb 16> :
+  PdbPretriggsConfig.EnableDelayMask = 1;
+  _29 = GroupPtr->AdcIpwGroupConfigPtr;
+  _30 = _29->PdbDelay;
+  _31 = (short unsigned int) PdbIndex;
+  PdbDelay = _30 * _31;
+  _32 = (long unsigned int) PhysicalHwUnitId;
+  Pdb_Adc_Ip_SetAdcPretriggerDelayValue (_32, PdbIndex, 0, PdbDelay);
+  goto <bb 20>; [INV]
+
+  <bb 17> :
+  if (PdbIndex == 0)
+    goto <bb 18>; [INV]
+  else
+    goto <bb 19>; [INV]
+
+  <bb 18> :
+  PdbPretriggsConfig.EnableDelayMask = 1;
+  _33 = (long unsigned int) PhysicalHwUnitId;
+  Pdb_Adc_Ip_SetAdcPretriggerDelayValue (_33, PdbIndex, 0, 0);
+  goto <bb 20>; [INV]
+
+  <bb 19> :
+  PdbPretriggsConfig.EnableDelayMask = 1;
+  _34 = GroupPtr->AdcIpwGroupConfigPtr;
+  _35 = _34->PdbDelay;
+  _36 = (short unsigned int) PdbIndex;
+  PdbDelay = _35 * _36;
+  _37 = (long unsigned int) PhysicalHwUnitId;
+  Pdb_Adc_Ip_SetAdcPretriggerDelayValue (_37, PdbIndex, 0, PdbDelay);
+
+  <bb 20> :
+  _38 = (long unsigned int) PhysicalHwUnitId;
+  Pdb_Adc_Ip_LoadRegValues (_38);
+  LeftChannel = LeftChannel - ChUsed;
+  _39 = (short unsigned int) ChUsed;
+  CurrentCh = CurrentCh + _39;
+  _40 = GroupPtr->AdcIpwGroupConfigPtr;
+  _41 = _40->AdcGroupEnableBackToBack;
+  if (_41 != 0)
+    goto <bb 21>; [INV]
+  else
+    goto <bb 24>; [INV]
+
+  <bb 21> :
+  if (PdbIndex == 0)
+    goto <bb 22>; [INV]
+  else
+    goto <bb 23>; [INV]
+
+  <bb 22> :
+  _42 = (unsigned int) ChUsed;
+  _43 = 8 - _42;
+  _44 = 255 >> _43;
+  _45 = (unsigned char) _44;
+  _46 = _45 + 255;
+  PdbPretriggsConfig.BackToBackEnableMask = _46;
+  goto <bb 25>; [INV]
+
+  <bb 23> :
+  _47 = (unsigned int) ChUsed;
+  _48 = 8 - _47;
+  _49 = 255 >> _48;
+  _50 = (unsigned char) _49;
+  _51 = _50 + 255;
+  PdbPretriggsConfig.BackToBackEnableMask = _51;
+  goto <bb 25>; [INV]
+
+  <bb 24> :
+  PdbPretriggsConfig.BackToBackEnableMask = 0;
+
+  <bb 25> :
+  _52 = (unsigned int) ChUsed;
+  _53 = 8 - _52;
+  _54 = 255 >> _53;
+  _55 = (unsigned char) _54;
+  PdbPretriggsConfig.EnableMask = _55;
+  _56 = (long unsigned int) PhysicalHwUnitId;
+  Pdb_Adc_Ip_ConfigAdcPretriggers (_56, PdbIndex, &PdbPretriggsConfig);
+  PdbIndex.8_57 = PdbIndex;
+  PdbIndex = PdbIndex.8_57 + 1;
+
+  <bb 26> :
+  if (PdbIndex < PdbChannelUsed)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 27>; [INV]
+
+  <bb 27> :
+  D.6626 = PdbIndex;
+  PdbPretriggsConfig = {CLOBBER};
+
+  <bb 28> :
+<L31>:
+  return D.6626;
+
+}
+
+
+Adc_Ipw_WriteDataBuffer (const Adc_GroupType Group, Adc_ValueGroupType * DataPtr, uint8 CoreId)
+{
+  Adc_StreamNumSampleType ResultIndex;
+  Adc_ValueGroupType * ResultPtr;
+  const Adc_ChannelIndexType ChannelCount;
+  const struct Adc_GroupConfigurationType * GroupPtr;
+  const Adc_GroupType GroupIndex;
+  uint16 ResultOffset;
+  uint8 Index;
+
+  <bb 2> :
+  _1 = (int) CoreId;
+  _2 = Adc_apxCfgPtr[_1];
+  _3 = _2->GroupIdToIndexMapPtr;
+  _4 = (unsigned int) Group;
+  _5 = _4 * 2;
+  _6 = _3 + _5;
+  GroupIndex = *_6;
+  _7 = (int) CoreId;
+  _8 = Adc_apxCfgPtr[_7];
+  _9 = _8->GroupsPtr;
+  _10 = (unsigned int) GroupIndex;
+  _11 = _10 * 52;
+  GroupPtr = _9 + _11;
+  ChannelCount = GroupPtr->AssignedChannelCount;
+  ResultPtr = 0B;
+  ResultIndex = 0;
+  _12 = (int) Group;
+  _13 = Adc_axGroupStatus[_12].ResultIndex;
+  ResultIndex = _13 + 65535;
+  _14 = (int) Group;
+  _15 = Adc_axGroupStatus[_14].ResultIndex;
+  if (_15 == 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  _16 = GroupPtr->NumSamples;
+  ResultIndex = _16 + 65535;
+
+  <bb 4> :
+  _17 = (int) Group;
+  _18 = Adc_axGroupStatus[_17].ResultsBufferPtr;
+  _19 = (unsigned int) ResultIndex;
+  _20 = _19 * 2;
+  ResultPtr = _18 + _20;
+  ResultOffset = GroupPtr->NumSamples;
+  Index = 0;
+  goto <bb 6>; [INV]
+
+  <bb 5> :
+  _21 = (unsigned int) Index;
+  _22 = _21 * 2;
+  _23 = DataPtr + _22;
+  _24 = *ResultPtr;
+  *_23 = _24;
+  _25 = (unsigned int) ResultOffset;
+  _26 = _25 * 2;
+  ResultPtr = ResultPtr + _26;
+  Index.18_27 = Index;
+  Index = Index.18_27 + 1;
+
+  <bb 6> :
+  if (Index < ChannelCount)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 7> :
+  return;
+
+}
+
+
+Adc_Ipw_ReadGroupNoInt (const struct Adc_GroupConfigurationType * GroupPtr, Adc_ValueGroupType * DataPtr, boolean * Flag, uint8 CoreId)
+{
+  const Adc_HwUnitType PhysicalHwUnitId;
+  const Adc_HwUnitType LogicalHwUnitId;
+  Std_ReturnType ReadGroupRet;
+  boolean ValidConversion;
+  Adc_ChannelIndexType ChannelCount;
+  Std_ReturnType D.6681;
+
+  <bb 2> :
+  ValidConversion = 1;
+  ReadGroupRet = 0;
+  LogicalHwUnitId = GroupPtr->AdcLogicalUnitId;
+  _1 = (int) CoreId;
+  _2 = Adc_apxCfgPtr[_1];
+  _3 = _2->AdcIpwConfigPtr;
+  _4 = (int) LogicalHwUnitId;
+  PhysicalHwUnitId = _3->AdcPhysicalIdArr[_4];
+  ChannelCount = GroupPtr->AssignedChannelCount;
+  ValidConversion = Adc_Ipw_CheckValidConversion (PhysicalHwUnitId, 0, ChannelCount);
+  if (ValidConversion != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  ReadGroupRet = Adc_Ipw_ReadGroupConvData (GroupPtr, DataPtr, Flag, CoreId);
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  ReadGroupRet = 1;
+
+  <bb 5> :
+  D.6681 = ReadGroupRet;
+
+  <bb 6> :
+<L3>:
+  return D.6681;
+
+}
+
+
+Adc_Ipw_ReadGroupConvData (const struct Adc_GroupConfigurationType * GroupPtr, Adc_ValueGroupType * DataPtr, boolean * Flag, uint8 CoreId)
+{
+  const Adc_ChannelIndexType ChannelCount;
+  const uint8 NumsBitShift;
+  const Adc_HwUnitType PhysicalHwUnitId;
+  const Adc_HwUnitType LogicalHwUnitId;
+  Std_ReturnType ReadGroupRet;
+  Adc_ValueGroupType AdcResult;
+  uint8 Channel;
+  Std_ReturnType D.6683;
+
+  <bb 2> :
+  ReadGroupRet = 0;
+  LogicalHwUnitId = GroupPtr->AdcLogicalUnitId;
+  _1 = (int) CoreId;
+  _2 = Adc_apxCfgPtr[_1];
+  _3 = _2->AdcIpwConfigPtr;
+  _4 = (int) LogicalHwUnitId;
+  PhysicalHwUnitId = _3->AdcPhysicalIdArr[_4];
+  _5 = (int) CoreId;
+  _6 = Adc_apxCfgPtr[_5];
+  _7 = _6->AdcIpwConfigPtr;
+  _8 = (int) LogicalHwUnitId;
+  _9 = _7->AdcConfigPtrArr[_8];
+  _10 = _9->Resolution;
+  NumsBitShift = Adc_Ipw_CalculateNumsBitShift (_10);
+  ChannelCount = GroupPtr->AssignedChannelCount;
+  Channel = 0;
+  goto <bb 4>; [INV]
+
+  <bb 3> :
+  _11 = (long unsigned int) PhysicalHwUnitId;
+  AdcResult = Adc_Ip_GetConvData (_11, Channel);
+  _12 = (int) AdcResult;
+  _13 = (int) NumsBitShift;
+  _14 = _12 << _13;
+  AdcResult = (Adc_ValueGroupType) _14;
+  *Flag = 1;
+  _15 = (unsigned int) Channel;
+  _16 = _15 * 2;
+  _17 = DataPtr + _16;
+  *_17 = AdcResult;
+  Channel.17_18 = Channel;
+  Channel = Channel.17_18 + 1;
+
+  <bb 4> :
+  if (Channel < ChannelCount)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 5> :
+  D.6683 = ReadGroupRet;
+
+  <bb 6> :
+<L3>:
+  return D.6683;
+
+}
+
+
+Adc_Ipw_RemoveFromQueue (const Adc_HwUnitType Unit, const Adc_QueueIndexType CurQueueIndex)
+{
+  Adc_QueueIndexType CurrentIndex;
+  Adc_QueueIndexType PositionIndex;
+
+  <bb 2> :
+  PositionIndex = 0;
+  CurrentIndex = 0;
+  SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_00 ();
+  _1 = (int) Unit;
+  CurrentIndex = Adc_axUnitStatus[_1].SwNormalQueueIndex;
+  if (CurrentIndex <= 1)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  _2 = (int) Unit;
+  Adc_axUnitStatus[_2].SwNormalQueueIndex = 0;
+  goto <bb 8>; [INV]
+
+  <bb 4> :
+  PositionIndex = CurQueueIndex + 1;
+  goto <bb 6>; [INV]
+
+  <bb 5> :
+  _3 = (int) Unit;
+  _4 = (int) PositionIndex;
+  _5 = (int) Unit;
+  _6 = (unsigned int) PositionIndex;
+  _7 = _6 + 4294967295;
+  _8 = Adc_axUnitStatus[_3].SwNormalQueue[_4];
+  Adc_axUnitStatus[_5].SwNormalQueue[_7] = _8;
+  PositionIndex.0_9 = PositionIndex;
+  PositionIndex = PositionIndex.0_9 + 1;
+
+  <bb 6> :
+  if (PositionIndex < CurrentIndex)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 7> :
+  _10 = (int) Unit;
+  _11 = Adc_axUnitStatus[_10].SwNormalQueueIndex;
+  _12 = _11;
+  _13 = _12 + 65535;
+  Adc_axUnitStatus[_10].SwNormalQueueIndex = _13;
+
+  <bb 8> :
+  SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_00 ();
+  return;
+
+}
+
+

@@ -1,0 +1,286 @@
+Pwm_SetOutputToIdle (Pwm_ChannelType ChannelNumber)
+{
+  Pwm_ChannelType PartitionChannelIdx;
+  uint32 CoreId;
+  const struct Pwm_ChannelConfigType * _1;
+  unsigned int _2;
+  unsigned int _3;
+  const struct Pwm_ChannelConfigType * _4;
+  <unnamed type> _5;
+  const struct Pwm_ChannelConfigType * _6;
+  unsigned int _7;
+  unsigned int _8;
+  const struct Pwm_ChannelConfigType * _9;
+  const struct Pwm_IpwChannelConfigType * _10;
+  int _11;
+
+  <bb 2> :
+  CoreId_12 = 0;
+  PartitionChannelIdx_16 = Pwm_GetPartitionChannelIdx (CoreId_12, ChannelNumber_14(D));
+  _1 = Pwm_aState[CoreId_12].PwmChannelConfigs[0];
+  _2 = (unsigned int) PartitionChannelIdx_16;
+  _3 = _2 * 24;
+  _4 = _1 + _3;
+  _5 = _4->ChannelIdleState;
+  _6 = Pwm_aState[CoreId_12].PwmChannelConfigs[0];
+  _7 = (unsigned int) PartitionChannelIdx_16;
+  _8 = _7 * 24;
+  _9 = _6 + _8;
+  _10 = &_9->IpwChannelCfg;
+  Pwm_Ipw_SetOutputToIdle (_5, _10);
+  _11 = (int) PartitionChannelIdx_16;
+  Pwm_aState[CoreId_12].PwmChannelIdleState[_11] = 1;
+  return;
+
+}
+
+
+Pwm_SetPeriodAndDuty (Pwm_ChannelType ChannelNumber, Pwm_PeriodType Period, uint16 DutyCycle)
+{
+  Pwm_ChannelType PartitionChannelIdx;
+  uint32 CoreId;
+  const struct Pwm_ChannelConfigType * _1;
+  unsigned int _2;
+  unsigned int _3;
+  const struct Pwm_ChannelConfigType * _4;
+  const struct Pwm_IpwChannelConfigType * _5;
+
+  <bb 2> :
+  CoreId_6 = 0;
+  PartitionChannelIdx_10 = Pwm_GetPartitionChannelIdx (CoreId_6, ChannelNumber_8(D));
+  _1 = Pwm_aState[CoreId_6].PwmChannelConfigs[0];
+  _2 = (unsigned int) PartitionChannelIdx_10;
+  _3 = _2 * 24;
+  _4 = _1 + _3;
+  _5 = &_4->IpwChannelCfg;
+  Pwm_Ipw_SetPeriodAndDuty (Period_11(D), DutyCycle_12(D), _5);
+  return;
+
+}
+
+
+Pwm_SetDutyCycle (Pwm_ChannelType ChannelNumber, uint16 DutyCycle)
+{
+  Std_ReturnType RetVal;
+  Pwm_ChannelType PartitionChannelIdx;
+  uint32 CoreId;
+  const struct Pwm_ChannelConfigType * _1;
+  unsigned int _2;
+  unsigned int _3;
+  const struct Pwm_ChannelConfigType * _4;
+  const struct Pwm_IpwChannelConfigType * _5;
+
+  <bb 2> :
+  RetVal_6 = 0;
+  CoreId_7 = 0;
+  PartitionChannelIdx_11 = Pwm_GetPartitionChannelIdx (CoreId_7, ChannelNumber_9(D));
+  _1 = Pwm_aState[CoreId_7].PwmChannelConfigs[0];
+  _2 = (unsigned int) PartitionChannelIdx_11;
+  _3 = _2 * 24;
+  _4 = _1 + _3;
+  _5 = &_4->IpwChannelCfg;
+  RetVal_14 = Pwm_Ipw_SetDutyCycle (DutyCycle_12(D), _5);
+  return;
+
+}
+
+
+Pwm_DeInit ()
+{
+  uint8 Index;
+  uint32 CoreId;
+  const struct Pwm_ConfigType * ConfigPtr;
+  const struct Pwm_ChannelConfigType * _1;
+  unsigned int _2;
+  unsigned int _3;
+  const struct Pwm_ChannelConfigType * _4;
+  const struct Pwm_IpwChannelConfigType * _5;
+  const struct Pwm_ChannelConfigType * _6;
+  unsigned int _7;
+  unsigned int _8;
+  const struct Pwm_ChannelConfigType * _9;
+  <unnamed type> _10;
+  unsigned char Index.2_11;
+  const struct Pwm_ConfigType * _12;
+  unsigned char _13;
+  const struct Pwm_IpwInstanceConfigType[<unknown>] * _14;
+  int _15;
+  const struct Pwm_IpwInstanceConfigType * _16;
+  unsigned char Index.3_17;
+  const struct Pwm_ConfigType * _18;
+  unsigned char _19;
+  int _20;
+  unsigned char Index.4_21;
+
+  <bb 2> :
+  CoreId_28 = 0;
+  Index_29 = 0;
+  goto <bb 4>; [INV]
+
+  <bb 3> :
+  _1 = Pwm_aState[CoreId_28].PwmChannelConfigs[0];
+  _2 = (unsigned int) Index_22;
+  _3 = _2 * 24;
+  _4 = _1 + _3;
+  _5 = &_4->IpwChannelCfg;
+  _6 = Pwm_aState[CoreId_28].PwmChannelConfigs[0];
+  _7 = (unsigned int) Index_22;
+  _8 = _7 * 24;
+  _9 = _6 + _8;
+  _10 = _9->ChannelIdleState;
+  Pwm_Ipw_DeInit (_5, _10);
+  Index.2_11 = Index_22;
+  Index_40 = Index.2_11 + 1;
+
+  <bb 4> :
+  # Index_22 = PHI <Index_29(2), Index_40(3)>
+  _12 = Pwm_aState[CoreId_28].PwmConfig;
+  _13 = _12->NumChannels;
+  if (Index_22 < _13)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 5> :
+  ConfigPtr_31 = Pwm_aState[CoreId_28].PwmConfig;
+  Index_32 = 0;
+  goto <bb 7>; [INV]
+
+  <bb 6> :
+  _14 = ConfigPtr_31->PwmInstancesConfig;
+  _15 = (int) Index_23;
+  _16 = &(*_14)[_15];
+  Pwm_Ipw_DeInitInstance (_16);
+  Index.3_17 = Index_23;
+  Index_38 = Index.3_17 + 1;
+
+  <bb 7> :
+  # Index_23 = PHI <Index_32(5), Index_38(6)>
+  _18 = Pwm_aState[CoreId_28].PwmConfig;
+  _19 = _18->NumInstances;
+  if (Index_23 < _19)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 8> :
+  Pwm_aState[CoreId_28].PwmConfig = 0B;
+  Index_34 = 0;
+  goto <bb 10>; [INV]
+
+  <bb 9> :
+  _20 = (int) Index_24;
+  Pwm_aState[CoreId_28].PwmChannelConfigs[_20] = 0B;
+  Index.4_21 = Index_24;
+  Index_36 = Index.4_21 + 1;
+
+  <bb 10> :
+  # Index_24 = PHI <Index_34(8), Index_36(9)>
+  if (Index_24 == 0)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 11> :
+  return;
+
+}
+
+
+Pwm_Init (const struct Pwm_ConfigType * ConfigPtr)
+{
+  uint8 Index;
+  uint32 CoreId;
+  const struct Pwm_ConfigType * _1;
+  const struct Pwm_IpwInstanceConfigType[<unknown>] * _2;
+  int _3;
+  const struct Pwm_IpwInstanceConfigType * _4;
+  unsigned char Index.0_5;
+  const struct Pwm_ConfigType * _6;
+  unsigned char _7;
+  const struct Pwm_ConfigType * _8;
+  const struct Pwm_ChannelConfigType[<unknown>] * _9;
+  int _10;
+  int _11;
+  const struct Pwm_ChannelConfigType * _12;
+  const struct Pwm_ConfigType * _13;
+  const struct Pwm_ChannelConfigType[<unknown>] * _14;
+  int _15;
+  const struct Pwm_IpwChannelConfigType * _16;
+  unsigned char Index.1_17;
+  const struct Pwm_ConfigType * _18;
+  unsigned char _19;
+
+  <bb 2> :
+  CoreId_24 = 0;
+  Pwm_aState[CoreId_24].PwmConfig = ConfigPtr_26(D);
+  Index_28 = 0;
+  goto <bb 4>; [INV]
+
+  <bb 3> :
+  _1 = Pwm_aState[CoreId_24].PwmConfig;
+  _2 = _1->PwmInstancesConfig;
+  _3 = (int) Index_20;
+  _4 = &(*_2)[_3];
+  Pwm_Ipw_InitInstance (_4);
+  Index.0_5 = Index_20;
+  Index_34 = Index.0_5 + 1;
+
+  <bb 4> :
+  # Index_20 = PHI <Index_28(2), Index_34(3)>
+  _6 = Pwm_aState[CoreId_24].PwmConfig;
+  _7 = _6->NumInstances;
+  if (Index_20 < _7)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 5> :
+  Index_29 = 0;
+  goto <bb 7>; [INV]
+
+  <bb 6> :
+  _8 = Pwm_aState[CoreId_24].PwmConfig;
+  _9 = _8->PwmChannelsConfig;
+  _10 = (int) Index_21;
+  _11 = (int) Index_21;
+  _12 = &(*_9)[_10];
+  Pwm_aState[CoreId_24].PwmChannelConfigs[_11] = _12;
+  _13 = Pwm_aState[CoreId_24].PwmConfig;
+  _14 = _13->PwmChannelsConfig;
+  _15 = (int) Index_21;
+  _16 = &(*_14)[_15].IpwChannelCfg;
+  Pwm_Ipw_Init (_16);
+  Index.1_17 = Index_21;
+  Index_32 = Index.1_17 + 1;
+
+  <bb 7> :
+  # Index_21 = PHI <Index_29(5), Index_32(6)>
+  _18 = Pwm_aState[CoreId_24].PwmConfig;
+  _19 = _18->NumChannels;
+  if (Index_21 < _19)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 8> :
+  return;
+
+}
+
+
+Pwm_GetPartitionChannelIdx (uint32 CoreId, Pwm_ChannelType ChannelNumber)
+{
+  uint8 D.6023;
+  uint8 _2;
+
+  <bb 2> :
+  _2 = ChannelNumber_1(D);
+
+  <bb 3> :
+<L0>:
+  return _2;
+
+}
+
+

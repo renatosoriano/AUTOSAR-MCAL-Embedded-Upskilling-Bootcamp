@@ -1,0 +1,49 @@
+HwIoAb_Buzzer_Stop ()
+{
+  <bb 2> :
+  Pwm_SetOutputToIdle (0);
+  return;
+
+}
+
+
+HwIoAb_Buzzer_Beep (uint8 Tone)
+{
+  int _1;
+
+  <bb 2> :
+  _1 = (int) Tone_3(D);
+  switch (_1) <default: <L3> [INV], case 0: <L0> [INV], case 1: <L1> [INV], case 2: <L2> [INV]>
+
+  <bb 3> :
+<L0>:
+  Pwm_SetPeriodAndDuty (0, 2666, 16384);
+  goto <bb 7>; [INV]
+
+  <bb 4> :
+<L1>:
+  Pwm_SetPeriodAndDuty (0, 1600, 16384);
+  goto <bb 7>; [INV]
+
+  <bb 5> :
+<L2>:
+  Pwm_SetPeriodAndDuty (0, 1066, 16384);
+  goto <bb 7>; [INV]
+
+  <bb 6> :
+<L3>:
+
+  <bb 7> :
+  return;
+
+}
+
+
+HwIoAb_Buzzer_Init (const struct HwIoAb_Buzzer_Config * Buzzer_Config)
+{
+  <bb 2> :
+  return;
+
+}
+
+

@@ -1,0 +1,62 @@
+Power_Ip_TimeoutExpired (uint32 * StartTimeInOut, uint32 * ElapsedTimeInOut, uint32 TimeoutTicks)
+{
+  boolean RetVal;
+  boolean D.5549;
+  long unsigned int D.5546;
+
+  <bb 2> :
+  RetVal = 0;
+  D.5546 = OsIf_GetElapsed (StartTimeInOut, 0);
+  _1 = *ElapsedTimeInOut;
+  _2 = D.5546 + _1;
+  *ElapsedTimeInOut = _2;
+  _3 = *ElapsedTimeInOut;
+  if (TimeoutTicks <= _3)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  RetVal = 1;
+
+  <bb 4> :
+  D.5549 = RetVal;
+
+  <bb 5> :
+<L2>:
+  return D.5549;
+
+}
+
+
+Power_Ip_StartTimeout (uint32 * StartTimeOut, uint32 * ElapsedTimeOut, uint32 * TimeoutTicksOut, uint32 TimeoutUs)
+{
+  <bb 2> :
+  _1 = OsIf_GetCounter (0);
+  *StartTimeOut = _1;
+  *ElapsedTimeOut = 0;
+  _2 = OsIf_MicrosToTicks (TimeoutUs, 0);
+  *TimeoutTicksOut = _2;
+  return;
+
+}
+
+
+Power_Ip_ReportPowerErrorsEmptyCallback (Power_Ip_ReportErrorType Error, uint8 ErrorCode)
+{
+  <bb 2> :
+  return;
+
+}
+
+
+Power_Ip_ReportPowerErrors (Power_Ip_ReportErrorType Error, uint8 ErrorCode)
+{
+  <bb 2> :
+  Power_Ip_pfReportErrorsCallback.0_1 = Power_Ip_pfReportErrorsCallback;
+  Power_Ip_pfReportErrorsCallback.0_1 (Error, ErrorCode);
+  return;
+
+}
+
+
