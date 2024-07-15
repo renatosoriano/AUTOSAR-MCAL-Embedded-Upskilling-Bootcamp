@@ -125,7 +125,7 @@ _Will be uploading them as they are ready._
 ## 7. Final Project
 
 You can find here [**Final Project**](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Tresos_Workspace/Final_Project) the final project created for this Upskilling Bootcamp.
-It consists on a full AUTOSAR I/O Hardware Abstraction for the on board Buttons, LEDs, Potentiometers and Buzzer, all together with the Scheduler and a state machine with specific application event and tasks requirements.
+It consists on a full AUTOSAR I/O Hardware Abstraction for the on board Buttons, LEDs, Potentiometers and Buzzer, all together with the Scheduler and a state machine with specific application events and tasks requirements.
 
 ## 8. Results
 You can find here captures and media relevant to an example and/or exercise visible output in communication (software) or physical-world (board).
