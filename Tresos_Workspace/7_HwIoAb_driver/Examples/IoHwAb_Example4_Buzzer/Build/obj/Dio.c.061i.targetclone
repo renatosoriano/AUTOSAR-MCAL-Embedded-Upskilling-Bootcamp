@@ -1,0 +1,99 @@
+Dio_WriteChannelGroup (const struct Dio_ChannelGroupType * ChannelGroupIdPtr, Dio_PortLevelType Level)
+{
+  <bb 2> :
+  Dio_Ipw_WriteChannelGroup (ChannelGroupIdPtr_2(D), Level_3(D));
+  return;
+
+}
+
+
+Dio_ReadChannelGroup (const struct Dio_ChannelGroupType * ChannelGroupIdPtr)
+{
+  Dio_PortLevelType PortLevel;
+  Dio_PortLevelType D.5474;
+  Dio_PortLevelType _6;
+
+  <bb 2> :
+  PortLevel_1 = 0;
+  PortLevel_5 = Dio_Ipw_ReadChannelGroup (ChannelGroupIdPtr_3(D));
+  _6 = PortLevel_5;
+
+  <bb 3> :
+<L0>:
+  return _6;
+
+}
+
+
+Dio_WritePort (Dio_PortType PortId, Dio_PortLevelType Level)
+{
+  <bb 2> :
+  Dio_Ipw_WritePort (PortId_2(D), Level_3(D));
+  return;
+
+}
+
+
+Dio_ReadPort (Dio_PortType PortId)
+{
+  Dio_PortLevelType PortLevel;
+  Dio_PortLevelType D.5472;
+  Dio_PortLevelType _6;
+
+  <bb 2> :
+  PortLevel_1 = 0;
+  PortLevel_5 = Dio_Ipw_ReadPort (PortId_3(D));
+  _6 = PortLevel_5;
+
+  <bb 3> :
+<L0>:
+  return _6;
+
+}
+
+
+Dio_FlipChannel (Dio_ChannelType ChannelId)
+{
+  Dio_LevelType ChannelLevel;
+  Dio_LevelType D.5470;
+  Dio_LevelType _6;
+
+  <bb 2> :
+  ChannelLevel_1 = 0;
+  ChannelLevel_5 = Dio_Ipw_FlipChannel (ChannelId_3(D));
+  _6 = ChannelLevel_5;
+
+  <bb 3> :
+<L0>:
+  return _6;
+
+}
+
+
+Dio_WriteChannel (Dio_ChannelType ChannelId, Dio_LevelType Level)
+{
+  <bb 2> :
+  Dio_Ipw_WriteChannel (ChannelId_2(D), Level_3(D));
+  return;
+
+}
+
+
+Dio_ReadChannel (Dio_ChannelType ChannelId)
+{
+  Dio_LevelType ChannelLevel;
+  Dio_LevelType D.5468;
+  Dio_LevelType _6;
+
+  <bb 2> :
+  ChannelLevel_1 = 0;
+  ChannelLevel_5 = Dio_Ipw_ReadChannel (ChannelId_3(D));
+  _6 = ChannelLevel_5;
+
+  <bb 3> :
+<L0>:
+  return _6;
+
+}
+
+

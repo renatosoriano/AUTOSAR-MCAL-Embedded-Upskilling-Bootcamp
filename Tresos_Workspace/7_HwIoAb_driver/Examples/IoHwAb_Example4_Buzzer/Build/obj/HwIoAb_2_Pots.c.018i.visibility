@@ -1,0 +1,258 @@
+
+Marking local functions:
+
+
+Marking externally visible functions: HwIoAb_Pots_GetAltValue/5 HwIoAb_Pots_GetValue/4 HwIoAb_Pots_Init/3
+
+
+Marking externally visible variables: PotsControl_Ptr/2 PotsCtrl/1
+
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+Symbol table:
+
+Adc_ReadGroup/10 (Adc_ReadGroup) @0e5e9b60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: HwIoAb_Pots_GetAltValue/5 HwIoAb_Pots_GetValue/4 
+  Calls: 
+Adc_GetGroupStatus/9 (Adc_GetGroupStatus) @0e5e9a80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: HwIoAb_Pots_GetAltValue/5 HwIoAb_Pots_GetValue/4 
+  Calls: 
+Adc_StartGroupConversion/8 (Adc_StartGroupConversion) @0e5e99a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: HwIoAb_Pots_GetAltValue/5 HwIoAb_Pots_GetValue/4 
+  Calls: 
+Adc_SetupResultBuffer/7 (Adc_SetupResultBuffer) @0e5e97e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: HwIoAb_Pots_Init/3 HwIoAb_Pots_Init/3 
+  Calls: 
+Adc_Calibrate/6 (Adc_Calibrate) @0e5e9700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: HwIoAb_Pots_Init/3 HwIoAb_Pots_Init/3 
+  Calls: 
+HwIoAb_Pots_GetAltValue/5 (HwIoAb_Pots_GetAltValue) @0e5e92a0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: PotsControl_Ptr/2 (read) PotsControl_Ptr/2 (read) PotsControl_Ptr/2 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Adc_ReadGroup/10 Adc_GetGroupStatus/9 Adc_StartGroupConversion/8 
+HwIoAb_Pots_GetValue/4 (HwIoAb_Pots_GetValue) @0e5e9000
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: PotsControl_Ptr/2 (read) PotsControl_Ptr/2 (read) PotsControl_Ptr/2 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Adc_ReadGroup/10 Adc_GetGroupStatus/9 Adc_StartGroupConversion/8 
+HwIoAb_Pots_Init/3 (HwIoAb_Pots_Init) @0e5e58c0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: PotsControl_Ptr/2 (read) PotsControl_Ptr/2 (read) PotsControl_Ptr/2 (read) PotsControl_Ptr/2 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Adc_SetupResultBuffer/7 Adc_SetupResultBuffer/7 Adc_Calibrate/6 Adc_Calibrate/6 
+PotsControl_Ptr/2 (PotsControl_Ptr) @0e5e3a20
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: PotsCtrl/1 (addr) 
+  Referring: HwIoAb_Pots_Init/3 (read) HwIoAb_Pots_Init/3 (read) HwIoAb_Pots_Init/3 (read) HwIoAb_Pots_Init/3 (read) HwIoAb_Pots_GetValue/4 (read) HwIoAb_Pots_GetValue/4 (read) HwIoAb_Pots_GetValue/4 (read) HwIoAb_Pots_GetAltValue/5 (read) HwIoAb_Pots_GetAltValue/5 (read) HwIoAb_Pots_GetAltValue/5 (read) 
+  Availability: available
+  Varpool flags: initialized
+PotsCtrl/1 (PotsCtrl) @0e5e39d8
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: PotsControl_Ptr/2 (addr) 
+  Availability: available
+  Varpool flags:
+HwIoAb_Pots_GetAltValue (uint16 * AltPots)
+{
+  uint8 i;
+
+  <bb 2> :
+  Adc_StartGroupConversion (1);
+
+  <bb 3> :
+  _1 = Adc_GetGroupStatus (1);
+  if (_1 == 1)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 4> :
+  PotsControl_Ptr.8_2 = PotsControl_Ptr;
+  _3 = &PotsControl_Ptr.8_2->Raw_results_alter;
+  Adc_ReadGroup (1, _3);
+  i = 0;
+  goto <bb 8>; [INV]
+
+  <bb 5> :
+  PotsControl_Ptr.9_4 = PotsControl_Ptr;
+  _5 = (int) i;
+  _6 = PotsControl_Ptr.9_4->Raw_results_alter[_5];
+  _7 = (float) _6;
+  _8 = _7 / 2.703e+3;
+  _9 = _8 * 1.0e+4;
+  _10 = (unsigned int) i;
+  _11 = _10 * 2;
+  _12 = AltPots + _11;
+  _13 = (short unsigned int) _9;
+  *_12 = _13;
+  _14 = (unsigned int) i;
+  _15 = _14 * 2;
+  _16 = AltPots + _15;
+  _17 = *_16;
+  if (_17 > 10000)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  _18 = (unsigned int) i;
+  _19 = _18 * 2;
+  _20 = AltPots + _19;
+  *_20 = 10000;
+
+  <bb 7> :
+  i.10_21 = i;
+  i = i.10_21 + 1;
+
+  <bb 8> :
+  PotsControl_Ptr.11_22 = PotsControl_Ptr;
+  _23 = PotsControl_Ptr.11_22->Pots;
+  if (i < _23)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 9> :
+  return;
+
+}
+
+
+HwIoAb_Pots_GetValue (uint16 * Pots)
+{
+  uint8 i;
+
+  <bb 2> :
+  Adc_StartGroupConversion (0);
+
+  <bb 3> :
+  _1 = Adc_GetGroupStatus (0);
+  if (_1 == 1)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 4> :
+  PotsControl_Ptr.4_2 = PotsControl_Ptr;
+  _3 = &PotsControl_Ptr.4_2->Raw_results_main;
+  Adc_ReadGroup (0, _3);
+  i = 0;
+  goto <bb 8>; [INV]
+
+  <bb 5> :
+  PotsControl_Ptr.5_4 = PotsControl_Ptr;
+  _5 = (int) i;
+  _6 = PotsControl_Ptr.5_4->Raw_results_main[_5];
+  _7 = (float) _6;
+  _8 = _7 / 2.703e+3;
+  _9 = _8 * 1.0e+4;
+  _10 = (unsigned int) i;
+  _11 = _10 * 2;
+  _12 = Pots + _11;
+  _13 = (short unsigned int) _9;
+  *_12 = _13;
+  _14 = (unsigned int) i;
+  _15 = _14 * 2;
+  _16 = Pots + _15;
+  _17 = *_16;
+  if (_17 > 10000)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  _18 = (unsigned int) i;
+  _19 = _18 * 2;
+  _20 = Pots + _19;
+  *_20 = 10000;
+
+  <bb 7> :
+  i.6_21 = i;
+  i = i.6_21 + 1;
+
+  <bb 8> :
+  PotsControl_Ptr.7_22 = PotsControl_Ptr;
+  _23 = PotsControl_Ptr.7_22->Pots;
+  if (i < _23)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 9> :
+  return;
+
+}
+
+
+HwIoAb_Pots_Init (const struct HwIoAb_Pots_Config * Pots_Config)
+{
+  struct Adc_CalibrationStatusType Calib_Status_ADC1;
+  struct Adc_CalibrationStatusType Calib_Status_ADC0;
+
+  <bb 2> :
+  Adc_Calibrate (0, &Calib_Status_ADC0);
+  Adc_Calibrate (1, &Calib_Status_ADC1);
+  PotsControl_Ptr.0_1 = PotsControl_Ptr;
+  _2 = &PotsControl_Ptr.0_1->Raw_results_main;
+  Adc_SetupResultBuffer (0, _2);
+  PotsControl_Ptr.1_3 = PotsControl_Ptr;
+  _4 = &PotsControl_Ptr.1_3->Raw_results_alter;
+  Adc_SetupResultBuffer (1, _4);
+  PotsControl_Ptr.2_5 = PotsControl_Ptr;
+  PotsControl_Ptr.2_5->Pots = 2;
+  PotsControl_Ptr.3_6 = PotsControl_Ptr;
+  PotsControl_Ptr.3_6->Pots_init = 1;
+  Calib_Status_ADC0 = {CLOBBER};
+  Calib_Status_ADC1 = {CLOBBER};
+  return;
+
+}
+
+

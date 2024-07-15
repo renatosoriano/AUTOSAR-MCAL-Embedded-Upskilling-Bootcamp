@@ -1,0 +1,70 @@
+OsIf_Timer_System_Internal_GetElapsed (uint32 * const CurrentRef)
+{
+  uint32 dif;
+  uint32 CurrentVal;
+  uint32 D.5366;
+
+  <bb 2> :
+  _1 = 3758153744B;
+  _2 = _1->CVR;
+  CurrentVal = _2 & 16777215;
+  dif = 0;
+  _3 = *CurrentRef;
+  if (CurrentVal > _3)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  _4 = *CurrentRef;
+  _5 = _4 - CurrentVal;
+  dif = _5 + 16777215;
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  _6 = *CurrentRef;
+  dif = _6 - CurrentVal;
+
+  <bb 5> :
+  *CurrentRef = CurrentVal;
+  D.5366 = dif;
+
+  <bb 6> :
+<L3>:
+  return D.5366;
+
+}
+
+
+OsIf_Timer_System_Internal_GetCounter ()
+{
+  uint32 D.5361;
+
+  <bb 2> :
+  _1 = 3758153744B;
+  _2 = _1->CVR;
+  D.5361 = _2 & 16777215;
+
+  <bb 3> :
+<L0>:
+  return D.5361;
+
+}
+
+
+OsIf_Timer_System_Internal_Init (uint32 SystemCounterFreq)
+{
+  <bb 2> :
+  _1 = 3758153744B;
+  _1->CSRr = 0;
+  _2 = 3758153744B;
+  _2->RVR = 16777215;
+  _3 = 3758153744B;
+  _3->CVR = 0;
+  _4 = 3758153744B;
+  _4->CSRr = 5;
+  return;
+
+}
+
+
