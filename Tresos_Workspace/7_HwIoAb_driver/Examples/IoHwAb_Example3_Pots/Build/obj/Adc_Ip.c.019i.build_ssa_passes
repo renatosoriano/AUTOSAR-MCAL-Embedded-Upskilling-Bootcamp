@@ -1,0 +1,1304 @@
+Adc_Ip_IRQHandler (const uint32 Instance)
+{
+  boolean ChanCocoFlag;
+  boolean ChanIntFlag;
+  uint32 Sc1Reg;
+  uint8 ControlChanIdx;
+
+  <bb 2> :
+  ChanIntFlag = 0;
+  ChanCocoFlag = 0;
+  _1 = Adc_Ip_axState[Instance].Init;
+  if (_1 != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 3> :
+  _2 = Adc_Ip_axState[Instance].ConversionCompleteNotification;
+  if (_2 != 0B)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 4> :
+  ControlChanIdx = 0;
+  goto <bb 9>; [INV]
+
+  <bb 5> :
+  _3 = Adc_Ip_apxBase[Instance];
+  _4 = (int) ControlChanIdx;
+  Sc1Reg = _3->SC1[_4];
+  ChanIntFlag = Adc_HwAcc_GetAIEN (Sc1Reg);
+  ChanCocoFlag = Adc_HwAcc_GetCOCO (Sc1Reg);
+  if (ChanIntFlag != 0)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 6> :
+  if (ChanCocoFlag != 0)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 7> :
+  _5 = Adc_Ip_axState[Instance].ConversionCompleteNotification;
+  _5 (ControlChanIdx);
+
+  <bb 8> :
+  ControlChanIdx.11_6 = ControlChanIdx;
+  ControlChanIdx = ControlChanIdx.11_6 + 1;
+
+  <bb 9> :
+  if (ControlChanIdx <= 15)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 10> :
+  ControlChanIdx = 0;
+  goto <bb 12>; [INV]
+
+  <bb 11> :
+  _7 = Adc_Ip_apxBase[Instance];
+  Adc_HwAcc_GetData (_7, ControlChanIdx);
+  ControlChanIdx.12_8 = ControlChanIdx;
+  ControlChanIdx = ControlChanIdx.12_8 + 1;
+
+  <bb 12> :
+  if (ControlChanIdx <= 15)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 13> :
+  return;
+
+}
+
+
+Adc_Ip_GetChanData (const uint32 Instance, const Adc_Ip_InputChannelType Channel, uint16 * const Result)
+{
+  boolean Found;
+  uint8 ControlChanIdx;
+  uint16 Temp;
+  Adc_Ip_StatusType Status;
+  const struct ADC_Type * const Base;
+  Adc_Ip_StatusType D.6364;
+
+  <bb 2> :
+  Base = Adc_Ip_apxBase[Instance];
+  Status = 0;
+  Temp = 0;
+  Found = 0;
+  ControlChanIdx = 0;
+  goto <bb 6>; [INV]
+
+  <bb 3> :
+  _1 = (int) ControlChanIdx;
+  _2 = Adc_Ip_axState[Instance].ChannelConfig[_1];
+  if (Channel == _2)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  Found = 1;
+  goto <bb 7>; [INV]
+
+  <bb 5> :
+  ControlChanIdx.10_3 = ControlChanIdx;
+  ControlChanIdx = ControlChanIdx.10_3 + 1;
+
+  <bb 6> :
+  if (ControlChanIdx <= 15)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 7> :
+  if (Found != 0)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 8> :
+  _4 = (int) ControlChanIdx;
+  _5 = Base->R[_4];
+  Temp = (uint16) _5;
+  Temp = Temp & 4095;
+  goto <bb 10>; [INV]
+
+  <bb 9> :
+  Status = 1;
+
+  <bb 10> :
+  *Result = Temp;
+  D.6364 = Status;
+
+  <bb 11> :
+<L8>:
+  return D.6364;
+
+}
+
+
+Adc_Ip_GetDataAddress (const uint32 Instance, const uint8 Index)
+{
+  uint32 D.6357;
+
+  <bb 2> :
+  _1 = Adc_Ip_apxBase[Instance];
+  _2 = (int) Index;
+  _3 = &_1->R[_2];
+  D.6357 = (uint32) _3;
+
+  <bb 3> :
+<L0>:
+  return D.6357;
+
+}
+
+
+Adc_Ip_GetTrigErrReg (const uint32 Instance)
+{
+  const struct ADC_Type * const Base;
+  uint32 D.6355;
+
+  <bb 2> :
+  Base = Adc_Ip_apxBase[Instance];
+  _1 = Base->SC2;
+  _2 = _1 >> 24;
+  D.6355 = _2 & 15;
+
+  <bb 3> :
+<L0>:
+  return D.6355;
+
+}
+
+
+Adc_Ip_ClearTrigErrReg (const uint32 Instance)
+{
+  struct ADC_Type * const Base;
+
+  <bb 2> :
+  Base = Adc_Ip_apxBase[Instance];
+  SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_25 ();
+  _1 = Base->SC2;
+  _2 = _1 | 251658240;
+  Base->SC2 = _2;
+  SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_25 ();
+  return;
+
+}
+
+
+Adc_Ip_DisableChannelNotification (const uint32 Instance, const uint8 ControlChanIdx)
+{
+  struct ADC_Type * const Base;
+
+  <bb 2> :
+  Base = Adc_Ip_apxBase[Instance];
+  SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_20 ();
+  _1 = (int) ControlChanIdx;
+  _2 = Base->SC1[_1];
+  _3 = (int) ControlChanIdx;
+  _4 = _2 & 4294967231;
+  Base->SC1[_3] = _4;
+  SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_20 ();
+  return;
+
+}
+
+
+Adc_Ip_EnableChannelNotification (const uint32 Instance, const uint8 ControlChanIdx)
+{
+  struct ADC_Type * const Base;
+
+  <bb 2> :
+  Base = Adc_Ip_apxBase[Instance];
+  SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_19 ();
+  _1 = (int) ControlChanIdx;
+  _2 = Base->SC1[_1];
+  _3 = (int) ControlChanIdx;
+  _4 = _2 | 64;
+  Base->SC1[_3] = _4;
+  SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_19 ();
+  return;
+
+}
+
+
+Adc_Ip_ClearLatchedTriggers (const uint32 Instance)
+{
+  uint32 ElapsedTicks;
+  uint32 CurrentTicks;
+  uint32 TimeoutTicks;
+  Adc_Ip_StatusType Status;
+  struct ADC_Type * const Base;
+  Adc_Ip_StatusType D.6352;
+  long unsigned int D.6348;
+
+  <bb 2> :
+  Base = Adc_Ip_apxBase[Instance];
+  Status = 0;
+  TimeoutTicks = OsIf_MicrosToTicks (100000, 0);
+  _1 = OsIf_GetCounter (0);
+  CurrentTicks = _1;
+  ElapsedTicks = 0;
+  SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_12 ();
+  _2 = Base->CFG1;
+  _3 = _2 | 256;
+  Base->CFG1 = _3;
+  SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_12 ();
+  goto <bb 4>; [INV]
+
+  <bb 3> :
+  D.6348 = OsIf_GetElapsed (&CurrentTicks, 0);
+  ElapsedTicks = D.6348 + ElapsedTicks;
+
+  <bb 4> :
+  _4 = Base->SC2;
+  _5 = _4 & 983040;
+  if (_5 != 0)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  if (ElapsedTicks < TimeoutTicks)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 6> :
+  if (ElapsedTicks >= TimeoutTicks)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 7> :
+  Status = 2;
+
+  <bb 8> :
+  D.6352 = Status;
+  CurrentTicks = {CLOBBER};
+
+  <bb 9> :
+<L7>:
+  return D.6352;
+
+}
+
+
+Adc_Ip_DoCalibration (const uint32 Instance)
+{
+  struct Adc_Ip_ClockConfigType CalClockConfig;
+  struct Adc_Ip_ClockConfigType PreClockConfig;
+  uint32 Reg;
+  uint32 ElapsedTicks;
+  uint32 CurrentTicks;
+  uint32 TimeoutTicks;
+  Adc_Ip_TrigType TriggerMode;
+  Adc_Ip_StatusType Status;
+  struct ADC_Type * const Base;
+  Adc_Ip_StatusType D.6335;
+  long unsigned int vol.9;
+  long unsigned int D.6330;
+
+  <bb 2> :
+  Base = Adc_Ip_apxBase[Instance];
+  Status = 0;
+  TimeoutTicks = OsIf_MicrosToTicks (100000, 0);
+  _1 = OsIf_GetCounter (0);
+  CurrentTicks = _1;
+  ElapsedTicks = 0;
+  Reg = Base->SC3;
+  _2 = Reg >> 2;
+  _3 = (int) _2;
+  _4 = _3 & 1;
+  _5 = _4 != 0;
+  PreClockConfig.AvgEn = _5;
+  _6 = Adc_HwAcc_GetAverageSelect (Reg);
+  PreClockConfig.AvgSel = _6;
+  Reg = Base->CFG2;
+  _7 = (unsigned char) Reg;
+  PreClockConfig.SampleTime = _7;
+  _8 = Base->SC2;
+  TriggerMode = Adc_HwAcc_GetTriggerMode (_8);
+  Reg = Base->CFG1;
+  _9 = Adc_HwAcc_GetClockDivide (Reg);
+  PreClockConfig.ClockDivide = _9;
+  _10 = Adc_HwAcc_GetInputClock (Reg);
+  PreClockConfig.InputClock = _10;
+  CalClockConfig.AvgEn = 1;
+  CalClockConfig.AvgSel = 3;
+  CalClockConfig.SampleTime = 12;
+  _11 = Adc_Ip_axState[Instance].CalibrationClockDivide;
+  CalClockConfig.ClockDivide = _11;
+  _12 = PreClockConfig.InputClock;
+  CalClockConfig.InputClock = _12;
+  ADC_DoCalibration_SetParams (Base, &CalClockConfig, 0);
+  Base->CLPS = 0;
+  Base->CLP3 = 0;
+  Base->CLP2 = 0;
+  Base->CLP1 = 0;
+  Base->CLP0 = 0;
+  Base->CLPX = 0;
+  Base->CLP9 = 0;
+  SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_29 ();
+  Reg = Base->SC3;
+  Reg = Reg & 4294967167;
+  Reg = Reg | 128;
+  Base->SC3 = Reg;
+  SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_29 ();
+  goto <bb 4>; [INV]
+
+  <bb 3> :
+  D.6330 = OsIf_GetElapsed (&CurrentTicks, 0);
+  ElapsedTicks = D.6330 + ElapsedTicks;
+
+  <bb 4> :
+  _13 = Base->SC3;
+  _14 = _13 & 128;
+  if (_14 != 0)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  if (ElapsedTicks < TimeoutTicks)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 6> :
+  if (ElapsedTicks >= TimeoutTicks)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 7> :
+  Status = 2;
+
+  <bb 8> :
+  ADC_DoCalibration_SetParams (Base, &PreClockConfig, TriggerMode);
+  vol.9 = Base->R[0];
+  D.6335 = Status;
+  CurrentTicks = {CLOBBER};
+  PreClockConfig = {CLOBBER};
+  CalClockConfig = {CLOBBER};
+
+  <bb 9> :
+<L7>:
+  return D.6335;
+
+}
+
+
+Adc_Ip_GetConvData (const uint32 Instance, const uint8 ControlChanIdx)
+{
+  const struct ADC_Type * const Base;
+  uint16 D.6326;
+
+  <bb 2> :
+  Base = Adc_Ip_apxBase[Instance];
+  D.6326 = Adc_HwAcc_GetData (Base, ControlChanIdx);
+
+  <bb 3> :
+<L0>:
+  return D.6326;
+
+}
+
+
+Adc_Ip_GetConvCompleteFlag (const uint32 Instance, const uint8 ControlChanIdx)
+{
+  const uint32 Sc1Reg;
+  boolean D.6322;
+
+  <bb 2> :
+  _1 = Adc_Ip_apxBase[Instance];
+  _2 = (int) ControlChanIdx;
+  Sc1Reg = _1->SC1[_2];
+  D.6322 = Adc_HwAcc_GetCOCO (Sc1Reg);
+
+  <bb 3> :
+<L0>:
+  return D.6322;
+
+}
+
+
+Adc_Ip_GetChanInterrupt (const uint32 Instance, const uint8 ControlChanIdx)
+{
+  const uint32 Sc1Reg;
+  boolean D.6318;
+
+  <bb 2> :
+  _1 = Adc_Ip_apxBase[Instance];
+  _2 = (int) ControlChanIdx;
+  Sc1Reg = _1->SC1[_2];
+  D.6318 = Adc_HwAcc_GetAIEN (Sc1Reg);
+
+  <bb 3> :
+<L0>:
+  return D.6318;
+
+}
+
+
+Adc_Ip_GetConvActiveFlag (const uint32 Instance)
+{
+  uint32 Sc2Reg;
+  const struct ADC_Type * const Base;
+  boolean D.6316;
+
+  <bb 2> :
+  Base = Adc_Ip_apxBase[Instance];
+  Sc2Reg = Base->SC2;
+  _1 = Sc2Reg >> 7;
+  Sc2Reg = _1 & 1;
+  D.6316 = Sc2Reg != 0;
+
+  <bb 3> :
+<L0>:
+  return D.6316;
+
+}
+
+
+Adc_Ip_StartConversion (const uint32 Instance, Adc_Ip_InputChannelType InputChannel, const boolean InterruptEnable)
+{
+  struct ADC_Type * const Base;
+
+  <bb 2> :
+  Base = Adc_Ip_apxBase[Instance];
+  SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_18 ();
+  Adc_HwAcc_SetChannel (Base, 0, InputChannel, InterruptEnable);
+  SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_18 ();
+  return;
+
+}
+
+
+Adc_Ip_SetDisabledChannel (const uint32 Instance, const uint8 ControlChanIdx, const boolean WithTimeout)
+{
+  uint32 ElapsedTicks;
+  uint32 CurrentTicks;
+  uint32 TimeoutTicks;
+  Adc_Ip_StatusType Status;
+  struct ADC_Type * const Base;
+  Adc_Ip_StatusType D.6313;
+  long unsigned int D.6309;
+
+  <bb 2> :
+  Base = Adc_Ip_apxBase[Instance];
+  Status = 0;
+  TimeoutTicks = OsIf_MicrosToTicks (100000, 0);
+  _1 = OsIf_GetCounter (0);
+  CurrentTicks = _1;
+  ElapsedTicks = 0;
+  SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_17 ();
+  _2 = (int) ControlChanIdx;
+  _3 = Base->SC1[_2];
+  _4 = (int) ControlChanIdx;
+  _5 = _3 | 31;
+  Base->SC1[_4] = _5;
+  SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_17 ();
+  if (WithTimeout != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 3> :
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  D.6309 = OsIf_GetElapsed (&CurrentTicks, 0);
+  ElapsedTicks = D.6309 + ElapsedTicks;
+
+  <bb 5> :
+  _6 = (int) ControlChanIdx;
+  _7 = Base->SC1[_6];
+  _8 = _7 & 31;
+  if (_8 != 31)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  if (ElapsedTicks < TimeoutTicks)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 7> :
+  if (ElapsedTicks >= TimeoutTicks)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 8> :
+  Status = 2;
+
+  <bb 9> :
+  D.6313 = Status;
+  CurrentTicks = {CLOBBER};
+
+  <bb 10> :
+<L9>:
+  return D.6313;
+
+}
+
+
+Adc_Ip_ConfigChannel (const uint32 Instance, const struct Adc_Ip_ChanConfigType * const ChanConfig)
+{
+  Adc_Ip_InputChannelType InputChanDemapped;
+  struct ADC_Type * const Base;
+
+  <bb 2> :
+  Base = Adc_Ip_apxBase[Instance];
+  InputChanDemapped = ChanConfig->Channel;
+  SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_21 ();
+  _1 = ChanConfig->ChnIdx;
+  _2 = ChanConfig->InterruptEnable;
+  Adc_HwAcc_SetChannel (Base, _1, InputChanDemapped, _2);
+  SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_21 ();
+  _3 = ChanConfig->ChnIdx;
+  _4 = (int) _3;
+  _5 = ChanConfig->Channel;
+  Adc_Ip_axState[Instance].ChannelConfig[_4] = _5;
+  return;
+
+}
+
+
+Adc_Ip_SetClockMode (const uint32 Instance, const struct Adc_Ip_ClockConfigType * const Config)
+{
+  struct ADC_Type * const Base;
+
+  <bb 2> :
+  Base = Adc_Ip_apxBase[Instance];
+  SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_11 ();
+  _1 = Config->ClockDivide;
+  _2 = Config->InputClock;
+  Adc_HwAcc_SetClock (Base, _1, _2);
+  SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_11 ();
+  SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_14 ();
+  _3 = Config->SampleTime;
+  Adc_HwAcc_SetSampleTime (Base, _3);
+  SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_14 ();
+  SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_28 ();
+  _4 = Config->AvgEn;
+  _5 = Config->AvgSel;
+  Adc_HwAcc_SetAveraging (Base, _4, _5);
+  SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_28 ();
+  return;
+
+}
+
+
+Adc_Ip_SetResolution (const uint32 Instance, const Adc_Ip_ResolutionType Resolution)
+{
+  uint32 Cfg1Reg;
+  struct ADC_Type * const Base;
+
+  <bb 2> :
+  Base = Adc_Ip_apxBase[Instance];
+  SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_10 ();
+  Cfg1Reg = Base->CFG1;
+  Cfg1Reg = Cfg1Reg & 4294967283;
+  _1 = Resolution << 2;
+  _2 = _1 & 12;
+  Cfg1Reg = Cfg1Reg | _2;
+  Base->CFG1 = Cfg1Reg;
+  SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_10 ();
+  return;
+
+}
+
+
+Adc_Ip_SetContinuousMode (const uint32 Instance, const boolean ContinuousModeEnable)
+{
+  uint32 Sc3Reg;
+  struct ADC_Type * const Base;
+  long unsigned int iftmp.7;
+
+  <bb 2> :
+  Base = Adc_Ip_apxBase[Instance];
+  SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_30 ();
+  Sc3Reg = Base->SC3;
+  Sc3Reg = Sc3Reg & 4294967287;
+  if (ContinuousModeEnable != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  iftmp.7 = 8;
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  iftmp.7 = 0;
+
+  <bb 5> :
+  Sc3Reg = iftmp.7 | Sc3Reg;
+  Base->SC3 = Sc3Reg;
+  SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_30 ();
+  return;
+
+}
+
+
+Adc_Ip_SetTriggerMode (const uint32 Instance, const Adc_Ip_TrigType TriggerMode)
+{
+  struct ADC_Type * const Base;
+
+  <bb 2> :
+  Base = Adc_Ip_apxBase[Instance];
+  SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_23 ();
+  Adc_HwAcc_SetTriggerMode (Base, TriggerMode);
+  SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_23 ();
+  return;
+
+}
+
+
+Adc_Ip_DisableDma (const uint32 Instance)
+{
+  struct ADC_Type * const Base;
+
+  <bb 2> :
+  Base = Adc_Ip_apxBase[Instance];
+  SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_22 ();
+  _1 = Base->SC2;
+  _2 = _1 & 4294967291;
+  Base->SC2 = _2;
+  SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_22 ();
+  return;
+
+}
+
+
+Adc_Ip_EnableDma (const uint32 Instance)
+{
+  struct ADC_Type * const Base;
+
+  <bb 2> :
+  Base = Adc_Ip_apxBase[Instance];
+  SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_26 ();
+  _1 = Base->SC2;
+  _2 = _1 | 4;
+  Base->SC2 = _2;
+  SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_26 ();
+  return;
+
+}
+
+
+Adc_Ip_SetSampleTime (const uint32 Instance, const uint8 SampleTime)
+{
+  struct ADC_Type * const Base;
+
+  <bb 2> :
+  Base = Adc_Ip_apxBase[Instance];
+  SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_16 ();
+  Adc_HwAcc_SetSampleTime (Base, SampleTime);
+  SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_16 ();
+  return;
+
+}
+
+
+Adc_Ip_SetAveraging (const uint32 Instance, const boolean AvgEn, const Adc_Ip_AvgSelectType AvgSel)
+{
+  struct ADC_Type * const Base;
+
+  <bb 2> :
+  Base = Adc_Ip_apxBase[Instance];
+  SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_27 ();
+  Adc_HwAcc_SetAveraging (Base, AvgEn, AvgSel);
+  SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_27 ();
+  return;
+
+}
+
+
+Adc_Ip_DeInit (const uint32 Instance)
+{
+  uint8 Index;
+  struct Adc_Ip_ChanConfigType ChannelConfigs[16];
+  struct Adc_Ip_ConfigType DefaultConfig;
+
+  <bb 2> :
+  DefaultConfig.ClockDivide = 0;
+  DefaultConfig.CalibrationClockDivide = 3;
+  DefaultConfig.InputClock = 0;
+  DefaultConfig.SampleTime = 12;
+  DefaultConfig.AvgEn = 0;
+  DefaultConfig.AvgSel = 0;
+  DefaultConfig.Resolution = 0;
+  DefaultConfig.TriggerMode = 0;
+  DefaultConfig.DmaEnable = 0;
+  DefaultConfig.VoltageRef = 0;
+  DefaultConfig.ContinuousConvEnable = 0;
+  DefaultConfig.CompareEnable = 0;
+  DefaultConfig.CompareGreaterThanEnable = 0;
+  DefaultConfig.CompareRangeFuncEnable = 0;
+  DefaultConfig.CompVal1 = 0;
+  DefaultConfig.CompVal2 = 0;
+  DefaultConfig.UsrGain = 4;
+  DefaultConfig.UsrOffset = 0;
+  DefaultConfig.NumChannels = 16;
+  Index = 0;
+  goto <bb 4>; [INV]
+
+  <bb 3> :
+  _1 = (int) Index;
+  ChannelConfigs[_1].ChnIdx = Index;
+  _2 = (int) Index;
+  ChannelConfigs[_2].Channel = 31;
+  _3 = (int) Index;
+  ChannelConfigs[_3].InterruptEnable = 0;
+  Index.6_4 = Index;
+  Index = Index.6_4 + 1;
+
+  <bb 4> :
+  if (Index <= 15)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 5> :
+  DefaultConfig.ChannelConfigs = &ChannelConfigs;
+  DefaultConfig.ConversionCompleteNotification = 0B;
+  Adc_Ip_Init (Instance, &DefaultConfig);
+  Adc_Ip_axState[Instance].Init = 0;
+  DefaultConfig = {CLOBBER};
+  ChannelConfigs = {CLOBBER};
+  return;
+
+}
+
+
+Adc_Ip_Init (const uint32 Instance, const struct Adc_Ip_ConfigType * const Config)
+{
+  uint8 Index;
+  uint32 SC2ClearMask;
+  uint32 SC2Reg;
+  struct ADC_Type * const Base;
+  long unsigned int iftmp.2;
+  long unsigned int iftmp.1;
+  long unsigned int iftmp.0;
+
+  <bb 2> :
+  Base = Adc_Ip_apxBase[Instance];
+  SC2Reg = 0;
+  SC2ClearMask = 0;
+  _1 = Config->ClockDivide;
+  _2 = Config->InputClock;
+  Adc_HwAcc_SetClock (Base, _1, _2);
+  _3 = Config->SampleTime;
+  Adc_HwAcc_SetSampleTime (Base, _3);
+  _4 = Config->AvgEn;
+  _5 = Config->AvgSel;
+  Adc_HwAcc_SetAveraging (Base, _4, _5);
+  _6 = Config->Resolution;
+  Adc_Ip_SetResolution (Instance, _6);
+  SC2ClearMask = SC2ClearMask | 64;
+  _7 = Config->TriggerMode;
+  _8 = _7 << 6;
+  _9 = _8 & 64;
+  SC2Reg = SC2Reg | _9;
+  _10 = Config->DmaEnable;
+  if (_10 != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  SC2Reg = SC2Reg | 4;
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  SC2ClearMask = SC2ClearMask | 4;
+
+  <bb 5> :
+  SC2ClearMask = SC2ClearMask | 3;
+  _11 = Config->VoltageRef;
+  _12 = _11 & 3;
+  SC2Reg = SC2Reg | _12;
+  SC2ClearMask = SC2ClearMask | 56;
+  _13 = Config->CompareEnable;
+  if (_13 != 0)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  iftmp.0 = 32;
+  goto <bb 8>; [INV]
+
+  <bb 7> :
+  iftmp.0 = 0;
+
+  <bb 8> :
+  SC2Reg = iftmp.0 | SC2Reg;
+  _14 = Config->CompareGreaterThanEnable;
+  if (_14 != 0)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 9> :
+  iftmp.1 = 16;
+  goto <bb 11>; [INV]
+
+  <bb 10> :
+  iftmp.1 = 0;
+
+  <bb 11> :
+  SC2Reg = iftmp.1 | SC2Reg;
+  _15 = Config->CompareRangeFuncEnable;
+  if (_15 != 0)
+    goto <bb 12>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 12> :
+  iftmp.2 = 8;
+  goto <bb 14>; [INV]
+
+  <bb 13> :
+  iftmp.2 = 0;
+
+  <bb 14> :
+  SC2Reg = iftmp.2 | SC2Reg;
+  _16 = Config->CompVal1;
+  _17 = (long unsigned int) _16;
+  Base->CV[0] = _17;
+  _18 = Config->CompVal2;
+  _19 = (long unsigned int) _18;
+  Base->CV[1] = _19;
+  Adc_HwAcc_SetSC2Reg (Base, SC2ClearMask, SC2Reg);
+  _20 = Config->UsrGain;
+  _21 = Config->UsrOffset;
+  Adc_HwAcc_SetUserGainAndOffset (Base, _20, _21);
+  _22 = Config->ContinuousConvEnable;
+  Adc_Ip_SetContinuousMode (Instance, _22);
+  _23 = Config->ChannelConfigs;
+  if (_23 != 0B)
+    goto <bb 15>; [INV]
+  else
+    goto <bb 18>; [INV]
+
+  <bb 15> :
+  Index = 0;
+  goto <bb 17>; [INV]
+
+  <bb 16> :
+  _24 = Config->ChannelConfigs;
+  _25 = (unsigned int) Index;
+  _26 = _25 * 12;
+  _27 = _24 + _26;
+  Adc_Ip_ConfigChannel (Instance, _27);
+  Index.3_28 = Index;
+  Index = Index.3_28 + 1;
+
+  <bb 17> :
+  _29 = Config->NumChannels;
+  if (Index < _29)
+    goto <bb 16>; [INV]
+  else
+    goto <bb 18>; [INV]
+
+  <bb 18> :
+  _30 = Config->ConversionCompleteNotification;
+  Adc_Ip_axState[Instance].ConversionCompleteNotification = _30;
+  _31 = Config->CalibrationClockDivide;
+  Adc_Ip_axState[Instance].CalibrationClockDivide = _31;
+  Adc_Ip_axState[Instance].Init = 1;
+  return;
+
+}
+
+
+ADC_DoCalibration_SetParams (struct ADC_Type * const Base, const struct Adc_Ip_ClockConfigType * const Config, const Adc_Ip_TrigType TriggerMode)
+{
+  <bb 2> :
+  SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_29 ();
+  _1 = Config->AvgEn;
+  _2 = Config->AvgSel;
+  Adc_HwAcc_SetAveraging (Base, _1, _2);
+  SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_29 ();
+  SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_24 ();
+  Adc_HwAcc_SetTriggerMode (Base, TriggerMode);
+  SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_24 ();
+  SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_15 ();
+  _3 = Config->SampleTime;
+  Adc_HwAcc_SetSampleTime (Base, _3);
+  SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_15 ();
+  SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_13 ();
+  _4 = Config->ClockDivide;
+  _5 = Config->InputClock;
+  Adc_HwAcc_SetClock (Base, _4, _5);
+  SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_13 ();
+  return;
+
+}
+
+
+Adc_HwAcc_GetData (const struct ADC_Type * const Base, const uint8 ChnIdx)
+{
+  uint16 Result;
+  uint16 D.6328;
+
+  <bb 2> :
+  _1 = (int) ChnIdx;
+  _2 = Base->R[_1];
+  Result = (uint16) _2;
+  Result = Result & 4095;
+  D.6328 = Result;
+
+  <bb 3> :
+<L0>:
+  return D.6328;
+
+}
+
+
+Adc_HwAcc_GetCOCO (const uint32 Reg)
+{
+  boolean D.6324;
+
+  <bb 2> :
+  _1 = Reg >> 7;
+  _2 = (int) _1;
+  _3 = _2 & 1;
+  D.6324 = _3 != 0;
+
+  <bb 3> :
+<L0>:
+  return D.6324;
+
+}
+
+
+Adc_HwAcc_GetAIEN (const uint32 Reg)
+{
+  boolean D.6320;
+
+  <bb 2> :
+  _1 = Reg >> 6;
+  _2 = (int) _1;
+  _3 = _2 & 1;
+  D.6320 = _3 != 0;
+
+  <bb 3> :
+<L0>:
+  return D.6320;
+
+}
+
+
+Adc_HwAcc_SetUserGainAndOffset (struct ADC_Type * const Base, const uint16 UsrGain, const uint16 UsrOffset)
+{
+  <bb 2> :
+  _1 = (long unsigned int) UsrOffset;
+  _2 = _1 & 255;
+  Base->USR_OFS = _2;
+  _3 = (long unsigned int) UsrGain;
+  _4 = _3 & 1023;
+  Base->UG = _4;
+  return;
+
+}
+
+
+Adc_HwAcc_SetChannel (struct ADC_Type * const Base, const uint8 ChnIdx, const Adc_Ip_InputChannelType InputChannel, const boolean InterruptEnable)
+{
+  uint32 Sc1Reg;
+  long unsigned int iftmp.8;
+
+  <bb 2> :
+  _1 = (int) ChnIdx;
+  Sc1Reg = Base->SC1[_1];
+  Sc1Reg = Sc1Reg & 4294967200;
+  _2 = InputChannel & 31;
+  Sc1Reg = Sc1Reg | _2;
+  if (InterruptEnable != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  iftmp.8 = 64;
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  iftmp.8 = 0;
+
+  <bb 5> :
+  Sc1Reg = iftmp.8 | Sc1Reg;
+  _3 = (int) ChnIdx;
+  Base->SC1[_3] = Sc1Reg;
+  return;
+
+}
+
+
+Adc_HwAcc_GetTriggerMode (const uint32 Reg)
+{
+  Adc_Ip_TrigType ReturnValue;
+  Adc_Ip_TrigType D.6342;
+
+  <bb 2> :
+  ReturnValue = 0;
+  _1 = Reg & 64;
+  if (_1 != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  ReturnValue = 1;
+
+  <bb 4> :
+  D.6342 = ReturnValue;
+
+  <bb 5> :
+<L2>:
+  return D.6342;
+
+}
+
+
+Adc_HwAcc_SetTriggerMode (struct ADC_Type * const Base, const Adc_Ip_TrigType TriggerMode)
+{
+  uint32 Sc2Reg;
+
+  <bb 2> :
+  Sc2Reg = Base->SC2;
+  Sc2Reg = Sc2Reg & 4294967231;
+  _1 = TriggerMode << 6;
+  _2 = _1 & 64;
+  Sc2Reg = Sc2Reg | _2;
+  Base->SC2 = Sc2Reg;
+  return;
+
+}
+
+
+Adc_HwAcc_GetAverageSelect (const uint32 Reg)
+{
+  Adc_Ip_AvgSelectType ReturnValue;
+  Adc_Ip_AvgSelectType D.6338;
+
+  <bb 2> :
+  ReturnValue = 0;
+  _1 = Reg & 3;
+  switch (_1) <default: <L3> [INV], case 1: <L0> [INV], case 2: <L1> [INV], case 3: <L2> [INV]>
+
+  <bb 3> :
+<L0>:
+  ReturnValue = 1;
+  goto <bb 7>; [INV]
+
+  <bb 4> :
+<L1>:
+  ReturnValue = 2;
+  goto <bb 7>; [INV]
+
+  <bb 5> :
+<L2>:
+  ReturnValue = 3;
+  goto <bb 7>; [INV]
+
+  <bb 6> :
+<L3>:
+
+  <bb 7> :
+  D.6338 = ReturnValue;
+
+  <bb 8> :
+<L5>:
+  return D.6338;
+
+}
+
+
+Adc_HwAcc_SetAveraging (struct ADC_Type * const Base, const boolean AvgEn, const Adc_Ip_AvgSelectType AvgSel)
+{
+  uint32 Sc3Reg;
+  long unsigned int iftmp.5;
+
+  <bb 2> :
+  Sc3Reg = Base->SC3;
+  Sc3Reg = Sc3Reg & 4294967288;
+  if (AvgEn != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  iftmp.5 = 4;
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  iftmp.5 = 0;
+
+  <bb 5> :
+  Sc3Reg = iftmp.5 | Sc3Reg;
+  _1 = AvgSel & 3;
+  Sc3Reg = Sc3Reg | _1;
+  Base->SC3 = Sc3Reg;
+  return;
+
+}
+
+
+Adc_HwAcc_SetSampleTime (struct ADC_Type * const Base, const uint8 SampleTime)
+{
+  uint32 Cfg2Reg;
+  uint8 ClippedSampleTime;
+  unsigned char iftmp.4;
+
+  <bb 2> :
+  if (SampleTime != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  iftmp.4 = SampleTime;
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  iftmp.4 = 1;
+
+  <bb 5> :
+  ClippedSampleTime = iftmp.4;
+  Cfg2Reg = Base->CFG2;
+  Cfg2Reg = Cfg2Reg & 4294967040;
+  _1 = (long unsigned int) ClippedSampleTime;
+  Cfg2Reg = Cfg2Reg | _1;
+  Base->CFG2 = Cfg2Reg;
+  return;
+
+}
+
+
+Adc_HwAcc_GetInputClock (const uint32 Reg)
+{
+  Adc_Ip_ClkSourceType ReturnValue;
+  Adc_Ip_ClkSourceType D.6346;
+
+  <bb 2> :
+  ReturnValue = 0;
+  _1 = Reg & 3;
+  switch (_1) <default: <L3> [INV], case 1: <L0> [INV], case 2: <L1> [INV], case 3: <L2> [INV]>
+
+  <bb 3> :
+<L0>:
+  ReturnValue = 1;
+  goto <bb 7>; [INV]
+
+  <bb 4> :
+<L1>:
+  ReturnValue = 2;
+  goto <bb 7>; [INV]
+
+  <bb 5> :
+<L2>:
+  ReturnValue = 3;
+  goto <bb 7>; [INV]
+
+  <bb 6> :
+<L3>:
+
+  <bb 7> :
+  D.6346 = ReturnValue;
+
+  <bb 8> :
+<L5>:
+  return D.6346;
+
+}
+
+
+Adc_HwAcc_GetClockDivide (const uint32 Reg)
+{
+  Adc_Ip_ClockSelType ReturnValue;
+  Adc_Ip_ClockSelType D.6344;
+
+  <bb 2> :
+  ReturnValue = 0;
+  _1 = Reg >> 5;
+  _2 = _1 & 3;
+  switch (_2) <default: <L3> [INV], case 1: <L0> [INV], case 2: <L1> [INV], case 3: <L2> [INV]>
+
+  <bb 3> :
+<L0>:
+  ReturnValue = 1;
+  goto <bb 7>; [INV]
+
+  <bb 4> :
+<L1>:
+  ReturnValue = 2;
+  goto <bb 7>; [INV]
+
+  <bb 5> :
+<L2>:
+  ReturnValue = 3;
+  goto <bb 7>; [INV]
+
+  <bb 6> :
+<L3>:
+
+  <bb 7> :
+  D.6344 = ReturnValue;
+
+  <bb 8> :
+<L5>:
+  return D.6344;
+
+}
+
+
+Adc_HwAcc_SetClock (struct ADC_Type * const Base, const Adc_Ip_ClockSelType ClockDivide, const Adc_Ip_ClkSourceType InputClock)
+{
+  uint32 Cfg1Reg;
+
+  <bb 2> :
+  Cfg1Reg = Base->CFG1;
+  Cfg1Reg = Cfg1Reg & 4294967196;
+  _1 = ClockDivide << 5;
+  _2 = _1 & 96;
+  Cfg1Reg = Cfg1Reg | _2;
+  _3 = InputClock & 3;
+  Cfg1Reg = Cfg1Reg | _3;
+  Base->CFG1 = Cfg1Reg;
+  return;
+
+}
+
+
+Adc_HwAcc_SetSC2Reg (struct ADC_Type * const Base, const uint32 ClearMask, const uint32 Value)
+{
+  uint32 Sc2Reg;
+
+  <bb 2> :
+  Sc2Reg = Base->SC2;
+  _1 = ~ClearMask;
+  Sc2Reg = Sc2Reg & _1;
+  Sc2Reg = Sc2Reg | Value;
+  Base->SC2 = Sc2Reg;
+  return;
+
+}
+
+

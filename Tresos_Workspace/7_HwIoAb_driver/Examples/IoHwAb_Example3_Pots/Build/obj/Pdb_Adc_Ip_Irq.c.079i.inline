@@ -1,0 +1,75 @@
+IPA summary for Pdb_1_Isr/1 is missing.
+IPA summary for Pdb_0_Isr/0 is missing.
+
+Flattening functions:
+Overall time estimate: 0.000000 weighted by profile: 0.000000
+
+Deciding on inlining of small functions.  Starting with size 0.
+node context cache: 0 hits, 0 misses, 0 initializations
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+
+Deciding on functions to be inlined into all callers and removing useless speculations:
+Overall time estimate: 0.000000 weighted by profile: 0.000000
+
+Why inlining failed?
+function body not available                       :        2 calls, 2.000000 freq, 0 count
+IPA summary for Pdb_1_Isr/1 is missing.
+IPA summary for Pdb_0_Isr/0 is missing.
+Symbol table:
+
+Pdb_Adc_Ip_IRQHandler/2 (Pdb_Adc_Ip_IRQHandler) @0d46ee00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Pdb_1_Isr/1 Pdb_0_Isr/0 
+  Calls: 
+Pdb_1_Isr/1 (Pdb_1_Isr) @0d46e9a0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Pdb_Adc_Ip_IRQHandler/2 
+Pdb_0_Isr/0 (Pdb_0_Isr) @0d46e700
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Pdb_Adc_Ip_IRQHandler/2 
+
+;; Function Pdb_0_Isr (Pdb_0_Isr, funcdef_no=0, decl_uid=5410, cgraph_uid=1, symbol_order=0)
+
+Pdb_0_Isr ()
+{
+  <bb 2> :
+  Pdb_Adc_Ip_IRQHandler (0);
+  __asm__ __volatile__(" DSB");
+  return;
+
+}
+
+
+
+;; Function Pdb_1_Isr (Pdb_1_Isr, funcdef_no=1, decl_uid=5412, cgraph_uid=2, symbol_order=1)
+
+Pdb_1_Isr ()
+{
+  <bb 2> :
+  Pdb_Adc_Ip_IRQHandler (1);
+  __asm__ __volatile__(" DSB");
+  return;
+
+}
+
+

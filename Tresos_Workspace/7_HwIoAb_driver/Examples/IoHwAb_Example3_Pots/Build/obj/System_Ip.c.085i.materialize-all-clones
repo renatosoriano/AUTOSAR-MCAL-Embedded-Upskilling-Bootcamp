@@ -1,0 +1,45 @@
+System_Ip_ConfigIrq (System_Ip_IrqType eIrq, boolean bEnable)
+{
+  <bb 2> :
+  System_Ip_ConfigIrqPrivileged (eIrq_2(D), bEnable_3(D));
+  return;
+
+}
+
+
+System_Ip_ConfigIrqPrivileged (System_Ip_IrqType eIrq, boolean bEnable)
+{
+  uint32 regValTemp;
+  struct MCM_Type * _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  struct MCM_Type * _5;
+
+  <bb 2> :
+  _1 = 3758620672B;
+  regValTemp_8 ={v} _1->ISCR;
+  if (bEnable_9(D) != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  _2 = 1 << eIrq_10(D);
+  regValTemp_12 = regValTemp_8 | _2;
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  _3 = 1 << eIrq_10(D);
+  _4 = ~_3;
+  regValTemp_11 = regValTemp_8 & _4;
+
+  <bb 5> :
+  # regValTemp_6 = PHI <regValTemp_12(3), regValTemp_11(4)>
+  _5 = 3758620672B;
+  _5->ISCR ={v} regValTemp_6;
+  return;
+
+}
+
+
