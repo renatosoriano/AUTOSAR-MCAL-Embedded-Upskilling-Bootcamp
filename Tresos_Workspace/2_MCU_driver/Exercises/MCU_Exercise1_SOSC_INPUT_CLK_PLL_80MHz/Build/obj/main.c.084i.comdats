@@ -1,0 +1,37 @@
+EcuM_Init ()
+{
+  <unnamed type> _1;
+
+  <bb 2> :
+  Mcu_Init (&Mcu_Config);
+  Mcu_InitClock (0);
+
+  <bb 3> :
+  _1 = Mcu_GetPllStatus ();
+  if (_1 != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 4> :
+  Mcu_DistributePllClock ();
+  Mcu_SetMode (0);
+  Port_Init (&Port_Config);
+  return;
+
+}
+
+
+main ()
+{
+  int D.6064;
+
+  <bb 2> :
+  EcuM_Init ();
+
+  <bb 3> :
+  goto <bb 3>; [INV]
+
+}
+
+

@@ -1,0 +1,39 @@
+System_Ip_ConfigIrq (System_Ip_IrqType eIrq, boolean bEnable)
+{
+  <bb 2> :
+  System_Ip_ConfigIrqPrivileged (eIrq, bEnable);
+  return;
+
+}
+
+
+System_Ip_ConfigIrqPrivileged (System_Ip_IrqType eIrq, boolean bEnable)
+{
+  uint32 regValTemp;
+
+  <bb 2> :
+  _1 = 3758620672B;
+  regValTemp = _1->ISCR;
+  if (bEnable != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  _2 = 1 << eIrq;
+  regValTemp = regValTemp | _2;
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  _3 = 1 << eIrq;
+  _4 = ~_3;
+  regValTemp = regValTemp & _4;
+
+  <bb 5> :
+  _5 = 3758620672B;
+  _5->ISCR = regValTemp;
+  return;
+
+}
+
+

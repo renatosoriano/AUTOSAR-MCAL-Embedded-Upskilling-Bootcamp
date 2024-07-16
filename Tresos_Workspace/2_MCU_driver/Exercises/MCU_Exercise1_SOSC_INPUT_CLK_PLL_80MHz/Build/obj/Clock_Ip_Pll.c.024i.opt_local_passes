@@ -1,0 +1,373 @@
+Clock_Ip_EnableSpll_TrustedCall (const struct Clock_Ip_PllConfigType * Config)
+{
+  short unsigned int _1;
+  struct SCG_Type * _2;
+  long unsigned int _3;
+  struct SCG_Type * _4;
+  long unsigned int _5;
+
+  <bb 2> :
+  _1 = Config_8(D)->Enable;
+  if (_1 == 1)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  _2 = 1074151424B;
+  _3 ={v} _2->SPLLCSR;
+  _4 = 1074151424B;
+  _5 = _3 | 1;
+  _4->SPLLCSR ={v} _5;
+
+  <bb 4> :
+  return;
+
+}
+
+
+Clock_Ip_DisableSpll_TrustedCall (Clock_Ip_NameType PllName)
+{
+  struct SCG_Type * _1;
+  long unsigned int _2;
+  struct SCG_Type * _3;
+  long unsigned int _4;
+  struct SCG_Type * _5;
+  long unsigned int _6;
+  struct SCG_Type * _7;
+  long unsigned int _8;
+
+  <bb 2> :
+  _1 = 1074151424B;
+  _2 ={v} _1->SPLLCSR;
+  _3 = 1074151424B;
+  _4 = _2 & 4286578687;
+  _3->SPLLCSR ={v} _4;
+  _5 = 1074151424B;
+  _6 ={v} _5->SPLLCSR;
+  _7 = 1074151424B;
+  _8 = _6 & 4294967294;
+  _7->SPLLCSR ={v} _8;
+  return;
+
+}
+
+
+Clock_Ip_SetSpll_TrustedCall (const struct Clock_Ip_PllConfigType * Config)
+{
+  short unsigned int _1;
+  struct SCG_Type * _2;
+  long unsigned int _3;
+  unsigned char _4;
+  long unsigned int _5;
+  long unsigned int _6;
+  long unsigned int _7;
+  long unsigned int _8;
+  unsigned char _9;
+  long unsigned int _10;
+  long unsigned int _11;
+  long unsigned int _12;
+  long unsigned int _13;
+  long unsigned int _14;
+  struct SCG_Type * _15;
+  long unsigned int _16;
+  unsigned char _17;
+  int _18;
+  struct SCG_Type * _19;
+  struct SCG_Type * _20;
+  struct SCG_Type * _21;
+
+  <bb 2> :
+  _1 = Config_24(D)->Enable;
+  if (_1 == 1)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 3> :
+  _2 = 1074151424B;
+  _3 ={v} _2->SPLLCFG;
+  _4 = Config_24(D)->Predivider;
+  _5 = (long unsigned int) _4;
+  _6 = _5 + 4294967295;
+  _7 = _6 << 8;
+  _8 = _7 & 1792;
+  _9 = Config_24(D)->MulFactorDiv;
+  _10 = (long unsigned int) _9;
+  _11 = _10 + 4294967280;
+  _12 = _11 << 16;
+  _13 = _12 & 2031616;
+  _14 = _8 | _13;
+  _15 = 1074151424B;
+  _16 = _3 | _14;
+  _15->SPLLCFG ={v} _16;
+  _17 = Config_24(D)->Monitor;
+  _18 = (int) _17;
+  switch (_18) <default: <L4> [INV], case 0: <L1> [INV], case 1: <L2> [INV], case 2: <L3> [INV]>
+
+  <bb 4> :
+<L1>:
+  _19 = 1074151424B;
+  _19->SPLLCSR ={v} 0;
+  goto <bb 8>; [INV]
+
+  <bb 5> :
+<L2>:
+  _20 = 1074151424B;
+  _20->SPLLCSR ={v} 65536;
+  goto <bb 8>; [INV]
+
+  <bb 6> :
+<L3>:
+  _21 = 1074151424B;
+  _21->SPLLCSR ={v} 196608;
+  goto <bb 8>; [INV]
+
+  <bb 7> :
+<L4>:
+
+  <bb 8> :
+  return;
+
+}
+
+
+Clock_Ip_ResetSpll_TrustedCall (const struct Clock_Ip_PllConfigType * Config)
+{
+  struct SCG_Type * _1;
+  long unsigned int _2;
+  struct SCG_Type * _3;
+  long unsigned int _4;
+  struct SCG_Type * _5;
+  long unsigned int _6;
+  struct SCG_Type * _7;
+  long unsigned int _8;
+  struct SCG_Type * _9;
+  long unsigned int _10;
+  struct SCG_Type * _11;
+  long unsigned int _12;
+  struct SCG_Type * _13;
+  long unsigned int _14;
+  struct SCG_Type * _15;
+  long unsigned int _16;
+  struct SCG_Type * _17;
+  long unsigned int _18;
+  struct SCG_Type * _19;
+  long unsigned int _20;
+  struct SCG_Type * _21;
+  long unsigned int _22;
+  struct SCG_Type * _23;
+  long unsigned int _24;
+
+  <bb 2> :
+  _1 = 1074151424B;
+  _2 ={v} _1->SPLLCSR;
+  _3 = 1074151424B;
+  _4 = _2 & 4286578687;
+  _3->SPLLCSR ={v} _4;
+  _5 = 1074151424B;
+  _6 ={v} _5->SPLLCSR;
+  _7 = 1074151424B;
+  _8 = _6 & 4294901759;
+  _7->SPLLCSR ={v} _8;
+  _9 = 1074151424B;
+  _10 ={v} _9->SPLLCSR;
+  _11 = 1074151424B;
+  _12 = _10 & 4294836223;
+  _11->SPLLCSR ={v} _12;
+  _13 = 1074151424B;
+  _14 ={v} _13->SPLLCSR;
+  _15 = 1074151424B;
+  _16 = _14 & 4294967294;
+  _15->SPLLCSR ={v} _16;
+  _17 = 1074151424B;
+  _18 ={v} _17->SPLLCFG;
+  _19 = 1074151424B;
+  _20 = _18 & 4294965503;
+  _19->SPLLCFG ={v} _20;
+  _21 = 1074151424B;
+  _22 ={v} _21->SPLLCFG;
+  _23 = 1074151424B;
+  _24 = _22 & 4292935679;
+  _23->SPLLCFG ={v} _24;
+  return;
+
+}
+
+
+Clock_Ip_EnableSpll (const struct Clock_Ip_PllConfigType * Config)
+{
+  <bb 2> :
+  if (Config_2(D) != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  Clock_Ip_EnableSpll_TrustedCall (Config_2(D));
+
+  <bb 4> :
+  return;
+
+}
+
+
+Clock_Ip_DisableSpll (Clock_Ip_NameType PllName)
+{
+  <bb 2> :
+  Clock_Ip_DisableSpll_TrustedCall (PllName_2(D));
+  return;
+
+}
+
+
+Clock_Ip_CompleteSpll (Clock_Ip_NameType PllName)
+{
+  uint32 SpllStatus;
+  uint32 TimeoutTicks;
+  uint32 ElapsedTime;
+  uint32 StartTime;
+  boolean TimeoutOccurred;
+  Clock_Ip_PllStatusReturnType PllStatus;
+  Clock_Ip_PllStatusReturnType D.5977;
+  struct SCG_Type * _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  struct SCG_Type * _4;
+  long unsigned int _5;
+  long unsigned int _6;
+  long unsigned int TimeoutTicks.0_7;
+  _Bool _8;
+  _Bool _9;
+  Clock_Ip_PllStatusReturnType _24;
+
+  <bb 2> :
+  PllStatus_13 = 1;
+  TimeoutOccurred_14 = 0;
+  _1 = 1074151424B;
+  _2 ={v} _1->SPLLCSR;
+  _3 = _2 & 1;
+  if (_3 != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 3> :
+  Clock_Ip_StartTimeout (&StartTime, &ElapsedTime, &TimeoutTicks, 50000);
+
+  <bb 4> :
+  _4 = 1074151424B;
+  _5 ={v} _4->SPLLCSR;
+  _6 = _5 >> 24;
+  SpllStatus_18 = _6 & 1;
+  TimeoutTicks.0_7 = TimeoutTicks;
+  TimeoutOccurred_20 = Clock_Ip_TimeoutExpired (&StartTime, &ElapsedTime, TimeoutTicks.0_7);
+  if (SpllStatus_18 == 0)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  _8 = ~TimeoutOccurred_20;
+  if (_8 != 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 6> :
+  _9 = ~TimeoutOccurred_20;
+  if (_9 != 0)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 7> :
+  PllStatus_23 = 2;
+  goto <bb 10>; [INV]
+
+  <bb 8> :
+  Clock_Ip_ReportClockErrors (1, PllName_21(D));
+  goto <bb 10>; [INV]
+
+  <bb 9> :
+  PllStatus_16 = 0;
+
+  <bb 10> :
+  # PllStatus_10 = PHI <PllStatus_13(8), PllStatus_16(9), PllStatus_23(7)>
+  _24 = PllStatus_10;
+  StartTime ={v} {CLOBBER};
+  ElapsedTime ={v} {CLOBBER};
+  TimeoutTicks ={v} {CLOBBER};
+
+  <bb 11> :
+<L10>:
+  return _24;
+
+}
+
+
+Clock_Ip_SetSpll (const struct Clock_Ip_PllConfigType * Config)
+{
+  <bb 2> :
+  if (Config_2(D) != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  Clock_Ip_SetSpll_TrustedCall (Config_2(D));
+
+  <bb 4> :
+  return;
+
+}
+
+
+Clock_Ip_ResetSpll (const struct Clock_Ip_PllConfigType * Config)
+{
+  <bb 2> :
+  if (Config_2(D) != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  Clock_Ip_ResetSpll_TrustedCall (Config_2(D));
+
+  <bb 4> :
+  return;
+
+}
+
+
+Clock_Ip_CallbackPllEmptyDisable (Clock_Ip_NameType PllName)
+{
+  <bb 2> :
+  return;
+
+}
+
+
+Clock_Ip_CallbackPllEmptyComplete (Clock_Ip_NameType PllName)
+{
+  Clock_Ip_PllStatusReturnType D.5964;
+  Clock_Ip_PllStatusReturnType _1;
+
+  <bb 2> :
+  _1 = 2;
+
+  <bb 3> :
+<L0>:
+  return _1;
+
+}
+
+
+Clock_Ip_CallbackPllEmpty (const struct Clock_Ip_PllConfigType * Config)
+{
+  <bb 2> :
+  return;
+
+}
+
+
