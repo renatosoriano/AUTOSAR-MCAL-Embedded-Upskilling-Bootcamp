@@ -1,0 +1,78 @@
+Mcu_Ipw_SleepOnExit (Mcu_SleepOnExitType SleepOnExit)
+{
+  <bb 2> :
+  if (SleepOnExit_2(D) == 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  Power_Ip_DisableSleepOnExit ();
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  Power_Ip_EnableSleepOnExit ();
+
+  <bb 5> :
+  return;
+
+}
+
+
+Mcu_Ipw_GetResetRawValue ()
+{
+  Mcu_RawResetType D.5887;
+  Mcu_RawResetType _3;
+
+  <bb 2> :
+  _3 = Power_Ip_GetResetRawValue ();
+
+  <bb 3> :
+<L0>:
+  return _3;
+
+}
+
+
+Mcu_Ipw_GetResetReason ()
+{
+  Mcu_ResetType D.5885;
+  Mcu_ResetType _3;
+
+  <bb 2> :
+  _3 = Power_Ip_GetResetReason ();
+
+  <bb 3> :
+<L0>:
+  return _3;
+
+}
+
+
+Mcu_Ipw_SetMode (const struct Mcu_ModeConfigType * ModeConfigPtr)
+{
+  <bb 2> :
+  Power_Ip_SetMode (ModeConfigPtr_2(D));
+  return;
+
+}
+
+
+Mcu_Ipw_InitClock (const struct Mcu_ClockConfigType * ClockConfigPtr)
+{
+  <bb 2> :
+  Clock_Ip_InitClock (ClockConfigPtr_2(D));
+  return;
+
+}
+
+
+Mcu_Ipw_Init (const struct Mcu_HwIPsConfigType * HwIPsConfigPtr)
+{
+  <bb 2> :
+  Power_Ip_Init (HwIPsConfigPtr_2(D));
+  return;
+
+}
+
+

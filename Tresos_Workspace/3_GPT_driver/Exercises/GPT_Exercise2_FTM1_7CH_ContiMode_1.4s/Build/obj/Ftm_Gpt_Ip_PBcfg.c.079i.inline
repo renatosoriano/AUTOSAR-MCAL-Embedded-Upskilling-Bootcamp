@@ -1,0 +1,41 @@
+
+Flattening functions:
+Overall time estimate: 0.000000 weighted by profile: 0.000000
+
+Deciding on inlining of small functions.  Starting with size 0.
+node context cache: 0 hits, 0 misses, 0 initializations
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+
+Deciding on functions to be inlined into all callers and removing useless speculations:
+Overall time estimate: 0.000000 weighted by profile: 0.000000
+
+Why inlining failed?
+Symbol table:
+
+Gpt_ProcessCommonInterrupt/2 (Gpt_ProcessCommonInterrupt) @0daf9380
+  Type: function
+  Visibility: external public
+  Address is taken.
+  References: 
+  Referring: FTM_1_ChannelConfig_PB/1 (addr) FTM_1_ChannelConfig_PB/1 (addr) FTM_1_ChannelConfig_PB/1 (addr) FTM_1_ChannelConfig_PB/1 (addr) FTM_1_ChannelConfig_PB/1 (addr) FTM_1_ChannelConfig_PB/1 (addr) FTM_1_ChannelConfig_PB/1 (addr) 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+FTM_1_ChannelConfig_PB/1 (FTM_1_ChannelConfig_PB) @0daf8e58
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Gpt_ProcessCommonInterrupt/2 (addr) Gpt_ProcessCommonInterrupt/2 (addr) Gpt_ProcessCommonInterrupt/2 (addr) Gpt_ProcessCommonInterrupt/2 (addr) Gpt_ProcessCommonInterrupt/2 (addr) Gpt_ProcessCommonInterrupt/2 (addr) Gpt_ProcessCommonInterrupt/2 (addr) 
+  Referring: 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+FTM_1_InitConfig_PB/0 (FTM_1_InitConfig_PB) @0daf8dc8
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known

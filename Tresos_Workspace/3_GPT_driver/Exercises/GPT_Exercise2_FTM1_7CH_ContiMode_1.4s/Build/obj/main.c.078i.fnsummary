@@ -1,0 +1,287 @@
+Symbol table:
+
+Gpt_Config/28 (Gpt_Config) @0ea76360
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: EcuM_Init/16 (addr) 
+  Availability: not_available
+  Varpool flags: read-only
+Gpt_Init/27 (Gpt_Init) @0ea75700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: EcuM_Init/16 
+  Calls: 
+Port_Config/26 (Port_Config) @0ea762d0
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: EcuM_Init/16 (addr) 
+  Availability: not_available
+  Varpool flags: read-only
+Port_Init/25 (Port_Init) @0ea75620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: EcuM_Init/16 
+  Calls: 
+Platform_Init/24 (Platform_Init) @0ea75540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: EcuM_Init/16 
+  Calls: 
+Mcu_SetMode/23 (Mcu_SetMode) @0ea75460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: EcuM_Init/16 
+  Calls: 
+Mcu_InitClock/22 (Mcu_InitClock) @0ea75380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: EcuM_Init/16 
+  Calls: 
+Mcu_Config/21 (Mcu_Config) @0ea76168
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: EcuM_Init/16 (addr) 
+  Availability: not_available
+  Varpool flags: read-only
+Mcu_Init/20 (Mcu_Init) @0ea752a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: EcuM_Init/16 
+  Calls: 
+Dio_FlipChannel/19 (Dio_FlipChannel) @0ea75000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Gpt_TimeoutCallback_6/14 Gpt_TimeoutCallback_6/14 
+  Calls: 
+Gpt_EnableNotification/18 (Gpt_EnableNotification) @0ea70a80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: main/15 Gpt_TimeoutCallback_5/13 Gpt_TimeoutCallback_4/12 Gpt_TimeoutCallback_3/11 Gpt_TimeoutCallback_2/10 Gpt_TimeoutCallback_1/9 Gpt_TimeoutCallback_0/8 
+  Calls: 
+Gpt_StartTimer/17 (Gpt_StartTimer) @0ea709a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: main/15 Gpt_TimeoutCallback_5/13 Gpt_TimeoutCallback_4/12 Gpt_TimeoutCallback_3/11 Gpt_TimeoutCallback_2/10 Gpt_TimeoutCallback_1/9 Gpt_TimeoutCallback_0/8 
+  Calls: 
+EcuM_Init/16 (EcuM_Init) @0ea70540
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Mcu_Config/21 (addr) Port_Config/26 (addr) Gpt_Config/28 (addr) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: main/15 
+  Calls: Gpt_Init/27 Port_Init/25 Platform_Init/24 Mcu_SetMode/23 Mcu_InitClock/22 Mcu_Init/20 
+main/15 (main) @0ea702a0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Gpt_EnableNotification/18 Gpt_StartTimer/17 EcuM_Init/16 
+Gpt_TimeoutCallback_6/14 (Gpt_TimeoutCallback_6) @0ea70000
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Dio_FlipChannel/19 Dio_FlipChannel/19 
+Gpt_TimeoutCallback_5/13 (Gpt_TimeoutCallback_5) @0ea6dd20
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Gpt_EnableNotification/18 Gpt_StartTimer/17 
+Gpt_TimeoutCallback_4/12 (Gpt_TimeoutCallback_4) @0ea6da80
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Gpt_EnableNotification/18 Gpt_StartTimer/17 
+Gpt_TimeoutCallback_3/11 (Gpt_TimeoutCallback_3) @0ea6d7e0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Gpt_EnableNotification/18 Gpt_StartTimer/17 
+Gpt_TimeoutCallback_2/10 (Gpt_TimeoutCallback_2) @0ea6d540
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Gpt_EnableNotification/18 Gpt_StartTimer/17 
+Gpt_TimeoutCallback_1/9 (Gpt_TimeoutCallback_1) @0ea6d2a0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Gpt_EnableNotification/18 Gpt_StartTimer/17 
+Gpt_TimeoutCallback_0/8 (Gpt_TimeoutCallback_0) @0ea6d000
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Gpt_EnableNotification/18 Gpt_StartTimer/17 
+EcuM_Init ()
+{
+  <bb 2> :
+  Mcu_Init (&Mcu_Config);
+  Mcu_InitClock (0);
+  Mcu_SetMode (0);
+  Platform_Init (0B);
+  Port_Init (&Port_Config);
+  Gpt_Init (&Gpt_Config);
+  return;
+
+}
+
+
+main ()
+{
+  int D.7349;
+
+  <bb 2> :
+  EcuM_Init ();
+  Gpt_StartTimer (0, 18750);
+  Gpt_EnableNotification (0);
+
+  <bb 3> :
+  goto <bb 3>; [INV]
+
+}
+
+
+Gpt_TimeoutCallback_6 ()
+{
+  <bb 2> :
+  Dio_FlipChannel (72);
+  Dio_FlipChannel (96);
+  return;
+
+}
+
+
+Gpt_TimeoutCallback_5 ()
+{
+  <bb 2> :
+  Gpt_StartTimer (6, 18750);
+  Gpt_EnableNotification (6);
+  return;
+
+}
+
+
+Gpt_TimeoutCallback_4 ()
+{
+  <bb 2> :
+  Gpt_StartTimer (5, 18750);
+  Gpt_EnableNotification (5);
+  return;
+
+}
+
+
+Gpt_TimeoutCallback_3 ()
+{
+  <bb 2> :
+  Gpt_StartTimer (4, 18750);
+  Gpt_EnableNotification (4);
+  return;
+
+}
+
+
+Gpt_TimeoutCallback_2 ()
+{
+  <bb 2> :
+  Gpt_StartTimer (3, 18750);
+  Gpt_EnableNotification (3);
+  return;
+
+}
+
+
+Gpt_TimeoutCallback_1 ()
+{
+  <bb 2> :
+  Gpt_StartTimer (2, 18750);
+  Gpt_EnableNotification (2);
+  return;
+
+}
+
+
+Gpt_TimeoutCallback_0 ()
+{
+  <bb 2> :
+  Gpt_StartTimer (1, 18750);
+  Gpt_EnableNotification (1);
+  return;
+
+}
+
+
