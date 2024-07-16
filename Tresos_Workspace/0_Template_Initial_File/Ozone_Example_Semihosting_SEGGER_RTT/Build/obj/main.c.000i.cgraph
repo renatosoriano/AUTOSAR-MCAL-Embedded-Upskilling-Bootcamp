@@ -1,0 +1,584 @@
+Trivially needed symbols: EcuM_Init/2 main/1
+
+
+Initial Symbol table:
+
+Port_Config/11 (Port_Config) @0df5df78
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: EcuM_Init/2 (addr) 
+  Availability: not-ready
+  Varpool flags: read-only
+Port_Init/10 (Port_Init) @0df61000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: EcuM_Init/2 
+  Calls: 
+Mcu_SetMode/9 (Mcu_SetMode) @0df5c460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: EcuM_Init/2 
+  Calls: 
+Mcu_InitClock/8 (Mcu_InitClock) @0df5cee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: EcuM_Init/2 
+  Calls: 
+Mcu_Config/7 (Mcu_Config) @0df5de58
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: EcuM_Init/2 (addr) 
+  Availability: not-ready
+  Varpool flags: read-only
+Mcu_Init/6 (Mcu_Init) @0df5ce00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: EcuM_Init/2 
+  Calls: 
+SEGGER_RTT_printf/5 (SEGGER_RTT_printf) @0df5cc40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: main/1 
+  Calls: 
+Dio_FlipChannel/4 (Dio_FlipChannel) @0df5cb60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: main/1 
+  Calls: 
+SEGGER_RTT_Init/3 (SEGGER_RTT_Init) @0df5ca80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: main/1 
+  Calls: 
+EcuM_Init/2 (EcuM_Init) @0df5c620
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @01981040
+  References: Mcu_Config/7 (addr) Port_Config/11 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: main/1 
+  Calls: Port_Init/10 Mcu_SetMode/9 Mcu_InitClock/8 Mcu_Init/6 
+main/1 (main) @0df5c380
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0df5c620
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: SEGGER_RTT_printf/5 Dio_FlipChannel/4 SEGGER_RTT_Init/3 EcuM_Init/2 
+DevAssert/0 (DevAssert) @0dcf5a80
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+
+Removing unused symbols: DevAssert/0
+
+Reclaimed Symbol table:
+
+Port_Config/11 (Port_Config) @0df5df78
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: EcuM_Init/2 (addr) 
+  Availability: not-ready
+  Varpool flags: read-only
+Port_Init/10 (Port_Init) @0df61000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: EcuM_Init/2 
+  Calls: 
+Mcu_SetMode/9 (Mcu_SetMode) @0df5c460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: EcuM_Init/2 
+  Calls: 
+Mcu_InitClock/8 (Mcu_InitClock) @0df5cee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: EcuM_Init/2 
+  Calls: 
+Mcu_Config/7 (Mcu_Config) @0df5de58
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: EcuM_Init/2 (addr) 
+  Availability: not-ready
+  Varpool flags: read-only
+Mcu_Init/6 (Mcu_Init) @0df5ce00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: EcuM_Init/2 
+  Calls: 
+SEGGER_RTT_printf/5 (SEGGER_RTT_printf) @0df5cc40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: main/1 
+  Calls: 
+Dio_FlipChannel/4 (Dio_FlipChannel) @0df5cb60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: main/1 
+  Calls: 
+SEGGER_RTT_Init/3 (SEGGER_RTT_Init) @0df5ca80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: main/1 
+  Calls: 
+EcuM_Init/2 (EcuM_Init) @0df5c620
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Mcu_Config/7 (addr) Port_Config/11 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: main/1 
+  Calls: Port_Init/10 Mcu_SetMode/9 Mcu_InitClock/8 Mcu_Init/6 
+main/1 (main) @0df5c380
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: SEGGER_RTT_printf/5 Dio_FlipChannel/4 SEGGER_RTT_Init/3 EcuM_Init/2 
+
+
+Initial Symbol table:
+
+Port_Config/11 (Port_Config) @0df5df78
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: EcuM_Init/2 (addr) 
+  Availability: not-ready
+  Varpool flags: read-only
+Port_Init/10 (Port_Init) @0df61000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: EcuM_Init/2 
+  Calls: 
+Mcu_SetMode/9 (Mcu_SetMode) @0df5c460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: EcuM_Init/2 
+  Calls: 
+Mcu_InitClock/8 (Mcu_InitClock) @0df5cee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: EcuM_Init/2 
+  Calls: 
+Mcu_Config/7 (Mcu_Config) @0df5de58
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: EcuM_Init/2 (addr) 
+  Availability: not-ready
+  Varpool flags: read-only
+Mcu_Init/6 (Mcu_Init) @0df5ce00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: EcuM_Init/2 
+  Calls: 
+SEGGER_RTT_printf/5 (SEGGER_RTT_printf) @0df5cc40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: main/1 
+  Calls: 
+Dio_FlipChannel/4 (Dio_FlipChannel) @0df5cb60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: main/1 
+  Calls: 
+SEGGER_RTT_Init/3 (SEGGER_RTT_Init) @0df5ca80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: main/1 
+  Calls: 
+EcuM_Init/2 (EcuM_Init) @0df5c620
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Mcu_Config/7 (addr) Port_Config/11 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: main/1 
+  Calls: Port_Init/10 Mcu_SetMode/9 Mcu_InitClock/8 Mcu_Init/6 
+main/1 (main) @0df5c380
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: SEGGER_RTT_printf/5 Dio_FlipChannel/4 SEGGER_RTT_Init/3 EcuM_Init/2 
+
+Removing unused symbols:
+
+Reclaimed Symbol table:
+
+Port_Config/11 (Port_Config) @0df5df78
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: EcuM_Init/2 (addr) 
+  Availability: not-ready
+  Varpool flags: read-only
+Port_Init/10 (Port_Init) @0df61000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: EcuM_Init/2 
+  Calls: 
+Mcu_SetMode/9 (Mcu_SetMode) @0df5c460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: EcuM_Init/2 
+  Calls: 
+Mcu_InitClock/8 (Mcu_InitClock) @0df5cee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: EcuM_Init/2 
+  Calls: 
+Mcu_Config/7 (Mcu_Config) @0df5de58
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: EcuM_Init/2 (addr) 
+  Availability: not-ready
+  Varpool flags: read-only
+Mcu_Init/6 (Mcu_Init) @0df5ce00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: EcuM_Init/2 
+  Calls: 
+SEGGER_RTT_printf/5 (SEGGER_RTT_printf) @0df5cc40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: main/1 
+  Calls: 
+Dio_FlipChannel/4 (Dio_FlipChannel) @0df5cb60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: main/1 
+  Calls: 
+SEGGER_RTT_Init/3 (SEGGER_RTT_Init) @0df5ca80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: main/1 
+  Calls: 
+EcuM_Init/2 (EcuM_Init) @0df5c620
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Mcu_Config/7 (addr) Port_Config/11 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: main/1 
+  Calls: Port_Init/10 Mcu_SetMode/9 Mcu_InitClock/8 Mcu_Init/6 
+main/1 (main) @0df5c380
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: SEGGER_RTT_printf/5 Dio_FlipChannel/4 SEGGER_RTT_Init/3 EcuM_Init/2 
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+Optimized Symbol table:
+
+Port_Config/11 (Port_Config) @0df5df78
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: EcuM_Init/2 (addr) 
+  Availability: not_available
+  Varpool flags: read-only
+Port_Init/10 (Port_Init) @0df61000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: EcuM_Init/2 
+  Calls: 
+Mcu_SetMode/9 (Mcu_SetMode) @0df5c460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: EcuM_Init/2 
+  Calls: 
+Mcu_InitClock/8 (Mcu_InitClock) @0df5cee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: EcuM_Init/2 
+  Calls: 
+Mcu_Config/7 (Mcu_Config) @0df5de58
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: EcuM_Init/2 (addr) 
+  Availability: not_available
+  Varpool flags: read-only
+Mcu_Init/6 (Mcu_Init) @0df5ce00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: EcuM_Init/2 
+  Calls: 
+SEGGER_RTT_printf/5 (SEGGER_RTT_printf) @0df5cc40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: main/1 
+  Calls: 
+Dio_FlipChannel/4 (Dio_FlipChannel) @0df5cb60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: main/1 
+  Calls: 
+SEGGER_RTT_Init/3 (SEGGER_RTT_Init) @0df5ca80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: main/1 
+  Calls: 
+EcuM_Init/2 (EcuM_Init) @0df5c620
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Mcu_Config/7 (addr) Port_Config/11 (addr) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: main/1 
+  Calls: Port_Init/10 Mcu_SetMode/9 Mcu_InitClock/8 Mcu_Init/6 
+main/1 (main) @0df5c380
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: SEGGER_RTT_printf/5 Dio_FlipChannel/4 SEGGER_RTT_Init/3 EcuM_Init/2 
+Materializing clones
+Materialization Call site updates done.
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+Trivially needed variables:
+Removing variables:
+
+Final Symbol table:
+
+Port_Config/11 (Port_Config) @0df5df78
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Varpool flags: read-only
+Port_Init/10 (Port_Init) @0df61000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+Mcu_SetMode/9 (Mcu_SetMode) @0df5c460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+Mcu_InitClock/8 (Mcu_InitClock) @0df5cee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+Mcu_Config/7 (Mcu_Config) @0df5de58
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Varpool flags: read-only
+Mcu_Init/6 (Mcu_Init) @0df5ce00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+SEGGER_RTT_printf/5 (SEGGER_RTT_printf) @0df5cc40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+Dio_FlipChannel/4 (Dio_FlipChannel) @0df5cb60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+SEGGER_RTT_Init/3 (SEGGER_RTT_Init) @0df5ca80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+EcuM_Init/2 (EcuM_Init) @0df5c620
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.EcuM_Init (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+main/1 (main) @0df5c380
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.main (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 

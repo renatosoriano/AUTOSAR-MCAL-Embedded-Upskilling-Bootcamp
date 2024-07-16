@@ -1,0 +1,108 @@
+Platform_Ipw_Init (const struct Platform_Ipw_ConfigType * pConfig)
+{
+  Std_ReturnType ret;
+
+  <bb 2> :
+  ret = 0;
+  _1 = pConfig->pIntCtrlConfig;
+  if (_1 != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  _2 = pConfig->pIntCtrlConfig;
+  ret = Platform_Ipw_InitIntCtrl (_2);
+
+  <bb 4> :
+  if (ret == 0)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  _3 = pConfig->aSystemConfig;
+
+  <bb 6> :
+  return;
+
+}
+
+
+Platform_Ipw_InitIntCtrl (const struct IntCtrl_Ip_CtrlConfigType * pIntCtrlCtrlConfig)
+{
+  uint32 irqIdx;
+  Std_ReturnType D.6165;
+
+  <bb 2> :
+  irqIdx = 0;
+  goto <bb 7>; [INV]
+
+  <bb 3> :
+  _1 = pIntCtrlCtrlConfig->aIrqConfig;
+  _2 = irqIdx * 12;
+  _3 = _1 + _2;
+  _4 = _3->eIrqNumber;
+  IntCtrl_Ip_ClearPending (_4);
+  _5 = pIntCtrlCtrlConfig->aIrqConfig;
+  _6 = irqIdx * 12;
+  _7 = _5 + _6;
+  _8 = _7->eIrqNumber;
+  _9 = pIntCtrlCtrlConfig->aIrqConfig;
+  _10 = irqIdx * 12;
+  _11 = _9 + _10;
+  _12 = _11->u8IrqPriority;
+  IntCtrl_Ip_SetPriority (_8, _12);
+  _13 = pIntCtrlCtrlConfig->aIrqConfig;
+  _14 = irqIdx * 12;
+  _15 = _13 + _14;
+  _16 = _15->eIrqNumber;
+  _17 = pIntCtrlCtrlConfig->aIrqConfig;
+  _18 = irqIdx * 12;
+  _19 = _17 + _18;
+  _20 = _19->pfHandler;
+  IntCtrl_Ip_InstallHandler (_16, _20, 0B);
+  _21 = pIntCtrlCtrlConfig->aIrqConfig;
+  _22 = irqIdx * 12;
+  _23 = _21 + _22;
+  _24 = _23->bIrqEnabled;
+  if (_24 != 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  _25 = pIntCtrlCtrlConfig->aIrqConfig;
+  _26 = irqIdx * 12;
+  _27 = _25 + _26;
+  _28 = _27->eIrqNumber;
+  IntCtrl_Ip_EnableIrq (_28);
+  goto <bb 6>; [INV]
+
+  <bb 5> :
+  _29 = pIntCtrlCtrlConfig->aIrqConfig;
+  _30 = irqIdx * 12;
+  _31 = _29 + _30;
+  _32 = _31->eIrqNumber;
+  IntCtrl_Ip_DisableIrq (_32);
+
+  <bb 6> :
+  irqIdx = irqIdx + 1;
+
+  <bb 7> :
+  _33 = pIntCtrlCtrlConfig->u32ConfigIrqCount;
+  if (irqIdx < _33)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 8> :
+  D.6165 = 0;
+
+  <bb 9> :
+<L6>:
+  return D.6165;
+
+}
+
+
