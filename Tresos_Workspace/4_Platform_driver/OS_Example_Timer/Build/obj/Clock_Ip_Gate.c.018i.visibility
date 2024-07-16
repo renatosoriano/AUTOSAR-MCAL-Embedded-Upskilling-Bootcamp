@@ -1,0 +1,633 @@
+
+Marking local functions:
+
+
+Marking externally visible functions: Clock_Ip_ClockSetSimTraceEnable_TrustedCall/19 Clock_Ip_ClockSetSimGate_TrustedCall/18 Clock_Ip_ClockSetPccCgcEnable_TrustedCall/17 Clock_Ip_ClockSetSimClkoutEnable_TrustedCall/16 Clock_Ip_ClockSetSimLPO32KEnable_TrustedCall/15 Clock_Ip_ClockSetSimLPO1KEnable_TrustedCall/14
+
+
+Marking externally visible variables: Clock_Ip_axGateCallbacks/20
+
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+Symbol table:
+
+Clock_Ip_au8ClockFeatures/21 (Clock_Ip_au8ClockFeatures) @0dba58b8
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: Clock_Ip_ClockSetPccCgcEnable_TrustedCall/17 (read) Clock_Ip_ClockSetPccCgcEnable_TrustedCall/17 (read) Clock_Ip_ClockSetSimGate_TrustedCall/18 (read) 
+  Availability: not_available
+  Varpool flags: read-only
+Clock_Ip_axGateCallbacks/20 (Clock_Ip_axGateCallbacks) @0dc4ab40
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Clock_Ip_ClockSetGateEmpty/0 (addr) Clock_Ip_ClockUpdateGateEmpty/1 (addr) Clock_Ip_ClockSetPccCgcEnable/8 (addr) Clock_Ip_ClockUpdatePccCgcEnable/9 (addr) Clock_Ip_ClockSetSimClkoutEnable/6 (addr) Clock_Ip_ClockUpdateSimClkoutEnable/7 (addr) Clock_Ip_ClockSetSimLPO32KEnable/4 (addr) Clock_Ip_ClockUpdateSimLPO32KEnable/5 (addr) Clock_Ip_ClockSetSimLPO1KEnable/2 (addr) Clock_Ip_ClockUpdateSimLPO1KEnable/3 (addr) Clock_Ip_ClockSetSimGate/10 (addr) Clock_Ip_ClockUpdateSimGate/11 (addr) Clock_Ip_ClockSetSimTraceEnable/12 (addr) Clock_Ip_ClockUpdateSimTraceEnable/13 (addr) 
+  Referring: 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+Clock_Ip_ClockSetSimTraceEnable_TrustedCall/19 (Clock_Ip_ClockSetSimTraceEnable_TrustedCall) @0dc55ee0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: Clock_Ip_ClockSetSimTraceEnable/12 
+  Calls: 
+Clock_Ip_ClockSetSimGate_TrustedCall/18 (Clock_Ip_ClockSetSimGate_TrustedCall) @0dc55c40
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Clock_Ip_au8ClockFeatures/21 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: Clock_Ip_ClockSetSimGate/10 
+  Calls: 
+Clock_Ip_ClockSetPccCgcEnable_TrustedCall/17 (Clock_Ip_ClockSetPccCgcEnable_TrustedCall) @0dc559a0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Clock_Ip_au8ClockFeatures/21 (read) Clock_Ip_au8ClockFeatures/21 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: Clock_Ip_ClockSetPccCgcEnable/8 
+  Calls: 
+Clock_Ip_ClockSetSimClkoutEnable_TrustedCall/16 (Clock_Ip_ClockSetSimClkoutEnable_TrustedCall) @0dc55700
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: Clock_Ip_ClockSetSimClkoutEnable/6 
+  Calls: 
+Clock_Ip_ClockSetSimLPO32KEnable_TrustedCall/15 (Clock_Ip_ClockSetSimLPO32KEnable_TrustedCall) @0dc55460
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: Clock_Ip_ClockSetSimLPO32KEnable/4 
+  Calls: 
+Clock_Ip_ClockSetSimLPO1KEnable_TrustedCall/14 (Clock_Ip_ClockSetSimLPO1KEnable_TrustedCall) @0dc551c0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: Clock_Ip_ClockSetSimLPO1KEnable/2 
+  Calls: 
+Clock_Ip_ClockUpdateSimTraceEnable/13 (Clock_Ip_ClockUpdateSimTraceEnable) @0dc51ee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: 
+  Referring: Clock_Ip_axGateCallbacks/20 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Clock_Ip_ClockSetSimTraceEnable/12 
+Clock_Ip_ClockSetSimTraceEnable/12 (Clock_Ip_ClockSetSimTraceEnable) @0dc518c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: 
+  Referring: Clock_Ip_axGateCallbacks/20 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: Clock_Ip_ClockUpdateSimTraceEnable/13 
+  Calls: Clock_Ip_ClockSetSimTraceEnable_TrustedCall/19 
+Clock_Ip_ClockUpdateSimGate/11 (Clock_Ip_ClockUpdateSimGate) @0dc51380
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: 
+  Referring: Clock_Ip_axGateCallbacks/20 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Clock_Ip_ClockSetSimGate/10 
+Clock_Ip_ClockSetSimGate/10 (Clock_Ip_ClockSetSimGate) @0dc51e00
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: 
+  Referring: Clock_Ip_axGateCallbacks/20 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: Clock_Ip_ClockUpdateSimGate/11 
+  Calls: Clock_Ip_ClockSetSimGate_TrustedCall/18 
+Clock_Ip_ClockUpdatePccCgcEnable/9 (Clock_Ip_ClockUpdatePccCgcEnable) @0dc51a80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: 
+  Referring: Clock_Ip_axGateCallbacks/20 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Clock_Ip_ClockSetPccCgcEnable/8 
+Clock_Ip_ClockSetPccCgcEnable/8 (Clock_Ip_ClockSetPccCgcEnable) @0dc517e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: 
+  Referring: Clock_Ip_axGateCallbacks/20 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: Clock_Ip_ClockUpdatePccCgcEnable/9 
+  Calls: Clock_Ip_ClockSetPccCgcEnable_TrustedCall/17 
+Clock_Ip_ClockUpdateSimClkoutEnable/7 (Clock_Ip_ClockUpdateSimClkoutEnable) @0dc51540
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: 
+  Referring: Clock_Ip_axGateCallbacks/20 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Clock_Ip_ClockSetSimClkoutEnable/6 
+Clock_Ip_ClockSetSimClkoutEnable/6 (Clock_Ip_ClockSetSimClkoutEnable) @0dc512a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: 
+  Referring: Clock_Ip_axGateCallbacks/20 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: Clock_Ip_ClockUpdateSimClkoutEnable/7 
+  Calls: Clock_Ip_ClockSetSimClkoutEnable_TrustedCall/16 
+Clock_Ip_ClockUpdateSimLPO32KEnable/5 (Clock_Ip_ClockUpdateSimLPO32KEnable) @0dc51000
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: 
+  Referring: Clock_Ip_axGateCallbacks/20 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Clock_Ip_ClockSetSimLPO32KEnable/4 
+Clock_Ip_ClockSetSimLPO32KEnable/4 (Clock_Ip_ClockSetSimLPO32KEnable) @0dc4cb60
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: 
+  Referring: Clock_Ip_axGateCallbacks/20 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: Clock_Ip_ClockUpdateSimLPO32KEnable/5 
+  Calls: Clock_Ip_ClockSetSimLPO32KEnable_TrustedCall/15 
+Clock_Ip_ClockUpdateSimLPO1KEnable/3 (Clock_Ip_ClockUpdateSimLPO1KEnable) @0dc4c620
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: 
+  Referring: Clock_Ip_axGateCallbacks/20 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Clock_Ip_ClockSetSimLPO1KEnable/2 
+Clock_Ip_ClockSetSimLPO1KEnable/2 (Clock_Ip_ClockSetSimLPO1KEnable) @0dc4cd20
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: 
+  Referring: Clock_Ip_axGateCallbacks/20 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: Clock_Ip_ClockUpdateSimLPO1KEnable/3 
+  Calls: Clock_Ip_ClockSetSimLPO1KEnable_TrustedCall/14 
+Clock_Ip_ClockUpdateGateEmpty/1 (Clock_Ip_ClockUpdateGateEmpty) @0dc4ca80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: 
+  Referring: Clock_Ip_axGateCallbacks/20 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+Clock_Ip_ClockSetGateEmpty/0 (Clock_Ip_ClockSetGateEmpty) @0dc4c7e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: 
+  Referring: Clock_Ip_axGateCallbacks/20 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+Clock_Ip_ClockSetSimTraceEnable_TrustedCall (const struct Clock_Ip_GateConfigType * Config)
+{
+  uint32 RegValue;
+
+  <bb 2> :
+  _1 = 1074036736B;
+  RegValue = _1->CLKDIV4;
+  _2 = Config->Enable;
+  if (_2 == 1)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  RegValue = RegValue | 268435456;
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  RegValue = RegValue & 4026531839;
+
+  <bb 5> :
+  _3 = 1074036736B;
+  _3->CLKDIV4 = RegValue;
+  return;
+
+}
+
+
+Clock_Ip_ClockSetSimGate_TrustedCall (const struct Clock_Ip_GateConfigType * Config)
+{
+  uint32 RegValue;
+  uint32 GateIndex;
+  uint32 Enable;
+
+  <bb 2> :
+  _1 = Config->Enable;
+  Enable = (uint32) _1;
+  _2 = Config->Name;
+  _3 = Clock_Ip_au8ClockFeatures[_2][6];
+  GateIndex = (uint32) _3;
+  _4 = 1074036736B;
+  RegValue = _4->PLATCGC;
+  _5 = 1 << GateIndex;
+  _6 = ~_5;
+  RegValue = RegValue & _6;
+  _7 = Enable << GateIndex;
+  RegValue = RegValue | _7;
+  _8 = 1074036736B;
+  _8->PLATCGC = RegValue;
+  return;
+
+}
+
+
+Clock_Ip_ClockSetPccCgcEnable_TrustedCall (const struct Clock_Ip_GateConfigType * Config)
+{
+  uint32 RegValue;
+
+  <bb 2> :
+  _1 = 1074155520B;
+  _2 = Config->Name;
+  _3 = Clock_Ip_au8ClockFeatures[_2][6];
+  _4 = (int) _3;
+  RegValue = _1->PCCn[_4];
+  RegValue = RegValue & 3221225471;
+  _5 = Config->Enable;
+  _6 = (long unsigned int) _5;
+  _7 = _6 << 30;
+  RegValue = RegValue | _7;
+  _8 = 1074155520B;
+  _9 = Config->Name;
+  _10 = Clock_Ip_au8ClockFeatures[_9][6];
+  _11 = (int) _10;
+  _8->PCCn[_11] = RegValue;
+  return;
+
+}
+
+
+Clock_Ip_ClockSetSimClkoutEnable_TrustedCall (const struct Clock_Ip_GateConfigType * Config)
+{
+  uint32 RegValue;
+
+  <bb 2> :
+  _1 = 1074036736B;
+  RegValue = _1->CHIPCTL;
+  RegValue = RegValue & 4294965247;
+  _2 = Config->Enable;
+  _3 = (long unsigned int) _2;
+  _4 = _3 << 11;
+  RegValue = RegValue | _4;
+  _5 = 1074036736B;
+  _5->CHIPCTL = RegValue;
+  return;
+
+}
+
+
+Clock_Ip_ClockSetSimLPO32KEnable_TrustedCall (const struct Clock_Ip_GateConfigType * Config)
+{
+  uint32 RegValue;
+
+  <bb 2> :
+  _1 = 1074036736B;
+  RegValue = _1->LPOCLKS;
+  RegValue = RegValue & 4294967293;
+  _2 = Config->Enable;
+  _3 = (long unsigned int) _2;
+  _4 = _3 << 1;
+  RegValue = RegValue | _4;
+  _5 = 1074036736B;
+  _5->LPOCLKS = RegValue;
+  return;
+
+}
+
+
+Clock_Ip_ClockSetSimLPO1KEnable_TrustedCall (const struct Clock_Ip_GateConfigType * Config)
+{
+  uint32 RegValue;
+
+  <bb 2> :
+  _1 = 1074036736B;
+  RegValue = _1->LPOCLKS;
+  RegValue = RegValue & 4294967294;
+  _2 = Config->Enable;
+  _3 = (long unsigned int) _2;
+  RegValue = RegValue | _3;
+  _4 = 1074036736B;
+  _4->LPOCLKS = RegValue;
+  return;
+
+}
+
+
+Clock_Ip_ClockUpdateSimTraceEnable (Clock_Ip_NameType ClockName, boolean Gate)
+{
+  struct Clock_Ip_GateConfigType Config;
+
+  <bb 2> :
+  Config.Name = ClockName;
+  if (Gate != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  Config.Enable = 0;
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  Config.Enable = 1;
+
+  <bb 5> :
+  Clock_Ip_ClockSetSimTraceEnable (&Config);
+  Config = {CLOBBER};
+  return;
+
+}
+
+
+Clock_Ip_ClockSetSimTraceEnable (const struct Clock_Ip_GateConfigType * Config)
+{
+  <bb 2> :
+  if (Config != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  Clock_Ip_ClockSetSimTraceEnable_TrustedCall (Config);
+
+  <bb 4> :
+  return;
+
+}
+
+
+Clock_Ip_ClockUpdateSimGate (Clock_Ip_NameType ClockName, boolean Gate)
+{
+  struct Clock_Ip_GateConfigType Config;
+
+  <bb 2> :
+  Config.Name = ClockName;
+  if (Gate != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  Config.Enable = 0;
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  Config.Enable = 1;
+
+  <bb 5> :
+  Clock_Ip_ClockSetSimGate (&Config);
+  Config = {CLOBBER};
+  return;
+
+}
+
+
+Clock_Ip_ClockSetSimGate (const struct Clock_Ip_GateConfigType * Config)
+{
+  <bb 2> :
+  if (Config != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  Clock_Ip_ClockSetSimGate_TrustedCall (Config);
+
+  <bb 4> :
+  return;
+
+}
+
+
+Clock_Ip_ClockUpdatePccCgcEnable (Clock_Ip_NameType ClockName, boolean Gate)
+{
+  struct Clock_Ip_GateConfigType Config;
+
+  <bb 2> :
+  Config.Name = ClockName;
+  if (Gate != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  Config.Enable = 0;
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  Config.Enable = 1;
+
+  <bb 5> :
+  Clock_Ip_ClockSetPccCgcEnable (&Config);
+  Config = {CLOBBER};
+  return;
+
+}
+
+
+Clock_Ip_ClockSetPccCgcEnable (const struct Clock_Ip_GateConfigType * Config)
+{
+  <bb 2> :
+  if (Config != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  Clock_Ip_ClockSetPccCgcEnable_TrustedCall (Config);
+
+  <bb 4> :
+  return;
+
+}
+
+
+Clock_Ip_ClockUpdateSimClkoutEnable (Clock_Ip_NameType ClockName, boolean Gate)
+{
+  struct Clock_Ip_GateConfigType Config;
+
+  <bb 2> :
+  Config.Name = ClockName;
+  if (Gate != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  Config.Enable = 0;
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  Config.Enable = 1;
+
+  <bb 5> :
+  Clock_Ip_ClockSetSimClkoutEnable (&Config);
+  Config = {CLOBBER};
+  return;
+
+}
+
+
+Clock_Ip_ClockSetSimClkoutEnable (const struct Clock_Ip_GateConfigType * Config)
+{
+  <bb 2> :
+  if (Config != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  Clock_Ip_ClockSetSimClkoutEnable_TrustedCall (Config);
+
+  <bb 4> :
+  return;
+
+}
+
+
+Clock_Ip_ClockUpdateSimLPO32KEnable (Clock_Ip_NameType ClockName, boolean Gate)
+{
+  struct Clock_Ip_GateConfigType Config;
+
+  <bb 2> :
+  Config.Name = ClockName;
+  if (Gate != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  Config.Enable = 0;
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  Config.Enable = 1;
+
+  <bb 5> :
+  Clock_Ip_ClockSetSimLPO32KEnable (&Config);
+  Config = {CLOBBER};
+  return;
+
+}
+
+
+Clock_Ip_ClockSetSimLPO32KEnable (const struct Clock_Ip_GateConfigType * Config)
+{
+  <bb 2> :
+  if (Config != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  Clock_Ip_ClockSetSimLPO32KEnable_TrustedCall (Config);
+
+  <bb 4> :
+  return;
+
+}
+
+
+Clock_Ip_ClockUpdateSimLPO1KEnable (Clock_Ip_NameType ClockName, boolean Gate)
+{
+  struct Clock_Ip_GateConfigType Config;
+
+  <bb 2> :
+  Config.Name = ClockName;
+  if (Gate != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  Config.Enable = 0;
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  Config.Enable = 1;
+
+  <bb 5> :
+  Clock_Ip_ClockSetSimLPO1KEnable (&Config);
+  Config = {CLOBBER};
+  return;
+
+}
+
+
+Clock_Ip_ClockSetSimLPO1KEnable (const struct Clock_Ip_GateConfigType * Config)
+{
+  <bb 2> :
+  if (Config != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  Clock_Ip_ClockSetSimLPO1KEnable_TrustedCall (Config);
+
+  <bb 4> :
+  return;
+
+}
+
+
+Clock_Ip_ClockUpdateGateEmpty (Clock_Ip_NameType ClockName, boolean Gate)
+{
+  <bb 2> :
+  return;
+
+}
+
+
+Clock_Ip_ClockSetGateEmpty (const struct Clock_Ip_GateConfigType * Config)
+{
+  <bb 2> :
+  return;
+
+}
+
+

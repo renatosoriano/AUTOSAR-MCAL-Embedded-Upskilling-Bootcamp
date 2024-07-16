@@ -1,0 +1,194 @@
+IPA summary for EcuM_Init/2 is missing.
+IPA summary for main/1 is missing.
+
+Flattening functions:
+Overall time estimate: 0.000000 weighted by profile: 0.000000
+
+Deciding on inlining of small functions.  Starting with size 0.
+node context cache: 0 hits, 0 misses, 0 initializations
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+
+Deciding on functions to be inlined into all callers and removing useless speculations:
+Overall time estimate: 0.000000 weighted by profile: 0.000000
+
+Why inlining failed?
+function not considered for inlining              :        1 calls, 1.000000 freq, 0 count
+function body not available                       :        9 calls, 9.000000 freq, 0 count
+IPA summary for EcuM_Init/2 is missing.
+IPA summary for main/1 is missing.
+Symbol table:
+
+Port_Config/13 (Port_Config) @0ddebb88
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: EcuM_Init/2 (addr) 
+  Availability: not_available
+  Varpool flags: read-only
+Port_Init/12 (Port_Init) @0de02460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: EcuM_Init/2 
+  Calls: 
+OsIf_Init/11 (OsIf_Init) @0de02380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: EcuM_Init/2 
+  Calls: 
+Mcu_SetMode/10 (Mcu_SetMode) @0de022a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: EcuM_Init/2 
+  Calls: 
+Mcu_InitClock/9 (Mcu_InitClock) @0de021c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: EcuM_Init/2 
+  Calls: 
+Mcu_Config/8 (Mcu_Config) @0ddeba20
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: EcuM_Init/2 (addr) 
+  Availability: not_available
+  Varpool flags: read-only
+Mcu_Init/7 (Mcu_Init) @0de020e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: EcuM_Init/2 
+  Calls: 
+Dio_FlipChannel/6 (Dio_FlipChannel) @0ddea700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: main/1 
+  Calls: 
+OsIf_GetElapsed/5 (OsIf_GetElapsed) @0ddeaee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: main/1 
+  Calls: 
+OsIf_GetCounter/4 (OsIf_GetCounter) @0ddeae00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: main/1 
+  Calls: 
+OsIf_MicrosToTicks/3 (OsIf_MicrosToTicks) @0ddead20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: main/1 
+  Calls: 
+EcuM_Init/2 (EcuM_Init) @0ddea8c0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Mcu_Config/8 (addr) Port_Config/13 (addr) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: main/1 
+  Calls: Port_Init/12 OsIf_Init/11 Mcu_SetMode/10 Mcu_InitClock/9 Mcu_Init/7 
+main/1 (main) @0ddea620
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Dio_FlipChannel/6 OsIf_GetElapsed/5 OsIf_GetCounter/4 OsIf_MicrosToTicks/3 EcuM_Init/2 
+
+;; Function main (main, funcdef_no=1, decl_uid=6066, cgraph_uid=2, symbol_order=1)
+
+main ()
+{
+  uint32 ElapsedTime;
+  uint32 SeedTick;
+  uint32 Timeout_500ms;
+  int D.6082;
+  long unsigned int D.6079;
+  long unsigned int _1;
+  long unsigned int _14;
+
+  <bb 2> :
+  EcuM_Init ();
+  Timeout_500ms_9 = OsIf_MicrosToTicks (500000, 1);
+  _1 = OsIf_GetCounter (1);
+  SeedTick = _1;
+  ElapsedTime_12 = 0;
+
+  <bb 3> :
+  # ElapsedTime_2 = PHI <ElapsedTime_12(2), ElapsedTime_3(5)>
+  _14 = OsIf_GetElapsed (&SeedTick, 1);
+  ElapsedTime_15 = _14 + ElapsedTime_2;
+  if (ElapsedTime_15 >= Timeout_500ms_9)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  ElapsedTime_16 = 0;
+  Dio_FlipChannel (96);
+
+  <bb 5> :
+  # ElapsedTime_3 = PHI <ElapsedTime_15(3), ElapsedTime_16(4)>
+  goto <bb 3>; [INV]
+
+}
+
+
+
+;; Function EcuM_Init (EcuM_Init, funcdef_no=2, decl_uid=6064, cgraph_uid=3, symbol_order=2)
+
+EcuM_Init ()
+{
+  <bb 2> :
+  Mcu_Init (&Mcu_Config);
+  Mcu_InitClock (0);
+  Mcu_SetMode (0);
+  OsIf_Init (0B);
+  Port_Init (&Port_Config);
+  return;
+
+}
+
+

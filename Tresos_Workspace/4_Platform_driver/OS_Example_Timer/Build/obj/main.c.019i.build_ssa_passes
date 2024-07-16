@@ -1,0 +1,46 @@
+EcuM_Init ()
+{
+  <bb 2> :
+  Mcu_Init (&Mcu_Config);
+  Mcu_InitClock (0);
+  Mcu_SetMode (0);
+  OsIf_Init (0B);
+  Port_Init (&Port_Config);
+  return;
+
+}
+
+
+main ()
+{
+  uint32 ElapsedTime;
+  uint32 SeedTick;
+  uint32 Timeout_500ms;
+  int D.6082;
+  long unsigned int D.6079;
+
+  <bb 2> :
+  EcuM_Init ();
+  Timeout_500ms = OsIf_MicrosToTicks (500000, 1);
+  _1 = OsIf_GetCounter (1);
+  SeedTick = _1;
+  ElapsedTime = 0;
+
+  <bb 3> :
+  D.6079 = OsIf_GetElapsed (&SeedTick, 1);
+  ElapsedTime = D.6079 + ElapsedTime;
+  if (ElapsedTime >= Timeout_500ms)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  ElapsedTime = 0;
+  Dio_FlipChannel (96);
+
+  <bb 5> :
+  goto <bb 3>; [INV]
+
+}
+
+
