@@ -225,7 +225,7 @@ Using two different timers (FTM1 and FTM2) to toggle two pairs of leds (1st pair
 
 ![GPT_Exercise1_2Timers_OneShot_FIRC_2LEDs.GIF](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/GPT_driver/GPT_Exercise1_2Timers_OneShot_FIRC_2LEDs.GIF)
 
-
+https://github.com/user-attachments/assets/193ff80f-5500-420f-af6e-2be51721c8a4
 
 ### **CAN Driver Evidences**
 
