@@ -170,7 +170,7 @@ Shall display (SEGGER_RTT_printf) Pot 2 ADC0 value in ohms, toggle C12_LED4 (as 
 
 ![Button_2_Double_click.GIF](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/Final_Project/Button_2_Double_click.GIF)
 
-
+https://github.com/user-attachments/assets/9eea159c-86a7-4f8a-8b8b-228dc2623305
 
 ![Button_2_Double_click_Terminal.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/Final_Project/Button_2_Double_click_Terminal.png)
 
