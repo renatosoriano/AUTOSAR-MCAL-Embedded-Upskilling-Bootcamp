@@ -195,7 +195,7 @@ Shall display (SEGGER_RTT_printf) Pot 1 and Pot 2 ADC1 alternate values in ohms,
 
 ![Button_3_Double_click.GIF](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/Final_Project/Button_3_Double_click.GIF)
 
-
+https://github.com/user-attachments/assets/2bfb6ac9-46a6-4cf8-8ef3-cd11ad5b9d95
 
 ![Button_3_Double_click_Terminal.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/Final_Project/Button_3_Double_click_Terminal.png)
 
