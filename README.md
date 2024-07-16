@@ -174,6 +174,21 @@ https://github.com/user-attachments/assets/9eea159c-86a7-4f8a-8b8b-228dc2623305
 
 ![Button_2_Double_click_Terminal.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/Final_Project/Button_2_Double_click_Terminal.png)
 
+* #### Button 2: Hold and Release
+Buzzer shall start to beep and play Tone 2, then stop.
+
+![Button_2_Hold_Release.GIF](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/Final_Project/Button_2_Hold_Release.GIF)
+
+![Button_2_Hold_Release_Terminal.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/Final_Project/Button_2_Hold_Release_Terminal.png)
+
+* #### Button 3: Single click
+Shall toggle ON/OFF RGB_LED_GREEN (D16) and C8_LED0 (as SINGLE_CLICK visual indicator).
+
+![Button_3_Single_click.GIF](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/Final_Project/Button_3_Single_click.GIF)
+
+https://github.com/user-attachments/assets/b4d3c5dc-a298-42aa-b5f8-e419363fc6f3
+
+![Button_3_Single_click_Terminal.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/Final_Project/Button_3_Single_click_Terminal.png)
 
 ## 8. Results
 You can find here captures and media relevant to examples and/or exercises visible output in communication (software) or physical-world (board).
