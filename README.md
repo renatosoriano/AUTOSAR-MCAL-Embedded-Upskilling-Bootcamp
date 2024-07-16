@@ -18,7 +18,7 @@ Date: July, 2024.
 5. [**Documentation**](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp?tab=readme-ov-file#documentation)
 6. [**Examples and Exercises**](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp?tab=readme-ov-file#examples-and-exercises)
 7. [**Final Project**](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp?tab=readme-ov-file#final-project)
-8. [**Results**](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp?tab=readme-ov-file#results)
+8. [**Sample Evidences**](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp?tab=readme-ov-file#sample-evidences)
 
 ## 1. Description
 
@@ -204,7 +204,7 @@ https://github.com/user-attachments/assets/2bfb6ac9-46a6-4cf8-8ef3-cd11ad5b9d95
 
 ![Button_3_Hold_Release_Terminal.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/Final_Project/Button_3_Hold_Release_Terminal.png)
 
-## 8. Results
+## 8. Sample Evidences
 You can find here captures and media relevant to examples and/or exercises visible output in communication (software) or physical-world (board).
 
 _Will be uploading them as they are ready._
