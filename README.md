@@ -186,7 +186,7 @@ Shall toggle ON/OFF RGB_LED_GREEN (D16) and C8_LED0 (as SINGLE_CLICK visual indi
 
 ![Button_3_Single_click.GIF](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/Final_Project/Button_3_Single_click.GIF)
 
-https://github.com/user-attachments/assets/b4d3c5dc-a298-42aa-b5f8-e419363fc6f3
+https://github.com/user-attachments/assets/2ae425f0-8526-4a7d-ba0b-80b507f2b16e
 
 ![Button_3_Single_click_Terminal.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/Final_Project/Button_3_Single_click_Terminal.png)
 
