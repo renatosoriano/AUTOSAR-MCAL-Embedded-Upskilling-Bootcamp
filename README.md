@@ -149,6 +149,13 @@ https://github.com/user-attachments/assets/9f66e0b6-36a8-45d1-8fdf-4e0b84e6d62f
 
 ![Button_1_Double_click_Terminal.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/Final_Project/Button_1_Double_click_Terminal.png)
 
+* #### Button 1: Hold and Release
+Buzzer shall start to beep and play Tone 1, then stop.
+
+![Button_1_Hold_Release.GIF](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/Final_Project/Button_1_Hold_Release.GIF)
+
+![Button_1_Hold_Release_Terminal.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/Final_Project/Button_1_Hold_Release_Terminal.png)
+
 * #### Button 2: Single click
 Shall toggle ON/OFF RGB_LED_RED (D15) and C9_LED1 (as SINGLE_CLICK visual indicator).
 
@@ -157,6 +164,16 @@ Shall toggle ON/OFF RGB_LED_RED (D15) and C9_LED1 (as SINGLE_CLICK visual indica
 https://github.com/user-attachments/assets/b4d3c5dc-a298-42aa-b5f8-e419363fc6f3
 
 ![Button_2_Single_click_Terminal.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/Final_Project/Button_2_Single_click_Terminal.png)
+
+* #### Button 2: Double click
+Shall display (SEGGER_RTT_printf) Pot 2 ADC0 value in ohms, toggle C12_LED4 (as DOUBLE_CLICK visual indicator), and toggle C15_LED7 (as Pot 2 visual indicator).
+
+![Button_2_Double_click.GIF](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/Final_Project/Button_2_Double_click.GIF)
+
+
+
+![Button_2_Double_click_Terminal.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/Final_Project/Button_2_Double_click_Terminal.png)
+
 
 ## 8. Results
 You can find here captures and media relevant to examples and/or exercises visible output in communication (software) or physical-world (board).
