@@ -232,7 +232,7 @@ Using three FTM timers with one channel each, toggle the three RGB leds at diffe
 
 ![GPT_Exercise3_3Timers_FTM_RGB_DiffClkRef.GIF](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/GPT_driver/GPT_Exercise3_3Timers_FTM_RGB_DiffClkRef.GIF)
 
-
+https://github.com/user-attachments/assets/51c8bdf2-141e-4744-be3b-26aa9c43fdc1
 
 ### **CAN Driver Evidences**
 
