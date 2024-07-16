@@ -216,11 +216,6 @@ Pressing 1st button will rotate the LEDs from right to left, and pressing 2nd bu
 
 ![DIO_Exercise8_Rotate_LEDs_Left_Right_Buttons.GIF](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/DIO_PORT_driver/DIO_Exercise8_Rotate_LEDs_Left_Right_Buttons.GIF)
 
-https://github.com/user-attachments/assets/26b8afe0-4fea-4588-bc26-9f966ed6f95d
-
-https://github.com/user-attachments/assets/8eb3f5c9-890b-4bfc-8155-4dca482ff42e
-
-
 https://github.com/user-attachments/assets/80e7ae72-599a-454c-8cb2-881933acbc30
 
 ### **GPT Driver Evidences**
