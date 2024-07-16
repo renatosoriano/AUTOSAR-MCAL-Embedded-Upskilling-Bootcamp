@@ -190,6 +190,15 @@ https://github.com/user-attachments/assets/2ae425f0-8526-4a7d-ba0b-80b507f2b16e
 
 ![Button_3_Single_click_Terminal.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/Final_Project/Button_3_Single_click_Terminal.png)
 
+* #### Button 3: Double click
+Shall display (SEGGER_RTT_printf) Pot 1 and Pot 2 ADC1 alternate values in ohms, toggle C11_LED3 (as DOUBLE_CLICK visual indicator), toggle C14_LED6 (as Pot 1 visual indicator), and toggle C15_LED7 (as Pot 2 visual indicator).
+
+![Button_3_Double_click.GIF](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/Final_Project/Button_3_Double_click.GIF)
+
+
+
+![Button_3_Double_click_Terminal.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/Final_Project/Button_3_Double_click_Terminal.png)
+
 ## 8. Results
 You can find here captures and media relevant to examples and/or exercises visible output in communication (software) or physical-world (board).
 
