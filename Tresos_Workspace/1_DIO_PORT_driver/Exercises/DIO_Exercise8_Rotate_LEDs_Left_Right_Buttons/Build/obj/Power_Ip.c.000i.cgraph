@@ -1,0 +1,1088 @@
+Trivially needed symbols: Power_Ip_InstallNotificationsCallback/9 Power_Ip_EnableSleepOnExit/8 Power_Ip_DisableSleepOnExit/7 Power_Ip_Init/6 Power_Ip_GetResetRawValue/5 Power_Ip_GetResetReason/4 Power_Ip_ConvertIntergeToResetType/3 Power_Ip_SetMode/2 Power_Ip_pfReportErrorsCallback/1 ResetReasonArray/0
+
+
+Initial Symbol table:
+
+Power_Ip_CM4_EnableSleepOnExit/20 (Power_Ip_CM4_EnableSleepOnExit) @0dcc2380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Power_Ip_EnableSleepOnExit/8 
+  Calls: 
+Power_Ip_CM4_DisableSleepOnExit/19 (Power_Ip_CM4_DisableSleepOnExit) @0dcc21c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Power_Ip_DisableSleepOnExit/7 
+  Calls: 
+Power_Ip_SMC_AllowedModesConfig/18 (Power_Ip_SMC_AllowedModesConfig) @0dcc2000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Power_Ip_Init/6 
+  Calls: 
+Power_Ip_PMC_PowerInit/17 (Power_Ip_PMC_PowerInit) @0dac2000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Power_Ip_Init/6 
+  Calls: 
+Power_Ip_RCM_ResetInit/16 (Power_Ip_RCM_ResetInit) @0dac2ee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Power_Ip_Init/6 
+  Calls: 
+Power_Ip_RCM_GetResetRawValue/15 (Power_Ip_RCM_GetResetRawValue) @0dac2d20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Power_Ip_GetResetRawValue/5 
+  Calls: 
+Power_Ip_RCM_GetResetReason/14 (Power_Ip_RCM_GetResetReason) @0dac2b60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Power_Ip_GetResetReason/4 
+  Calls: 
+Power_Ip_ReportPowerErrors/13 (Power_Ip_ReportPowerErrors) @0dac28c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Power_Ip_SetMode/2 
+  Calls: 
+Power_Ip_SMC_ModeConfig/12 (Power_Ip_SMC_ModeConfig) @0dac27e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Power_Ip_SetMode/2 
+  Calls: 
+Power_Ip_SMC_ModeCheckEntry/11 (Power_Ip_SMC_ModeCheckEntry) @0dac2700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Power_Ip_SetMode/2 
+  Calls: 
+Power_Ip_ReportPowerErrorsEmptyCallback/10 (Power_Ip_ReportPowerErrorsEmptyCallback) @0dac22a0
+  Type: function
+  Visibility: external public
+  Address is taken.
+  References: 
+  Referring: Power_Ip_pfReportErrorsCallback/1 (addr) 
+  Function flags:
+  Called by: 
+  Calls: 
+Power_Ip_InstallNotificationsCallback/9 (Power_Ip_InstallNotificationsCallback) @0dac21c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @01981040
+  References: Power_Ip_pfReportErrorsCallback/1 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+Power_Ip_EnableSleepOnExit/8 (Power_Ip_EnableSleepOnExit) @0dabde00
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0dac21c0
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Power_Ip_CM4_EnableSleepOnExit/20 
+Power_Ip_DisableSleepOnExit/7 (Power_Ip_DisableSleepOnExit) @0dabd8c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0dabde00
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Power_Ip_CM4_DisableSleepOnExit/19 
+Power_Ip_Init/6 (Power_Ip_Init) @0dabd380
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0dabd8c0
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Power_Ip_SMC_AllowedModesConfig/18 Power_Ip_PMC_PowerInit/17 Power_Ip_RCM_ResetInit/16 
+Power_Ip_GetResetRawValue/5 (Power_Ip_GetResetRawValue) @0dabdd20
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0dabd380
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Power_Ip_RCM_GetResetRawValue/15 
+Power_Ip_GetResetReason/4 (Power_Ip_GetResetReason) @0dabda80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0dabdd20
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Power_Ip_ConvertIntergeToResetType/3 Power_Ip_RCM_GetResetReason/14 
+Power_Ip_ConvertIntergeToResetType/3 (Power_Ip_ConvertIntergeToResetType) @0dabd7e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @0dabda80
+  References: ResetReasonArray/0 (read) ResetReasonArray/0 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Power_Ip_GetResetReason/4 
+  Calls: 
+Power_Ip_SetMode/2 (Power_Ip_SetMode) @0dabd540
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0dabd7e0
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Power_Ip_ReportPowerErrors/13 Power_Ip_SMC_ModeConfig/12 Power_Ip_SMC_ModeCheckEntry/11 
+Power_Ip_pfReportErrorsCallback/1 (Power_Ip_pfReportErrorsCallback) @0dab7e10
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0dabd540
+  References: Power_Ip_ReportPowerErrorsEmptyCallback/10 (addr) 
+  Referring: Power_Ip_InstallNotificationsCallback/9 (write) 
+  Availability: not-ready
+  Varpool flags: initialized
+ResetReasonArray/0 (ResetReasonArray) @0dab7dc8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @0dab7e10
+  References: 
+  Referring: Power_Ip_ConvertIntergeToResetType/3 (read) Power_Ip_ConvertIntergeToResetType/3 (read) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+
+Removing unused symbols:
+
+Reclaimed Symbol table:
+
+Power_Ip_CM4_EnableSleepOnExit/20 (Power_Ip_CM4_EnableSleepOnExit) @0dcc2380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Power_Ip_EnableSleepOnExit/8 
+  Calls: 
+Power_Ip_CM4_DisableSleepOnExit/19 (Power_Ip_CM4_DisableSleepOnExit) @0dcc21c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Power_Ip_DisableSleepOnExit/7 
+  Calls: 
+Power_Ip_SMC_AllowedModesConfig/18 (Power_Ip_SMC_AllowedModesConfig) @0dcc2000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Power_Ip_Init/6 
+  Calls: 
+Power_Ip_PMC_PowerInit/17 (Power_Ip_PMC_PowerInit) @0dac2000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Power_Ip_Init/6 
+  Calls: 
+Power_Ip_RCM_ResetInit/16 (Power_Ip_RCM_ResetInit) @0dac2ee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Power_Ip_Init/6 
+  Calls: 
+Power_Ip_RCM_GetResetRawValue/15 (Power_Ip_RCM_GetResetRawValue) @0dac2d20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Power_Ip_GetResetRawValue/5 
+  Calls: 
+Power_Ip_RCM_GetResetReason/14 (Power_Ip_RCM_GetResetReason) @0dac2b60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Power_Ip_GetResetReason/4 
+  Calls: 
+Power_Ip_ReportPowerErrors/13 (Power_Ip_ReportPowerErrors) @0dac28c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Power_Ip_SetMode/2 
+  Calls: 
+Power_Ip_SMC_ModeConfig/12 (Power_Ip_SMC_ModeConfig) @0dac27e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Power_Ip_SetMode/2 
+  Calls: 
+Power_Ip_SMC_ModeCheckEntry/11 (Power_Ip_SMC_ModeCheckEntry) @0dac2700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Power_Ip_SetMode/2 
+  Calls: 
+Power_Ip_ReportPowerErrorsEmptyCallback/10 (Power_Ip_ReportPowerErrorsEmptyCallback) @0dac22a0
+  Type: function
+  Visibility: external public
+  Address is taken.
+  References: 
+  Referring: Power_Ip_pfReportErrorsCallback/1 (addr) 
+  Function flags:
+  Called by: 
+  Calls: 
+Power_Ip_InstallNotificationsCallback/9 (Power_Ip_InstallNotificationsCallback) @0dac21c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Power_Ip_pfReportErrorsCallback/1 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+Power_Ip_EnableSleepOnExit/8 (Power_Ip_EnableSleepOnExit) @0dabde00
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Power_Ip_CM4_EnableSleepOnExit/20 
+Power_Ip_DisableSleepOnExit/7 (Power_Ip_DisableSleepOnExit) @0dabd8c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Power_Ip_CM4_DisableSleepOnExit/19 
+Power_Ip_Init/6 (Power_Ip_Init) @0dabd380
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Power_Ip_SMC_AllowedModesConfig/18 Power_Ip_PMC_PowerInit/17 Power_Ip_RCM_ResetInit/16 
+Power_Ip_GetResetRawValue/5 (Power_Ip_GetResetRawValue) @0dabdd20
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Power_Ip_RCM_GetResetRawValue/15 
+Power_Ip_GetResetReason/4 (Power_Ip_GetResetReason) @0dabda80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Power_Ip_ConvertIntergeToResetType/3 Power_Ip_RCM_GetResetReason/14 
+Power_Ip_ConvertIntergeToResetType/3 (Power_Ip_ConvertIntergeToResetType) @0dabd7e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: ResetReasonArray/0 (read) ResetReasonArray/0 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Power_Ip_GetResetReason/4 
+  Calls: 
+Power_Ip_SetMode/2 (Power_Ip_SetMode) @0dabd540
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Power_Ip_ReportPowerErrors/13 Power_Ip_SMC_ModeConfig/12 Power_Ip_SMC_ModeCheckEntry/11 
+Power_Ip_pfReportErrorsCallback/1 (Power_Ip_pfReportErrorsCallback) @0dab7e10
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: Power_Ip_ReportPowerErrorsEmptyCallback/10 (addr) 
+  Referring: Power_Ip_InstallNotificationsCallback/9 (write) 
+  Availability: not-ready
+  Varpool flags: initialized
+ResetReasonArray/0 (ResetReasonArray) @0dab7dc8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: Power_Ip_ConvertIntergeToResetType/3 (read) Power_Ip_ConvertIntergeToResetType/3 (read) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+
+
+Initial Symbol table:
+
+Power_Ip_CM4_EnableSleepOnExit/20 (Power_Ip_CM4_EnableSleepOnExit) @0dcc2380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Power_Ip_EnableSleepOnExit/8 
+  Calls: 
+Power_Ip_CM4_DisableSleepOnExit/19 (Power_Ip_CM4_DisableSleepOnExit) @0dcc21c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Power_Ip_DisableSleepOnExit/7 
+  Calls: 
+Power_Ip_SMC_AllowedModesConfig/18 (Power_Ip_SMC_AllowedModesConfig) @0dcc2000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Power_Ip_Init/6 
+  Calls: 
+Power_Ip_PMC_PowerInit/17 (Power_Ip_PMC_PowerInit) @0dac2000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Power_Ip_Init/6 
+  Calls: 
+Power_Ip_RCM_ResetInit/16 (Power_Ip_RCM_ResetInit) @0dac2ee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Power_Ip_Init/6 
+  Calls: 
+Power_Ip_RCM_GetResetRawValue/15 (Power_Ip_RCM_GetResetRawValue) @0dac2d20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Power_Ip_GetResetRawValue/5 
+  Calls: 
+Power_Ip_RCM_GetResetReason/14 (Power_Ip_RCM_GetResetReason) @0dac2b60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Power_Ip_GetResetReason/4 
+  Calls: 
+Power_Ip_ReportPowerErrors/13 (Power_Ip_ReportPowerErrors) @0dac28c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Power_Ip_SetMode/2 
+  Calls: 
+Power_Ip_SMC_ModeConfig/12 (Power_Ip_SMC_ModeConfig) @0dac27e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Power_Ip_SetMode/2 
+  Calls: 
+Power_Ip_SMC_ModeCheckEntry/11 (Power_Ip_SMC_ModeCheckEntry) @0dac2700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Power_Ip_SetMode/2 
+  Calls: 
+Power_Ip_ReportPowerErrorsEmptyCallback/10 (Power_Ip_ReportPowerErrorsEmptyCallback) @0dac22a0
+  Type: function
+  Visibility: external public
+  Address is taken.
+  References: 
+  Referring: Power_Ip_pfReportErrorsCallback/1 (addr) 
+  Function flags:
+  Called by: 
+  Calls: 
+Power_Ip_InstallNotificationsCallback/9 (Power_Ip_InstallNotificationsCallback) @0dac21c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Power_Ip_pfReportErrorsCallback/1 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+Power_Ip_EnableSleepOnExit/8 (Power_Ip_EnableSleepOnExit) @0dabde00
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Power_Ip_CM4_EnableSleepOnExit/20 
+Power_Ip_DisableSleepOnExit/7 (Power_Ip_DisableSleepOnExit) @0dabd8c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Power_Ip_CM4_DisableSleepOnExit/19 
+Power_Ip_Init/6 (Power_Ip_Init) @0dabd380
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Power_Ip_SMC_AllowedModesConfig/18 Power_Ip_PMC_PowerInit/17 Power_Ip_RCM_ResetInit/16 
+Power_Ip_GetResetRawValue/5 (Power_Ip_GetResetRawValue) @0dabdd20
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Power_Ip_RCM_GetResetRawValue/15 
+Power_Ip_GetResetReason/4 (Power_Ip_GetResetReason) @0dabda80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Power_Ip_ConvertIntergeToResetType/3 Power_Ip_RCM_GetResetReason/14 
+Power_Ip_ConvertIntergeToResetType/3 (Power_Ip_ConvertIntergeToResetType) @0dabd7e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: ResetReasonArray/0 (read) ResetReasonArray/0 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Power_Ip_GetResetReason/4 
+  Calls: 
+Power_Ip_SetMode/2 (Power_Ip_SetMode) @0dabd540
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Power_Ip_ReportPowerErrors/13 Power_Ip_SMC_ModeConfig/12 Power_Ip_SMC_ModeCheckEntry/11 
+Power_Ip_pfReportErrorsCallback/1 (Power_Ip_pfReportErrorsCallback) @0dab7e10
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: Power_Ip_ReportPowerErrorsEmptyCallback/10 (addr) 
+  Referring: Power_Ip_InstallNotificationsCallback/9 (write) 
+  Availability: not-ready
+  Varpool flags: initialized
+ResetReasonArray/0 (ResetReasonArray) @0dab7dc8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: Power_Ip_ConvertIntergeToResetType/3 (read) Power_Ip_ConvertIntergeToResetType/3 (read) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+
+Removing unused symbols:
+
+Reclaimed Symbol table:
+
+Power_Ip_CM4_EnableSleepOnExit/20 (Power_Ip_CM4_EnableSleepOnExit) @0dcc2380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Power_Ip_EnableSleepOnExit/8 
+  Calls: 
+Power_Ip_CM4_DisableSleepOnExit/19 (Power_Ip_CM4_DisableSleepOnExit) @0dcc21c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Power_Ip_DisableSleepOnExit/7 
+  Calls: 
+Power_Ip_SMC_AllowedModesConfig/18 (Power_Ip_SMC_AllowedModesConfig) @0dcc2000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Power_Ip_Init/6 
+  Calls: 
+Power_Ip_PMC_PowerInit/17 (Power_Ip_PMC_PowerInit) @0dac2000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Power_Ip_Init/6 
+  Calls: 
+Power_Ip_RCM_ResetInit/16 (Power_Ip_RCM_ResetInit) @0dac2ee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Power_Ip_Init/6 
+  Calls: 
+Power_Ip_RCM_GetResetRawValue/15 (Power_Ip_RCM_GetResetRawValue) @0dac2d20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Power_Ip_GetResetRawValue/5 
+  Calls: 
+Power_Ip_RCM_GetResetReason/14 (Power_Ip_RCM_GetResetReason) @0dac2b60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Power_Ip_GetResetReason/4 
+  Calls: 
+Power_Ip_ReportPowerErrors/13 (Power_Ip_ReportPowerErrors) @0dac28c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Power_Ip_SetMode/2 
+  Calls: 
+Power_Ip_SMC_ModeConfig/12 (Power_Ip_SMC_ModeConfig) @0dac27e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Power_Ip_SetMode/2 
+  Calls: 
+Power_Ip_SMC_ModeCheckEntry/11 (Power_Ip_SMC_ModeCheckEntry) @0dac2700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Power_Ip_SetMode/2 
+  Calls: 
+Power_Ip_ReportPowerErrorsEmptyCallback/10 (Power_Ip_ReportPowerErrorsEmptyCallback) @0dac22a0
+  Type: function
+  Visibility: external public
+  Address is taken.
+  References: 
+  Referring: Power_Ip_pfReportErrorsCallback/1 (addr) 
+  Function flags:
+  Called by: 
+  Calls: 
+Power_Ip_InstallNotificationsCallback/9 (Power_Ip_InstallNotificationsCallback) @0dac21c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Power_Ip_pfReportErrorsCallback/1 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+Power_Ip_EnableSleepOnExit/8 (Power_Ip_EnableSleepOnExit) @0dabde00
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Power_Ip_CM4_EnableSleepOnExit/20 
+Power_Ip_DisableSleepOnExit/7 (Power_Ip_DisableSleepOnExit) @0dabd8c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Power_Ip_CM4_DisableSleepOnExit/19 
+Power_Ip_Init/6 (Power_Ip_Init) @0dabd380
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Power_Ip_SMC_AllowedModesConfig/18 Power_Ip_PMC_PowerInit/17 Power_Ip_RCM_ResetInit/16 
+Power_Ip_GetResetRawValue/5 (Power_Ip_GetResetRawValue) @0dabdd20
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Power_Ip_RCM_GetResetRawValue/15 
+Power_Ip_GetResetReason/4 (Power_Ip_GetResetReason) @0dabda80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Power_Ip_ConvertIntergeToResetType/3 Power_Ip_RCM_GetResetReason/14 
+Power_Ip_ConvertIntergeToResetType/3 (Power_Ip_ConvertIntergeToResetType) @0dabd7e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: ResetReasonArray/0 (read) ResetReasonArray/0 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Power_Ip_GetResetReason/4 
+  Calls: 
+Power_Ip_SetMode/2 (Power_Ip_SetMode) @0dabd540
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Power_Ip_ReportPowerErrors/13 Power_Ip_SMC_ModeConfig/12 Power_Ip_SMC_ModeCheckEntry/11 
+Power_Ip_pfReportErrorsCallback/1 (Power_Ip_pfReportErrorsCallback) @0dab7e10
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: Power_Ip_ReportPowerErrorsEmptyCallback/10 (addr) 
+  Referring: Power_Ip_InstallNotificationsCallback/9 (write) 
+  Availability: not-ready
+  Varpool flags: initialized
+ResetReasonArray/0 (ResetReasonArray) @0dab7dc8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: Power_Ip_ConvertIntergeToResetType/3 (read) Power_Ip_ConvertIntergeToResetType/3 (read) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+Optimized Symbol table:
+
+Power_Ip_CM4_EnableSleepOnExit/20 (Power_Ip_CM4_EnableSleepOnExit) @0dcc2380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Power_Ip_EnableSleepOnExit/8 
+  Calls: 
+Power_Ip_CM4_DisableSleepOnExit/19 (Power_Ip_CM4_DisableSleepOnExit) @0dcc21c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Power_Ip_DisableSleepOnExit/7 
+  Calls: 
+Power_Ip_SMC_AllowedModesConfig/18 (Power_Ip_SMC_AllowedModesConfig) @0dcc2000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Power_Ip_Init/6 
+  Calls: 
+Power_Ip_PMC_PowerInit/17 (Power_Ip_PMC_PowerInit) @0dac2000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Power_Ip_Init/6 
+  Calls: 
+Power_Ip_RCM_ResetInit/16 (Power_Ip_RCM_ResetInit) @0dac2ee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Power_Ip_Init/6 
+  Calls: 
+Power_Ip_RCM_GetResetRawValue/15 (Power_Ip_RCM_GetResetRawValue) @0dac2d20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Power_Ip_GetResetRawValue/5 
+  Calls: 
+Power_Ip_RCM_GetResetReason/14 (Power_Ip_RCM_GetResetReason) @0dac2b60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Power_Ip_GetResetReason/4 
+  Calls: 
+Power_Ip_ReportPowerErrors/13 (Power_Ip_ReportPowerErrors) @0dac28c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Power_Ip_SetMode/2 
+  Calls: 
+Power_Ip_SMC_ModeConfig/12 (Power_Ip_SMC_ModeConfig) @0dac27e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Power_Ip_SetMode/2 
+  Calls: 
+Power_Ip_SMC_ModeCheckEntry/11 (Power_Ip_SMC_ModeCheckEntry) @0dac2700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Power_Ip_SetMode/2 
+  Calls: 
+Power_Ip_ReportPowerErrorsEmptyCallback/10 (Power_Ip_ReportPowerErrorsEmptyCallback) @0dac22a0
+  Type: function
+  Visibility: external public
+  Address is taken.
+  References: 
+  Referring: Power_Ip_pfReportErrorsCallback/1 (addr) 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+Power_Ip_InstallNotificationsCallback/9 (Power_Ip_InstallNotificationsCallback) @0dac21c0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Power_Ip_pfReportErrorsCallback/1 (write) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+Power_Ip_EnableSleepOnExit/8 (Power_Ip_EnableSleepOnExit) @0dabde00
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Power_Ip_CM4_EnableSleepOnExit/20 
+Power_Ip_DisableSleepOnExit/7 (Power_Ip_DisableSleepOnExit) @0dabd8c0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Power_Ip_CM4_DisableSleepOnExit/19 
+Power_Ip_Init/6 (Power_Ip_Init) @0dabd380
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Power_Ip_SMC_AllowedModesConfig/18 Power_Ip_PMC_PowerInit/17 Power_Ip_RCM_ResetInit/16 
+Power_Ip_GetResetRawValue/5 (Power_Ip_GetResetRawValue) @0dabdd20
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Power_Ip_RCM_GetResetRawValue/15 
+Power_Ip_GetResetReason/4 (Power_Ip_GetResetReason) @0dabda80
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Power_Ip_ConvertIntergeToResetType/3 Power_Ip_RCM_GetResetReason/14 
+Power_Ip_ConvertIntergeToResetType/3 (Power_Ip_ConvertIntergeToResetType) @0dabd7e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: ResetReasonArray/0 (read) ResetReasonArray/0 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: Power_Ip_GetResetReason/4 
+  Calls: 
+Power_Ip_SetMode/2 (Power_Ip_SetMode) @0dabd540
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Power_Ip_ReportPowerErrors/13 Power_Ip_SMC_ModeConfig/12 Power_Ip_SMC_ModeCheckEntry/11 
+Power_Ip_pfReportErrorsCallback/1 (Power_Ip_pfReportErrorsCallback) @0dab7e10
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Power_Ip_ReportPowerErrorsEmptyCallback/10 (addr) 
+  Referring: Power_Ip_InstallNotificationsCallback/9 (write) 
+  Availability: available
+  Varpool flags: initialized
+ResetReasonArray/0 (ResetReasonArray) @0dab7dc8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: Power_Ip_ConvertIntergeToResetType/3 (read) Power_Ip_ConvertIntergeToResetType/3 (read) 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+Materializing clones
+Materialization Call site updates done.
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+Trivially needed variables: Power_Ip_pfReportErrorsCallback/1 ResetReasonArray/0
+Removing variables:
+
+Final Symbol table:
+
+Power_Ip_CM4_EnableSleepOnExit/20 (Power_Ip_CM4_EnableSleepOnExit) @0dcc2380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+Power_Ip_CM4_DisableSleepOnExit/19 (Power_Ip_CM4_DisableSleepOnExit) @0dcc21c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+Power_Ip_SMC_AllowedModesConfig/18 (Power_Ip_SMC_AllowedModesConfig) @0dcc2000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+Power_Ip_PMC_PowerInit/17 (Power_Ip_PMC_PowerInit) @0dac2000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+Power_Ip_RCM_ResetInit/16 (Power_Ip_RCM_ResetInit) @0dac2ee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+Power_Ip_RCM_GetResetRawValue/15 (Power_Ip_RCM_GetResetRawValue) @0dac2d20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+Power_Ip_RCM_GetResetReason/14 (Power_Ip_RCM_GetResetReason) @0dac2b60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+Power_Ip_ReportPowerErrors/13 (Power_Ip_ReportPowerErrors) @0dac28c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+Power_Ip_SMC_ModeConfig/12 (Power_Ip_SMC_ModeConfig) @0dac27e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+Power_Ip_SMC_ModeCheckEntry/11 (Power_Ip_SMC_ModeCheckEntry) @0dac2700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+Power_Ip_ReportPowerErrorsEmptyCallback/10 (Power_Ip_ReportPowerErrorsEmptyCallback) @0dac22a0
+  Type: function
+  Visibility: external public
+  Address is taken.
+  References: 
+  Referring: Power_Ip_pfReportErrorsCallback/1 (addr) 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+Power_Ip_InstallNotificationsCallback/9 (Power_Ip_InstallNotificationsCallback) @0dac21c0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.Power_Ip_InstallNotificationsCallback (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+Power_Ip_EnableSleepOnExit/8 (Power_Ip_EnableSleepOnExit) @0dabde00
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.Power_Ip_EnableSleepOnExit (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+Power_Ip_DisableSleepOnExit/7 (Power_Ip_DisableSleepOnExit) @0dabd8c0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.Power_Ip_DisableSleepOnExit (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+Power_Ip_Init/6 (Power_Ip_Init) @0dabd380
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.Power_Ip_Init (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+Power_Ip_GetResetRawValue/5 (Power_Ip_GetResetRawValue) @0dabdd20
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.Power_Ip_GetResetRawValue (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+Power_Ip_GetResetReason/4 (Power_Ip_GetResetReason) @0dabda80
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.Power_Ip_GetResetReason (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+Power_Ip_ConvertIntergeToResetType/3 (Power_Ip_ConvertIntergeToResetType) @0dabd7e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written section:.text.Power_Ip_ConvertIntergeToResetType (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+Power_Ip_SetMode/2 (Power_Ip_SetMode) @0dabd540
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.Power_Ip_SetMode (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+Power_Ip_pfReportErrorsCallback/1 (Power_Ip_pfReportErrorsCallback) @0dab7e10
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.data.Power_Ip_pfReportErrorsCallback (implicit_section)
+  Aux: @00000001
+  References: Power_Ip_ReportPowerErrorsEmptyCallback/10 (addr) 
+  Referring: 
+  Availability: available
+  Varpool flags: initialized
+ResetReasonArray/0 (ResetReasonArray) @0dab7dc8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written section:.rodata.ResetReasonArray (implicit_section)
+  Aux: @0dab7e10
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known

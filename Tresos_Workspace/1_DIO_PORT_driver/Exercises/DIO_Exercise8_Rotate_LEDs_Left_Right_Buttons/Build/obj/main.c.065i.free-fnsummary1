@@ -1,0 +1,165 @@
+EcuM_Init ()
+{
+  <bb 2> :
+  Mcu_Init (&Mcu_Config);
+  Mcu_InitClock (0);
+  Mcu_SetMode (0);
+  Port_Init (&Port_Config);
+  return;
+
+}
+
+
+main ()
+{
+  uint32 i;
+  uint8 i;
+  uint32 i;
+  uint8 i;
+  uint32 i;
+  uint8 i;
+  int D.6089;
+  unsigned char _1;
+  int _2;
+  unsigned int _3;
+  unsigned char i.0_4;
+  unsigned char _5;
+  int _6;
+  int _7;
+  unsigned int _8;
+  unsigned char i.1_9;
+  unsigned char _10;
+  int _11;
+  unsigned int _12;
+  unsigned char i.2_13;
+
+  <bb 2> :
+  EcuM_Init ();
+
+  <bb 3> :
+  _1 = Dio_ReadChannel (140);
+  if (_1 == 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 4> :
+  i_30 = 0;
+  goto <bb 9>; [INV]
+
+  <bb 5> :
+  Dio_WriteChannelGroup (&DioConfig_aChannelGroupList[0], 0);
+  _2 = (int) i_14;
+  _3 = 1 << _2;
+  Dio_WriteChannelGroup (&DioConfig_aChannelGroupList[0], _3);
+  i_33 = 0;
+  goto <bb 7>; [INV]
+
+  <bb 6> :
+  i_35 = i_15 + 1;
+
+  <bb 7> :
+  # i_15 = PHI <i_33(5), i_35(6)>
+  if (i_15 <= 499999)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 8> :
+  i.0_4 = i_14;
+  i_34 = i.0_4 + 1;
+
+  <bb 9> :
+  # i_14 = PHI <i_30(4), i_34(8)>
+  if (i_14 <= 7)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 10> :
+  _5 = Dio_ReadChannel (113);
+  if (_5 == 0)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 17>; [INV]
+
+  <bb 11> :
+  i_37 = 0;
+  goto <bb 16>; [INV]
+
+  <bb 12> :
+  Dio_WriteChannelGroup (&DioConfig_aChannelGroupList[0], 0);
+  _6 = (int) i_16;
+  _7 = 7 - _6;
+  _8 = 1 << _7;
+  Dio_WriteChannelGroup (&DioConfig_aChannelGroupList[0], _8);
+  i_40 = 0;
+  goto <bb 14>; [INV]
+
+  <bb 13> :
+  i_42 = i_17 + 1;
+
+  <bb 14> :
+  # i_17 = PHI <i_40(12), i_42(13)>
+  if (i_17 <= 499999)
+    goto <bb 13>; [INV]
+  else
+    goto <bb 15>; [INV]
+
+  <bb 15> :
+  i.1_9 = i_16;
+  i_41 = i.1_9 + 1;
+
+  <bb 16> :
+  # i_16 = PHI <i_37(11), i_41(15)>
+  if (i_16 <= 7)
+    goto <bb 12>; [INV]
+  else
+    goto <bb 17>; [INV]
+
+  <bb 17> :
+  _10 = Dio_ReadChannel (12);
+  if (_10 == 0)
+    goto <bb 18>; [INV]
+  else
+    goto <bb 24>; [INV]
+
+  <bb 18> :
+  i_44 = 0;
+  goto <bb 23>; [INV]
+
+  <bb 19> :
+  Dio_WriteChannelGroup (&DioConfig_aChannelGroupList[0], 0);
+  _11 = (int) i_18;
+  _12 = 1 << _11;
+  Dio_WriteChannelGroup (&DioConfig_aChannelGroupList[0], _12);
+  i_47 = 0;
+  goto <bb 21>; [INV]
+
+  <bb 20> :
+  i_49 = i_19 + 1;
+
+  <bb 21> :
+  # i_19 = PHI <i_47(19), i_49(20)>
+  if (i_19 <= 99999)
+    goto <bb 20>; [INV]
+  else
+    goto <bb 22>; [INV]
+
+  <bb 22> :
+  i.2_13 = i_18;
+  i_48 = i.2_13 + 1;
+
+  <bb 23> :
+  # i_18 = PHI <i_44(18), i_48(22)>
+  if (i_18 <= 7)
+    goto <bb 19>; [INV]
+  else
+    goto <bb 24>; [INV]
+
+  <bb 24> :
+  goto <bb 3>; [INV]
+
+}
+
+

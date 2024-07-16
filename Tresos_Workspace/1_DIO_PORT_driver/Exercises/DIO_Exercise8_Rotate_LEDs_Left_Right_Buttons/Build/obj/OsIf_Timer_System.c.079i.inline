@@ -1,0 +1,230 @@
+IPA summary for OsIf_Timer_System_MicrosToTicks/5 is missing.
+IPA summary for OsIf_Timer_System_SetTimerFrequency/4 is missing.
+IPA summary for OsIf_Timer_System_GetElapsed/3 is missing.
+IPA summary for OsIf_Timer_System_GetCounter/2 is missing.
+IPA summary for OsIf_Timer_System_Init/1 is missing.
+
+Flattening functions:
+Overall time estimate: 0.000000 weighted by profile: 0.000000
+
+Deciding on inlining of small functions.  Starting with size 0.
+node context cache: 0 hits, 0 misses, 0 initializations
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+
+Deciding on functions to be inlined into all callers and removing useless speculations:
+Overall time estimate: 0.000000 weighted by profile: 0.000000
+
+Why inlining failed?
+function body not available                       :        3 calls, 3.000000 freq, 0 count
+IPA summary for OsIf_Timer_System_MicrosToTicks/5 is missing.
+IPA summary for OsIf_Timer_System_SetTimerFrequency/4 is missing.
+IPA summary for OsIf_Timer_System_GetElapsed/3 is missing.
+IPA summary for OsIf_Timer_System_GetCounter/2 is missing.
+IPA summary for OsIf_Timer_System_Init/1 is missing.
+Symbol table:
+
+OsIf_Timer_System_Internal_GetElapsed/9 (OsIf_Timer_System_Internal_GetElapsed) @0da37540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: OsIf_Timer_System_GetElapsed/3 
+  Calls: 
+OsIf_Timer_System_Internal_GetCounter/8 (OsIf_Timer_System_Internal_GetCounter) @0da37000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: OsIf_Timer_System_GetCounter/2 
+  Calls: 
+OsIf_Timer_System_Internal_Init/7 (OsIf_Timer_System_Internal_Init) @0da37e00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: OsIf_Timer_System_Init/1 
+  Calls: 
+OsIf_apxPredefinedConfig/6 (OsIf_apxPredefinedConfig) @0da381f8
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: OsIf_Timer_System_Init/1 (read) 
+  Availability: not_available
+  Varpool flags: read-only
+OsIf_Timer_System_MicrosToTicks/5 (OsIf_Timer_System_MicrosToTicks) @0da379a0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: OsIf_au32InternalFrequencies/0 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+OsIf_Timer_System_SetTimerFrequency/4 (OsIf_Timer_System_SetTimerFrequency) @0da37700
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: OsIf_au32InternalFrequencies/0 (write) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+OsIf_Timer_System_GetElapsed/3 (OsIf_Timer_System_GetElapsed) @0da37460
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: OsIf_Timer_System_Internal_GetElapsed/9 
+OsIf_Timer_System_GetCounter/2 (OsIf_Timer_System_GetCounter) @0da371c0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: OsIf_Timer_System_Internal_GetCounter/8 
+OsIf_Timer_System_Init/1 (OsIf_Timer_System_Init) @0da30ee0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: OsIf_apxPredefinedConfig/6 (read) OsIf_au32InternalFrequencies/0 (write) OsIf_au32InternalFrequencies/0 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: OsIf_Timer_System_Internal_Init/7 
+OsIf_au32InternalFrequencies/0 (OsIf_au32InternalFrequencies) @0da33900
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: OsIf_Timer_System_SetTimerFrequency/4 (write) OsIf_Timer_System_Init/1 (read) OsIf_Timer_System_Init/1 (write) OsIf_Timer_System_MicrosToTicks/5 (read) 
+  Availability: available
+  Varpool flags:
+
+;; Function OsIf_Timer_System_Init (OsIf_Timer_System_Init, funcdef_no=0, decl_uid=5364, cgraph_uid=1, symbol_order=1)
+
+OsIf_Timer_System_Init ()
+{
+  uint32 CoreId;
+  const struct OsIf_ConfigType * _1;
+  long unsigned int _2;
+  long unsigned int _3;
+
+  <bb 2> :
+  CoreId_4 = 0;
+  _1 = OsIf_apxPredefinedConfig[CoreId_4];
+  _2 = _1->counterFrequency;
+  OsIf_au32InternalFrequencies[CoreId_4] = _2;
+  _3 = OsIf_au32InternalFrequencies[CoreId_4];
+  OsIf_Timer_System_Internal_Init (_3);
+  return;
+
+}
+
+
+
+;; Function OsIf_Timer_System_GetCounter (OsIf_Timer_System_GetCounter, funcdef_no=1, decl_uid=5366, cgraph_uid=2, symbol_order=2)
+
+OsIf_Timer_System_GetCounter ()
+{
+  uint32 CoreId;
+  uint32 Counter;
+  uint32 D.5409;
+  uint32 _6;
+
+  <bb 2> :
+  Counter_1 = 0;
+  CoreId_2 = 0;
+  Counter_5 = OsIf_Timer_System_Internal_GetCounter ();
+  _6 = Counter_5;
+
+  <bb 3> :
+<L0>:
+  return _6;
+
+}
+
+
+
+;; Function OsIf_Timer_System_GetElapsed (OsIf_Timer_System_GetElapsed, funcdef_no=2, decl_uid=5368, cgraph_uid=3, symbol_order=3)
+
+OsIf_Timer_System_GetElapsed (uint32 * const CurrentRef)
+{
+  uint32 CoreId;
+  uint32 Elapsed;
+  uint32 D.5411;
+  uint32 _7;
+
+  <bb 2> :
+  Elapsed_1 = 0;
+  CoreId_2 = 0;
+  Elapsed_6 = OsIf_Timer_System_Internal_GetElapsed (CurrentRef_4(D));
+  _7 = Elapsed_6;
+
+  <bb 3> :
+<L0>:
+  return _7;
+
+}
+
+
+
+;; Function OsIf_Timer_System_SetTimerFrequency (OsIf_Timer_System_SetTimerFrequency, funcdef_no=3, decl_uid=5370, cgraph_uid=4, symbol_order=4)
+
+OsIf_Timer_System_SetTimerFrequency (uint32 Freq)
+{
+  uint32 CoreId;
+
+  <bb 2> :
+  CoreId_1 = 0;
+  OsIf_au32InternalFrequencies[CoreId_1] = Freq_3(D);
+  return;
+
+}
+
+
+
+;; Function OsIf_Timer_System_MicrosToTicks (OsIf_Timer_System_MicrosToTicks, funcdef_no=4, decl_uid=5372, cgraph_uid=5, symbol_order=5)
+
+OsIf_Timer_System_MicrosToTicks (uint32 Micros)
+{
+  uint32 CoreId;
+  uint32 ticks;
+  uint64 interim;
+  uint32 D.5413;
+  long long unsigned int _1;
+  long unsigned int _2;
+  long long unsigned int _3;
+  uint32 _11;
+
+  <bb 2> :
+  ticks_4 = 0;
+  CoreId_5 = 0;
+  _1 = (long long unsigned int) Micros_6(D);
+  _2 = OsIf_au32InternalFrequencies[CoreId_5];
+  _3 = (long long unsigned int) _2;
+  interim_8 = _1 * _3;
+  interim_9 = interim_8 / 1000000;
+  ticks_10 = (uint32) interim_9;
+  _11 = ticks_10;
+
+  <bb 3> :
+<L0>:
+  return _11;
+
+}
+
+
