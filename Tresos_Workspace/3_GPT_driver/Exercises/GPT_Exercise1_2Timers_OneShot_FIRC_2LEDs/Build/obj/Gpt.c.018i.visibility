@@ -1,0 +1,1512 @@
+
+Marking local functions: Gpt_CheckStatusWakeupEnabled/11 Gpt_CheckStatusNotificationEnabled/10 Gpt_ConvertChannelIndexToChannel/9 Gpt_ValidateMode/8 Gpt_ValidateChannelStatus/7
+
+
+Marking externally visible functions: Gpt_GetPredefTimerValue/25 Gpt_ProcessCommonInterrupt/24 Gpt_CheckWakeup/23 Gpt_EnableWakeup/22 Gpt_DisableWakeup/21 Gpt_SetMode/20 Gpt_DisableNotification/19 Gpt_EnableNotification/18 Gpt_StopTimer/17 Gpt_StartTimer/16 Gpt_GetTimeRemaining/15 Gpt_GetTimeElapsed/14 Gpt_DeInit/13 Gpt_Init/12
+
+
+Marking externally visible variables: Gpt_pConfig/4
+
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+Symbol table:
+
+Gpt_Ipw_GetPredefTimerValue/39 (Gpt_Ipw_GetPredefTimerValue) @0e0358c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Gpt_GetPredefTimerValue/25 
+  Calls: 
+EcuM_CheckWakeup/38 (EcuM_CheckWakeup) @0e035700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Gpt_ProcessCommonInterrupt/24 
+  Calls: 
+EcuM_SetWakeupEvent/37 (EcuM_SetWakeupEvent) @0e035460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Gpt_CheckWakeup/23 
+  Calls: 
+Gpt_Ipw_DisableInterrupt/36 (Gpt_Ipw_DisableInterrupt) @0e024c40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Gpt_DisableWakeup/21 Gpt_CheckStatusNotificationEnabled/10 Gpt_CheckStatusWakeupEnabled/11 Gpt_DisableNotification/19 
+  Calls: 
+Gpt_Ipw_StopTimer/35 (Gpt_Ipw_StopTimer) @0e0247e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Gpt_CheckStatusWakeupEnabled/11 Gpt_StopTimer/17 
+  Calls: 
+Gpt_Ipw_StartTimer/34 (Gpt_Ipw_StartTimer) @0e024620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Gpt_StartTimer/16 
+  Calls: 
+Gpt_Ipw_EnableInterrupt/33 (Gpt_Ipw_EnableInterrupt) @0e024460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Gpt_EnableWakeup/22 Gpt_CheckStatusNotificationEnabled/10 Gpt_CheckStatusWakeupEnabled/11 Gpt_EnableNotification/18 Gpt_StartTimer/16 
+  Calls: 
+Gpt_Ipw_GetTimeElapsed/32 (Gpt_Ipw_GetTimeElapsed) @0e024000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Gpt_CheckStatusWakeupEnabled/11 Gpt_StopTimer/17 Gpt_GetTimeRemaining/15 Gpt_GetTimeElapsed/14 
+  Calls: 
+Det_ReportRuntimeError/31 (Det_ReportRuntimeError) @0dff4a80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Gpt_ValidateMode/8 Gpt_StartTimer/16 Gpt_ValidateChannelStatus/7 
+  Calls: 
+Gpt_Ipw_StopPredefTimer/30 (Gpt_Ipw_StopPredefTimer) @0dff4000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Gpt_SetMode/20 Gpt_DeInit/13 
+  Calls: 
+Gpt_Ipw_DeInit/29 (Gpt_Ipw_DeInit) @0dff4ee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Gpt_DeInit/13 
+  Calls: 
+Gpt_Ipw_Init/28 (Gpt_Ipw_Init) @0dff4b60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Gpt_Init/12 
+  Calls: 
+Gpt_Ipw_InitInstances/27 (Gpt_Ipw_InitInstances) @0dff49a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Gpt_Init/12 
+  Calls: 
+Gpt_Ipw_StartPredefTimer/26 (Gpt_Ipw_StartPredefTimer) @0dff48c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Gpt_SetMode/20 Gpt_Init/12 
+  Calls: 
+Gpt_GetPredefTimerValue/25 (Gpt_GetPredefTimerValue) @0dff4460
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Gpt_pConfig/4 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Gpt_Ipw_GetPredefTimerValue/39 Gpt_ValidateMode/8 
+Gpt_ProcessCommonInterrupt/24 (Gpt_ProcessCommonInterrupt) @0dff41c0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Gpt_pConfig/4 (read) Gpt_pConfig/4 (read) Gpt_pConfig/4 (read) Gpt_aChannelInfo/5 (write) Gpt_eMode/3 (read) Gpt_aChannelInfo/5 (read) Gpt_pConfig/4 (read) Gpt_eMode/3 (read) Gpt_aChannelInfo/5 (read) Gpt_aChannelInfo/5 (write) Gpt_pConfig/4 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: EcuM_CheckWakeup/38 
+   Indirect call Num speculative call targets: 0
+Gpt_CheckWakeup/23 (Gpt_CheckWakeup) @0dfc6d20
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Gpt_pConfig/4 (read) Gpt_aChannelInfo/5 (read) Gpt_aChannelInfo/5 (write) Gpt_pConfig/4 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: EcuM_SetWakeupEvent/37 Gpt_ConvertChannelIndexToChannel/9 
+Gpt_EnableWakeup/22 (Gpt_EnableWakeup) @0dfc67e0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Gpt_pConfig/4 (read) Gpt_aChannelInfo/5 (write) Gpt_eMode/3 (read) Gpt_pConfig/4 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Gpt_Ipw_EnableInterrupt/33 
+Gpt_DisableWakeup/21 (Gpt_DisableWakeup) @0dfc62a0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Gpt_pConfig/4 (read) Gpt_aChannelInfo/5 (write) Gpt_eMode/3 (read) Gpt_pConfig/4 (read) Gpt_aChannelInfo/5 (read) Gpt_pConfig/4 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Gpt_Ipw_DisableInterrupt/36 
+Gpt_SetMode/20 (Gpt_SetMode) @0dfc6ee0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Gpt_pConfig/4 (read) Gpt_eMode/3 (write) Gpt_eMode/3 (read) Gpt_pConfig/4 (read) Gpt_eMode/3 (write) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Gpt_CheckStatusNotificationEnabled/10 Gpt_Ipw_StartPredefTimer/26 Gpt_Ipw_StopPredefTimer/30 Gpt_CheckStatusWakeupEnabled/11 
+Gpt_DisableNotification/19 (Gpt_DisableNotification) @0dfc6c40
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Gpt_pConfig/4 (read) Gpt_aChannelInfo/5 (write) Gpt_eMode/3 (read) Gpt_pConfig/4 (read) Gpt_aChannelInfo/5 (read) Gpt_pConfig/4 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Gpt_Ipw_DisableInterrupt/36 
+Gpt_EnableNotification/18 (Gpt_EnableNotification) @0dfc69a0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Gpt_pConfig/4 (read) Gpt_aChannelInfo/5 (write) Gpt_eMode/3 (read) Gpt_pConfig/4 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Gpt_Ipw_EnableInterrupt/33 
+Gpt_StopTimer/17 (Gpt_StopTimer) @0dfc6700
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Gpt_pConfig/4 (read) Gpt_pConfig/4 (read) Gpt_aChannelInfo/5 (read) Gpt_pConfig/4 (read) Gpt_pConfig/4 (read) Gpt_aChannelInfo/5 (write) Gpt_aStopTime/6 (write) Gpt_aChannelInfo/5 (write) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Gpt_Ipw_StopTimer/35 Gpt_Ipw_GetTimeElapsed/32 
+Gpt_StartTimer/16 (Gpt_StartTimer) @0dfc6460
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Gpt_pConfig/4 (read) Gpt_pConfig/4 (read) Gpt_pConfig/4 (read) Gpt_aChannelInfo/5 (write) Gpt_pConfig/4 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Det_ReportRuntimeError/31 Gpt_Ipw_StartTimer/34 Gpt_Ipw_EnableInterrupt/33 Gpt_ValidateChannelStatus/7 
+Gpt_GetTimeRemaining/15 (Gpt_GetTimeRemaining) @0dfc61c0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Gpt_pConfig/4 (read) Gpt_pConfig/4 (read) Gpt_aChannelInfo/5 (read) Gpt_pConfig/4 (read) Gpt_aStopTime/6 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Gpt_Ipw_GetTimeElapsed/32 
+Gpt_GetTimeElapsed/14 (Gpt_GetTimeElapsed) @0dcc2d20
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Gpt_pConfig/4 (read) Gpt_pConfig/4 (read) Gpt_aChannelInfo/5 (read) Gpt_pConfig/4 (read) Gpt_aStopTime/6 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Gpt_Ipw_GetTimeElapsed/32 
+Gpt_DeInit/13 (Gpt_DeInit) @0dcc27e0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Gpt_pConfig/4 (read) Gpt_aChannelInfo/5 (write) Gpt_aChannelInfo/5 (write) Gpt_aChannelInfo/5 (write) Gpt_aChannelInfo/5 (write) Gpt_aStopTime/6 (write) Gpt_pConfig/4 (read) Gpt_pConfig/4 (read) Gpt_pConfig/4 (read) Gpt_pConfig/4 (write) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Gpt_Ipw_StopPredefTimer/30 Gpt_Ipw_DeInit/29 Gpt_ConvertChannelIndexToChannel/9 Gpt_ValidateChannelStatus/7 Gpt_ConvertChannelIndexToChannel/9 
+Gpt_Init/12 (Gpt_Init) @0dcc2ee0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Gpt_pConfig/4 (write) Gpt_pConfig/4 (read) Gpt_pConfig/4 (read) Gpt_aChannelInfo/5 (write) Gpt_aChannelInfo/5 (write) Gpt_aChannelInfo/5 (write) Gpt_aChannelInfo/5 (write) Gpt_aStopTime/6 (write) Gpt_pConfig/4 (read) Gpt_pConfig/4 (read) Gpt_eMode/3 (write) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Gpt_Ipw_Init/28 Gpt_ConvertChannelIndexToChannel/9 Gpt_Ipw_InitInstances/27 Gpt_Ipw_StartPredefTimer/26 
+Gpt_CheckStatusWakeupEnabled/11 (Gpt_CheckStatusWakeupEnabled) @0dcc2c40
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: Gpt_aChannelInfo/5 (read) Gpt_pConfig/4 (read) Gpt_pConfig/4 (read) Gpt_pConfig/4 (read) Gpt_aChannelInfo/5 (read) Gpt_pConfig/4 (read) Gpt_aChannelInfo/5 (write) Gpt_aStopTime/6 (write) Gpt_aChannelInfo/5 (write) Gpt_pConfig/4 (read) Gpt_pConfig/4 (read) 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: Gpt_SetMode/20 
+  Calls: Gpt_Ipw_StopTimer/35 Gpt_Ipw_GetTimeElapsed/32 Gpt_Ipw_DisableInterrupt/36 Gpt_Ipw_EnableInterrupt/33 Gpt_ConvertChannelIndexToChannel/9 
+Gpt_CheckStatusNotificationEnabled/10 (Gpt_CheckStatusNotificationEnabled) @0dcc29a0
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: Gpt_aChannelInfo/5 (read) Gpt_pConfig/4 (read) Gpt_aChannelInfo/5 (read) Gpt_pConfig/4 (read) Gpt_pConfig/4 (read) Gpt_pConfig/4 (read) 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: Gpt_SetMode/20 
+  Calls: Gpt_Ipw_DisableInterrupt/36 Gpt_Ipw_EnableInterrupt/33 Gpt_ConvertChannelIndexToChannel/9 
+Gpt_ConvertChannelIndexToChannel/9 (Gpt_ConvertChannelIndexToChannel) @0dcc2700
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: Gpt_pConfig/4 (read) 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: Gpt_CheckWakeup/23 Gpt_CheckStatusNotificationEnabled/10 Gpt_CheckStatusWakeupEnabled/11 Gpt_DeInit/13 Gpt_DeInit/13 Gpt_Init/12 
+  Calls: 
+Gpt_ValidateMode/8 (Gpt_ValidateMode) @0dcc2460
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: Gpt_eMode/3 (read) 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: Gpt_GetPredefTimerValue/25 
+  Calls: Det_ReportRuntimeError/31 
+Gpt_ValidateChannelStatus/7 (Gpt_ValidateChannelStatus) @0dcc21c0
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: Gpt_aChannelInfo/5 (read) 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: Gpt_StartTimer/16 Gpt_DeInit/13 
+  Calls: Det_ReportRuntimeError/31 
+Gpt_aStopTime/6 (Gpt_aStopTime) @0dca6bd0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: Gpt_Init/12 (write) Gpt_DeInit/13 (write) Gpt_GetTimeElapsed/14 (read) Gpt_GetTimeRemaining/15 (read) Gpt_StopTimer/17 (write) Gpt_CheckStatusWakeupEnabled/11 (write) 
+  Availability: available
+  Varpool flags:
+Gpt_aChannelInfo/5 (Gpt_aChannelInfo) @0dca6b40
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: Gpt_Init/12 (write) Gpt_Init/12 (write) Gpt_Init/12 (write) Gpt_Init/12 (write) Gpt_DeInit/13 (write) Gpt_DeInit/13 (write) Gpt_DeInit/13 (write) Gpt_DeInit/13 (write) Gpt_ValidateChannelStatus/7 (read) Gpt_GetTimeElapsed/14 (read) Gpt_GetTimeRemaining/15 (read) Gpt_StartTimer/16 (write) Gpt_StopTimer/17 (read) Gpt_StopTimer/17 (write) Gpt_StopTimer/17 (write) Gpt_EnableNotification/18 (write) Gpt_DisableNotification/19 (write) Gpt_DisableNotification/19 (read) Gpt_CheckStatusWakeupEnabled/11 (read) Gpt_CheckStatusWakeupEnabled/11 (read) Gpt_CheckStatusWakeupEnabled/11 (write) Gpt_CheckStatusWakeupEnabled/11 (write) Gpt_CheckStatusNotificationEnabled/10 (read) Gpt_CheckStatusNotificationEnabled/10 (read) Gpt_DisableWakeup/21 (write) Gpt_DisableWakeup/21 (read) Gpt_EnableWakeup/22 (write) Gpt_CheckWakeup/23 (read) Gpt_CheckWakeup/23 (write) Gpt_ProcessCommonInterrupt/24 (write) Gpt_ProcessCommonInterrupt/24 (read) Gpt_ProcessCommonInterrupt/24 (read) Gpt_ProcessCommonInterrupt/24 (write) 
+  Availability: available
+  Varpool flags:
+Gpt_pConfig/4 (Gpt_pConfig) @0dca6ab0
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: Gpt_Init/12 (write) Gpt_Init/12 (read) Gpt_Init/12 (read) Gpt_Init/12 (read) Gpt_Init/12 (read) Gpt_ConvertChannelIndexToChannel/9 (read) Gpt_DeInit/13 (read) Gpt_DeInit/13 (read) Gpt_DeInit/13 (read) Gpt_DeInit/13 (read) Gpt_DeInit/13 (write) Gpt_GetTimeElapsed/14 (read) Gpt_GetTimeElapsed/14 (read) Gpt_GetTimeElapsed/14 (read) Gpt_GetTimeRemaining/15 (read) Gpt_GetTimeRemaining/15 (read) Gpt_GetTimeRemaining/15 (read) Gpt_StartTimer/16 (read) Gpt_StartTimer/16 (read) Gpt_StartTimer/16 (read) Gpt_StartTimer/16 (read) Gpt_StopTimer/17 (read) Gpt_StopTimer/17 (read) Gpt_StopTimer/17 (read) Gpt_StopTimer/17 (read) Gpt_EnableNotification/18 (read) Gpt_EnableNotification/18 (read) Gpt_DisableNotification/19 (read) Gpt_DisableNotification/19 (read) Gpt_DisableNotification/19 (read) Gpt_SetMode/20 (read) Gpt_SetMode/20 (read) Gpt_CheckStatusWakeupEnabled/11 (read) Gpt_CheckStatusWakeupEnabled/11 (read) Gpt_CheckStatusWakeupEnabled/11 (read) Gpt_CheckStatusWakeupEnabled/11 (read) Gpt_CheckStatusWakeupEnabled/11 (read) Gpt_CheckStatusWakeupEnabled/11 (read) Gpt_CheckStatusNotificationEnabled/10 (read) Gpt_CheckStatusNotificationEnabled/10 (read) Gpt_CheckStatusNotificationEnabled/10 (read) Gpt_CheckStatusNotificationEnabled/10 (read) Gpt_DisableWakeup/21 (read) Gpt_DisableWakeup/21 (read) Gpt_DisableWakeup/21 (read) Gpt_EnableWakeup/22 (read) Gpt_EnableWakeup/22 (read) Gpt_CheckWakeup/23 (read) Gpt_CheckWakeup/23 (read) Gpt_ProcessCommonInterrupt/24 (read) Gpt_ProcessCommonInterrupt/24 (read) Gpt_ProcessCommonInterrupt/24 (read) Gpt_ProcessCommonInterrupt/24 (read) Gpt_ProcessCommonInterrupt/24 (read) Gpt_GetPredefTimerValue/25 (read) 
+  Availability: available
+  Varpool flags:
+Gpt_eMode/3 (Gpt_eMode) @0dca6a20
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: Gpt_Init/12 (write) Gpt_EnableNotification/18 (read) Gpt_DisableNotification/19 (read) Gpt_SetMode/20 (write) Gpt_SetMode/20 (read) Gpt_SetMode/20 (write) Gpt_DisableWakeup/21 (read) Gpt_EnableWakeup/22 (read) Gpt_ProcessCommonInterrupt/24 (read) Gpt_ProcessCommonInterrupt/24 (read) Gpt_ValidateMode/8 (read) 
+  Availability: available
+  Varpool flags: initialized
+Gpt_GetPredefTimerValue (Gpt_PredefTimerType PredefTimer, uint32 * TimeValuePtr)
+{
+  uint32 coreID;
+  Gpt_ChannelType channel;
+  Std_ReturnType returnValue;
+  Std_ReturnType D.6334;
+
+  <bb 2> :
+  coreID = 0;
+  returnValue = Gpt_ValidateMode (13, coreID);
+  if (returnValue == 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  channel = (Gpt_ChannelType) PredefTimer;
+  _1 = Gpt_pConfig[coreID];
+  _2 = _1->Gpt_pChannelPredefConfigType;
+  _3 = (unsigned int) channel;
+  _4 = _3 * 4;
+  _5 = _2 + _4;
+  _6 = *_5;
+  Gpt_Ipw_GetPredefTimerValue (_6, PredefTimer, TimeValuePtr);
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  *TimeValuePtr = 0;
+
+  <bb 5> :
+  D.6334 = returnValue;
+
+  <bb 6> :
+<L3>:
+  return D.6334;
+
+}
+
+
+Gpt_ProcessCommonInterrupt (uint8 channel)
+{
+  uint32 coreID;
+  uint8 ChannelIndex;
+
+  <bb 2> :
+  coreID = 0;
+  _1 = Gpt_pConfig[coreID];
+  if (_1 != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 3> :
+  _2 = Gpt_pConfig[coreID];
+  _3 = _2->u8GptChannelIdToIndexMap;
+  _4 = (int) channel;
+  ChannelIndex = (*_3)[_4];
+  _5 = Gpt_pConfig[coreID];
+  _6 = _5->Gpt_pChannelConfig;
+  _7 = (int) ChannelIndex;
+  _8 = (*_6)[_7].Gpt_eChannelMode;
+  if (_8 == 1)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  _9 = (int) channel;
+  Gpt_aChannelInfo[coreID][_9].eChannelStatus = 3;
+
+  <bb 5> :
+  _10 = Gpt_eMode[coreID];
+  if (_10 == 0)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 6> :
+  _11 = (int) channel;
+  _12 = Gpt_aChannelInfo[coreID][_11].bNotificationEnabled;
+  if (_12 != 0)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 7> :
+  _13 = Gpt_pConfig[coreID];
+  _14 = _13->Gpt_pChannelConfig;
+  _15 = (int) ChannelIndex;
+  _16 = (*_14)[_15].Gpt_pfNotification;
+  _16 ();
+
+  <bb 8> :
+  _17 = Gpt_eMode[coreID];
+  if (_17 == 1)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 9> :
+  _18 = (int) channel;
+  _19 = Gpt_aChannelInfo[coreID][_18].bWakeupEnabled;
+  if (_19 != 0)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 10> :
+  _20 = (int) channel;
+  Gpt_aChannelInfo[coreID][_20].bWakeupGenerated = 1;
+  _21 = Gpt_pConfig[coreID];
+  _22 = _21->Gpt_pChannelConfig;
+  _23 = (int) ChannelIndex;
+  _24 = (*_22)[_23].Gpt_uWakeupSource;
+  EcuM_CheckWakeup (_24);
+
+  <bb 11> :
+
+  <bb 12> :
+<L12>:
+  return;
+
+}
+
+
+Gpt_CheckWakeup (EcuM_WakeupSourceType wakeupSource)
+{
+  Gpt_ChannelType ChannelIndex;
+  Gpt_ChannelType channel;
+  uint32 coreID;
+
+  <bb 2> :
+  coreID = 0;
+  ChannelIndex = 0;
+  goto <bb 8>; [INV]
+
+  <bb 3> :
+  channel = Gpt_ConvertChannelIndexToChannel (ChannelIndex, coreID);
+  if (channel <= 1)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 4> :
+  _1 = Gpt_pConfig[coreID];
+  _2 = _1->Gpt_pChannelConfig;
+  _3 = (int) ChannelIndex;
+  _4 = (*_2)[_3].Gpt_uWakeupSource;
+  if (wakeupSource == _4)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 5> :
+  _5 = (int) channel;
+  _6 = Gpt_aChannelInfo[coreID][_5].bWakeupGenerated;
+  if (_6 != 0)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  _7 = (int) channel;
+  Gpt_aChannelInfo[coreID][_7].bWakeupGenerated = 0;
+  EcuM_SetWakeupEvent (wakeupSource);
+  goto <bb 9>; [INV]
+
+  <bb 7> :
+  ChannelIndex.5_8 = ChannelIndex;
+  ChannelIndex = ChannelIndex.5_8 + 1;
+
+  <bb 8> :
+  _9 = Gpt_pConfig[coreID];
+  _10 = _9->channelCount;
+  if (ChannelIndex < _10)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 9> :
+
+  <bb 10> :
+<L9>:
+  return;
+
+}
+
+
+Gpt_EnableWakeup (Gpt_ChannelType channel)
+{
+  uint32 coreID;
+  uint8 ChannelIndex;
+
+  <bb 2> :
+  coreID = 0;
+  _1 = Gpt_pConfig[coreID];
+  _2 = _1->u8GptChannelIdToIndexMap;
+  _3 = (int) channel;
+  ChannelIndex = (*_2)[_3];
+  _4 = (int) channel;
+  Gpt_aChannelInfo[coreID][_4].bWakeupEnabled = 1;
+  _5 = Gpt_eMode[coreID];
+  if (_5 == 1)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  _6 = Gpt_pConfig[coreID];
+  _7 = _6->Gpt_pChannelConfig;
+  _8 = (int) ChannelIndex;
+  _9 = (*_7)[_8].Gpt_Ipw_HwChannelConfig;
+  Gpt_Ipw_EnableInterrupt (_9);
+
+  <bb 4> :
+
+  <bb 5> :
+<L2>:
+  return;
+
+}
+
+
+Gpt_DisableWakeup (Gpt_ChannelType channel)
+{
+  uint32 coreID;
+  uint8 ChannelIndex;
+
+  <bb 2> :
+  coreID = 0;
+  _1 = Gpt_pConfig[coreID];
+  _2 = _1->u8GptChannelIdToIndexMap;
+  _3 = (int) channel;
+  ChannelIndex = (*_2)[_3];
+  _4 = (int) channel;
+  Gpt_aChannelInfo[coreID][_4].bWakeupEnabled = 0;
+  _5 = Gpt_eMode[coreID];
+  if (_5 == 1)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 3> :
+  _6 = Gpt_pConfig[coreID];
+  _7 = _6->Gpt_pChannelConfig;
+  _8 = (int) ChannelIndex;
+  _9 = (*_7)[_8].Gpt_eChannelMode;
+  if (_9 == 0)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 4> :
+  _10 = (int) channel;
+  _11 = Gpt_aChannelInfo[coreID][_10].eChannelStatus;
+  if (_11 != 4)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  _12 = Gpt_pConfig[coreID];
+  _13 = _12->Gpt_pChannelConfig;
+  _14 = (int) ChannelIndex;
+  _15 = (*_13)[_14].Gpt_Ipw_HwChannelConfig;
+  Gpt_Ipw_DisableInterrupt (_15);
+
+  <bb 6> :
+
+  <bb 7> :
+<L5>:
+  return;
+
+}
+
+
+Gpt_SetMode (Gpt_ModeType Mode)
+{
+  uint32 coreID;
+
+  <bb 2> :
+  coreID = 0;
+  if (Mode == 1)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  Gpt_CheckStatusWakeupEnabled (coreID);
+  _1 = Gpt_pConfig[coreID];
+  Gpt_Ipw_StopPredefTimer (_1);
+  Gpt_eMode[coreID] = 1;
+  goto <bb 8>; [INV]
+
+  <bb 4> :
+  if (Mode == 0)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 5> :
+  _2 = Gpt_eMode[coreID];
+  if (_2 == 1)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  _3 = Gpt_pConfig[coreID];
+  Gpt_Ipw_StartPredefTimer (_3);
+
+  <bb 7> :
+  Gpt_CheckStatusNotificationEnabled (coreID);
+  Gpt_eMode[coreID] = 0;
+
+  <bb 8> :
+
+  <bb 9> :
+<L8>:
+  return;
+
+}
+
+
+Gpt_DisableNotification (Gpt_ChannelType channel)
+{
+  uint32 coreID;
+  uint8 ChannelIndex;
+
+  <bb 2> :
+  coreID = 0;
+  _1 = Gpt_pConfig[coreID];
+  _2 = _1->u8GptChannelIdToIndexMap;
+  _3 = (int) channel;
+  ChannelIndex = (*_2)[_3];
+  _4 = (int) channel;
+  Gpt_aChannelInfo[coreID][_4].bNotificationEnabled = 0;
+  _5 = Gpt_eMode[coreID];
+  if (_5 == 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 3> :
+  _6 = Gpt_pConfig[coreID];
+  _7 = _6->Gpt_pChannelConfig;
+  _8 = (int) ChannelIndex;
+  _9 = (*_7)[_8].Gpt_eChannelMode;
+  if (_9 == 0)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 4> :
+  _10 = (int) channel;
+  _11 = Gpt_aChannelInfo[coreID][_10].eChannelStatus;
+  if (_11 != 4)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  _12 = Gpt_pConfig[coreID];
+  _13 = _12->Gpt_pChannelConfig;
+  _14 = (int) ChannelIndex;
+  _15 = (*_13)[_14].Gpt_Ipw_HwChannelConfig;
+  Gpt_Ipw_DisableInterrupt (_15);
+
+  <bb 6> :
+
+  <bb 7> :
+<L5>:
+  return;
+
+}
+
+
+Gpt_EnableNotification (Gpt_ChannelType channel)
+{
+  uint32 coreID;
+  uint8 ChannelIndex;
+
+  <bb 2> :
+  coreID = 0;
+  _1 = Gpt_pConfig[coreID];
+  _2 = _1->u8GptChannelIdToIndexMap;
+  _3 = (int) channel;
+  ChannelIndex = (*_2)[_3];
+  _4 = (int) channel;
+  Gpt_aChannelInfo[coreID][_4].bNotificationEnabled = 1;
+  _5 = Gpt_eMode[coreID];
+  if (_5 == 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  _6 = Gpt_pConfig[coreID];
+  _7 = _6->Gpt_pChannelConfig;
+  _8 = (int) ChannelIndex;
+  _9 = (*_7)[_8].Gpt_Ipw_HwChannelConfig;
+  Gpt_Ipw_EnableInterrupt (_9);
+
+  <bb 4> :
+
+  <bb 5> :
+<L2>:
+  return;
+
+}
+
+
+Gpt_StopTimer (Gpt_ChannelType channel)
+{
+  uint32 coreID;
+  Gpt_ChannelType ChannelIndex;
+  Gpt_ValueType uElapsedTime;
+  struct Gpt_HwChannelInfoType * pRetHwChannelInfo;
+  struct Gpt_HwChannelInfoType returnHwChannelInfo;
+
+  <bb 2> :
+  returnHwChannelInfo.bChannelRollover = 0;
+  returnHwChannelInfo.uTargetTime = 0;
+  pRetHwChannelInfo = &returnHwChannelInfo;
+  uElapsedTime = 0;
+  coreID = 0;
+  _1 = Gpt_pConfig[coreID];
+  _2 = _1->u8GptChannelIdToIndexMap;
+  _3 = (int) channel;
+  ChannelIndex = (*_2)[_3];
+  _4 = Gpt_pConfig[coreID];
+  _5 = _4->Gpt_pChannelConfig;
+  _6 = (int) ChannelIndex;
+  _7 = (*_5)[_6].Gpt_Ipw_HwChannelConfig;
+  uElapsedTime = Gpt_Ipw_GetTimeElapsed (_7, pRetHwChannelInfo);
+  _8 = (int) channel;
+  _9 = Gpt_aChannelInfo[coreID][_8].eChannelStatus;
+  if (_9 == 4)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 3> :
+  _10 = Gpt_pConfig[coreID];
+  _11 = _10->Gpt_pChannelConfig;
+  _12 = (int) ChannelIndex;
+  _13 = (*_11)[_12].Gpt_Ipw_HwChannelConfig;
+  Gpt_Ipw_StopTimer (_13);
+  _14 = returnHwChannelInfo.bChannelRollover;
+  if (_14 != 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 4> :
+  _15 = Gpt_pConfig[coreID];
+  _16 = _15->Gpt_pChannelConfig;
+  _17 = (int) ChannelIndex;
+  _18 = (*_16)[_17].Gpt_eChannelMode;
+  if (_18 == 1)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  _19 = (int) channel;
+  Gpt_aChannelInfo[coreID][_19].eChannelStatus = 3;
+  goto <bb 7>; [INV]
+
+  <bb 6> :
+  _20 = (int) channel;
+  Gpt_aStopTime[coreID][_20] = uElapsedTime;
+  _21 = (int) channel;
+  Gpt_aChannelInfo[coreID][_21].eChannelStatus = 2;
+
+  <bb 7> :
+
+  <bb 8> :
+  returnHwChannelInfo = {CLOBBER};
+
+  <bb 9> :
+<L7>:
+  return;
+
+}
+
+
+Gpt_StartTimer (Gpt_ChannelType channel, Gpt_ValueType value)
+{
+  uint32 coreID;
+  Std_ReturnType returnValue;
+  uint8 ChannelIndex;
+
+  <bb 2> :
+  coreID = 0;
+  _1 = Gpt_ValidateChannelStatus (5, channel, coreID);
+  if (_1 == 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 3> :
+  _2 = Gpt_pConfig[coreID];
+  _3 = _2->u8GptChannelIdToIndexMap;
+  _4 = (int) channel;
+  ChannelIndex = (*_3)[_4];
+  _5 = Gpt_pConfig[coreID];
+  _6 = _5->Gpt_pChannelConfig;
+  _7 = (int) ChannelIndex;
+  _8 = (*_6)[_7].Gpt_eChannelMode;
+  if (_8 == 1)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  _9 = Gpt_pConfig[coreID];
+  _10 = _9->Gpt_pChannelConfig;
+  _11 = (int) ChannelIndex;
+  _12 = (*_10)[_11].Gpt_Ipw_HwChannelConfig;
+  Gpt_Ipw_EnableInterrupt (_12);
+
+  <bb 5> :
+  _13 = (int) channel;
+  Gpt_aChannelInfo[coreID][_13].eChannelStatus = 4;
+  _14 = Gpt_pConfig[coreID];
+  _15 = _14->Gpt_pChannelConfig;
+  _16 = (int) ChannelIndex;
+  _17 = (*_15)[_16].Gpt_Ipw_HwChannelConfig;
+  returnValue = Gpt_Ipw_StartTimer (_17, value);
+  if (returnValue != 0)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  Det_ReportRuntimeError (100, 0, 5, 43);
+
+  <bb 7> :
+
+  <bb 8> :
+<L6>:
+  return;
+
+}
+
+
+Gpt_GetTimeRemaining (Gpt_ChannelType channel)
+{
+  uint32 coreID;
+  Gpt_ValueType returnValue;
+  Gpt_ChannelType ChannelIndex;
+  struct Gpt_HwChannelInfoType * pRetHwChannelInfo;
+  struct Gpt_HwChannelInfoType returnHwChannelInfo;
+  Gpt_ValueType D.6247;
+
+  <bb 2> :
+  returnHwChannelInfo.bChannelRollover = 0;
+  returnHwChannelInfo.uTargetTime = 0;
+  pRetHwChannelInfo = &returnHwChannelInfo;
+  returnValue = 0;
+  coreID = 0;
+  _1 = Gpt_pConfig[coreID];
+  _2 = _1->u8GptChannelIdToIndexMap;
+  _3 = (int) channel;
+  ChannelIndex = (*_2)[_3];
+  _4 = Gpt_pConfig[coreID];
+  _5 = _4->Gpt_pChannelConfig;
+  _6 = (int) ChannelIndex;
+  _7 = (*_5)[_6].Gpt_Ipw_HwChannelConfig;
+  returnValue = Gpt_Ipw_GetTimeElapsed (_7, pRetHwChannelInfo);
+  _8 = (int) channel;
+  _9 = Gpt_aChannelInfo[coreID][_8].eChannelStatus;
+  switch (_9) <default: <L8> [INV], case 1: <L5> [INV], case 2: <L6> [INV], case 3: <L7> [INV], case 4: <L0> [INV]>
+
+  <bb 3> :
+<L0>:
+  _10 = returnHwChannelInfo.bChannelRollover;
+  if (_10 != 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 4> :
+  _11 = Gpt_pConfig[coreID];
+  _12 = _11->Gpt_pChannelConfig;
+  _13 = (int) ChannelIndex;
+  _14 = (*_12)[_13].Gpt_eChannelMode;
+  if (_14 == 1)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  returnValue = 0;
+  goto <bb 7>; [INV]
+
+  <bb 6> :
+  _15 = returnHwChannelInfo.uTargetTime;
+  returnValue = _15 - returnValue;
+
+  <bb 7> :
+  goto <bb 12>; [INV]
+
+  <bb 8> :
+<L5>:
+  returnValue = 0;
+  goto <bb 12>; [INV]
+
+  <bb 9> :
+<L6>:
+  _16 = returnHwChannelInfo.uTargetTime;
+  _17 = (int) channel;
+  _18 = Gpt_aStopTime[coreID][_17];
+  returnValue = _16 - _18;
+  goto <bb 12>; [INV]
+
+  <bb 10> :
+<L7>:
+  returnValue = 0;
+  goto <bb 12>; [INV]
+
+  <bb 11> :
+<L8>:
+
+  <bb 12> :
+  D.6247 = returnValue;
+  returnHwChannelInfo = {CLOBBER};
+
+  <bb 13> :
+<L11>:
+  return D.6247;
+
+}
+
+
+Gpt_GetTimeElapsed (Gpt_ChannelType channel)
+{
+  uint32 coreID;
+  Gpt_ValueType returnValue;
+  Gpt_ChannelType ChannelIndex;
+  struct Gpt_HwChannelInfoType * pRetHwChannelInfo;
+  struct Gpt_HwChannelInfoType returnHwChannelInfo;
+  Gpt_ValueType D.6240;
+
+  <bb 2> :
+  returnHwChannelInfo.bChannelRollover = 0;
+  returnHwChannelInfo.uTargetTime = 0;
+  pRetHwChannelInfo = &returnHwChannelInfo;
+  returnValue = 0;
+  coreID = 0;
+  _1 = Gpt_pConfig[coreID];
+  _2 = _1->u8GptChannelIdToIndexMap;
+  _3 = (int) channel;
+  ChannelIndex = (*_2)[_3];
+  _4 = Gpt_pConfig[coreID];
+  _5 = _4->Gpt_pChannelConfig;
+  _6 = (int) ChannelIndex;
+  _7 = (*_5)[_6].Gpt_Ipw_HwChannelConfig;
+  returnValue = Gpt_Ipw_GetTimeElapsed (_7, pRetHwChannelInfo);
+  _8 = (int) channel;
+  _9 = Gpt_aChannelInfo[coreID][_8].eChannelStatus;
+  switch (_9) <default: <L8> [INV], case 1: <L5> [INV], case 2: <L6> [INV], case 3: <L7> [INV], case 4: <L0> [INV]>
+
+  <bb 3> :
+<L0>:
+  _10 = returnHwChannelInfo.bChannelRollover;
+  if (_10 != 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 4> :
+  _11 = Gpt_pConfig[coreID];
+  _12 = _11->Gpt_pChannelConfig;
+  _13 = (int) ChannelIndex;
+  _14 = (*_12)[_13].Gpt_eChannelMode;
+  if (_14 == 1)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  returnValue = returnHwChannelInfo.uTargetTime;
+
+  <bb 6> :
+  goto <bb 11>; [INV]
+
+  <bb 7> :
+<L5>:
+  returnValue = 0;
+  goto <bb 11>; [INV]
+
+  <bb 8> :
+<L6>:
+  _15 = (int) channel;
+  returnValue = Gpt_aStopTime[coreID][_15];
+  goto <bb 11>; [INV]
+
+  <bb 9> :
+<L7>:
+  returnValue = returnHwChannelInfo.uTargetTime;
+  goto <bb 11>; [INV]
+
+  <bb 10> :
+<L8>:
+
+  <bb 11> :
+  D.6240 = returnValue;
+  returnHwChannelInfo = {CLOBBER};
+
+  <bb 12> :
+<L11>:
+  return D.6240;
+
+}
+
+
+Gpt_DeInit ()
+{
+  uint32 coreID;
+  Std_ReturnType allChannelStatus;
+  Gpt_ChannelType ChannelIndex;
+  Gpt_ChannelType channel;
+
+  <bb 2> :
+  allChannelStatus = 0;
+  coreID = 0;
+  ChannelIndex = 0;
+  goto <bb 6>; [INV]
+
+  <bb 3> :
+  channel = Gpt_ConvertChannelIndexToChannel (ChannelIndex, coreID);
+  _1 = Gpt_ValidateChannelStatus (2, channel, coreID);
+  if (_1 == 1)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  allChannelStatus = 1;
+  goto <bb 7>; [INV]
+
+  <bb 5> :
+  ChannelIndex.1_2 = ChannelIndex;
+  ChannelIndex = ChannelIndex.1_2 + 1;
+
+  <bb 6> :
+  _3 = Gpt_pConfig[coreID];
+  _4 = _3->channelCount;
+  if (ChannelIndex < _4)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 7> :
+  if (allChannelStatus == 0)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 14>; [INV]
+
+  <bb 8> :
+  ChannelIndex = 0;
+  goto <bb 12>; [INV]
+
+  <bb 9> :
+  channel = Gpt_ConvertChannelIndexToChannel (ChannelIndex, coreID);
+  if (channel <= 1)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 10> :
+  _5 = (int) channel;
+  Gpt_aChannelInfo[coreID][_5].bNotificationEnabled = 0;
+  _6 = (int) channel;
+  Gpt_aChannelInfo[coreID][_6].bWakeupEnabled = 0;
+  _7 = (int) channel;
+  Gpt_aChannelInfo[coreID][_7].bWakeupGenerated = 0;
+  _8 = (int) channel;
+  Gpt_aChannelInfo[coreID][_8].eChannelStatus = 0;
+  _9 = (int) channel;
+  Gpt_aStopTime[coreID][_9] = 0;
+  _10 = Gpt_pConfig[coreID];
+  _11 = _10->Gpt_pChannelConfig;
+  _12 = (int) ChannelIndex;
+  _13 = (*_11)[_12].Gpt_Ipw_HwChannelConfig;
+  Gpt_Ipw_DeInit (_13);
+
+  <bb 11> :
+  ChannelIndex.2_14 = ChannelIndex;
+  ChannelIndex = ChannelIndex.2_14 + 1;
+
+  <bb 12> :
+  _15 = Gpt_pConfig[coreID];
+  _16 = _15->channelCount;
+  if (ChannelIndex < _16)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 13> :
+  _17 = Gpt_pConfig[coreID];
+  Gpt_Ipw_StopPredefTimer (_17);
+  Gpt_pConfig[coreID] = 0B;
+
+  <bb 14> :
+
+  <bb 15> :
+<L12>:
+  return;
+
+}
+
+
+Gpt_Init (const struct Gpt_ConfigType * configPtr)
+{
+  uint32 coreID;
+  Gpt_ChannelType channel;
+  Gpt_ChannelType ChannelIndex;
+
+  <bb 2> :
+  coreID = 0;
+  Gpt_pConfig[coreID] = configPtr;
+  _1 = Gpt_pConfig[coreID];
+  Gpt_Ipw_StartPredefTimer (_1);
+  _2 = Gpt_pConfig[coreID];
+  Gpt_Ipw_InitInstances (_2);
+  ChannelIndex = 0;
+  goto <bb 6>; [INV]
+
+  <bb 3> :
+  channel = Gpt_ConvertChannelIndexToChannel (ChannelIndex, coreID);
+  if (channel <= 1)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  _3 = (int) channel;
+  Gpt_aChannelInfo[coreID][_3].bNotificationEnabled = 0;
+  _4 = (int) channel;
+  Gpt_aChannelInfo[coreID][_4].bWakeupEnabled = 0;
+  _5 = (int) channel;
+  Gpt_aChannelInfo[coreID][_5].bWakeupGenerated = 0;
+  _6 = (int) channel;
+  Gpt_aChannelInfo[coreID][_6].eChannelStatus = 1;
+  _7 = (int) channel;
+  Gpt_aStopTime[coreID][_7] = 0;
+
+  <bb 5> :
+  _8 = Gpt_pConfig[coreID];
+  _9 = _8->Gpt_pChannelConfig;
+  _10 = (int) ChannelIndex;
+  _11 = (*_9)[_10].Gpt_Ipw_HwChannelConfig;
+  Gpt_Ipw_Init (_11);
+  ChannelIndex.0_12 = ChannelIndex;
+  ChannelIndex = ChannelIndex.0_12 + 1;
+
+  <bb 6> :
+  _13 = Gpt_pConfig[coreID];
+  _14 = _13->channelCount;
+  if (ChannelIndex < _14)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 7> :
+  Gpt_eMode[coreID] = 0;
+
+  <bb 8> :
+<L5>:
+  return;
+
+}
+
+
+Gpt_CheckStatusWakeupEnabled (uint32 coreID)
+{
+  Gpt_ChannelType channel;
+  Gpt_ChannelType ChannelIndex;
+  Gpt_ValueType uElapsedTime;
+  struct Gpt_HwChannelInfoType * pRetHwChannelInfo;
+  struct Gpt_HwChannelInfoType returnHwChannelInfo;
+
+  <bb 2> :
+  returnHwChannelInfo.bChannelRollover = 0;
+  returnHwChannelInfo.uTargetTime = 0;
+  pRetHwChannelInfo = &returnHwChannelInfo;
+  uElapsedTime = 0;
+  ChannelIndex = 0;
+  goto <bb 13>; [INV]
+
+  <bb 3> :
+  channel = Gpt_ConvertChannelIndexToChannel (ChannelIndex, coreID);
+  if (channel <= 1)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 4> :
+  _1 = (int) channel;
+  _2 = Gpt_aChannelInfo[coreID][_1].bWakeupEnabled;
+  if (_2 != 0)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  _3 = Gpt_pConfig[coreID];
+  _4 = _3->Gpt_pChannelConfig;
+  _5 = (int) ChannelIndex;
+  _6 = (*_4)[_5].Gpt_Ipw_HwChannelConfig;
+  Gpt_Ipw_EnableInterrupt (_6);
+  goto <bb 12>; [INV]
+
+  <bb 6> :
+  _7 = Gpt_pConfig[coreID];
+  _8 = _7->Gpt_pChannelConfig;
+  _9 = (int) ChannelIndex;
+  _10 = (*_8)[_9].Gpt_Ipw_HwChannelConfig;
+  Gpt_Ipw_DisableInterrupt (_10);
+  _11 = Gpt_pConfig[coreID];
+  _12 = _11->Gpt_pChannelConfig;
+  _13 = (int) ChannelIndex;
+  _14 = (*_12)[_13].Gpt_Ipw_HwChannelConfig;
+  uElapsedTime = Gpt_Ipw_GetTimeElapsed (_14, pRetHwChannelInfo);
+  _15 = (int) channel;
+  _16 = Gpt_aChannelInfo[coreID][_15].eChannelStatus;
+  if (_16 == 4)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 7> :
+  _17 = returnHwChannelInfo.bChannelRollover;
+  if (_17 != 0)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 8> :
+  _18 = Gpt_pConfig[coreID];
+  _19 = _18->Gpt_pChannelConfig;
+  _20 = (int) ChannelIndex;
+  _21 = (*_19)[_20].Gpt_eChannelMode;
+  if (_21 == 1)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 9> :
+  _22 = (int) channel;
+  Gpt_aChannelInfo[coreID][_22].eChannelStatus = 3;
+  goto <bb 11>; [INV]
+
+  <bb 10> :
+  _23 = (int) channel;
+  Gpt_aStopTime[coreID][_23] = uElapsedTime;
+  _24 = (int) channel;
+  Gpt_aChannelInfo[coreID][_24].eChannelStatus = 2;
+
+  <bb 11> :
+  _25 = Gpt_pConfig[coreID];
+  _26 = _25->Gpt_pChannelConfig;
+  _27 = (int) ChannelIndex;
+  _28 = (*_26)[_27].Gpt_Ipw_HwChannelConfig;
+  Gpt_Ipw_StopTimer (_28);
+
+  <bb 12> :
+  ChannelIndex.3_29 = ChannelIndex;
+  ChannelIndex = ChannelIndex.3_29 + 1;
+
+  <bb 13> :
+  _30 = Gpt_pConfig[coreID];
+  _31 = _30->channelCount;
+  if (ChannelIndex < _31)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 14>; [INV]
+
+  <bb 14> :
+  returnHwChannelInfo = {CLOBBER};
+  return;
+
+}
+
+
+Gpt_CheckStatusNotificationEnabled (uint32 coreID)
+{
+  Gpt_ChannelType ChannelIndex;
+  Gpt_ChannelType channel;
+
+  <bb 2> :
+  ChannelIndex = 0;
+  goto <bb 10>; [INV]
+
+  <bb 3> :
+  channel = Gpt_ConvertChannelIndexToChannel (ChannelIndex, coreID);
+  if (channel <= 1)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 4> :
+  _1 = (int) channel;
+  _2 = Gpt_aChannelInfo[coreID][_1].bNotificationEnabled;
+  if (_2 != 0)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  _3 = Gpt_pConfig[coreID];
+  _4 = _3->Gpt_pChannelConfig;
+  _5 = (int) ChannelIndex;
+  _6 = (*_4)[_5].Gpt_Ipw_HwChannelConfig;
+  Gpt_Ipw_EnableInterrupt (_6);
+  goto <bb 9>; [INV]
+
+  <bb 6> :
+  _7 = (int) channel;
+  _8 = Gpt_aChannelInfo[coreID][_7].eChannelStatus;
+  if (_8 != 4)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 7> :
+  _9 = Gpt_pConfig[coreID];
+  _10 = _9->Gpt_pChannelConfig;
+  _11 = (int) ChannelIndex;
+  _12 = (*_10)[_11].Gpt_eChannelMode;
+  if (_12 == 0)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 8> :
+  _13 = Gpt_pConfig[coreID];
+  _14 = _13->Gpt_pChannelConfig;
+  _15 = (int) ChannelIndex;
+  _16 = (*_14)[_15].Gpt_Ipw_HwChannelConfig;
+  Gpt_Ipw_DisableInterrupt (_16);
+
+  <bb 9> :
+  ChannelIndex.4_17 = ChannelIndex;
+  ChannelIndex = ChannelIndex.4_17 + 1;
+
+  <bb 10> :
+  _18 = Gpt_pConfig[coreID];
+  _19 = _18->channelCount;
+  if (ChannelIndex < _19)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 11> :
+  return;
+
+}
+
+
+Gpt_ConvertChannelIndexToChannel (Gpt_ChannelType ChannelIndex, uint32 coreID)
+{
+  Gpt_ChannelType Channel;
+  Gpt_ChannelType D.6220;
+
+  <bb 2> :
+  Channel = 0;
+  goto <bb 6>; [INV]
+
+  <bb 3> :
+  _1 = Gpt_pConfig[coreID];
+  _2 = _1->u8GptChannelIdToIndexMap;
+  _3 = (int) Channel;
+  _4 = (*_2)[_3];
+  if (ChannelIndex == _4)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  goto <bb 7>; [INV]
+
+  <bb 5> :
+  Channel = Channel + 1;
+
+  <bb 6> :
+  if (Channel <= 1)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 7> :
+  D.6220 = Channel;
+
+  <bb 8> :
+<L5>:
+  return D.6220;
+
+}
+
+
+Gpt_ValidateMode (uint8 u8ServiceId, uint32 coreID)
+{
+  Std_ReturnType returnValue;
+  Std_ReturnType D.6339;
+
+  <bb 2> :
+  _1 = Gpt_eMode[coreID];
+  if (_1 == 1)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  Det_ReportRuntimeError (100, 0, u8ServiceId, 12);
+  returnValue = 1;
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  returnValue = 0;
+
+  <bb 5> :
+  D.6339 = returnValue;
+
+  <bb 6> :
+<L3>:
+  return D.6339;
+
+}
+
+
+Gpt_ValidateChannelStatus (uint8 u8ServiceId, Gpt_ChannelType channel, uint32 coreID)
+{
+  Std_ReturnType returnValue;
+  Std_ReturnType D.6234;
+
+  <bb 2> :
+  returnValue = 1;
+  if (channel <= 1)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 3> :
+  _1 = (int) channel;
+  _2 = Gpt_aChannelInfo[coreID][_1].eChannelStatus;
+  if (_2 == 4)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  Det_ReportRuntimeError (100, 0, u8ServiceId, 11);
+  goto <bb 6>; [INV]
+
+  <bb 5> :
+  returnValue = 0;
+
+  <bb 6> :
+  D.6234 = returnValue;
+
+  <bb 7> :
+<L5>:
+  return D.6234;
+
+}
+
+

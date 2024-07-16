@@ -1,0 +1,1910 @@
+Trivially needed symbols: Gpt_GetPredefTimerValue/25 Gpt_ProcessCommonInterrupt/24 Gpt_CheckWakeup/23 Gpt_EnableWakeup/22 Gpt_DisableWakeup/21 Gpt_SetMode/20 Gpt_DisableNotification/19 Gpt_EnableNotification/18 Gpt_StopTimer/17 Gpt_StartTimer/16 Gpt_GetTimeRemaining/15 Gpt_GetTimeElapsed/14 Gpt_DeInit/13 Gpt_Init/12 Gpt_aStopTime/6 Gpt_aChannelInfo/5 Gpt_pConfig/4 Gpt_eMode/3
+
+
+Initial Symbol table:
+
+Gpt_Ipw_GetPredefTimerValue/39 (Gpt_Ipw_GetPredefTimerValue) @0e0358c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Gpt_GetPredefTimerValue/25 
+  Calls: 
+EcuM_CheckWakeup/38 (EcuM_CheckWakeup) @0e035700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Gpt_ProcessCommonInterrupt/24 
+  Calls: 
+EcuM_SetWakeupEvent/37 (EcuM_SetWakeupEvent) @0e035460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Gpt_CheckWakeup/23 
+  Calls: 
+Gpt_Ipw_DisableInterrupt/36 (Gpt_Ipw_DisableInterrupt) @0e024c40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Gpt_DisableWakeup/21 Gpt_CheckStatusNotificationEnabled/10 Gpt_CheckStatusWakeupEnabled/11 Gpt_DisableNotification/19 
+  Calls: 
+Gpt_Ipw_StopTimer/35 (Gpt_Ipw_StopTimer) @0e0247e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Gpt_CheckStatusWakeupEnabled/11 Gpt_StopTimer/17 
+  Calls: 
+Gpt_Ipw_StartTimer/34 (Gpt_Ipw_StartTimer) @0e024620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Gpt_StartTimer/16 
+  Calls: 
+Gpt_Ipw_EnableInterrupt/33 (Gpt_Ipw_EnableInterrupt) @0e024460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Gpt_EnableWakeup/22 Gpt_CheckStatusNotificationEnabled/10 Gpt_CheckStatusWakeupEnabled/11 Gpt_EnableNotification/18 Gpt_StartTimer/16 
+  Calls: 
+Gpt_Ipw_GetTimeElapsed/32 (Gpt_Ipw_GetTimeElapsed) @0e024000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Gpt_CheckStatusWakeupEnabled/11 Gpt_StopTimer/17 Gpt_GetTimeRemaining/15 Gpt_GetTimeElapsed/14 
+  Calls: 
+Det_ReportRuntimeError/31 (Det_ReportRuntimeError) @0dff4a80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Gpt_ValidateMode/8 Gpt_StartTimer/16 Gpt_ValidateChannelStatus/7 
+  Calls: 
+Gpt_Ipw_StopPredefTimer/30 (Gpt_Ipw_StopPredefTimer) @0dff4000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Gpt_SetMode/20 Gpt_DeInit/13 
+  Calls: 
+Gpt_Ipw_DeInit/29 (Gpt_Ipw_DeInit) @0dff4ee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Gpt_DeInit/13 
+  Calls: 
+Gpt_Ipw_Init/28 (Gpt_Ipw_Init) @0dff4b60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Gpt_Init/12 
+  Calls: 
+Gpt_Ipw_InitInstances/27 (Gpt_Ipw_InitInstances) @0dff49a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Gpt_Init/12 
+  Calls: 
+Gpt_Ipw_StartPredefTimer/26 (Gpt_Ipw_StartPredefTimer) @0dff48c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Gpt_SetMode/20 Gpt_Init/12 
+  Calls: 
+Gpt_GetPredefTimerValue/25 (Gpt_GetPredefTimerValue) @0dff4460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @01981040
+  References: Gpt_pConfig/4 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Gpt_Ipw_GetPredefTimerValue/39 Gpt_ValidateMode/8 
+Gpt_ProcessCommonInterrupt/24 (Gpt_ProcessCommonInterrupt) @0dff41c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0dff4460
+  References: Gpt_pConfig/4 (read) Gpt_pConfig/4 (read) Gpt_pConfig/4 (read) Gpt_aChannelInfo/5 (write) Gpt_eMode/3 (read) Gpt_aChannelInfo/5 (read) Gpt_pConfig/4 (read) Gpt_eMode/3 (read) Gpt_aChannelInfo/5 (read) Gpt_aChannelInfo/5 (write) Gpt_pConfig/4 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: EcuM_CheckWakeup/38 
+   Indirect call Num speculative call targets: 0
+Gpt_CheckWakeup/23 (Gpt_CheckWakeup) @0dfc6d20
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0dff41c0
+  References: Gpt_pConfig/4 (read) Gpt_aChannelInfo/5 (read) Gpt_aChannelInfo/5 (write) Gpt_pConfig/4 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: EcuM_SetWakeupEvent/37 Gpt_ConvertChannelIndexToChannel/9 
+Gpt_EnableWakeup/22 (Gpt_EnableWakeup) @0dfc67e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0dfc6d20
+  References: Gpt_pConfig/4 (read) Gpt_aChannelInfo/5 (write) Gpt_eMode/3 (read) Gpt_pConfig/4 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Gpt_Ipw_EnableInterrupt/33 
+Gpt_DisableWakeup/21 (Gpt_DisableWakeup) @0dfc62a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0dfc67e0
+  References: Gpt_pConfig/4 (read) Gpt_aChannelInfo/5 (write) Gpt_eMode/3 (read) Gpt_pConfig/4 (read) Gpt_aChannelInfo/5 (read) Gpt_pConfig/4 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Gpt_Ipw_DisableInterrupt/36 
+Gpt_SetMode/20 (Gpt_SetMode) @0dfc6ee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0dfc62a0
+  References: Gpt_pConfig/4 (read) Gpt_eMode/3 (write) Gpt_eMode/3 (read) Gpt_pConfig/4 (read) Gpt_eMode/3 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Gpt_CheckStatusNotificationEnabled/10 Gpt_Ipw_StartPredefTimer/26 Gpt_Ipw_StopPredefTimer/30 Gpt_CheckStatusWakeupEnabled/11 
+Gpt_DisableNotification/19 (Gpt_DisableNotification) @0dfc6c40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0dfc6ee0
+  References: Gpt_pConfig/4 (read) Gpt_aChannelInfo/5 (write) Gpt_eMode/3 (read) Gpt_pConfig/4 (read) Gpt_aChannelInfo/5 (read) Gpt_pConfig/4 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Gpt_Ipw_DisableInterrupt/36 
+Gpt_EnableNotification/18 (Gpt_EnableNotification) @0dfc69a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0dfc6c40
+  References: Gpt_pConfig/4 (read) Gpt_aChannelInfo/5 (write) Gpt_eMode/3 (read) Gpt_pConfig/4 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Gpt_Ipw_EnableInterrupt/33 
+Gpt_StopTimer/17 (Gpt_StopTimer) @0dfc6700
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0dfc69a0
+  References: Gpt_pConfig/4 (read) Gpt_pConfig/4 (read) Gpt_aChannelInfo/5 (read) Gpt_pConfig/4 (read) Gpt_pConfig/4 (read) Gpt_aChannelInfo/5 (write) Gpt_aStopTime/6 (write) Gpt_aChannelInfo/5 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Gpt_Ipw_StopTimer/35 Gpt_Ipw_GetTimeElapsed/32 
+Gpt_StartTimer/16 (Gpt_StartTimer) @0dfc6460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0dfc6700
+  References: Gpt_pConfig/4 (read) Gpt_pConfig/4 (read) Gpt_pConfig/4 (read) Gpt_aChannelInfo/5 (write) Gpt_pConfig/4 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Det_ReportRuntimeError/31 Gpt_Ipw_StartTimer/34 Gpt_Ipw_EnableInterrupt/33 Gpt_ValidateChannelStatus/7 
+Gpt_GetTimeRemaining/15 (Gpt_GetTimeRemaining) @0dfc61c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0dfc6460
+  References: Gpt_pConfig/4 (read) Gpt_pConfig/4 (read) Gpt_aChannelInfo/5 (read) Gpt_pConfig/4 (read) Gpt_aStopTime/6 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Gpt_Ipw_GetTimeElapsed/32 
+Gpt_GetTimeElapsed/14 (Gpt_GetTimeElapsed) @0dcc2d20
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0dfc61c0
+  References: Gpt_pConfig/4 (read) Gpt_pConfig/4 (read) Gpt_aChannelInfo/5 (read) Gpt_pConfig/4 (read) Gpt_aStopTime/6 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Gpt_Ipw_GetTimeElapsed/32 
+Gpt_DeInit/13 (Gpt_DeInit) @0dcc27e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0dcc2d20
+  References: Gpt_pConfig/4 (read) Gpt_aChannelInfo/5 (write) Gpt_aChannelInfo/5 (write) Gpt_aChannelInfo/5 (write) Gpt_aChannelInfo/5 (write) Gpt_aStopTime/6 (write) Gpt_pConfig/4 (read) Gpt_pConfig/4 (read) Gpt_pConfig/4 (read) Gpt_pConfig/4 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Gpt_Ipw_StopPredefTimer/30 Gpt_Ipw_DeInit/29 Gpt_ConvertChannelIndexToChannel/9 Gpt_ValidateChannelStatus/7 Gpt_ConvertChannelIndexToChannel/9 
+Gpt_Init/12 (Gpt_Init) @0dcc2ee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0dcc27e0
+  References: Gpt_pConfig/4 (write) Gpt_pConfig/4 (read) Gpt_pConfig/4 (read) Gpt_aChannelInfo/5 (write) Gpt_aChannelInfo/5 (write) Gpt_aChannelInfo/5 (write) Gpt_aChannelInfo/5 (write) Gpt_aStopTime/6 (write) Gpt_pConfig/4 (read) Gpt_pConfig/4 (read) Gpt_eMode/3 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Gpt_Ipw_Init/28 Gpt_ConvertChannelIndexToChannel/9 Gpt_Ipw_InitInstances/27 Gpt_Ipw_StartPredefTimer/26 
+Gpt_CheckStatusWakeupEnabled/11 (Gpt_CheckStatusWakeupEnabled) @0dcc2c40
+  Type: function definition analyzed
+  Visibility: no_reorder
+  Aux: @0dcc29a0
+  References: Gpt_aChannelInfo/5 (read) Gpt_pConfig/4 (read) Gpt_pConfig/4 (read) Gpt_pConfig/4 (read) Gpt_aChannelInfo/5 (read) Gpt_pConfig/4 (read) Gpt_aChannelInfo/5 (write) Gpt_aStopTime/6 (write) Gpt_aChannelInfo/5 (write) Gpt_pConfig/4 (read) Gpt_pConfig/4 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Gpt_SetMode/20 
+  Calls: Gpt_Ipw_StopTimer/35 Gpt_Ipw_GetTimeElapsed/32 Gpt_Ipw_DisableInterrupt/36 Gpt_Ipw_EnableInterrupt/33 Gpt_ConvertChannelIndexToChannel/9 
+Gpt_CheckStatusNotificationEnabled/10 (Gpt_CheckStatusNotificationEnabled) @0dcc29a0
+  Type: function definition analyzed
+  Visibility: no_reorder
+  Aux: @0dfc62a0
+  References: Gpt_aChannelInfo/5 (read) Gpt_pConfig/4 (read) Gpt_aChannelInfo/5 (read) Gpt_pConfig/4 (read) Gpt_pConfig/4 (read) Gpt_pConfig/4 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Gpt_SetMode/20 
+  Calls: Gpt_Ipw_DisableInterrupt/36 Gpt_Ipw_EnableInterrupt/33 Gpt_ConvertChannelIndexToChannel/9 
+Gpt_ConvertChannelIndexToChannel/9 (Gpt_ConvertChannelIndexToChannel) @0dcc2700
+  Type: function definition analyzed
+  Visibility: no_reorder
+  Aux: @0dcc27e0
+  References: Gpt_pConfig/4 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Gpt_CheckWakeup/23 Gpt_CheckStatusNotificationEnabled/10 Gpt_CheckStatusWakeupEnabled/11 Gpt_DeInit/13 Gpt_DeInit/13 Gpt_Init/12 
+  Calls: 
+Gpt_ValidateMode/8 (Gpt_ValidateMode) @0dcc2460
+  Type: function definition analyzed
+  Visibility: no_reorder
+  Aux: @01981040
+  References: Gpt_eMode/3 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Gpt_GetPredefTimerValue/25 
+  Calls: Det_ReportRuntimeError/31 
+Gpt_ValidateChannelStatus/7 (Gpt_ValidateChannelStatus) @0dcc21c0
+  Type: function definition analyzed
+  Visibility: no_reorder
+  Aux: @0dcc2d20
+  References: Gpt_aChannelInfo/5 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Gpt_StartTimer/16 Gpt_DeInit/13 
+  Calls: Det_ReportRuntimeError/31 
+Gpt_aStopTime/6 (Gpt_aStopTime) @0dca6bd0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @0dcc2ee0
+  References: 
+  Referring: Gpt_Init/12 (write) Gpt_DeInit/13 (write) Gpt_GetTimeElapsed/14 (read) Gpt_GetTimeRemaining/15 (read) Gpt_StopTimer/17 (write) Gpt_CheckStatusWakeupEnabled/11 (write) 
+  Availability: not-ready
+  Varpool flags:
+Gpt_aChannelInfo/5 (Gpt_aChannelInfo) @0dca6b40
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @0dca6bd0
+  References: 
+  Referring: Gpt_Init/12 (write) Gpt_Init/12 (write) Gpt_Init/12 (write) Gpt_Init/12 (write) Gpt_DeInit/13 (write) Gpt_DeInit/13 (write) Gpt_DeInit/13 (write) Gpt_DeInit/13 (write) Gpt_ValidateChannelStatus/7 (read) Gpt_GetTimeElapsed/14 (read) Gpt_GetTimeRemaining/15 (read) Gpt_StartTimer/16 (write) Gpt_StopTimer/17 (read) Gpt_StopTimer/17 (write) Gpt_StopTimer/17 (write) Gpt_EnableNotification/18 (write) Gpt_DisableNotification/19 (write) Gpt_DisableNotification/19 (read) Gpt_CheckStatusWakeupEnabled/11 (read) Gpt_CheckStatusWakeupEnabled/11 (read) Gpt_CheckStatusWakeupEnabled/11 (write) Gpt_CheckStatusWakeupEnabled/11 (write) Gpt_CheckStatusNotificationEnabled/10 (read) Gpt_CheckStatusNotificationEnabled/10 (read) Gpt_DisableWakeup/21 (write) Gpt_DisableWakeup/21 (read) Gpt_EnableWakeup/22 (write) Gpt_CheckWakeup/23 (read) Gpt_CheckWakeup/23 (write) Gpt_ProcessCommonInterrupt/24 (write) Gpt_ProcessCommonInterrupt/24 (read) Gpt_ProcessCommonInterrupt/24 (read) Gpt_ProcessCommonInterrupt/24 (write) 
+  Availability: not-ready
+  Varpool flags:
+Gpt_pConfig/4 (Gpt_pConfig) @0dca6ab0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0dca6b40
+  References: 
+  Referring: Gpt_Init/12 (write) Gpt_Init/12 (read) Gpt_Init/12 (read) Gpt_Init/12 (read) Gpt_Init/12 (read) Gpt_ConvertChannelIndexToChannel/9 (read) Gpt_DeInit/13 (read) Gpt_DeInit/13 (read) Gpt_DeInit/13 (read) Gpt_DeInit/13 (read) Gpt_DeInit/13 (write) Gpt_GetTimeElapsed/14 (read) Gpt_GetTimeElapsed/14 (read) Gpt_GetTimeElapsed/14 (read) Gpt_GetTimeRemaining/15 (read) Gpt_GetTimeRemaining/15 (read) Gpt_GetTimeRemaining/15 (read) Gpt_StartTimer/16 (read) Gpt_StartTimer/16 (read) Gpt_StartTimer/16 (read) Gpt_StartTimer/16 (read) Gpt_StopTimer/17 (read) Gpt_StopTimer/17 (read) Gpt_StopTimer/17 (read) Gpt_StopTimer/17 (read) Gpt_EnableNotification/18 (read) Gpt_EnableNotification/18 (read) Gpt_DisableNotification/19 (read) Gpt_DisableNotification/19 (read) Gpt_DisableNotification/19 (read) Gpt_SetMode/20 (read) Gpt_SetMode/20 (read) Gpt_CheckStatusWakeupEnabled/11 (read) Gpt_CheckStatusWakeupEnabled/11 (read) Gpt_CheckStatusWakeupEnabled/11 (read) Gpt_CheckStatusWakeupEnabled/11 (read) Gpt_CheckStatusWakeupEnabled/11 (read) Gpt_CheckStatusWakeupEnabled/11 (read) Gpt_CheckStatusNotificationEnabled/10 (read) Gpt_CheckStatusNotificationEnabled/10 (read) Gpt_CheckStatusNotificationEnabled/10 (read) Gpt_CheckStatusNotificationEnabled/10 (read) Gpt_DisableWakeup/21 (read) Gpt_DisableWakeup/21 (read) Gpt_DisableWakeup/21 (read) Gpt_EnableWakeup/22 (read) Gpt_EnableWakeup/22 (read) Gpt_CheckWakeup/23 (read) Gpt_CheckWakeup/23 (read) Gpt_ProcessCommonInterrupt/24 (read) Gpt_ProcessCommonInterrupt/24 (read) Gpt_ProcessCommonInterrupt/24 (read) Gpt_ProcessCommonInterrupt/24 (read) Gpt_ProcessCommonInterrupt/24 (read) Gpt_GetPredefTimerValue/25 (read) 
+  Availability: not-ready
+  Varpool flags:
+Gpt_eMode/3 (Gpt_eMode) @0dca6a20
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @0dca6ab0
+  References: 
+  Referring: Gpt_Init/12 (write) Gpt_EnableNotification/18 (read) Gpt_DisableNotification/19 (read) Gpt_SetMode/20 (write) Gpt_SetMode/20 (read) Gpt_SetMode/20 (write) Gpt_DisableWakeup/21 (read) Gpt_EnableWakeup/22 (read) Gpt_ProcessCommonInterrupt/24 (read) Gpt_ProcessCommonInterrupt/24 (read) Gpt_ValidateMode/8 (read) 
+  Availability: not-ready
+  Varpool flags: initialized
+Ftm_Gpt_Ip_GetCompareValue/2 (Ftm_Gpt_Ip_GetCompareValue) @0db2c7e0
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+Ftm_Gpt_Ip_GetCntValue/1 (Ftm_Gpt_Ip_GetCntValue) @0db2c540
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+Ftm_Gpt_Ip_GetChInterruptStatusFlag/0 (Ftm_Gpt_Ip_GetChInterruptStatusFlag) @0db2c2a0
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+
+Removing unused symbols: Ftm_Gpt_Ip_GetCompareValue/2 Ftm_Gpt_Ip_GetCntValue/1 Ftm_Gpt_Ip_GetChInterruptStatusFlag/0
+
+Reclaimed Symbol table:
+
+Gpt_Ipw_GetPredefTimerValue/39 (Gpt_Ipw_GetPredefTimerValue) @0e0358c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Gpt_GetPredefTimerValue/25 
+  Calls: 
+EcuM_CheckWakeup/38 (EcuM_CheckWakeup) @0e035700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Gpt_ProcessCommonInterrupt/24 
+  Calls: 
+EcuM_SetWakeupEvent/37 (EcuM_SetWakeupEvent) @0e035460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Gpt_CheckWakeup/23 
+  Calls: 
+Gpt_Ipw_DisableInterrupt/36 (Gpt_Ipw_DisableInterrupt) @0e024c40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Gpt_DisableWakeup/21 Gpt_CheckStatusNotificationEnabled/10 Gpt_CheckStatusWakeupEnabled/11 Gpt_DisableNotification/19 
+  Calls: 
+Gpt_Ipw_StopTimer/35 (Gpt_Ipw_StopTimer) @0e0247e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Gpt_CheckStatusWakeupEnabled/11 Gpt_StopTimer/17 
+  Calls: 
+Gpt_Ipw_StartTimer/34 (Gpt_Ipw_StartTimer) @0e024620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Gpt_StartTimer/16 
+  Calls: 
+Gpt_Ipw_EnableInterrupt/33 (Gpt_Ipw_EnableInterrupt) @0e024460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Gpt_EnableWakeup/22 Gpt_CheckStatusNotificationEnabled/10 Gpt_CheckStatusWakeupEnabled/11 Gpt_EnableNotification/18 Gpt_StartTimer/16 
+  Calls: 
+Gpt_Ipw_GetTimeElapsed/32 (Gpt_Ipw_GetTimeElapsed) @0e024000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Gpt_CheckStatusWakeupEnabled/11 Gpt_StopTimer/17 Gpt_GetTimeRemaining/15 Gpt_GetTimeElapsed/14 
+  Calls: 
+Det_ReportRuntimeError/31 (Det_ReportRuntimeError) @0dff4a80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Gpt_ValidateMode/8 Gpt_StartTimer/16 Gpt_ValidateChannelStatus/7 
+  Calls: 
+Gpt_Ipw_StopPredefTimer/30 (Gpt_Ipw_StopPredefTimer) @0dff4000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Gpt_SetMode/20 Gpt_DeInit/13 
+  Calls: 
+Gpt_Ipw_DeInit/29 (Gpt_Ipw_DeInit) @0dff4ee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Gpt_DeInit/13 
+  Calls: 
+Gpt_Ipw_Init/28 (Gpt_Ipw_Init) @0dff4b60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Gpt_Init/12 
+  Calls: 
+Gpt_Ipw_InitInstances/27 (Gpt_Ipw_InitInstances) @0dff49a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Gpt_Init/12 
+  Calls: 
+Gpt_Ipw_StartPredefTimer/26 (Gpt_Ipw_StartPredefTimer) @0dff48c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Gpt_SetMode/20 Gpt_Init/12 
+  Calls: 
+Gpt_GetPredefTimerValue/25 (Gpt_GetPredefTimerValue) @0dff4460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Gpt_pConfig/4 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Gpt_Ipw_GetPredefTimerValue/39 Gpt_ValidateMode/8 
+Gpt_ProcessCommonInterrupt/24 (Gpt_ProcessCommonInterrupt) @0dff41c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Gpt_pConfig/4 (read) Gpt_pConfig/4 (read) Gpt_pConfig/4 (read) Gpt_aChannelInfo/5 (write) Gpt_eMode/3 (read) Gpt_aChannelInfo/5 (read) Gpt_pConfig/4 (read) Gpt_eMode/3 (read) Gpt_aChannelInfo/5 (read) Gpt_aChannelInfo/5 (write) Gpt_pConfig/4 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: EcuM_CheckWakeup/38 
+   Indirect call Num speculative call targets: 0
+Gpt_CheckWakeup/23 (Gpt_CheckWakeup) @0dfc6d20
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Gpt_pConfig/4 (read) Gpt_aChannelInfo/5 (read) Gpt_aChannelInfo/5 (write) Gpt_pConfig/4 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: EcuM_SetWakeupEvent/37 Gpt_ConvertChannelIndexToChannel/9 
+Gpt_EnableWakeup/22 (Gpt_EnableWakeup) @0dfc67e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Gpt_pConfig/4 (read) Gpt_aChannelInfo/5 (write) Gpt_eMode/3 (read) Gpt_pConfig/4 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Gpt_Ipw_EnableInterrupt/33 
+Gpt_DisableWakeup/21 (Gpt_DisableWakeup) @0dfc62a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Gpt_pConfig/4 (read) Gpt_aChannelInfo/5 (write) Gpt_eMode/3 (read) Gpt_pConfig/4 (read) Gpt_aChannelInfo/5 (read) Gpt_pConfig/4 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Gpt_Ipw_DisableInterrupt/36 
+Gpt_SetMode/20 (Gpt_SetMode) @0dfc6ee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Gpt_pConfig/4 (read) Gpt_eMode/3 (write) Gpt_eMode/3 (read) Gpt_pConfig/4 (read) Gpt_eMode/3 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Gpt_CheckStatusNotificationEnabled/10 Gpt_Ipw_StartPredefTimer/26 Gpt_Ipw_StopPredefTimer/30 Gpt_CheckStatusWakeupEnabled/11 
+Gpt_DisableNotification/19 (Gpt_DisableNotification) @0dfc6c40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Gpt_pConfig/4 (read) Gpt_aChannelInfo/5 (write) Gpt_eMode/3 (read) Gpt_pConfig/4 (read) Gpt_aChannelInfo/5 (read) Gpt_pConfig/4 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Gpt_Ipw_DisableInterrupt/36 
+Gpt_EnableNotification/18 (Gpt_EnableNotification) @0dfc69a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Gpt_pConfig/4 (read) Gpt_aChannelInfo/5 (write) Gpt_eMode/3 (read) Gpt_pConfig/4 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Gpt_Ipw_EnableInterrupt/33 
+Gpt_StopTimer/17 (Gpt_StopTimer) @0dfc6700
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Gpt_pConfig/4 (read) Gpt_pConfig/4 (read) Gpt_aChannelInfo/5 (read) Gpt_pConfig/4 (read) Gpt_pConfig/4 (read) Gpt_aChannelInfo/5 (write) Gpt_aStopTime/6 (write) Gpt_aChannelInfo/5 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Gpt_Ipw_StopTimer/35 Gpt_Ipw_GetTimeElapsed/32 
+Gpt_StartTimer/16 (Gpt_StartTimer) @0dfc6460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Gpt_pConfig/4 (read) Gpt_pConfig/4 (read) Gpt_pConfig/4 (read) Gpt_aChannelInfo/5 (write) Gpt_pConfig/4 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Det_ReportRuntimeError/31 Gpt_Ipw_StartTimer/34 Gpt_Ipw_EnableInterrupt/33 Gpt_ValidateChannelStatus/7 
+Gpt_GetTimeRemaining/15 (Gpt_GetTimeRemaining) @0dfc61c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Gpt_pConfig/4 (read) Gpt_pConfig/4 (read) Gpt_aChannelInfo/5 (read) Gpt_pConfig/4 (read) Gpt_aStopTime/6 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Gpt_Ipw_GetTimeElapsed/32 
+Gpt_GetTimeElapsed/14 (Gpt_GetTimeElapsed) @0dcc2d20
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Gpt_pConfig/4 (read) Gpt_pConfig/4 (read) Gpt_aChannelInfo/5 (read) Gpt_pConfig/4 (read) Gpt_aStopTime/6 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Gpt_Ipw_GetTimeElapsed/32 
+Gpt_DeInit/13 (Gpt_DeInit) @0dcc27e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Gpt_pConfig/4 (read) Gpt_aChannelInfo/5 (write) Gpt_aChannelInfo/5 (write) Gpt_aChannelInfo/5 (write) Gpt_aChannelInfo/5 (write) Gpt_aStopTime/6 (write) Gpt_pConfig/4 (read) Gpt_pConfig/4 (read) Gpt_pConfig/4 (read) Gpt_pConfig/4 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Gpt_Ipw_StopPredefTimer/30 Gpt_Ipw_DeInit/29 Gpt_ConvertChannelIndexToChannel/9 Gpt_ValidateChannelStatus/7 Gpt_ConvertChannelIndexToChannel/9 
+Gpt_Init/12 (Gpt_Init) @0dcc2ee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Gpt_pConfig/4 (write) Gpt_pConfig/4 (read) Gpt_pConfig/4 (read) Gpt_aChannelInfo/5 (write) Gpt_aChannelInfo/5 (write) Gpt_aChannelInfo/5 (write) Gpt_aChannelInfo/5 (write) Gpt_aStopTime/6 (write) Gpt_pConfig/4 (read) Gpt_pConfig/4 (read) Gpt_eMode/3 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Gpt_Ipw_Init/28 Gpt_ConvertChannelIndexToChannel/9 Gpt_Ipw_InitInstances/27 Gpt_Ipw_StartPredefTimer/26 
+Gpt_CheckStatusWakeupEnabled/11 (Gpt_CheckStatusWakeupEnabled) @0dcc2c40
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: Gpt_aChannelInfo/5 (read) Gpt_pConfig/4 (read) Gpt_pConfig/4 (read) Gpt_pConfig/4 (read) Gpt_aChannelInfo/5 (read) Gpt_pConfig/4 (read) Gpt_aChannelInfo/5 (write) Gpt_aStopTime/6 (write) Gpt_aChannelInfo/5 (write) Gpt_pConfig/4 (read) Gpt_pConfig/4 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Gpt_SetMode/20 
+  Calls: Gpt_Ipw_StopTimer/35 Gpt_Ipw_GetTimeElapsed/32 Gpt_Ipw_DisableInterrupt/36 Gpt_Ipw_EnableInterrupt/33 Gpt_ConvertChannelIndexToChannel/9 
+Gpt_CheckStatusNotificationEnabled/10 (Gpt_CheckStatusNotificationEnabled) @0dcc29a0
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: Gpt_aChannelInfo/5 (read) Gpt_pConfig/4 (read) Gpt_aChannelInfo/5 (read) Gpt_pConfig/4 (read) Gpt_pConfig/4 (read) Gpt_pConfig/4 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Gpt_SetMode/20 
+  Calls: Gpt_Ipw_DisableInterrupt/36 Gpt_Ipw_EnableInterrupt/33 Gpt_ConvertChannelIndexToChannel/9 
+Gpt_ConvertChannelIndexToChannel/9 (Gpt_ConvertChannelIndexToChannel) @0dcc2700
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: Gpt_pConfig/4 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Gpt_CheckWakeup/23 Gpt_CheckStatusNotificationEnabled/10 Gpt_CheckStatusWakeupEnabled/11 Gpt_DeInit/13 Gpt_DeInit/13 Gpt_Init/12 
+  Calls: 
+Gpt_ValidateMode/8 (Gpt_ValidateMode) @0dcc2460
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: Gpt_eMode/3 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Gpt_GetPredefTimerValue/25 
+  Calls: Det_ReportRuntimeError/31 
+Gpt_ValidateChannelStatus/7 (Gpt_ValidateChannelStatus) @0dcc21c0
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: Gpt_aChannelInfo/5 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Gpt_StartTimer/16 Gpt_DeInit/13 
+  Calls: Det_ReportRuntimeError/31 
+Gpt_aStopTime/6 (Gpt_aStopTime) @0dca6bd0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: Gpt_Init/12 (write) Gpt_DeInit/13 (write) Gpt_GetTimeElapsed/14 (read) Gpt_GetTimeRemaining/15 (read) Gpt_StopTimer/17 (write) Gpt_CheckStatusWakeupEnabled/11 (write) 
+  Availability: not-ready
+  Varpool flags:
+Gpt_aChannelInfo/5 (Gpt_aChannelInfo) @0dca6b40
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: Gpt_Init/12 (write) Gpt_Init/12 (write) Gpt_Init/12 (write) Gpt_Init/12 (write) Gpt_DeInit/13 (write) Gpt_DeInit/13 (write) Gpt_DeInit/13 (write) Gpt_DeInit/13 (write) Gpt_ValidateChannelStatus/7 (read) Gpt_GetTimeElapsed/14 (read) Gpt_GetTimeRemaining/15 (read) Gpt_StartTimer/16 (write) Gpt_StopTimer/17 (read) Gpt_StopTimer/17 (write) Gpt_StopTimer/17 (write) Gpt_EnableNotification/18 (write) Gpt_DisableNotification/19 (write) Gpt_DisableNotification/19 (read) Gpt_CheckStatusWakeupEnabled/11 (read) Gpt_CheckStatusWakeupEnabled/11 (read) Gpt_CheckStatusWakeupEnabled/11 (write) Gpt_CheckStatusWakeupEnabled/11 (write) Gpt_CheckStatusNotificationEnabled/10 (read) Gpt_CheckStatusNotificationEnabled/10 (read) Gpt_DisableWakeup/21 (write) Gpt_DisableWakeup/21 (read) Gpt_EnableWakeup/22 (write) Gpt_CheckWakeup/23 (read) Gpt_CheckWakeup/23 (write) Gpt_ProcessCommonInterrupt/24 (write) Gpt_ProcessCommonInterrupt/24 (read) Gpt_ProcessCommonInterrupt/24 (read) Gpt_ProcessCommonInterrupt/24 (write) 
+  Availability: not-ready
+  Varpool flags:
+Gpt_pConfig/4 (Gpt_pConfig) @0dca6ab0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: Gpt_Init/12 (write) Gpt_Init/12 (read) Gpt_Init/12 (read) Gpt_Init/12 (read) Gpt_Init/12 (read) Gpt_ConvertChannelIndexToChannel/9 (read) Gpt_DeInit/13 (read) Gpt_DeInit/13 (read) Gpt_DeInit/13 (read) Gpt_DeInit/13 (read) Gpt_DeInit/13 (write) Gpt_GetTimeElapsed/14 (read) Gpt_GetTimeElapsed/14 (read) Gpt_GetTimeElapsed/14 (read) Gpt_GetTimeRemaining/15 (read) Gpt_GetTimeRemaining/15 (read) Gpt_GetTimeRemaining/15 (read) Gpt_StartTimer/16 (read) Gpt_StartTimer/16 (read) Gpt_StartTimer/16 (read) Gpt_StartTimer/16 (read) Gpt_StopTimer/17 (read) Gpt_StopTimer/17 (read) Gpt_StopTimer/17 (read) Gpt_StopTimer/17 (read) Gpt_EnableNotification/18 (read) Gpt_EnableNotification/18 (read) Gpt_DisableNotification/19 (read) Gpt_DisableNotification/19 (read) Gpt_DisableNotification/19 (read) Gpt_SetMode/20 (read) Gpt_SetMode/20 (read) Gpt_CheckStatusWakeupEnabled/11 (read) Gpt_CheckStatusWakeupEnabled/11 (read) Gpt_CheckStatusWakeupEnabled/11 (read) Gpt_CheckStatusWakeupEnabled/11 (read) Gpt_CheckStatusWakeupEnabled/11 (read) Gpt_CheckStatusWakeupEnabled/11 (read) Gpt_CheckStatusNotificationEnabled/10 (read) Gpt_CheckStatusNotificationEnabled/10 (read) Gpt_CheckStatusNotificationEnabled/10 (read) Gpt_CheckStatusNotificationEnabled/10 (read) Gpt_DisableWakeup/21 (read) Gpt_DisableWakeup/21 (read) Gpt_DisableWakeup/21 (read) Gpt_EnableWakeup/22 (read) Gpt_EnableWakeup/22 (read) Gpt_CheckWakeup/23 (read) Gpt_CheckWakeup/23 (read) Gpt_ProcessCommonInterrupt/24 (read) Gpt_ProcessCommonInterrupt/24 (read) Gpt_ProcessCommonInterrupt/24 (read) Gpt_ProcessCommonInterrupt/24 (read) Gpt_ProcessCommonInterrupt/24 (read) Gpt_GetPredefTimerValue/25 (read) 
+  Availability: not-ready
+  Varpool flags:
+Gpt_eMode/3 (Gpt_eMode) @0dca6a20
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: Gpt_Init/12 (write) Gpt_EnableNotification/18 (read) Gpt_DisableNotification/19 (read) Gpt_SetMode/20 (write) Gpt_SetMode/20 (read) Gpt_SetMode/20 (write) Gpt_DisableWakeup/21 (read) Gpt_EnableWakeup/22 (read) Gpt_ProcessCommonInterrupt/24 (read) Gpt_ProcessCommonInterrupt/24 (read) Gpt_ValidateMode/8 (read) 
+  Availability: not-ready
+  Varpool flags: initialized
+
+
+Initial Symbol table:
+
+Gpt_Ipw_GetPredefTimerValue/39 (Gpt_Ipw_GetPredefTimerValue) @0e0358c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Gpt_GetPredefTimerValue/25 
+  Calls: 
+EcuM_CheckWakeup/38 (EcuM_CheckWakeup) @0e035700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Gpt_ProcessCommonInterrupt/24 
+  Calls: 
+EcuM_SetWakeupEvent/37 (EcuM_SetWakeupEvent) @0e035460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Gpt_CheckWakeup/23 
+  Calls: 
+Gpt_Ipw_DisableInterrupt/36 (Gpt_Ipw_DisableInterrupt) @0e024c40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Gpt_DisableWakeup/21 Gpt_CheckStatusNotificationEnabled/10 Gpt_CheckStatusWakeupEnabled/11 Gpt_DisableNotification/19 
+  Calls: 
+Gpt_Ipw_StopTimer/35 (Gpt_Ipw_StopTimer) @0e0247e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Gpt_CheckStatusWakeupEnabled/11 Gpt_StopTimer/17 
+  Calls: 
+Gpt_Ipw_StartTimer/34 (Gpt_Ipw_StartTimer) @0e024620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Gpt_StartTimer/16 
+  Calls: 
+Gpt_Ipw_EnableInterrupt/33 (Gpt_Ipw_EnableInterrupt) @0e024460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Gpt_EnableWakeup/22 Gpt_CheckStatusNotificationEnabled/10 Gpt_CheckStatusWakeupEnabled/11 Gpt_EnableNotification/18 Gpt_StartTimer/16 
+  Calls: 
+Gpt_Ipw_GetTimeElapsed/32 (Gpt_Ipw_GetTimeElapsed) @0e024000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Gpt_CheckStatusWakeupEnabled/11 Gpt_StopTimer/17 Gpt_GetTimeRemaining/15 Gpt_GetTimeElapsed/14 
+  Calls: 
+Det_ReportRuntimeError/31 (Det_ReportRuntimeError) @0dff4a80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Gpt_ValidateMode/8 Gpt_StartTimer/16 Gpt_ValidateChannelStatus/7 
+  Calls: 
+Gpt_Ipw_StopPredefTimer/30 (Gpt_Ipw_StopPredefTimer) @0dff4000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Gpt_SetMode/20 Gpt_DeInit/13 
+  Calls: 
+Gpt_Ipw_DeInit/29 (Gpt_Ipw_DeInit) @0dff4ee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Gpt_DeInit/13 
+  Calls: 
+Gpt_Ipw_Init/28 (Gpt_Ipw_Init) @0dff4b60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Gpt_Init/12 
+  Calls: 
+Gpt_Ipw_InitInstances/27 (Gpt_Ipw_InitInstances) @0dff49a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Gpt_Init/12 
+  Calls: 
+Gpt_Ipw_StartPredefTimer/26 (Gpt_Ipw_StartPredefTimer) @0dff48c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Gpt_SetMode/20 Gpt_Init/12 
+  Calls: 
+Gpt_GetPredefTimerValue/25 (Gpt_GetPredefTimerValue) @0dff4460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Gpt_pConfig/4 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Gpt_Ipw_GetPredefTimerValue/39 Gpt_ValidateMode/8 
+Gpt_ProcessCommonInterrupt/24 (Gpt_ProcessCommonInterrupt) @0dff41c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Gpt_pConfig/4 (read) Gpt_pConfig/4 (read) Gpt_pConfig/4 (read) Gpt_aChannelInfo/5 (write) Gpt_eMode/3 (read) Gpt_aChannelInfo/5 (read) Gpt_pConfig/4 (read) Gpt_eMode/3 (read) Gpt_aChannelInfo/5 (read) Gpt_aChannelInfo/5 (write) Gpt_pConfig/4 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: EcuM_CheckWakeup/38 
+   Indirect call Num speculative call targets: 0
+Gpt_CheckWakeup/23 (Gpt_CheckWakeup) @0dfc6d20
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Gpt_pConfig/4 (read) Gpt_aChannelInfo/5 (read) Gpt_aChannelInfo/5 (write) Gpt_pConfig/4 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: EcuM_SetWakeupEvent/37 Gpt_ConvertChannelIndexToChannel/9 
+Gpt_EnableWakeup/22 (Gpt_EnableWakeup) @0dfc67e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Gpt_pConfig/4 (read) Gpt_aChannelInfo/5 (write) Gpt_eMode/3 (read) Gpt_pConfig/4 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Gpt_Ipw_EnableInterrupt/33 
+Gpt_DisableWakeup/21 (Gpt_DisableWakeup) @0dfc62a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Gpt_pConfig/4 (read) Gpt_aChannelInfo/5 (write) Gpt_eMode/3 (read) Gpt_pConfig/4 (read) Gpt_aChannelInfo/5 (read) Gpt_pConfig/4 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Gpt_Ipw_DisableInterrupt/36 
+Gpt_SetMode/20 (Gpt_SetMode) @0dfc6ee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Gpt_pConfig/4 (read) Gpt_eMode/3 (write) Gpt_eMode/3 (read) Gpt_pConfig/4 (read) Gpt_eMode/3 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Gpt_CheckStatusNotificationEnabled/10 Gpt_Ipw_StartPredefTimer/26 Gpt_Ipw_StopPredefTimer/30 Gpt_CheckStatusWakeupEnabled/11 
+Gpt_DisableNotification/19 (Gpt_DisableNotification) @0dfc6c40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Gpt_pConfig/4 (read) Gpt_aChannelInfo/5 (write) Gpt_eMode/3 (read) Gpt_pConfig/4 (read) Gpt_aChannelInfo/5 (read) Gpt_pConfig/4 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Gpt_Ipw_DisableInterrupt/36 
+Gpt_EnableNotification/18 (Gpt_EnableNotification) @0dfc69a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Gpt_pConfig/4 (read) Gpt_aChannelInfo/5 (write) Gpt_eMode/3 (read) Gpt_pConfig/4 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Gpt_Ipw_EnableInterrupt/33 
+Gpt_StopTimer/17 (Gpt_StopTimer) @0dfc6700
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Gpt_pConfig/4 (read) Gpt_pConfig/4 (read) Gpt_aChannelInfo/5 (read) Gpt_pConfig/4 (read) Gpt_pConfig/4 (read) Gpt_aChannelInfo/5 (write) Gpt_aStopTime/6 (write) Gpt_aChannelInfo/5 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Gpt_Ipw_StopTimer/35 Gpt_Ipw_GetTimeElapsed/32 
+Gpt_StartTimer/16 (Gpt_StartTimer) @0dfc6460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Gpt_pConfig/4 (read) Gpt_pConfig/4 (read) Gpt_pConfig/4 (read) Gpt_aChannelInfo/5 (write) Gpt_pConfig/4 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Det_ReportRuntimeError/31 Gpt_Ipw_StartTimer/34 Gpt_Ipw_EnableInterrupt/33 Gpt_ValidateChannelStatus/7 
+Gpt_GetTimeRemaining/15 (Gpt_GetTimeRemaining) @0dfc61c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Gpt_pConfig/4 (read) Gpt_pConfig/4 (read) Gpt_aChannelInfo/5 (read) Gpt_pConfig/4 (read) Gpt_aStopTime/6 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Gpt_Ipw_GetTimeElapsed/32 
+Gpt_GetTimeElapsed/14 (Gpt_GetTimeElapsed) @0dcc2d20
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Gpt_pConfig/4 (read) Gpt_pConfig/4 (read) Gpt_aChannelInfo/5 (read) Gpt_pConfig/4 (read) Gpt_aStopTime/6 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Gpt_Ipw_GetTimeElapsed/32 
+Gpt_DeInit/13 (Gpt_DeInit) @0dcc27e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Gpt_pConfig/4 (read) Gpt_aChannelInfo/5 (write) Gpt_aChannelInfo/5 (write) Gpt_aChannelInfo/5 (write) Gpt_aChannelInfo/5 (write) Gpt_aStopTime/6 (write) Gpt_pConfig/4 (read) Gpt_pConfig/4 (read) Gpt_pConfig/4 (read) Gpt_pConfig/4 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Gpt_Ipw_StopPredefTimer/30 Gpt_Ipw_DeInit/29 Gpt_ConvertChannelIndexToChannel/9 Gpt_ValidateChannelStatus/7 Gpt_ConvertChannelIndexToChannel/9 
+Gpt_Init/12 (Gpt_Init) @0dcc2ee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Gpt_pConfig/4 (write) Gpt_pConfig/4 (read) Gpt_pConfig/4 (read) Gpt_aChannelInfo/5 (write) Gpt_aChannelInfo/5 (write) Gpt_aChannelInfo/5 (write) Gpt_aChannelInfo/5 (write) Gpt_aStopTime/6 (write) Gpt_pConfig/4 (read) Gpt_pConfig/4 (read) Gpt_eMode/3 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Gpt_Ipw_Init/28 Gpt_ConvertChannelIndexToChannel/9 Gpt_Ipw_InitInstances/27 Gpt_Ipw_StartPredefTimer/26 
+Gpt_CheckStatusWakeupEnabled/11 (Gpt_CheckStatusWakeupEnabled) @0dcc2c40
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: Gpt_aChannelInfo/5 (read) Gpt_pConfig/4 (read) Gpt_pConfig/4 (read) Gpt_pConfig/4 (read) Gpt_aChannelInfo/5 (read) Gpt_pConfig/4 (read) Gpt_aChannelInfo/5 (write) Gpt_aStopTime/6 (write) Gpt_aChannelInfo/5 (write) Gpt_pConfig/4 (read) Gpt_pConfig/4 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Gpt_SetMode/20 
+  Calls: Gpt_Ipw_StopTimer/35 Gpt_Ipw_GetTimeElapsed/32 Gpt_Ipw_DisableInterrupt/36 Gpt_Ipw_EnableInterrupt/33 Gpt_ConvertChannelIndexToChannel/9 
+Gpt_CheckStatusNotificationEnabled/10 (Gpt_CheckStatusNotificationEnabled) @0dcc29a0
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: Gpt_aChannelInfo/5 (read) Gpt_pConfig/4 (read) Gpt_aChannelInfo/5 (read) Gpt_pConfig/4 (read) Gpt_pConfig/4 (read) Gpt_pConfig/4 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Gpt_SetMode/20 
+  Calls: Gpt_Ipw_DisableInterrupt/36 Gpt_Ipw_EnableInterrupt/33 Gpt_ConvertChannelIndexToChannel/9 
+Gpt_ConvertChannelIndexToChannel/9 (Gpt_ConvertChannelIndexToChannel) @0dcc2700
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: Gpt_pConfig/4 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Gpt_CheckWakeup/23 Gpt_CheckStatusNotificationEnabled/10 Gpt_CheckStatusWakeupEnabled/11 Gpt_DeInit/13 Gpt_DeInit/13 Gpt_Init/12 
+  Calls: 
+Gpt_ValidateMode/8 (Gpt_ValidateMode) @0dcc2460
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: Gpt_eMode/3 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Gpt_GetPredefTimerValue/25 
+  Calls: Det_ReportRuntimeError/31 
+Gpt_ValidateChannelStatus/7 (Gpt_ValidateChannelStatus) @0dcc21c0
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: Gpt_aChannelInfo/5 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Gpt_StartTimer/16 Gpt_DeInit/13 
+  Calls: Det_ReportRuntimeError/31 
+Gpt_aStopTime/6 (Gpt_aStopTime) @0dca6bd0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: Gpt_Init/12 (write) Gpt_DeInit/13 (write) Gpt_GetTimeElapsed/14 (read) Gpt_GetTimeRemaining/15 (read) Gpt_StopTimer/17 (write) Gpt_CheckStatusWakeupEnabled/11 (write) 
+  Availability: not-ready
+  Varpool flags:
+Gpt_aChannelInfo/5 (Gpt_aChannelInfo) @0dca6b40
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: Gpt_Init/12 (write) Gpt_Init/12 (write) Gpt_Init/12 (write) Gpt_Init/12 (write) Gpt_DeInit/13 (write) Gpt_DeInit/13 (write) Gpt_DeInit/13 (write) Gpt_DeInit/13 (write) Gpt_ValidateChannelStatus/7 (read) Gpt_GetTimeElapsed/14 (read) Gpt_GetTimeRemaining/15 (read) Gpt_StartTimer/16 (write) Gpt_StopTimer/17 (read) Gpt_StopTimer/17 (write) Gpt_StopTimer/17 (write) Gpt_EnableNotification/18 (write) Gpt_DisableNotification/19 (write) Gpt_DisableNotification/19 (read) Gpt_CheckStatusWakeupEnabled/11 (read) Gpt_CheckStatusWakeupEnabled/11 (read) Gpt_CheckStatusWakeupEnabled/11 (write) Gpt_CheckStatusWakeupEnabled/11 (write) Gpt_CheckStatusNotificationEnabled/10 (read) Gpt_CheckStatusNotificationEnabled/10 (read) Gpt_DisableWakeup/21 (write) Gpt_DisableWakeup/21 (read) Gpt_EnableWakeup/22 (write) Gpt_CheckWakeup/23 (read) Gpt_CheckWakeup/23 (write) Gpt_ProcessCommonInterrupt/24 (write) Gpt_ProcessCommonInterrupt/24 (read) Gpt_ProcessCommonInterrupt/24 (read) Gpt_ProcessCommonInterrupt/24 (write) 
+  Availability: not-ready
+  Varpool flags:
+Gpt_pConfig/4 (Gpt_pConfig) @0dca6ab0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: Gpt_Init/12 (write) Gpt_Init/12 (read) Gpt_Init/12 (read) Gpt_Init/12 (read) Gpt_Init/12 (read) Gpt_ConvertChannelIndexToChannel/9 (read) Gpt_DeInit/13 (read) Gpt_DeInit/13 (read) Gpt_DeInit/13 (read) Gpt_DeInit/13 (read) Gpt_DeInit/13 (write) Gpt_GetTimeElapsed/14 (read) Gpt_GetTimeElapsed/14 (read) Gpt_GetTimeElapsed/14 (read) Gpt_GetTimeRemaining/15 (read) Gpt_GetTimeRemaining/15 (read) Gpt_GetTimeRemaining/15 (read) Gpt_StartTimer/16 (read) Gpt_StartTimer/16 (read) Gpt_StartTimer/16 (read) Gpt_StartTimer/16 (read) Gpt_StopTimer/17 (read) Gpt_StopTimer/17 (read) Gpt_StopTimer/17 (read) Gpt_StopTimer/17 (read) Gpt_EnableNotification/18 (read) Gpt_EnableNotification/18 (read) Gpt_DisableNotification/19 (read) Gpt_DisableNotification/19 (read) Gpt_DisableNotification/19 (read) Gpt_SetMode/20 (read) Gpt_SetMode/20 (read) Gpt_CheckStatusWakeupEnabled/11 (read) Gpt_CheckStatusWakeupEnabled/11 (read) Gpt_CheckStatusWakeupEnabled/11 (read) Gpt_CheckStatusWakeupEnabled/11 (read) Gpt_CheckStatusWakeupEnabled/11 (read) Gpt_CheckStatusWakeupEnabled/11 (read) Gpt_CheckStatusNotificationEnabled/10 (read) Gpt_CheckStatusNotificationEnabled/10 (read) Gpt_CheckStatusNotificationEnabled/10 (read) Gpt_CheckStatusNotificationEnabled/10 (read) Gpt_DisableWakeup/21 (read) Gpt_DisableWakeup/21 (read) Gpt_DisableWakeup/21 (read) Gpt_EnableWakeup/22 (read) Gpt_EnableWakeup/22 (read) Gpt_CheckWakeup/23 (read) Gpt_CheckWakeup/23 (read) Gpt_ProcessCommonInterrupt/24 (read) Gpt_ProcessCommonInterrupt/24 (read) Gpt_ProcessCommonInterrupt/24 (read) Gpt_ProcessCommonInterrupt/24 (read) Gpt_ProcessCommonInterrupt/24 (read) Gpt_GetPredefTimerValue/25 (read) 
+  Availability: not-ready
+  Varpool flags:
+Gpt_eMode/3 (Gpt_eMode) @0dca6a20
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: Gpt_Init/12 (write) Gpt_EnableNotification/18 (read) Gpt_DisableNotification/19 (read) Gpt_SetMode/20 (write) Gpt_SetMode/20 (read) Gpt_SetMode/20 (write) Gpt_DisableWakeup/21 (read) Gpt_EnableWakeup/22 (read) Gpt_ProcessCommonInterrupt/24 (read) Gpt_ProcessCommonInterrupt/24 (read) Gpt_ValidateMode/8 (read) 
+  Availability: not-ready
+  Varpool flags: initialized
+
+Removing unused symbols:
+
+Reclaimed Symbol table:
+
+Gpt_Ipw_GetPredefTimerValue/39 (Gpt_Ipw_GetPredefTimerValue) @0e0358c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Gpt_GetPredefTimerValue/25 
+  Calls: 
+EcuM_CheckWakeup/38 (EcuM_CheckWakeup) @0e035700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Gpt_ProcessCommonInterrupt/24 
+  Calls: 
+EcuM_SetWakeupEvent/37 (EcuM_SetWakeupEvent) @0e035460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Gpt_CheckWakeup/23 
+  Calls: 
+Gpt_Ipw_DisableInterrupt/36 (Gpt_Ipw_DisableInterrupt) @0e024c40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Gpt_DisableWakeup/21 Gpt_CheckStatusNotificationEnabled/10 Gpt_CheckStatusWakeupEnabled/11 Gpt_DisableNotification/19 
+  Calls: 
+Gpt_Ipw_StopTimer/35 (Gpt_Ipw_StopTimer) @0e0247e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Gpt_CheckStatusWakeupEnabled/11 Gpt_StopTimer/17 
+  Calls: 
+Gpt_Ipw_StartTimer/34 (Gpt_Ipw_StartTimer) @0e024620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Gpt_StartTimer/16 
+  Calls: 
+Gpt_Ipw_EnableInterrupt/33 (Gpt_Ipw_EnableInterrupt) @0e024460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Gpt_EnableWakeup/22 Gpt_CheckStatusNotificationEnabled/10 Gpt_CheckStatusWakeupEnabled/11 Gpt_EnableNotification/18 Gpt_StartTimer/16 
+  Calls: 
+Gpt_Ipw_GetTimeElapsed/32 (Gpt_Ipw_GetTimeElapsed) @0e024000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Gpt_CheckStatusWakeupEnabled/11 Gpt_StopTimer/17 Gpt_GetTimeRemaining/15 Gpt_GetTimeElapsed/14 
+  Calls: 
+Det_ReportRuntimeError/31 (Det_ReportRuntimeError) @0dff4a80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Gpt_ValidateMode/8 Gpt_StartTimer/16 Gpt_ValidateChannelStatus/7 
+  Calls: 
+Gpt_Ipw_StopPredefTimer/30 (Gpt_Ipw_StopPredefTimer) @0dff4000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Gpt_SetMode/20 Gpt_DeInit/13 
+  Calls: 
+Gpt_Ipw_DeInit/29 (Gpt_Ipw_DeInit) @0dff4ee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Gpt_DeInit/13 
+  Calls: 
+Gpt_Ipw_Init/28 (Gpt_Ipw_Init) @0dff4b60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Gpt_Init/12 
+  Calls: 
+Gpt_Ipw_InitInstances/27 (Gpt_Ipw_InitInstances) @0dff49a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Gpt_Init/12 
+  Calls: 
+Gpt_Ipw_StartPredefTimer/26 (Gpt_Ipw_StartPredefTimer) @0dff48c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Gpt_SetMode/20 Gpt_Init/12 
+  Calls: 
+Gpt_GetPredefTimerValue/25 (Gpt_GetPredefTimerValue) @0dff4460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Gpt_pConfig/4 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Gpt_Ipw_GetPredefTimerValue/39 Gpt_ValidateMode/8 
+Gpt_ProcessCommonInterrupt/24 (Gpt_ProcessCommonInterrupt) @0dff41c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Gpt_pConfig/4 (read) Gpt_pConfig/4 (read) Gpt_pConfig/4 (read) Gpt_aChannelInfo/5 (write) Gpt_eMode/3 (read) Gpt_aChannelInfo/5 (read) Gpt_pConfig/4 (read) Gpt_eMode/3 (read) Gpt_aChannelInfo/5 (read) Gpt_aChannelInfo/5 (write) Gpt_pConfig/4 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: EcuM_CheckWakeup/38 
+   Indirect call Num speculative call targets: 0
+Gpt_CheckWakeup/23 (Gpt_CheckWakeup) @0dfc6d20
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Gpt_pConfig/4 (read) Gpt_aChannelInfo/5 (read) Gpt_aChannelInfo/5 (write) Gpt_pConfig/4 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: EcuM_SetWakeupEvent/37 Gpt_ConvertChannelIndexToChannel/9 
+Gpt_EnableWakeup/22 (Gpt_EnableWakeup) @0dfc67e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Gpt_pConfig/4 (read) Gpt_aChannelInfo/5 (write) Gpt_eMode/3 (read) Gpt_pConfig/4 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Gpt_Ipw_EnableInterrupt/33 
+Gpt_DisableWakeup/21 (Gpt_DisableWakeup) @0dfc62a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Gpt_pConfig/4 (read) Gpt_aChannelInfo/5 (write) Gpt_eMode/3 (read) Gpt_pConfig/4 (read) Gpt_aChannelInfo/5 (read) Gpt_pConfig/4 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Gpt_Ipw_DisableInterrupt/36 
+Gpt_SetMode/20 (Gpt_SetMode) @0dfc6ee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Gpt_pConfig/4 (read) Gpt_eMode/3 (write) Gpt_eMode/3 (read) Gpt_pConfig/4 (read) Gpt_eMode/3 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Gpt_CheckStatusNotificationEnabled/10 Gpt_Ipw_StartPredefTimer/26 Gpt_Ipw_StopPredefTimer/30 Gpt_CheckStatusWakeupEnabled/11 
+Gpt_DisableNotification/19 (Gpt_DisableNotification) @0dfc6c40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Gpt_pConfig/4 (read) Gpt_aChannelInfo/5 (write) Gpt_eMode/3 (read) Gpt_pConfig/4 (read) Gpt_aChannelInfo/5 (read) Gpt_pConfig/4 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Gpt_Ipw_DisableInterrupt/36 
+Gpt_EnableNotification/18 (Gpt_EnableNotification) @0dfc69a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Gpt_pConfig/4 (read) Gpt_aChannelInfo/5 (write) Gpt_eMode/3 (read) Gpt_pConfig/4 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Gpt_Ipw_EnableInterrupt/33 
+Gpt_StopTimer/17 (Gpt_StopTimer) @0dfc6700
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Gpt_pConfig/4 (read) Gpt_pConfig/4 (read) Gpt_aChannelInfo/5 (read) Gpt_pConfig/4 (read) Gpt_pConfig/4 (read) Gpt_aChannelInfo/5 (write) Gpt_aStopTime/6 (write) Gpt_aChannelInfo/5 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Gpt_Ipw_StopTimer/35 Gpt_Ipw_GetTimeElapsed/32 
+Gpt_StartTimer/16 (Gpt_StartTimer) @0dfc6460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Gpt_pConfig/4 (read) Gpt_pConfig/4 (read) Gpt_pConfig/4 (read) Gpt_aChannelInfo/5 (write) Gpt_pConfig/4 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Det_ReportRuntimeError/31 Gpt_Ipw_StartTimer/34 Gpt_Ipw_EnableInterrupt/33 Gpt_ValidateChannelStatus/7 
+Gpt_GetTimeRemaining/15 (Gpt_GetTimeRemaining) @0dfc61c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Gpt_pConfig/4 (read) Gpt_pConfig/4 (read) Gpt_aChannelInfo/5 (read) Gpt_pConfig/4 (read) Gpt_aStopTime/6 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Gpt_Ipw_GetTimeElapsed/32 
+Gpt_GetTimeElapsed/14 (Gpt_GetTimeElapsed) @0dcc2d20
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Gpt_pConfig/4 (read) Gpt_pConfig/4 (read) Gpt_aChannelInfo/5 (read) Gpt_pConfig/4 (read) Gpt_aStopTime/6 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Gpt_Ipw_GetTimeElapsed/32 
+Gpt_DeInit/13 (Gpt_DeInit) @0dcc27e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Gpt_pConfig/4 (read) Gpt_aChannelInfo/5 (write) Gpt_aChannelInfo/5 (write) Gpt_aChannelInfo/5 (write) Gpt_aChannelInfo/5 (write) Gpt_aStopTime/6 (write) Gpt_pConfig/4 (read) Gpt_pConfig/4 (read) Gpt_pConfig/4 (read) Gpt_pConfig/4 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Gpt_Ipw_StopPredefTimer/30 Gpt_Ipw_DeInit/29 Gpt_ConvertChannelIndexToChannel/9 Gpt_ValidateChannelStatus/7 Gpt_ConvertChannelIndexToChannel/9 
+Gpt_Init/12 (Gpt_Init) @0dcc2ee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Gpt_pConfig/4 (write) Gpt_pConfig/4 (read) Gpt_pConfig/4 (read) Gpt_aChannelInfo/5 (write) Gpt_aChannelInfo/5 (write) Gpt_aChannelInfo/5 (write) Gpt_aChannelInfo/5 (write) Gpt_aStopTime/6 (write) Gpt_pConfig/4 (read) Gpt_pConfig/4 (read) Gpt_eMode/3 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Gpt_Ipw_Init/28 Gpt_ConvertChannelIndexToChannel/9 Gpt_Ipw_InitInstances/27 Gpt_Ipw_StartPredefTimer/26 
+Gpt_CheckStatusWakeupEnabled/11 (Gpt_CheckStatusWakeupEnabled) @0dcc2c40
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: Gpt_aChannelInfo/5 (read) Gpt_pConfig/4 (read) Gpt_pConfig/4 (read) Gpt_pConfig/4 (read) Gpt_aChannelInfo/5 (read) Gpt_pConfig/4 (read) Gpt_aChannelInfo/5 (write) Gpt_aStopTime/6 (write) Gpt_aChannelInfo/5 (write) Gpt_pConfig/4 (read) Gpt_pConfig/4 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Gpt_SetMode/20 
+  Calls: Gpt_Ipw_StopTimer/35 Gpt_Ipw_GetTimeElapsed/32 Gpt_Ipw_DisableInterrupt/36 Gpt_Ipw_EnableInterrupt/33 Gpt_ConvertChannelIndexToChannel/9 
+Gpt_CheckStatusNotificationEnabled/10 (Gpt_CheckStatusNotificationEnabled) @0dcc29a0
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: Gpt_aChannelInfo/5 (read) Gpt_pConfig/4 (read) Gpt_aChannelInfo/5 (read) Gpt_pConfig/4 (read) Gpt_pConfig/4 (read) Gpt_pConfig/4 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Gpt_SetMode/20 
+  Calls: Gpt_Ipw_DisableInterrupt/36 Gpt_Ipw_EnableInterrupt/33 Gpt_ConvertChannelIndexToChannel/9 
+Gpt_ConvertChannelIndexToChannel/9 (Gpt_ConvertChannelIndexToChannel) @0dcc2700
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: Gpt_pConfig/4 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Gpt_CheckWakeup/23 Gpt_CheckStatusNotificationEnabled/10 Gpt_CheckStatusWakeupEnabled/11 Gpt_DeInit/13 Gpt_DeInit/13 Gpt_Init/12 
+  Calls: 
+Gpt_ValidateMode/8 (Gpt_ValidateMode) @0dcc2460
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: Gpt_eMode/3 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Gpt_GetPredefTimerValue/25 
+  Calls: Det_ReportRuntimeError/31 
+Gpt_ValidateChannelStatus/7 (Gpt_ValidateChannelStatus) @0dcc21c0
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: Gpt_aChannelInfo/5 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Gpt_StartTimer/16 Gpt_DeInit/13 
+  Calls: Det_ReportRuntimeError/31 
+Gpt_aStopTime/6 (Gpt_aStopTime) @0dca6bd0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: Gpt_Init/12 (write) Gpt_DeInit/13 (write) Gpt_GetTimeElapsed/14 (read) Gpt_GetTimeRemaining/15 (read) Gpt_StopTimer/17 (write) Gpt_CheckStatusWakeupEnabled/11 (write) 
+  Availability: not-ready
+  Varpool flags:
+Gpt_aChannelInfo/5 (Gpt_aChannelInfo) @0dca6b40
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: Gpt_Init/12 (write) Gpt_Init/12 (write) Gpt_Init/12 (write) Gpt_Init/12 (write) Gpt_DeInit/13 (write) Gpt_DeInit/13 (write) Gpt_DeInit/13 (write) Gpt_DeInit/13 (write) Gpt_ValidateChannelStatus/7 (read) Gpt_GetTimeElapsed/14 (read) Gpt_GetTimeRemaining/15 (read) Gpt_StartTimer/16 (write) Gpt_StopTimer/17 (read) Gpt_StopTimer/17 (write) Gpt_StopTimer/17 (write) Gpt_EnableNotification/18 (write) Gpt_DisableNotification/19 (write) Gpt_DisableNotification/19 (read) Gpt_CheckStatusWakeupEnabled/11 (read) Gpt_CheckStatusWakeupEnabled/11 (read) Gpt_CheckStatusWakeupEnabled/11 (write) Gpt_CheckStatusWakeupEnabled/11 (write) Gpt_CheckStatusNotificationEnabled/10 (read) Gpt_CheckStatusNotificationEnabled/10 (read) Gpt_DisableWakeup/21 (write) Gpt_DisableWakeup/21 (read) Gpt_EnableWakeup/22 (write) Gpt_CheckWakeup/23 (read) Gpt_CheckWakeup/23 (write) Gpt_ProcessCommonInterrupt/24 (write) Gpt_ProcessCommonInterrupt/24 (read) Gpt_ProcessCommonInterrupt/24 (read) Gpt_ProcessCommonInterrupt/24 (write) 
+  Availability: not-ready
+  Varpool flags:
+Gpt_pConfig/4 (Gpt_pConfig) @0dca6ab0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: Gpt_Init/12 (write) Gpt_Init/12 (read) Gpt_Init/12 (read) Gpt_Init/12 (read) Gpt_Init/12 (read) Gpt_ConvertChannelIndexToChannel/9 (read) Gpt_DeInit/13 (read) Gpt_DeInit/13 (read) Gpt_DeInit/13 (read) Gpt_DeInit/13 (read) Gpt_DeInit/13 (write) Gpt_GetTimeElapsed/14 (read) Gpt_GetTimeElapsed/14 (read) Gpt_GetTimeElapsed/14 (read) Gpt_GetTimeRemaining/15 (read) Gpt_GetTimeRemaining/15 (read) Gpt_GetTimeRemaining/15 (read) Gpt_StartTimer/16 (read) Gpt_StartTimer/16 (read) Gpt_StartTimer/16 (read) Gpt_StartTimer/16 (read) Gpt_StopTimer/17 (read) Gpt_StopTimer/17 (read) Gpt_StopTimer/17 (read) Gpt_StopTimer/17 (read) Gpt_EnableNotification/18 (read) Gpt_EnableNotification/18 (read) Gpt_DisableNotification/19 (read) Gpt_DisableNotification/19 (read) Gpt_DisableNotification/19 (read) Gpt_SetMode/20 (read) Gpt_SetMode/20 (read) Gpt_CheckStatusWakeupEnabled/11 (read) Gpt_CheckStatusWakeupEnabled/11 (read) Gpt_CheckStatusWakeupEnabled/11 (read) Gpt_CheckStatusWakeupEnabled/11 (read) Gpt_CheckStatusWakeupEnabled/11 (read) Gpt_CheckStatusWakeupEnabled/11 (read) Gpt_CheckStatusNotificationEnabled/10 (read) Gpt_CheckStatusNotificationEnabled/10 (read) Gpt_CheckStatusNotificationEnabled/10 (read) Gpt_CheckStatusNotificationEnabled/10 (read) Gpt_DisableWakeup/21 (read) Gpt_DisableWakeup/21 (read) Gpt_DisableWakeup/21 (read) Gpt_EnableWakeup/22 (read) Gpt_EnableWakeup/22 (read) Gpt_CheckWakeup/23 (read) Gpt_CheckWakeup/23 (read) Gpt_ProcessCommonInterrupt/24 (read) Gpt_ProcessCommonInterrupt/24 (read) Gpt_ProcessCommonInterrupt/24 (read) Gpt_ProcessCommonInterrupt/24 (read) Gpt_ProcessCommonInterrupt/24 (read) Gpt_GetPredefTimerValue/25 (read) 
+  Availability: not-ready
+  Varpool flags:
+Gpt_eMode/3 (Gpt_eMode) @0dca6a20
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: Gpt_Init/12 (write) Gpt_EnableNotification/18 (read) Gpt_DisableNotification/19 (read) Gpt_SetMode/20 (write) Gpt_SetMode/20 (read) Gpt_SetMode/20 (write) Gpt_DisableWakeup/21 (read) Gpt_EnableWakeup/22 (read) Gpt_ProcessCommonInterrupt/24 (read) Gpt_ProcessCommonInterrupt/24 (read) Gpt_ValidateMode/8 (read) 
+  Availability: not-ready
+  Varpool flags: initialized
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+Optimized Symbol table:
+
+Gpt_Ipw_GetPredefTimerValue/39 (Gpt_Ipw_GetPredefTimerValue) @0e0358c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Gpt_GetPredefTimerValue/25 
+  Calls: 
+EcuM_CheckWakeup/38 (EcuM_CheckWakeup) @0e035700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Gpt_ProcessCommonInterrupt/24 
+  Calls: 
+EcuM_SetWakeupEvent/37 (EcuM_SetWakeupEvent) @0e035460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Gpt_CheckWakeup/23 
+  Calls: 
+Gpt_Ipw_DisableInterrupt/36 (Gpt_Ipw_DisableInterrupt) @0e024c40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Gpt_DisableWakeup/21 Gpt_DisableNotification/19 Gpt_CheckStatusNotificationEnabled/10 Gpt_CheckStatusWakeupEnabled/11 
+  Calls: 
+Gpt_Ipw_StopTimer/35 (Gpt_Ipw_StopTimer) @0e0247e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Gpt_StopTimer/17 Gpt_CheckStatusWakeupEnabled/11 
+  Calls: 
+Gpt_Ipw_StartTimer/34 (Gpt_Ipw_StartTimer) @0e024620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Gpt_StartTimer/16 
+  Calls: 
+Gpt_Ipw_EnableInterrupt/33 (Gpt_Ipw_EnableInterrupt) @0e024460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Gpt_EnableWakeup/22 Gpt_EnableNotification/18 Gpt_StartTimer/16 Gpt_CheckStatusNotificationEnabled/10 Gpt_CheckStatusWakeupEnabled/11 
+  Calls: 
+Gpt_Ipw_GetTimeElapsed/32 (Gpt_Ipw_GetTimeElapsed) @0e024000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Gpt_StopTimer/17 Gpt_GetTimeRemaining/15 Gpt_GetTimeElapsed/14 Gpt_CheckStatusWakeupEnabled/11 
+  Calls: 
+Det_ReportRuntimeError/31 (Det_ReportRuntimeError) @0dff4a80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Gpt_StartTimer/16 Gpt_ValidateMode/8 Gpt_ValidateChannelStatus/7 
+  Calls: 
+Gpt_Ipw_StopPredefTimer/30 (Gpt_Ipw_StopPredefTimer) @0dff4000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Gpt_SetMode/20 Gpt_DeInit/13 
+  Calls: 
+Gpt_Ipw_DeInit/29 (Gpt_Ipw_DeInit) @0dff4ee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Gpt_DeInit/13 
+  Calls: 
+Gpt_Ipw_Init/28 (Gpt_Ipw_Init) @0dff4b60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Gpt_Init/12 
+  Calls: 
+Gpt_Ipw_InitInstances/27 (Gpt_Ipw_InitInstances) @0dff49a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Gpt_Init/12 
+  Calls: 
+Gpt_Ipw_StartPredefTimer/26 (Gpt_Ipw_StartPredefTimer) @0dff48c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Gpt_SetMode/20 Gpt_Init/12 
+  Calls: 
+Gpt_GetPredefTimerValue/25 (Gpt_GetPredefTimerValue) @0dff4460
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Gpt_pConfig/4 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Gpt_Ipw_GetPredefTimerValue/39 Gpt_ValidateMode/8 
+Gpt_ProcessCommonInterrupt/24 (Gpt_ProcessCommonInterrupt) @0dff41c0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Gpt_pConfig/4 (read) Gpt_pConfig/4 (read) Gpt_pConfig/4 (read) Gpt_aChannelInfo/5 (write) Gpt_eMode/3 (read) Gpt_aChannelInfo/5 (read) Gpt_pConfig/4 (read) Gpt_eMode/3 (read) Gpt_aChannelInfo/5 (read) Gpt_aChannelInfo/5 (write) Gpt_pConfig/4 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: EcuM_CheckWakeup/38 
+   Indirect call Num speculative call targets: 0
+Gpt_CheckWakeup/23 (Gpt_CheckWakeup) @0dfc6d20
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Gpt_pConfig/4 (read) Gpt_aChannelInfo/5 (read) Gpt_aChannelInfo/5 (write) Gpt_pConfig/4 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: EcuM_SetWakeupEvent/37 Gpt_ConvertChannelIndexToChannel/9 
+Gpt_EnableWakeup/22 (Gpt_EnableWakeup) @0dfc67e0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Gpt_pConfig/4 (read) Gpt_aChannelInfo/5 (write) Gpt_eMode/3 (read) Gpt_pConfig/4 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Gpt_Ipw_EnableInterrupt/33 
+Gpt_DisableWakeup/21 (Gpt_DisableWakeup) @0dfc62a0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Gpt_pConfig/4 (read) Gpt_aChannelInfo/5 (write) Gpt_eMode/3 (read) Gpt_pConfig/4 (read) Gpt_aChannelInfo/5 (read) Gpt_pConfig/4 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Gpt_Ipw_DisableInterrupt/36 
+Gpt_SetMode/20 (Gpt_SetMode) @0dfc6ee0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Gpt_pConfig/4 (read) Gpt_eMode/3 (write) Gpt_eMode/3 (read) Gpt_pConfig/4 (read) Gpt_eMode/3 (write) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Gpt_CheckStatusNotificationEnabled/10 Gpt_Ipw_StartPredefTimer/26 Gpt_Ipw_StopPredefTimer/30 Gpt_CheckStatusWakeupEnabled/11 
+Gpt_DisableNotification/19 (Gpt_DisableNotification) @0dfc6c40
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Gpt_pConfig/4 (read) Gpt_aChannelInfo/5 (write) Gpt_eMode/3 (read) Gpt_pConfig/4 (read) Gpt_aChannelInfo/5 (read) Gpt_pConfig/4 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Gpt_Ipw_DisableInterrupt/36 
+Gpt_EnableNotification/18 (Gpt_EnableNotification) @0dfc69a0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Gpt_pConfig/4 (read) Gpt_aChannelInfo/5 (write) Gpt_eMode/3 (read) Gpt_pConfig/4 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Gpt_Ipw_EnableInterrupt/33 
+Gpt_StopTimer/17 (Gpt_StopTimer) @0dfc6700
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Gpt_pConfig/4 (read) Gpt_pConfig/4 (read) Gpt_aChannelInfo/5 (read) Gpt_pConfig/4 (read) Gpt_pConfig/4 (read) Gpt_aChannelInfo/5 (write) Gpt_aStopTime/6 (write) Gpt_aChannelInfo/5 (write) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Gpt_Ipw_StopTimer/35 Gpt_Ipw_GetTimeElapsed/32 
+Gpt_StartTimer/16 (Gpt_StartTimer) @0dfc6460
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Gpt_pConfig/4 (read) Gpt_pConfig/4 (read) Gpt_pConfig/4 (read) Gpt_aChannelInfo/5 (write) Gpt_pConfig/4 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Det_ReportRuntimeError/31 Gpt_Ipw_StartTimer/34 Gpt_Ipw_EnableInterrupt/33 Gpt_ValidateChannelStatus/7 
+Gpt_GetTimeRemaining/15 (Gpt_GetTimeRemaining) @0dfc61c0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Gpt_pConfig/4 (read) Gpt_pConfig/4 (read) Gpt_aChannelInfo/5 (read) Gpt_pConfig/4 (read) Gpt_aStopTime/6 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Gpt_Ipw_GetTimeElapsed/32 
+Gpt_GetTimeElapsed/14 (Gpt_GetTimeElapsed) @0dcc2d20
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Gpt_pConfig/4 (read) Gpt_pConfig/4 (read) Gpt_aChannelInfo/5 (read) Gpt_pConfig/4 (read) Gpt_aStopTime/6 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Gpt_Ipw_GetTimeElapsed/32 
+Gpt_DeInit/13 (Gpt_DeInit) @0dcc27e0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Gpt_pConfig/4 (read) Gpt_aChannelInfo/5 (write) Gpt_aChannelInfo/5 (write) Gpt_aChannelInfo/5 (write) Gpt_aChannelInfo/5 (write) Gpt_aStopTime/6 (write) Gpt_pConfig/4 (read) Gpt_pConfig/4 (read) Gpt_pConfig/4 (read) Gpt_pConfig/4 (write) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Gpt_Ipw_StopPredefTimer/30 Gpt_Ipw_DeInit/29 Gpt_ConvertChannelIndexToChannel/9 Gpt_ValidateChannelStatus/7 Gpt_ConvertChannelIndexToChannel/9 
+Gpt_Init/12 (Gpt_Init) @0dcc2ee0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Gpt_pConfig/4 (write) Gpt_pConfig/4 (read) Gpt_pConfig/4 (read) Gpt_aChannelInfo/5 (write) Gpt_aChannelInfo/5 (write) Gpt_aChannelInfo/5 (write) Gpt_aChannelInfo/5 (write) Gpt_aStopTime/6 (write) Gpt_pConfig/4 (read) Gpt_pConfig/4 (read) Gpt_eMode/3 (write) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Gpt_Ipw_Init/28 Gpt_ConvertChannelIndexToChannel/9 Gpt_Ipw_InitInstances/27 Gpt_Ipw_StartPredefTimer/26 
+Gpt_CheckStatusWakeupEnabled/11 (Gpt_CheckStatusWakeupEnabled) @0dcc2c40
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: Gpt_aChannelInfo/5 (read) Gpt_pConfig/4 (read) Gpt_pConfig/4 (read) Gpt_pConfig/4 (read) Gpt_aChannelInfo/5 (read) Gpt_pConfig/4 (read) Gpt_aChannelInfo/5 (write) Gpt_aStopTime/6 (write) Gpt_aChannelInfo/5 (write) Gpt_pConfig/4 (read) Gpt_pConfig/4 (read) 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: Gpt_SetMode/20 
+  Calls: Gpt_Ipw_StopTimer/35 Gpt_Ipw_GetTimeElapsed/32 Gpt_Ipw_DisableInterrupt/36 Gpt_Ipw_EnableInterrupt/33 Gpt_ConvertChannelIndexToChannel/9 
+Gpt_CheckStatusNotificationEnabled/10 (Gpt_CheckStatusNotificationEnabled) @0dcc29a0
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: Gpt_aChannelInfo/5 (read) Gpt_pConfig/4 (read) Gpt_aChannelInfo/5 (read) Gpt_pConfig/4 (read) Gpt_pConfig/4 (read) Gpt_pConfig/4 (read) 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: Gpt_SetMode/20 
+  Calls: Gpt_Ipw_DisableInterrupt/36 Gpt_Ipw_EnableInterrupt/33 Gpt_ConvertChannelIndexToChannel/9 
+Gpt_ConvertChannelIndexToChannel/9 (Gpt_ConvertChannelIndexToChannel) @0dcc2700
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: Gpt_pConfig/4 (read) 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: Gpt_CheckWakeup/23 Gpt_DeInit/13 Gpt_DeInit/13 Gpt_Init/12 Gpt_CheckStatusNotificationEnabled/10 Gpt_CheckStatusWakeupEnabled/11 
+  Calls: 
+Gpt_ValidateMode/8 (Gpt_ValidateMode) @0dcc2460
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: Gpt_eMode/3 (read) 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: Gpt_GetPredefTimerValue/25 
+  Calls: Det_ReportRuntimeError/31 
+Gpt_ValidateChannelStatus/7 (Gpt_ValidateChannelStatus) @0dcc21c0
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: Gpt_aChannelInfo/5 (read) 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: Gpt_StartTimer/16 Gpt_DeInit/13 
+  Calls: Det_ReportRuntimeError/31 
+Gpt_aStopTime/6 (Gpt_aStopTime) @0dca6bd0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: Gpt_GetTimeRemaining/15 (read) Gpt_CheckStatusWakeupEnabled/11 (write) Gpt_Init/12 (write) Gpt_DeInit/13 (write) Gpt_GetTimeElapsed/14 (read) Gpt_StopTimer/17 (write) 
+  Availability: available
+  Varpool flags:
+Gpt_aChannelInfo/5 (Gpt_aChannelInfo) @0dca6b40
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: Gpt_DeInit/13 (write) Gpt_StopTimer/17 (read) Gpt_CheckStatusWakeupEnabled/11 (write) Gpt_CheckStatusWakeupEnabled/11 (write) Gpt_CheckStatusWakeupEnabled/11 (read) Gpt_CheckStatusWakeupEnabled/11 (read) Gpt_CheckStatusNotificationEnabled/10 (read) Gpt_CheckStatusNotificationEnabled/10 (read) Gpt_EnableWakeup/22 (write) Gpt_Init/12 (write) Gpt_DeInit/13 (write) Gpt_GetTimeElapsed/14 (read) Gpt_Init/12 (write) Gpt_Init/12 (write) Gpt_GetTimeRemaining/15 (read) Gpt_StartTimer/16 (write) Gpt_DeInit/13 (write) Gpt_StopTimer/17 (write) Gpt_Init/12 (write) Gpt_DeInit/13 (write) Gpt_DisableWakeup/21 (write) Gpt_CheckWakeup/23 (write) Gpt_CheckWakeup/23 (read) Gpt_ValidateChannelStatus/7 (read) Gpt_StopTimer/17 (write) Gpt_EnableNotification/18 (write) Gpt_DisableNotification/19 (read) Gpt_DisableNotification/19 (write) Gpt_DisableWakeup/21 (read) Gpt_ProcessCommonInterrupt/24 (write) Gpt_ProcessCommonInterrupt/24 (read) Gpt_ProcessCommonInterrupt/24 (read) Gpt_ProcessCommonInterrupt/24 (write) 
+  Availability: available
+  Varpool flags:
+Gpt_pConfig/4 (Gpt_pConfig) @0dca6ab0
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: Gpt_DeInit/13 (read) Gpt_CheckStatusWakeupEnabled/11 (read) Gpt_CheckStatusWakeupEnabled/11 (read) Gpt_CheckStatusWakeupEnabled/11 (read) Gpt_CheckStatusWakeupEnabled/11 (read) Gpt_CheckWakeup/23 (read) Gpt_CheckStatusWakeupEnabled/11 (read) Gpt_CheckStatusNotificationEnabled/10 (read) Gpt_CheckStatusNotificationEnabled/10 (read) Gpt_CheckStatusNotificationEnabled/10 (read) Gpt_CheckStatusNotificationEnabled/10 (read) Gpt_Init/12 (read) Gpt_Init/12 (read) Gpt_Init/12 (read) Gpt_DeInit/13 (read) Gpt_DeInit/13 (read) Gpt_DeInit/13 (write) Gpt_Init/12 (read) Gpt_GetTimeElapsed/14 (read) Gpt_GetTimeElapsed/14 (read) Gpt_GetTimeElapsed/14 (read) Gpt_DeInit/13 (read) Gpt_GetTimeRemaining/15 (read) Gpt_GetTimeRemaining/15 (read) Gpt_GetTimeRemaining/15 (read) Gpt_StartTimer/16 (read) Gpt_StartTimer/16 (read) Gpt_StartTimer/16 (read) Gpt_StopTimer/17 (read) Gpt_StopTimer/17 (read) Gpt_EnableNotification/18 (read) Gpt_EnableNotification/18 (read) Gpt_Init/12 (write) Gpt_StartTimer/16 (read) Gpt_DisableNotification/19 (read) Gpt_EnableWakeup/22 (read) Gpt_EnableWakeup/22 (read) Gpt_ProcessCommonInterrupt/24 (read) Gpt_StopTimer/17 (read) Gpt_DisableWakeup/21 (read) Gpt_CheckWakeup/23 (read) Gpt_ConvertChannelIndexToChannel/9 (read) Gpt_StopTimer/17 (read) Gpt_DisableNotification/19 (read) Gpt_DisableNotification/19 (read) Gpt_SetMode/20 (read) Gpt_SetMode/20 (read) Gpt_DisableWakeup/21 (read) Gpt_DisableWakeup/21 (read) Gpt_CheckStatusWakeupEnabled/11 (read) Gpt_ProcessCommonInterrupt/24 (read) Gpt_ProcessCommonInterrupt/24 (read) Gpt_ProcessCommonInterrupt/24 (read) Gpt_ProcessCommonInterrupt/24 (read) Gpt_GetPredefTimerValue/25 (read) 
+  Availability: available
+  Varpool flags:
+Gpt_eMode/3 (Gpt_eMode) @0dca6a20
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: Gpt_EnableWakeup/22 (read) Gpt_ValidateMode/8 (read) Gpt_Init/12 (write) Gpt_SetMode/20 (read) Gpt_DisableWakeup/21 (read) Gpt_EnableNotification/18 (read) Gpt_DisableNotification/19 (read) Gpt_SetMode/20 (write) Gpt_SetMode/20 (write) Gpt_ProcessCommonInterrupt/24 (read) Gpt_ProcessCommonInterrupt/24 (read) 
+  Availability: available
+  Varpool flags: initialized
+Materializing clones
+Materialization Call site updates done.
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+Trivially needed variables: Gpt_aStopTime/6 Gpt_aChannelInfo/5 Gpt_pConfig/4 Gpt_eMode/3
+Removing variables:
+
+Final Symbol table:
+
+Gpt_Ipw_GetPredefTimerValue/39 (Gpt_Ipw_GetPredefTimerValue) @0e0358c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+EcuM_CheckWakeup/38 (EcuM_CheckWakeup) @0e035700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+EcuM_SetWakeupEvent/37 (EcuM_SetWakeupEvent) @0e035460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+Gpt_Ipw_DisableInterrupt/36 (Gpt_Ipw_DisableInterrupt) @0e024c40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+Gpt_Ipw_StopTimer/35 (Gpt_Ipw_StopTimer) @0e0247e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+Gpt_Ipw_StartTimer/34 (Gpt_Ipw_StartTimer) @0e024620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+Gpt_Ipw_EnableInterrupt/33 (Gpt_Ipw_EnableInterrupt) @0e024460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+Gpt_Ipw_GetTimeElapsed/32 (Gpt_Ipw_GetTimeElapsed) @0e024000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+Det_ReportRuntimeError/31 (Det_ReportRuntimeError) @0dff4a80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+Gpt_Ipw_StopPredefTimer/30 (Gpt_Ipw_StopPredefTimer) @0dff4000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+Gpt_Ipw_DeInit/29 (Gpt_Ipw_DeInit) @0dff4ee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+Gpt_Ipw_Init/28 (Gpt_Ipw_Init) @0dff4b60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+Gpt_Ipw_InitInstances/27 (Gpt_Ipw_InitInstances) @0dff49a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+Gpt_Ipw_StartPredefTimer/26 (Gpt_Ipw_StartPredefTimer) @0dff48c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+Gpt_GetPredefTimerValue/25 (Gpt_GetPredefTimerValue) @0dff4460
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.Gpt_GetPredefTimerValue (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+Gpt_ProcessCommonInterrupt/24 (Gpt_ProcessCommonInterrupt) @0dff41c0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.Gpt_ProcessCommonInterrupt (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+Gpt_CheckWakeup/23 (Gpt_CheckWakeup) @0dfc6d20
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.Gpt_CheckWakeup (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+Gpt_EnableWakeup/22 (Gpt_EnableWakeup) @0dfc67e0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.Gpt_EnableWakeup (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+Gpt_DisableWakeup/21 (Gpt_DisableWakeup) @0dfc62a0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.Gpt_DisableWakeup (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+Gpt_SetMode/20 (Gpt_SetMode) @0dfc6ee0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.Gpt_SetMode (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+Gpt_DisableNotification/19 (Gpt_DisableNotification) @0dfc6c40
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.Gpt_DisableNotification (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+Gpt_EnableNotification/18 (Gpt_EnableNotification) @0dfc69a0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.Gpt_EnableNotification (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+Gpt_StopTimer/17 (Gpt_StopTimer) @0dfc6700
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.Gpt_StopTimer (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+Gpt_StartTimer/16 (Gpt_StartTimer) @0dfc6460
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.Gpt_StartTimer (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+Gpt_GetTimeRemaining/15 (Gpt_GetTimeRemaining) @0dfc61c0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.Gpt_GetTimeRemaining (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+Gpt_GetTimeElapsed/14 (Gpt_GetTimeElapsed) @0dcc2d20
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.Gpt_GetTimeElapsed (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+Gpt_DeInit/13 (Gpt_DeInit) @0dcc27e0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.Gpt_DeInit (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+Gpt_Init/12 (Gpt_Init) @0dcc2ee0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.Gpt_Init (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+Gpt_CheckStatusWakeupEnabled/11 (Gpt_CheckStatusWakeupEnabled) @0dcc2c40
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly asm_written section:.text.Gpt_CheckStatusWakeupEnabled (implicit_section)
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: local
+  Called by: 
+  Calls: 
+Gpt_CheckStatusNotificationEnabled/10 (Gpt_CheckStatusNotificationEnabled) @0dcc29a0
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly asm_written section:.text.Gpt_CheckStatusNotificationEnabled (implicit_section)
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: local
+  Called by: 
+  Calls: 
+Gpt_ConvertChannelIndexToChannel/9 (Gpt_ConvertChannelIndexToChannel) @0dcc2700
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly asm_written section:.text.Gpt_ConvertChannelIndexToChannel (implicit_section)
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: local
+  Called by: 
+  Calls: 
+Gpt_ValidateMode/8 (Gpt_ValidateMode) @0dcc2460
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly asm_written section:.text.Gpt_ValidateMode (implicit_section)
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: local
+  Called by: 
+  Calls: 
+Gpt_ValidateChannelStatus/7 (Gpt_ValidateChannelStatus) @0dcc21c0
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly asm_written section:.text.Gpt_ValidateChannelStatus (implicit_section)
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: local
+  Called by: 
+  Calls: 
+Gpt_aStopTime/6 (Gpt_aStopTime) @0dca6bd0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written section:.bss.Gpt_aStopTime (implicit_section)
+  Aux: @00000001
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags:
+Gpt_aChannelInfo/5 (Gpt_aChannelInfo) @0dca6b40
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written section:.bss.Gpt_aChannelInfo (implicit_section)
+  Aux: @0dca6bd0
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags:
+Gpt_pConfig/4 (Gpt_pConfig) @0dca6ab0
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.bss.Gpt_pConfig (implicit_section)
+  Aux: @0dca6b40
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags:
+Gpt_eMode/3 (Gpt_eMode) @0dca6a20
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written section:.bss.Gpt_eMode (implicit_section)
+  Aux: @0dca6ab0
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags: initialized

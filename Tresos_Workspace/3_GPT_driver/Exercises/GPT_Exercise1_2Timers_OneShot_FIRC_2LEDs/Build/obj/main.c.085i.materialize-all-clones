@@ -1,0 +1,51 @@
+EcuM_Init ()
+{
+  <bb 2> :
+  Mcu_Init (&Mcu_Config);
+  Mcu_InitClock (0);
+  Mcu_SetMode (0);
+  Platform_Init (0B);
+  Port_Init (&Port_Config);
+  Gpt_Init (&Gpt_Config);
+  return;
+
+}
+
+
+main ()
+{
+  int D.7332;
+
+  <bb 2> :
+  EcuM_Init ();
+
+  <bb 3> :
+  Gpt_StartTimer (0, 9375);
+  Gpt_StartTimer (1, 28125);
+  Gpt_EnableNotification (0);
+  Gpt_EnableNotification (1);
+  goto <bb 3>; [INV]
+
+}
+
+
+Gpt_TimeoutCallback_2 ()
+{
+  <bb 2> :
+  Dio_FlipChannel (73);
+  Dio_FlipChannel (112);
+  return;
+
+}
+
+
+Gpt_TimeoutCallback_1 ()
+{
+  <bb 2> :
+  Dio_FlipChannel (72);
+  Dio_FlipChannel (96);
+  return;
+
+}
+
+
