@@ -1,0 +1,135 @@
+ConvertAdcValue (uint16 adcValue, uint16 * voltage, uint16 * resistance)
+{
+  <bb 2> :
+  _1 = (float) adcValue;
+  _2 = _1 / 2.703e+3;
+  _3 = (double) _2;
+  _4 = _3 * 3.29999999999999982236431605997495353221893310547e+0;
+  _5 = (short unsigned int) _4;
+  *voltage = _5;
+  _6 = (float) adcValue;
+  _7 = _6 / 2.703e+3;
+  _8 = _7 * 1.0e+4;
+  _9 = (short unsigned int) _8;
+  *resistance = _9;
+  return;
+
+}
+
+
+Delay (uint32 ms)
+{
+  uint32 ElapsedTime;
+  uint32 SeedTick;
+  uint32 Timeout;
+  long unsigned int D.8287;
+
+  <bb 2> :
+  _1 = ms * 1000;
+  Timeout = OsIf_MicrosToTicks (_1, 1);
+  _2 = OsIf_GetCounter (1);
+  SeedTick = _2;
+  ElapsedTime = 0;
+
+  <bb 3> :
+  D.8287 = OsIf_GetElapsed (&SeedTick, 1);
+  ElapsedTime = D.8287 + ElapsedTime;
+  if (ElapsedTime < Timeout)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 4> :
+  SeedTick = {CLOBBER};
+  return;
+
+}
+
+
+EcuM_Init ()
+{
+  <bb 2> :
+  Mcu_Init (&Mcu_Config);
+  Mcu_InitClock (0);
+  Mcu_SetMode (0);
+  OsIf_Init (0B);
+  Platform_Init (0B);
+  Port_Init (&Port_Config);
+  Adc_Init (&Adc_Config);
+  return;
+
+}
+
+
+main ()
+{
+  uint16 resistancePot2;
+  uint16 resistancePot1;
+  uint16 voltagePot2;
+  uint16 voltagePot1;
+  uint16 adcValuePot2;
+  uint16 adcValuePot1;
+  Adc_ValueGroupType ResultBuffer[2];
+  Adc_ValueGroupType AdcReadGroupBuffer[2];
+  struct Adc_CalibrationStatusType CalibStatus;
+  int D.8284;
+
+  <bb 2> :
+  EcuM_Init ();
+  SEGGER_RTT_Init ();
+  Port_Ci_Port_Ip_SetMuxModeSel (1074044928B, 13, 8);
+  Adc_Calibrate (0, &CalibStatus);
+  Adc_SetupResultBuffer (0, &ResultBuffer);
+
+  <bb 3> :
+  Adc_StartGroupConversion (0);
+
+  <bb 4> :
+  _1 = Adc_GetGroupStatus (0);
+  if (_1 == 1)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 5> :
+  Adc_ReadGroup (0, &AdcReadGroupBuffer);
+  adcValuePot1 = AdcReadGroupBuffer[0];
+  adcValuePot2 = AdcReadGroupBuffer[1];
+  ConvertAdcValue (adcValuePot1, &voltagePot1, &resistancePot1);
+  ConvertAdcValue (adcValuePot2, &voltagePot2, &resistancePot2);
+  resistancePot1.0_2 = resistancePot1;
+  if (resistancePot1.0_2 > 10000)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  resistancePot1 = 10000;
+
+  <bb 7> :
+  resistancePot2.1_3 = resistancePot2;
+  if (resistancePot2.1_3 > 10000)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 8> :
+  resistancePot2 = 10000;
+
+  <bb 9> :
+  voltagePot1.2_4 = voltagePot1;
+  _5 = (int) voltagePot1.2_4;
+  resistancePot1.3_6 = resistancePot1;
+  _7 = (int) resistancePot1.3_6;
+  SEGGER_RTT_printf (0, "Pot1: Voltage = %d V, Resistance = %d Ohms\n", _5, _7);
+  voltagePot2.4_8 = voltagePot2;
+  _9 = (int) voltagePot2.4_8;
+  resistancePot2.5_10 = resistancePot2;
+  _11 = (int) resistancePot2.5_10;
+  SEGGER_RTT_printf (0, "Pot2: Voltage = %d V, Resistance = %d Ohms\n", _9, _11);
+  Delay (800);
+  goto <bb 3>; [INV]
+
+}
+
+

@@ -245,6 +245,11 @@ https://github.com/user-attachments/assets/52fb87fa-588e-4ca8-92fe-8630d8d8d1d9
 
 ![ADC_Exercise1_Rotate_Speed_8LEDs_Potentiometer_Terminal.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/ADC_driver/ADC_Exercise1_Rotate_Speed_8LEDs_Potentiometer_Terminal.png)
 
+* #### ADC Exercise 2: Two Potentiometers, display Volts and Ohms
+Display the values of the two potentiometers in Ohms and Volts.
+
+![ADC_Exercise2_2PotValues_Ohms_Volts_Terminal.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/ADC_driver/ADC_Exercise2_2PotValues_Ohms_Volts_Terminal.png)
+
 ### **CAN Driver Evidences**
 
 * #### CAN Example 3: Transmission using Interrupts (ISRs)

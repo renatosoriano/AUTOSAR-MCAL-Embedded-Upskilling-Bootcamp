@@ -1,0 +1,179 @@
+OsIf_MicrosToTicks (uint32 Micros, OsIf_CounterType SelectedCounter)
+{
+  uint32 Value;
+  uint32 D.5442;
+
+  <bb 2> :
+  Value = 0;
+  switch (SelectedCounter) <default: <L2> [INV], case 0: <L0> [INV], case 1: <L1> [INV]>
+
+  <bb 3> :
+<L0>:
+  Value = OsIf_Timer_Dummy_MicrosToTicks (Micros);
+  goto <bb 6>; [INV]
+
+  <bb 4> :
+<L1>:
+  Value = OsIf_Timer_System_MicrosToTicks (Micros);
+  goto <bb 6>; [INV]
+
+  <bb 5> :
+<L2>:
+
+  <bb 6> :
+  D.5442 = Value;
+
+  <bb 7> :
+<L4>:
+  return D.5442;
+
+}
+
+
+OsIf_SetTimerFrequency (uint32 Freq, OsIf_CounterType SelectedCounter)
+{
+  <bb 2> :
+  switch (SelectedCounter) <default: <L2> [INV], case 0: <L0> [INV], case 1: <L1> [INV]>
+
+  <bb 3> :
+<L0>:
+  OsIf_Timer_Dummy_SetTimerFrequency (Freq);
+  goto <bb 6>; [INV]
+
+  <bb 4> :
+<L1>:
+  OsIf_Timer_System_SetTimerFrequency (Freq);
+  goto <bb 6>; [INV]
+
+  <bb 5> :
+<L2>:
+
+  <bb 6> :
+  return;
+
+}
+
+
+OsIf_GetElapsed (uint32 * const CurrentRef, OsIf_CounterType SelectedCounter)
+{
+  uint32 Value;
+  uint32 D.5438;
+
+  <bb 2> :
+  Value = 0;
+  switch (SelectedCounter) <default: <L2> [INV], case 0: <L0> [INV], case 1: <L1> [INV]>
+
+  <bb 3> :
+<L0>:
+  Value = OsIf_Timer_Dummy_GetElapsed (CurrentRef);
+  goto <bb 6>; [INV]
+
+  <bb 4> :
+<L1>:
+  Value = OsIf_Timer_System_GetElapsed (CurrentRef);
+  goto <bb 6>; [INV]
+
+  <bb 5> :
+<L2>:
+
+  <bb 6> :
+  D.5438 = Value;
+
+  <bb 7> :
+<L4>:
+  return D.5438;
+
+}
+
+
+OsIf_GetCounter (OsIf_CounterType SelectedCounter)
+{
+  uint32 Value;
+  uint32 D.5434;
+
+  <bb 2> :
+  Value = 0;
+  switch (SelectedCounter) <default: <L2> [INV], case 0: <L0> [INV], case 1: <L1> [INV]>
+
+  <bb 3> :
+<L0>:
+  Value = OsIf_Timer_Dummy_GetCounter ();
+  goto <bb 6>; [INV]
+
+  <bb 4> :
+<L1>:
+  Value = OsIf_Timer_System_GetCounter ();
+  goto <bb 6>; [INV]
+
+  <bb 5> :
+<L2>:
+
+  <bb 6> :
+  D.5434 = Value;
+
+  <bb 7> :
+<L4>:
+  return D.5434;
+
+}
+
+
+OsIf_Init (const void * Config)
+{
+  <bb 2> :
+  OsIf_Timer_System_Init ();
+  return;
+
+}
+
+
+OsIf_Timer_Dummy_MicrosToTicks (uint32 Micros)
+{
+  uint32 D.5444;
+
+  <bb 2> :
+  D.5444 = Micros;
+
+  <bb 3> :
+<L0>:
+  return D.5444;
+
+}
+
+
+OsIf_Timer_Dummy_SetTimerFrequency (uint32 Freq)
+{
+  <bb 2> :
+  return;
+
+}
+
+
+OsIf_Timer_Dummy_GetElapsed (const uint32 * const CurrentRef)
+{
+  uint32 D.5440;
+
+  <bb 2> :
+  D.5440 = 1;
+
+  <bb 3> :
+<L0>:
+  return D.5440;
+
+}
+
+
+OsIf_Timer_Dummy_GetCounter ()
+{
+  uint32 D.5436;
+
+  <bb 2> :
+  D.5436 = 0;
+
+  <bb 3> :
+<L0>:
+  return D.5436;
+
+}
+
+
