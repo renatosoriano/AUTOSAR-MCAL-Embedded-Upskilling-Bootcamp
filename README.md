@@ -209,7 +209,14 @@ You can find here captures and media relevant to examples and/or exercises visib
 
 _Will be uploading them as they are ready._
 
-### **CAN Driver Examples Results**
+### **DIO-PORT Driver Evidences**
+
+* #### DIO Exercise 8: Rotate LEDs Left-Right using Buttons
+Pressing 1st button will rotate the LEDs from right to left, and pressing 2nd button will rotate them from left to right. 3rd button activates a different speed.
+
+![DIO_Exercise8_Rotate_LEDs_Left_Right_Buttons.GIF](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/DIO_PORT_driver/DIO_Exercise8_Rotate_LEDs_Left_Right_Buttons.GIF)
+
+### **CAN Driver Evidences**
 
 * #### CAN Example 3: Transmission using Interrupts (ISRs)
 Hardware board transmits (Tx) an 8-byte single message with ID 0x123 and specified Data payload: 01 02 03 04 05 06 11 12. Savvy CAN receiving (Rx) the data, evertime having byte 1 and 8 increased by value of 0x1 as per the example intentional behavior.
