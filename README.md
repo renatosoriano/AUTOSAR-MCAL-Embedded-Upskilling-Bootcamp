@@ -216,6 +216,8 @@ Pressing 1st button will rotate the LEDs from right to left, and pressing 2nd bu
 
 ![DIO_Exercise8_Rotate_LEDs_Left_Right_Buttons.GIF](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/DIO_PORT_driver/DIO_Exercise8_Rotate_LEDs_Left_Right_Buttons.GIF)
 
+https://github.com/user-attachments/assets/3915911f-6c8a-49f0-acd5-e59d21f5ec7f
+
 ### **CAN Driver Evidences**
 
 * #### CAN Example 3: Transmission using Interrupts (ISRs)
