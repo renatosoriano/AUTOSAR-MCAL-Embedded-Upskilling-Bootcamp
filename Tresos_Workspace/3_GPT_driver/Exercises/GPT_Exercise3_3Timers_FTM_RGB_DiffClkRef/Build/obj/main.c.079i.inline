@@ -1,0 +1,254 @@
+IPA summary for EcuM_Init/12 is missing.
+IPA summary for main/11 is missing.
+IPA summary for Gpt_TimeoutCallback_2/10 is missing.
+IPA summary for Gpt_TimeoutCallback_1/9 is missing.
+IPA summary for Gpt_TimeoutCallback_0/8 is missing.
+
+Flattening functions:
+Overall time estimate: 0.000000 weighted by profile: 0.000000
+
+Deciding on inlining of small functions.  Starting with size 0.
+node context cache: 0 hits, 0 misses, 0 initializations
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+
+Deciding on functions to be inlined into all callers and removing useless speculations:
+Overall time estimate: 0.000000 weighted by profile: 0.000000
+
+Why inlining failed?
+function not considered for inlining              :        1 calls, 1.000000 freq, 0 count
+function body not available                       :       15 calls, 15.000000 freq, 0 count
+IPA summary for EcuM_Init/12 is missing.
+IPA summary for main/11 is missing.
+IPA summary for Gpt_TimeoutCallback_2/10 is missing.
+IPA summary for Gpt_TimeoutCallback_1/9 is missing.
+IPA summary for Gpt_TimeoutCallback_0/8 is missing.
+Symbol table:
+
+Gpt_Config/24 (Gpt_Config) @0ea039d8
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: EcuM_Init/12 (addr) 
+  Availability: not_available
+  Varpool flags: read-only
+Gpt_Init/23 (Gpt_Init) @0eb297e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: EcuM_Init/12 
+  Calls: 
+Port_Config/22 (Port_Config) @0ea03948
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: EcuM_Init/12 (addr) 
+  Availability: not_available
+  Varpool flags: read-only
+Port_Init/21 (Port_Init) @0eb29700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: EcuM_Init/12 
+  Calls: 
+Platform_Init/20 (Platform_Init) @0eb29620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: EcuM_Init/12 
+  Calls: 
+Mcu_SetMode/19 (Mcu_SetMode) @0eb29540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: EcuM_Init/12 
+  Calls: 
+Mcu_InitClock/18 (Mcu_InitClock) @0eb29460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: EcuM_Init/12 
+  Calls: 
+Mcu_Config/17 (Mcu_Config) @0ea037e0
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: EcuM_Init/12 (addr) 
+  Availability: not_available
+  Varpool flags: read-only
+Mcu_Init/16 (Mcu_Init) @0eb29380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: EcuM_Init/12 
+  Calls: 
+Gpt_EnableNotification/15 (Gpt_EnableNotification) @0eb291c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: main/11 main/11 main/11 
+  Calls: 
+Gpt_StartTimer/14 (Gpt_StartTimer) @0eb290e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: main/11 main/11 main/11 
+  Calls: 
+Dio_FlipChannel/13 (Dio_FlipChannel) @0ea00e00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Gpt_TimeoutCallback_2/10 Gpt_TimeoutCallback_1/9 Gpt_TimeoutCallback_0/8 
+  Calls: 
+EcuM_Init/12 (EcuM_Init) @0ea009a0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Mcu_Config/17 (addr) Port_Config/22 (addr) Gpt_Config/24 (addr) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: main/11 
+  Calls: Gpt_Init/23 Port_Init/21 Platform_Init/20 Mcu_SetMode/19 Mcu_InitClock/18 Mcu_Init/16 
+main/11 (main) @0ea00700
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Gpt_EnableNotification/15 Gpt_EnableNotification/15 Gpt_EnableNotification/15 Gpt_StartTimer/14 Gpt_StartTimer/14 Gpt_StartTimer/14 EcuM_Init/12 
+Gpt_TimeoutCallback_2/10 (Gpt_TimeoutCallback_2) @0ea00460
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Dio_FlipChannel/13 
+Gpt_TimeoutCallback_1/9 (Gpt_TimeoutCallback_1) @0ea001c0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Dio_FlipChannel/13 
+Gpt_TimeoutCallback_0/8 (Gpt_TimeoutCallback_0) @0e9fbee0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Dio_FlipChannel/13 
+
+;; Function Gpt_TimeoutCallback_0 (Gpt_TimeoutCallback_0, funcdef_no=8, decl_uid=7320, cgraph_uid=9, symbol_order=8)
+
+Gpt_TimeoutCallback_0 ()
+{
+  <bb 2> :
+  Dio_FlipChannel (96);
+  return;
+
+}
+
+
+
+;; Function Gpt_TimeoutCallback_1 (Gpt_TimeoutCallback_1, funcdef_no=9, decl_uid=7323, cgraph_uid=10, symbol_order=9)
+
+Gpt_TimeoutCallback_1 ()
+{
+  <bb 2> :
+  Dio_FlipChannel (111);
+  return;
+
+}
+
+
+
+;; Function Gpt_TimeoutCallback_2 (Gpt_TimeoutCallback_2, funcdef_no=10, decl_uid=7326, cgraph_uid=11, symbol_order=10)
+
+Gpt_TimeoutCallback_2 ()
+{
+  <bb 2> :
+  Dio_FlipChannel (112);
+  return;
+
+}
+
+
+
+;; Function main (main, funcdef_no=11, decl_uid=7329, cgraph_uid=12, symbol_order=11)
+
+main ()
+{
+  int D.7339;
+
+  <bb 2> :
+  EcuM_Init ();
+  Gpt_StartTimer (0, 9375);
+  Gpt_StartTimer (1, 12500);
+  Gpt_StartTimer (1, 50000);
+  Gpt_EnableNotification (0);
+  Gpt_EnableNotification (1);
+  Gpt_EnableNotification (2);
+
+  <bb 3> :
+  goto <bb 3>; [INV]
+
+}
+
+
+
+;; Function EcuM_Init (EcuM_Init, funcdef_no=12, decl_uid=7318, cgraph_uid=13, symbol_order=12)
+
+EcuM_Init ()
+{
+  <bb 2> :
+  Mcu_Init (&Mcu_Config);
+  Mcu_InitClock (0);
+  Mcu_SetMode (0);
+  Platform_Init (0B);
+  Port_Init (&Port_Config);
+  Gpt_Init (&Gpt_Config);
+  return;
+
+}
+
+

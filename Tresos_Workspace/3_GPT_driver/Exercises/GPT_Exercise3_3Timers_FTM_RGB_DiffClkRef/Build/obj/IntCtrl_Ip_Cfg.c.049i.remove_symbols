@@ -1,0 +1,50 @@
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+Symbol table:
+
+FTM_2_CH_0_CH_1_ISR/4 (FTM_2_CH_0_CH_1_ISR) @0de4b2a0
+  Type: function
+  Visibility: external public
+  Address is taken.
+  References: 
+  Referring: aIrqConfiguration/0 (addr) 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+FTM_1_CH_0_CH_1_ISR/3 (FTM_1_CH_0_CH_1_ISR) @0de4b1c0
+  Type: function
+  Visibility: external public
+  Address is taken.
+  References: 
+  Referring: aIrqConfiguration/0 (addr) 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+FTM_0_CH_0_CH_1_ISR/2 (FTM_0_CH_0_CH_1_ISR) @0de4b0e0
+  Type: function
+  Visibility: external public
+  Address is taken.
+  References: 
+  Referring: aIrqConfiguration/0 (addr) 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+intCtrlConfig/1 (intCtrlConfig) @0de4a000
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: aIrqConfiguration/0 (addr) 
+  Referring: 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+aIrqConfiguration/0 (aIrqConfiguration) @0da65c60
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: FTM_0_CH_0_CH_1_ISR/2 (addr) FTM_1_CH_0_CH_1_ISR/3 (addr) FTM_2_CH_0_CH_1_ISR/4 (addr) 
+  Referring: intCtrlConfig/1 (addr) 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
