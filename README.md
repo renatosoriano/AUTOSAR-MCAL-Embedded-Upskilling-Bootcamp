@@ -218,6 +218,9 @@ Pressing 1st button will rotate the LEDs from right to left, and pressing 2nd bu
 
 https://github.com/user-attachments/assets/26b8afe0-4fea-4588-bc26-9f966ed6f95d
 
+
+https://github.com/user-attachments/assets/8eb3f5c9-890b-4bfc-8155-4dca482ff42e
+
 ### **GPT Driver Evidences**
 
 * #### GPT Exercise 1: 2 Timers in OneShot mode using FIRC clock to toggle 2 LEDs
