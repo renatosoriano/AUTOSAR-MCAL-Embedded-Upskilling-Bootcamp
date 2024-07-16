@@ -1,0 +1,265 @@
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+Symbol table:
+
+Port_Config/11 (Port_Config) @0ddafea0
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: EcuM_Init/2 (addr) 
+  Availability: not_available
+  Varpool flags: read-only
+Port_Init/10 (Port_Init) @0ddc4380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: EcuM_Init/2 
+  Calls: 
+Mcu_SetMode/9 (Mcu_SetMode) @0ddc42a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: EcuM_Init/2 
+  Calls: 
+Mcu_InitClock/8 (Mcu_InitClock) @0ddc41c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: EcuM_Init/2 
+  Calls: 
+Mcu_Config/7 (Mcu_Config) @0ddafd80
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: EcuM_Init/2 (addr) 
+  Availability: not_available
+  Varpool flags: read-only
+Mcu_Init/6 (Mcu_Init) @0ddc40e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: EcuM_Init/2 
+  Calls: 
+DioConfig_aChannelGroupList/5 (DioConfig_aChannelGroupList) @0ddafa20
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: main/1 (addr) main/1 (addr) main/1 (addr) main/1 (addr) main/1 (addr) main/1 (addr) 
+  Availability: not_available
+  Varpool flags: read-only
+Dio_WriteChannelGroup/4 (Dio_WriteChannelGroup) @0dda8ee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: main/1 main/1 main/1 main/1 main/1 main/1 
+  Calls: 
+Dio_ReadChannel/3 (Dio_ReadChannel) @0dda8e00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: main/1 main/1 main/1 
+  Calls: 
+EcuM_Init/2 (EcuM_Init) @0dda87e0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Mcu_Config/7 (addr) Port_Config/11 (addr) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: main/1 
+  Calls: Port_Init/10 Mcu_SetMode/9 Mcu_InitClock/8 Mcu_Init/6 
+main/1 (main) @0dda8540
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: DioConfig_aChannelGroupList/5 (addr) DioConfig_aChannelGroupList/5 (addr) DioConfig_aChannelGroupList/5 (addr) DioConfig_aChannelGroupList/5 (addr) DioConfig_aChannelGroupList/5 (addr) DioConfig_aChannelGroupList/5 (addr) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Dio_WriteChannelGroup/4 Dio_WriteChannelGroup/4 Dio_ReadChannel/3 Dio_WriteChannelGroup/4 Dio_WriteChannelGroup/4 Dio_ReadChannel/3 Dio_WriteChannelGroup/4 Dio_WriteChannelGroup/4 Dio_ReadChannel/3 EcuM_Init/2 
+EcuM_Init ()
+{
+  <bb 2> :
+  Mcu_Init (&Mcu_Config);
+  Mcu_InitClock (0);
+  Mcu_SetMode (0);
+  Port_Init (&Port_Config);
+  return;
+
+}
+
+
+main ()
+{
+  uint32 i;
+  uint8 i;
+  uint32 i;
+  uint8 i;
+  uint32 i;
+  uint8 i;
+  int D.6089;
+  unsigned char _1;
+  int _2;
+  unsigned int _3;
+  unsigned char i.0_4;
+  unsigned char _5;
+  int _6;
+  unsigned int _7;
+  unsigned char i.1_8;
+  unsigned char _9;
+  int _10;
+  unsigned int _11;
+  unsigned char i.2_12;
+
+  <bb 2> :
+  EcuM_Init ();
+
+  <bb 3> :
+  _1 = Dio_ReadChannel (140);
+  if (_1 == 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 4> :
+  i_29 = 0;
+  goto <bb 9>; [INV]
+
+  <bb 5> :
+  Dio_WriteChannelGroup (&DioConfig_aChannelGroupList[0], 0);
+  _2 = (int) i_13;
+  _3 = 1 << _2;
+  Dio_WriteChannelGroup (&DioConfig_aChannelGroupList[0], _3);
+  i_32 = 0;
+  goto <bb 7>; [INV]
+
+  <bb 6> :
+  i_34 = i_14 + 1;
+
+  <bb 7> :
+  # i_14 = PHI <i_32(5), i_34(6)>
+  if (i_14 <= 499999)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 8> :
+  i.0_4 = i_13;
+  i_33 = i.0_4 + 1;
+
+  <bb 9> :
+  # i_13 = PHI <i_29(4), i_33(8)>
+  if (i_13 <= 7)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 10> :
+  _5 = Dio_ReadChannel (113);
+  if (_5 == 0)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 17>; [INV]
+
+  <bb 11> :
+  i_36 = 0;
+  goto <bb 16>; [INV]
+
+  <bb 12> :
+  Dio_WriteChannelGroup (&DioConfig_aChannelGroupList[0], 0);
+  _6 = (int) i_15;
+  _7 = 1 << _6;
+  Dio_WriteChannelGroup (&DioConfig_aChannelGroupList[0], _7);
+  i_39 = 0;
+  goto <bb 14>; [INV]
+
+  <bb 13> :
+  i_41 = i_16 + 1;
+
+  <bb 14> :
+  # i_16 = PHI <i_39(12), i_41(13)>
+  if (i_16 <= 249999)
+    goto <bb 13>; [INV]
+  else
+    goto <bb 15>; [INV]
+
+  <bb 15> :
+  i.1_8 = i_15;
+  i_40 = i.1_8 + 1;
+
+  <bb 16> :
+  # i_15 = PHI <i_36(11), i_40(15)>
+  if (i_15 <= 7)
+    goto <bb 12>; [INV]
+  else
+    goto <bb 17>; [INV]
+
+  <bb 17> :
+  _9 = Dio_ReadChannel (12);
+  if (_9 == 0)
+    goto <bb 18>; [INV]
+  else
+    goto <bb 24>; [INV]
+
+  <bb 18> :
+  i_43 = 0;
+  goto <bb 23>; [INV]
+
+  <bb 19> :
+  Dio_WriteChannelGroup (&DioConfig_aChannelGroupList[0], 0);
+  _10 = (int) i_17;
+  _11 = 1 << _10;
+  Dio_WriteChannelGroup (&DioConfig_aChannelGroupList[0], _11);
+  i_46 = 0;
+  goto <bb 21>; [INV]
+
+  <bb 20> :
+  i_48 = i_18 + 1;
+
+  <bb 21> :
+  # i_18 = PHI <i_46(19), i_48(20)>
+  if (i_18 <= 99999)
+    goto <bb 20>; [INV]
+  else
+    goto <bb 22>; [INV]
+
+  <bb 22> :
+  i.2_12 = i_17;
+  i_47 = i.2_12 + 1;
+
+  <bb 23> :
+  # i_17 = PHI <i_43(18), i_47(22)>
+  if (i_17 <= 7)
+    goto <bb 19>; [INV]
+  else
+    goto <bb 24>; [INV]
+
+  <bb 24> :
+  goto <bb 3>; [INV]
+
+}
+
+

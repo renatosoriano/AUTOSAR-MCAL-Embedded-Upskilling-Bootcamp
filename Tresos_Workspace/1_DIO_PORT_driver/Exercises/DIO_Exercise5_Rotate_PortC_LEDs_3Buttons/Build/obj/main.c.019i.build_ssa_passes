@@ -1,0 +1,145 @@
+EcuM_Init ()
+{
+  <bb 2> :
+  Mcu_Init (&Mcu_Config);
+  Mcu_InitClock (0);
+  Mcu_SetMode (0);
+  Port_Init (&Port_Config);
+  return;
+
+}
+
+
+main ()
+{
+  uint32 i;
+  uint8 i;
+  uint32 i;
+  uint8 i;
+  uint32 i;
+  uint8 i;
+  int D.6089;
+
+  <bb 2> :
+  EcuM_Init ();
+
+  <bb 3> :
+  _1 = Dio_ReadChannel (140);
+  if (_1 == 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 4> :
+  i = 0;
+  goto <bb 9>; [INV]
+
+  <bb 5> :
+  Dio_WriteChannelGroup (&DioConfig_aChannelGroupList[0], 0);
+  _2 = (int) i;
+  _3 = 1 << _2;
+  Dio_WriteChannelGroup (&DioConfig_aChannelGroupList[0], _3);
+  i = 0;
+  goto <bb 7>; [INV]
+
+  <bb 6> :
+  i = i + 1;
+
+  <bb 7> :
+  if (i <= 499999)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 8> :
+  i.0_4 = i;
+  i = i.0_4 + 1;
+
+  <bb 9> :
+  if (i <= 7)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 10> :
+  _5 = Dio_ReadChannel (113);
+  if (_5 == 0)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 17>; [INV]
+
+  <bb 11> :
+  i = 0;
+  goto <bb 16>; [INV]
+
+  <bb 12> :
+  Dio_WriteChannelGroup (&DioConfig_aChannelGroupList[0], 0);
+  _6 = (int) i;
+  _7 = 1 << _6;
+  Dio_WriteChannelGroup (&DioConfig_aChannelGroupList[0], _7);
+  i = 0;
+  goto <bb 14>; [INV]
+
+  <bb 13> :
+  i = i + 1;
+
+  <bb 14> :
+  if (i <= 249999)
+    goto <bb 13>; [INV]
+  else
+    goto <bb 15>; [INV]
+
+  <bb 15> :
+  i.1_8 = i;
+  i = i.1_8 + 1;
+
+  <bb 16> :
+  if (i <= 7)
+    goto <bb 12>; [INV]
+  else
+    goto <bb 17>; [INV]
+
+  <bb 17> :
+  _9 = Dio_ReadChannel (12);
+  if (_9 == 0)
+    goto <bb 18>; [INV]
+  else
+    goto <bb 24>; [INV]
+
+  <bb 18> :
+  i = 0;
+  goto <bb 23>; [INV]
+
+  <bb 19> :
+  Dio_WriteChannelGroup (&DioConfig_aChannelGroupList[0], 0);
+  _10 = (int) i;
+  _11 = 1 << _10;
+  Dio_WriteChannelGroup (&DioConfig_aChannelGroupList[0], _11);
+  i = 0;
+  goto <bb 21>; [INV]
+
+  <bb 20> :
+  i = i + 1;
+
+  <bb 21> :
+  if (i <= 99999)
+    goto <bb 20>; [INV]
+  else
+    goto <bb 22>; [INV]
+
+  <bb 22> :
+  i.2_12 = i;
+  i = i.2_12 + 1;
+
+  <bb 23> :
+  if (i <= 7)
+    goto <bb 19>; [INV]
+  else
+    goto <bb 24>; [INV]
+
+  <bb 24> :
+  goto <bb 3>; [INV]
+
+}
+
+
