@@ -1,0 +1,175 @@
+IPA summary for EcuM_Init/2 is missing.
+IPA summary for main/1 is missing.
+
+Flattening functions:
+Overall time estimate: 0.000000 weighted by profile: 0.000000
+
+Deciding on inlining of small functions.  Starting with size 0.
+node context cache: 0 hits, 0 misses, 0 initializations
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+
+Deciding on functions to be inlined into all callers and removing useless speculations:
+Overall time estimate: 0.000000 weighted by profile: 0.000000
+
+Why inlining failed?
+function not considered for inlining              :        1 calls, 1.000000 freq, 0 count
+function body not available                       :        8 calls, 8.000000 freq, 0 count
+IPA summary for EcuM_Init/2 is missing.
+IPA summary for main/1 is missing.
+Symbol table:
+
+Port_Config/10 (Port_Config) @0dd9d3f0
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: EcuM_Init/2 (addr) 
+  Availability: not_available
+  Varpool flags: read-only
+Port_Init/9 (Port_Init) @0dd9e0e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: EcuM_Init/2 
+  Calls: 
+Mcu_SetMode/8 (Mcu_SetMode) @0dd9e000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: EcuM_Init/2 
+  Calls: 
+Mcu_InitClock/7 (Mcu_InitClock) @0dd98700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: EcuM_Init/2 
+  Calls: 
+Mcu_Config/6 (Mcu_Config) @0dd9d2d0
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: EcuM_Init/2 (addr) 
+  Availability: not_available
+  Varpool flags: read-only
+Mcu_Init/5 (Mcu_Init) @0dd98ee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: EcuM_Init/2 
+  Calls: 
+DioConfig_aChannelGroupList/4 (DioConfig_aChannelGroupList) @0dd9d090
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: main/1 (addr) main/1 (addr) main/1 (addr) main/1 (addr) 
+  Availability: not_available
+  Varpool flags: read-only
+Dio_WriteChannelGroup/3 (Dio_WriteChannelGroup) @0dd98d20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: main/1 main/1 main/1 main/1 
+  Calls: 
+EcuM_Init/2 (EcuM_Init) @0dd988c0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Mcu_Config/6 (addr) Port_Config/10 (addr) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: main/1 
+  Calls: Port_Init/9 Mcu_SetMode/8 Mcu_InitClock/7 Mcu_Init/5 
+main/1 (main) @0dd98620
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: DioConfig_aChannelGroupList/4 (addr) DioConfig_aChannelGroupList/4 (addr) DioConfig_aChannelGroupList/4 (addr) DioConfig_aChannelGroupList/4 (addr) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Dio_WriteChannelGroup/3 Dio_WriteChannelGroup/3 Dio_WriteChannelGroup/3 Dio_WriteChannelGroup/3 EcuM_Init/2 
+
+;; Function main (main, funcdef_no=1, decl_uid=6049, cgraph_uid=2, symbol_order=1)
+
+main ()
+{
+  uint32 i;
+  uint32 i;
+  int D.6067;
+
+  <bb 2> :
+  EcuM_Init ();
+
+  <bb 3> :
+  Dio_WriteChannelGroup (&DioConfig_aChannelGroupList[0], 5);
+  Dio_WriteChannelGroup (&DioConfig_aChannelGroupList[1], 5);
+  i_8 = 0;
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  i_13 = i_1 + 1;
+
+  <bb 5> :
+  # i_1 = PHI <i_8(3), i_13(4)>
+  if (i_1 <= 4999999)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 6> :
+  Dio_WriteChannelGroup (&DioConfig_aChannelGroupList[0], 10);
+  Dio_WriteChannelGroup (&DioConfig_aChannelGroupList[1], 10);
+  i_11 = 0;
+  goto <bb 8>; [INV]
+
+  <bb 7> :
+  i_12 = i_2 + 1;
+
+  <bb 8> :
+  # i_2 = PHI <i_11(6), i_12(7)>
+  if (i_2 <= 4999999)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 9> :
+  goto <bb 3>; [INV]
+
+}
+
+
+
+;; Function EcuM_Init (EcuM_Init, funcdef_no=2, decl_uid=6047, cgraph_uid=3, symbol_order=2)
+
+EcuM_Init ()
+{
+  <bb 2> :
+  Mcu_Init (&Mcu_Config);
+  Mcu_InitClock (0);
+  Mcu_SetMode (0);
+  Port_Init (&Port_Config);
+  return;
+
+}
+
+

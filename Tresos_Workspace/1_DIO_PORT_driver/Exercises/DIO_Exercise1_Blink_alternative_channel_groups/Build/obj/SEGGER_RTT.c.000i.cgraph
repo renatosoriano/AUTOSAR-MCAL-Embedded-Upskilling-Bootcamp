@@ -1,0 +1,2287 @@
+Trivially needed symbols: SEGGER_RTT_GetBytesInBuffer/40 SEGGER_RTT_GetAvailWriteSpace/39 SEGGER_RTT_TerminalOut/38 SEGGER_RTT_SetTerminal/37 SEGGER_RTT_Init/36 SEGGER_RTT_SetFlagsDownBuffer/35 SEGGER_RTT_SetFlagsUpBuffer/34 SEGGER_RTT_SetNameDownBuffer/33 SEGGER_RTT_SetNameUpBuffer/32 SEGGER_RTT_ConfigDownBuffer/31 SEGGER_RTT_ConfigUpBuffer/30 SEGGER_RTT_AllocUpBuffer/29 SEGGER_RTT_AllocDownBuffer/28 SEGGER_RTT_HasDataUp/27 SEGGER_RTT_HasData/26 SEGGER_RTT_HasKey/25 SEGGER_RTT_WaitKey/24 SEGGER_RTT_GetKey/23 SEGGER_RTT_PutChar/22 SEGGER_RTT_PutCharSkip/21 SEGGER_RTT_PutCharSkipNoLock/20 SEGGER_RTT_WriteString/19 SEGGER_RTT_Write/18 SEGGER_RTT_WriteDownBuffer/17 SEGGER_RTT_WriteNoLock/16 SEGGER_RTT_WriteDownBufferNoLock/15 SEGGER_RTT_WriteWithOverwriteNoLock/14 SEGGER_RTT_Read/13 SEGGER_RTT_ReadUpBuffer/12 SEGGER_RTT_ReadNoLock/11 SEGGER_RTT_ReadUpBufferNoLock/10 _GetAvailWriteSpace/9 _PostTerminalSwitch/8 _WriteNoCheck/7 _WriteBlocking/6 _DoInit/5 _ActiveTerminal/4 _acDownBuffer/3 _acUpBuffer/2 _SEGGER_RTT/1 _aTerminalId/0
+Trivially needed symbols: _aInitStr/42
+
+
+Initial Symbol table:
+
+strlen/44 (strlen) @0dad1540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: SEGGER_RTT_TerminalOut/38 SEGGER_RTT_WriteString/19 
+  Calls: 
+memcpy/43 (memcpy) @0dab3a80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: SEGGER_RTT_WriteWithOverwriteNoLock/14 SEGGER_RTT_WriteWithOverwriteNoLock/14 SEGGER_RTT_ReadNoLock/11 SEGGER_RTT_ReadNoLock/11 SEGGER_RTT_ReadUpBufferNoLock/10 SEGGER_RTT_ReadUpBufferNoLock/10 _WriteNoCheck/7 _WriteNoCheck/7 _WriteNoCheck/7 _WriteBlocking/6 
+  Calls: 
+_aInitStr/42 (_aInitStr) @0dab2480
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @0da149a0
+  References: 
+  Referring: _DoInit/5 (read) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+memset/41 (memset) @0dab38c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: _DoInit/5 
+  Calls: 
+SEGGER_RTT_GetBytesInBuffer/40 (SEGGER_RTT_GetBytesInBuffer) @0dab3460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @01981040
+  References: _SEGGER_RTT/1 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+SEGGER_RTT_GetAvailWriteSpace/39 (SEGGER_RTT_GetAvailWriteSpace) @0dab31c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0dab3460
+  References: _SEGGER_RTT/1 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: _GetAvailWriteSpace/9 
+SEGGER_RTT_TerminalOut/38 (SEGGER_RTT_TerminalOut) @0da9fe00
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0dab31c0
+  References: _SEGGER_RTT/1 (addr) _SEGGER_RTT/1 (addr) _ActiveTerminal/4 (read) _ActiveTerminal/4 (read) _ActiveTerminal/4 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: _PostTerminalSwitch/8 _WriteBlocking/6 _PostTerminalSwitch/8 _PostTerminalSwitch/8 _WriteBlocking/6 _PostTerminalSwitch/8 _PostTerminalSwitch/8 _WriteBlocking/6 _PostTerminalSwitch/8 _GetAvailWriteSpace/9 strlen/44 _DoInit/5 
+SEGGER_RTT_SetTerminal/37 (SEGGER_RTT_SetTerminal) @0da9f460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0da9fe00
+  References: _SEGGER_RTT/1 (addr) _aTerminalId/0 (read) _SEGGER_RTT/1 (addr) _ActiveTerminal/4 (write) _ActiveTerminal/4 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: _WriteNoCheck/7 _GetAvailWriteSpace/9 _WriteBlocking/6 _DoInit/5 
+SEGGER_RTT_Init/36 (SEGGER_RTT_Init) @0da9fd20
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0da9f460
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: _DoInit/5 
+SEGGER_RTT_SetFlagsDownBuffer/35 (SEGGER_RTT_SetFlagsDownBuffer) @0da9fa80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0da9fd20
+  References: _SEGGER_RTT/1 (addr) _SEGGER_RTT/1 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: _DoInit/5 
+SEGGER_RTT_SetFlagsUpBuffer/34 (SEGGER_RTT_SetFlagsUpBuffer) @0da9f700
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0da9fa80
+  References: _SEGGER_RTT/1 (addr) _SEGGER_RTT/1 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: _DoInit/5 
+SEGGER_RTT_SetNameDownBuffer/33 (SEGGER_RTT_SetNameDownBuffer) @0da9f380
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0da9f700
+  References: _SEGGER_RTT/1 (addr) _SEGGER_RTT/1 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: _DoInit/5 
+SEGGER_RTT_SetNameUpBuffer/32 (SEGGER_RTT_SetNameUpBuffer) @0da9f000
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0da9f380
+  References: _SEGGER_RTT/1 (addr) _SEGGER_RTT/1 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: _DoInit/5 
+SEGGER_RTT_ConfigDownBuffer/31 (SEGGER_RTT_ConfigDownBuffer) @0da6a540
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0da9f000
+  References: _SEGGER_RTT/1 (addr) _SEGGER_RTT/1 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: _DoInit/5 
+SEGGER_RTT_ConfigUpBuffer/30 (SEGGER_RTT_ConfigUpBuffer) @0da6aee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0da6a540
+  References: _SEGGER_RTT/1 (addr) _SEGGER_RTT/1 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: _DoInit/5 
+SEGGER_RTT_AllocUpBuffer/29 (SEGGER_RTT_AllocUpBuffer) @0da6ab60
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0da6aee0
+  References: _SEGGER_RTT/1 (addr) _SEGGER_RTT/1 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: _DoInit/5 
+SEGGER_RTT_AllocDownBuffer/28 (SEGGER_RTT_AllocDownBuffer) @0da6a7e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0da6ab60
+  References: _SEGGER_RTT/1 (addr) _SEGGER_RTT/1 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: _DoInit/5 
+SEGGER_RTT_HasDataUp/27 (SEGGER_RTT_HasDataUp) @0da6a460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0da6a7e0
+  References: _SEGGER_RTT/1 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+SEGGER_RTT_HasData/26 (SEGGER_RTT_HasData) @0da6a1c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0da6a460
+  References: _SEGGER_RTT/1 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+SEGGER_RTT_HasKey/25 (SEGGER_RTT_HasKey) @0da60e00
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0da6a1c0
+  References: _SEGGER_RTT/1 (addr) _SEGGER_RTT/1 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: _DoInit/5 
+SEGGER_RTT_WaitKey/24 (SEGGER_RTT_WaitKey) @0da60700
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0da60e00
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: SEGGER_RTT_GetKey/23 
+SEGGER_RTT_GetKey/23 (SEGGER_RTT_GetKey) @0da601c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0da60700
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: SEGGER_RTT_WaitKey/24 
+  Calls: SEGGER_RTT_Read/13 
+SEGGER_RTT_PutChar/22 (SEGGER_RTT_PutChar) @0da60d20
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0da601c0
+  References: _SEGGER_RTT/1 (addr) _SEGGER_RTT/1 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: _DoInit/5 
+SEGGER_RTT_PutCharSkip/21 (SEGGER_RTT_PutCharSkip) @0da609a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0da60d20
+  References: _SEGGER_RTT/1 (addr) _SEGGER_RTT/1 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: _DoInit/5 
+SEGGER_RTT_PutCharSkipNoLock/20 (SEGGER_RTT_PutCharSkipNoLock) @0da60620
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0da609a0
+  References: _SEGGER_RTT/1 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+SEGGER_RTT_WriteString/19 (SEGGER_RTT_WriteString) @0da60380
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0da60620
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: SEGGER_RTT_Write/18 strlen/44 
+SEGGER_RTT_Write/18 (SEGGER_RTT_Write) @0da600e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0da60380
+  References: _SEGGER_RTT/1 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: SEGGER_RTT_WriteString/19 
+  Calls: SEGGER_RTT_WriteNoLock/16 _DoInit/5 
+SEGGER_RTT_WriteDownBuffer/17 (SEGGER_RTT_WriteDownBuffer) @0da46b60
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0da600e0
+  References: _SEGGER_RTT/1 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: SEGGER_RTT_WriteDownBufferNoLock/15 _DoInit/5 
+SEGGER_RTT_WriteNoLock/16 (SEGGER_RTT_WriteNoLock) @0da46000
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0da46b60
+  References: _SEGGER_RTT/1 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: SEGGER_RTT_Write/18 
+  Calls: _WriteBlocking/6 _WriteNoCheck/7 _GetAvailWriteSpace/9 _WriteNoCheck/7 _GetAvailWriteSpace/9 
+SEGGER_RTT_WriteDownBufferNoLock/15 (SEGGER_RTT_WriteDownBufferNoLock) @0da46d20
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0da46000
+  References: _SEGGER_RTT/1 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: SEGGER_RTT_WriteDownBuffer/17 
+  Calls: _WriteBlocking/6 _WriteNoCheck/7 _GetAvailWriteSpace/9 _WriteNoCheck/7 _GetAvailWriteSpace/9 
+SEGGER_RTT_WriteWithOverwriteNoLock/14 (SEGGER_RTT_WriteWithOverwriteNoLock) @0da46a80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0da46d20
+  References: _SEGGER_RTT/1 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: memcpy/43 memcpy/43 
+SEGGER_RTT_Read/13 (SEGGER_RTT_Read) @0da46620
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0da46a80
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: SEGGER_RTT_GetKey/23 
+  Calls: SEGGER_RTT_ReadNoLock/11 
+SEGGER_RTT_ReadUpBuffer/12 (SEGGER_RTT_ReadUpBuffer) @0da462a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0da46620
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: SEGGER_RTT_ReadUpBufferNoLock/10 
+SEGGER_RTT_ReadNoLock/11 (SEGGER_RTT_ReadNoLock) @0da3eb60
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0da462a0
+  References: _SEGGER_RTT/1 (addr) _SEGGER_RTT/1 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: SEGGER_RTT_Read/13 
+  Calls: memcpy/43 memcpy/43 _DoInit/5 
+SEGGER_RTT_ReadUpBufferNoLock/10 (SEGGER_RTT_ReadUpBufferNoLock) @0da3ea80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0da3eb60
+  References: _SEGGER_RTT/1 (addr) _SEGGER_RTT/1 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: SEGGER_RTT_ReadUpBuffer/12 
+  Calls: memcpy/43 memcpy/43 _DoInit/5 
+_GetAvailWriteSpace/9 (_GetAvailWriteSpace) @0da3e460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @0da3ea80
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: SEGGER_RTT_GetAvailWriteSpace/39 SEGGER_RTT_TerminalOut/38 SEGGER_RTT_SetTerminal/37 SEGGER_RTT_WriteNoLock/16 SEGGER_RTT_WriteNoLock/16 SEGGER_RTT_WriteDownBufferNoLock/15 SEGGER_RTT_WriteDownBufferNoLock/15 
+  Calls: 
+_PostTerminalSwitch/8 (_PostTerminalSwitch) @0da3e1c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @0da3e460
+  References: _aTerminalId/0 (read) 
+  Referring: 
+  Function flags: body
+  Called by: SEGGER_RTT_TerminalOut/38 SEGGER_RTT_TerminalOut/38 SEGGER_RTT_TerminalOut/38 SEGGER_RTT_TerminalOut/38 SEGGER_RTT_TerminalOut/38 SEGGER_RTT_TerminalOut/38 
+  Calls: _WriteBlocking/6 
+_WriteNoCheck/7 (_WriteNoCheck) @0da14ee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @0da3e1c0
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: SEGGER_RTT_SetTerminal/37 SEGGER_RTT_WriteNoLock/16 SEGGER_RTT_WriteNoLock/16 SEGGER_RTT_WriteDownBufferNoLock/15 SEGGER_RTT_WriteDownBufferNoLock/15 
+  Calls: memcpy/43 memcpy/43 memcpy/43 
+_WriteBlocking/6 (_WriteBlocking) @0da149a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @0da14ee0
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: SEGGER_RTT_TerminalOut/38 SEGGER_RTT_TerminalOut/38 SEGGER_RTT_TerminalOut/38 SEGGER_RTT_SetTerminal/37 SEGGER_RTT_WriteNoLock/16 SEGGER_RTT_WriteDownBufferNoLock/15 _PostTerminalSwitch/8 
+  Calls: memcpy/43 
+_DoInit/5 (_DoInit) @0da14540
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @0da149a0
+  References: _SEGGER_RTT/1 (addr) _acUpBuffer/2 (addr) _acDownBuffer/3 (addr) _aInitStr/42 (read) 
+  Referring: 
+  Function flags: body
+  Called by: SEGGER_RTT_TerminalOut/38 SEGGER_RTT_SetTerminal/37 SEGGER_RTT_Init/36 SEGGER_RTT_SetFlagsDownBuffer/35 SEGGER_RTT_SetFlagsUpBuffer/34 SEGGER_RTT_SetNameDownBuffer/33 SEGGER_RTT_SetNameUpBuffer/32 SEGGER_RTT_ConfigDownBuffer/31 SEGGER_RTT_ConfigUpBuffer/30 SEGGER_RTT_AllocUpBuffer/29 SEGGER_RTT_AllocDownBuffer/28 SEGGER_RTT_HasKey/25 SEGGER_RTT_PutChar/22 SEGGER_RTT_PutCharSkip/21 SEGGER_RTT_Write/18 SEGGER_RTT_WriteDownBuffer/17 SEGGER_RTT_ReadNoLock/11 SEGGER_RTT_ReadUpBufferNoLock/10 
+  Calls: memset/41 
+_ActiveTerminal/4 (_ActiveTerminal) @0da13120
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @0da14540
+  References: 
+  Referring: SEGGER_RTT_SetTerminal/37 (write) SEGGER_RTT_SetTerminal/37 (write) SEGGER_RTT_TerminalOut/38 (read) SEGGER_RTT_TerminalOut/38 (read) SEGGER_RTT_TerminalOut/38 (read) 
+  Availability: not-ready
+  Varpool flags:
+_acDownBuffer/3 (_acDownBuffer) @0da13090
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @0da13120
+  References: 
+  Referring: _DoInit/5 (addr) 
+  Availability: not-ready
+  Varpool flags:
+_acUpBuffer/2 (_acUpBuffer) @0da13048
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @0da13090
+  References: 
+  Referring: _DoInit/5 (addr) 
+  Availability: not-ready
+  Varpool flags:
+_SEGGER_RTT/1 (_SEGGER_RTT) @0da13000
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0da13048
+  References: 
+  Referring: _DoInit/5 (addr) SEGGER_RTT_ReadUpBufferNoLock/10 (addr) SEGGER_RTT_ReadUpBufferNoLock/10 (addr) SEGGER_RTT_ReadNoLock/11 (addr) SEGGER_RTT_ReadNoLock/11 (addr) SEGGER_RTT_WriteWithOverwriteNoLock/14 (addr) SEGGER_RTT_WriteDownBufferNoLock/15 (addr) SEGGER_RTT_WriteNoLock/16 (addr) SEGGER_RTT_WriteDownBuffer/17 (addr) SEGGER_RTT_Write/18 (addr) SEGGER_RTT_PutCharSkipNoLock/20 (addr) SEGGER_RTT_PutCharSkip/21 (addr) SEGGER_RTT_PutCharSkip/21 (addr) SEGGER_RTT_PutChar/22 (addr) SEGGER_RTT_PutChar/22 (addr) SEGGER_RTT_HasKey/25 (addr) SEGGER_RTT_HasKey/25 (addr) SEGGER_RTT_HasData/26 (addr) SEGGER_RTT_HasDataUp/27 (addr) SEGGER_RTT_AllocDownBuffer/28 (addr) SEGGER_RTT_AllocDownBuffer/28 (addr) SEGGER_RTT_AllocUpBuffer/29 (addr) SEGGER_RTT_AllocUpBuffer/29 (addr) SEGGER_RTT_ConfigUpBuffer/30 (addr) SEGGER_RTT_ConfigUpBuffer/30 (addr) SEGGER_RTT_ConfigDownBuffer/31 (addr) SEGGER_RTT_ConfigDownBuffer/31 (addr) SEGGER_RTT_SetNameUpBuffer/32 (addr) SEGGER_RTT_SetNameUpBuffer/32 (addr) SEGGER_RTT_SetNameDownBuffer/33 (addr) SEGGER_RTT_SetNameDownBuffer/33 (addr) SEGGER_RTT_SetFlagsUpBuffer/34 (addr) SEGGER_RTT_SetFlagsUpBuffer/34 (addr) SEGGER_RTT_SetFlagsDownBuffer/35 (addr) SEGGER_RTT_SetFlagsDownBuffer/35 (addr) SEGGER_RTT_SetTerminal/37 (addr) SEGGER_RTT_SetTerminal/37 (addr) SEGGER_RTT_TerminalOut/38 (addr) SEGGER_RTT_TerminalOut/38 (addr) SEGGER_RTT_GetAvailWriteSpace/39 (addr) SEGGER_RTT_GetBytesInBuffer/40 (addr) 
+  Availability: not-ready
+  Varpool flags:
+_aTerminalId/0 (_aTerminalId) @0da12f30
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @0da13000
+  References: 
+  Referring: _PostTerminalSwitch/8 (read) SEGGER_RTT_SetTerminal/37 (read) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+
+Removing unused symbols:
+
+Reclaimed Symbol table:
+
+strlen/44 (strlen) @0dad1540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: SEGGER_RTT_TerminalOut/38 SEGGER_RTT_WriteString/19 
+  Calls: 
+memcpy/43 (memcpy) @0dab3a80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: SEGGER_RTT_WriteWithOverwriteNoLock/14 SEGGER_RTT_WriteWithOverwriteNoLock/14 SEGGER_RTT_ReadNoLock/11 SEGGER_RTT_ReadNoLock/11 SEGGER_RTT_ReadUpBufferNoLock/10 SEGGER_RTT_ReadUpBufferNoLock/10 _WriteNoCheck/7 _WriteNoCheck/7 _WriteNoCheck/7 _WriteBlocking/6 
+  Calls: 
+_aInitStr/42 (_aInitStr) @0dab2480
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: _DoInit/5 (read) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+memset/41 (memset) @0dab38c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: _DoInit/5 
+  Calls: 
+SEGGER_RTT_GetBytesInBuffer/40 (SEGGER_RTT_GetBytesInBuffer) @0dab3460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: _SEGGER_RTT/1 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+SEGGER_RTT_GetAvailWriteSpace/39 (SEGGER_RTT_GetAvailWriteSpace) @0dab31c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: _SEGGER_RTT/1 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: _GetAvailWriteSpace/9 
+SEGGER_RTT_TerminalOut/38 (SEGGER_RTT_TerminalOut) @0da9fe00
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: _SEGGER_RTT/1 (addr) _SEGGER_RTT/1 (addr) _ActiveTerminal/4 (read) _ActiveTerminal/4 (read) _ActiveTerminal/4 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: _PostTerminalSwitch/8 _WriteBlocking/6 _PostTerminalSwitch/8 _PostTerminalSwitch/8 _WriteBlocking/6 _PostTerminalSwitch/8 _PostTerminalSwitch/8 _WriteBlocking/6 _PostTerminalSwitch/8 _GetAvailWriteSpace/9 strlen/44 _DoInit/5 
+SEGGER_RTT_SetTerminal/37 (SEGGER_RTT_SetTerminal) @0da9f460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: _SEGGER_RTT/1 (addr) _aTerminalId/0 (read) _SEGGER_RTT/1 (addr) _ActiveTerminal/4 (write) _ActiveTerminal/4 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: _WriteNoCheck/7 _GetAvailWriteSpace/9 _WriteBlocking/6 _DoInit/5 
+SEGGER_RTT_Init/36 (SEGGER_RTT_Init) @0da9fd20
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: _DoInit/5 
+SEGGER_RTT_SetFlagsDownBuffer/35 (SEGGER_RTT_SetFlagsDownBuffer) @0da9fa80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: _SEGGER_RTT/1 (addr) _SEGGER_RTT/1 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: _DoInit/5 
+SEGGER_RTT_SetFlagsUpBuffer/34 (SEGGER_RTT_SetFlagsUpBuffer) @0da9f700
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: _SEGGER_RTT/1 (addr) _SEGGER_RTT/1 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: _DoInit/5 
+SEGGER_RTT_SetNameDownBuffer/33 (SEGGER_RTT_SetNameDownBuffer) @0da9f380
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: _SEGGER_RTT/1 (addr) _SEGGER_RTT/1 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: _DoInit/5 
+SEGGER_RTT_SetNameUpBuffer/32 (SEGGER_RTT_SetNameUpBuffer) @0da9f000
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: _SEGGER_RTT/1 (addr) _SEGGER_RTT/1 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: _DoInit/5 
+SEGGER_RTT_ConfigDownBuffer/31 (SEGGER_RTT_ConfigDownBuffer) @0da6a540
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: _SEGGER_RTT/1 (addr) _SEGGER_RTT/1 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: _DoInit/5 
+SEGGER_RTT_ConfigUpBuffer/30 (SEGGER_RTT_ConfigUpBuffer) @0da6aee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: _SEGGER_RTT/1 (addr) _SEGGER_RTT/1 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: _DoInit/5 
+SEGGER_RTT_AllocUpBuffer/29 (SEGGER_RTT_AllocUpBuffer) @0da6ab60
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: _SEGGER_RTT/1 (addr) _SEGGER_RTT/1 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: _DoInit/5 
+SEGGER_RTT_AllocDownBuffer/28 (SEGGER_RTT_AllocDownBuffer) @0da6a7e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: _SEGGER_RTT/1 (addr) _SEGGER_RTT/1 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: _DoInit/5 
+SEGGER_RTT_HasDataUp/27 (SEGGER_RTT_HasDataUp) @0da6a460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: _SEGGER_RTT/1 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+SEGGER_RTT_HasData/26 (SEGGER_RTT_HasData) @0da6a1c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: _SEGGER_RTT/1 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+SEGGER_RTT_HasKey/25 (SEGGER_RTT_HasKey) @0da60e00
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: _SEGGER_RTT/1 (addr) _SEGGER_RTT/1 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: _DoInit/5 
+SEGGER_RTT_WaitKey/24 (SEGGER_RTT_WaitKey) @0da60700
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: SEGGER_RTT_GetKey/23 
+SEGGER_RTT_GetKey/23 (SEGGER_RTT_GetKey) @0da601c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: SEGGER_RTT_WaitKey/24 
+  Calls: SEGGER_RTT_Read/13 
+SEGGER_RTT_PutChar/22 (SEGGER_RTT_PutChar) @0da60d20
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: _SEGGER_RTT/1 (addr) _SEGGER_RTT/1 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: _DoInit/5 
+SEGGER_RTT_PutCharSkip/21 (SEGGER_RTT_PutCharSkip) @0da609a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: _SEGGER_RTT/1 (addr) _SEGGER_RTT/1 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: _DoInit/5 
+SEGGER_RTT_PutCharSkipNoLock/20 (SEGGER_RTT_PutCharSkipNoLock) @0da60620
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: _SEGGER_RTT/1 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+SEGGER_RTT_WriteString/19 (SEGGER_RTT_WriteString) @0da60380
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: SEGGER_RTT_Write/18 strlen/44 
+SEGGER_RTT_Write/18 (SEGGER_RTT_Write) @0da600e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: _SEGGER_RTT/1 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: SEGGER_RTT_WriteString/19 
+  Calls: SEGGER_RTT_WriteNoLock/16 _DoInit/5 
+SEGGER_RTT_WriteDownBuffer/17 (SEGGER_RTT_WriteDownBuffer) @0da46b60
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: _SEGGER_RTT/1 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: SEGGER_RTT_WriteDownBufferNoLock/15 _DoInit/5 
+SEGGER_RTT_WriteNoLock/16 (SEGGER_RTT_WriteNoLock) @0da46000
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: _SEGGER_RTT/1 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: SEGGER_RTT_Write/18 
+  Calls: _WriteBlocking/6 _WriteNoCheck/7 _GetAvailWriteSpace/9 _WriteNoCheck/7 _GetAvailWriteSpace/9 
+SEGGER_RTT_WriteDownBufferNoLock/15 (SEGGER_RTT_WriteDownBufferNoLock) @0da46d20
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: _SEGGER_RTT/1 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: SEGGER_RTT_WriteDownBuffer/17 
+  Calls: _WriteBlocking/6 _WriteNoCheck/7 _GetAvailWriteSpace/9 _WriteNoCheck/7 _GetAvailWriteSpace/9 
+SEGGER_RTT_WriteWithOverwriteNoLock/14 (SEGGER_RTT_WriteWithOverwriteNoLock) @0da46a80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: _SEGGER_RTT/1 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: memcpy/43 memcpy/43 
+SEGGER_RTT_Read/13 (SEGGER_RTT_Read) @0da46620
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: SEGGER_RTT_GetKey/23 
+  Calls: SEGGER_RTT_ReadNoLock/11 
+SEGGER_RTT_ReadUpBuffer/12 (SEGGER_RTT_ReadUpBuffer) @0da462a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: SEGGER_RTT_ReadUpBufferNoLock/10 
+SEGGER_RTT_ReadNoLock/11 (SEGGER_RTT_ReadNoLock) @0da3eb60
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: _SEGGER_RTT/1 (addr) _SEGGER_RTT/1 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: SEGGER_RTT_Read/13 
+  Calls: memcpy/43 memcpy/43 _DoInit/5 
+SEGGER_RTT_ReadUpBufferNoLock/10 (SEGGER_RTT_ReadUpBufferNoLock) @0da3ea80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: _SEGGER_RTT/1 (addr) _SEGGER_RTT/1 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: SEGGER_RTT_ReadUpBuffer/12 
+  Calls: memcpy/43 memcpy/43 _DoInit/5 
+_GetAvailWriteSpace/9 (_GetAvailWriteSpace) @0da3e460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: SEGGER_RTT_GetAvailWriteSpace/39 SEGGER_RTT_TerminalOut/38 SEGGER_RTT_SetTerminal/37 SEGGER_RTT_WriteNoLock/16 SEGGER_RTT_WriteNoLock/16 SEGGER_RTT_WriteDownBufferNoLock/15 SEGGER_RTT_WriteDownBufferNoLock/15 
+  Calls: 
+_PostTerminalSwitch/8 (_PostTerminalSwitch) @0da3e1c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: _aTerminalId/0 (read) 
+  Referring: 
+  Function flags: body
+  Called by: SEGGER_RTT_TerminalOut/38 SEGGER_RTT_TerminalOut/38 SEGGER_RTT_TerminalOut/38 SEGGER_RTT_TerminalOut/38 SEGGER_RTT_TerminalOut/38 SEGGER_RTT_TerminalOut/38 
+  Calls: _WriteBlocking/6 
+_WriteNoCheck/7 (_WriteNoCheck) @0da14ee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: SEGGER_RTT_SetTerminal/37 SEGGER_RTT_WriteNoLock/16 SEGGER_RTT_WriteNoLock/16 SEGGER_RTT_WriteDownBufferNoLock/15 SEGGER_RTT_WriteDownBufferNoLock/15 
+  Calls: memcpy/43 memcpy/43 memcpy/43 
+_WriteBlocking/6 (_WriteBlocking) @0da149a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: SEGGER_RTT_TerminalOut/38 SEGGER_RTT_TerminalOut/38 SEGGER_RTT_TerminalOut/38 SEGGER_RTT_SetTerminal/37 SEGGER_RTT_WriteNoLock/16 SEGGER_RTT_WriteDownBufferNoLock/15 _PostTerminalSwitch/8 
+  Calls: memcpy/43 
+_DoInit/5 (_DoInit) @0da14540
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: _SEGGER_RTT/1 (addr) _acUpBuffer/2 (addr) _acDownBuffer/3 (addr) _aInitStr/42 (read) 
+  Referring: 
+  Function flags: body
+  Called by: SEGGER_RTT_TerminalOut/38 SEGGER_RTT_SetTerminal/37 SEGGER_RTT_Init/36 SEGGER_RTT_SetFlagsDownBuffer/35 SEGGER_RTT_SetFlagsUpBuffer/34 SEGGER_RTT_SetNameDownBuffer/33 SEGGER_RTT_SetNameUpBuffer/32 SEGGER_RTT_ConfigDownBuffer/31 SEGGER_RTT_ConfigUpBuffer/30 SEGGER_RTT_AllocUpBuffer/29 SEGGER_RTT_AllocDownBuffer/28 SEGGER_RTT_HasKey/25 SEGGER_RTT_PutChar/22 SEGGER_RTT_PutCharSkip/21 SEGGER_RTT_Write/18 SEGGER_RTT_WriteDownBuffer/17 SEGGER_RTT_ReadNoLock/11 SEGGER_RTT_ReadUpBufferNoLock/10 
+  Calls: memset/41 
+_ActiveTerminal/4 (_ActiveTerminal) @0da13120
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: SEGGER_RTT_SetTerminal/37 (write) SEGGER_RTT_SetTerminal/37 (write) SEGGER_RTT_TerminalOut/38 (read) SEGGER_RTT_TerminalOut/38 (read) SEGGER_RTT_TerminalOut/38 (read) 
+  Availability: not-ready
+  Varpool flags:
+_acDownBuffer/3 (_acDownBuffer) @0da13090
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: _DoInit/5 (addr) 
+  Availability: not-ready
+  Varpool flags:
+_acUpBuffer/2 (_acUpBuffer) @0da13048
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: _DoInit/5 (addr) 
+  Availability: not-ready
+  Varpool flags:
+_SEGGER_RTT/1 (_SEGGER_RTT) @0da13000
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: _DoInit/5 (addr) SEGGER_RTT_ReadUpBufferNoLock/10 (addr) SEGGER_RTT_ReadUpBufferNoLock/10 (addr) SEGGER_RTT_ReadNoLock/11 (addr) SEGGER_RTT_ReadNoLock/11 (addr) SEGGER_RTT_WriteWithOverwriteNoLock/14 (addr) SEGGER_RTT_WriteDownBufferNoLock/15 (addr) SEGGER_RTT_WriteNoLock/16 (addr) SEGGER_RTT_WriteDownBuffer/17 (addr) SEGGER_RTT_Write/18 (addr) SEGGER_RTT_PutCharSkipNoLock/20 (addr) SEGGER_RTT_PutCharSkip/21 (addr) SEGGER_RTT_PutCharSkip/21 (addr) SEGGER_RTT_PutChar/22 (addr) SEGGER_RTT_PutChar/22 (addr) SEGGER_RTT_HasKey/25 (addr) SEGGER_RTT_HasKey/25 (addr) SEGGER_RTT_HasData/26 (addr) SEGGER_RTT_HasDataUp/27 (addr) SEGGER_RTT_AllocDownBuffer/28 (addr) SEGGER_RTT_AllocDownBuffer/28 (addr) SEGGER_RTT_AllocUpBuffer/29 (addr) SEGGER_RTT_AllocUpBuffer/29 (addr) SEGGER_RTT_ConfigUpBuffer/30 (addr) SEGGER_RTT_ConfigUpBuffer/30 (addr) SEGGER_RTT_ConfigDownBuffer/31 (addr) SEGGER_RTT_ConfigDownBuffer/31 (addr) SEGGER_RTT_SetNameUpBuffer/32 (addr) SEGGER_RTT_SetNameUpBuffer/32 (addr) SEGGER_RTT_SetNameDownBuffer/33 (addr) SEGGER_RTT_SetNameDownBuffer/33 (addr) SEGGER_RTT_SetFlagsUpBuffer/34 (addr) SEGGER_RTT_SetFlagsUpBuffer/34 (addr) SEGGER_RTT_SetFlagsDownBuffer/35 (addr) SEGGER_RTT_SetFlagsDownBuffer/35 (addr) SEGGER_RTT_SetTerminal/37 (addr) SEGGER_RTT_SetTerminal/37 (addr) SEGGER_RTT_TerminalOut/38 (addr) SEGGER_RTT_TerminalOut/38 (addr) SEGGER_RTT_GetAvailWriteSpace/39 (addr) SEGGER_RTT_GetBytesInBuffer/40 (addr) 
+  Availability: not-ready
+  Varpool flags:
+_aTerminalId/0 (_aTerminalId) @0da12f30
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: _PostTerminalSwitch/8 (read) SEGGER_RTT_SetTerminal/37 (read) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+
+
+Initial Symbol table:
+
+strlen/44 (strlen) @0dad1540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: SEGGER_RTT_TerminalOut/38 SEGGER_RTT_WriteString/19 
+  Calls: 
+memcpy/43 (memcpy) @0dab3a80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: SEGGER_RTT_WriteWithOverwriteNoLock/14 SEGGER_RTT_WriteWithOverwriteNoLock/14 SEGGER_RTT_ReadNoLock/11 SEGGER_RTT_ReadNoLock/11 SEGGER_RTT_ReadUpBufferNoLock/10 SEGGER_RTT_ReadUpBufferNoLock/10 _WriteNoCheck/7 _WriteNoCheck/7 _WriteNoCheck/7 _WriteBlocking/6 
+  Calls: 
+_aInitStr.0/42 (_aInitStr) @0dab2480
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: _DoInit/5 (read) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+memset/41 (memset) @0dab38c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: _DoInit/5 
+  Calls: 
+SEGGER_RTT_GetBytesInBuffer/40 (SEGGER_RTT_GetBytesInBuffer) @0dab3460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: _SEGGER_RTT/1 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+SEGGER_RTT_GetAvailWriteSpace/39 (SEGGER_RTT_GetAvailWriteSpace) @0dab31c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: _SEGGER_RTT/1 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: _GetAvailWriteSpace/9 
+SEGGER_RTT_TerminalOut/38 (SEGGER_RTT_TerminalOut) @0da9fe00
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: _SEGGER_RTT/1 (addr) _SEGGER_RTT/1 (addr) _ActiveTerminal/4 (read) _ActiveTerminal/4 (read) _ActiveTerminal/4 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: _PostTerminalSwitch/8 _WriteBlocking/6 _PostTerminalSwitch/8 _PostTerminalSwitch/8 _WriteBlocking/6 _PostTerminalSwitch/8 _PostTerminalSwitch/8 _WriteBlocking/6 _PostTerminalSwitch/8 _GetAvailWriteSpace/9 strlen/44 _DoInit/5 
+SEGGER_RTT_SetTerminal/37 (SEGGER_RTT_SetTerminal) @0da9f460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: _SEGGER_RTT/1 (addr) _aTerminalId/0 (read) _SEGGER_RTT/1 (addr) _ActiveTerminal/4 (write) _ActiveTerminal/4 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: _WriteNoCheck/7 _GetAvailWriteSpace/9 _WriteBlocking/6 _DoInit/5 
+SEGGER_RTT_Init/36 (SEGGER_RTT_Init) @0da9fd20
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: _DoInit/5 
+SEGGER_RTT_SetFlagsDownBuffer/35 (SEGGER_RTT_SetFlagsDownBuffer) @0da9fa80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: _SEGGER_RTT/1 (addr) _SEGGER_RTT/1 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: _DoInit/5 
+SEGGER_RTT_SetFlagsUpBuffer/34 (SEGGER_RTT_SetFlagsUpBuffer) @0da9f700
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: _SEGGER_RTT/1 (addr) _SEGGER_RTT/1 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: _DoInit/5 
+SEGGER_RTT_SetNameDownBuffer/33 (SEGGER_RTT_SetNameDownBuffer) @0da9f380
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: _SEGGER_RTT/1 (addr) _SEGGER_RTT/1 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: _DoInit/5 
+SEGGER_RTT_SetNameUpBuffer/32 (SEGGER_RTT_SetNameUpBuffer) @0da9f000
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: _SEGGER_RTT/1 (addr) _SEGGER_RTT/1 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: _DoInit/5 
+SEGGER_RTT_ConfigDownBuffer/31 (SEGGER_RTT_ConfigDownBuffer) @0da6a540
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: _SEGGER_RTT/1 (addr) _SEGGER_RTT/1 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: _DoInit/5 
+SEGGER_RTT_ConfigUpBuffer/30 (SEGGER_RTT_ConfigUpBuffer) @0da6aee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: _SEGGER_RTT/1 (addr) _SEGGER_RTT/1 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: _DoInit/5 
+SEGGER_RTT_AllocUpBuffer/29 (SEGGER_RTT_AllocUpBuffer) @0da6ab60
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: _SEGGER_RTT/1 (addr) _SEGGER_RTT/1 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: _DoInit/5 
+SEGGER_RTT_AllocDownBuffer/28 (SEGGER_RTT_AllocDownBuffer) @0da6a7e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: _SEGGER_RTT/1 (addr) _SEGGER_RTT/1 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: _DoInit/5 
+SEGGER_RTT_HasDataUp/27 (SEGGER_RTT_HasDataUp) @0da6a460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: _SEGGER_RTT/1 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+SEGGER_RTT_HasData/26 (SEGGER_RTT_HasData) @0da6a1c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: _SEGGER_RTT/1 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+SEGGER_RTT_HasKey/25 (SEGGER_RTT_HasKey) @0da60e00
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: _SEGGER_RTT/1 (addr) _SEGGER_RTT/1 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: _DoInit/5 
+SEGGER_RTT_WaitKey/24 (SEGGER_RTT_WaitKey) @0da60700
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: SEGGER_RTT_GetKey/23 
+SEGGER_RTT_GetKey/23 (SEGGER_RTT_GetKey) @0da601c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: SEGGER_RTT_WaitKey/24 
+  Calls: SEGGER_RTT_Read/13 
+SEGGER_RTT_PutChar/22 (SEGGER_RTT_PutChar) @0da60d20
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: _SEGGER_RTT/1 (addr) _SEGGER_RTT/1 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: _DoInit/5 
+SEGGER_RTT_PutCharSkip/21 (SEGGER_RTT_PutCharSkip) @0da609a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: _SEGGER_RTT/1 (addr) _SEGGER_RTT/1 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: _DoInit/5 
+SEGGER_RTT_PutCharSkipNoLock/20 (SEGGER_RTT_PutCharSkipNoLock) @0da60620
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: _SEGGER_RTT/1 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+SEGGER_RTT_WriteString/19 (SEGGER_RTT_WriteString) @0da60380
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: SEGGER_RTT_Write/18 strlen/44 
+SEGGER_RTT_Write/18 (SEGGER_RTT_Write) @0da600e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: _SEGGER_RTT/1 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: SEGGER_RTT_WriteString/19 
+  Calls: SEGGER_RTT_WriteNoLock/16 _DoInit/5 
+SEGGER_RTT_WriteDownBuffer/17 (SEGGER_RTT_WriteDownBuffer) @0da46b60
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: _SEGGER_RTT/1 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: SEGGER_RTT_WriteDownBufferNoLock/15 _DoInit/5 
+SEGGER_RTT_WriteNoLock/16 (SEGGER_RTT_WriteNoLock) @0da46000
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: _SEGGER_RTT/1 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: SEGGER_RTT_Write/18 
+  Calls: _WriteBlocking/6 _WriteNoCheck/7 _GetAvailWriteSpace/9 _WriteNoCheck/7 _GetAvailWriteSpace/9 
+SEGGER_RTT_WriteDownBufferNoLock/15 (SEGGER_RTT_WriteDownBufferNoLock) @0da46d20
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: _SEGGER_RTT/1 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: SEGGER_RTT_WriteDownBuffer/17 
+  Calls: _WriteBlocking/6 _WriteNoCheck/7 _GetAvailWriteSpace/9 _WriteNoCheck/7 _GetAvailWriteSpace/9 
+SEGGER_RTT_WriteWithOverwriteNoLock/14 (SEGGER_RTT_WriteWithOverwriteNoLock) @0da46a80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: _SEGGER_RTT/1 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: memcpy/43 memcpy/43 
+SEGGER_RTT_Read/13 (SEGGER_RTT_Read) @0da46620
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: SEGGER_RTT_GetKey/23 
+  Calls: SEGGER_RTT_ReadNoLock/11 
+SEGGER_RTT_ReadUpBuffer/12 (SEGGER_RTT_ReadUpBuffer) @0da462a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: SEGGER_RTT_ReadUpBufferNoLock/10 
+SEGGER_RTT_ReadNoLock/11 (SEGGER_RTT_ReadNoLock) @0da3eb60
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: _SEGGER_RTT/1 (addr) _SEGGER_RTT/1 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: SEGGER_RTT_Read/13 
+  Calls: memcpy/43 memcpy/43 _DoInit/5 
+SEGGER_RTT_ReadUpBufferNoLock/10 (SEGGER_RTT_ReadUpBufferNoLock) @0da3ea80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: _SEGGER_RTT/1 (addr) _SEGGER_RTT/1 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: SEGGER_RTT_ReadUpBuffer/12 
+  Calls: memcpy/43 memcpy/43 _DoInit/5 
+_GetAvailWriteSpace/9 (_GetAvailWriteSpace) @0da3e460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: SEGGER_RTT_GetAvailWriteSpace/39 SEGGER_RTT_TerminalOut/38 SEGGER_RTT_SetTerminal/37 SEGGER_RTT_WriteNoLock/16 SEGGER_RTT_WriteNoLock/16 SEGGER_RTT_WriteDownBufferNoLock/15 SEGGER_RTT_WriteDownBufferNoLock/15 
+  Calls: 
+_PostTerminalSwitch/8 (_PostTerminalSwitch) @0da3e1c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: _aTerminalId/0 (read) 
+  Referring: 
+  Function flags: body
+  Called by: SEGGER_RTT_TerminalOut/38 SEGGER_RTT_TerminalOut/38 SEGGER_RTT_TerminalOut/38 SEGGER_RTT_TerminalOut/38 SEGGER_RTT_TerminalOut/38 SEGGER_RTT_TerminalOut/38 
+  Calls: _WriteBlocking/6 
+_WriteNoCheck/7 (_WriteNoCheck) @0da14ee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: SEGGER_RTT_SetTerminal/37 SEGGER_RTT_WriteNoLock/16 SEGGER_RTT_WriteNoLock/16 SEGGER_RTT_WriteDownBufferNoLock/15 SEGGER_RTT_WriteDownBufferNoLock/15 
+  Calls: memcpy/43 memcpy/43 memcpy/43 
+_WriteBlocking/6 (_WriteBlocking) @0da149a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: SEGGER_RTT_TerminalOut/38 SEGGER_RTT_TerminalOut/38 SEGGER_RTT_TerminalOut/38 SEGGER_RTT_SetTerminal/37 SEGGER_RTT_WriteNoLock/16 SEGGER_RTT_WriteDownBufferNoLock/15 _PostTerminalSwitch/8 
+  Calls: memcpy/43 
+_DoInit/5 (_DoInit) @0da14540
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: _SEGGER_RTT/1 (addr) _acUpBuffer/2 (addr) _acDownBuffer/3 (addr) _aInitStr.0/42 (read) 
+  Referring: 
+  Function flags: body
+  Called by: SEGGER_RTT_TerminalOut/38 SEGGER_RTT_SetTerminal/37 SEGGER_RTT_Init/36 SEGGER_RTT_SetFlagsDownBuffer/35 SEGGER_RTT_SetFlagsUpBuffer/34 SEGGER_RTT_SetNameDownBuffer/33 SEGGER_RTT_SetNameUpBuffer/32 SEGGER_RTT_ConfigDownBuffer/31 SEGGER_RTT_ConfigUpBuffer/30 SEGGER_RTT_AllocUpBuffer/29 SEGGER_RTT_AllocDownBuffer/28 SEGGER_RTT_HasKey/25 SEGGER_RTT_PutChar/22 SEGGER_RTT_PutCharSkip/21 SEGGER_RTT_Write/18 SEGGER_RTT_WriteDownBuffer/17 SEGGER_RTT_ReadNoLock/11 SEGGER_RTT_ReadUpBufferNoLock/10 
+  Calls: memset/41 
+_ActiveTerminal/4 (_ActiveTerminal) @0da13120
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: SEGGER_RTT_SetTerminal/37 (write) SEGGER_RTT_SetTerminal/37 (write) SEGGER_RTT_TerminalOut/38 (read) SEGGER_RTT_TerminalOut/38 (read) SEGGER_RTT_TerminalOut/38 (read) 
+  Availability: not-ready
+  Varpool flags:
+_acDownBuffer/3 (_acDownBuffer) @0da13090
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: _DoInit/5 (addr) 
+  Availability: not-ready
+  Varpool flags:
+_acUpBuffer/2 (_acUpBuffer) @0da13048
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: _DoInit/5 (addr) 
+  Availability: not-ready
+  Varpool flags:
+_SEGGER_RTT/1 (_SEGGER_RTT) @0da13000
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: _DoInit/5 (addr) SEGGER_RTT_ReadUpBufferNoLock/10 (addr) SEGGER_RTT_ReadUpBufferNoLock/10 (addr) SEGGER_RTT_ReadNoLock/11 (addr) SEGGER_RTT_ReadNoLock/11 (addr) SEGGER_RTT_WriteWithOverwriteNoLock/14 (addr) SEGGER_RTT_WriteDownBufferNoLock/15 (addr) SEGGER_RTT_WriteNoLock/16 (addr) SEGGER_RTT_WriteDownBuffer/17 (addr) SEGGER_RTT_Write/18 (addr) SEGGER_RTT_PutCharSkipNoLock/20 (addr) SEGGER_RTT_PutCharSkip/21 (addr) SEGGER_RTT_PutCharSkip/21 (addr) SEGGER_RTT_PutChar/22 (addr) SEGGER_RTT_PutChar/22 (addr) SEGGER_RTT_HasKey/25 (addr) SEGGER_RTT_HasKey/25 (addr) SEGGER_RTT_HasData/26 (addr) SEGGER_RTT_HasDataUp/27 (addr) SEGGER_RTT_AllocDownBuffer/28 (addr) SEGGER_RTT_AllocDownBuffer/28 (addr) SEGGER_RTT_AllocUpBuffer/29 (addr) SEGGER_RTT_AllocUpBuffer/29 (addr) SEGGER_RTT_ConfigUpBuffer/30 (addr) SEGGER_RTT_ConfigUpBuffer/30 (addr) SEGGER_RTT_ConfigDownBuffer/31 (addr) SEGGER_RTT_ConfigDownBuffer/31 (addr) SEGGER_RTT_SetNameUpBuffer/32 (addr) SEGGER_RTT_SetNameUpBuffer/32 (addr) SEGGER_RTT_SetNameDownBuffer/33 (addr) SEGGER_RTT_SetNameDownBuffer/33 (addr) SEGGER_RTT_SetFlagsUpBuffer/34 (addr) SEGGER_RTT_SetFlagsUpBuffer/34 (addr) SEGGER_RTT_SetFlagsDownBuffer/35 (addr) SEGGER_RTT_SetFlagsDownBuffer/35 (addr) SEGGER_RTT_SetTerminal/37 (addr) SEGGER_RTT_SetTerminal/37 (addr) SEGGER_RTT_TerminalOut/38 (addr) SEGGER_RTT_TerminalOut/38 (addr) SEGGER_RTT_GetAvailWriteSpace/39 (addr) SEGGER_RTT_GetBytesInBuffer/40 (addr) 
+  Availability: not-ready
+  Varpool flags:
+_aTerminalId/0 (_aTerminalId) @0da12f30
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: _PostTerminalSwitch/8 (read) SEGGER_RTT_SetTerminal/37 (read) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+
+Removing unused symbols:
+
+Reclaimed Symbol table:
+
+strlen/44 (strlen) @0dad1540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: SEGGER_RTT_TerminalOut/38 SEGGER_RTT_WriteString/19 
+  Calls: 
+memcpy/43 (memcpy) @0dab3a80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: SEGGER_RTT_WriteWithOverwriteNoLock/14 SEGGER_RTT_WriteWithOverwriteNoLock/14 SEGGER_RTT_ReadNoLock/11 SEGGER_RTT_ReadNoLock/11 SEGGER_RTT_ReadUpBufferNoLock/10 SEGGER_RTT_ReadUpBufferNoLock/10 _WriteNoCheck/7 _WriteNoCheck/7 _WriteNoCheck/7 _WriteBlocking/6 
+  Calls: 
+_aInitStr.0/42 (_aInitStr) @0dab2480
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: _DoInit/5 (read) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+memset/41 (memset) @0dab38c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: _DoInit/5 
+  Calls: 
+SEGGER_RTT_GetBytesInBuffer/40 (SEGGER_RTT_GetBytesInBuffer) @0dab3460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: _SEGGER_RTT/1 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+SEGGER_RTT_GetAvailWriteSpace/39 (SEGGER_RTT_GetAvailWriteSpace) @0dab31c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: _SEGGER_RTT/1 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: _GetAvailWriteSpace/9 
+SEGGER_RTT_TerminalOut/38 (SEGGER_RTT_TerminalOut) @0da9fe00
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: _SEGGER_RTT/1 (addr) _SEGGER_RTT/1 (addr) _ActiveTerminal/4 (read) _ActiveTerminal/4 (read) _ActiveTerminal/4 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: _PostTerminalSwitch/8 _WriteBlocking/6 _PostTerminalSwitch/8 _PostTerminalSwitch/8 _WriteBlocking/6 _PostTerminalSwitch/8 _PostTerminalSwitch/8 _WriteBlocking/6 _PostTerminalSwitch/8 _GetAvailWriteSpace/9 strlen/44 _DoInit/5 
+SEGGER_RTT_SetTerminal/37 (SEGGER_RTT_SetTerminal) @0da9f460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: _SEGGER_RTT/1 (addr) _aTerminalId/0 (read) _SEGGER_RTT/1 (addr) _ActiveTerminal/4 (write) _ActiveTerminal/4 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: _WriteNoCheck/7 _GetAvailWriteSpace/9 _WriteBlocking/6 _DoInit/5 
+SEGGER_RTT_Init/36 (SEGGER_RTT_Init) @0da9fd20
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: _DoInit/5 
+SEGGER_RTT_SetFlagsDownBuffer/35 (SEGGER_RTT_SetFlagsDownBuffer) @0da9fa80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: _SEGGER_RTT/1 (addr) _SEGGER_RTT/1 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: _DoInit/5 
+SEGGER_RTT_SetFlagsUpBuffer/34 (SEGGER_RTT_SetFlagsUpBuffer) @0da9f700
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: _SEGGER_RTT/1 (addr) _SEGGER_RTT/1 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: _DoInit/5 
+SEGGER_RTT_SetNameDownBuffer/33 (SEGGER_RTT_SetNameDownBuffer) @0da9f380
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: _SEGGER_RTT/1 (addr) _SEGGER_RTT/1 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: _DoInit/5 
+SEGGER_RTT_SetNameUpBuffer/32 (SEGGER_RTT_SetNameUpBuffer) @0da9f000
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: _SEGGER_RTT/1 (addr) _SEGGER_RTT/1 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: _DoInit/5 
+SEGGER_RTT_ConfigDownBuffer/31 (SEGGER_RTT_ConfigDownBuffer) @0da6a540
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: _SEGGER_RTT/1 (addr) _SEGGER_RTT/1 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: _DoInit/5 
+SEGGER_RTT_ConfigUpBuffer/30 (SEGGER_RTT_ConfigUpBuffer) @0da6aee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: _SEGGER_RTT/1 (addr) _SEGGER_RTT/1 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: _DoInit/5 
+SEGGER_RTT_AllocUpBuffer/29 (SEGGER_RTT_AllocUpBuffer) @0da6ab60
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: _SEGGER_RTT/1 (addr) _SEGGER_RTT/1 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: _DoInit/5 
+SEGGER_RTT_AllocDownBuffer/28 (SEGGER_RTT_AllocDownBuffer) @0da6a7e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: _SEGGER_RTT/1 (addr) _SEGGER_RTT/1 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: _DoInit/5 
+SEGGER_RTT_HasDataUp/27 (SEGGER_RTT_HasDataUp) @0da6a460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: _SEGGER_RTT/1 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+SEGGER_RTT_HasData/26 (SEGGER_RTT_HasData) @0da6a1c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: _SEGGER_RTT/1 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+SEGGER_RTT_HasKey/25 (SEGGER_RTT_HasKey) @0da60e00
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: _SEGGER_RTT/1 (addr) _SEGGER_RTT/1 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: _DoInit/5 
+SEGGER_RTT_WaitKey/24 (SEGGER_RTT_WaitKey) @0da60700
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: SEGGER_RTT_GetKey/23 
+SEGGER_RTT_GetKey/23 (SEGGER_RTT_GetKey) @0da601c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: SEGGER_RTT_WaitKey/24 
+  Calls: SEGGER_RTT_Read/13 
+SEGGER_RTT_PutChar/22 (SEGGER_RTT_PutChar) @0da60d20
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: _SEGGER_RTT/1 (addr) _SEGGER_RTT/1 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: _DoInit/5 
+SEGGER_RTT_PutCharSkip/21 (SEGGER_RTT_PutCharSkip) @0da609a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: _SEGGER_RTT/1 (addr) _SEGGER_RTT/1 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: _DoInit/5 
+SEGGER_RTT_PutCharSkipNoLock/20 (SEGGER_RTT_PutCharSkipNoLock) @0da60620
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: _SEGGER_RTT/1 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+SEGGER_RTT_WriteString/19 (SEGGER_RTT_WriteString) @0da60380
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: SEGGER_RTT_Write/18 strlen/44 
+SEGGER_RTT_Write/18 (SEGGER_RTT_Write) @0da600e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: _SEGGER_RTT/1 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: SEGGER_RTT_WriteString/19 
+  Calls: SEGGER_RTT_WriteNoLock/16 _DoInit/5 
+SEGGER_RTT_WriteDownBuffer/17 (SEGGER_RTT_WriteDownBuffer) @0da46b60
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: _SEGGER_RTT/1 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: SEGGER_RTT_WriteDownBufferNoLock/15 _DoInit/5 
+SEGGER_RTT_WriteNoLock/16 (SEGGER_RTT_WriteNoLock) @0da46000
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: _SEGGER_RTT/1 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: SEGGER_RTT_Write/18 
+  Calls: _WriteBlocking/6 _WriteNoCheck/7 _GetAvailWriteSpace/9 _WriteNoCheck/7 _GetAvailWriteSpace/9 
+SEGGER_RTT_WriteDownBufferNoLock/15 (SEGGER_RTT_WriteDownBufferNoLock) @0da46d20
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: _SEGGER_RTT/1 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: SEGGER_RTT_WriteDownBuffer/17 
+  Calls: _WriteBlocking/6 _WriteNoCheck/7 _GetAvailWriteSpace/9 _WriteNoCheck/7 _GetAvailWriteSpace/9 
+SEGGER_RTT_WriteWithOverwriteNoLock/14 (SEGGER_RTT_WriteWithOverwriteNoLock) @0da46a80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: _SEGGER_RTT/1 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: memcpy/43 memcpy/43 
+SEGGER_RTT_Read/13 (SEGGER_RTT_Read) @0da46620
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: SEGGER_RTT_GetKey/23 
+  Calls: SEGGER_RTT_ReadNoLock/11 
+SEGGER_RTT_ReadUpBuffer/12 (SEGGER_RTT_ReadUpBuffer) @0da462a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: SEGGER_RTT_ReadUpBufferNoLock/10 
+SEGGER_RTT_ReadNoLock/11 (SEGGER_RTT_ReadNoLock) @0da3eb60
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: _SEGGER_RTT/1 (addr) _SEGGER_RTT/1 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: SEGGER_RTT_Read/13 
+  Calls: memcpy/43 memcpy/43 _DoInit/5 
+SEGGER_RTT_ReadUpBufferNoLock/10 (SEGGER_RTT_ReadUpBufferNoLock) @0da3ea80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: _SEGGER_RTT/1 (addr) _SEGGER_RTT/1 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: SEGGER_RTT_ReadUpBuffer/12 
+  Calls: memcpy/43 memcpy/43 _DoInit/5 
+_GetAvailWriteSpace/9 (_GetAvailWriteSpace) @0da3e460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: SEGGER_RTT_GetAvailWriteSpace/39 SEGGER_RTT_TerminalOut/38 SEGGER_RTT_SetTerminal/37 SEGGER_RTT_WriteNoLock/16 SEGGER_RTT_WriteNoLock/16 SEGGER_RTT_WriteDownBufferNoLock/15 SEGGER_RTT_WriteDownBufferNoLock/15 
+  Calls: 
+_PostTerminalSwitch/8 (_PostTerminalSwitch) @0da3e1c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: _aTerminalId/0 (read) 
+  Referring: 
+  Function flags: body
+  Called by: SEGGER_RTT_TerminalOut/38 SEGGER_RTT_TerminalOut/38 SEGGER_RTT_TerminalOut/38 SEGGER_RTT_TerminalOut/38 SEGGER_RTT_TerminalOut/38 SEGGER_RTT_TerminalOut/38 
+  Calls: _WriteBlocking/6 
+_WriteNoCheck/7 (_WriteNoCheck) @0da14ee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: SEGGER_RTT_SetTerminal/37 SEGGER_RTT_WriteNoLock/16 SEGGER_RTT_WriteNoLock/16 SEGGER_RTT_WriteDownBufferNoLock/15 SEGGER_RTT_WriteDownBufferNoLock/15 
+  Calls: memcpy/43 memcpy/43 memcpy/43 
+_WriteBlocking/6 (_WriteBlocking) @0da149a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: SEGGER_RTT_TerminalOut/38 SEGGER_RTT_TerminalOut/38 SEGGER_RTT_TerminalOut/38 SEGGER_RTT_SetTerminal/37 SEGGER_RTT_WriteNoLock/16 SEGGER_RTT_WriteDownBufferNoLock/15 _PostTerminalSwitch/8 
+  Calls: memcpy/43 
+_DoInit/5 (_DoInit) @0da14540
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  References: _SEGGER_RTT/1 (addr) _acUpBuffer/2 (addr) _acDownBuffer/3 (addr) _aInitStr.0/42 (read) 
+  Referring: 
+  Function flags: body
+  Called by: SEGGER_RTT_TerminalOut/38 SEGGER_RTT_SetTerminal/37 SEGGER_RTT_Init/36 SEGGER_RTT_SetFlagsDownBuffer/35 SEGGER_RTT_SetFlagsUpBuffer/34 SEGGER_RTT_SetNameDownBuffer/33 SEGGER_RTT_SetNameUpBuffer/32 SEGGER_RTT_ConfigDownBuffer/31 SEGGER_RTT_ConfigUpBuffer/30 SEGGER_RTT_AllocUpBuffer/29 SEGGER_RTT_AllocDownBuffer/28 SEGGER_RTT_HasKey/25 SEGGER_RTT_PutChar/22 SEGGER_RTT_PutCharSkip/21 SEGGER_RTT_Write/18 SEGGER_RTT_WriteDownBuffer/17 SEGGER_RTT_ReadNoLock/11 SEGGER_RTT_ReadUpBufferNoLock/10 
+  Calls: memset/41 
+_ActiveTerminal/4 (_ActiveTerminal) @0da13120
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: SEGGER_RTT_SetTerminal/37 (write) SEGGER_RTT_SetTerminal/37 (write) SEGGER_RTT_TerminalOut/38 (read) SEGGER_RTT_TerminalOut/38 (read) SEGGER_RTT_TerminalOut/38 (read) 
+  Availability: not-ready
+  Varpool flags:
+_acDownBuffer/3 (_acDownBuffer) @0da13090
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: _DoInit/5 (addr) 
+  Availability: not-ready
+  Varpool flags:
+_acUpBuffer/2 (_acUpBuffer) @0da13048
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: _DoInit/5 (addr) 
+  Availability: not-ready
+  Varpool flags:
+_SEGGER_RTT/1 (_SEGGER_RTT) @0da13000
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: _DoInit/5 (addr) SEGGER_RTT_ReadUpBufferNoLock/10 (addr) SEGGER_RTT_ReadUpBufferNoLock/10 (addr) SEGGER_RTT_ReadNoLock/11 (addr) SEGGER_RTT_ReadNoLock/11 (addr) SEGGER_RTT_WriteWithOverwriteNoLock/14 (addr) SEGGER_RTT_WriteDownBufferNoLock/15 (addr) SEGGER_RTT_WriteNoLock/16 (addr) SEGGER_RTT_WriteDownBuffer/17 (addr) SEGGER_RTT_Write/18 (addr) SEGGER_RTT_PutCharSkipNoLock/20 (addr) SEGGER_RTT_PutCharSkip/21 (addr) SEGGER_RTT_PutCharSkip/21 (addr) SEGGER_RTT_PutChar/22 (addr) SEGGER_RTT_PutChar/22 (addr) SEGGER_RTT_HasKey/25 (addr) SEGGER_RTT_HasKey/25 (addr) SEGGER_RTT_HasData/26 (addr) SEGGER_RTT_HasDataUp/27 (addr) SEGGER_RTT_AllocDownBuffer/28 (addr) SEGGER_RTT_AllocDownBuffer/28 (addr) SEGGER_RTT_AllocUpBuffer/29 (addr) SEGGER_RTT_AllocUpBuffer/29 (addr) SEGGER_RTT_ConfigUpBuffer/30 (addr) SEGGER_RTT_ConfigUpBuffer/30 (addr) SEGGER_RTT_ConfigDownBuffer/31 (addr) SEGGER_RTT_ConfigDownBuffer/31 (addr) SEGGER_RTT_SetNameUpBuffer/32 (addr) SEGGER_RTT_SetNameUpBuffer/32 (addr) SEGGER_RTT_SetNameDownBuffer/33 (addr) SEGGER_RTT_SetNameDownBuffer/33 (addr) SEGGER_RTT_SetFlagsUpBuffer/34 (addr) SEGGER_RTT_SetFlagsUpBuffer/34 (addr) SEGGER_RTT_SetFlagsDownBuffer/35 (addr) SEGGER_RTT_SetFlagsDownBuffer/35 (addr) SEGGER_RTT_SetTerminal/37 (addr) SEGGER_RTT_SetTerminal/37 (addr) SEGGER_RTT_TerminalOut/38 (addr) SEGGER_RTT_TerminalOut/38 (addr) SEGGER_RTT_GetAvailWriteSpace/39 (addr) SEGGER_RTT_GetBytesInBuffer/40 (addr) 
+  Availability: not-ready
+  Varpool flags:
+_aTerminalId/0 (_aTerminalId) @0da12f30
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: _PostTerminalSwitch/8 (read) SEGGER_RTT_SetTerminal/37 (read) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+Optimized Symbol table:
+
+strlen/44 (strlen) @0dad1540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: SEGGER_RTT_TerminalOut/38 SEGGER_RTT_WriteString/19 
+  Calls: 
+memcpy/43 (memcpy) @0dab3a80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: SEGGER_RTT_WriteWithOverwriteNoLock/14 SEGGER_RTT_WriteWithOverwriteNoLock/14 SEGGER_RTT_ReadNoLock/11 SEGGER_RTT_ReadNoLock/11 SEGGER_RTT_ReadUpBufferNoLock/10 SEGGER_RTT_ReadUpBufferNoLock/10 _WriteNoCheck/7 _WriteNoCheck/7 _WriteNoCheck/7 _WriteBlocking/6 
+  Calls: 
+_aInitStr.0/42 (_aInitStr) @0dab2480
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: _DoInit/5 (read) 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+memset/41 (memset) @0dab38c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: _DoInit/5 
+  Calls: 
+SEGGER_RTT_GetBytesInBuffer/40 (SEGGER_RTT_GetBytesInBuffer) @0dab3460
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: _SEGGER_RTT/1 (addr) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+SEGGER_RTT_GetAvailWriteSpace/39 (SEGGER_RTT_GetAvailWriteSpace) @0dab31c0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: _SEGGER_RTT/1 (addr) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: _GetAvailWriteSpace/9 
+SEGGER_RTT_TerminalOut/38 (SEGGER_RTT_TerminalOut) @0da9fe00
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: _SEGGER_RTT/1 (addr) _SEGGER_RTT/1 (addr) _ActiveTerminal/4 (read) _ActiveTerminal/4 (read) _ActiveTerminal/4 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: _PostTerminalSwitch/8 _WriteBlocking/6 _PostTerminalSwitch/8 _PostTerminalSwitch/8 _WriteBlocking/6 _PostTerminalSwitch/8 _PostTerminalSwitch/8 _WriteBlocking/6 _PostTerminalSwitch/8 _GetAvailWriteSpace/9 strlen/44 _DoInit/5 
+SEGGER_RTT_SetTerminal/37 (SEGGER_RTT_SetTerminal) @0da9f460
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: _SEGGER_RTT/1 (addr) _aTerminalId/0 (read) _SEGGER_RTT/1 (addr) _ActiveTerminal/4 (write) _ActiveTerminal/4 (write) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: _WriteNoCheck/7 _GetAvailWriteSpace/9 _WriteBlocking/6 _DoInit/5 
+SEGGER_RTT_Init/36 (SEGGER_RTT_Init) @0da9fd20
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: _DoInit/5 
+SEGGER_RTT_SetFlagsDownBuffer/35 (SEGGER_RTT_SetFlagsDownBuffer) @0da9fa80
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: _SEGGER_RTT/1 (addr) _SEGGER_RTT/1 (addr) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: _DoInit/5 
+SEGGER_RTT_SetFlagsUpBuffer/34 (SEGGER_RTT_SetFlagsUpBuffer) @0da9f700
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: _SEGGER_RTT/1 (addr) _SEGGER_RTT/1 (addr) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: _DoInit/5 
+SEGGER_RTT_SetNameDownBuffer/33 (SEGGER_RTT_SetNameDownBuffer) @0da9f380
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: _SEGGER_RTT/1 (addr) _SEGGER_RTT/1 (addr) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: _DoInit/5 
+SEGGER_RTT_SetNameUpBuffer/32 (SEGGER_RTT_SetNameUpBuffer) @0da9f000
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: _SEGGER_RTT/1 (addr) _SEGGER_RTT/1 (addr) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: _DoInit/5 
+SEGGER_RTT_ConfigDownBuffer/31 (SEGGER_RTT_ConfigDownBuffer) @0da6a540
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: _SEGGER_RTT/1 (addr) _SEGGER_RTT/1 (addr) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: _DoInit/5 
+SEGGER_RTT_ConfigUpBuffer/30 (SEGGER_RTT_ConfigUpBuffer) @0da6aee0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: _SEGGER_RTT/1 (addr) _SEGGER_RTT/1 (addr) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: _DoInit/5 
+SEGGER_RTT_AllocUpBuffer/29 (SEGGER_RTT_AllocUpBuffer) @0da6ab60
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: _SEGGER_RTT/1 (addr) _SEGGER_RTT/1 (addr) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: _DoInit/5 
+SEGGER_RTT_AllocDownBuffer/28 (SEGGER_RTT_AllocDownBuffer) @0da6a7e0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: _SEGGER_RTT/1 (addr) _SEGGER_RTT/1 (addr) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: _DoInit/5 
+SEGGER_RTT_HasDataUp/27 (SEGGER_RTT_HasDataUp) @0da6a460
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: _SEGGER_RTT/1 (addr) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+SEGGER_RTT_HasData/26 (SEGGER_RTT_HasData) @0da6a1c0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: _SEGGER_RTT/1 (addr) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+SEGGER_RTT_HasKey/25 (SEGGER_RTT_HasKey) @0da60e00
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: _SEGGER_RTT/1 (addr) _SEGGER_RTT/1 (addr) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: _DoInit/5 
+SEGGER_RTT_WaitKey/24 (SEGGER_RTT_WaitKey) @0da60700
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: SEGGER_RTT_GetKey/23 
+SEGGER_RTT_GetKey/23 (SEGGER_RTT_GetKey) @0da601c0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: SEGGER_RTT_WaitKey/24 
+  Calls: SEGGER_RTT_Read/13 
+SEGGER_RTT_PutChar/22 (SEGGER_RTT_PutChar) @0da60d20
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: _SEGGER_RTT/1 (addr) _SEGGER_RTT/1 (addr) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: _DoInit/5 
+SEGGER_RTT_PutCharSkip/21 (SEGGER_RTT_PutCharSkip) @0da609a0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: _SEGGER_RTT/1 (addr) _SEGGER_RTT/1 (addr) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: _DoInit/5 
+SEGGER_RTT_PutCharSkipNoLock/20 (SEGGER_RTT_PutCharSkipNoLock) @0da60620
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: _SEGGER_RTT/1 (addr) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+SEGGER_RTT_WriteString/19 (SEGGER_RTT_WriteString) @0da60380
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: SEGGER_RTT_Write/18 strlen/44 
+SEGGER_RTT_Write/18 (SEGGER_RTT_Write) @0da600e0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: _SEGGER_RTT/1 (addr) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: SEGGER_RTT_WriteString/19 
+  Calls: SEGGER_RTT_WriteNoLock/16 _DoInit/5 
+SEGGER_RTT_WriteDownBuffer/17 (SEGGER_RTT_WriteDownBuffer) @0da46b60
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: _SEGGER_RTT/1 (addr) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: SEGGER_RTT_WriteDownBufferNoLock/15 _DoInit/5 
+SEGGER_RTT_WriteNoLock/16 (SEGGER_RTT_WriteNoLock) @0da46000
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: _SEGGER_RTT/1 (addr) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: SEGGER_RTT_Write/18 
+  Calls: _WriteBlocking/6 _WriteNoCheck/7 _GetAvailWriteSpace/9 _WriteNoCheck/7 _GetAvailWriteSpace/9 
+SEGGER_RTT_WriteDownBufferNoLock/15 (SEGGER_RTT_WriteDownBufferNoLock) @0da46d20
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: _SEGGER_RTT/1 (addr) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: SEGGER_RTT_WriteDownBuffer/17 
+  Calls: _WriteBlocking/6 _WriteNoCheck/7 _GetAvailWriteSpace/9 _WriteNoCheck/7 _GetAvailWriteSpace/9 
+SEGGER_RTT_WriteWithOverwriteNoLock/14 (SEGGER_RTT_WriteWithOverwriteNoLock) @0da46a80
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: _SEGGER_RTT/1 (addr) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: memcpy/43 memcpy/43 
+SEGGER_RTT_Read/13 (SEGGER_RTT_Read) @0da46620
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: SEGGER_RTT_GetKey/23 
+  Calls: SEGGER_RTT_ReadNoLock/11 
+SEGGER_RTT_ReadUpBuffer/12 (SEGGER_RTT_ReadUpBuffer) @0da462a0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: SEGGER_RTT_ReadUpBufferNoLock/10 
+SEGGER_RTT_ReadNoLock/11 (SEGGER_RTT_ReadNoLock) @0da3eb60
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: _SEGGER_RTT/1 (addr) _SEGGER_RTT/1 (addr) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: SEGGER_RTT_Read/13 
+  Calls: memcpy/43 memcpy/43 _DoInit/5 
+SEGGER_RTT_ReadUpBufferNoLock/10 (SEGGER_RTT_ReadUpBufferNoLock) @0da3ea80
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: _SEGGER_RTT/1 (addr) _SEGGER_RTT/1 (addr) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: SEGGER_RTT_ReadUpBuffer/12 
+  Calls: memcpy/43 memcpy/43 _DoInit/5 
+_GetAvailWriteSpace/9 (_GetAvailWriteSpace) @0da3e460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: SEGGER_RTT_GetAvailWriteSpace/39 SEGGER_RTT_TerminalOut/38 SEGGER_RTT_SetTerminal/37 SEGGER_RTT_WriteNoLock/16 SEGGER_RTT_WriteNoLock/16 SEGGER_RTT_WriteDownBufferNoLock/15 SEGGER_RTT_WriteDownBufferNoLock/15 
+  Calls: 
+_PostTerminalSwitch/8 (_PostTerminalSwitch) @0da3e1c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: _aTerminalId/0 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: SEGGER_RTT_TerminalOut/38 SEGGER_RTT_TerminalOut/38 SEGGER_RTT_TerminalOut/38 SEGGER_RTT_TerminalOut/38 SEGGER_RTT_TerminalOut/38 SEGGER_RTT_TerminalOut/38 
+  Calls: _WriteBlocking/6 
+_WriteNoCheck/7 (_WriteNoCheck) @0da14ee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: SEGGER_RTT_SetTerminal/37 SEGGER_RTT_WriteNoLock/16 SEGGER_RTT_WriteNoLock/16 SEGGER_RTT_WriteDownBufferNoLock/15 SEGGER_RTT_WriteDownBufferNoLock/15 
+  Calls: memcpy/43 memcpy/43 memcpy/43 
+_WriteBlocking/6 (_WriteBlocking) @0da149a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: SEGGER_RTT_TerminalOut/38 SEGGER_RTT_TerminalOut/38 SEGGER_RTT_TerminalOut/38 SEGGER_RTT_SetTerminal/37 SEGGER_RTT_WriteNoLock/16 SEGGER_RTT_WriteDownBufferNoLock/15 _PostTerminalSwitch/8 
+  Calls: memcpy/43 
+_DoInit/5 (_DoInit) @0da14540
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: _SEGGER_RTT/1 (addr) _acUpBuffer/2 (addr) _acDownBuffer/3 (addr) _aInitStr.0/42 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: SEGGER_RTT_TerminalOut/38 SEGGER_RTT_SetTerminal/37 SEGGER_RTT_Init/36 SEGGER_RTT_SetFlagsDownBuffer/35 SEGGER_RTT_SetFlagsUpBuffer/34 SEGGER_RTT_SetNameDownBuffer/33 SEGGER_RTT_SetNameUpBuffer/32 SEGGER_RTT_ConfigDownBuffer/31 SEGGER_RTT_ConfigUpBuffer/30 SEGGER_RTT_AllocUpBuffer/29 SEGGER_RTT_AllocDownBuffer/28 SEGGER_RTT_HasKey/25 SEGGER_RTT_PutChar/22 SEGGER_RTT_PutCharSkip/21 SEGGER_RTT_Write/18 SEGGER_RTT_WriteDownBuffer/17 SEGGER_RTT_ReadNoLock/11 SEGGER_RTT_ReadUpBufferNoLock/10 
+  Calls: memset/41 
+_ActiveTerminal/4 (_ActiveTerminal) @0da13120
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: SEGGER_RTT_SetTerminal/37 (write) SEGGER_RTT_SetTerminal/37 (write) SEGGER_RTT_TerminalOut/38 (read) SEGGER_RTT_TerminalOut/38 (read) SEGGER_RTT_TerminalOut/38 (read) 
+  Availability: available
+  Varpool flags:
+_acDownBuffer/3 (_acDownBuffer) @0da13090
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: _DoInit/5 (addr) 
+  Availability: available
+  Varpool flags:
+_acUpBuffer/2 (_acUpBuffer) @0da13048
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: _DoInit/5 (addr) 
+  Availability: available
+  Varpool flags:
+_SEGGER_RTT/1 (_SEGGER_RTT) @0da13000
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: SEGGER_RTT_TerminalOut/38 (addr) SEGGER_RTT_SetTerminal/37 (addr) SEGGER_RTT_GetAvailWriteSpace/39 (addr) SEGGER_RTT_SetTerminal/37 (addr) _DoInit/5 (addr) SEGGER_RTT_ReadUpBufferNoLock/10 (addr) SEGGER_RTT_ReadNoLock/11 (addr) SEGGER_RTT_WriteWithOverwriteNoLock/14 (addr) SEGGER_RTT_WriteDownBufferNoLock/15 (addr) SEGGER_RTT_WriteNoLock/16 (addr) SEGGER_RTT_WriteDownBuffer/17 (addr) SEGGER_RTT_ReadUpBufferNoLock/10 (addr) SEGGER_RTT_Write/18 (addr) SEGGER_RTT_ReadNoLock/11 (addr) SEGGER_RTT_PutCharSkipNoLock/20 (addr) SEGGER_RTT_PutCharSkip/21 (addr) SEGGER_RTT_PutCharSkip/21 (addr) SEGGER_RTT_PutChar/22 (addr) SEGGER_RTT_HasKey/25 (addr) SEGGER_RTT_PutChar/22 (addr) SEGGER_RTT_HasData/26 (addr) SEGGER_RTT_HasKey/25 (addr) SEGGER_RTT_HasDataUp/27 (addr) SEGGER_RTT_AllocDownBuffer/28 (addr) SEGGER_RTT_AllocDownBuffer/28 (addr) SEGGER_RTT_AllocUpBuffer/29 (addr) SEGGER_RTT_AllocUpBuffer/29 (addr) SEGGER_RTT_ConfigUpBuffer/30 (addr) SEGGER_RTT_ConfigUpBuffer/30 (addr) SEGGER_RTT_ConfigDownBuffer/31 (addr) SEGGER_RTT_ConfigDownBuffer/31 (addr) SEGGER_RTT_SetNameUpBuffer/32 (addr) SEGGER_RTT_SetNameUpBuffer/32 (addr) SEGGER_RTT_SetNameDownBuffer/33 (addr) SEGGER_RTT_SetNameDownBuffer/33 (addr) SEGGER_RTT_SetFlagsUpBuffer/34 (addr) SEGGER_RTT_SetFlagsUpBuffer/34 (addr) SEGGER_RTT_SetFlagsDownBuffer/35 (addr) SEGGER_RTT_SetFlagsDownBuffer/35 (addr) SEGGER_RTT_TerminalOut/38 (addr) SEGGER_RTT_GetBytesInBuffer/40 (addr) 
+  Availability: available
+  Varpool flags:
+_aTerminalId/0 (_aTerminalId) @0da12f30
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: _PostTerminalSwitch/8 (read) SEGGER_RTT_SetTerminal/37 (read) 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+Materializing clones
+Materialization Call site updates done.
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+Trivially needed variables: _aInitStr.0/42 _ActiveTerminal/4 _acDownBuffer/3 _acUpBuffer/2 _SEGGER_RTT/1 _aTerminalId/0
+Removing variables:
+
+Final Symbol table:
+
+strlen/44 (strlen) @0dad1540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+memcpy/43 (memcpy) @0dab3a80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+_aInitStr.0/42 (_aInitStr) @0dab2480
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written section:.rodata._aInitStr.0 (implicit_section)
+  Aux: @00000001
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+memset/41 (memset) @0dab38c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+SEGGER_RTT_GetBytesInBuffer/40 (SEGGER_RTT_GetBytesInBuffer) @0dab3460
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.SEGGER_RTT_GetBytesInBuffer (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+SEGGER_RTT_GetAvailWriteSpace/39 (SEGGER_RTT_GetAvailWriteSpace) @0dab31c0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.SEGGER_RTT_GetAvailWriteSpace (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+SEGGER_RTT_TerminalOut/38 (SEGGER_RTT_TerminalOut) @0da9fe00
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.SEGGER_RTT_TerminalOut (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+SEGGER_RTT_SetTerminal/37 (SEGGER_RTT_SetTerminal) @0da9f460
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.SEGGER_RTT_SetTerminal (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+SEGGER_RTT_Init/36 (SEGGER_RTT_Init) @0da9fd20
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.SEGGER_RTT_Init (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+SEGGER_RTT_SetFlagsDownBuffer/35 (SEGGER_RTT_SetFlagsDownBuffer) @0da9fa80
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.SEGGER_RTT_SetFlagsDownBuffer (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+SEGGER_RTT_SetFlagsUpBuffer/34 (SEGGER_RTT_SetFlagsUpBuffer) @0da9f700
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.SEGGER_RTT_SetFlagsUpBuffer (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+SEGGER_RTT_SetNameDownBuffer/33 (SEGGER_RTT_SetNameDownBuffer) @0da9f380
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.SEGGER_RTT_SetNameDownBuffer (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+SEGGER_RTT_SetNameUpBuffer/32 (SEGGER_RTT_SetNameUpBuffer) @0da9f000
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.SEGGER_RTT_SetNameUpBuffer (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+SEGGER_RTT_ConfigDownBuffer/31 (SEGGER_RTT_ConfigDownBuffer) @0da6a540
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.SEGGER_RTT_ConfigDownBuffer (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+SEGGER_RTT_ConfigUpBuffer/30 (SEGGER_RTT_ConfigUpBuffer) @0da6aee0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.SEGGER_RTT_ConfigUpBuffer (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+SEGGER_RTT_AllocUpBuffer/29 (SEGGER_RTT_AllocUpBuffer) @0da6ab60
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.SEGGER_RTT_AllocUpBuffer (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+SEGGER_RTT_AllocDownBuffer/28 (SEGGER_RTT_AllocDownBuffer) @0da6a7e0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.SEGGER_RTT_AllocDownBuffer (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+SEGGER_RTT_HasDataUp/27 (SEGGER_RTT_HasDataUp) @0da6a460
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.SEGGER_RTT_HasDataUp (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+SEGGER_RTT_HasData/26 (SEGGER_RTT_HasData) @0da6a1c0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.SEGGER_RTT_HasData (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+SEGGER_RTT_HasKey/25 (SEGGER_RTT_HasKey) @0da60e00
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.SEGGER_RTT_HasKey (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+SEGGER_RTT_WaitKey/24 (SEGGER_RTT_WaitKey) @0da60700
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.SEGGER_RTT_WaitKey (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+SEGGER_RTT_GetKey/23 (SEGGER_RTT_GetKey) @0da601c0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.SEGGER_RTT_GetKey (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+SEGGER_RTT_PutChar/22 (SEGGER_RTT_PutChar) @0da60d20
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.SEGGER_RTT_PutChar (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+SEGGER_RTT_PutCharSkip/21 (SEGGER_RTT_PutCharSkip) @0da609a0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.SEGGER_RTT_PutCharSkip (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+SEGGER_RTT_PutCharSkipNoLock/20 (SEGGER_RTT_PutCharSkipNoLock) @0da60620
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.SEGGER_RTT_PutCharSkipNoLock (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+SEGGER_RTT_WriteString/19 (SEGGER_RTT_WriteString) @0da60380
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.SEGGER_RTT_WriteString (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+SEGGER_RTT_Write/18 (SEGGER_RTT_Write) @0da600e0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.SEGGER_RTT_Write (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+SEGGER_RTT_WriteDownBuffer/17 (SEGGER_RTT_WriteDownBuffer) @0da46b60
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.SEGGER_RTT_WriteDownBuffer (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+SEGGER_RTT_WriteNoLock/16 (SEGGER_RTT_WriteNoLock) @0da46000
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.SEGGER_RTT_WriteNoLock (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+SEGGER_RTT_WriteDownBufferNoLock/15 (SEGGER_RTT_WriteDownBufferNoLock) @0da46d20
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.SEGGER_RTT_WriteDownBufferNoLock (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+SEGGER_RTT_WriteWithOverwriteNoLock/14 (SEGGER_RTT_WriteWithOverwriteNoLock) @0da46a80
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.SEGGER_RTT_WriteWithOverwriteNoLock (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+SEGGER_RTT_Read/13 (SEGGER_RTT_Read) @0da46620
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.SEGGER_RTT_Read (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+SEGGER_RTT_ReadUpBuffer/12 (SEGGER_RTT_ReadUpBuffer) @0da462a0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.SEGGER_RTT_ReadUpBuffer (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+SEGGER_RTT_ReadNoLock/11 (SEGGER_RTT_ReadNoLock) @0da3eb60
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.SEGGER_RTT_ReadNoLock (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+SEGGER_RTT_ReadUpBufferNoLock/10 (SEGGER_RTT_ReadUpBufferNoLock) @0da3ea80
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.SEGGER_RTT_ReadUpBufferNoLock (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+_GetAvailWriteSpace/9 (_GetAvailWriteSpace) @0da3e460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written section:.text._GetAvailWriteSpace (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+_PostTerminalSwitch/8 (_PostTerminalSwitch) @0da3e1c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written section:.text._PostTerminalSwitch (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+_WriteNoCheck/7 (_WriteNoCheck) @0da14ee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written section:.text._WriteNoCheck (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+_WriteBlocking/6 (_WriteBlocking) @0da149a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written section:.text._WriteBlocking (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+_DoInit/5 (_DoInit) @0da14540
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written section:.text._DoInit (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+_ActiveTerminal/4 (_ActiveTerminal) @0da13120
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written section:.bss._ActiveTerminal (implicit_section)
+  Aux: @0dab2480
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags:
+_acDownBuffer/3 (_acDownBuffer) @0da13090
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written section:.bss._acDownBuffer (implicit_section)
+  Aux: @0da13120
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags:
+_acUpBuffer/2 (_acUpBuffer) @0da13048
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written section:.bss._acUpBuffer (implicit_section)
+  Aux: @0da13090
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags:
+_SEGGER_RTT/1 (_SEGGER_RTT) @0da13000
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.bss._SEGGER_RTT (implicit_section)
+  Aux: @0da13048
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags:
+_aTerminalId/0 (_aTerminalId) @0da12f30
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written section:.rodata._aTerminalId (implicit_section)
+  Aux: @0da13000
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
