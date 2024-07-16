@@ -1,0 +1,890 @@
+Trivially needed symbols: Clock_Ip_axPllCallbacks/12 Clock_Ip_EnableSpll_TrustedCall/11 Clock_Ip_DisableSpll_TrustedCall/10 Clock_Ip_SetSpll_TrustedCall/9 Clock_Ip_ResetSpll_TrustedCall/8 Clock_Ip_EnableSpll/7 Clock_Ip_DisableSpll/6 Clock_Ip_CompleteSpll/5 Clock_Ip_SetSpll/4 Clock_Ip_ResetSpll/3 Clock_Ip_CallbackPllEmptyDisable/2 Clock_Ip_CallbackPllEmptyComplete/1 Clock_Ip_CallbackPllEmpty/0
+
+
+Initial Symbol table:
+
+Clock_Ip_ReportClockErrors/15 (Clock_Ip_ReportClockErrors) @0db42540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Clock_Ip_CompleteSpll/5 
+  Calls: 
+Clock_Ip_TimeoutExpired/14 (Clock_Ip_TimeoutExpired) @0db42460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Clock_Ip_CompleteSpll/5 
+  Calls: 
+Clock_Ip_StartTimeout/13 (Clock_Ip_StartTimeout) @0db42380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Clock_Ip_CompleteSpll/5 
+  Calls: 
+Clock_Ip_axPllCallbacks/12 (Clock_Ip_axPllCallbacks) @0db357e0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @01981040
+  References: Clock_Ip_CallbackPllEmpty/0 (addr) Clock_Ip_CallbackPllEmpty/0 (addr) Clock_Ip_CallbackPllEmptyComplete/1 (addr) Clock_Ip_CallbackPllEmpty/0 (addr) Clock_Ip_CallbackPllEmptyDisable/2 (addr) Clock_Ip_ResetSpll/3 (addr) Clock_Ip_SetSpll/4 (addr) Clock_Ip_CompleteSpll/5 (addr) Clock_Ip_EnableSpll/7 (addr) Clock_Ip_DisableSpll/6 (addr) 
+  Referring: 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+Clock_Ip_EnableSpll_TrustedCall/11 (Clock_Ip_EnableSpll_TrustedCall) @0db40b60
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0db357e0
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: Clock_Ip_EnableSpll/7 
+  Calls: 
+Clock_Ip_DisableSpll_TrustedCall/10 (Clock_Ip_DisableSpll_TrustedCall) @0db407e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0db40b60
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: Clock_Ip_DisableSpll/6 
+  Calls: 
+Clock_Ip_SetSpll_TrustedCall/9 (Clock_Ip_SetSpll_TrustedCall) @0db40540
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0db407e0
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: Clock_Ip_SetSpll/4 
+  Calls: 
+Clock_Ip_ResetSpll_TrustedCall/8 (Clock_Ip_ResetSpll_TrustedCall) @0db37b60
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0db40540
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: Clock_Ip_ResetSpll/3 
+  Calls: 
+Clock_Ip_EnableSpll/7 (Clock_Ip_EnableSpll) @0db37620
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  Aux: @0db37b60
+  References: 
+  Referring: Clock_Ip_axPllCallbacks/12 (addr) 
+  Function flags: body
+  Called by: 
+  Calls: Clock_Ip_EnableSpll_TrustedCall/11 
+Clock_Ip_DisableSpll/6 (Clock_Ip_DisableSpll) @0db370e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  Aux: @0db37620
+  References: 
+  Referring: Clock_Ip_axPllCallbacks/12 (addr) 
+  Function flags: body
+  Called by: 
+  Calls: Clock_Ip_DisableSpll_TrustedCall/10 
+Clock_Ip_CompleteSpll/5 (Clock_Ip_CompleteSpll) @0db37d20
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  Aux: @0db370e0
+  References: 
+  Referring: Clock_Ip_axPllCallbacks/12 (addr) 
+  Function flags: body
+  Called by: 
+  Calls: Clock_Ip_ReportClockErrors/15 Clock_Ip_TimeoutExpired/14 Clock_Ip_StartTimeout/13 
+Clock_Ip_SetSpll/4 (Clock_Ip_SetSpll) @0db37a80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  Aux: @0db37d20
+  References: 
+  Referring: Clock_Ip_axPllCallbacks/12 (addr) 
+  Function flags: body
+  Called by: 
+  Calls: Clock_Ip_SetSpll_TrustedCall/9 
+Clock_Ip_ResetSpll/3 (Clock_Ip_ResetSpll) @0db377e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  Aux: @0db37a80
+  References: 
+  Referring: Clock_Ip_axPllCallbacks/12 (addr) 
+  Function flags: body
+  Called by: 
+  Calls: Clock_Ip_ResetSpll_TrustedCall/8 
+Clock_Ip_CallbackPllEmptyDisable/2 (Clock_Ip_CallbackPllEmptyDisable) @0db37540
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  Aux: @0db377e0
+  References: 
+  Referring: Clock_Ip_axPllCallbacks/12 (addr) 
+  Function flags: body
+  Called by: 
+  Calls: 
+Clock_Ip_CallbackPllEmptyComplete/1 (Clock_Ip_CallbackPllEmptyComplete) @0db372a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  Aux: @0db37540
+  References: 
+  Referring: Clock_Ip_axPllCallbacks/12 (addr) 
+  Function flags: body
+  Called by: 
+  Calls: 
+Clock_Ip_CallbackPllEmpty/0 (Clock_Ip_CallbackPllEmpty) @0db37000
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  Aux: @0db372a0
+  References: 
+  Referring: Clock_Ip_axPllCallbacks/12 (addr) Clock_Ip_axPllCallbacks/12 (addr) Clock_Ip_axPllCallbacks/12 (addr) 
+  Function flags: body
+  Called by: 
+  Calls: 
+
+Removing unused symbols:
+
+Reclaimed Symbol table:
+
+Clock_Ip_ReportClockErrors/15 (Clock_Ip_ReportClockErrors) @0db42540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Clock_Ip_CompleteSpll/5 
+  Calls: 
+Clock_Ip_TimeoutExpired/14 (Clock_Ip_TimeoutExpired) @0db42460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Clock_Ip_CompleteSpll/5 
+  Calls: 
+Clock_Ip_StartTimeout/13 (Clock_Ip_StartTimeout) @0db42380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Clock_Ip_CompleteSpll/5 
+  Calls: 
+Clock_Ip_axPllCallbacks/12 (Clock_Ip_axPllCallbacks) @0db357e0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: Clock_Ip_CallbackPllEmpty/0 (addr) Clock_Ip_CallbackPllEmpty/0 (addr) Clock_Ip_CallbackPllEmptyComplete/1 (addr) Clock_Ip_CallbackPllEmpty/0 (addr) Clock_Ip_CallbackPllEmptyDisable/2 (addr) Clock_Ip_ResetSpll/3 (addr) Clock_Ip_SetSpll/4 (addr) Clock_Ip_CompleteSpll/5 (addr) Clock_Ip_EnableSpll/7 (addr) Clock_Ip_DisableSpll/6 (addr) 
+  Referring: 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+Clock_Ip_EnableSpll_TrustedCall/11 (Clock_Ip_EnableSpll_TrustedCall) @0db40b60
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: Clock_Ip_EnableSpll/7 
+  Calls: 
+Clock_Ip_DisableSpll_TrustedCall/10 (Clock_Ip_DisableSpll_TrustedCall) @0db407e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: Clock_Ip_DisableSpll/6 
+  Calls: 
+Clock_Ip_SetSpll_TrustedCall/9 (Clock_Ip_SetSpll_TrustedCall) @0db40540
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: Clock_Ip_SetSpll/4 
+  Calls: 
+Clock_Ip_ResetSpll_TrustedCall/8 (Clock_Ip_ResetSpll_TrustedCall) @0db37b60
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: Clock_Ip_ResetSpll/3 
+  Calls: 
+Clock_Ip_EnableSpll/7 (Clock_Ip_EnableSpll) @0db37620
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  References: 
+  Referring: Clock_Ip_axPllCallbacks/12 (addr) 
+  Function flags: body
+  Called by: 
+  Calls: Clock_Ip_EnableSpll_TrustedCall/11 
+Clock_Ip_DisableSpll/6 (Clock_Ip_DisableSpll) @0db370e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  References: 
+  Referring: Clock_Ip_axPllCallbacks/12 (addr) 
+  Function flags: body
+  Called by: 
+  Calls: Clock_Ip_DisableSpll_TrustedCall/10 
+Clock_Ip_CompleteSpll/5 (Clock_Ip_CompleteSpll) @0db37d20
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  References: 
+  Referring: Clock_Ip_axPllCallbacks/12 (addr) 
+  Function flags: body
+  Called by: 
+  Calls: Clock_Ip_ReportClockErrors/15 Clock_Ip_TimeoutExpired/14 Clock_Ip_StartTimeout/13 
+Clock_Ip_SetSpll/4 (Clock_Ip_SetSpll) @0db37a80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  References: 
+  Referring: Clock_Ip_axPllCallbacks/12 (addr) 
+  Function flags: body
+  Called by: 
+  Calls: Clock_Ip_SetSpll_TrustedCall/9 
+Clock_Ip_ResetSpll/3 (Clock_Ip_ResetSpll) @0db377e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  References: 
+  Referring: Clock_Ip_axPllCallbacks/12 (addr) 
+  Function flags: body
+  Called by: 
+  Calls: Clock_Ip_ResetSpll_TrustedCall/8 
+Clock_Ip_CallbackPllEmptyDisable/2 (Clock_Ip_CallbackPllEmptyDisable) @0db37540
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  References: 
+  Referring: Clock_Ip_axPllCallbacks/12 (addr) 
+  Function flags: body
+  Called by: 
+  Calls: 
+Clock_Ip_CallbackPllEmptyComplete/1 (Clock_Ip_CallbackPllEmptyComplete) @0db372a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  References: 
+  Referring: Clock_Ip_axPllCallbacks/12 (addr) 
+  Function flags: body
+  Called by: 
+  Calls: 
+Clock_Ip_CallbackPllEmpty/0 (Clock_Ip_CallbackPllEmpty) @0db37000
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  References: 
+  Referring: Clock_Ip_axPllCallbacks/12 (addr) Clock_Ip_axPllCallbacks/12 (addr) Clock_Ip_axPllCallbacks/12 (addr) 
+  Function flags: body
+  Called by: 
+  Calls: 
+
+
+Initial Symbol table:
+
+Clock_Ip_ReportClockErrors/15 (Clock_Ip_ReportClockErrors) @0db42540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Clock_Ip_CompleteSpll/5 
+  Calls: 
+Clock_Ip_TimeoutExpired/14 (Clock_Ip_TimeoutExpired) @0db42460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Clock_Ip_CompleteSpll/5 
+  Calls: 
+Clock_Ip_StartTimeout/13 (Clock_Ip_StartTimeout) @0db42380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Clock_Ip_CompleteSpll/5 
+  Calls: 
+Clock_Ip_axPllCallbacks/12 (Clock_Ip_axPllCallbacks) @0db357e0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: Clock_Ip_CallbackPllEmpty/0 (addr) Clock_Ip_CallbackPllEmpty/0 (addr) Clock_Ip_CallbackPllEmptyComplete/1 (addr) Clock_Ip_CallbackPllEmpty/0 (addr) Clock_Ip_CallbackPllEmptyDisable/2 (addr) Clock_Ip_ResetSpll/3 (addr) Clock_Ip_SetSpll/4 (addr) Clock_Ip_CompleteSpll/5 (addr) Clock_Ip_EnableSpll/7 (addr) Clock_Ip_DisableSpll/6 (addr) 
+  Referring: 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+Clock_Ip_EnableSpll_TrustedCall/11 (Clock_Ip_EnableSpll_TrustedCall) @0db40b60
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: Clock_Ip_EnableSpll/7 
+  Calls: 
+Clock_Ip_DisableSpll_TrustedCall/10 (Clock_Ip_DisableSpll_TrustedCall) @0db407e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: Clock_Ip_DisableSpll/6 
+  Calls: 
+Clock_Ip_SetSpll_TrustedCall/9 (Clock_Ip_SetSpll_TrustedCall) @0db40540
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: Clock_Ip_SetSpll/4 
+  Calls: 
+Clock_Ip_ResetSpll_TrustedCall/8 (Clock_Ip_ResetSpll_TrustedCall) @0db37b60
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: Clock_Ip_ResetSpll/3 
+  Calls: 
+Clock_Ip_EnableSpll/7 (Clock_Ip_EnableSpll) @0db37620
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  References: 
+  Referring: Clock_Ip_axPllCallbacks/12 (addr) 
+  Function flags: body
+  Called by: 
+  Calls: Clock_Ip_EnableSpll_TrustedCall/11 
+Clock_Ip_DisableSpll/6 (Clock_Ip_DisableSpll) @0db370e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  References: 
+  Referring: Clock_Ip_axPllCallbacks/12 (addr) 
+  Function flags: body
+  Called by: 
+  Calls: Clock_Ip_DisableSpll_TrustedCall/10 
+Clock_Ip_CompleteSpll/5 (Clock_Ip_CompleteSpll) @0db37d20
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  References: 
+  Referring: Clock_Ip_axPllCallbacks/12 (addr) 
+  Function flags: body
+  Called by: 
+  Calls: Clock_Ip_ReportClockErrors/15 Clock_Ip_TimeoutExpired/14 Clock_Ip_StartTimeout/13 
+Clock_Ip_SetSpll/4 (Clock_Ip_SetSpll) @0db37a80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  References: 
+  Referring: Clock_Ip_axPllCallbacks/12 (addr) 
+  Function flags: body
+  Called by: 
+  Calls: Clock_Ip_SetSpll_TrustedCall/9 
+Clock_Ip_ResetSpll/3 (Clock_Ip_ResetSpll) @0db377e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  References: 
+  Referring: Clock_Ip_axPllCallbacks/12 (addr) 
+  Function flags: body
+  Called by: 
+  Calls: Clock_Ip_ResetSpll_TrustedCall/8 
+Clock_Ip_CallbackPllEmptyDisable/2 (Clock_Ip_CallbackPllEmptyDisable) @0db37540
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  References: 
+  Referring: Clock_Ip_axPllCallbacks/12 (addr) 
+  Function flags: body
+  Called by: 
+  Calls: 
+Clock_Ip_CallbackPllEmptyComplete/1 (Clock_Ip_CallbackPllEmptyComplete) @0db372a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  References: 
+  Referring: Clock_Ip_axPllCallbacks/12 (addr) 
+  Function flags: body
+  Called by: 
+  Calls: 
+Clock_Ip_CallbackPllEmpty/0 (Clock_Ip_CallbackPllEmpty) @0db37000
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  References: 
+  Referring: Clock_Ip_axPllCallbacks/12 (addr) Clock_Ip_axPllCallbacks/12 (addr) Clock_Ip_axPllCallbacks/12 (addr) 
+  Function flags: body
+  Called by: 
+  Calls: 
+
+Removing unused symbols:
+
+Reclaimed Symbol table:
+
+Clock_Ip_ReportClockErrors/15 (Clock_Ip_ReportClockErrors) @0db42540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Clock_Ip_CompleteSpll/5 
+  Calls: 
+Clock_Ip_TimeoutExpired/14 (Clock_Ip_TimeoutExpired) @0db42460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Clock_Ip_CompleteSpll/5 
+  Calls: 
+Clock_Ip_StartTimeout/13 (Clock_Ip_StartTimeout) @0db42380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Clock_Ip_CompleteSpll/5 
+  Calls: 
+Clock_Ip_axPllCallbacks/12 (Clock_Ip_axPllCallbacks) @0db357e0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: Clock_Ip_CallbackPllEmpty/0 (addr) Clock_Ip_CallbackPllEmpty/0 (addr) Clock_Ip_CallbackPllEmptyComplete/1 (addr) Clock_Ip_CallbackPllEmpty/0 (addr) Clock_Ip_CallbackPllEmptyDisable/2 (addr) Clock_Ip_ResetSpll/3 (addr) Clock_Ip_SetSpll/4 (addr) Clock_Ip_CompleteSpll/5 (addr) Clock_Ip_EnableSpll/7 (addr) Clock_Ip_DisableSpll/6 (addr) 
+  Referring: 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+Clock_Ip_EnableSpll_TrustedCall/11 (Clock_Ip_EnableSpll_TrustedCall) @0db40b60
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: Clock_Ip_EnableSpll/7 
+  Calls: 
+Clock_Ip_DisableSpll_TrustedCall/10 (Clock_Ip_DisableSpll_TrustedCall) @0db407e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: Clock_Ip_DisableSpll/6 
+  Calls: 
+Clock_Ip_SetSpll_TrustedCall/9 (Clock_Ip_SetSpll_TrustedCall) @0db40540
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: Clock_Ip_SetSpll/4 
+  Calls: 
+Clock_Ip_ResetSpll_TrustedCall/8 (Clock_Ip_ResetSpll_TrustedCall) @0db37b60
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: Clock_Ip_ResetSpll/3 
+  Calls: 
+Clock_Ip_EnableSpll/7 (Clock_Ip_EnableSpll) @0db37620
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  References: 
+  Referring: Clock_Ip_axPllCallbacks/12 (addr) 
+  Function flags: body
+  Called by: 
+  Calls: Clock_Ip_EnableSpll_TrustedCall/11 
+Clock_Ip_DisableSpll/6 (Clock_Ip_DisableSpll) @0db370e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  References: 
+  Referring: Clock_Ip_axPllCallbacks/12 (addr) 
+  Function flags: body
+  Called by: 
+  Calls: Clock_Ip_DisableSpll_TrustedCall/10 
+Clock_Ip_CompleteSpll/5 (Clock_Ip_CompleteSpll) @0db37d20
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  References: 
+  Referring: Clock_Ip_axPllCallbacks/12 (addr) 
+  Function flags: body
+  Called by: 
+  Calls: Clock_Ip_ReportClockErrors/15 Clock_Ip_TimeoutExpired/14 Clock_Ip_StartTimeout/13 
+Clock_Ip_SetSpll/4 (Clock_Ip_SetSpll) @0db37a80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  References: 
+  Referring: Clock_Ip_axPllCallbacks/12 (addr) 
+  Function flags: body
+  Called by: 
+  Calls: Clock_Ip_SetSpll_TrustedCall/9 
+Clock_Ip_ResetSpll/3 (Clock_Ip_ResetSpll) @0db377e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  References: 
+  Referring: Clock_Ip_axPllCallbacks/12 (addr) 
+  Function flags: body
+  Called by: 
+  Calls: Clock_Ip_ResetSpll_TrustedCall/8 
+Clock_Ip_CallbackPllEmptyDisable/2 (Clock_Ip_CallbackPllEmptyDisable) @0db37540
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  References: 
+  Referring: Clock_Ip_axPllCallbacks/12 (addr) 
+  Function flags: body
+  Called by: 
+  Calls: 
+Clock_Ip_CallbackPllEmptyComplete/1 (Clock_Ip_CallbackPllEmptyComplete) @0db372a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  References: 
+  Referring: Clock_Ip_axPllCallbacks/12 (addr) 
+  Function flags: body
+  Called by: 
+  Calls: 
+Clock_Ip_CallbackPllEmpty/0 (Clock_Ip_CallbackPllEmpty) @0db37000
+  Type: function definition analyzed
+  Visibility: force_output no_reorder
+  Address is taken.
+  References: 
+  Referring: Clock_Ip_axPllCallbacks/12 (addr) Clock_Ip_axPllCallbacks/12 (addr) Clock_Ip_axPllCallbacks/12 (addr) 
+  Function flags: body
+  Called by: 
+  Calls: 
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+Optimized Symbol table:
+
+Clock_Ip_ReportClockErrors/15 (Clock_Ip_ReportClockErrors) @0db42540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Clock_Ip_CompleteSpll/5 
+  Calls: 
+Clock_Ip_TimeoutExpired/14 (Clock_Ip_TimeoutExpired) @0db42460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Clock_Ip_CompleteSpll/5 
+  Calls: 
+Clock_Ip_StartTimeout/13 (Clock_Ip_StartTimeout) @0db42380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Clock_Ip_CompleteSpll/5 
+  Calls: 
+Clock_Ip_axPllCallbacks/12 (Clock_Ip_axPllCallbacks) @0db357e0
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Clock_Ip_CallbackPllEmpty/0 (addr) Clock_Ip_CallbackPllEmpty/0 (addr) Clock_Ip_CallbackPllEmptyComplete/1 (addr) Clock_Ip_CallbackPllEmpty/0 (addr) Clock_Ip_CallbackPllEmptyDisable/2 (addr) Clock_Ip_ResetSpll/3 (addr) Clock_Ip_SetSpll/4 (addr) Clock_Ip_CompleteSpll/5 (addr) Clock_Ip_EnableSpll/7 (addr) Clock_Ip_DisableSpll/6 (addr) 
+  Referring: 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+Clock_Ip_EnableSpll_TrustedCall/11 (Clock_Ip_EnableSpll_TrustedCall) @0db40b60
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: Clock_Ip_EnableSpll/7 
+  Calls: 
+Clock_Ip_DisableSpll_TrustedCall/10 (Clock_Ip_DisableSpll_TrustedCall) @0db407e0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: Clock_Ip_DisableSpll/6 
+  Calls: 
+Clock_Ip_SetSpll_TrustedCall/9 (Clock_Ip_SetSpll_TrustedCall) @0db40540
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: Clock_Ip_SetSpll/4 
+  Calls: 
+Clock_Ip_ResetSpll_TrustedCall/8 (Clock_Ip_ResetSpll_TrustedCall) @0db37b60
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: Clock_Ip_ResetSpll/3 
+  Calls: 
+Clock_Ip_EnableSpll/7 (Clock_Ip_EnableSpll) @0db37620
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: 
+  Referring: Clock_Ip_axPllCallbacks/12 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Clock_Ip_EnableSpll_TrustedCall/11 
+Clock_Ip_DisableSpll/6 (Clock_Ip_DisableSpll) @0db370e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: 
+  Referring: Clock_Ip_axPllCallbacks/12 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Clock_Ip_DisableSpll_TrustedCall/10 
+Clock_Ip_CompleteSpll/5 (Clock_Ip_CompleteSpll) @0db37d20
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: 
+  Referring: Clock_Ip_axPllCallbacks/12 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Clock_Ip_ReportClockErrors/15 Clock_Ip_TimeoutExpired/14 Clock_Ip_StartTimeout/13 
+Clock_Ip_SetSpll/4 (Clock_Ip_SetSpll) @0db37a80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: 
+  Referring: Clock_Ip_axPllCallbacks/12 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Clock_Ip_SetSpll_TrustedCall/9 
+Clock_Ip_ResetSpll/3 (Clock_Ip_ResetSpll) @0db377e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: 
+  Referring: Clock_Ip_axPllCallbacks/12 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Clock_Ip_ResetSpll_TrustedCall/8 
+Clock_Ip_CallbackPllEmptyDisable/2 (Clock_Ip_CallbackPllEmptyDisable) @0db37540
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: 
+  Referring: Clock_Ip_axPllCallbacks/12 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+Clock_Ip_CallbackPllEmptyComplete/1 (Clock_Ip_CallbackPllEmptyComplete) @0db372a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: 
+  Referring: Clock_Ip_axPllCallbacks/12 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+Clock_Ip_CallbackPllEmpty/0 (Clock_Ip_CallbackPllEmpty) @0db37000
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  Address is taken.
+  References: 
+  Referring: Clock_Ip_axPllCallbacks/12 (addr) Clock_Ip_axPllCallbacks/12 (addr) Clock_Ip_axPllCallbacks/12 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+Materializing clones
+Materialization Call site updates done.
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+Trivially needed variables: Clock_Ip_axPllCallbacks/12
+Removing variables:
+
+Final Symbol table:
+
+Clock_Ip_ReportClockErrors/15 (Clock_Ip_ReportClockErrors) @0db42540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+Clock_Ip_TimeoutExpired/14 (Clock_Ip_TimeoutExpired) @0db42460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+Clock_Ip_StartTimeout/13 (Clock_Ip_StartTimeout) @0db42380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+Clock_Ip_axPllCallbacks/12 (Clock_Ip_axPllCallbacks) @0db357e0
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.rodata.Clock_Ip_axPllCallbacks (implicit_section)
+  Aux: @00000001
+  References: Clock_Ip_CallbackPllEmpty/0 (addr) Clock_Ip_CallbackPllEmpty/0 (addr) Clock_Ip_CallbackPllEmptyComplete/1 (addr) Clock_Ip_CallbackPllEmpty/0 (addr) Clock_Ip_CallbackPllEmptyDisable/2 (addr) Clock_Ip_ResetSpll/3 (addr) Clock_Ip_SetSpll/4 (addr) Clock_Ip_CompleteSpll/5 (addr) Clock_Ip_EnableSpll/7 (addr) Clock_Ip_DisableSpll/6 (addr) 
+  Referring: 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+Clock_Ip_EnableSpll_TrustedCall/11 (Clock_Ip_EnableSpll_TrustedCall) @0db40b60
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.Clock_Ip_EnableSpll_TrustedCall (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+Clock_Ip_DisableSpll_TrustedCall/10 (Clock_Ip_DisableSpll_TrustedCall) @0db407e0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.Clock_Ip_DisableSpll_TrustedCall (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+Clock_Ip_SetSpll_TrustedCall/9 (Clock_Ip_SetSpll_TrustedCall) @0db40540
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.Clock_Ip_SetSpll_TrustedCall (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+Clock_Ip_ResetSpll_TrustedCall/8 (Clock_Ip_ResetSpll_TrustedCall) @0db37b60
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.Clock_Ip_ResetSpll_TrustedCall (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+Clock_Ip_EnableSpll/7 (Clock_Ip_EnableSpll) @0db37620
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written section:.text.Clock_Ip_EnableSpll (implicit_section)
+  Address is taken.
+  References: 
+  Referring: Clock_Ip_axPllCallbacks/12 (addr) 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+Clock_Ip_DisableSpll/6 (Clock_Ip_DisableSpll) @0db370e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written section:.text.Clock_Ip_DisableSpll (implicit_section)
+  Address is taken.
+  References: 
+  Referring: Clock_Ip_axPllCallbacks/12 (addr) 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+Clock_Ip_CompleteSpll/5 (Clock_Ip_CompleteSpll) @0db37d20
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written section:.text.Clock_Ip_CompleteSpll (implicit_section)
+  Address is taken.
+  References: 
+  Referring: Clock_Ip_axPllCallbacks/12 (addr) 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+Clock_Ip_SetSpll/4 (Clock_Ip_SetSpll) @0db37a80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written section:.text.Clock_Ip_SetSpll (implicit_section)
+  Address is taken.
+  References: 
+  Referring: Clock_Ip_axPllCallbacks/12 (addr) 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+Clock_Ip_ResetSpll/3 (Clock_Ip_ResetSpll) @0db377e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written section:.text.Clock_Ip_ResetSpll (implicit_section)
+  Address is taken.
+  References: 
+  Referring: Clock_Ip_axPllCallbacks/12 (addr) 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+Clock_Ip_CallbackPllEmptyDisable/2 (Clock_Ip_CallbackPllEmptyDisable) @0db37540
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written section:.text.Clock_Ip_CallbackPllEmptyDisable (implicit_section)
+  Address is taken.
+  References: 
+  Referring: Clock_Ip_axPllCallbacks/12 (addr) 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+Clock_Ip_CallbackPllEmptyComplete/1 (Clock_Ip_CallbackPllEmptyComplete) @0db372a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written section:.text.Clock_Ip_CallbackPllEmptyComplete (implicit_section)
+  Address is taken.
+  References: 
+  Referring: Clock_Ip_axPllCallbacks/12 (addr) 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+Clock_Ip_CallbackPllEmpty/0 (Clock_Ip_CallbackPllEmpty) @0db37000
+  Type: function definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written section:.text.Clock_Ip_CallbackPllEmpty (implicit_section)
+  Address is taken.
+  References: 
+  Referring: Clock_Ip_axPllCallbacks/12 (addr) Clock_Ip_axPllCallbacks/12 (addr) Clock_Ip_axPllCallbacks/12 (addr) 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 

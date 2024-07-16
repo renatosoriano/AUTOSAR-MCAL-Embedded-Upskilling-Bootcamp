@@ -1,0 +1,237 @@
+IPA summary for Dio_WriteChannelGroup/5 is missing.
+IPA summary for Dio_ReadChannelGroup/4 is missing.
+IPA summary for Dio_WritePort/3 is missing.
+IPA summary for Dio_ReadPort/2 is missing.
+IPA summary for Dio_WriteChannel/1 is missing.
+IPA summary for Dio_ReadChannel/0 is missing.
+
+Flattening functions:
+Overall time estimate: 0.000000 weighted by profile: 0.000000
+
+Deciding on inlining of small functions.  Starting with size 0.
+node context cache: 0 hits, 0 misses, 0 initializations
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+
+Deciding on functions to be inlined into all callers and removing useless speculations:
+Overall time estimate: 0.000000 weighted by profile: 0.000000
+
+Why inlining failed?
+function body not available                       :        6 calls, 6.000000 freq, 0 count
+IPA summary for Dio_WriteChannelGroup/5 is missing.
+IPA summary for Dio_ReadChannelGroup/4 is missing.
+IPA summary for Dio_WritePort/3 is missing.
+IPA summary for Dio_ReadPort/2 is missing.
+IPA summary for Dio_WriteChannel/1 is missing.
+IPA summary for Dio_ReadChannel/0 is missing.
+Symbol table:
+
+Dio_Ipw_WriteChannelGroup/11 (Dio_Ipw_WriteChannelGroup) @0d9f1700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Dio_WriteChannelGroup/5 
+  Calls: 
+Dio_Ipw_ReadChannelGroup/10 (Dio_Ipw_ReadChannelGroup) @0d9f1540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Dio_ReadChannelGroup/4 
+  Calls: 
+Dio_Ipw_WritePort/9 (Dio_Ipw_WritePort) @0d9f1380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Dio_WritePort/3 
+  Calls: 
+Dio_Ipw_ReadPort/8 (Dio_Ipw_ReadPort) @0d9f11c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Dio_ReadPort/2 
+  Calls: 
+Dio_Ipw_WriteChannel/7 (Dio_Ipw_WriteChannel) @0d9f1000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Dio_WriteChannel/1 
+  Calls: 
+Dio_Ipw_ReadChannel/6 (Dio_Ipw_ReadChannel) @0d9e9e00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Dio_ReadChannel/0 
+  Calls: 
+Dio_WriteChannelGroup/5 (Dio_WriteChannelGroup) @0d9e90e0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Dio_Ipw_WriteChannelGroup/11 
+Dio_ReadChannelGroup/4 (Dio_ReadChannelGroup) @0d9e9d20
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Dio_Ipw_ReadChannelGroup/10 
+Dio_WritePort/3 (Dio_WritePort) @0d9e9a80
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Dio_Ipw_WritePort/9 
+Dio_ReadPort/2 (Dio_ReadPort) @0d9e97e0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Dio_Ipw_ReadPort/8 
+Dio_WriteChannel/1 (Dio_WriteChannel) @0d9e9540
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Dio_Ipw_WriteChannel/7 
+Dio_ReadChannel/0 (Dio_ReadChannel) @0d9e92a0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Dio_Ipw_ReadChannel/6 
+
+;; Function Dio_ReadChannel (Dio_ReadChannel, funcdef_no=0, decl_uid=5378, cgraph_uid=1, symbol_order=0)
+
+Dio_ReadChannel (Dio_ChannelType ChannelId)
+{
+  Dio_LevelType ChannelLevel;
+  Dio_LevelType D.5462;
+  Dio_LevelType _6;
+
+  <bb 2> :
+  ChannelLevel_1 = 0;
+  ChannelLevel_5 = Dio_Ipw_ReadChannel (ChannelId_3(D));
+  _6 = ChannelLevel_5;
+
+  <bb 3> :
+<L0>:
+  return _6;
+
+}
+
+
+
+;; Function Dio_WriteChannel (Dio_WriteChannel, funcdef_no=1, decl_uid=5381, cgraph_uid=2, symbol_order=1)
+
+Dio_WriteChannel (Dio_ChannelType ChannelId, Dio_LevelType Level)
+{
+  <bb 2> :
+  Dio_Ipw_WriteChannel (ChannelId_2(D), Level_3(D));
+  return;
+
+}
+
+
+
+;; Function Dio_ReadPort (Dio_ReadPort, funcdef_no=2, decl_uid=5383, cgraph_uid=3, symbol_order=2)
+
+Dio_ReadPort (Dio_PortType PortId)
+{
+  Dio_PortLevelType PortLevel;
+  Dio_PortLevelType D.5464;
+  Dio_PortLevelType _6;
+
+  <bb 2> :
+  PortLevel_1 = 0;
+  PortLevel_5 = Dio_Ipw_ReadPort (PortId_3(D));
+  _6 = PortLevel_5;
+
+  <bb 3> :
+<L0>:
+  return _6;
+
+}
+
+
+
+;; Function Dio_WritePort (Dio_WritePort, funcdef_no=3, decl_uid=5386, cgraph_uid=4, symbol_order=3)
+
+Dio_WritePort (Dio_PortType PortId, Dio_PortLevelType Level)
+{
+  <bb 2> :
+  Dio_Ipw_WritePort (PortId_2(D), Level_3(D));
+  return;
+
+}
+
+
+
+;; Function Dio_ReadChannelGroup (Dio_ReadChannelGroup, funcdef_no=4, decl_uid=5388, cgraph_uid=5, symbol_order=4)
+
+Dio_ReadChannelGroup (const struct Dio_ChannelGroupType * ChannelGroupIdPtr)
+{
+  Dio_PortLevelType PortLevel;
+  Dio_PortLevelType D.5466;
+  Dio_PortLevelType _6;
+
+  <bb 2> :
+  PortLevel_1 = 0;
+  PortLevel_5 = Dio_Ipw_ReadChannelGroup (ChannelGroupIdPtr_3(D));
+  _6 = PortLevel_5;
+
+  <bb 3> :
+<L0>:
+  return _6;
+
+}
+
+
+
+;; Function Dio_WriteChannelGroup (Dio_WriteChannelGroup, funcdef_no=5, decl_uid=5391, cgraph_uid=6, symbol_order=5)
+
+Dio_WriteChannelGroup (const struct Dio_ChannelGroupType * ChannelGroupIdPtr, Dio_PortLevelType Level)
+{
+  <bb 2> :
+  Dio_Ipw_WriteChannelGroup (ChannelGroupIdPtr_2(D), Level_3(D));
+  return;
+
+}
+
+

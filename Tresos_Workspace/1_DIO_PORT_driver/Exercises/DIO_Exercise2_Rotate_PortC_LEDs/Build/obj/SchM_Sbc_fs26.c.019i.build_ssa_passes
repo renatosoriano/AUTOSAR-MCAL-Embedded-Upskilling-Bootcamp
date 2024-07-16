@@ -1,0 +1,356 @@
+SchM_Exit_Sbc_fs26_SBC_FS26_EXCLUSIVE_AREA_05 ()
+{
+  uint32 u32CoreId;
+
+  <bb 2> :
+  _1 = Sys_GetCoreID ();
+  u32CoreId = (uint32) _1;
+  _2 = reentry_guard_SBC_FS26_EXCLUSIVE_AREA_05[u32CoreId];
+  _3 = _2 + 4294967295;
+  reentry_guard_SBC_FS26_EXCLUSIVE_AREA_05[u32CoreId] = _3;
+  _4 = msr_SBC_FS26_EXCLUSIVE_AREA_05[u32CoreId];
+  _5 = _4 & 1;
+  if (_5 == 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 3> :
+  _6 = reentry_guard_SBC_FS26_EXCLUSIVE_AREA_05[u32CoreId];
+  if (_6 == 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  __asm__ __volatile__(" cpsie i");
+
+  <bb 5> :
+  return;
+
+}
+
+
+SchM_Enter_Sbc_fs26_SBC_FS26_EXCLUSIVE_AREA_05 ()
+{
+  uint32 u32CoreId;
+
+  <bb 2> :
+  _1 = Sys_GetCoreID ();
+  u32CoreId = (uint32) _1;
+  _2 = reentry_guard_SBC_FS26_EXCLUSIVE_AREA_05[u32CoreId];
+  if (_2 == 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 3> :
+  _3 = Sbc_fs26_schm_read_msr ();
+  msr_SBC_FS26_EXCLUSIVE_AREA_05[u32CoreId] = _3;
+  _4 = msr_SBC_FS26_EXCLUSIVE_AREA_05[u32CoreId];
+  _5 = _4 & 1;
+  if (_5 == 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  __asm__ __volatile__(" cpsid i");
+
+  <bb 5> :
+  _6 = reentry_guard_SBC_FS26_EXCLUSIVE_AREA_05[u32CoreId];
+  _7 = _6 + 1;
+  reentry_guard_SBC_FS26_EXCLUSIVE_AREA_05[u32CoreId] = _7;
+  return;
+
+}
+
+
+SchM_Exit_Sbc_fs26_SBC_FS26_EXCLUSIVE_AREA_04 ()
+{
+  uint32 u32CoreId;
+
+  <bb 2> :
+  _1 = Sys_GetCoreID ();
+  u32CoreId = (uint32) _1;
+  _2 = reentry_guard_SBC_FS26_EXCLUSIVE_AREA_04[u32CoreId];
+  _3 = _2 + 4294967295;
+  reentry_guard_SBC_FS26_EXCLUSIVE_AREA_04[u32CoreId] = _3;
+  _4 = msr_SBC_FS26_EXCLUSIVE_AREA_04[u32CoreId];
+  _5 = _4 & 1;
+  if (_5 == 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 3> :
+  _6 = reentry_guard_SBC_FS26_EXCLUSIVE_AREA_04[u32CoreId];
+  if (_6 == 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  __asm__ __volatile__(" cpsie i");
+
+  <bb 5> :
+  return;
+
+}
+
+
+SchM_Enter_Sbc_fs26_SBC_FS26_EXCLUSIVE_AREA_04 ()
+{
+  uint32 u32CoreId;
+
+  <bb 2> :
+  _1 = Sys_GetCoreID ();
+  u32CoreId = (uint32) _1;
+  _2 = reentry_guard_SBC_FS26_EXCLUSIVE_AREA_04[u32CoreId];
+  if (_2 == 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 3> :
+  _3 = Sbc_fs26_schm_read_msr ();
+  msr_SBC_FS26_EXCLUSIVE_AREA_04[u32CoreId] = _3;
+  _4 = msr_SBC_FS26_EXCLUSIVE_AREA_04[u32CoreId];
+  _5 = _4 & 1;
+  if (_5 == 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  __asm__ __volatile__(" cpsid i");
+
+  <bb 5> :
+  _6 = reentry_guard_SBC_FS26_EXCLUSIVE_AREA_04[u32CoreId];
+  _7 = _6 + 1;
+  reentry_guard_SBC_FS26_EXCLUSIVE_AREA_04[u32CoreId] = _7;
+  return;
+
+}
+
+
+SchM_Exit_Sbc_fs26_SBC_FS26_EXCLUSIVE_AREA_03 ()
+{
+  uint32 u32CoreId;
+
+  <bb 2> :
+  _1 = Sys_GetCoreID ();
+  u32CoreId = (uint32) _1;
+  _2 = reentry_guard_SBC_FS26_EXCLUSIVE_AREA_03[u32CoreId];
+  _3 = _2 + 4294967295;
+  reentry_guard_SBC_FS26_EXCLUSIVE_AREA_03[u32CoreId] = _3;
+  _4 = msr_SBC_FS26_EXCLUSIVE_AREA_03[u32CoreId];
+  _5 = _4 & 1;
+  if (_5 == 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 3> :
+  _6 = reentry_guard_SBC_FS26_EXCLUSIVE_AREA_03[u32CoreId];
+  if (_6 == 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  __asm__ __volatile__(" cpsie i");
+
+  <bb 5> :
+  return;
+
+}
+
+
+SchM_Enter_Sbc_fs26_SBC_FS26_EXCLUSIVE_AREA_03 ()
+{
+  uint32 u32CoreId;
+
+  <bb 2> :
+  _1 = Sys_GetCoreID ();
+  u32CoreId = (uint32) _1;
+  _2 = reentry_guard_SBC_FS26_EXCLUSIVE_AREA_03[u32CoreId];
+  if (_2 == 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 3> :
+  _3 = Sbc_fs26_schm_read_msr ();
+  msr_SBC_FS26_EXCLUSIVE_AREA_03[u32CoreId] = _3;
+  _4 = msr_SBC_FS26_EXCLUSIVE_AREA_03[u32CoreId];
+  _5 = _4 & 1;
+  if (_5 == 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  __asm__ __volatile__(" cpsid i");
+
+  <bb 5> :
+  _6 = reentry_guard_SBC_FS26_EXCLUSIVE_AREA_03[u32CoreId];
+  _7 = _6 + 1;
+  reentry_guard_SBC_FS26_EXCLUSIVE_AREA_03[u32CoreId] = _7;
+  return;
+
+}
+
+
+SchM_Exit_Sbc_fs26_SBC_FS26_EXCLUSIVE_AREA_02 ()
+{
+  uint32 u32CoreId;
+
+  <bb 2> :
+  _1 = Sys_GetCoreID ();
+  u32CoreId = (uint32) _1;
+  _2 = reentry_guard_SBC_FS26_EXCLUSIVE_AREA_02[u32CoreId];
+  _3 = _2 + 4294967295;
+  reentry_guard_SBC_FS26_EXCLUSIVE_AREA_02[u32CoreId] = _3;
+  _4 = msr_SBC_FS26_EXCLUSIVE_AREA_02[u32CoreId];
+  _5 = _4 & 1;
+  if (_5 == 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 3> :
+  _6 = reentry_guard_SBC_FS26_EXCLUSIVE_AREA_02[u32CoreId];
+  if (_6 == 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  __asm__ __volatile__(" cpsie i");
+
+  <bb 5> :
+  return;
+
+}
+
+
+SchM_Enter_Sbc_fs26_SBC_FS26_EXCLUSIVE_AREA_02 ()
+{
+  uint32 u32CoreId;
+
+  <bb 2> :
+  _1 = Sys_GetCoreID ();
+  u32CoreId = (uint32) _1;
+  _2 = reentry_guard_SBC_FS26_EXCLUSIVE_AREA_02[u32CoreId];
+  if (_2 == 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 3> :
+  _3 = Sbc_fs26_schm_read_msr ();
+  msr_SBC_FS26_EXCLUSIVE_AREA_02[u32CoreId] = _3;
+  _4 = msr_SBC_FS26_EXCLUSIVE_AREA_02[u32CoreId];
+  _5 = _4 & 1;
+  if (_5 == 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  __asm__ __volatile__(" cpsid i");
+
+  <bb 5> :
+  _6 = reentry_guard_SBC_FS26_EXCLUSIVE_AREA_02[u32CoreId];
+  _7 = _6 + 1;
+  reentry_guard_SBC_FS26_EXCLUSIVE_AREA_02[u32CoreId] = _7;
+  return;
+
+}
+
+
+SchM_Exit_Sbc_fs26_SBC_FS26_EXCLUSIVE_AREA_01 ()
+{
+  uint32 u32CoreId;
+
+  <bb 2> :
+  _1 = Sys_GetCoreID ();
+  u32CoreId = (uint32) _1;
+  _2 = reentry_guard_SBC_FS26_EXCLUSIVE_AREA_01[u32CoreId];
+  _3 = _2 + 4294967295;
+  reentry_guard_SBC_FS26_EXCLUSIVE_AREA_01[u32CoreId] = _3;
+  _4 = msr_SBC_FS26_EXCLUSIVE_AREA_01[u32CoreId];
+  _5 = _4 & 1;
+  if (_5 == 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 3> :
+  _6 = reentry_guard_SBC_FS26_EXCLUSIVE_AREA_01[u32CoreId];
+  if (_6 == 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  __asm__ __volatile__(" cpsie i");
+
+  <bb 5> :
+  return;
+
+}
+
+
+SchM_Enter_Sbc_fs26_SBC_FS26_EXCLUSIVE_AREA_01 ()
+{
+  uint32 u32CoreId;
+
+  <bb 2> :
+  _1 = Sys_GetCoreID ();
+  u32CoreId = (uint32) _1;
+  _2 = reentry_guard_SBC_FS26_EXCLUSIVE_AREA_01[u32CoreId];
+  if (_2 == 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 3> :
+  _3 = Sbc_fs26_schm_read_msr ();
+  msr_SBC_FS26_EXCLUSIVE_AREA_01[u32CoreId] = _3;
+  _4 = msr_SBC_FS26_EXCLUSIVE_AREA_01[u32CoreId];
+  _5 = _4 & 1;
+  if (_5 == 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  __asm__ __volatile__(" cpsid i");
+
+  <bb 5> :
+  _6 = reentry_guard_SBC_FS26_EXCLUSIVE_AREA_01[u32CoreId];
+  _7 = _6 + 1;
+  reentry_guard_SBC_FS26_EXCLUSIVE_AREA_01[u32CoreId] = _7;
+  return;
+
+}
+
+
+Sbc_fs26_schm_read_msr ()
+{
+  register uint32 reg_tmp;
+  uint32 D.5443;
+
+  <bb 2> :
+  __asm__ __volatile__(" mrs %0, primask " : "=r" reg_tmp);
+  D.5443 = reg_tmp;
+
+  <bb 3> :
+<L0>:
+  return D.5443;
+
+}
+
+

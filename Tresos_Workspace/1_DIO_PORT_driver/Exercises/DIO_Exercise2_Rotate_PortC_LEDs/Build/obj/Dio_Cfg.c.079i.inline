@@ -1,0 +1,66 @@
+
+Flattening functions:
+Overall time estimate: 0.000000 weighted by profile: 0.000000
+
+Deciding on inlining of small functions.  Starting with size 0.
+node context cache: 0 hits, 0 misses, 0 initializations
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+
+Deciding on functions to be inlined into all callers and removing useless speculations:
+Overall time estimate: 0.000000 weighted by profile: 0.000000
+
+Why inlining failed?
+Symbol table:
+
+Dio_pxChannelGroupsListForEachPartition/6 (Dio_pxChannelGroupsListForEachPartition) @0dacb8b8
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: DioConfig_aChannelGroupList/5 (addr) 
+  Referring: 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+DioConfig_aChannelGroupList/5 (DioConfig_aChannelGroupList) @0dacb870
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: Dio_Config/4 (addr) Dio_pxChannelGroupsListForEachPartition/6 (addr) 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+Dio_Config/4 (Dio_Config) @0dacb828
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: DioConfig_aChannelGroupList/5 (addr) Dio_au32ChannelToPartitionMap/0 (addr) Dio_au32PortToPartitionMap/1 (addr) 
+  Referring: 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+Dio_aAvailablePinsForRead/3 (Dio_aAvailablePinsForRead) @0dacb7e0
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+Dio_aAvailablePinsForWrite/2 (Dio_aAvailablePinsForWrite) @0dacb750
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+Dio_au32PortToPartitionMap/1 (Dio_au32PortToPartitionMap) @0dacb6c0
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: Dio_Config/4 (addr) 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+Dio_au32ChannelToPartitionMap/0 (Dio_au32ChannelToPartitionMap) @0dacb630
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: Dio_Config/4 (addr) 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
