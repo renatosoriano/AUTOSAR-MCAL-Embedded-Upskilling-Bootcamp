@@ -1,0 +1,86 @@
+OsIf_Timer_System_Internal_GetElapsed (uint32 * const CurrentRef)
+{
+  uint32 dif;
+  uint32 CurrentVal;
+  uint32 D.5366;
+  struct S32_SysTick_Type * _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _5;
+  long unsigned int _6;
+  uint32 _15;
+
+  <bb 2> :
+  _1 = 3758153744B;
+  _2 ={v} _1->CVR;
+  CurrentVal_9 = _2 & 16777215;
+  dif_10 = 0;
+  _3 = *CurrentRef_11(D);
+  if (CurrentVal_9 > _3)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  _4 = *CurrentRef_11(D);
+  _5 = _4 - CurrentVal_9;
+  dif_13 = _5 + 16777215;
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  _6 = *CurrentRef_11(D);
+  dif_12 = _6 - CurrentVal_9;
+
+  <bb 5> :
+  # dif_7 = PHI <dif_13(3), dif_12(4)>
+  *CurrentRef_11(D) = CurrentVal_9;
+  _15 = dif_7;
+
+  <bb 6> :
+<L3>:
+  return _15;
+
+}
+
+
+OsIf_Timer_System_Internal_GetCounter ()
+{
+  uint32 D.5361;
+  struct S32_SysTick_Type * _1;
+  long unsigned int _2;
+  uint32 _4;
+
+  <bb 2> :
+  _1 = 3758153744B;
+  _2 ={v} _1->CVR;
+  _4 = _2 & 16777215;
+
+  <bb 3> :
+<L0>:
+  return _4;
+
+}
+
+
+OsIf_Timer_System_Internal_Init (uint32 SystemCounterFreq)
+{
+  struct S32_SysTick_Type * _1;
+  struct S32_SysTick_Type * _2;
+  struct S32_SysTick_Type * _3;
+  struct S32_SysTick_Type * _4;
+
+  <bb 2> :
+  _1 = 3758153744B;
+  _1->CSRr ={v} 0;
+  _2 = 3758153744B;
+  _2->RVR ={v} 16777215;
+  _3 = 3758153744B;
+  _3->CVR ={v} 0;
+  _4 = 3758153744B;
+  _4->CSRr ={v} 5;
+  return;
+
+}
+
+

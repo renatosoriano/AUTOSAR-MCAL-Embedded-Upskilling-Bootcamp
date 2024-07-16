@@ -1,0 +1,117 @@
+Delay (uint32 ms)
+{
+  uint32 ElapsedTime;
+  uint32 SeedTick;
+  uint32 Timeout;
+  long unsigned int D.7730;
+
+  <bb 2> :
+  _1 = ms * 1000;
+  Timeout = OsIf_MicrosToTicks (_1, 1);
+  _2 = OsIf_GetCounter (1);
+  SeedTick = _2;
+  ElapsedTime = 0;
+
+  <bb 3> :
+  D.7730 = OsIf_GetElapsed (&SeedTick, 1);
+  ElapsedTime = D.7730 + ElapsedTime;
+  if (ElapsedTime < Timeout)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 4> :
+  SeedTick = {CLOBBER};
+  return;
+
+}
+
+
+EcuM_Init ()
+{
+  <bb 2> :
+  Mcu_Init (&Mcu_Config);
+  Mcu_InitClock (0);
+  Mcu_SetMode (0);
+  OsIf_Init (0B);
+  Platform_Init (0B);
+  Port_Init (&Port_Config);
+  Adc_Init (&Adc_Config);
+  return;
+
+}
+
+
+main ()
+{
+  uint16_t average_Pot2;
+  uint16_t average_Pot1;
+  uint16_t adcvalue3_Pot2;
+  uint16_t adcvalue3_Pot1;
+  uint16_t adcvalue2_Pot2;
+  uint16_t adcvalue2_Pot1;
+  uint16_t adcvalue1_Pot2;
+  uint16_t adcvalue1_Pot1;
+  Adc_ValueGroupType ResultBuffer[2];
+  Adc_ValueGroupType AdcReadGroupBuffer[2];
+  struct Adc_CalibrationStatusType CalibStatus;
+  int D.7727;
+
+  <bb 2> :
+  adcvalue1_Pot1 = 0;
+  adcvalue1_Pot2 = 0;
+  adcvalue2_Pot1 = 0;
+  adcvalue2_Pot2 = 0;
+  adcvalue3_Pot1 = 0;
+  adcvalue3_Pot2 = 0;
+  average_Pot1 = 0;
+  average_Pot2 = 0;
+  EcuM_Init ();
+  SEGGER_RTT_Init ();
+  Port_Ci_Port_Ip_SetMuxModeSel (1074044928B, 13, 8);
+  Adc_Calibrate (0, &CalibStatus);
+  Adc_SetupResultBuffer (0, &ResultBuffer);
+
+  <bb 3> :
+  Adc_StartGroupConversion (0);
+
+  <bb 4> :
+  _1 = Adc_GetGroupStatus (0);
+  if (_1 == 1)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 5> :
+  Adc_ReadGroup (0, &AdcReadGroupBuffer);
+  adcvalue1_Pot1 = AdcReadGroupBuffer[0];
+  adcvalue1_Pot2 = AdcReadGroupBuffer[1];
+  Delay (100);
+  adcvalue2_Pot1 = AdcReadGroupBuffer[0];
+  adcvalue2_Pot2 = AdcReadGroupBuffer[1];
+  Delay (100);
+  adcvalue3_Pot1 = AdcReadGroupBuffer[0];
+  adcvalue3_Pot2 = AdcReadGroupBuffer[1];
+  _2 = (int) adcvalue1_Pot1;
+  _3 = (int) adcvalue2_Pot1;
+  _4 = _2 + _3;
+  _5 = (int) adcvalue3_Pot1;
+  _6 = _4 + _5;
+  _7 = _6 / 3;
+  average_Pot1 = (uint16_t) _7;
+  _8 = (int) adcvalue1_Pot2;
+  _9 = (int) adcvalue2_Pot2;
+  _10 = _8 + _9;
+  _11 = (int) adcvalue3_Pot2;
+  _12 = _10 + _11;
+  _13 = _12 / 3;
+  average_Pot2 = (uint16_t) _13;
+  _14 = (int) average_Pot1;
+  _15 = (int) average_Pot2;
+  SEGGER_RTT_printf (0, "ADC1 average value: %d, ADC2 average value: %d\n", _14, _15);
+  Delay (500);
+  goto <bb 3>; [INV]
+
+}
+
+

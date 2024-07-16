@@ -1,0 +1,475 @@
+Port_Ci_Port_Ip_SetGlobalPinControl (struct PORT_Type * const base, uint16 pins, uint16 value, Port_Ci_Port_Ip_PortGlobalControlPins halfPort)
+{
+  uint16 mask;
+
+  <bb 2> :
+  mask = 0;
+  mask = mask | 1;
+  mask = mask | 2;
+  mask = mask | 16;
+  mask = mask | 64;
+  mask = mask | 1792;
+  mask = mask | 32768;
+  mask = mask & value;
+  switch (halfPort) <default: <L2> [INV], case 0: <L0> [INV], case 1: <L1> [INV]>
+
+  <bb 3> :
+<L0>:
+  _1 = (long unsigned int) pins;
+  _2 = _1 << 16;
+  _3 = (long unsigned int) mask;
+  _4 = _2 | _3;
+  base->GPCLR = _4;
+  goto <bb 6>; [INV]
+
+  <bb 4> :
+<L1>:
+  _5 = (long unsigned int) pins;
+  _6 = _5 << 16;
+  _7 = (long unsigned int) mask;
+  _8 = _6 | _7;
+  base->GPCHR = _8;
+  goto <bb 6>; [INV]
+
+  <bb 5> :
+<L2>:
+
+  <bb 6> :
+  return;
+
+}
+
+
+Port_Ci_Port_Ip_ConfigDigitalFilter (struct PORT_Type * const base, const struct Port_Ci_Port_Ip_DigitalFilterConfigType * config)
+{
+  <bb 2> :
+  _1 = config->u8Clock;
+  _2 = (long unsigned int) _1;
+  _3 = _2 & 1;
+  base->DFCR = _3;
+  _4 = config->u8Width;
+  _5 = (long unsigned int) _4;
+  _6 = _5 & 31;
+  base->DFWR = _6;
+  return;
+
+}
+
+
+Port_Ci_Port_Ip_DisableDigitalFilter (struct PORT_Type * const base, uint32 pin)
+{
+  <bb 2> :
+  SchM_Enter_Port_PORT_EXCLUSIVE_AREA_08 ();
+  _1 = base->DFER;
+  _2 = 1 << pin;
+  _3 = ~_2;
+  _4 = _1 & _3;
+  base->DFER = _4;
+  SchM_Exit_Port_PORT_EXCLUSIVE_AREA_08 ();
+  return;
+
+}
+
+
+Port_Ci_Port_Ip_EnableDigitalFilter (struct PORT_Type * const base, uint32 pin)
+{
+  <bb 2> :
+  SchM_Enter_Port_PORT_EXCLUSIVE_AREA_07 ();
+  _1 = base->DFER;
+  _2 = 1 << pin;
+  _3 = _1 | _2;
+  base->DFER = _3;
+  SchM_Exit_Port_PORT_EXCLUSIVE_AREA_07 ();
+  return;
+
+}
+
+
+Port_Ci_Port_Ip_SetMuxModeSel (struct PORT_Type * const base, uint32 pin, Port_Ci_Port_Ip_PortMux mux)
+{
+  Port_Ci_Port_Ip_PortMux muxing;
+  uint32 regValue;
+
+  <bb 2> :
+  muxing = Port_Ci_Port_Ip_ConfigureInterleave (base, pin, mux);
+  SchM_Enter_Port_PORT_EXCLUSIVE_AREA_06 ();
+  regValue = base->PCR[pin];
+  regValue = regValue & 4294965503;
+  _1 = muxing << 8;
+  _2 = _1 & 1792;
+  regValue = regValue | _2;
+  base->PCR[pin] = regValue;
+  SchM_Exit_Port_PORT_EXCLUSIVE_AREA_06 ();
+  return;
+
+}
+
+
+Port_Ci_Port_Ip_Init (uint32 pinCount, const struct Port_Ci_Port_Ip_PinSettingsConfig * config)
+{
+  uint32 i;
+  Port_Ci_Port_Ip_PortStatusType D.5724;
+
+  <bb 2> :
+  i = 0;
+  goto <bb 4>; [INV]
+
+  <bb 3> :
+  _1 = i * 40;
+  _2 = config + _1;
+  Port_Ci_Port_Ip_PinInit (_2);
+  i = i + 1;
+
+  <bb 4> :
+  if (i < pinCount)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 5> :
+  D.5724 = 0;
+
+  <bb 6> :
+<L3>:
+  return D.5724;
+
+}
+
+
+Port_Ci_Port_Ip_PinInit (const struct Port_Ci_Port_Ip_PinSettingsConfig * config)
+{
+  Port_Ci_Port_Ip_PortMux retMuxing;
+  Port_Ci_Port_Ip_PortMux muxing;
+  uint32 digitalFilters;
+  uint32 pinsValues;
+  long unsigned int iftmp.1;
+  long unsigned int iftmp.0;
+
+  <bb 2> :
+  pinsValues = 0;
+  muxing = 0;
+  retMuxing = 0;
+  _1 = config->pullConfig;
+  if (_1 != 2)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  pinsValues = pinsValues | 2;
+  _2 = config->pullConfig;
+  _3 = _2 & 1;
+  pinsValues = pinsValues | _3;
+
+  <bb 4> :
+  _4 = config->driveStrength;
+  _5 = _4 << 6;
+  _6 = _5 & 64;
+  pinsValues = pinsValues | _6;
+  _7 = config->lockRegister;
+  _8 = _7 << 15;
+  _9 = _8 & 65535;
+  pinsValues = pinsValues | _9;
+  _10 = config->passiveFilter;
+  if (_10 != 0)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  iftmp.0 = 16;
+  goto <bb 7>; [INV]
+
+  <bb 6> :
+  iftmp.0 = 0;
+
+  <bb 7> :
+  pinsValues = iftmp.0 | pinsValues;
+  muxing = config->mux;
+  _11 = config->portBase;
+  _12 = config->pinPortIdx;
+  retMuxing = Port_Ci_Port_Ip_ConfigureInterleave (_11, _12, muxing);
+  muxing = retMuxing;
+  _13 = muxing << 8;
+  _14 = _13 & 1792;
+  pinsValues = pinsValues | _14;
+  SchM_Enter_Port_PORT_EXCLUSIVE_AREA_00 ();
+  _15 = config->portBase;
+  digitalFilters = _15->DFER;
+  _16 = config->pinPortIdx;
+  _17 = 1 << _16;
+  _18 = ~_17;
+  digitalFilters = digitalFilters & _18;
+  _19 = config->digitalFilter;
+  if (_19 != 0)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 8> :
+  iftmp.1 = 1;
+  goto <bb 10>; [INV]
+
+  <bb 9> :
+  iftmp.1 = 0;
+
+  <bb 10> :
+  _20 = config->pinPortIdx;
+  _21 = iftmp.1 << _20;
+  digitalFilters = digitalFilters | _21;
+  _22 = config->portBase;
+  _22->DFER = digitalFilters;
+  SchM_Exit_Port_PORT_EXCLUSIVE_AREA_00 ();
+  if (muxing == 1)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 20>; [INV]
+
+  <bb 11> :
+  _23 = config->direction;
+  if (_23 == 2)
+    goto <bb 12>; [INV]
+  else
+    goto <bb 17>; [INV]
+
+  <bb 12> :
+  _24 = config->initValue;
+  if (_24 == 1)
+    goto <bb 13>; [INV]
+  else
+    goto <bb 14>; [INV]
+
+  <bb 13> :
+  SchM_Enter_Port_PORT_EXCLUSIVE_AREA_01 ();
+  _25 = config->gpioBase;
+  _26 = _25->PSOR;
+  _27 = config->pinPortIdx;
+  _28 = 1 << _27;
+  _29 = config->gpioBase;
+  _30 = _26 | _28;
+  _29->PSOR = _30;
+  SchM_Exit_Port_PORT_EXCLUSIVE_AREA_01 ();
+  goto <bb 16>; [INV]
+
+  <bb 14> :
+  _31 = config->initValue;
+  if (_31 == 0)
+    goto <bb 15>; [INV]
+  else
+    goto <bb 16>; [INV]
+
+  <bb 15> :
+  SchM_Enter_Port_PORT_EXCLUSIVE_AREA_02 ();
+  _32 = config->gpioBase;
+  _33 = _32->PCOR;
+  _34 = config->pinPortIdx;
+  _35 = 1 << _34;
+  _36 = config->gpioBase;
+  _37 = _33 | _35;
+  _36->PCOR = _37;
+  SchM_Exit_Port_PORT_EXCLUSIVE_AREA_02 ();
+
+  <bb 16> :
+  SchM_Enter_Port_PORT_EXCLUSIVE_AREA_03 ();
+  _38 = config->gpioBase;
+  _39 = _38->PDDR;
+  _40 = config->pinPortIdx;
+  _41 = 1 << _40;
+  _42 = config->gpioBase;
+  _43 = _39 | _41;
+  _42->PDDR = _43;
+  SchM_Exit_Port_PORT_EXCLUSIVE_AREA_03 ();
+  goto <bb 20>; [INV]
+
+  <bb 17> :
+  SchM_Enter_Port_PORT_EXCLUSIVE_AREA_03 ();
+  _44 = config->gpioBase;
+  _45 = _44->PDDR;
+  _46 = config->pinPortIdx;
+  _47 = 1 << _46;
+  _48 = ~_47;
+  _49 = config->gpioBase;
+  _50 = _45 & _48;
+  _49->PDDR = _50;
+  SchM_Exit_Port_PORT_EXCLUSIVE_AREA_03 ();
+  SchM_Enter_Port_PORT_EXCLUSIVE_AREA_04 ();
+  _51 = config->gpioBase;
+  _52 = _51->PIDR;
+  _53 = config->pinPortIdx;
+  _54 = 1 << _53;
+  _55 = ~_54;
+  _56 = config->gpioBase;
+  _57 = _52 & _55;
+  _56->PIDR = _57;
+  _58 = config->direction;
+  if (_58 == 3)
+    goto <bb 18>; [INV]
+  else
+    goto <bb 19>; [INV]
+
+  <bb 18> :
+  _59 = config->gpioBase;
+  _60 = _59->PIDR;
+  _61 = config->pinPortIdx;
+  _62 = 1 << _61;
+  _63 = config->gpioBase;
+  _64 = _60 | _62;
+  _63->PIDR = _64;
+
+  <bb 19> :
+  SchM_Exit_Port_PORT_EXCLUSIVE_AREA_04 ();
+
+  <bb 20> :
+  _65 = config->portBase;
+  _66 = config->pinPortIdx;
+  _65->PCR[_66] = pinsValues;
+  return;
+
+}
+
+
+Port_Ci_Port_Ip_ConfigureInterleave (const struct PORT_Type * const base, uint32 pin, Port_Ci_Port_Ip_PortMux muxing)
+{
+  Port_Ci_Port_Ip_InterleaveMux interleaveVal;
+  uint32 chipCtlReg;
+  Port_Ci_Port_Ip_PortMux retMuxing;
+  Port_Ci_Port_Ip_PortMux D.5699;
+
+  <bb 2> :
+  retMuxing = muxing;
+  if (muxing == 8)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 3> :
+  _1 = 1074036736B;
+  _2 = _1->CHIPCTL;
+  chipCtlReg = _2 & 15;
+  interleaveVal = Port_Ci_Port_Ip_GetAdcInterleaveVal (base, pin, chipCtlReg);
+  if (interleaveVal != 255)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  SchM_Enter_Port_PORT_EXCLUSIVE_AREA_05 ();
+  _3 = 1074036736B;
+  _4 = _3->CHIPCTL;
+  _5 = 1074036736B;
+  _6 = _4 & 4294967280;
+  _5->CHIPCTL = _6;
+  _7 = 1074036736B;
+  _8 = _7->CHIPCTL;
+  _9 = interleaveVal & 15;
+  _10 = 1074036736B;
+  _11 = _8 | _9;
+  _10->CHIPCTL = _11;
+  SchM_Exit_Port_PORT_EXCLUSIVE_AREA_05 ();
+
+  <bb 5> :
+  retMuxing = 0;
+
+  <bb 6> :
+  D.5699 = retMuxing;
+
+  <bb 7> :
+<L4>:
+  return D.5699;
+
+}
+
+
+Port_Ci_Port_Ip_GetAdcInterleaveVal (const struct PORT_Type * base, const uint32 pinPortIdx, const uint32 currentVal)
+{
+  uint32 adcInterleaveVal;
+  uint32 D.5693;
+
+  <bb 2> :
+  adcInterleaveVal = 255;
+  if (base == 1074044928B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 3> :
+  switch (pinPortIdx) <default: <L7> [INV], case 0: <L1> [INV], case 1: <L2> [INV], case 13: <L3> [INV], case 14: <L4> [INV], case 15: <L5> [INV], case 16: <L6> [INV]>
+
+  <bb 4> :
+<L1>:
+  adcInterleaveVal = 1;
+  adcInterleaveVal = adcInterleaveVal | currentVal;
+  goto <bb 11>; [INV]
+
+  <bb 5> :
+<L2>:
+  adcInterleaveVal = 2;
+  adcInterleaveVal = adcInterleaveVal | currentVal;
+  goto <bb 11>; [INV]
+
+  <bb 6> :
+<L3>:
+  adcInterleaveVal = 4;
+  adcInterleaveVal = adcInterleaveVal | currentVal;
+  goto <bb 11>; [INV]
+
+  <bb 7> :
+<L4>:
+  adcInterleaveVal = 8;
+  adcInterleaveVal = adcInterleaveVal | currentVal;
+  goto <bb 11>; [INV]
+
+  <bb 8> :
+<L5>:
+  adcInterleaveVal = 14;
+  adcInterleaveVal = adcInterleaveVal & currentVal;
+  goto <bb 11>; [INV]
+
+  <bb 9> :
+<L6>:
+  adcInterleaveVal = 13;
+  adcInterleaveVal = adcInterleaveVal & currentVal;
+  goto <bb 11>; [INV]
+
+  <bb 10> :
+<L7>:
+
+  <bb 11> :
+  goto <bb 18>; [INV]
+
+  <bb 12> :
+  if (base == 1074049024B)
+    goto <bb 13>; [INV]
+  else
+    goto <bb 18>; [INV]
+
+  <bb 13> :
+  switch (pinPortIdx) <default: <L13> [INV], case 0: <L11> [INV], case 1: <L12> [INV]>
+
+  <bb 14> :
+<L11>:
+  adcInterleaveVal = 11;
+  adcInterleaveVal = adcInterleaveVal & currentVal;
+  goto <bb 17>; [INV]
+
+  <bb 15> :
+<L12>:
+  adcInterleaveVal = 7;
+  adcInterleaveVal = adcInterleaveVal & currentVal;
+  goto <bb 17>; [INV]
+
+  <bb 16> :
+<L13>:
+
+  <bb 17> :
+
+  <bb 18> :
+  D.5693 = adcInterleaveVal;
+
+  <bb 19> :
+<L18>:
+  return D.5693;
+
+}
+
+

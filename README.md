@@ -40,7 +40,7 @@ The Upskilling Bootcamp covers:
 10. I/O Hardware Abstraction.
 11. CAN driver.
 12. CANIF driver.
-13. Final Project
+13. Final Project.
 
 ## 2. Hardware Requirements
 
