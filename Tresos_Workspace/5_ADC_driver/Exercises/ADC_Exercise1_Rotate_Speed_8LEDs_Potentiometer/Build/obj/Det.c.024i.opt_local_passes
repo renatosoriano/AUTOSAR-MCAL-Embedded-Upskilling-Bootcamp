@@ -1,0 +1,85 @@
+Det_Start ()
+{
+  <bb 2> :
+  return;
+
+}
+
+
+Det_ReportTransientFault (uint16 ModuleId, uint8 InstanceId, uint8 ApiId, uint8 FaultId)
+{
+  uint32 u32CoreId;
+  Std_ReturnType D.5441;
+  unsigned char _1;
+  Std_ReturnType _13;
+
+  <bb 2> :
+  _1 = Sys_GetCoreID ();
+  u32CoreId_4 = (uint32) _1;
+  Det_TransientModuleId[u32CoreId_4] = ModuleId_5(D);
+  Det_TransientInstanceId[u32CoreId_4] = InstanceId_7(D);
+  Det_TransientApiId[u32CoreId_4] = ApiId_9(D);
+  Det_TransientFaultId[u32CoreId_4] = FaultId_11(D);
+  _13 = 0;
+
+  <bb 3> :
+<L0>:
+  return _13;
+
+}
+
+
+Det_ReportRuntimeError (uint16 ModuleId, uint8 InstanceId, uint8 ApiId, uint8 ErrorId)
+{
+  uint32 u32CoreId;
+  Std_ReturnType D.5439;
+  unsigned char _1;
+  Std_ReturnType _13;
+
+  <bb 2> :
+  _1 = Sys_GetCoreID ();
+  u32CoreId_4 = (uint32) _1;
+  Det_RuntimeModuleId[u32CoreId_4] = ModuleId_5(D);
+  Det_RuntimeInstanceId[u32CoreId_4] = InstanceId_7(D);
+  Det_RuntimeApiId[u32CoreId_4] = ApiId_9(D);
+  Det_RuntimeErrorId[u32CoreId_4] = ErrorId_11(D);
+  _13 = 0;
+
+  <bb 3> :
+<L0>:
+  return _13;
+
+}
+
+
+Det_ReportError (uint16 ModuleId, uint8 InstanceId, uint8 ApiId, uint8 ErrorId)
+{
+  uint32 u32CoreId;
+  Std_ReturnType D.5437;
+  unsigned char _1;
+  Std_ReturnType _13;
+
+  <bb 2> :
+  _1 = Sys_GetCoreID ();
+  u32CoreId_4 = (uint32) _1;
+  Det_ModuleId[u32CoreId_4] = ModuleId_5(D);
+  Det_InstanceId[u32CoreId_4] = InstanceId_7(D);
+  Det_ApiId[u32CoreId_4] = ApiId_9(D);
+  Det_ErrorId[u32CoreId_4] = ErrorId_11(D);
+  _13 = 0;
+
+  <bb 3> :
+<L0>:
+  return _13;
+
+}
+
+
+Det_Init ()
+{
+  <bb 2> :
+  return;
+
+}
+
+

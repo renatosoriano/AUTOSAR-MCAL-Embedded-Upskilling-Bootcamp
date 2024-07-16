@@ -1,0 +1,127 @@
+Delay (uint32 ms)
+{
+  uint32 ElapsedTime;
+  uint32 SeedTick;
+  uint32 Timeout;
+  long unsigned int D.7745;
+
+  <bb 2> :
+  _1 = ms * 1000;
+  Timeout = OsIf_MicrosToTicks (_1, 1);
+  _2 = OsIf_GetCounter (1);
+  SeedTick = _2;
+  ElapsedTime = 0;
+
+  <bb 3> :
+  D.7745 = OsIf_GetElapsed (&SeedTick, 1);
+  ElapsedTime = D.7745 + ElapsedTime;
+  if (ElapsedTime < Timeout)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 4> :
+  SeedTick = {CLOBBER};
+  return;
+
+}
+
+
+EcuM_Init ()
+{
+  <bb 2> :
+  Mcu_Init (&Mcu_Config);
+  Mcu_InitClock (0);
+  Mcu_SetMode (0);
+  OsIf_Init (0B);
+  Platform_Init (0B);
+  Port_Init (&Port_Config);
+  Adc_Init (&Adc_Config);
+  return;
+
+}
+
+
+main ()
+{
+  uint32 i;
+  uint8 i;
+  Adc_ValueGroupType ResultBuffer[1];
+  struct Adc_CalibrationStatusType CalibStatus;
+  int D.7742;
+
+  <bb 2> :
+  EcuM_Init ();
+  SEGGER_RTT_Init ();
+  Adc_Calibrate (0, &CalibStatus);
+  Adc_SetupResultBuffer (0, &ResultBuffer);
+  Adc_EnableGroupNotification (0);
+
+  <bb 3> :
+  Adc_StartGroupConversion (0);
+
+  <bb 4> :
+  AdcFlag.0_1 = AdcFlag;
+  if (AdcFlag.0_1 == 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 5> :
+  AdcFlag = 0;
+  _2 = AdcReadGroupBuffer[0];
+  _3 = (int) _2;
+  SEGGER_RTT_printf (0, "Adc Channel value: %d\n", _3);
+  _4 = AdcReadGroupBuffer[0];
+  _5 = (long unsigned int) _4;
+  adcvalue = _5;
+  i = 0;
+  goto <bb 10>; [INV]
+
+  <bb 6> :
+  Dio_WriteChannelGroup (&DioConfig_aChannelGroupList[0], 0);
+  _6 = (int) i;
+  _7 = 1 << _6;
+  Dio_WriteChannelGroup (&DioConfig_aChannelGroupList[0], _7);
+  i = 0;
+  goto <bb 8>; [INV]
+
+  <bb 7> :
+  i = i + 1;
+
+  <bb 8> :
+  adcvalue.1_8 = adcvalue;
+  _9 = adcvalue.1_8 * 200;
+  _10 = _9 + 50000;
+  if (i < _10)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 9> :
+  i.2_11 = i;
+  i = i.2_11 + 1;
+
+  <bb 10> :
+  if (i <= 7)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 11> :
+  Delay (30);
+  goto <bb 3>; [INV]
+
+}
+
+
+IoHwAb_AdcNotification_0 ()
+{
+  <bb 2> :
+  AdcFlag = 1;
+  Adc_ReadGroup (0, &AdcReadGroupBuffer);
+  return;
+
+}
+
+

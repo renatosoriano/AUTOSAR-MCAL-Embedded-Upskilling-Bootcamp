@@ -234,6 +234,17 @@ Using three FTM timers with one channel each, toggle the three RGB leds at diffe
 
 https://github.com/user-attachments/assets/51c8bdf2-141e-4744-be3b-26aa9c43fdc1
 
+### **ADC Driver Evidences**
+
+* #### ADC Exercise 1: Rotate Speed of 8 LEDs with Potentiometer
+Vary the rotation speed of eight LEDs C8 to C15 using one of the potentiometers on the board.
+
+![ADC_Exercise1_Rotate_Speed_8LEDs_Potentiometer.GIF](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/ADC_driver/ADC_Exercise1_Rotate_Speed_8LEDs_Potentiometer.GIF)
+
+
+
+![ADC_Exercise1_Rotate_Speed_8LEDs_Potentiometer_Terminal.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/ADC_driver/ADC_Exercise1_Rotate_Speed_8LEDs_Potentiometer_Terminal.png)
+
 ### **CAN Driver Evidences**
 
 * #### CAN Example 3: Transmission using Interrupts (ISRs)
@@ -241,12 +252,12 @@ Hardware board transmits (Tx) an 8-byte single message with ID 0x123 and specifi
 
 ![CAN_Example3_Transmission_using_Interrupts.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/CAN_Driver_examples_results_screenshots/CAN_Example3_Transmission_using_Interrupts.png)
 
-* #### CAN_Example 4: Reception using Interrupts(ISRs), Dataset 1
+* #### CAN_Example 4: Reception using Interrupts (ISRs), Dataset 1
 Hardware board receives (Rx) an 8-byte single message with ID 0x010 and specified Data payload: 32 01 01 01 01 01 01 01. Savvy CAN transmits (Tx) the data. Notice how in code we can establish a condition, in this case where the first byte must be 0x32 and once that is confirmed, can proceed and receive the rest of the data.
 
 ![CAN_Example4_Reception_using_Interrupts_Dataset1.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/CAN_Driver_examples_results_screenshots/CAN_Example4_Reception_using_Interrupts_Dataset1.png)
 
-* #### CAN_Example 4: Reception using Interrupts(ISRs), Dataset 2
+* #### CAN_Example 4: Reception using Interrupts (ISRs), Dataset 2
 Similar as previous, hardware board receives (Rx) an 8-byte single message with ID 0x010 and specified Data payload: 32 08 07 06 05 04 03 02. Savvy CAN transmits (Tx) the data. Notice how in code we can establish a condition, in this case where the first byte must be 0x32 and once that is confirmed, can proceed and receive the rest of the data.
 
 ![CAN_Example4_Reception_using_Interrupts_Dataset2.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/CAN_Driver_examples_results_screenshots/CAN_Example4_Reception_using_Interrupts_Dataset2.png)
