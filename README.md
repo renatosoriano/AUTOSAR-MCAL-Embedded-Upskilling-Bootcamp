@@ -221,11 +221,18 @@ https://github.com/user-attachments/assets/26b8afe0-4fea-4588-bc26-9f966ed6f95d
 ### **GPT Driver Evidences**
 
 * #### GPT Exercise 1: 2 Timers in OneShot mode using FIRC clock to toggle 2 LEDs
-Using two different timers (FTM1 and FTM2) to toggle two pairs of leds (1st pair: normal led C8 and Blue RGB led, 2nd pair: normal led C9 and Green RGB led) at 100ms and 300ms, both timers shall use notifications in one shot mode, plus been feed by FIRC clock at 12MHz.
+Using two different timers (FTM1 and FTM2) to toggle two pairs of leds (1st pair: normal led C8 and Blue RGB led, 2nd pair: normal led C9 and Green RGB led) at 100ms and 300ms, both timers use notifications in one shot mode, plus been feed by FIRC clock at 12MHz.
 
 ![GPT_Exercise1_2Timers_OneShot_FIRC_2LEDs.GIF](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/GPT_driver/GPT_Exercise1_2Timers_OneShot_FIRC_2LEDs.GIF)
 
 https://github.com/user-attachments/assets/193ff80f-5500-420f-af6e-2be51721c8a4
+
+* #### GPT Exercise 3: 3 FTM Timers to toggle all RGB at different Frequencies
+Using three FTM timers with one channel each, toggle the three RGB leds at different values (100ms, 400ms, and 800ms), the most important is that each FTM timer is feed by a different clock reference (12MHz, 4MHz, and 8MHz).
+
+![GPT_Exercise3_3Timers_FTM_RGB_DiffClkRef.GIF](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/GPT_driver/GPT_Exercise3_3Timers_FTM_RGB_DiffClkRef.GIF)
+
+
 
 ### **CAN Driver Evidences**
 
