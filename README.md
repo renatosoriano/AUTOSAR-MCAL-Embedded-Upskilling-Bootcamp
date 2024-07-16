@@ -241,7 +241,7 @@ Vary the rotation speed of eight LEDs C8 to C15 using one of the potentiometers 
 
 ![ADC_Exercise1_Rotate_Speed_8LEDs_Potentiometer.GIF](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/ADC_driver/ADC_Exercise1_Rotate_Speed_8LEDs_Potentiometer.GIF)
 
-
+https://github.com/user-attachments/assets/52fb87fa-588e-4ca8-92fe-8630d8d8d1d9
 
 ![ADC_Exercise1_Rotate_Speed_8LEDs_Potentiometer_Terminal.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/ADC_driver/ADC_Exercise1_Rotate_Speed_8LEDs_Potentiometer_Terminal.png)
 
