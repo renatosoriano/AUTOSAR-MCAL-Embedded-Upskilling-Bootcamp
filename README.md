@@ -11,14 +11,14 @@ Date: July, 2024.
 ![Autosar_MCAL_Certificate_Badge.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/Autosar_MCAL_Certificate_Badge.png)
 
 ## Table of Contents
-1. [**Description**](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp?tab=readme-ov-file#description)
-2. [**Hardware Requirements**](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp?tab=readme-ov-file#hardware-requirements)
-3. [**Software Requirements**](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp?tab=readme-ov-file#software-requirements)
-4. [**Notes**](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp?tab=readme-ov-file#notes)
-5. [**Documentation**](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp?tab=readme-ov-file#documentation)
-6. [**Examples and Exercises**](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp?tab=readme-ov-file#examples-and-exercises)
-7. [**Final Project**](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp?tab=readme-ov-file#final-project)
-8. [**Sample Evidences**](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp?tab=readme-ov-file#sample-evidences)
+1. [**Description**](#description)
+2. [**Hardware Requirements**](#hardware-requirements)
+3. [**Software Requirements**](#software-requirements)
+4. [**Notes**](#notes)
+5. [**Documentation**](#documentation)
+6. [**Examples and Exercises**](#examples-and-exercises)
+7. [**Final Project**](#final-project)
+8. [**Sample Evidences**](#sample-evidences)
 
 ## 1. Description
 
