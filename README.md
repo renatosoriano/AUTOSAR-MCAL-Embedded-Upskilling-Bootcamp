@@ -244,7 +244,7 @@ Pressing 1st button will rotate the LEDs from right to left, and pressing 2nd bu
 
 https://github.com/user-attachments/assets/80e7ae72-599a-454c-8cb2-881933acbc30
 
-### **GPT Driver Evidences**
+### <ins>GPT Driver Evidences<ins>
 
 * #### GPT Exercise 1: 2 Timers in OneShot mode using FIRC clock to toggle 2 LEDs
 Using two different timers (FTM1 and FTM2) to toggle two pairs of leds (1st pair: normal led C8 and Blue RGB led, 2nd pair: normal led C9 and Green RGB led) at 100ms and 300ms, both timers use notifications in one shot mode, plus been feed by FIRC clock at 12MHz.
@@ -260,7 +260,7 @@ Using three FTM timers with one channel each, toggle the three RGB leds at diffe
 
 https://github.com/user-attachments/assets/51c8bdf2-141e-4744-be3b-26aa9c43fdc1
 
-### **ADC Driver Evidences**
+### <ins>ADC Driver Evidences<ins>
 
 * #### ADC Exercise 1: Rotate Speed of 8 LEDs with Potentiometer
 Vary the rotation speed of eight LEDs C8 to C15 using one of the potentiometers on the board.
@@ -291,7 +291,7 @@ ADC0 and ADC1 Interleaved Channels diagram from NXP S32K1xx Reference Manual Rev
 
 ![ADC_Exercise6_4Channels_ADC0_2Pots_Interleave.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/ADC_driver/ADC_Exercise6_4Channels_ADC0_2Pots_Interleave.png)
 
-### **PWM Driver Evidences**
+### <ins>PWM Driver Evidences<ins>
 
 * #### PWM Exercise 1: Two Channels, Two FTM Timers with SIRC Clock
 A program that generates two PWM channels but using two different timers, must see which pins are available with FTM functionality. Feed those timers with a SIRC clock.
@@ -336,7 +336,7 @@ https://github.com/user-attachments/assets/a163665e-de78-469f-a384-a67201327c4e
 
 ![PWM_Exercise4_ADC_Pot_DutyCycle_RGB_LED_Terminal.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/PWM_driver/PWM_Exercise4_ADC_Pot_DutyCycle_RGB_LED_Terminal.png)
 
-### **SPI Driver Evidences**
+### <ins>SPI Driver Evidences<ins>
 
 * #### SPI Exercise 1: Read and Print 32 bytes from EEPROM
 Read and display the first 32 bytes of an Eeprom in different formats using Semihosting with RTT.
@@ -357,7 +357,7 @@ Wrote the following functions to allow to write a given array of n number of byt
 
 ![SPI_Exercise5_Function_Write_Read_ArrayData_Terminal.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/SPI_driver/SPI_Exercise5_Function_Write_Read_ArrayData_Terminal.png)
 
-### **CAN Driver Evidences**
+### <ins>CAN Driver Evidences<ins>
 
 * #### CAN Example 3: Transmission using Interrupts (ISRs)
 Hardware board transmits (Tx) an 8-byte single message with ID 0x123 and specified Data payload: 01 02 03 04 05 06 11 12. Savvy CAN receiving (Rx) the data, evertime having byte 1 and 8 increased by value of 0x1 as per the example intentional behavior.
@@ -389,7 +389,7 @@ Hardware board receives (Rx) every second an 8-byte single message with ID 0x022
 
 ![CAN_Example6_Reception_with_Filters_ID_0x022.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/CAN_Driver_examples_results_screenshots/CAN_Example6_Reception_with_Filters_ID_0x022.png)
 
-### **CAN Interface (CANIF) Driver Examples Results**
+### <ins>CAN Interface (CANIF) Driver Examples Results<ins>
 
 * #### CANIF Example 1: Transmission single PDU
 Hardware board transmits (Tx) an 8-byte single message with ID 0x123 and specified Data payload: 01 02 03 04 05 06 11 12. Savvy CAN receiving (Rx) the data, evertime having byte 1 and 8 increased by value of 0x1 as per the example intentional behavior.
