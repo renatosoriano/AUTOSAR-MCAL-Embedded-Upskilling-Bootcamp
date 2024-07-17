@@ -1,0 +1,2197 @@
+Trivially needed symbols: Adc_Calibrate/31 Adc_GetVersionInfo/30 Adc_GetStreamLastPointer/29 Adc_GetGroupStatus/28 Adc_ReadGroup/27 Adc_StopGroupConversion/26 Adc_StartGroupConversion/25 Adc_DeInit/24 Adc_SetupResultBuffer/23 Adc_Init/22 Adc_axUnitStatus/2 Adc_axGroupStatus/1 Adc_apxCfgPtr/0
+
+
+Initial Symbol table:
+
+Adc_Ipw_Calibrate/42 (Adc_Ipw_Calibrate) @0e02c7e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_Calibrate/31 
+  Calls: 
+Adc_Ipw_ReadGroup/41 (Adc_Ipw_ReadGroup) @0e017c40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_ReadGroup/27 
+  Calls: 
+Adc_Ipw_RemoveFromQueue/40 (Adc_Ipw_RemoveFromQueue) @0e017a80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_UpdateSwQueueIndexNoInt/19 Adc_StopSwGroupConversion/15 
+  Calls: 
+Adc_Ipw_StopCurrentConversion/39 (Adc_Ipw_StopCurrentConversion) @0e0179a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_StopSwGroupConversion/15 
+  Calls: 
+Adc_Ipw_StartNormalConversion/38 (Adc_Ipw_StartNormalConversion) @0e017460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_UpdateSwQueueIndexNoInt/19 Adc_UpdateStatusStopConversion/16 Adc_UpdateStatusStartConversion/14 
+  Calls: 
+SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_01/37 (SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_01) @0e017380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_UpdateStatusStartConversion/14 Adc_UpdateStatusStartConversion/14 Adc_UpdateStatusStartConversion/14 
+  Calls: 
+SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_01/36 (SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_01) @0e0171c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_UpdateStatusStartConversion/14 Adc_UpdateStatusStartConversion/14 
+  Calls: 
+Adc_Ipw_DeInit/35 (Adc_Ipw_DeInit) @0dc8b9a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_DeInit/24 
+  Calls: 
+Det_ReportRuntimeError/34 (Det_ReportRuntimeError) @0dc8b620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_ReportDetRuntimeError/3 
+  Calls: 
+Adc_Ipw_Init/33 (Adc_Ipw_Init) @0dc8b0e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_Init/22 
+  Calls: 
+Adc_GetCoreID/32 (Adc_GetCoreID) @0dc8b000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_Calibrate/31 Adc_GetStreamLastPointer/29 Adc_ReadGroup/27 Adc_StopGroupConversion/26 Adc_StartGroupConversion/25 Adc_DeInit/24 Adc_Init/22 
+  Calls: 
+Adc_Calibrate/31 (Adc_Calibrate) @0dc7a2a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @01981040
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Adc_ReportDetRuntimeError/3 Adc_Ipw_Calibrate/42 Adc_ValidateCheckGroupNotConversion/6 Adc_ValidateNotBusyNoQueue/4 Adc_GetCoreID/32 
+Adc_GetVersionInfo/30 (Adc_GetVersionInfo) @0dc7aee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0dc7a2a0
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+Adc_GetStreamLastPointer/29 (Adc_GetStreamLastPointer) @0dc7ac40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0dc7aee0
+  References: Adc_axGroupStatus/1 (read) Adc_axGroupStatus/1 (read) Adc_apxCfgPtr/0 (read) Adc_axGroupStatus/1 (read) Adc_apxCfgPtr/0 (read) Adc_apxCfgPtr/0 (read) Adc_axGroupStatus/1 (read) Adc_axGroupStatus/1 (read) Adc_axGroupStatus/1 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Adc_UpdateStatusAfterGetStream/21 Adc_ValidateStateNotIdle/10 Adc_GetCoreID/32 
+Adc_GetGroupStatus/28 (Adc_GetGroupStatus) @0dc7a9a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0dc7ac40
+  References: Adc_axGroupStatus/1 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+Adc_ReadGroup/27 (Adc_ReadGroup) @0dc7a700
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0dc7a9a0
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Adc_UpdateStatusReadGroup/17 Adc_Ipw_ReadGroup/41 Adc_ValidateStateNotIdle/10 Adc_GetCoreID/32 
+Adc_StopGroupConversion/26 (Adc_StopGroupConversion) @0dc7a460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0dc7a700
+  References: Adc_apxCfgPtr/0 (read) Adc_apxCfgPtr/0 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Adc_UpdateStatusStopConversion/16 Adc_ValidateStateNotIdle/10 Adc_GetCoreID/32 
+Adc_StartGroupConversion/25 (Adc_StartGroupConversion) @0dc7a1c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0dc7a460
+  References: Adc_apxCfgPtr/0 (read) Adc_apxCfgPtr/0 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Adc_UpdateStatusStartConversion/14 Adc_ValidateStateStartGroupConvNotBusy/9 Adc_GetCoreID/32 
+Adc_DeInit/24 (Adc_DeInit) @0dc6bd20
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0dc7a1c0
+  References: Adc_apxCfgPtr/0 (read) Adc_apxCfgPtr/0 (read) Adc_axUnitStatus/2 (write) Adc_apxCfgPtr/0 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Adc_ReportDetRuntimeError/3 Adc_Ipw_DeInit/35 Adc_ValidateDeInitNotBusy/7 Adc_CheckCurrentCoreId/13 Adc_GetCoreID/32 
+Adc_SetupResultBuffer/23 (Adc_SetupResultBuffer) @0dc6b7e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0dc6bd20
+  References: Adc_axGroupStatus/1 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Adc_ValidateSetupBufferNotBusy/8 
+Adc_Init/22 (Adc_Init) @0dc6b2a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0dc6b7e0
+  References: Adc_apxCfgPtr/0 (write) Adc_apxCfgPtr/0 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Adc_ReportDetRuntimeError/3 Adc_Ipw_Init/33 Adc_InitGroupsStatus/11 Adc_InitUnitStatus/12 Adc_CheckCurrentCoreId/13 Adc_GetCoreID/32 
+Adc_UpdateStatusAfterGetStream/21 (Adc_UpdateStatusAfterGetStream) @0dc6bee0
+  Type: function definition analyzed
+  Visibility: no_reorder
+  Aux: @0dc7aee0
+  References: Adc_apxCfgPtr/0 (read) Adc_axGroupStatus/1 (read) Adc_axGroupStatus/1 (write) Adc_axGroupStatus/1 (read) Adc_apxCfgPtr/0 (read) Adc_apxCfgPtr/0 (read) Adc_apxCfgPtr/0 (read) Adc_apxCfgPtr/0 (read) Adc_apxCfgPtr/0 (read) Adc_axGroupStatus/1 (write) Adc_axGroupStatus/1 (write) 
+  Referring: 
+  Function flags: body
+  Called by: Adc_GetStreamLastPointer/29 
+  Calls: 
+Adc_UpdateStatusReadGroupInt/20 (Adc_UpdateStatusReadGroupInt) @0dc6bc40
+  Type: function definition analyzed
+  Visibility: no_reorder
+  Aux: @0dc7a9a0
+  References: Adc_apxCfgPtr/0 (read) Adc_axGroupStatus/1 (read) Adc_axGroupStatus/1 (write) Adc_axGroupStatus/1 (read) Adc_apxCfgPtr/0 (read) Adc_apxCfgPtr/0 (read) Adc_apxCfgPtr/0 (read) Adc_apxCfgPtr/0 (read) Adc_apxCfgPtr/0 (read) Adc_axGroupStatus/1 (write) Adc_axGroupStatus/1 (write) 
+  Referring: 
+  Function flags: body
+  Called by: Adc_UpdateStatusReadGroup/17 
+  Calls: 
+Adc_UpdateSwQueueIndexNoInt/19 (Adc_UpdateSwQueueIndexNoInt) @0dc6b9a0
+  Type: function definition analyzed
+  Visibility: no_reorder
+  Aux: @0dc6bc40
+  References: Adc_apxCfgPtr/0 (read) Adc_apxCfgPtr/0 (read) Adc_axUnitStatus/2 (read) Adc_axUnitStatus/2 (read) Adc_axUnitStatus/2 (read) Adc_axUnitStatus/2 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Adc_UpdateStatusReadGroupNoInt/18 
+  Calls: Adc_Ipw_StartNormalConversion/38 Adc_Ipw_RemoveFromQueue/40 
+Adc_UpdateStatusReadGroupNoInt/18 (Adc_UpdateStatusReadGroupNoInt) @0dc6b700
+  Type: function definition analyzed
+  Visibility: no_reorder
+  Aux: @0dc6bc40
+  References: Adc_apxCfgPtr/0 (read) Adc_axGroupStatus/1 (write) Adc_apxCfgPtr/0 (read) Adc_axGroupStatus/1 (write) Adc_apxCfgPtr/0 (read) Adc_axGroupStatus/1 (write) 
+  Referring: 
+  Function flags: body
+  Called by: Adc_UpdateStatusReadGroup/17 
+  Calls: Adc_UpdateSwQueueIndexNoInt/19 
+Adc_UpdateStatusReadGroup/17 (Adc_UpdateStatusReadGroup) @0dc6b460
+  Type: function definition analyzed
+  Visibility: no_reorder
+  Aux: @0dc7a9a0
+  References: Adc_apxCfgPtr/0 (read) Adc_apxCfgPtr/0 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Adc_ReadGroup/27 
+  Calls: Adc_UpdateStatusReadGroupInt/20 Adc_UpdateStatusReadGroupNoInt/18 
+Adc_UpdateStatusStopConversion/16 (Adc_UpdateStatusStopConversion) @0dc6b1c0
+  Type: function definition analyzed
+  Visibility: no_reorder
+  Aux: @0dc7a700
+  References: Adc_apxCfgPtr/0 (read) Adc_apxCfgPtr/0 (read) Adc_apxCfgPtr/0 (read) Adc_apxCfgPtr/0 (read) Adc_axGroupStatus/1 (read) Adc_axGroupStatus/1 (write) Adc_axGroupStatus/1 (write) Adc_axGroupStatus/1 (write) Adc_axUnitStatus/2 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Adc_StopGroupConversion/26 
+  Calls: Adc_ReportDetRuntimeError/3 Adc_Ipw_StartNormalConversion/38 Adc_StopSwGroupConversion/15 
+Adc_StopSwGroupConversion/15 (Adc_StopSwGroupConversion) @0dbd9d20
+  Type: function definition analyzed
+  Visibility: no_reorder
+  Aux: @0dc7a700
+  References: Adc_axUnitStatus/2 (read) Adc_axUnitStatus/2 (read) Adc_axUnitStatus/2 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Adc_UpdateStatusStopConversion/16 
+  Calls: Adc_Ipw_RemoveFromQueue/40 Adc_Ipw_StopCurrentConversion/39 
+Adc_UpdateStatusStartConversion/14 (Adc_UpdateStatusStartConversion) @0dbd97e0
+  Type: function definition analyzed
+  Visibility: no_reorder
+  Aux: @0dc7a460
+  References: Adc_axGroupStatus/1 (write) Adc_axGroupStatus/1 (write) Adc_axUnitStatus/2 (read) Adc_axUnitStatus/2 (write) Adc_axUnitStatus/2 (read) Adc_axUnitStatus/2 (write) Adc_axUnitStatus/2 (read) Adc_axUnitStatus/2 (read) Adc_axUnitStatus/2 (read) Adc_axUnitStatus/2 (write) Adc_axUnitStatus/2 (read) Adc_axUnitStatus/2 (write) 
+  Referring: 
+  Function flags: body
+  Called by: Adc_StartGroupConversion/25 
+  Calls: SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_01/37 Adc_Ipw_StartNormalConversion/38 SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_01/37 SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_01/36 SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_01/37 SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_01/36 
+Adc_CheckCurrentCoreId/13 (Adc_CheckCurrentCoreId) @0dbd92a0
+  Type: function definition analyzed
+  Visibility: no_reorder
+  Aux: @0dbd9ee0
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: Adc_DeInit/24 Adc_Init/22 
+  Calls: 
+Adc_InitUnitStatus/12 (Adc_InitUnitStatus) @0dbd9ee0
+  Type: function definition analyzed
+  Visibility: no_reorder
+  Aux: @0dbd9c40
+  References: Adc_apxCfgPtr/0 (read) Adc_axUnitStatus/2 (write) Adc_axUnitStatus/2 (write) Adc_axUnitStatus/2 (write) 
+  Referring: 
+  Function flags: body
+  Called by: Adc_Init/22 
+  Calls: 
+Adc_InitGroupsStatus/11 (Adc_InitGroupsStatus) @0dbd9c40
+  Type: function definition analyzed
+  Visibility: no_reorder
+  Aux: @0dbd0a80
+  References: Adc_apxCfgPtr/0 (read) Adc_axGroupStatus/1 (write) Adc_axGroupStatus/1 (write) Adc_axGroupStatus/1 (write) Adc_axGroupStatus/1 (write) Adc_axGroupStatus/1 (write) Adc_apxCfgPtr/0 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Adc_Init/22 
+  Calls: 
+Adc_ValidateStateNotIdle/10 (Adc_ValidateStateNotIdle) @0dbd99a0
+  Type: function definition analyzed
+  Visibility: no_reorder
+  Aux: @0dc6b1c0
+  References: Adc_axGroupStatus/1 (read) Adc_axGroupStatus/1 (read) Adc_axGroupStatus/1 (read) Adc_axGroupStatus/1 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Adc_GetStreamLastPointer/29 Adc_ReadGroup/27 Adc_StopGroupConversion/26 
+  Calls: Adc_ReportDetRuntimeError/3 Adc_ReportDetRuntimeError/3 Adc_ReportDetRuntimeError/3 
+Adc_ValidateStateStartGroupConvNotBusy/9 (Adc_ValidateStateStartGroupConvNotBusy) @0dbd9700
+  Type: function definition analyzed
+  Visibility: no_reorder
+  Aux: @0dbd97e0
+  References: Adc_apxCfgPtr/0 (read) Adc_apxCfgPtr/0 (read) Adc_apxCfgPtr/0 (read) Adc_apxCfgPtr/0 (read) Adc_apxCfgPtr/0 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Adc_StartGroupConversion/25 
+  Calls: Adc_ValidateNotBusyNoPrio/5 Adc_ReportDetRuntimeError/3 
+Adc_ValidateSetupBufferNotBusy/8 (Adc_ValidateSetupBufferNotBusy) @0dbd9460
+  Type: function definition analyzed
+  Visibility: no_reorder
+  Aux: @0dc6bd20
+  References: Adc_axGroupStatus/1 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Adc_SetupResultBuffer/23 
+  Calls: Adc_ReportDetRuntimeError/3 
+Adc_ValidateDeInitNotBusy/7 (Adc_ValidateDeInitNotBusy) @0dbd91c0
+  Type: function definition analyzed
+  Visibility: no_reorder
+  Aux: @0dc7a1c0
+  References: Adc_apxCfgPtr/0 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Adc_DeInit/24 
+  Calls: Adc_ValidateCheckGroupNotConversion/6 Adc_ValidateNotBusyNoQueue/4 
+Adc_ValidateCheckGroupNotConversion/6 (Adc_ValidateCheckGroupNotConversion) @0dbd0e00
+  Type: function definition analyzed
+  Visibility: no_reorder
+  Aux: @0dc7a1c0
+  References: Adc_apxCfgPtr/0 (read) Adc_axGroupStatus/1 (read) Adc_apxCfgPtr/0 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Adc_Calibrate/31 Adc_ValidateDeInitNotBusy/7 
+  Calls: Adc_ReportDetRuntimeError/3 
+Adc_ValidateNotBusyNoPrio/5 (Adc_ValidateNotBusyNoPrio) @0dbd08c0
+  Type: function definition analyzed
+  Visibility: no_reorder
+  Aux: @0dbd97e0
+  References: Adc_axGroupStatus/1 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Adc_ValidateStateStartGroupConvNotBusy/9 
+  Calls: Adc_ReportDetRuntimeError/3 Adc_ReportDetRuntimeError/3 
+Adc_ValidateNotBusyNoQueue/4 (Adc_ValidateNotBusyNoQueue) @0dbd0d20
+  Type: function definition analyzed
+  Visibility: no_reorder
+  Aux: @0dbd0e00
+  References: Adc_axUnitStatus/2 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Adc_Calibrate/31 Adc_ValidateDeInitNotBusy/7 
+  Calls: Adc_ReportDetRuntimeError/3 
+Adc_ReportDetRuntimeError/3 (Adc_ReportDetRuntimeError) @0dbd0a80
+  Type: function definition analyzed
+  Visibility: no_reorder
+  Aux: @0dc6b7e0
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: Adc_Calibrate/31 Adc_UpdateStatusStopConversion/16 Adc_ValidateStateNotIdle/10 Adc_ValidateStateNotIdle/10 Adc_ValidateStateNotIdle/10 Adc_ValidateNotBusyNoPrio/5 Adc_ValidateNotBusyNoPrio/5 Adc_ValidateStateStartGroupConvNotBusy/9 Adc_ValidateCheckGroupNotConversion/6 Adc_ValidateNotBusyNoQueue/4 Adc_DeInit/24 Adc_ValidateSetupBufferNotBusy/8 Adc_Init/22 
+  Calls: Det_ReportRuntimeError/34 
+Adc_axUnitStatus/2 (Adc_axUnitStatus) @0dbc6cf0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0dc6b2a0
+  References: 
+  Referring: Adc_InitUnitStatus/12 (write) Adc_InitUnitStatus/12 (write) Adc_InitUnitStatus/12 (write) Adc_DeInit/24 (write) Adc_ValidateNotBusyNoQueue/4 (read) Adc_UpdateStatusStartConversion/14 (read) Adc_UpdateStatusStartConversion/14 (write) Adc_UpdateStatusStartConversion/14 (read) Adc_UpdateStatusStartConversion/14 (write) Adc_UpdateStatusStartConversion/14 (read) Adc_UpdateStatusStartConversion/14 (read) Adc_UpdateStatusStartConversion/14 (read) Adc_UpdateStatusStartConversion/14 (write) Adc_UpdateStatusStartConversion/14 (read) Adc_UpdateStatusStartConversion/14 (write) Adc_UpdateStatusStopConversion/16 (read) Adc_StopSwGroupConversion/15 (read) Adc_StopSwGroupConversion/15 (read) Adc_StopSwGroupConversion/15 (read) Adc_UpdateSwQueueIndexNoInt/19 (read) Adc_UpdateSwQueueIndexNoInt/19 (read) Adc_UpdateSwQueueIndexNoInt/19 (read) Adc_UpdateSwQueueIndexNoInt/19 (read) 
+  Availability: not-ready
+  Varpool flags:
+Adc_axGroupStatus/1 (Adc_axGroupStatus) @0dbc6ca8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0dbc6cf0
+  References: 
+  Referring: Adc_InitGroupsStatus/11 (write) Adc_InitGroupsStatus/11 (write) Adc_InitGroupsStatus/11 (write) Adc_InitGroupsStatus/11 (write) Adc_InitGroupsStatus/11 (write) Adc_SetupResultBuffer/23 (write) Adc_ValidateSetupBufferNotBusy/8 (read) Adc_ValidateCheckGroupNotConversion/6 (read) Adc_ValidateNotBusyNoPrio/5 (read) Adc_UpdateStatusStartConversion/14 (write) Adc_UpdateStatusStartConversion/14 (write) Adc_ValidateStateNotIdle/10 (read) Adc_ValidateStateNotIdle/10 (read) Adc_ValidateStateNotIdle/10 (read) Adc_ValidateStateNotIdle/10 (read) Adc_UpdateStatusStopConversion/16 (read) Adc_UpdateStatusStopConversion/16 (write) Adc_UpdateStatusStopConversion/16 (write) Adc_UpdateStatusStopConversion/16 (write) Adc_UpdateStatusReadGroupNoInt/18 (write) Adc_UpdateStatusReadGroupNoInt/18 (write) Adc_UpdateStatusReadGroupNoInt/18 (write) Adc_UpdateStatusReadGroupInt/20 (read) Adc_UpdateStatusReadGroupInt/20 (write) Adc_UpdateStatusReadGroupInt/20 (read) Adc_UpdateStatusReadGroupInt/20 (write) Adc_UpdateStatusReadGroupInt/20 (write) Adc_GetGroupStatus/28 (read) Adc_GetStreamLastPointer/29 (read) Adc_GetStreamLastPointer/29 (read) Adc_GetStreamLastPointer/29 (read) Adc_GetStreamLastPointer/29 (read) Adc_GetStreamLastPointer/29 (read) Adc_GetStreamLastPointer/29 (read) Adc_UpdateStatusAfterGetStream/21 (read) Adc_UpdateStatusAfterGetStream/21 (write) Adc_UpdateStatusAfterGetStream/21 (read) Adc_UpdateStatusAfterGetStream/21 (write) Adc_UpdateStatusAfterGetStream/21 (write) 
+  Availability: not-ready
+  Varpool flags:
+Adc_apxCfgPtr/0 (Adc_apxCfgPtr) @0dbc6c18
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0dbc6ca8
+  References: 
+  Referring: Adc_Init/22 (write) Adc_Init/22 (read) Adc_InitUnitStatus/12 (read) Adc_InitGroupsStatus/11 (read) Adc_InitGroupsStatus/11 (read) Adc_DeInit/24 (read) Adc_DeInit/24 (read) Adc_DeInit/24 (write) Adc_ValidateDeInitNotBusy/7 (read) Adc_ValidateCheckGroupNotConversion/6 (read) Adc_ValidateCheckGroupNotConversion/6 (read) Adc_StartGroupConversion/25 (read) Adc_StartGroupConversion/25 (read) Adc_ValidateStateStartGroupConvNotBusy/9 (read) Adc_ValidateStateStartGroupConvNotBusy/9 (read) Adc_ValidateStateStartGroupConvNotBusy/9 (read) Adc_ValidateStateStartGroupConvNotBusy/9 (read) Adc_ValidateStateStartGroupConvNotBusy/9 (read) Adc_StopGroupConversion/26 (read) Adc_StopGroupConversion/26 (read) Adc_UpdateStatusStopConversion/16 (read) Adc_UpdateStatusStopConversion/16 (read) Adc_UpdateStatusStopConversion/16 (read) Adc_UpdateStatusStopConversion/16 (read) Adc_UpdateStatusReadGroup/17 (read) Adc_UpdateStatusReadGroup/17 (read) Adc_UpdateStatusReadGroupNoInt/18 (read) Adc_UpdateStatusReadGroupNoInt/18 (read) Adc_UpdateStatusReadGroupNoInt/18 (read) Adc_UpdateSwQueueIndexNoInt/19 (read) Adc_UpdateSwQueueIndexNoInt/19 (read) Adc_UpdateStatusReadGroupInt/20 (read) Adc_UpdateStatusReadGroupInt/20 (read) Adc_UpdateStatusReadGroupInt/20 (read) Adc_UpdateStatusReadGroupInt/20 (read) Adc_UpdateStatusReadGroupInt/20 (read) Adc_UpdateStatusReadGroupInt/20 (read) Adc_GetStreamLastPointer/29 (read) Adc_GetStreamLastPointer/29 (read) Adc_GetStreamLastPointer/29 (read) Adc_UpdateStatusAfterGetStream/21 (read) Adc_UpdateStatusAfterGetStream/21 (read) Adc_UpdateStatusAfterGetStream/21 (read) Adc_UpdateStatusAfterGetStream/21 (read) Adc_UpdateStatusAfterGetStream/21 (read) Adc_UpdateStatusAfterGetStream/21 (read) 
+  Availability: not-ready
+  Varpool flags:
+
+Removing unused symbols:
+
+Reclaimed Symbol table:
+
+Adc_Ipw_Calibrate/42 (Adc_Ipw_Calibrate) @0e02c7e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_Calibrate/31 
+  Calls: 
+Adc_Ipw_ReadGroup/41 (Adc_Ipw_ReadGroup) @0e017c40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_ReadGroup/27 
+  Calls: 
+Adc_Ipw_RemoveFromQueue/40 (Adc_Ipw_RemoveFromQueue) @0e017a80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_UpdateSwQueueIndexNoInt/19 Adc_StopSwGroupConversion/15 
+  Calls: 
+Adc_Ipw_StopCurrentConversion/39 (Adc_Ipw_StopCurrentConversion) @0e0179a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_StopSwGroupConversion/15 
+  Calls: 
+Adc_Ipw_StartNormalConversion/38 (Adc_Ipw_StartNormalConversion) @0e017460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_UpdateSwQueueIndexNoInt/19 Adc_UpdateStatusStopConversion/16 Adc_UpdateStatusStartConversion/14 
+  Calls: 
+SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_01/37 (SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_01) @0e017380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_UpdateStatusStartConversion/14 Adc_UpdateStatusStartConversion/14 Adc_UpdateStatusStartConversion/14 
+  Calls: 
+SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_01/36 (SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_01) @0e0171c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_UpdateStatusStartConversion/14 Adc_UpdateStatusStartConversion/14 
+  Calls: 
+Adc_Ipw_DeInit/35 (Adc_Ipw_DeInit) @0dc8b9a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_DeInit/24 
+  Calls: 
+Det_ReportRuntimeError/34 (Det_ReportRuntimeError) @0dc8b620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_ReportDetRuntimeError/3 
+  Calls: 
+Adc_Ipw_Init/33 (Adc_Ipw_Init) @0dc8b0e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_Init/22 
+  Calls: 
+Adc_GetCoreID/32 (Adc_GetCoreID) @0dc8b000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_Calibrate/31 Adc_GetStreamLastPointer/29 Adc_ReadGroup/27 Adc_StopGroupConversion/26 Adc_StartGroupConversion/25 Adc_DeInit/24 Adc_Init/22 
+  Calls: 
+Adc_Calibrate/31 (Adc_Calibrate) @0dc7a2a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Adc_ReportDetRuntimeError/3 Adc_Ipw_Calibrate/42 Adc_ValidateCheckGroupNotConversion/6 Adc_ValidateNotBusyNoQueue/4 Adc_GetCoreID/32 
+Adc_GetVersionInfo/30 (Adc_GetVersionInfo) @0dc7aee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+Adc_GetStreamLastPointer/29 (Adc_GetStreamLastPointer) @0dc7ac40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Adc_axGroupStatus/1 (read) Adc_axGroupStatus/1 (read) Adc_apxCfgPtr/0 (read) Adc_axGroupStatus/1 (read) Adc_apxCfgPtr/0 (read) Adc_apxCfgPtr/0 (read) Adc_axGroupStatus/1 (read) Adc_axGroupStatus/1 (read) Adc_axGroupStatus/1 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Adc_UpdateStatusAfterGetStream/21 Adc_ValidateStateNotIdle/10 Adc_GetCoreID/32 
+Adc_GetGroupStatus/28 (Adc_GetGroupStatus) @0dc7a9a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Adc_axGroupStatus/1 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+Adc_ReadGroup/27 (Adc_ReadGroup) @0dc7a700
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Adc_UpdateStatusReadGroup/17 Adc_Ipw_ReadGroup/41 Adc_ValidateStateNotIdle/10 Adc_GetCoreID/32 
+Adc_StopGroupConversion/26 (Adc_StopGroupConversion) @0dc7a460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Adc_apxCfgPtr/0 (read) Adc_apxCfgPtr/0 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Adc_UpdateStatusStopConversion/16 Adc_ValidateStateNotIdle/10 Adc_GetCoreID/32 
+Adc_StartGroupConversion/25 (Adc_StartGroupConversion) @0dc7a1c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Adc_apxCfgPtr/0 (read) Adc_apxCfgPtr/0 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Adc_UpdateStatusStartConversion/14 Adc_ValidateStateStartGroupConvNotBusy/9 Adc_GetCoreID/32 
+Adc_DeInit/24 (Adc_DeInit) @0dc6bd20
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Adc_apxCfgPtr/0 (read) Adc_apxCfgPtr/0 (read) Adc_axUnitStatus/2 (write) Adc_apxCfgPtr/0 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Adc_ReportDetRuntimeError/3 Adc_Ipw_DeInit/35 Adc_ValidateDeInitNotBusy/7 Adc_CheckCurrentCoreId/13 Adc_GetCoreID/32 
+Adc_SetupResultBuffer/23 (Adc_SetupResultBuffer) @0dc6b7e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Adc_axGroupStatus/1 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Adc_ValidateSetupBufferNotBusy/8 
+Adc_Init/22 (Adc_Init) @0dc6b2a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Adc_apxCfgPtr/0 (write) Adc_apxCfgPtr/0 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Adc_ReportDetRuntimeError/3 Adc_Ipw_Init/33 Adc_InitGroupsStatus/11 Adc_InitUnitStatus/12 Adc_CheckCurrentCoreId/13 Adc_GetCoreID/32 
+Adc_UpdateStatusAfterGetStream/21 (Adc_UpdateStatusAfterGetStream) @0dc6bee0
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: Adc_apxCfgPtr/0 (read) Adc_axGroupStatus/1 (read) Adc_axGroupStatus/1 (write) Adc_axGroupStatus/1 (read) Adc_apxCfgPtr/0 (read) Adc_apxCfgPtr/0 (read) Adc_apxCfgPtr/0 (read) Adc_apxCfgPtr/0 (read) Adc_apxCfgPtr/0 (read) Adc_axGroupStatus/1 (write) Adc_axGroupStatus/1 (write) 
+  Referring: 
+  Function flags: body
+  Called by: Adc_GetStreamLastPointer/29 
+  Calls: 
+Adc_UpdateStatusReadGroupInt/20 (Adc_UpdateStatusReadGroupInt) @0dc6bc40
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: Adc_apxCfgPtr/0 (read) Adc_axGroupStatus/1 (read) Adc_axGroupStatus/1 (write) Adc_axGroupStatus/1 (read) Adc_apxCfgPtr/0 (read) Adc_apxCfgPtr/0 (read) Adc_apxCfgPtr/0 (read) Adc_apxCfgPtr/0 (read) Adc_apxCfgPtr/0 (read) Adc_axGroupStatus/1 (write) Adc_axGroupStatus/1 (write) 
+  Referring: 
+  Function flags: body
+  Called by: Adc_UpdateStatusReadGroup/17 
+  Calls: 
+Adc_UpdateSwQueueIndexNoInt/19 (Adc_UpdateSwQueueIndexNoInt) @0dc6b9a0
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: Adc_apxCfgPtr/0 (read) Adc_apxCfgPtr/0 (read) Adc_axUnitStatus/2 (read) Adc_axUnitStatus/2 (read) Adc_axUnitStatus/2 (read) Adc_axUnitStatus/2 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Adc_UpdateStatusReadGroupNoInt/18 
+  Calls: Adc_Ipw_StartNormalConversion/38 Adc_Ipw_RemoveFromQueue/40 
+Adc_UpdateStatusReadGroupNoInt/18 (Adc_UpdateStatusReadGroupNoInt) @0dc6b700
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: Adc_apxCfgPtr/0 (read) Adc_axGroupStatus/1 (write) Adc_apxCfgPtr/0 (read) Adc_axGroupStatus/1 (write) Adc_apxCfgPtr/0 (read) Adc_axGroupStatus/1 (write) 
+  Referring: 
+  Function flags: body
+  Called by: Adc_UpdateStatusReadGroup/17 
+  Calls: Adc_UpdateSwQueueIndexNoInt/19 
+Adc_UpdateStatusReadGroup/17 (Adc_UpdateStatusReadGroup) @0dc6b460
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: Adc_apxCfgPtr/0 (read) Adc_apxCfgPtr/0 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Adc_ReadGroup/27 
+  Calls: Adc_UpdateStatusReadGroupInt/20 Adc_UpdateStatusReadGroupNoInt/18 
+Adc_UpdateStatusStopConversion/16 (Adc_UpdateStatusStopConversion) @0dc6b1c0
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: Adc_apxCfgPtr/0 (read) Adc_apxCfgPtr/0 (read) Adc_apxCfgPtr/0 (read) Adc_apxCfgPtr/0 (read) Adc_axGroupStatus/1 (read) Adc_axGroupStatus/1 (write) Adc_axGroupStatus/1 (write) Adc_axGroupStatus/1 (write) Adc_axUnitStatus/2 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Adc_StopGroupConversion/26 
+  Calls: Adc_ReportDetRuntimeError/3 Adc_Ipw_StartNormalConversion/38 Adc_StopSwGroupConversion/15 
+Adc_StopSwGroupConversion/15 (Adc_StopSwGroupConversion) @0dbd9d20
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: Adc_axUnitStatus/2 (read) Adc_axUnitStatus/2 (read) Adc_axUnitStatus/2 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Adc_UpdateStatusStopConversion/16 
+  Calls: Adc_Ipw_RemoveFromQueue/40 Adc_Ipw_StopCurrentConversion/39 
+Adc_UpdateStatusStartConversion/14 (Adc_UpdateStatusStartConversion) @0dbd97e0
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: Adc_axGroupStatus/1 (write) Adc_axGroupStatus/1 (write) Adc_axUnitStatus/2 (read) Adc_axUnitStatus/2 (write) Adc_axUnitStatus/2 (read) Adc_axUnitStatus/2 (write) Adc_axUnitStatus/2 (read) Adc_axUnitStatus/2 (read) Adc_axUnitStatus/2 (read) Adc_axUnitStatus/2 (write) Adc_axUnitStatus/2 (read) Adc_axUnitStatus/2 (write) 
+  Referring: 
+  Function flags: body
+  Called by: Adc_StartGroupConversion/25 
+  Calls: SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_01/37 Adc_Ipw_StartNormalConversion/38 SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_01/37 SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_01/36 SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_01/37 SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_01/36 
+Adc_CheckCurrentCoreId/13 (Adc_CheckCurrentCoreId) @0dbd92a0
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: Adc_DeInit/24 Adc_Init/22 
+  Calls: 
+Adc_InitUnitStatus/12 (Adc_InitUnitStatus) @0dbd9ee0
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: Adc_apxCfgPtr/0 (read) Adc_axUnitStatus/2 (write) Adc_axUnitStatus/2 (write) Adc_axUnitStatus/2 (write) 
+  Referring: 
+  Function flags: body
+  Called by: Adc_Init/22 
+  Calls: 
+Adc_InitGroupsStatus/11 (Adc_InitGroupsStatus) @0dbd9c40
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: Adc_apxCfgPtr/0 (read) Adc_axGroupStatus/1 (write) Adc_axGroupStatus/1 (write) Adc_axGroupStatus/1 (write) Adc_axGroupStatus/1 (write) Adc_axGroupStatus/1 (write) Adc_apxCfgPtr/0 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Adc_Init/22 
+  Calls: 
+Adc_ValidateStateNotIdle/10 (Adc_ValidateStateNotIdle) @0dbd99a0
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: Adc_axGroupStatus/1 (read) Adc_axGroupStatus/1 (read) Adc_axGroupStatus/1 (read) Adc_axGroupStatus/1 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Adc_GetStreamLastPointer/29 Adc_ReadGroup/27 Adc_StopGroupConversion/26 
+  Calls: Adc_ReportDetRuntimeError/3 Adc_ReportDetRuntimeError/3 Adc_ReportDetRuntimeError/3 
+Adc_ValidateStateStartGroupConvNotBusy/9 (Adc_ValidateStateStartGroupConvNotBusy) @0dbd9700
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: Adc_apxCfgPtr/0 (read) Adc_apxCfgPtr/0 (read) Adc_apxCfgPtr/0 (read) Adc_apxCfgPtr/0 (read) Adc_apxCfgPtr/0 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Adc_StartGroupConversion/25 
+  Calls: Adc_ValidateNotBusyNoPrio/5 Adc_ReportDetRuntimeError/3 
+Adc_ValidateSetupBufferNotBusy/8 (Adc_ValidateSetupBufferNotBusy) @0dbd9460
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: Adc_axGroupStatus/1 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Adc_SetupResultBuffer/23 
+  Calls: Adc_ReportDetRuntimeError/3 
+Adc_ValidateDeInitNotBusy/7 (Adc_ValidateDeInitNotBusy) @0dbd91c0
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: Adc_apxCfgPtr/0 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Adc_DeInit/24 
+  Calls: Adc_ValidateCheckGroupNotConversion/6 Adc_ValidateNotBusyNoQueue/4 
+Adc_ValidateCheckGroupNotConversion/6 (Adc_ValidateCheckGroupNotConversion) @0dbd0e00
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: Adc_apxCfgPtr/0 (read) Adc_axGroupStatus/1 (read) Adc_apxCfgPtr/0 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Adc_Calibrate/31 Adc_ValidateDeInitNotBusy/7 
+  Calls: Adc_ReportDetRuntimeError/3 
+Adc_ValidateNotBusyNoPrio/5 (Adc_ValidateNotBusyNoPrio) @0dbd08c0
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: Adc_axGroupStatus/1 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Adc_ValidateStateStartGroupConvNotBusy/9 
+  Calls: Adc_ReportDetRuntimeError/3 Adc_ReportDetRuntimeError/3 
+Adc_ValidateNotBusyNoQueue/4 (Adc_ValidateNotBusyNoQueue) @0dbd0d20
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: Adc_axUnitStatus/2 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Adc_Calibrate/31 Adc_ValidateDeInitNotBusy/7 
+  Calls: Adc_ReportDetRuntimeError/3 
+Adc_ReportDetRuntimeError/3 (Adc_ReportDetRuntimeError) @0dbd0a80
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: Adc_Calibrate/31 Adc_UpdateStatusStopConversion/16 Adc_ValidateStateNotIdle/10 Adc_ValidateStateNotIdle/10 Adc_ValidateStateNotIdle/10 Adc_ValidateNotBusyNoPrio/5 Adc_ValidateNotBusyNoPrio/5 Adc_ValidateStateStartGroupConvNotBusy/9 Adc_ValidateCheckGroupNotConversion/6 Adc_ValidateNotBusyNoQueue/4 Adc_DeInit/24 Adc_ValidateSetupBufferNotBusy/8 Adc_Init/22 
+  Calls: Det_ReportRuntimeError/34 
+Adc_axUnitStatus/2 (Adc_axUnitStatus) @0dbc6cf0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: Adc_InitUnitStatus/12 (write) Adc_InitUnitStatus/12 (write) Adc_InitUnitStatus/12 (write) Adc_DeInit/24 (write) Adc_ValidateNotBusyNoQueue/4 (read) Adc_UpdateStatusStartConversion/14 (read) Adc_UpdateStatusStartConversion/14 (write) Adc_UpdateStatusStartConversion/14 (read) Adc_UpdateStatusStartConversion/14 (write) Adc_UpdateStatusStartConversion/14 (read) Adc_UpdateStatusStartConversion/14 (read) Adc_UpdateStatusStartConversion/14 (read) Adc_UpdateStatusStartConversion/14 (write) Adc_UpdateStatusStartConversion/14 (read) Adc_UpdateStatusStartConversion/14 (write) Adc_UpdateStatusStopConversion/16 (read) Adc_StopSwGroupConversion/15 (read) Adc_StopSwGroupConversion/15 (read) Adc_StopSwGroupConversion/15 (read) Adc_UpdateSwQueueIndexNoInt/19 (read) Adc_UpdateSwQueueIndexNoInt/19 (read) Adc_UpdateSwQueueIndexNoInt/19 (read) Adc_UpdateSwQueueIndexNoInt/19 (read) 
+  Availability: not-ready
+  Varpool flags:
+Adc_axGroupStatus/1 (Adc_axGroupStatus) @0dbc6ca8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: Adc_InitGroupsStatus/11 (write) Adc_InitGroupsStatus/11 (write) Adc_InitGroupsStatus/11 (write) Adc_InitGroupsStatus/11 (write) Adc_InitGroupsStatus/11 (write) Adc_SetupResultBuffer/23 (write) Adc_ValidateSetupBufferNotBusy/8 (read) Adc_ValidateCheckGroupNotConversion/6 (read) Adc_ValidateNotBusyNoPrio/5 (read) Adc_UpdateStatusStartConversion/14 (write) Adc_UpdateStatusStartConversion/14 (write) Adc_ValidateStateNotIdle/10 (read) Adc_ValidateStateNotIdle/10 (read) Adc_ValidateStateNotIdle/10 (read) Adc_ValidateStateNotIdle/10 (read) Adc_UpdateStatusStopConversion/16 (read) Adc_UpdateStatusStopConversion/16 (write) Adc_UpdateStatusStopConversion/16 (write) Adc_UpdateStatusStopConversion/16 (write) Adc_UpdateStatusReadGroupNoInt/18 (write) Adc_UpdateStatusReadGroupNoInt/18 (write) Adc_UpdateStatusReadGroupNoInt/18 (write) Adc_UpdateStatusReadGroupInt/20 (read) Adc_UpdateStatusReadGroupInt/20 (write) Adc_UpdateStatusReadGroupInt/20 (read) Adc_UpdateStatusReadGroupInt/20 (write) Adc_UpdateStatusReadGroupInt/20 (write) Adc_GetGroupStatus/28 (read) Adc_GetStreamLastPointer/29 (read) Adc_GetStreamLastPointer/29 (read) Adc_GetStreamLastPointer/29 (read) Adc_GetStreamLastPointer/29 (read) Adc_GetStreamLastPointer/29 (read) Adc_GetStreamLastPointer/29 (read) Adc_UpdateStatusAfterGetStream/21 (read) Adc_UpdateStatusAfterGetStream/21 (write) Adc_UpdateStatusAfterGetStream/21 (read) Adc_UpdateStatusAfterGetStream/21 (write) Adc_UpdateStatusAfterGetStream/21 (write) 
+  Availability: not-ready
+  Varpool flags:
+Adc_apxCfgPtr/0 (Adc_apxCfgPtr) @0dbc6c18
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: Adc_Init/22 (write) Adc_Init/22 (read) Adc_InitUnitStatus/12 (read) Adc_InitGroupsStatus/11 (read) Adc_InitGroupsStatus/11 (read) Adc_DeInit/24 (read) Adc_DeInit/24 (read) Adc_DeInit/24 (write) Adc_ValidateDeInitNotBusy/7 (read) Adc_ValidateCheckGroupNotConversion/6 (read) Adc_ValidateCheckGroupNotConversion/6 (read) Adc_StartGroupConversion/25 (read) Adc_StartGroupConversion/25 (read) Adc_ValidateStateStartGroupConvNotBusy/9 (read) Adc_ValidateStateStartGroupConvNotBusy/9 (read) Adc_ValidateStateStartGroupConvNotBusy/9 (read) Adc_ValidateStateStartGroupConvNotBusy/9 (read) Adc_ValidateStateStartGroupConvNotBusy/9 (read) Adc_StopGroupConversion/26 (read) Adc_StopGroupConversion/26 (read) Adc_UpdateStatusStopConversion/16 (read) Adc_UpdateStatusStopConversion/16 (read) Adc_UpdateStatusStopConversion/16 (read) Adc_UpdateStatusStopConversion/16 (read) Adc_UpdateStatusReadGroup/17 (read) Adc_UpdateStatusReadGroup/17 (read) Adc_UpdateStatusReadGroupNoInt/18 (read) Adc_UpdateStatusReadGroupNoInt/18 (read) Adc_UpdateStatusReadGroupNoInt/18 (read) Adc_UpdateSwQueueIndexNoInt/19 (read) Adc_UpdateSwQueueIndexNoInt/19 (read) Adc_UpdateStatusReadGroupInt/20 (read) Adc_UpdateStatusReadGroupInt/20 (read) Adc_UpdateStatusReadGroupInt/20 (read) Adc_UpdateStatusReadGroupInt/20 (read) Adc_UpdateStatusReadGroupInt/20 (read) Adc_UpdateStatusReadGroupInt/20 (read) Adc_GetStreamLastPointer/29 (read) Adc_GetStreamLastPointer/29 (read) Adc_GetStreamLastPointer/29 (read) Adc_UpdateStatusAfterGetStream/21 (read) Adc_UpdateStatusAfterGetStream/21 (read) Adc_UpdateStatusAfterGetStream/21 (read) Adc_UpdateStatusAfterGetStream/21 (read) Adc_UpdateStatusAfterGetStream/21 (read) Adc_UpdateStatusAfterGetStream/21 (read) 
+  Availability: not-ready
+  Varpool flags:
+
+
+Initial Symbol table:
+
+Adc_Ipw_Calibrate/42 (Adc_Ipw_Calibrate) @0e02c7e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_Calibrate/31 
+  Calls: 
+Adc_Ipw_ReadGroup/41 (Adc_Ipw_ReadGroup) @0e017c40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_ReadGroup/27 
+  Calls: 
+Adc_Ipw_RemoveFromQueue/40 (Adc_Ipw_RemoveFromQueue) @0e017a80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_UpdateSwQueueIndexNoInt/19 Adc_StopSwGroupConversion/15 
+  Calls: 
+Adc_Ipw_StopCurrentConversion/39 (Adc_Ipw_StopCurrentConversion) @0e0179a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_StopSwGroupConversion/15 
+  Calls: 
+Adc_Ipw_StartNormalConversion/38 (Adc_Ipw_StartNormalConversion) @0e017460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_UpdateSwQueueIndexNoInt/19 Adc_UpdateStatusStopConversion/16 Adc_UpdateStatusStartConversion/14 
+  Calls: 
+SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_01/37 (SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_01) @0e017380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_UpdateStatusStartConversion/14 Adc_UpdateStatusStartConversion/14 Adc_UpdateStatusStartConversion/14 
+  Calls: 
+SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_01/36 (SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_01) @0e0171c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_UpdateStatusStartConversion/14 Adc_UpdateStatusStartConversion/14 
+  Calls: 
+Adc_Ipw_DeInit/35 (Adc_Ipw_DeInit) @0dc8b9a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_DeInit/24 
+  Calls: 
+Det_ReportRuntimeError/34 (Det_ReportRuntimeError) @0dc8b620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_ReportDetRuntimeError/3 
+  Calls: 
+Adc_Ipw_Init/33 (Adc_Ipw_Init) @0dc8b0e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_Init/22 
+  Calls: 
+Adc_GetCoreID/32 (Adc_GetCoreID) @0dc8b000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_Calibrate/31 Adc_GetStreamLastPointer/29 Adc_ReadGroup/27 Adc_StopGroupConversion/26 Adc_StartGroupConversion/25 Adc_DeInit/24 Adc_Init/22 
+  Calls: 
+Adc_Calibrate/31 (Adc_Calibrate) @0dc7a2a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Adc_ReportDetRuntimeError/3 Adc_Ipw_Calibrate/42 Adc_ValidateCheckGroupNotConversion/6 Adc_ValidateNotBusyNoQueue/4 Adc_GetCoreID/32 
+Adc_GetVersionInfo/30 (Adc_GetVersionInfo) @0dc7aee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+Adc_GetStreamLastPointer/29 (Adc_GetStreamLastPointer) @0dc7ac40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Adc_axGroupStatus/1 (read) Adc_axGroupStatus/1 (read) Adc_apxCfgPtr/0 (read) Adc_axGroupStatus/1 (read) Adc_apxCfgPtr/0 (read) Adc_apxCfgPtr/0 (read) Adc_axGroupStatus/1 (read) Adc_axGroupStatus/1 (read) Adc_axGroupStatus/1 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Adc_UpdateStatusAfterGetStream/21 Adc_ValidateStateNotIdle/10 Adc_GetCoreID/32 
+Adc_GetGroupStatus/28 (Adc_GetGroupStatus) @0dc7a9a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Adc_axGroupStatus/1 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+Adc_ReadGroup/27 (Adc_ReadGroup) @0dc7a700
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Adc_UpdateStatusReadGroup/17 Adc_Ipw_ReadGroup/41 Adc_ValidateStateNotIdle/10 Adc_GetCoreID/32 
+Adc_StopGroupConversion/26 (Adc_StopGroupConversion) @0dc7a460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Adc_apxCfgPtr/0 (read) Adc_apxCfgPtr/0 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Adc_UpdateStatusStopConversion/16 Adc_ValidateStateNotIdle/10 Adc_GetCoreID/32 
+Adc_StartGroupConversion/25 (Adc_StartGroupConversion) @0dc7a1c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Adc_apxCfgPtr/0 (read) Adc_apxCfgPtr/0 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Adc_UpdateStatusStartConversion/14 Adc_ValidateStateStartGroupConvNotBusy/9 Adc_GetCoreID/32 
+Adc_DeInit/24 (Adc_DeInit) @0dc6bd20
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Adc_apxCfgPtr/0 (read) Adc_apxCfgPtr/0 (read) Adc_axUnitStatus/2 (write) Adc_apxCfgPtr/0 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Adc_ReportDetRuntimeError/3 Adc_Ipw_DeInit/35 Adc_ValidateDeInitNotBusy/7 Adc_CheckCurrentCoreId/13 Adc_GetCoreID/32 
+Adc_SetupResultBuffer/23 (Adc_SetupResultBuffer) @0dc6b7e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Adc_axGroupStatus/1 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Adc_ValidateSetupBufferNotBusy/8 
+Adc_Init/22 (Adc_Init) @0dc6b2a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Adc_apxCfgPtr/0 (write) Adc_apxCfgPtr/0 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Adc_ReportDetRuntimeError/3 Adc_Ipw_Init/33 Adc_InitGroupsStatus/11 Adc_InitUnitStatus/12 Adc_CheckCurrentCoreId/13 Adc_GetCoreID/32 
+Adc_UpdateStatusAfterGetStream/21 (Adc_UpdateStatusAfterGetStream) @0dc6bee0
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: Adc_apxCfgPtr/0 (read) Adc_axGroupStatus/1 (read) Adc_axGroupStatus/1 (write) Adc_axGroupStatus/1 (read) Adc_apxCfgPtr/0 (read) Adc_apxCfgPtr/0 (read) Adc_apxCfgPtr/0 (read) Adc_apxCfgPtr/0 (read) Adc_apxCfgPtr/0 (read) Adc_axGroupStatus/1 (write) Adc_axGroupStatus/1 (write) 
+  Referring: 
+  Function flags: body
+  Called by: Adc_GetStreamLastPointer/29 
+  Calls: 
+Adc_UpdateStatusReadGroupInt/20 (Adc_UpdateStatusReadGroupInt) @0dc6bc40
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: Adc_apxCfgPtr/0 (read) Adc_axGroupStatus/1 (read) Adc_axGroupStatus/1 (write) Adc_axGroupStatus/1 (read) Adc_apxCfgPtr/0 (read) Adc_apxCfgPtr/0 (read) Adc_apxCfgPtr/0 (read) Adc_apxCfgPtr/0 (read) Adc_apxCfgPtr/0 (read) Adc_axGroupStatus/1 (write) Adc_axGroupStatus/1 (write) 
+  Referring: 
+  Function flags: body
+  Called by: Adc_UpdateStatusReadGroup/17 
+  Calls: 
+Adc_UpdateSwQueueIndexNoInt/19 (Adc_UpdateSwQueueIndexNoInt) @0dc6b9a0
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: Adc_apxCfgPtr/0 (read) Adc_apxCfgPtr/0 (read) Adc_axUnitStatus/2 (read) Adc_axUnitStatus/2 (read) Adc_axUnitStatus/2 (read) Adc_axUnitStatus/2 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Adc_UpdateStatusReadGroupNoInt/18 
+  Calls: Adc_Ipw_StartNormalConversion/38 Adc_Ipw_RemoveFromQueue/40 
+Adc_UpdateStatusReadGroupNoInt/18 (Adc_UpdateStatusReadGroupNoInt) @0dc6b700
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: Adc_apxCfgPtr/0 (read) Adc_axGroupStatus/1 (write) Adc_apxCfgPtr/0 (read) Adc_axGroupStatus/1 (write) Adc_apxCfgPtr/0 (read) Adc_axGroupStatus/1 (write) 
+  Referring: 
+  Function flags: body
+  Called by: Adc_UpdateStatusReadGroup/17 
+  Calls: Adc_UpdateSwQueueIndexNoInt/19 
+Adc_UpdateStatusReadGroup/17 (Adc_UpdateStatusReadGroup) @0dc6b460
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: Adc_apxCfgPtr/0 (read) Adc_apxCfgPtr/0 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Adc_ReadGroup/27 
+  Calls: Adc_UpdateStatusReadGroupInt/20 Adc_UpdateStatusReadGroupNoInt/18 
+Adc_UpdateStatusStopConversion/16 (Adc_UpdateStatusStopConversion) @0dc6b1c0
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: Adc_apxCfgPtr/0 (read) Adc_apxCfgPtr/0 (read) Adc_apxCfgPtr/0 (read) Adc_apxCfgPtr/0 (read) Adc_axGroupStatus/1 (read) Adc_axGroupStatus/1 (write) Adc_axGroupStatus/1 (write) Adc_axGroupStatus/1 (write) Adc_axUnitStatus/2 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Adc_StopGroupConversion/26 
+  Calls: Adc_ReportDetRuntimeError/3 Adc_Ipw_StartNormalConversion/38 Adc_StopSwGroupConversion/15 
+Adc_StopSwGroupConversion/15 (Adc_StopSwGroupConversion) @0dbd9d20
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: Adc_axUnitStatus/2 (read) Adc_axUnitStatus/2 (read) Adc_axUnitStatus/2 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Adc_UpdateStatusStopConversion/16 
+  Calls: Adc_Ipw_RemoveFromQueue/40 Adc_Ipw_StopCurrentConversion/39 
+Adc_UpdateStatusStartConversion/14 (Adc_UpdateStatusStartConversion) @0dbd97e0
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: Adc_axGroupStatus/1 (write) Adc_axGroupStatus/1 (write) Adc_axUnitStatus/2 (read) Adc_axUnitStatus/2 (write) Adc_axUnitStatus/2 (read) Adc_axUnitStatus/2 (write) Adc_axUnitStatus/2 (read) Adc_axUnitStatus/2 (read) Adc_axUnitStatus/2 (read) Adc_axUnitStatus/2 (write) Adc_axUnitStatus/2 (read) Adc_axUnitStatus/2 (write) 
+  Referring: 
+  Function flags: body
+  Called by: Adc_StartGroupConversion/25 
+  Calls: SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_01/37 Adc_Ipw_StartNormalConversion/38 SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_01/37 SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_01/36 SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_01/37 SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_01/36 
+Adc_CheckCurrentCoreId/13 (Adc_CheckCurrentCoreId) @0dbd92a0
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: Adc_DeInit/24 Adc_Init/22 
+  Calls: 
+Adc_InitUnitStatus/12 (Adc_InitUnitStatus) @0dbd9ee0
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: Adc_apxCfgPtr/0 (read) Adc_axUnitStatus/2 (write) Adc_axUnitStatus/2 (write) Adc_axUnitStatus/2 (write) 
+  Referring: 
+  Function flags: body
+  Called by: Adc_Init/22 
+  Calls: 
+Adc_InitGroupsStatus/11 (Adc_InitGroupsStatus) @0dbd9c40
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: Adc_apxCfgPtr/0 (read) Adc_axGroupStatus/1 (write) Adc_axGroupStatus/1 (write) Adc_axGroupStatus/1 (write) Adc_axGroupStatus/1 (write) Adc_axGroupStatus/1 (write) Adc_apxCfgPtr/0 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Adc_Init/22 
+  Calls: 
+Adc_ValidateStateNotIdle/10 (Adc_ValidateStateNotIdle) @0dbd99a0
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: Adc_axGroupStatus/1 (read) Adc_axGroupStatus/1 (read) Adc_axGroupStatus/1 (read) Adc_axGroupStatus/1 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Adc_GetStreamLastPointer/29 Adc_ReadGroup/27 Adc_StopGroupConversion/26 
+  Calls: Adc_ReportDetRuntimeError/3 Adc_ReportDetRuntimeError/3 Adc_ReportDetRuntimeError/3 
+Adc_ValidateStateStartGroupConvNotBusy/9 (Adc_ValidateStateStartGroupConvNotBusy) @0dbd9700
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: Adc_apxCfgPtr/0 (read) Adc_apxCfgPtr/0 (read) Adc_apxCfgPtr/0 (read) Adc_apxCfgPtr/0 (read) Adc_apxCfgPtr/0 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Adc_StartGroupConversion/25 
+  Calls: Adc_ValidateNotBusyNoPrio/5 Adc_ReportDetRuntimeError/3 
+Adc_ValidateSetupBufferNotBusy/8 (Adc_ValidateSetupBufferNotBusy) @0dbd9460
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: Adc_axGroupStatus/1 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Adc_SetupResultBuffer/23 
+  Calls: Adc_ReportDetRuntimeError/3 
+Adc_ValidateDeInitNotBusy/7 (Adc_ValidateDeInitNotBusy) @0dbd91c0
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: Adc_apxCfgPtr/0 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Adc_DeInit/24 
+  Calls: Adc_ValidateCheckGroupNotConversion/6 Adc_ValidateNotBusyNoQueue/4 
+Adc_ValidateCheckGroupNotConversion/6 (Adc_ValidateCheckGroupNotConversion) @0dbd0e00
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: Adc_apxCfgPtr/0 (read) Adc_axGroupStatus/1 (read) Adc_apxCfgPtr/0 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Adc_Calibrate/31 Adc_ValidateDeInitNotBusy/7 
+  Calls: Adc_ReportDetRuntimeError/3 
+Adc_ValidateNotBusyNoPrio/5 (Adc_ValidateNotBusyNoPrio) @0dbd08c0
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: Adc_axGroupStatus/1 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Adc_ValidateStateStartGroupConvNotBusy/9 
+  Calls: Adc_ReportDetRuntimeError/3 Adc_ReportDetRuntimeError/3 
+Adc_ValidateNotBusyNoQueue/4 (Adc_ValidateNotBusyNoQueue) @0dbd0d20
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: Adc_axUnitStatus/2 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Adc_Calibrate/31 Adc_ValidateDeInitNotBusy/7 
+  Calls: Adc_ReportDetRuntimeError/3 
+Adc_ReportDetRuntimeError/3 (Adc_ReportDetRuntimeError) @0dbd0a80
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: Adc_Calibrate/31 Adc_UpdateStatusStopConversion/16 Adc_ValidateStateNotIdle/10 Adc_ValidateStateNotIdle/10 Adc_ValidateStateNotIdle/10 Adc_ValidateNotBusyNoPrio/5 Adc_ValidateNotBusyNoPrio/5 Adc_ValidateStateStartGroupConvNotBusy/9 Adc_ValidateCheckGroupNotConversion/6 Adc_ValidateNotBusyNoQueue/4 Adc_DeInit/24 Adc_ValidateSetupBufferNotBusy/8 Adc_Init/22 
+  Calls: Det_ReportRuntimeError/34 
+Adc_axUnitStatus/2 (Adc_axUnitStatus) @0dbc6cf0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: Adc_InitUnitStatus/12 (write) Adc_InitUnitStatus/12 (write) Adc_InitUnitStatus/12 (write) Adc_DeInit/24 (write) Adc_ValidateNotBusyNoQueue/4 (read) Adc_UpdateStatusStartConversion/14 (read) Adc_UpdateStatusStartConversion/14 (write) Adc_UpdateStatusStartConversion/14 (read) Adc_UpdateStatusStartConversion/14 (write) Adc_UpdateStatusStartConversion/14 (read) Adc_UpdateStatusStartConversion/14 (read) Adc_UpdateStatusStartConversion/14 (read) Adc_UpdateStatusStartConversion/14 (write) Adc_UpdateStatusStartConversion/14 (read) Adc_UpdateStatusStartConversion/14 (write) Adc_UpdateStatusStopConversion/16 (read) Adc_StopSwGroupConversion/15 (read) Adc_StopSwGroupConversion/15 (read) Adc_StopSwGroupConversion/15 (read) Adc_UpdateSwQueueIndexNoInt/19 (read) Adc_UpdateSwQueueIndexNoInt/19 (read) Adc_UpdateSwQueueIndexNoInt/19 (read) Adc_UpdateSwQueueIndexNoInt/19 (read) 
+  Availability: not-ready
+  Varpool flags:
+Adc_axGroupStatus/1 (Adc_axGroupStatus) @0dbc6ca8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: Adc_InitGroupsStatus/11 (write) Adc_InitGroupsStatus/11 (write) Adc_InitGroupsStatus/11 (write) Adc_InitGroupsStatus/11 (write) Adc_InitGroupsStatus/11 (write) Adc_SetupResultBuffer/23 (write) Adc_ValidateSetupBufferNotBusy/8 (read) Adc_ValidateCheckGroupNotConversion/6 (read) Adc_ValidateNotBusyNoPrio/5 (read) Adc_UpdateStatusStartConversion/14 (write) Adc_UpdateStatusStartConversion/14 (write) Adc_ValidateStateNotIdle/10 (read) Adc_ValidateStateNotIdle/10 (read) Adc_ValidateStateNotIdle/10 (read) Adc_ValidateStateNotIdle/10 (read) Adc_UpdateStatusStopConversion/16 (read) Adc_UpdateStatusStopConversion/16 (write) Adc_UpdateStatusStopConversion/16 (write) Adc_UpdateStatusStopConversion/16 (write) Adc_UpdateStatusReadGroupNoInt/18 (write) Adc_UpdateStatusReadGroupNoInt/18 (write) Adc_UpdateStatusReadGroupNoInt/18 (write) Adc_UpdateStatusReadGroupInt/20 (read) Adc_UpdateStatusReadGroupInt/20 (write) Adc_UpdateStatusReadGroupInt/20 (read) Adc_UpdateStatusReadGroupInt/20 (write) Adc_UpdateStatusReadGroupInt/20 (write) Adc_GetGroupStatus/28 (read) Adc_GetStreamLastPointer/29 (read) Adc_GetStreamLastPointer/29 (read) Adc_GetStreamLastPointer/29 (read) Adc_GetStreamLastPointer/29 (read) Adc_GetStreamLastPointer/29 (read) Adc_GetStreamLastPointer/29 (read) Adc_UpdateStatusAfterGetStream/21 (read) Adc_UpdateStatusAfterGetStream/21 (write) Adc_UpdateStatusAfterGetStream/21 (read) Adc_UpdateStatusAfterGetStream/21 (write) Adc_UpdateStatusAfterGetStream/21 (write) 
+  Availability: not-ready
+  Varpool flags:
+Adc_apxCfgPtr/0 (Adc_apxCfgPtr) @0dbc6c18
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: Adc_Init/22 (write) Adc_Init/22 (read) Adc_InitUnitStatus/12 (read) Adc_InitGroupsStatus/11 (read) Adc_InitGroupsStatus/11 (read) Adc_DeInit/24 (read) Adc_DeInit/24 (read) Adc_DeInit/24 (write) Adc_ValidateDeInitNotBusy/7 (read) Adc_ValidateCheckGroupNotConversion/6 (read) Adc_ValidateCheckGroupNotConversion/6 (read) Adc_StartGroupConversion/25 (read) Adc_StartGroupConversion/25 (read) Adc_ValidateStateStartGroupConvNotBusy/9 (read) Adc_ValidateStateStartGroupConvNotBusy/9 (read) Adc_ValidateStateStartGroupConvNotBusy/9 (read) Adc_ValidateStateStartGroupConvNotBusy/9 (read) Adc_ValidateStateStartGroupConvNotBusy/9 (read) Adc_StopGroupConversion/26 (read) Adc_StopGroupConversion/26 (read) Adc_UpdateStatusStopConversion/16 (read) Adc_UpdateStatusStopConversion/16 (read) Adc_UpdateStatusStopConversion/16 (read) Adc_UpdateStatusStopConversion/16 (read) Adc_UpdateStatusReadGroup/17 (read) Adc_UpdateStatusReadGroup/17 (read) Adc_UpdateStatusReadGroupNoInt/18 (read) Adc_UpdateStatusReadGroupNoInt/18 (read) Adc_UpdateStatusReadGroupNoInt/18 (read) Adc_UpdateSwQueueIndexNoInt/19 (read) Adc_UpdateSwQueueIndexNoInt/19 (read) Adc_UpdateStatusReadGroupInt/20 (read) Adc_UpdateStatusReadGroupInt/20 (read) Adc_UpdateStatusReadGroupInt/20 (read) Adc_UpdateStatusReadGroupInt/20 (read) Adc_UpdateStatusReadGroupInt/20 (read) Adc_UpdateStatusReadGroupInt/20 (read) Adc_GetStreamLastPointer/29 (read) Adc_GetStreamLastPointer/29 (read) Adc_GetStreamLastPointer/29 (read) Adc_UpdateStatusAfterGetStream/21 (read) Adc_UpdateStatusAfterGetStream/21 (read) Adc_UpdateStatusAfterGetStream/21 (read) Adc_UpdateStatusAfterGetStream/21 (read) Adc_UpdateStatusAfterGetStream/21 (read) Adc_UpdateStatusAfterGetStream/21 (read) 
+  Availability: not-ready
+  Varpool flags:
+
+Removing unused symbols:
+
+Reclaimed Symbol table:
+
+Adc_Ipw_Calibrate/42 (Adc_Ipw_Calibrate) @0e02c7e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_Calibrate/31 
+  Calls: 
+Adc_Ipw_ReadGroup/41 (Adc_Ipw_ReadGroup) @0e017c40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_ReadGroup/27 
+  Calls: 
+Adc_Ipw_RemoveFromQueue/40 (Adc_Ipw_RemoveFromQueue) @0e017a80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_UpdateSwQueueIndexNoInt/19 Adc_StopSwGroupConversion/15 
+  Calls: 
+Adc_Ipw_StopCurrentConversion/39 (Adc_Ipw_StopCurrentConversion) @0e0179a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_StopSwGroupConversion/15 
+  Calls: 
+Adc_Ipw_StartNormalConversion/38 (Adc_Ipw_StartNormalConversion) @0e017460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_UpdateSwQueueIndexNoInt/19 Adc_UpdateStatusStopConversion/16 Adc_UpdateStatusStartConversion/14 
+  Calls: 
+SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_01/37 (SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_01) @0e017380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_UpdateStatusStartConversion/14 Adc_UpdateStatusStartConversion/14 Adc_UpdateStatusStartConversion/14 
+  Calls: 
+SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_01/36 (SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_01) @0e0171c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_UpdateStatusStartConversion/14 Adc_UpdateStatusStartConversion/14 
+  Calls: 
+Adc_Ipw_DeInit/35 (Adc_Ipw_DeInit) @0dc8b9a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_DeInit/24 
+  Calls: 
+Det_ReportRuntimeError/34 (Det_ReportRuntimeError) @0dc8b620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_ReportDetRuntimeError/3 
+  Calls: 
+Adc_Ipw_Init/33 (Adc_Ipw_Init) @0dc8b0e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_Init/22 
+  Calls: 
+Adc_GetCoreID/32 (Adc_GetCoreID) @0dc8b000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_Calibrate/31 Adc_GetStreamLastPointer/29 Adc_ReadGroup/27 Adc_StopGroupConversion/26 Adc_StartGroupConversion/25 Adc_DeInit/24 Adc_Init/22 
+  Calls: 
+Adc_Calibrate/31 (Adc_Calibrate) @0dc7a2a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Adc_ReportDetRuntimeError/3 Adc_Ipw_Calibrate/42 Adc_ValidateCheckGroupNotConversion/6 Adc_ValidateNotBusyNoQueue/4 Adc_GetCoreID/32 
+Adc_GetVersionInfo/30 (Adc_GetVersionInfo) @0dc7aee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+Adc_GetStreamLastPointer/29 (Adc_GetStreamLastPointer) @0dc7ac40
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Adc_axGroupStatus/1 (read) Adc_axGroupStatus/1 (read) Adc_apxCfgPtr/0 (read) Adc_axGroupStatus/1 (read) Adc_apxCfgPtr/0 (read) Adc_apxCfgPtr/0 (read) Adc_axGroupStatus/1 (read) Adc_axGroupStatus/1 (read) Adc_axGroupStatus/1 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Adc_UpdateStatusAfterGetStream/21 Adc_ValidateStateNotIdle/10 Adc_GetCoreID/32 
+Adc_GetGroupStatus/28 (Adc_GetGroupStatus) @0dc7a9a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Adc_axGroupStatus/1 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+Adc_ReadGroup/27 (Adc_ReadGroup) @0dc7a700
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Adc_UpdateStatusReadGroup/17 Adc_Ipw_ReadGroup/41 Adc_ValidateStateNotIdle/10 Adc_GetCoreID/32 
+Adc_StopGroupConversion/26 (Adc_StopGroupConversion) @0dc7a460
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Adc_apxCfgPtr/0 (read) Adc_apxCfgPtr/0 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Adc_UpdateStatusStopConversion/16 Adc_ValidateStateNotIdle/10 Adc_GetCoreID/32 
+Adc_StartGroupConversion/25 (Adc_StartGroupConversion) @0dc7a1c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Adc_apxCfgPtr/0 (read) Adc_apxCfgPtr/0 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Adc_UpdateStatusStartConversion/14 Adc_ValidateStateStartGroupConvNotBusy/9 Adc_GetCoreID/32 
+Adc_DeInit/24 (Adc_DeInit) @0dc6bd20
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Adc_apxCfgPtr/0 (read) Adc_apxCfgPtr/0 (read) Adc_axUnitStatus/2 (write) Adc_apxCfgPtr/0 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Adc_ReportDetRuntimeError/3 Adc_Ipw_DeInit/35 Adc_ValidateDeInitNotBusy/7 Adc_CheckCurrentCoreId/13 Adc_GetCoreID/32 
+Adc_SetupResultBuffer/23 (Adc_SetupResultBuffer) @0dc6b7e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Adc_axGroupStatus/1 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Adc_ValidateSetupBufferNotBusy/8 
+Adc_Init/22 (Adc_Init) @0dc6b2a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Adc_apxCfgPtr/0 (write) Adc_apxCfgPtr/0 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Adc_ReportDetRuntimeError/3 Adc_Ipw_Init/33 Adc_InitGroupsStatus/11 Adc_InitUnitStatus/12 Adc_CheckCurrentCoreId/13 Adc_GetCoreID/32 
+Adc_UpdateStatusAfterGetStream/21 (Adc_UpdateStatusAfterGetStream) @0dc6bee0
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: Adc_apxCfgPtr/0 (read) Adc_axGroupStatus/1 (read) Adc_axGroupStatus/1 (write) Adc_axGroupStatus/1 (read) Adc_apxCfgPtr/0 (read) Adc_apxCfgPtr/0 (read) Adc_apxCfgPtr/0 (read) Adc_apxCfgPtr/0 (read) Adc_apxCfgPtr/0 (read) Adc_axGroupStatus/1 (write) Adc_axGroupStatus/1 (write) 
+  Referring: 
+  Function flags: body
+  Called by: Adc_GetStreamLastPointer/29 
+  Calls: 
+Adc_UpdateStatusReadGroupInt/20 (Adc_UpdateStatusReadGroupInt) @0dc6bc40
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: Adc_apxCfgPtr/0 (read) Adc_axGroupStatus/1 (read) Adc_axGroupStatus/1 (write) Adc_axGroupStatus/1 (read) Adc_apxCfgPtr/0 (read) Adc_apxCfgPtr/0 (read) Adc_apxCfgPtr/0 (read) Adc_apxCfgPtr/0 (read) Adc_apxCfgPtr/0 (read) Adc_axGroupStatus/1 (write) Adc_axGroupStatus/1 (write) 
+  Referring: 
+  Function flags: body
+  Called by: Adc_UpdateStatusReadGroup/17 
+  Calls: 
+Adc_UpdateSwQueueIndexNoInt/19 (Adc_UpdateSwQueueIndexNoInt) @0dc6b9a0
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: Adc_apxCfgPtr/0 (read) Adc_apxCfgPtr/0 (read) Adc_axUnitStatus/2 (read) Adc_axUnitStatus/2 (read) Adc_axUnitStatus/2 (read) Adc_axUnitStatus/2 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Adc_UpdateStatusReadGroupNoInt/18 
+  Calls: Adc_Ipw_StartNormalConversion/38 Adc_Ipw_RemoveFromQueue/40 
+Adc_UpdateStatusReadGroupNoInt/18 (Adc_UpdateStatusReadGroupNoInt) @0dc6b700
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: Adc_apxCfgPtr/0 (read) Adc_axGroupStatus/1 (write) Adc_apxCfgPtr/0 (read) Adc_axGroupStatus/1 (write) Adc_apxCfgPtr/0 (read) Adc_axGroupStatus/1 (write) 
+  Referring: 
+  Function flags: body
+  Called by: Adc_UpdateStatusReadGroup/17 
+  Calls: Adc_UpdateSwQueueIndexNoInt/19 
+Adc_UpdateStatusReadGroup/17 (Adc_UpdateStatusReadGroup) @0dc6b460
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: Adc_apxCfgPtr/0 (read) Adc_apxCfgPtr/0 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Adc_ReadGroup/27 
+  Calls: Adc_UpdateStatusReadGroupInt/20 Adc_UpdateStatusReadGroupNoInt/18 
+Adc_UpdateStatusStopConversion/16 (Adc_UpdateStatusStopConversion) @0dc6b1c0
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: Adc_apxCfgPtr/0 (read) Adc_apxCfgPtr/0 (read) Adc_apxCfgPtr/0 (read) Adc_apxCfgPtr/0 (read) Adc_axGroupStatus/1 (read) Adc_axGroupStatus/1 (write) Adc_axGroupStatus/1 (write) Adc_axGroupStatus/1 (write) Adc_axUnitStatus/2 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Adc_StopGroupConversion/26 
+  Calls: Adc_ReportDetRuntimeError/3 Adc_Ipw_StartNormalConversion/38 Adc_StopSwGroupConversion/15 
+Adc_StopSwGroupConversion/15 (Adc_StopSwGroupConversion) @0dbd9d20
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: Adc_axUnitStatus/2 (read) Adc_axUnitStatus/2 (read) Adc_axUnitStatus/2 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Adc_UpdateStatusStopConversion/16 
+  Calls: Adc_Ipw_RemoveFromQueue/40 Adc_Ipw_StopCurrentConversion/39 
+Adc_UpdateStatusStartConversion/14 (Adc_UpdateStatusStartConversion) @0dbd97e0
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: Adc_axGroupStatus/1 (write) Adc_axGroupStatus/1 (write) Adc_axUnitStatus/2 (read) Adc_axUnitStatus/2 (write) Adc_axUnitStatus/2 (read) Adc_axUnitStatus/2 (write) Adc_axUnitStatus/2 (read) Adc_axUnitStatus/2 (read) Adc_axUnitStatus/2 (read) Adc_axUnitStatus/2 (write) Adc_axUnitStatus/2 (read) Adc_axUnitStatus/2 (write) 
+  Referring: 
+  Function flags: body
+  Called by: Adc_StartGroupConversion/25 
+  Calls: SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_01/37 Adc_Ipw_StartNormalConversion/38 SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_01/37 SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_01/36 SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_01/37 SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_01/36 
+Adc_CheckCurrentCoreId/13 (Adc_CheckCurrentCoreId) @0dbd92a0
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: Adc_DeInit/24 Adc_Init/22 
+  Calls: 
+Adc_InitUnitStatus/12 (Adc_InitUnitStatus) @0dbd9ee0
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: Adc_apxCfgPtr/0 (read) Adc_axUnitStatus/2 (write) Adc_axUnitStatus/2 (write) Adc_axUnitStatus/2 (write) 
+  Referring: 
+  Function flags: body
+  Called by: Adc_Init/22 
+  Calls: 
+Adc_InitGroupsStatus/11 (Adc_InitGroupsStatus) @0dbd9c40
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: Adc_apxCfgPtr/0 (read) Adc_axGroupStatus/1 (write) Adc_axGroupStatus/1 (write) Adc_axGroupStatus/1 (write) Adc_axGroupStatus/1 (write) Adc_axGroupStatus/1 (write) Adc_apxCfgPtr/0 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Adc_Init/22 
+  Calls: 
+Adc_ValidateStateNotIdle/10 (Adc_ValidateStateNotIdle) @0dbd99a0
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: Adc_axGroupStatus/1 (read) Adc_axGroupStatus/1 (read) Adc_axGroupStatus/1 (read) Adc_axGroupStatus/1 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Adc_GetStreamLastPointer/29 Adc_ReadGroup/27 Adc_StopGroupConversion/26 
+  Calls: Adc_ReportDetRuntimeError/3 Adc_ReportDetRuntimeError/3 Adc_ReportDetRuntimeError/3 
+Adc_ValidateStateStartGroupConvNotBusy/9 (Adc_ValidateStateStartGroupConvNotBusy) @0dbd9700
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: Adc_apxCfgPtr/0 (read) Adc_apxCfgPtr/0 (read) Adc_apxCfgPtr/0 (read) Adc_apxCfgPtr/0 (read) Adc_apxCfgPtr/0 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Adc_StartGroupConversion/25 
+  Calls: Adc_ValidateNotBusyNoPrio/5 Adc_ReportDetRuntimeError/3 
+Adc_ValidateSetupBufferNotBusy/8 (Adc_ValidateSetupBufferNotBusy) @0dbd9460
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: Adc_axGroupStatus/1 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Adc_SetupResultBuffer/23 
+  Calls: Adc_ReportDetRuntimeError/3 
+Adc_ValidateDeInitNotBusy/7 (Adc_ValidateDeInitNotBusy) @0dbd91c0
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: Adc_apxCfgPtr/0 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Adc_DeInit/24 
+  Calls: Adc_ValidateCheckGroupNotConversion/6 Adc_ValidateNotBusyNoQueue/4 
+Adc_ValidateCheckGroupNotConversion/6 (Adc_ValidateCheckGroupNotConversion) @0dbd0e00
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: Adc_apxCfgPtr/0 (read) Adc_axGroupStatus/1 (read) Adc_apxCfgPtr/0 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Adc_Calibrate/31 Adc_ValidateDeInitNotBusy/7 
+  Calls: Adc_ReportDetRuntimeError/3 
+Adc_ValidateNotBusyNoPrio/5 (Adc_ValidateNotBusyNoPrio) @0dbd08c0
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: Adc_axGroupStatus/1 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Adc_ValidateStateStartGroupConvNotBusy/9 
+  Calls: Adc_ReportDetRuntimeError/3 Adc_ReportDetRuntimeError/3 
+Adc_ValidateNotBusyNoQueue/4 (Adc_ValidateNotBusyNoQueue) @0dbd0d20
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: Adc_axUnitStatus/2 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Adc_Calibrate/31 Adc_ValidateDeInitNotBusy/7 
+  Calls: Adc_ReportDetRuntimeError/3 
+Adc_ReportDetRuntimeError/3 (Adc_ReportDetRuntimeError) @0dbd0a80
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: Adc_Calibrate/31 Adc_UpdateStatusStopConversion/16 Adc_ValidateStateNotIdle/10 Adc_ValidateStateNotIdle/10 Adc_ValidateStateNotIdle/10 Adc_ValidateNotBusyNoPrio/5 Adc_ValidateNotBusyNoPrio/5 Adc_ValidateStateStartGroupConvNotBusy/9 Adc_ValidateCheckGroupNotConversion/6 Adc_ValidateNotBusyNoQueue/4 Adc_DeInit/24 Adc_ValidateSetupBufferNotBusy/8 Adc_Init/22 
+  Calls: Det_ReportRuntimeError/34 
+Adc_axUnitStatus/2 (Adc_axUnitStatus) @0dbc6cf0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: Adc_InitUnitStatus/12 (write) Adc_InitUnitStatus/12 (write) Adc_InitUnitStatus/12 (write) Adc_DeInit/24 (write) Adc_ValidateNotBusyNoQueue/4 (read) Adc_UpdateStatusStartConversion/14 (read) Adc_UpdateStatusStartConversion/14 (write) Adc_UpdateStatusStartConversion/14 (read) Adc_UpdateStatusStartConversion/14 (write) Adc_UpdateStatusStartConversion/14 (read) Adc_UpdateStatusStartConversion/14 (read) Adc_UpdateStatusStartConversion/14 (read) Adc_UpdateStatusStartConversion/14 (write) Adc_UpdateStatusStartConversion/14 (read) Adc_UpdateStatusStartConversion/14 (write) Adc_UpdateStatusStopConversion/16 (read) Adc_StopSwGroupConversion/15 (read) Adc_StopSwGroupConversion/15 (read) Adc_StopSwGroupConversion/15 (read) Adc_UpdateSwQueueIndexNoInt/19 (read) Adc_UpdateSwQueueIndexNoInt/19 (read) Adc_UpdateSwQueueIndexNoInt/19 (read) Adc_UpdateSwQueueIndexNoInt/19 (read) 
+  Availability: not-ready
+  Varpool flags:
+Adc_axGroupStatus/1 (Adc_axGroupStatus) @0dbc6ca8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: Adc_InitGroupsStatus/11 (write) Adc_InitGroupsStatus/11 (write) Adc_InitGroupsStatus/11 (write) Adc_InitGroupsStatus/11 (write) Adc_InitGroupsStatus/11 (write) Adc_SetupResultBuffer/23 (write) Adc_ValidateSetupBufferNotBusy/8 (read) Adc_ValidateCheckGroupNotConversion/6 (read) Adc_ValidateNotBusyNoPrio/5 (read) Adc_UpdateStatusStartConversion/14 (write) Adc_UpdateStatusStartConversion/14 (write) Adc_ValidateStateNotIdle/10 (read) Adc_ValidateStateNotIdle/10 (read) Adc_ValidateStateNotIdle/10 (read) Adc_ValidateStateNotIdle/10 (read) Adc_UpdateStatusStopConversion/16 (read) Adc_UpdateStatusStopConversion/16 (write) Adc_UpdateStatusStopConversion/16 (write) Adc_UpdateStatusStopConversion/16 (write) Adc_UpdateStatusReadGroupNoInt/18 (write) Adc_UpdateStatusReadGroupNoInt/18 (write) Adc_UpdateStatusReadGroupNoInt/18 (write) Adc_UpdateStatusReadGroupInt/20 (read) Adc_UpdateStatusReadGroupInt/20 (write) Adc_UpdateStatusReadGroupInt/20 (read) Adc_UpdateStatusReadGroupInt/20 (write) Adc_UpdateStatusReadGroupInt/20 (write) Adc_GetGroupStatus/28 (read) Adc_GetStreamLastPointer/29 (read) Adc_GetStreamLastPointer/29 (read) Adc_GetStreamLastPointer/29 (read) Adc_GetStreamLastPointer/29 (read) Adc_GetStreamLastPointer/29 (read) Adc_GetStreamLastPointer/29 (read) Adc_UpdateStatusAfterGetStream/21 (read) Adc_UpdateStatusAfterGetStream/21 (write) Adc_UpdateStatusAfterGetStream/21 (read) Adc_UpdateStatusAfterGetStream/21 (write) Adc_UpdateStatusAfterGetStream/21 (write) 
+  Availability: not-ready
+  Varpool flags:
+Adc_apxCfgPtr/0 (Adc_apxCfgPtr) @0dbc6c18
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: Adc_Init/22 (write) Adc_Init/22 (read) Adc_InitUnitStatus/12 (read) Adc_InitGroupsStatus/11 (read) Adc_InitGroupsStatus/11 (read) Adc_DeInit/24 (read) Adc_DeInit/24 (read) Adc_DeInit/24 (write) Adc_ValidateDeInitNotBusy/7 (read) Adc_ValidateCheckGroupNotConversion/6 (read) Adc_ValidateCheckGroupNotConversion/6 (read) Adc_StartGroupConversion/25 (read) Adc_StartGroupConversion/25 (read) Adc_ValidateStateStartGroupConvNotBusy/9 (read) Adc_ValidateStateStartGroupConvNotBusy/9 (read) Adc_ValidateStateStartGroupConvNotBusy/9 (read) Adc_ValidateStateStartGroupConvNotBusy/9 (read) Adc_ValidateStateStartGroupConvNotBusy/9 (read) Adc_StopGroupConversion/26 (read) Adc_StopGroupConversion/26 (read) Adc_UpdateStatusStopConversion/16 (read) Adc_UpdateStatusStopConversion/16 (read) Adc_UpdateStatusStopConversion/16 (read) Adc_UpdateStatusStopConversion/16 (read) Adc_UpdateStatusReadGroup/17 (read) Adc_UpdateStatusReadGroup/17 (read) Adc_UpdateStatusReadGroupNoInt/18 (read) Adc_UpdateStatusReadGroupNoInt/18 (read) Adc_UpdateStatusReadGroupNoInt/18 (read) Adc_UpdateSwQueueIndexNoInt/19 (read) Adc_UpdateSwQueueIndexNoInt/19 (read) Adc_UpdateStatusReadGroupInt/20 (read) Adc_UpdateStatusReadGroupInt/20 (read) Adc_UpdateStatusReadGroupInt/20 (read) Adc_UpdateStatusReadGroupInt/20 (read) Adc_UpdateStatusReadGroupInt/20 (read) Adc_UpdateStatusReadGroupInt/20 (read) Adc_GetStreamLastPointer/29 (read) Adc_GetStreamLastPointer/29 (read) Adc_GetStreamLastPointer/29 (read) Adc_UpdateStatusAfterGetStream/21 (read) Adc_UpdateStatusAfterGetStream/21 (read) Adc_UpdateStatusAfterGetStream/21 (read) Adc_UpdateStatusAfterGetStream/21 (read) Adc_UpdateStatusAfterGetStream/21 (read) Adc_UpdateStatusAfterGetStream/21 (read) 
+  Availability: not-ready
+  Varpool flags:
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+Optimized Symbol table:
+
+Adc_Ipw_Calibrate/42 (Adc_Ipw_Calibrate) @0e02c7e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Adc_Calibrate/31 
+  Calls: 
+Adc_Ipw_ReadGroup/41 (Adc_Ipw_ReadGroup) @0e017c40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Adc_ReadGroup/27 
+  Calls: 
+Adc_Ipw_RemoveFromQueue/40 (Adc_Ipw_RemoveFromQueue) @0e017a80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Adc_UpdateSwQueueIndexNoInt/19 Adc_StopSwGroupConversion/15 
+  Calls: 
+Adc_Ipw_StopCurrentConversion/39 (Adc_Ipw_StopCurrentConversion) @0e0179a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Adc_StopSwGroupConversion/15 
+  Calls: 
+Adc_Ipw_StartNormalConversion/38 (Adc_Ipw_StartNormalConversion) @0e017460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Adc_UpdateSwQueueIndexNoInt/19 Adc_UpdateStatusStopConversion/16 Adc_UpdateStatusStartConversion/14 
+  Calls: 
+SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_01/37 (SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_01) @0e017380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Adc_UpdateStatusStartConversion/14 Adc_UpdateStatusStartConversion/14 Adc_UpdateStatusStartConversion/14 
+  Calls: 
+SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_01/36 (SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_01) @0e0171c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Adc_UpdateStatusStartConversion/14 Adc_UpdateStatusStartConversion/14 
+  Calls: 
+Adc_Ipw_DeInit/35 (Adc_Ipw_DeInit) @0dc8b9a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Adc_DeInit/24 
+  Calls: 
+Det_ReportRuntimeError/34 (Det_ReportRuntimeError) @0dc8b620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Adc_ReportDetRuntimeError/3 
+  Calls: 
+Adc_Ipw_Init/33 (Adc_Ipw_Init) @0dc8b0e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Adc_Init/22 
+  Calls: 
+Adc_GetCoreID/32 (Adc_GetCoreID) @0dc8b000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Adc_Calibrate/31 Adc_GetStreamLastPointer/29 Adc_ReadGroup/27 Adc_StopGroupConversion/26 Adc_StartGroupConversion/25 Adc_DeInit/24 Adc_Init/22 
+  Calls: 
+Adc_Calibrate/31 (Adc_Calibrate) @0dc7a2a0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Adc_ReportDetRuntimeError/3 Adc_Ipw_Calibrate/42 Adc_ValidateCheckGroupNotConversion/6 Adc_ValidateNotBusyNoQueue/4 Adc_GetCoreID/32 
+Adc_GetVersionInfo/30 (Adc_GetVersionInfo) @0dc7aee0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+Adc_GetStreamLastPointer/29 (Adc_GetStreamLastPointer) @0dc7ac40
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Adc_axGroupStatus/1 (read) Adc_axGroupStatus/1 (read) Adc_apxCfgPtr/0 (read) Adc_axGroupStatus/1 (read) Adc_apxCfgPtr/0 (read) Adc_apxCfgPtr/0 (read) Adc_axGroupStatus/1 (read) Adc_axGroupStatus/1 (read) Adc_axGroupStatus/1 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Adc_UpdateStatusAfterGetStream/21 Adc_ValidateStateNotIdle/10 Adc_GetCoreID/32 
+Adc_GetGroupStatus/28 (Adc_GetGroupStatus) @0dc7a9a0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Adc_axGroupStatus/1 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+Adc_ReadGroup/27 (Adc_ReadGroup) @0dc7a700
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Adc_UpdateStatusReadGroup/17 Adc_Ipw_ReadGroup/41 Adc_ValidateStateNotIdle/10 Adc_GetCoreID/32 
+Adc_StopGroupConversion/26 (Adc_StopGroupConversion) @0dc7a460
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Adc_apxCfgPtr/0 (read) Adc_apxCfgPtr/0 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Adc_UpdateStatusStopConversion/16 Adc_ValidateStateNotIdle/10 Adc_GetCoreID/32 
+Adc_StartGroupConversion/25 (Adc_StartGroupConversion) @0dc7a1c0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Adc_apxCfgPtr/0 (read) Adc_apxCfgPtr/0 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Adc_UpdateStatusStartConversion/14 Adc_ValidateStateStartGroupConvNotBusy/9 Adc_GetCoreID/32 
+Adc_DeInit/24 (Adc_DeInit) @0dc6bd20
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Adc_apxCfgPtr/0 (read) Adc_apxCfgPtr/0 (read) Adc_axUnitStatus/2 (write) Adc_apxCfgPtr/0 (write) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Adc_ReportDetRuntimeError/3 Adc_Ipw_DeInit/35 Adc_ValidateDeInitNotBusy/7 Adc_CheckCurrentCoreId/13 Adc_GetCoreID/32 
+Adc_SetupResultBuffer/23 (Adc_SetupResultBuffer) @0dc6b7e0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Adc_axGroupStatus/1 (write) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Adc_ValidateSetupBufferNotBusy/8 
+Adc_Init/22 (Adc_Init) @0dc6b2a0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Adc_apxCfgPtr/0 (write) Adc_apxCfgPtr/0 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Adc_ReportDetRuntimeError/3 Adc_Ipw_Init/33 Adc_InitGroupsStatus/11 Adc_InitUnitStatus/12 Adc_CheckCurrentCoreId/13 Adc_GetCoreID/32 
+Adc_UpdateStatusAfterGetStream/21 (Adc_UpdateStatusAfterGetStream) @0dc6bee0
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: Adc_apxCfgPtr/0 (read) Adc_axGroupStatus/1 (read) Adc_axGroupStatus/1 (write) Adc_axGroupStatus/1 (read) Adc_apxCfgPtr/0 (read) Adc_apxCfgPtr/0 (read) Adc_apxCfgPtr/0 (read) Adc_apxCfgPtr/0 (read) Adc_apxCfgPtr/0 (read) Adc_axGroupStatus/1 (write) Adc_axGroupStatus/1 (write) 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: Adc_GetStreamLastPointer/29 
+  Calls: 
+Adc_UpdateStatusReadGroupInt/20 (Adc_UpdateStatusReadGroupInt) @0dc6bc40
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: Adc_apxCfgPtr/0 (read) Adc_axGroupStatus/1 (read) Adc_axGroupStatus/1 (write) Adc_axGroupStatus/1 (read) Adc_apxCfgPtr/0 (read) Adc_apxCfgPtr/0 (read) Adc_apxCfgPtr/0 (read) Adc_apxCfgPtr/0 (read) Adc_apxCfgPtr/0 (read) Adc_axGroupStatus/1 (write) Adc_axGroupStatus/1 (write) 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: Adc_UpdateStatusReadGroup/17 
+  Calls: 
+Adc_UpdateSwQueueIndexNoInt/19 (Adc_UpdateSwQueueIndexNoInt) @0dc6b9a0
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: Adc_apxCfgPtr/0 (read) Adc_apxCfgPtr/0 (read) Adc_axUnitStatus/2 (read) Adc_axUnitStatus/2 (read) Adc_axUnitStatus/2 (read) Adc_axUnitStatus/2 (read) 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: Adc_UpdateStatusReadGroupNoInt/18 
+  Calls: Adc_Ipw_StartNormalConversion/38 Adc_Ipw_RemoveFromQueue/40 
+Adc_UpdateStatusReadGroupNoInt/18 (Adc_UpdateStatusReadGroupNoInt) @0dc6b700
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: Adc_apxCfgPtr/0 (read) Adc_axGroupStatus/1 (write) Adc_apxCfgPtr/0 (read) Adc_axGroupStatus/1 (write) Adc_apxCfgPtr/0 (read) Adc_axGroupStatus/1 (write) 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: Adc_UpdateStatusReadGroup/17 
+  Calls: Adc_UpdateSwQueueIndexNoInt/19 
+Adc_UpdateStatusReadGroup/17 (Adc_UpdateStatusReadGroup) @0dc6b460
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: Adc_apxCfgPtr/0 (read) Adc_apxCfgPtr/0 (read) 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: Adc_ReadGroup/27 
+  Calls: Adc_UpdateStatusReadGroupInt/20 Adc_UpdateStatusReadGroupNoInt/18 
+Adc_UpdateStatusStopConversion/16 (Adc_UpdateStatusStopConversion) @0dc6b1c0
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: Adc_apxCfgPtr/0 (read) Adc_apxCfgPtr/0 (read) Adc_apxCfgPtr/0 (read) Adc_apxCfgPtr/0 (read) Adc_axGroupStatus/1 (read) Adc_axGroupStatus/1 (write) Adc_axGroupStatus/1 (write) Adc_axGroupStatus/1 (write) Adc_axUnitStatus/2 (read) 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: Adc_StopGroupConversion/26 
+  Calls: Adc_ReportDetRuntimeError/3 Adc_Ipw_StartNormalConversion/38 Adc_StopSwGroupConversion/15 
+Adc_StopSwGroupConversion/15 (Adc_StopSwGroupConversion) @0dbd9d20
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: Adc_axUnitStatus/2 (read) Adc_axUnitStatus/2 (read) Adc_axUnitStatus/2 (read) 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: Adc_UpdateStatusStopConversion/16 
+  Calls: Adc_Ipw_RemoveFromQueue/40 Adc_Ipw_StopCurrentConversion/39 
+Adc_UpdateStatusStartConversion/14 (Adc_UpdateStatusStartConversion) @0dbd97e0
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: Adc_axGroupStatus/1 (write) Adc_axGroupStatus/1 (write) Adc_axUnitStatus/2 (read) Adc_axUnitStatus/2 (write) Adc_axUnitStatus/2 (read) Adc_axUnitStatus/2 (write) Adc_axUnitStatus/2 (read) Adc_axUnitStatus/2 (read) Adc_axUnitStatus/2 (read) Adc_axUnitStatus/2 (write) Adc_axUnitStatus/2 (read) Adc_axUnitStatus/2 (write) 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: Adc_StartGroupConversion/25 
+  Calls: SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_01/37 Adc_Ipw_StartNormalConversion/38 SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_01/37 SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_01/36 SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_01/37 SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_01/36 
+Adc_CheckCurrentCoreId/13 (Adc_CheckCurrentCoreId) @0dbd92a0
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: Adc_DeInit/24 Adc_Init/22 
+  Calls: 
+Adc_InitUnitStatus/12 (Adc_InitUnitStatus) @0dbd9ee0
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: Adc_apxCfgPtr/0 (read) Adc_axUnitStatus/2 (write) Adc_axUnitStatus/2 (write) Adc_axUnitStatus/2 (write) 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: Adc_Init/22 
+  Calls: 
+Adc_InitGroupsStatus/11 (Adc_InitGroupsStatus) @0dbd9c40
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: Adc_apxCfgPtr/0 (read) Adc_axGroupStatus/1 (write) Adc_axGroupStatus/1 (write) Adc_axGroupStatus/1 (write) Adc_axGroupStatus/1 (write) Adc_axGroupStatus/1 (write) Adc_apxCfgPtr/0 (read) 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: Adc_Init/22 
+  Calls: 
+Adc_ValidateStateNotIdle/10 (Adc_ValidateStateNotIdle) @0dbd99a0
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: Adc_axGroupStatus/1 (read) Adc_axGroupStatus/1 (read) Adc_axGroupStatus/1 (read) Adc_axGroupStatus/1 (read) 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: Adc_GetStreamLastPointer/29 Adc_ReadGroup/27 Adc_StopGroupConversion/26 
+  Calls: Adc_ReportDetRuntimeError/3 Adc_ReportDetRuntimeError/3 Adc_ReportDetRuntimeError/3 
+Adc_ValidateStateStartGroupConvNotBusy/9 (Adc_ValidateStateStartGroupConvNotBusy) @0dbd9700
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: Adc_apxCfgPtr/0 (read) Adc_apxCfgPtr/0 (read) Adc_apxCfgPtr/0 (read) Adc_apxCfgPtr/0 (read) Adc_apxCfgPtr/0 (read) 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: Adc_StartGroupConversion/25 
+  Calls: Adc_ValidateNotBusyNoPrio/5 Adc_ReportDetRuntimeError/3 
+Adc_ValidateSetupBufferNotBusy/8 (Adc_ValidateSetupBufferNotBusy) @0dbd9460
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: Adc_axGroupStatus/1 (read) 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: Adc_SetupResultBuffer/23 
+  Calls: Adc_ReportDetRuntimeError/3 
+Adc_ValidateDeInitNotBusy/7 (Adc_ValidateDeInitNotBusy) @0dbd91c0
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: Adc_apxCfgPtr/0 (read) 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: Adc_DeInit/24 
+  Calls: Adc_ValidateCheckGroupNotConversion/6 Adc_ValidateNotBusyNoQueue/4 
+Adc_ValidateCheckGroupNotConversion/6 (Adc_ValidateCheckGroupNotConversion) @0dbd0e00
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: Adc_apxCfgPtr/0 (read) Adc_axGroupStatus/1 (read) Adc_apxCfgPtr/0 (read) 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: Adc_Calibrate/31 Adc_ValidateDeInitNotBusy/7 
+  Calls: Adc_ReportDetRuntimeError/3 
+Adc_ValidateNotBusyNoPrio/5 (Adc_ValidateNotBusyNoPrio) @0dbd08c0
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: Adc_axGroupStatus/1 (read) 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: Adc_ValidateStateStartGroupConvNotBusy/9 
+  Calls: Adc_ReportDetRuntimeError/3 Adc_ReportDetRuntimeError/3 
+Adc_ValidateNotBusyNoQueue/4 (Adc_ValidateNotBusyNoQueue) @0dbd0d20
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: Adc_axUnitStatus/2 (read) 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: Adc_Calibrate/31 Adc_ValidateDeInitNotBusy/7 
+  Calls: Adc_ReportDetRuntimeError/3 
+Adc_ReportDetRuntimeError/3 (Adc_ReportDetRuntimeError) @0dbd0a80
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: Adc_Calibrate/31 Adc_DeInit/24 Adc_Init/22 Adc_UpdateStatusStopConversion/16 Adc_ValidateStateNotIdle/10 Adc_ValidateStateNotIdle/10 Adc_ValidateStateNotIdle/10 Adc_ValidateStateStartGroupConvNotBusy/9 Adc_ValidateNotBusyNoPrio/5 Adc_ValidateNotBusyNoPrio/5 Adc_ValidateCheckGroupNotConversion/6 Adc_ValidateNotBusyNoQueue/4 Adc_ValidateSetupBufferNotBusy/8 
+  Calls: Det_ReportRuntimeError/34 
+Adc_axUnitStatus/2 (Adc_axUnitStatus) @0dbc6cf0
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: Adc_UpdateStatusStartConversion/14 (write) Adc_UpdateStatusStartConversion/14 (read) Adc_StopSwGroupConversion/15 (read) Adc_UpdateStatusStopConversion/16 (read) Adc_UpdateSwQueueIndexNoInt/19 (read) Adc_StopSwGroupConversion/15 (read) Adc_InitUnitStatus/12 (write) Adc_UpdateStatusStartConversion/14 (write) Adc_InitUnitStatus/12 (write) Adc_InitUnitStatus/12 (write) Adc_ValidateNotBusyNoQueue/4 (read) Adc_UpdateStatusStartConversion/14 (read) Adc_StopSwGroupConversion/15 (read) Adc_UpdateStatusStartConversion/14 (read) Adc_UpdateStatusStartConversion/14 (write) Adc_UpdateStatusStartConversion/14 (read) Adc_UpdateStatusStartConversion/14 (write) Adc_UpdateStatusStartConversion/14 (read) Adc_UpdateStatusStartConversion/14 (read) Adc_UpdateSwQueueIndexNoInt/19 (read) Adc_UpdateSwQueueIndexNoInt/19 (read) Adc_UpdateSwQueueIndexNoInt/19 (read) Adc_DeInit/24 (write) 
+  Availability: available
+  Varpool flags:
+Adc_axGroupStatus/1 (Adc_axGroupStatus) @0dbc6ca8
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: Adc_InitGroupsStatus/11 (write) Adc_InitGroupsStatus/11 (write) Adc_InitGroupsStatus/11 (write) Adc_InitGroupsStatus/11 (write) Adc_InitGroupsStatus/11 (write) Adc_UpdateStatusStopConversion/16 (write) Adc_UpdateStatusReadGroupInt/20 (write) Adc_UpdateStatusAfterGetStream/21 (write) Adc_ValidateSetupBufferNotBusy/8 (read) Adc_UpdateStatusAfterGetStream/21 (write) Adc_ValidateNotBusyNoPrio/5 (read) Adc_UpdateStatusReadGroupInt/20 (write) Adc_UpdateStatusReadGroupInt/20 (read) Adc_UpdateStatusReadGroupInt/20 (write) Adc_ValidateCheckGroupNotConversion/6 (read) Adc_UpdateStatusAfterGetStream/21 (write) Adc_UpdateStatusAfterGetStream/21 (read) Adc_ValidateStateNotIdle/10 (read) Adc_ValidateStateNotIdle/10 (read) Adc_ValidateStateNotIdle/10 (read) Adc_UpdateStatusStartConversion/14 (write) Adc_UpdateStatusStartConversion/14 (write) Adc_UpdateStatusAfterGetStream/21 (read) Adc_UpdateStatusStopConversion/16 (read) Adc_UpdateStatusReadGroupNoInt/18 (write) Adc_UpdateStatusReadGroupNoInt/18 (write) Adc_GetGroupStatus/28 (read) Adc_UpdateStatusReadGroupNoInt/18 (write) Adc_SetupResultBuffer/23 (write) Adc_UpdateStatusReadGroupInt/20 (read) Adc_ValidateStateNotIdle/10 (read) Adc_UpdateStatusStopConversion/16 (write) Adc_UpdateStatusStopConversion/16 (write) Adc_GetStreamLastPointer/29 (read) Adc_GetStreamLastPointer/29 (read) Adc_GetStreamLastPointer/29 (read) Adc_GetStreamLastPointer/29 (read) Adc_GetStreamLastPointer/29 (read) Adc_GetStreamLastPointer/29 (read) 
+  Availability: available
+  Varpool flags:
+Adc_apxCfgPtr/0 (Adc_apxCfgPtr) @0dbc6c18
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: Adc_UpdateStatusReadGroupNoInt/18 (read) Adc_UpdateStatusReadGroupNoInt/18 (read) Adc_StopGroupConversion/26 (read) Adc_InitGroupsStatus/11 (read) Adc_InitUnitStatus/12 (read) Adc_UpdateStatusStopConversion/16 (read) Adc_UpdateStatusReadGroup/17 (read) Adc_UpdateStatusReadGroup/17 (read) Adc_UpdateStatusAfterGetStream/21 (read) Adc_UpdateStatusReadGroupInt/20 (read) Adc_UpdateStatusReadGroupInt/20 (read) Adc_Init/22 (write) Adc_Init/22 (read) Adc_UpdateStatusReadGroupInt/20 (read) Adc_UpdateStatusReadGroupInt/20 (read) Adc_UpdateStatusReadGroupInt/20 (read) Adc_UpdateStatusAfterGetStream/21 (read) Adc_ValidateCheckGroupNotConversion/6 (read) Adc_DeInit/24 (read) Adc_DeInit/24 (write) Adc_UpdateStatusAfterGetStream/21 (read) Adc_UpdateStatusAfterGetStream/21 (read) Adc_ValidateCheckGroupNotConversion/6 (read) Adc_ValidateDeInitNotBusy/7 (read) Adc_UpdateSwQueueIndexNoInt/19 (read) Adc_UpdateSwQueueIndexNoInt/19 (read) Adc_ValidateStateStartGroupConvNotBusy/9 (read) Adc_UpdateStatusStopConversion/16 (read) Adc_UpdateStatusStopConversion/16 (read) Adc_ValidateStateStartGroupConvNotBusy/9 (read) Adc_ValidateStateStartGroupConvNotBusy/9 (read) Adc_UpdateStatusReadGroupInt/20 (read) Adc_UpdateStatusAfterGetStream/21 (read) Adc_ValidateStateStartGroupConvNotBusy/9 (read) Adc_DeInit/24 (read) Adc_StopGroupConversion/26 (read) Adc_InitGroupsStatus/11 (read) Adc_UpdateStatusReadGroupNoInt/18 (read) Adc_StartGroupConversion/25 (read) Adc_StartGroupConversion/25 (read) Adc_UpdateStatusAfterGetStream/21 (read) Adc_ValidateStateStartGroupConvNotBusy/9 (read) Adc_UpdateStatusStopConversion/16 (read) Adc_GetStreamLastPointer/29 (read) Adc_GetStreamLastPointer/29 (read) Adc_GetStreamLastPointer/29 (read) 
+  Availability: available
+  Varpool flags:
+Materializing clones
+Materialization Call site updates done.
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+Trivially needed variables: Adc_axUnitStatus/2 Adc_axGroupStatus/1 Adc_apxCfgPtr/0
+Removing variables:
+
+Final Symbol table:
+
+Adc_Ipw_Calibrate/42 (Adc_Ipw_Calibrate) @0e02c7e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+Adc_Ipw_ReadGroup/41 (Adc_Ipw_ReadGroup) @0e017c40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+Adc_Ipw_RemoveFromQueue/40 (Adc_Ipw_RemoveFromQueue) @0e017a80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+Adc_Ipw_StopCurrentConversion/39 (Adc_Ipw_StopCurrentConversion) @0e0179a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+Adc_Ipw_StartNormalConversion/38 (Adc_Ipw_StartNormalConversion) @0e017460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_01/37 (SchM_Exit_Adc_ADC_EXCLUSIVE_AREA_01) @0e017380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_01/36 (SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_01) @0e0171c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+Adc_Ipw_DeInit/35 (Adc_Ipw_DeInit) @0dc8b9a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+Det_ReportRuntimeError/34 (Det_ReportRuntimeError) @0dc8b620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+Adc_Ipw_Init/33 (Adc_Ipw_Init) @0dc8b0e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+Adc_GetCoreID/32 (Adc_GetCoreID) @0dc8b000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+Adc_Calibrate/31 (Adc_Calibrate) @0dc7a2a0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.Adc_Calibrate (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+Adc_GetVersionInfo/30 (Adc_GetVersionInfo) @0dc7aee0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.Adc_GetVersionInfo (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+Adc_GetStreamLastPointer/29 (Adc_GetStreamLastPointer) @0dc7ac40
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.Adc_GetStreamLastPointer (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+Adc_GetGroupStatus/28 (Adc_GetGroupStatus) @0dc7a9a0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.Adc_GetGroupStatus (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+Adc_ReadGroup/27 (Adc_ReadGroup) @0dc7a700
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.Adc_ReadGroup (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+Adc_StopGroupConversion/26 (Adc_StopGroupConversion) @0dc7a460
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.Adc_StopGroupConversion (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+Adc_StartGroupConversion/25 (Adc_StartGroupConversion) @0dc7a1c0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.Adc_StartGroupConversion (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+Adc_DeInit/24 (Adc_DeInit) @0dc6bd20
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.Adc_DeInit (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+Adc_SetupResultBuffer/23 (Adc_SetupResultBuffer) @0dc6b7e0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.Adc_SetupResultBuffer (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+Adc_Init/22 (Adc_Init) @0dc6b2a0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.Adc_Init (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+Adc_UpdateStatusAfterGetStream/21 (Adc_UpdateStatusAfterGetStream) @0dc6bee0
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly asm_written section:.text.Adc_UpdateStatusAfterGetStream (implicit_section)
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: local
+  Called by: 
+  Calls: 
+Adc_UpdateStatusReadGroupInt/20 (Adc_UpdateStatusReadGroupInt) @0dc6bc40
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly asm_written section:.text.Adc_UpdateStatusReadGroupInt (implicit_section)
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: local
+  Called by: 
+  Calls: 
+Adc_UpdateSwQueueIndexNoInt/19 (Adc_UpdateSwQueueIndexNoInt) @0dc6b9a0
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly asm_written section:.text.Adc_UpdateSwQueueIndexNoInt (implicit_section)
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: local
+  Called by: 
+  Calls: 
+Adc_UpdateStatusReadGroupNoInt/18 (Adc_UpdateStatusReadGroupNoInt) @0dc6b700
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly asm_written section:.text.Adc_UpdateStatusReadGroupNoInt (implicit_section)
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: local
+  Called by: 
+  Calls: 
+Adc_UpdateStatusReadGroup/17 (Adc_UpdateStatusReadGroup) @0dc6b460
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly asm_written section:.text.Adc_UpdateStatusReadGroup (implicit_section)
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: local
+  Called by: 
+  Calls: 
+Adc_UpdateStatusStopConversion/16 (Adc_UpdateStatusStopConversion) @0dc6b1c0
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly asm_written section:.text.Adc_UpdateStatusStopConversion (implicit_section)
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: local
+  Called by: 
+  Calls: 
+Adc_StopSwGroupConversion/15 (Adc_StopSwGroupConversion) @0dbd9d20
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly asm_written section:.text.Adc_StopSwGroupConversion (implicit_section)
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: local
+  Called by: 
+  Calls: 
+Adc_UpdateStatusStartConversion/14 (Adc_UpdateStatusStartConversion) @0dbd97e0
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly asm_written section:.text.Adc_UpdateStatusStartConversion (implicit_section)
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: local
+  Called by: 
+  Calls: 
+Adc_CheckCurrentCoreId/13 (Adc_CheckCurrentCoreId) @0dbd92a0
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly asm_written section:.text.Adc_CheckCurrentCoreId (implicit_section)
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: local
+  Called by: 
+  Calls: 
+Adc_InitUnitStatus/12 (Adc_InitUnitStatus) @0dbd9ee0
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly asm_written section:.text.Adc_InitUnitStatus (implicit_section)
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: local
+  Called by: 
+  Calls: 
+Adc_InitGroupsStatus/11 (Adc_InitGroupsStatus) @0dbd9c40
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly asm_written section:.text.Adc_InitGroupsStatus (implicit_section)
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: local
+  Called by: 
+  Calls: 
+Adc_ValidateStateNotIdle/10 (Adc_ValidateStateNotIdle) @0dbd99a0
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly asm_written section:.text.Adc_ValidateStateNotIdle (implicit_section)
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: local
+  Called by: 
+  Calls: 
+Adc_ValidateStateStartGroupConvNotBusy/9 (Adc_ValidateStateStartGroupConvNotBusy) @0dbd9700
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly asm_written section:.text.Adc_ValidateStateStartGroupConvNotBusy (implicit_section)
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: local
+  Called by: 
+  Calls: 
+Adc_ValidateSetupBufferNotBusy/8 (Adc_ValidateSetupBufferNotBusy) @0dbd9460
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly asm_written section:.text.Adc_ValidateSetupBufferNotBusy (implicit_section)
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: local
+  Called by: 
+  Calls: 
+Adc_ValidateDeInitNotBusy/7 (Adc_ValidateDeInitNotBusy) @0dbd91c0
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly asm_written section:.text.Adc_ValidateDeInitNotBusy (implicit_section)
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: local
+  Called by: 
+  Calls: 
+Adc_ValidateCheckGroupNotConversion/6 (Adc_ValidateCheckGroupNotConversion) @0dbd0e00
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly asm_written section:.text.Adc_ValidateCheckGroupNotConversion (implicit_section)
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: local
+  Called by: 
+  Calls: 
+Adc_ValidateNotBusyNoPrio/5 (Adc_ValidateNotBusyNoPrio) @0dbd08c0
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly asm_written section:.text.Adc_ValidateNotBusyNoPrio (implicit_section)
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: local
+  Called by: 
+  Calls: 
+Adc_ValidateNotBusyNoQueue/4 (Adc_ValidateNotBusyNoQueue) @0dbd0d20
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly asm_written section:.text.Adc_ValidateNotBusyNoQueue (implicit_section)
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: local
+  Called by: 
+  Calls: 
+Adc_ReportDetRuntimeError/3 (Adc_ReportDetRuntimeError) @0dbd0a80
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly asm_written section:.text.Adc_ReportDetRuntimeError (implicit_section)
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: local
+  Called by: 
+  Calls: 
+Adc_axUnitStatus/2 (Adc_axUnitStatus) @0dbc6cf0
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.bss.Adc_axUnitStatus (implicit_section)
+  Aux: @00000001
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags:
+Adc_axGroupStatus/1 (Adc_axGroupStatus) @0dbc6ca8
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.bss.Adc_axGroupStatus (implicit_section)
+  Aux: @0dbc6cf0
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags:
+Adc_apxCfgPtr/0 (Adc_apxCfgPtr) @0dbc6c18
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.bss.Adc_apxCfgPtr (implicit_section)
+  Aux: @0dbc6ca8
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags:

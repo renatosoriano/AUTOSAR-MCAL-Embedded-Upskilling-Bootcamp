@@ -250,6 +250,20 @@ Display the values of the two potentiometers in Ohms and Volts.
 
 ![ADC_Exercise2_2PotValues_Ohms_Volts_Terminal.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/ADC_driver/ADC_Exercise2_2PotValues_Ohms_Volts_Terminal.png)
 
+* #### ADC Exercise 6: Four Channels in ADC0 using 2 Potentiometers
+Using a jumper wire to connect other channels available from ADC0 to have four channels to sample: 
+- Pot 1: pin PTB1->CH5 connected to pin PTB0->CH4 
+- Pot 2: pin PTB13->CH8 (Interleaved, by default ADC0-CH8 is connected to PTC0 but changed to PTB13 using interleave function in code) connected to pin PTC1->CH9. 
+Also configure the hardware average sample with a value of 8, and calculate the total timing conversion for the entire group of channels.
+
+![ADC_Exercise6_4Channels_ADC0_2Pots.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/ADC_driver/ADC_Exercise6_4Channels_ADC0_2Pots.png)
+
+![ADC_Exercise6_4Channels_ADC0_2Pots_Terminal.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/ADC_driver/ADC_Exercise6_4Channels_ADC0_2Pots_Terminal.png)
+
+ADC0 and ADC1 Interleaved Channels diagram from NXP S32K1xx Reference Manual Rev. 13, page 1194 and 1195: 
+
+![ADC_Exercise6_4Channels_ADC0_2Pots_Interleave.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/ADC_driver/ADC_Exercise6_4Channels_ADC0_2Pots_Interleave.png)
+
 ### **CAN Driver Evidences**
 
 * #### CAN Example 3: Transmission using Interrupts (ISRs)

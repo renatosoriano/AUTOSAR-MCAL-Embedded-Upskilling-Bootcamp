@@ -1,0 +1,1027 @@
+Trivially needed symbols: Adc_Ipw_Adc0EndConversionNotification/8
+
+
+Initial Symbol table:
+
+Pdb_Adc_Ip_SwTrigger/19 (Pdb_Adc_Ip_SwTrigger) @0dbbeb60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_Ipw_RestartConversion/2 
+  Calls: 
+Adc_Ipw_StartNormalConversion/18 (Adc_Ipw_StartNormalConversion) @0dbbe9a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_Ipw_UpdateQueue/0 
+  Calls: 
+Adc_Ipw_RemoveFromQueue/17 (Adc_Ipw_RemoveFromQueue) @0dbbe8c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_Ipw_UpdateQueue/0 
+  Calls: 
+Adc_Ip_GetConvData/16 (Adc_Ip_GetConvData) @0dbbe380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_Ipw_CheckConversionChannels/1 
+  Calls: 
+Adc_Ipw_CheckValidConversion/15 (Adc_Ipw_CheckValidConversion) @0dbbe2a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_Ipw_CheckConversionChannels/1 
+  Calls: 
+Adc_Ipw_CalculateNumsBitShift/14 (Adc_Ipw_CalculateNumsBitShift) @0dbbe0e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_Ipw_CheckConversionChannels/1 
+  Calls: 
+Adc_Ipw_ConfigureConversion/13 (Adc_Ipw_ConfigureConversion) @0dbb4620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_Ipw_RestartConversion/2 Adc_Ipw_EndConversion/5 
+  Calls: 
+Adc_axGroupStatus/12 (Adc_axGroupStatus) @0dbb7ee8
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: Adc_Ipw_EndConversion/5 (read) Adc_Ipw_EndConversion/5 (read) Adc_Ipw_EndConversion/5 (read) Adc_Ipw_EndConversion/5 (write) Adc_Ipw_CheckConversionChannels/1 (read) Adc_Ipw_CheckConversionChannels/1 (read) Adc_Ipw_CheckConversionChannels/1 (read) Adc_Ipw_UpdateSoftwareGroupState/4 (write) Adc_Ipw_UpdateSoftwareGroupState/4 (read) Adc_Ipw_UpdateSoftwareGroupState/4 (write) Adc_Ipw_UpdateSoftwareGroupState/4 (write) Adc_Ipw_UpdateSoftwareGroupState/4 (write) Adc_Ipw_GetCurrentSampleCount/3 (read) Adc_Ipw_RestartConversion/2 (write) Adc_Ipw_RestartConversion/2 (write) 
+  Availability: not-ready
+  Varpool flags:
+Adc_axUnitStatus/11 (Adc_axUnitStatus) @0dbb7ab0
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: Adc_Ipw_EndConversionNotification/7 (read) Adc_Ipw_EndConversionNotification/7 (read) Adc_Ipw_UpdateQueue/0 (read) 
+  Availability: not-ready
+  Varpool flags:
+Adc_apxCfgPtr/10 (Adc_apxCfgPtr) @0dbb7a68
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: Adc_Ipw_EndConversionNotification/7 (read) Adc_Ipw_EndConversion/5 (read) Adc_Ipw_EndConversion/5 (read) Adc_Ipw_CheckConversionChannels/1 (read) Adc_Ipw_CheckConversionChannels/1 (read) Adc_Ipw_CheckConversionChannels/1 (read) Adc_Ipw_CheckConversionChannels/1 (read) Adc_Ipw_CheckConversionChannels/1 (read) Adc_Ipw_UpdateSoftwareGroupState/4 (read) Adc_Ipw_UpdateSoftwareGroupState/4 (read) Adc_Ipw_UpdateSoftwareGroupState/4 (read) Adc_Ipw_UpdateSoftwareGroupState/4 (read) Adc_Ipw_RestartConversion/2 (read) Adc_Ipw_RestartConversion/2 (read) Adc_Ipw_RestartConversion/2 (read) 
+  Availability: not-ready
+  Varpool flags:
+Adc_GetCoreID/9 (Adc_GetCoreID) @0dbb4000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_Ipw_EndConversionNotification/7 
+  Calls: 
+Adc_Ipw_Adc0EndConversionNotification/8 (Adc_Ipw_Adc0EndConversionNotification) @0dbb4a80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @01981040
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Adc_Ipw_EndConversionNotification/7 
+Adc_Ipw_EndConversionNotification/7 (Adc_Ipw_EndConversionNotification) @0dbb47e0
+  Type: function definition analyzed
+  Visibility: no_reorder
+  Aux: @01981040
+  References: Adc_apxCfgPtr/10 (read) Adc_axUnitStatus/11 (read) Adc_axUnitStatus/11 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Adc_Ipw_Adc0EndConversionNotification/8 
+  Calls: Adc_Ipw_EndConversion/5 Adc_GetCoreID/9 
+Adc_Ipw_ReadData/6 (Adc_Ipw_ReadData) @0dbb4540
+  Type: function definition analyzed
+  Visibility: no_reorder
+  Aux: @0db95ee0
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: Adc_Ipw_CheckConversionChannels/1 
+  Calls: 
+Adc_Ipw_EndConversion/5 (Adc_Ipw_EndConversion) @0dbb42a0
+  Type: function definition analyzed
+  Visibility: no_reorder
+  Aux: @01981040
+  References: Adc_apxCfgPtr/10 (read) Adc_apxCfgPtr/10 (read) Adc_axGroupStatus/12 (read) Adc_axGroupStatus/12 (read) Adc_axGroupStatus/12 (read) Adc_axGroupStatus/12 (write) 
+  Referring: 
+  Function flags: body
+  Called by: Adc_Ipw_EndConversionNotification/7 
+  Calls: Adc_Ipw_UpdateSoftwareGroupState/4 Adc_Ipw_ConfigureConversion/13 Adc_Ipw_CheckConversionChannels/1 
+Adc_Ipw_UpdateSoftwareGroupState/4 (Adc_Ipw_UpdateSoftwareGroupState) @0db95ee0
+  Type: function definition analyzed
+  Visibility: no_reorder
+  Aux: @01981040
+  References: Adc_apxCfgPtr/10 (read) Adc_axGroupStatus/12 (write) Adc_axGroupStatus/12 (read) Adc_axGroupStatus/12 (write) Adc_axGroupStatus/12 (write) Adc_apxCfgPtr/10 (read) Adc_apxCfgPtr/10 (read) Adc_apxCfgPtr/10 (read) Adc_axGroupStatus/12 (write) 
+  Referring: 
+  Function flags: body
+  Called by: Adc_Ipw_EndConversion/5 
+  Calls: Adc_Ipw_RestartConversion/2 Adc_Ipw_UpdateQueue/0 Adc_Ipw_RestartConversion/2 Adc_Ipw_UpdateQueue/0 Adc_Ipw_GetCurrentSampleCount/3 
+Adc_Ipw_GetCurrentSampleCount/3 (Adc_Ipw_GetCurrentSampleCount) @0db958c0
+  Type: function definition analyzed
+  Visibility: no_reorder
+  Aux: @0db957e0
+  References: Adc_axGroupStatus/12 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Adc_Ipw_UpdateSoftwareGroupState/4 
+  Calls: 
+Adc_Ipw_RestartConversion/2 (Adc_Ipw_RestartConversion) @0db95e00
+  Type: function definition analyzed
+  Visibility: no_reorder
+  Aux: @01981040
+  References: Adc_apxCfgPtr/10 (read) Adc_apxCfgPtr/10 (read) Adc_apxCfgPtr/10 (read) Adc_axGroupStatus/12 (write) Adc_axGroupStatus/12 (write) 
+  Referring: 
+  Function flags: body
+  Called by: Adc_Ipw_UpdateSoftwareGroupState/4 Adc_Ipw_UpdateSoftwareGroupState/4 
+  Calls: Adc_Ipw_ConfigureConversion/13 Pdb_Adc_Ip_SwTrigger/19 
+Adc_Ipw_CheckConversionChannels/1 (Adc_Ipw_CheckConversionChannels) @0db95a80
+  Type: function definition analyzed
+  Visibility: no_reorder
+  Aux: @0db95ee0
+  References: Adc_apxCfgPtr/10 (read) Adc_axGroupStatus/12 (read) Adc_apxCfgPtr/10 (read) Adc_apxCfgPtr/10 (read) Adc_apxCfgPtr/10 (read) Adc_apxCfgPtr/10 (read) Adc_axGroupStatus/12 (read) Adc_axGroupStatus/12 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Adc_Ipw_EndConversion/5 
+  Calls: Adc_Ipw_ReadData/6 Adc_Ip_GetConvData/16 Adc_Ipw_CheckValidConversion/15 Adc_Ipw_CalculateNumsBitShift/14 
+Adc_Ipw_UpdateQueue/0 (Adc_Ipw_UpdateQueue) @0db957e0
+  Type: function definition analyzed
+  Visibility: no_reorder
+  Aux: @0db95e00
+  References: Adc_axUnitStatus/11 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Adc_Ipw_UpdateSoftwareGroupState/4 Adc_Ipw_UpdateSoftwareGroupState/4 
+  Calls: Adc_Ipw_StartNormalConversion/18 Adc_Ipw_RemoveFromQueue/17 
+
+Removing unused symbols:
+
+Reclaimed Symbol table:
+
+Pdb_Adc_Ip_SwTrigger/19 (Pdb_Adc_Ip_SwTrigger) @0dbbeb60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_Ipw_RestartConversion/2 
+  Calls: 
+Adc_Ipw_StartNormalConversion/18 (Adc_Ipw_StartNormalConversion) @0dbbe9a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_Ipw_UpdateQueue/0 
+  Calls: 
+Adc_Ipw_RemoveFromQueue/17 (Adc_Ipw_RemoveFromQueue) @0dbbe8c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_Ipw_UpdateQueue/0 
+  Calls: 
+Adc_Ip_GetConvData/16 (Adc_Ip_GetConvData) @0dbbe380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_Ipw_CheckConversionChannels/1 
+  Calls: 
+Adc_Ipw_CheckValidConversion/15 (Adc_Ipw_CheckValidConversion) @0dbbe2a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_Ipw_CheckConversionChannels/1 
+  Calls: 
+Adc_Ipw_CalculateNumsBitShift/14 (Adc_Ipw_CalculateNumsBitShift) @0dbbe0e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_Ipw_CheckConversionChannels/1 
+  Calls: 
+Adc_Ipw_ConfigureConversion/13 (Adc_Ipw_ConfigureConversion) @0dbb4620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_Ipw_RestartConversion/2 Adc_Ipw_EndConversion/5 
+  Calls: 
+Adc_axGroupStatus/12 (Adc_axGroupStatus) @0dbb7ee8
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: Adc_Ipw_EndConversion/5 (read) Adc_Ipw_EndConversion/5 (read) Adc_Ipw_EndConversion/5 (read) Adc_Ipw_EndConversion/5 (write) Adc_Ipw_CheckConversionChannels/1 (read) Adc_Ipw_CheckConversionChannels/1 (read) Adc_Ipw_CheckConversionChannels/1 (read) Adc_Ipw_UpdateSoftwareGroupState/4 (write) Adc_Ipw_UpdateSoftwareGroupState/4 (read) Adc_Ipw_UpdateSoftwareGroupState/4 (write) Adc_Ipw_UpdateSoftwareGroupState/4 (write) Adc_Ipw_UpdateSoftwareGroupState/4 (write) Adc_Ipw_GetCurrentSampleCount/3 (read) Adc_Ipw_RestartConversion/2 (write) Adc_Ipw_RestartConversion/2 (write) 
+  Availability: not-ready
+  Varpool flags:
+Adc_axUnitStatus/11 (Adc_axUnitStatus) @0dbb7ab0
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: Adc_Ipw_EndConversionNotification/7 (read) Adc_Ipw_EndConversionNotification/7 (read) Adc_Ipw_UpdateQueue/0 (read) 
+  Availability: not-ready
+  Varpool flags:
+Adc_apxCfgPtr/10 (Adc_apxCfgPtr) @0dbb7a68
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: Adc_Ipw_EndConversionNotification/7 (read) Adc_Ipw_EndConversion/5 (read) Adc_Ipw_EndConversion/5 (read) Adc_Ipw_CheckConversionChannels/1 (read) Adc_Ipw_CheckConversionChannels/1 (read) Adc_Ipw_CheckConversionChannels/1 (read) Adc_Ipw_CheckConversionChannels/1 (read) Adc_Ipw_CheckConversionChannels/1 (read) Adc_Ipw_UpdateSoftwareGroupState/4 (read) Adc_Ipw_UpdateSoftwareGroupState/4 (read) Adc_Ipw_UpdateSoftwareGroupState/4 (read) Adc_Ipw_UpdateSoftwareGroupState/4 (read) Adc_Ipw_RestartConversion/2 (read) Adc_Ipw_RestartConversion/2 (read) Adc_Ipw_RestartConversion/2 (read) 
+  Availability: not-ready
+  Varpool flags:
+Adc_GetCoreID/9 (Adc_GetCoreID) @0dbb4000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_Ipw_EndConversionNotification/7 
+  Calls: 
+Adc_Ipw_Adc0EndConversionNotification/8 (Adc_Ipw_Adc0EndConversionNotification) @0dbb4a80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Adc_Ipw_EndConversionNotification/7 
+Adc_Ipw_EndConversionNotification/7 (Adc_Ipw_EndConversionNotification) @0dbb47e0
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: Adc_apxCfgPtr/10 (read) Adc_axUnitStatus/11 (read) Adc_axUnitStatus/11 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Adc_Ipw_Adc0EndConversionNotification/8 
+  Calls: Adc_Ipw_EndConversion/5 Adc_GetCoreID/9 
+Adc_Ipw_ReadData/6 (Adc_Ipw_ReadData) @0dbb4540
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: Adc_Ipw_CheckConversionChannels/1 
+  Calls: 
+Adc_Ipw_EndConversion/5 (Adc_Ipw_EndConversion) @0dbb42a0
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: Adc_apxCfgPtr/10 (read) Adc_apxCfgPtr/10 (read) Adc_axGroupStatus/12 (read) Adc_axGroupStatus/12 (read) Adc_axGroupStatus/12 (read) Adc_axGroupStatus/12 (write) 
+  Referring: 
+  Function flags: body
+  Called by: Adc_Ipw_EndConversionNotification/7 
+  Calls: Adc_Ipw_UpdateSoftwareGroupState/4 Adc_Ipw_ConfigureConversion/13 Adc_Ipw_CheckConversionChannels/1 
+Adc_Ipw_UpdateSoftwareGroupState/4 (Adc_Ipw_UpdateSoftwareGroupState) @0db95ee0
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: Adc_apxCfgPtr/10 (read) Adc_axGroupStatus/12 (write) Adc_axGroupStatus/12 (read) Adc_axGroupStatus/12 (write) Adc_axGroupStatus/12 (write) Adc_apxCfgPtr/10 (read) Adc_apxCfgPtr/10 (read) Adc_apxCfgPtr/10 (read) Adc_axGroupStatus/12 (write) 
+  Referring: 
+  Function flags: body
+  Called by: Adc_Ipw_EndConversion/5 
+  Calls: Adc_Ipw_RestartConversion/2 Adc_Ipw_UpdateQueue/0 Adc_Ipw_RestartConversion/2 Adc_Ipw_UpdateQueue/0 Adc_Ipw_GetCurrentSampleCount/3 
+Adc_Ipw_GetCurrentSampleCount/3 (Adc_Ipw_GetCurrentSampleCount) @0db958c0
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: Adc_axGroupStatus/12 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Adc_Ipw_UpdateSoftwareGroupState/4 
+  Calls: 
+Adc_Ipw_RestartConversion/2 (Adc_Ipw_RestartConversion) @0db95e00
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: Adc_apxCfgPtr/10 (read) Adc_apxCfgPtr/10 (read) Adc_apxCfgPtr/10 (read) Adc_axGroupStatus/12 (write) Adc_axGroupStatus/12 (write) 
+  Referring: 
+  Function flags: body
+  Called by: Adc_Ipw_UpdateSoftwareGroupState/4 Adc_Ipw_UpdateSoftwareGroupState/4 
+  Calls: Adc_Ipw_ConfigureConversion/13 Pdb_Adc_Ip_SwTrigger/19 
+Adc_Ipw_CheckConversionChannels/1 (Adc_Ipw_CheckConversionChannels) @0db95a80
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: Adc_apxCfgPtr/10 (read) Adc_axGroupStatus/12 (read) Adc_apxCfgPtr/10 (read) Adc_apxCfgPtr/10 (read) Adc_apxCfgPtr/10 (read) Adc_apxCfgPtr/10 (read) Adc_axGroupStatus/12 (read) Adc_axGroupStatus/12 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Adc_Ipw_EndConversion/5 
+  Calls: Adc_Ipw_ReadData/6 Adc_Ip_GetConvData/16 Adc_Ipw_CheckValidConversion/15 Adc_Ipw_CalculateNumsBitShift/14 
+Adc_Ipw_UpdateQueue/0 (Adc_Ipw_UpdateQueue) @0db957e0
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: Adc_axUnitStatus/11 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Adc_Ipw_UpdateSoftwareGroupState/4 Adc_Ipw_UpdateSoftwareGroupState/4 
+  Calls: Adc_Ipw_StartNormalConversion/18 Adc_Ipw_RemoveFromQueue/17 
+
+
+Initial Symbol table:
+
+Pdb_Adc_Ip_SwTrigger/19 (Pdb_Adc_Ip_SwTrigger) @0dbbeb60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_Ipw_RestartConversion/2 
+  Calls: 
+Adc_Ipw_StartNormalConversion/18 (Adc_Ipw_StartNormalConversion) @0dbbe9a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_Ipw_UpdateQueue/0 
+  Calls: 
+Adc_Ipw_RemoveFromQueue/17 (Adc_Ipw_RemoveFromQueue) @0dbbe8c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_Ipw_UpdateQueue/0 
+  Calls: 
+Adc_Ip_GetConvData/16 (Adc_Ip_GetConvData) @0dbbe380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_Ipw_CheckConversionChannels/1 
+  Calls: 
+Adc_Ipw_CheckValidConversion/15 (Adc_Ipw_CheckValidConversion) @0dbbe2a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_Ipw_CheckConversionChannels/1 
+  Calls: 
+Adc_Ipw_CalculateNumsBitShift/14 (Adc_Ipw_CalculateNumsBitShift) @0dbbe0e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_Ipw_CheckConversionChannels/1 
+  Calls: 
+Adc_Ipw_ConfigureConversion/13 (Adc_Ipw_ConfigureConversion) @0dbb4620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_Ipw_RestartConversion/2 Adc_Ipw_EndConversion/5 
+  Calls: 
+Adc_axGroupStatus/12 (Adc_axGroupStatus) @0dbb7ee8
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: Adc_Ipw_EndConversion/5 (read) Adc_Ipw_EndConversion/5 (read) Adc_Ipw_EndConversion/5 (read) Adc_Ipw_EndConversion/5 (write) Adc_Ipw_CheckConversionChannels/1 (read) Adc_Ipw_CheckConversionChannels/1 (read) Adc_Ipw_CheckConversionChannels/1 (read) Adc_Ipw_UpdateSoftwareGroupState/4 (write) Adc_Ipw_UpdateSoftwareGroupState/4 (read) Adc_Ipw_UpdateSoftwareGroupState/4 (write) Adc_Ipw_UpdateSoftwareGroupState/4 (write) Adc_Ipw_UpdateSoftwareGroupState/4 (write) Adc_Ipw_GetCurrentSampleCount/3 (read) Adc_Ipw_RestartConversion/2 (write) Adc_Ipw_RestartConversion/2 (write) 
+  Availability: not-ready
+  Varpool flags:
+Adc_axUnitStatus/11 (Adc_axUnitStatus) @0dbb7ab0
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: Adc_Ipw_EndConversionNotification/7 (read) Adc_Ipw_EndConversionNotification/7 (read) Adc_Ipw_UpdateQueue/0 (read) 
+  Availability: not-ready
+  Varpool flags:
+Adc_apxCfgPtr/10 (Adc_apxCfgPtr) @0dbb7a68
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: Adc_Ipw_EndConversionNotification/7 (read) Adc_Ipw_EndConversion/5 (read) Adc_Ipw_EndConversion/5 (read) Adc_Ipw_CheckConversionChannels/1 (read) Adc_Ipw_CheckConversionChannels/1 (read) Adc_Ipw_CheckConversionChannels/1 (read) Adc_Ipw_CheckConversionChannels/1 (read) Adc_Ipw_CheckConversionChannels/1 (read) Adc_Ipw_UpdateSoftwareGroupState/4 (read) Adc_Ipw_UpdateSoftwareGroupState/4 (read) Adc_Ipw_UpdateSoftwareGroupState/4 (read) Adc_Ipw_UpdateSoftwareGroupState/4 (read) Adc_Ipw_RestartConversion/2 (read) Adc_Ipw_RestartConversion/2 (read) Adc_Ipw_RestartConversion/2 (read) 
+  Availability: not-ready
+  Varpool flags:
+Adc_GetCoreID/9 (Adc_GetCoreID) @0dbb4000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_Ipw_EndConversionNotification/7 
+  Calls: 
+Adc_Ipw_Adc0EndConversionNotification/8 (Adc_Ipw_Adc0EndConversionNotification) @0dbb4a80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Adc_Ipw_EndConversionNotification/7 
+Adc_Ipw_EndConversionNotification/7 (Adc_Ipw_EndConversionNotification) @0dbb47e0
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: Adc_apxCfgPtr/10 (read) Adc_axUnitStatus/11 (read) Adc_axUnitStatus/11 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Adc_Ipw_Adc0EndConversionNotification/8 
+  Calls: Adc_Ipw_EndConversion/5 Adc_GetCoreID/9 
+Adc_Ipw_ReadData/6 (Adc_Ipw_ReadData) @0dbb4540
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: Adc_Ipw_CheckConversionChannels/1 
+  Calls: 
+Adc_Ipw_EndConversion/5 (Adc_Ipw_EndConversion) @0dbb42a0
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: Adc_apxCfgPtr/10 (read) Adc_apxCfgPtr/10 (read) Adc_axGroupStatus/12 (read) Adc_axGroupStatus/12 (read) Adc_axGroupStatus/12 (read) Adc_axGroupStatus/12 (write) 
+  Referring: 
+  Function flags: body
+  Called by: Adc_Ipw_EndConversionNotification/7 
+  Calls: Adc_Ipw_UpdateSoftwareGroupState/4 Adc_Ipw_ConfigureConversion/13 Adc_Ipw_CheckConversionChannels/1 
+Adc_Ipw_UpdateSoftwareGroupState/4 (Adc_Ipw_UpdateSoftwareGroupState) @0db95ee0
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: Adc_apxCfgPtr/10 (read) Adc_axGroupStatus/12 (write) Adc_axGroupStatus/12 (read) Adc_axGroupStatus/12 (write) Adc_axGroupStatus/12 (write) Adc_apxCfgPtr/10 (read) Adc_apxCfgPtr/10 (read) Adc_apxCfgPtr/10 (read) Adc_axGroupStatus/12 (write) 
+  Referring: 
+  Function flags: body
+  Called by: Adc_Ipw_EndConversion/5 
+  Calls: Adc_Ipw_RestartConversion/2 Adc_Ipw_UpdateQueue/0 Adc_Ipw_RestartConversion/2 Adc_Ipw_UpdateQueue/0 Adc_Ipw_GetCurrentSampleCount/3 
+Adc_Ipw_GetCurrentSampleCount/3 (Adc_Ipw_GetCurrentSampleCount) @0db958c0
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: Adc_axGroupStatus/12 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Adc_Ipw_UpdateSoftwareGroupState/4 
+  Calls: 
+Adc_Ipw_RestartConversion/2 (Adc_Ipw_RestartConversion) @0db95e00
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: Adc_apxCfgPtr/10 (read) Adc_apxCfgPtr/10 (read) Adc_apxCfgPtr/10 (read) Adc_axGroupStatus/12 (write) Adc_axGroupStatus/12 (write) 
+  Referring: 
+  Function flags: body
+  Called by: Adc_Ipw_UpdateSoftwareGroupState/4 Adc_Ipw_UpdateSoftwareGroupState/4 
+  Calls: Adc_Ipw_ConfigureConversion/13 Pdb_Adc_Ip_SwTrigger/19 
+Adc_Ipw_CheckConversionChannels/1 (Adc_Ipw_CheckConversionChannels) @0db95a80
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: Adc_apxCfgPtr/10 (read) Adc_axGroupStatus/12 (read) Adc_apxCfgPtr/10 (read) Adc_apxCfgPtr/10 (read) Adc_apxCfgPtr/10 (read) Adc_apxCfgPtr/10 (read) Adc_axGroupStatus/12 (read) Adc_axGroupStatus/12 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Adc_Ipw_EndConversion/5 
+  Calls: Adc_Ipw_ReadData/6 Adc_Ip_GetConvData/16 Adc_Ipw_CheckValidConversion/15 Adc_Ipw_CalculateNumsBitShift/14 
+Adc_Ipw_UpdateQueue/0 (Adc_Ipw_UpdateQueue) @0db957e0
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: Adc_axUnitStatus/11 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Adc_Ipw_UpdateSoftwareGroupState/4 Adc_Ipw_UpdateSoftwareGroupState/4 
+  Calls: Adc_Ipw_StartNormalConversion/18 Adc_Ipw_RemoveFromQueue/17 
+
+Removing unused symbols:
+
+Reclaimed Symbol table:
+
+Pdb_Adc_Ip_SwTrigger/19 (Pdb_Adc_Ip_SwTrigger) @0dbbeb60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_Ipw_RestartConversion/2 
+  Calls: 
+Adc_Ipw_StartNormalConversion/18 (Adc_Ipw_StartNormalConversion) @0dbbe9a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_Ipw_UpdateQueue/0 
+  Calls: 
+Adc_Ipw_RemoveFromQueue/17 (Adc_Ipw_RemoveFromQueue) @0dbbe8c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_Ipw_UpdateQueue/0 
+  Calls: 
+Adc_Ip_GetConvData/16 (Adc_Ip_GetConvData) @0dbbe380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_Ipw_CheckConversionChannels/1 
+  Calls: 
+Adc_Ipw_CheckValidConversion/15 (Adc_Ipw_CheckValidConversion) @0dbbe2a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_Ipw_CheckConversionChannels/1 
+  Calls: 
+Adc_Ipw_CalculateNumsBitShift/14 (Adc_Ipw_CalculateNumsBitShift) @0dbbe0e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_Ipw_CheckConversionChannels/1 
+  Calls: 
+Adc_Ipw_ConfigureConversion/13 (Adc_Ipw_ConfigureConversion) @0dbb4620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_Ipw_RestartConversion/2 Adc_Ipw_EndConversion/5 
+  Calls: 
+Adc_axGroupStatus/12 (Adc_axGroupStatus) @0dbb7ee8
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: Adc_Ipw_EndConversion/5 (read) Adc_Ipw_EndConversion/5 (read) Adc_Ipw_EndConversion/5 (read) Adc_Ipw_EndConversion/5 (write) Adc_Ipw_CheckConversionChannels/1 (read) Adc_Ipw_CheckConversionChannels/1 (read) Adc_Ipw_CheckConversionChannels/1 (read) Adc_Ipw_UpdateSoftwareGroupState/4 (write) Adc_Ipw_UpdateSoftwareGroupState/4 (read) Adc_Ipw_UpdateSoftwareGroupState/4 (write) Adc_Ipw_UpdateSoftwareGroupState/4 (write) Adc_Ipw_UpdateSoftwareGroupState/4 (write) Adc_Ipw_GetCurrentSampleCount/3 (read) Adc_Ipw_RestartConversion/2 (write) Adc_Ipw_RestartConversion/2 (write) 
+  Availability: not-ready
+  Varpool flags:
+Adc_axUnitStatus/11 (Adc_axUnitStatus) @0dbb7ab0
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: Adc_Ipw_EndConversionNotification/7 (read) Adc_Ipw_EndConversionNotification/7 (read) Adc_Ipw_UpdateQueue/0 (read) 
+  Availability: not-ready
+  Varpool flags:
+Adc_apxCfgPtr/10 (Adc_apxCfgPtr) @0dbb7a68
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: Adc_Ipw_EndConversionNotification/7 (read) Adc_Ipw_EndConversion/5 (read) Adc_Ipw_EndConversion/5 (read) Adc_Ipw_CheckConversionChannels/1 (read) Adc_Ipw_CheckConversionChannels/1 (read) Adc_Ipw_CheckConversionChannels/1 (read) Adc_Ipw_CheckConversionChannels/1 (read) Adc_Ipw_CheckConversionChannels/1 (read) Adc_Ipw_UpdateSoftwareGroupState/4 (read) Adc_Ipw_UpdateSoftwareGroupState/4 (read) Adc_Ipw_UpdateSoftwareGroupState/4 (read) Adc_Ipw_UpdateSoftwareGroupState/4 (read) Adc_Ipw_RestartConversion/2 (read) Adc_Ipw_RestartConversion/2 (read) Adc_Ipw_RestartConversion/2 (read) 
+  Availability: not-ready
+  Varpool flags:
+Adc_GetCoreID/9 (Adc_GetCoreID) @0dbb4000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Adc_Ipw_EndConversionNotification/7 
+  Calls: 
+Adc_Ipw_Adc0EndConversionNotification/8 (Adc_Ipw_Adc0EndConversionNotification) @0dbb4a80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Adc_Ipw_EndConversionNotification/7 
+Adc_Ipw_EndConversionNotification/7 (Adc_Ipw_EndConversionNotification) @0dbb47e0
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: Adc_apxCfgPtr/10 (read) Adc_axUnitStatus/11 (read) Adc_axUnitStatus/11 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Adc_Ipw_Adc0EndConversionNotification/8 
+  Calls: Adc_Ipw_EndConversion/5 Adc_GetCoreID/9 
+Adc_Ipw_ReadData/6 (Adc_Ipw_ReadData) @0dbb4540
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: Adc_Ipw_CheckConversionChannels/1 
+  Calls: 
+Adc_Ipw_EndConversion/5 (Adc_Ipw_EndConversion) @0dbb42a0
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: Adc_apxCfgPtr/10 (read) Adc_apxCfgPtr/10 (read) Adc_axGroupStatus/12 (read) Adc_axGroupStatus/12 (read) Adc_axGroupStatus/12 (read) Adc_axGroupStatus/12 (write) 
+  Referring: 
+  Function flags: body
+  Called by: Adc_Ipw_EndConversionNotification/7 
+  Calls: Adc_Ipw_UpdateSoftwareGroupState/4 Adc_Ipw_ConfigureConversion/13 Adc_Ipw_CheckConversionChannels/1 
+Adc_Ipw_UpdateSoftwareGroupState/4 (Adc_Ipw_UpdateSoftwareGroupState) @0db95ee0
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: Adc_apxCfgPtr/10 (read) Adc_axGroupStatus/12 (write) Adc_axGroupStatus/12 (read) Adc_axGroupStatus/12 (write) Adc_axGroupStatus/12 (write) Adc_apxCfgPtr/10 (read) Adc_apxCfgPtr/10 (read) Adc_apxCfgPtr/10 (read) Adc_axGroupStatus/12 (write) 
+  Referring: 
+  Function flags: body
+  Called by: Adc_Ipw_EndConversion/5 
+  Calls: Adc_Ipw_RestartConversion/2 Adc_Ipw_UpdateQueue/0 Adc_Ipw_RestartConversion/2 Adc_Ipw_UpdateQueue/0 Adc_Ipw_GetCurrentSampleCount/3 
+Adc_Ipw_GetCurrentSampleCount/3 (Adc_Ipw_GetCurrentSampleCount) @0db958c0
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: Adc_axGroupStatus/12 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Adc_Ipw_UpdateSoftwareGroupState/4 
+  Calls: 
+Adc_Ipw_RestartConversion/2 (Adc_Ipw_RestartConversion) @0db95e00
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: Adc_apxCfgPtr/10 (read) Adc_apxCfgPtr/10 (read) Adc_apxCfgPtr/10 (read) Adc_axGroupStatus/12 (write) Adc_axGroupStatus/12 (write) 
+  Referring: 
+  Function flags: body
+  Called by: Adc_Ipw_UpdateSoftwareGroupState/4 Adc_Ipw_UpdateSoftwareGroupState/4 
+  Calls: Adc_Ipw_ConfigureConversion/13 Pdb_Adc_Ip_SwTrigger/19 
+Adc_Ipw_CheckConversionChannels/1 (Adc_Ipw_CheckConversionChannels) @0db95a80
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: Adc_apxCfgPtr/10 (read) Adc_axGroupStatus/12 (read) Adc_apxCfgPtr/10 (read) Adc_apxCfgPtr/10 (read) Adc_apxCfgPtr/10 (read) Adc_apxCfgPtr/10 (read) Adc_axGroupStatus/12 (read) Adc_axGroupStatus/12 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Adc_Ipw_EndConversion/5 
+  Calls: Adc_Ipw_ReadData/6 Adc_Ip_GetConvData/16 Adc_Ipw_CheckValidConversion/15 Adc_Ipw_CalculateNumsBitShift/14 
+Adc_Ipw_UpdateQueue/0 (Adc_Ipw_UpdateQueue) @0db957e0
+  Type: function definition analyzed
+  Visibility: no_reorder
+  References: Adc_axUnitStatus/11 (read) 
+  Referring: 
+  Function flags: body
+  Called by: Adc_Ipw_UpdateSoftwareGroupState/4 Adc_Ipw_UpdateSoftwareGroupState/4 
+  Calls: Adc_Ipw_StartNormalConversion/18 Adc_Ipw_RemoveFromQueue/17 
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+Optimized Symbol table:
+
+Pdb_Adc_Ip_SwTrigger/19 (Pdb_Adc_Ip_SwTrigger) @0dbbeb60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Adc_Ipw_RestartConversion/2 
+  Calls: 
+Adc_Ipw_StartNormalConversion/18 (Adc_Ipw_StartNormalConversion) @0dbbe9a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Adc_Ipw_UpdateQueue/0 
+  Calls: 
+Adc_Ipw_RemoveFromQueue/17 (Adc_Ipw_RemoveFromQueue) @0dbbe8c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Adc_Ipw_UpdateQueue/0 
+  Calls: 
+Adc_Ip_GetConvData/16 (Adc_Ip_GetConvData) @0dbbe380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Adc_Ipw_CheckConversionChannels/1 
+  Calls: 
+Adc_Ipw_CheckValidConversion/15 (Adc_Ipw_CheckValidConversion) @0dbbe2a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Adc_Ipw_CheckConversionChannels/1 
+  Calls: 
+Adc_Ipw_CalculateNumsBitShift/14 (Adc_Ipw_CalculateNumsBitShift) @0dbbe0e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Adc_Ipw_CheckConversionChannels/1 
+  Calls: 
+Adc_Ipw_ConfigureConversion/13 (Adc_Ipw_ConfigureConversion) @0dbb4620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Adc_Ipw_EndConversion/5 Adc_Ipw_RestartConversion/2 
+  Calls: 
+Adc_axGroupStatus/12 (Adc_axGroupStatus) @0dbb7ee8
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: Adc_Ipw_UpdateSoftwareGroupState/4 (read) Adc_Ipw_CheckConversionChannels/1 (read) Adc_Ipw_RestartConversion/2 (write) Adc_Ipw_RestartConversion/2 (write) Adc_Ipw_GetCurrentSampleCount/3 (read) Adc_Ipw_UpdateSoftwareGroupState/4 (write) Adc_Ipw_UpdateSoftwareGroupState/4 (write) Adc_Ipw_CheckConversionChannels/1 (read) Adc_Ipw_CheckConversionChannels/1 (read) Adc_Ipw_UpdateSoftwareGroupState/4 (write) Adc_Ipw_UpdateSoftwareGroupState/4 (write) Adc_Ipw_EndConversion/5 (read) Adc_Ipw_EndConversion/5 (read) Adc_Ipw_EndConversion/5 (read) Adc_Ipw_EndConversion/5 (write) 
+  Availability: not_available
+  Varpool flags:
+Adc_axUnitStatus/11 (Adc_axUnitStatus) @0dbb7ab0
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: Adc_Ipw_UpdateQueue/0 (read) Adc_Ipw_EndConversionNotification/7 (read) Adc_Ipw_EndConversionNotification/7 (read) 
+  Availability: not_available
+  Varpool flags:
+Adc_apxCfgPtr/10 (Adc_apxCfgPtr) @0dbb7a68
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: Adc_Ipw_UpdateSoftwareGroupState/4 (read) Adc_Ipw_RestartConversion/2 (read) Adc_Ipw_RestartConversion/2 (read) Adc_Ipw_CheckConversionChannels/1 (read) Adc_Ipw_CheckConversionChannels/1 (read) Adc_Ipw_RestartConversion/2 (read) Adc_Ipw_UpdateSoftwareGroupState/4 (read) Adc_Ipw_EndConversion/5 (read) Adc_Ipw_CheckConversionChannels/1 (read) Adc_Ipw_CheckConversionChannels/1 (read) Adc_Ipw_CheckConversionChannels/1 (read) Adc_Ipw_UpdateSoftwareGroupState/4 (read) Adc_Ipw_UpdateSoftwareGroupState/4 (read) Adc_Ipw_EndConversion/5 (read) Adc_Ipw_EndConversionNotification/7 (read) 
+  Availability: not_available
+  Varpool flags:
+Adc_GetCoreID/9 (Adc_GetCoreID) @0dbb4000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Adc_Ipw_EndConversionNotification/7 
+  Calls: 
+Adc_Ipw_Adc0EndConversionNotification/8 (Adc_Ipw_Adc0EndConversionNotification) @0dbb4a80
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Adc_Ipw_EndConversionNotification/7 
+Adc_Ipw_EndConversionNotification/7 (Adc_Ipw_EndConversionNotification) @0dbb47e0
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: Adc_apxCfgPtr/10 (read) Adc_axUnitStatus/11 (read) Adc_axUnitStatus/11 (read) 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: Adc_Ipw_Adc0EndConversionNotification/8 
+  Calls: Adc_Ipw_EndConversion/5 Adc_GetCoreID/9 
+Adc_Ipw_ReadData/6 (Adc_Ipw_ReadData) @0dbb4540
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: Adc_Ipw_CheckConversionChannels/1 
+  Calls: 
+Adc_Ipw_EndConversion/5 (Adc_Ipw_EndConversion) @0dbb42a0
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: Adc_apxCfgPtr/10 (read) Adc_apxCfgPtr/10 (read) Adc_axGroupStatus/12 (read) Adc_axGroupStatus/12 (read) Adc_axGroupStatus/12 (read) Adc_axGroupStatus/12 (write) 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: Adc_Ipw_EndConversionNotification/7 
+  Calls: Adc_Ipw_UpdateSoftwareGroupState/4 Adc_Ipw_ConfigureConversion/13 Adc_Ipw_CheckConversionChannels/1 
+Adc_Ipw_UpdateSoftwareGroupState/4 (Adc_Ipw_UpdateSoftwareGroupState) @0db95ee0
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: Adc_apxCfgPtr/10 (read) Adc_axGroupStatus/12 (write) Adc_axGroupStatus/12 (read) Adc_axGroupStatus/12 (write) Adc_axGroupStatus/12 (write) Adc_apxCfgPtr/10 (read) Adc_apxCfgPtr/10 (read) Adc_apxCfgPtr/10 (read) Adc_axGroupStatus/12 (write) 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: Adc_Ipw_EndConversion/5 
+  Calls: Adc_Ipw_RestartConversion/2 Adc_Ipw_UpdateQueue/0 Adc_Ipw_RestartConversion/2 Adc_Ipw_UpdateQueue/0 Adc_Ipw_GetCurrentSampleCount/3 
+Adc_Ipw_GetCurrentSampleCount/3 (Adc_Ipw_GetCurrentSampleCount) @0db958c0
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: Adc_axGroupStatus/12 (read) 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: Adc_Ipw_UpdateSoftwareGroupState/4 
+  Calls: 
+Adc_Ipw_RestartConversion/2 (Adc_Ipw_RestartConversion) @0db95e00
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: Adc_apxCfgPtr/10 (read) Adc_apxCfgPtr/10 (read) Adc_apxCfgPtr/10 (read) Adc_axGroupStatus/12 (write) Adc_axGroupStatus/12 (write) 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: Adc_Ipw_UpdateSoftwareGroupState/4 Adc_Ipw_UpdateSoftwareGroupState/4 
+  Calls: Adc_Ipw_ConfigureConversion/13 Pdb_Adc_Ip_SwTrigger/19 
+Adc_Ipw_CheckConversionChannels/1 (Adc_Ipw_CheckConversionChannels) @0db95a80
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: Adc_apxCfgPtr/10 (read) Adc_axGroupStatus/12 (read) Adc_apxCfgPtr/10 (read) Adc_apxCfgPtr/10 (read) Adc_apxCfgPtr/10 (read) Adc_apxCfgPtr/10 (read) Adc_axGroupStatus/12 (read) Adc_axGroupStatus/12 (read) 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: Adc_Ipw_EndConversion/5 
+  Calls: Adc_Ipw_ReadData/6 Adc_Ip_GetConvData/16 Adc_Ipw_CheckValidConversion/15 Adc_Ipw_CalculateNumsBitShift/14 
+Adc_Ipw_UpdateQueue/0 (Adc_Ipw_UpdateQueue) @0db957e0
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly
+  References: Adc_axUnitStatus/11 (read) 
+  Referring: 
+  Availability: local
+  Function flags: body local
+  Called by: Adc_Ipw_UpdateSoftwareGroupState/4 Adc_Ipw_UpdateSoftwareGroupState/4 
+  Calls: Adc_Ipw_StartNormalConversion/18 Adc_Ipw_RemoveFromQueue/17 
+Materializing clones
+Materialization Call site updates done.
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+Trivially needed variables:
+Removing variables:
+
+Final Symbol table:
+
+Pdb_Adc_Ip_SwTrigger/19 (Pdb_Adc_Ip_SwTrigger) @0dbbeb60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+Adc_Ipw_StartNormalConversion/18 (Adc_Ipw_StartNormalConversion) @0dbbe9a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+Adc_Ipw_RemoveFromQueue/17 (Adc_Ipw_RemoveFromQueue) @0dbbe8c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+Adc_Ip_GetConvData/16 (Adc_Ip_GetConvData) @0dbbe380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+Adc_Ipw_CheckValidConversion/15 (Adc_Ipw_CheckValidConversion) @0dbbe2a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+Adc_Ipw_CalculateNumsBitShift/14 (Adc_Ipw_CalculateNumsBitShift) @0dbbe0e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+Adc_Ipw_ConfigureConversion/13 (Adc_Ipw_ConfigureConversion) @0dbb4620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+Adc_axGroupStatus/12 (Adc_axGroupStatus) @0dbb7ee8
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Varpool flags:
+Adc_axUnitStatus/11 (Adc_axUnitStatus) @0dbb7ab0
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Varpool flags:
+Adc_apxCfgPtr/10 (Adc_apxCfgPtr) @0dbb7a68
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Varpool flags:
+Adc_GetCoreID/9 (Adc_GetCoreID) @0dbb4000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+Adc_Ipw_Adc0EndConversionNotification/8 (Adc_Ipw_Adc0EndConversionNotification) @0dbb4a80
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.Adc_Ipw_Adc0EndConversionNotification (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+Adc_Ipw_EndConversionNotification/7 (Adc_Ipw_EndConversionNotification) @0dbb47e0
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly asm_written section:.text.Adc_Ipw_EndConversionNotification (implicit_section)
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: local
+  Called by: 
+  Calls: 
+Adc_Ipw_ReadData/6 (Adc_Ipw_ReadData) @0dbb4540
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly asm_written section:.text.Adc_Ipw_ReadData (implicit_section)
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: local
+  Called by: 
+  Calls: 
+Adc_Ipw_EndConversion/5 (Adc_Ipw_EndConversion) @0dbb42a0
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly asm_written section:.text.Adc_Ipw_EndConversion (implicit_section)
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: local
+  Called by: 
+  Calls: 
+Adc_Ipw_UpdateSoftwareGroupState/4 (Adc_Ipw_UpdateSoftwareGroupState) @0db95ee0
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly asm_written section:.text.Adc_Ipw_UpdateSoftwareGroupState (implicit_section)
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: local
+  Called by: 
+  Calls: 
+Adc_Ipw_GetCurrentSampleCount/3 (Adc_Ipw_GetCurrentSampleCount) @0db958c0
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly asm_written section:.text.Adc_Ipw_GetCurrentSampleCount (implicit_section)
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: local
+  Called by: 
+  Calls: 
+Adc_Ipw_RestartConversion/2 (Adc_Ipw_RestartConversion) @0db95e00
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly asm_written section:.text.Adc_Ipw_RestartConversion (implicit_section)
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: local
+  Called by: 
+  Calls: 
+Adc_Ipw_CheckConversionChannels/1 (Adc_Ipw_CheckConversionChannels) @0db95a80
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly asm_written section:.text.Adc_Ipw_CheckConversionChannels (implicit_section)
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: local
+  Called by: 
+  Calls: 
+Adc_Ipw_UpdateQueue/0 (Adc_Ipw_UpdateQueue) @0db957e0
+  Type: function definition analyzed
+  Visibility: no_reorder prevailing_def_ironly asm_written section:.text.Adc_Ipw_UpdateQueue (implicit_section)
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: local
+  Called by: 
+  Calls: 

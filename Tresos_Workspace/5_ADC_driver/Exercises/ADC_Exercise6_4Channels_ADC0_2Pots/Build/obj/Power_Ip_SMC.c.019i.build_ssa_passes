@@ -1,0 +1,234 @@
+Power_Ip_SMC_ModeConfig (const struct Power_Ip_ModeConfigType * ModeConfigPtr)
+{
+  boolean TimeoutOccurred;
+  uint32 TimeoutTicks;
+  uint32 ElapsedTime;
+  uint32 StartTime;
+  uint32 PowerModeStatus;
+  uint32 TempValue;
+  Power_Ip_PowerModeType PowerMode;
+  uint32 PowerSwitchMode;
+  uint32 D.5581;
+
+  <bb 2> :
+  PowerSwitchMode = 0;
+  PowerMode = 0;
+  TimeoutOccurred = 0;
+  PowerMode = ModeConfigPtr->PowerMode;
+  switch (PowerMode) <default: <L18> [INV], case 0: <L0> [INV], case 1: <L6> [INV], case 2: <L12> [INV]>
+
+  <bb 3> :
+<L0>:
+  _1 = 1074257920B;
+  TempValue = _1->PMCTRL;
+  TempValue = TempValue & 4294967199;
+  TempValue = TempValue;
+  _2 = 1074257920B;
+  _2->PMCTRL = TempValue;
+  Power_Ip_StartTimeout (&StartTime, &ElapsedTime, &TimeoutTicks, 50000);
+
+  <bb 4> :
+  TimeoutTicks.0_3 = TimeoutTicks;
+  TimeoutOccurred = Power_Ip_TimeoutExpired (&StartTime, &ElapsedTime, TimeoutTicks.0_3);
+  _4 = 1074257920B;
+  _5 = _4->PMSTAT;
+  PowerModeStatus = _5 & 1;
+  if (PowerModeStatus != 1)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  _6 = ~TimeoutOccurred;
+  if (_6 != 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 6> :
+  if (TimeoutOccurred != 0)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 7> :
+  PowerSwitchMode = 1;
+  Power_Ip_ReportPowerErrors (0, 255);
+
+  <bb 8> :
+  goto <bb 22>; [INV]
+
+  <bb 9> :
+<L6>:
+  _7 = 1074257920B;
+  TempValue = _7->PMCTRL;
+  TempValue = TempValue & 4294967199;
+  TempValue = TempValue | 96;
+  _8 = 1074257920B;
+  _8->PMCTRL = TempValue;
+  Power_Ip_StartTimeout (&StartTime, &ElapsedTime, &TimeoutTicks, 50000);
+
+  <bb 10> :
+  TimeoutTicks.1_9 = TimeoutTicks;
+  TimeoutOccurred = Power_Ip_TimeoutExpired (&StartTime, &ElapsedTime, TimeoutTicks.1_9);
+  _10 = 1074257920B;
+  _11 = _10->PMSTAT;
+  PowerModeStatus = _11 & 128;
+  if (PowerModeStatus != 128)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 11> :
+  _12 = ~TimeoutOccurred;
+  if (_12 != 0)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 12> :
+  if (TimeoutOccurred != 0)
+    goto <bb 13>; [INV]
+  else
+    goto <bb 14>; [INV]
+
+  <bb 13> :
+  PowerSwitchMode = 1;
+  Power_Ip_ReportPowerErrors (0, 255);
+
+  <bb 14> :
+  goto <bb 22>; [INV]
+
+  <bb 15> :
+<L12>:
+  _13 = 1074257920B;
+  TempValue = _13->PMCTRL;
+  TempValue = TempValue & 4294967199;
+  TempValue = TempValue | 64;
+  _14 = 1074257920B;
+  _14->PMCTRL = TempValue;
+  Power_Ip_StartTimeout (&StartTime, &ElapsedTime, &TimeoutTicks, 50000);
+
+  <bb 16> :
+  TimeoutTicks.2_15 = TimeoutTicks;
+  TimeoutOccurred = Power_Ip_TimeoutExpired (&StartTime, &ElapsedTime, TimeoutTicks.2_15);
+  _16 = 1074257920B;
+  _17 = _16->PMSTAT;
+  PowerModeStatus = _17 & 4;
+  if (PowerModeStatus != 4)
+    goto <bb 17>; [INV]
+  else
+    goto <bb 18>; [INV]
+
+  <bb 17> :
+  _18 = ~TimeoutOccurred;
+  if (_18 != 0)
+    goto <bb 16>; [INV]
+  else
+    goto <bb 18>; [INV]
+
+  <bb 18> :
+  if (TimeoutOccurred != 0)
+    goto <bb 19>; [INV]
+  else
+    goto <bb 20>; [INV]
+
+  <bb 19> :
+  PowerSwitchMode = 1;
+  Power_Ip_ReportPowerErrors (0, 255);
+
+  <bb 20> :
+  goto <bb 22>; [INV]
+
+  <bb 21> :
+<L18>:
+  PowerSwitchMode = 1;
+
+  <bb 22> :
+  D.5581 = PowerSwitchMode;
+  StartTime = {CLOBBER};
+  ElapsedTime = {CLOBBER};
+  TimeoutTicks = {CLOBBER};
+
+  <bb 23> :
+<L21>:
+  return D.5581;
+
+}
+
+
+Power_Ip_SMC_ModeCheckEntry (Power_Ip_PowerModeType PowerMode)
+{
+  uint32 CurrentPowerMode;
+  Power_Ip_SMC_ModeStatusType PowerModeCheck;
+  Power_Ip_SMC_ModeStatusType D.5570;
+
+  <bb 2> :
+  PowerModeCheck = 1;
+  _1 = 1074257920B;
+  _2 = _1->PMSTAT;
+  CurrentPowerMode = _2 & 255;
+  switch (PowerMode) <default: <L8> [INV], case 0: <L0> [INV], case 1: <L1> [INV], case 2: <L4> [INV]>
+
+  <bb 3> :
+<L0>:
+  PowerModeCheck = 0;
+  goto <bb 12>; [INV]
+
+  <bb 4> :
+<L1>:
+  if (CurrentPowerMode == 1)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  PowerModeCheck = 0;
+
+  <bb 6> :
+  goto <bb 12>; [INV]
+
+  <bb 7> :
+<L4>:
+  if (CurrentPowerMode == 1)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 8> :
+  if (CurrentPowerMode == 16)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 9> :
+  PowerModeCheck = 0;
+
+  <bb 10> :
+  goto <bb 12>; [INV]
+
+  <bb 11> :
+<L8>:
+
+  <bb 12> :
+  D.5570 = PowerModeCheck;
+
+  <bb 13> :
+<L10>:
+  return D.5570;
+
+}
+
+
+Power_Ip_SMC_AllowedModesConfig (const struct Power_Ip_SMC_ConfigType * ConfigPtr)
+{
+  <bb 2> :
+  _1 = ConfigPtr->AllowedModes;
+  _2 = 1074257920B;
+  _3 = _1 & 160;
+  _2->PMPROT = _3;
+  return;
+
+}
+
+
