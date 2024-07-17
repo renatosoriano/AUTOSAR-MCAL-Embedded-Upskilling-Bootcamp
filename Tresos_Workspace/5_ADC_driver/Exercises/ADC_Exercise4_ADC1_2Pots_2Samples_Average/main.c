@@ -1,7 +1,7 @@
 /**
  * @file main.c
  * @brief This file contains the main function of the project
- * @author Modular-MX
+ * @author Renato Soriano
  * 
  * ***********************************************************************************************************************
  * Exercise 4. 
