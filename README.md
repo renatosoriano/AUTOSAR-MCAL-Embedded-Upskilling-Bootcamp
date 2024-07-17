@@ -252,8 +252,8 @@ Display the values of the two potentiometers in Ohms and Volts.
 
 * #### ADC Exercise 6: Four Channels in ADC0 using 2 Potentiometers
 Using a jumper wire to connect other channels available from ADC0 to have four channels to sample: 
-- Pot 1: pin PTB1->CH5 connected to pin PTB0->CH4 (Blue jumper wire).
-- Pot 2: pin PTB13->CH8 (Interleaved, by default ADC0-CH8 is connected to PTC0 but changed to PTB13 using interleave function in code) connected to pin PTC1->CH9 (Purple jumper wire). 
+Pot 1: pin PTB1->CH5 connected to pin PTB0->CH4 (Blue jumper wire).
+Pot 2: pin PTB13->CH8 (Interleaved, by default ADC0-CH8 is connected to PTC0 but changed to PTB13 using interleave function in code) connected to pin PTC1->CH9 (Purple jumper wire). 
 
 Also configure the hardware average sample with a value of 8, and calculate the total timing conversion for the entire group of channels.
 
@@ -269,8 +269,8 @@ ADC0 and ADC1 Interleaved Channels diagram from NXP S32K1xx Reference Manual Rev
 
 * #### PWM Exercise 1: Two Channels, Two FTM Timers with SIRC Clock
 A program that generates two PWM channels but using two different timers, must see which pins are available with FTM functionality. Feed those timers with a SIRC clock.
-- Timer 1: FTM0, Channel: CH0, Pin: RED RGB LED.
-- Timer 2: FTM2, Channel: CH0, Pin: BLUE RGB LED.
+Timer 1: FTM0, Channel: CH0, Pin: RED RGB LED.
+Timer 2: FTM2, Channel: CH0, Pin: BLUE RGB LED.
 Both RGB LEDs working, hence the purple color.
 
 ![PWM_Exercise1_2CH_2Timers_FTM_SIRC_Clk.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/PWM_driver/PWM_Exercise1_2CH_2Timers_FTM_SIRC_Clk.png)
