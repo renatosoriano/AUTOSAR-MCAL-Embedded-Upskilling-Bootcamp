@@ -235,7 +235,7 @@ _Back to [Table of Contents](#table-of-contents)_
 
 You can find here captures and media, relevant to examples and exercises, visible output in communication (software) or physical world (board).
 
-### **<u>DIO-PORT Driver Evidences<u>**
+### <ins>DIO-PORT Driver Evidences<ins>
 
 * #### DIO Exercise 8: Rotate LEDs Left-Right using Buttons
 Pressing 1st button will rotate the LEDs from right to left, and pressing 2nd button will rotate them from left to right. 3rd button activates a different speed.
