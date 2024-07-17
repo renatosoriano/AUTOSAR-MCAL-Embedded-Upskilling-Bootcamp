@@ -237,6 +237,8 @@ You can find here captures and media, relevant to examples and exercises, visibl
 
 ### <ins>DIO-PORT Driver Evidences<ins>
 
+_Back to [Sample Evidences](#8-sample-evidences)_
+
 * #### DIO Exercise 8: Rotate LEDs Left-Right using Buttons
 Pressing 1st button will rotate the LEDs from right to left, and pressing 2nd button will rotate them from left to right. 3rd button activates a different speed.
 
@@ -246,14 +248,16 @@ https://github.com/user-attachments/assets/80e7ae72-599a-454c-8cb2-881933acbc30
 
 ### <ins>GPT Driver Evidences<ins>
 
-* #### GPT Exercise 1: 2 Timers in OneShot mode using FIRC clock to toggle 2 LEDs
+_Back to [Sample Evidences](#8-sample-evidences)_
+
+* #### GPT Exercise 1: Two Timers in OneShot mode using FIRC clock to toggle Two LEDs
 Using two different timers (FTM1 and FTM2) to toggle two pairs of leds (1st pair: normal led C8 and Blue RGB led, 2nd pair: normal led C9 and Green RGB led) at 100ms and 300ms, both timers use notifications in one shot mode, plus been feed by FIRC clock at 12MHz.
 
 ![GPT_Exercise1_2Timers_OneShot_FIRC_2LEDs.GIF](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/GPT_driver/GPT_Exercise1_2Timers_OneShot_FIRC_2LEDs.GIF)
 
 https://github.com/user-attachments/assets/193ff80f-5500-420f-af6e-2be51721c8a4
 
-* #### GPT Exercise 3: 3 FTM Timers to toggle all RGB at different Frequencies
+* #### GPT Exercise 3: Three FTM Timers to toggle all RGB at different Frequencies
 Using three FTM timers with one channel each, toggle the three RGB leds at different values (100ms, 400ms, and 800ms), the most important is that each FTM timer is feed by a different clock reference (12MHz, 4MHz, and 8MHz).
 
 ![GPT_Exercise3_3Timers_FTM_RGB_DiffClkRef.GIF](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/GPT_driver/GPT_Exercise3_3Timers_FTM_RGB_DiffClkRef.GIF)
@@ -262,7 +266,9 @@ https://github.com/user-attachments/assets/51c8bdf2-141e-4744-be3b-26aa9c43fdc1
 
 ### <ins>ADC Driver Evidences<ins>
 
-* #### ADC Exercise 1: Rotate Speed of 8 LEDs with Potentiometer
+_Back to [Sample Evidences](#8-sample-evidences)_
+
+* #### ADC Exercise 1: Rotate Speed of Eight LEDs with Potentiometer
 Vary the rotation speed of eight LEDs C8 to C15 using one of the potentiometers on the board.
 
 ![ADC_Exercise1_Rotate_Speed_8LEDs_Potentiometer.GIF](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/ADC_driver/ADC_Exercise1_Rotate_Speed_8LEDs_Potentiometer.GIF)
@@ -276,7 +282,7 @@ Display the values of the two potentiometers in Ohms and Volts.
 
 ![ADC_Exercise2_2PotValues_Ohms_Volts_Terminal.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/ADC_driver/ADC_Exercise2_2PotValues_Ohms_Volts_Terminal.png)
 
-* #### ADC Exercise 6: Four Channels in ADC0 using 2 Potentiometers
+* #### ADC Exercise 6: Four Channels in ADC0 using Two Potentiometers
 Using a jumper wire to connect other channels available from ADC0 to have four channels to sample: 
 - Pot 1: pin PTB1->CH5 connected to pin PTB0->CH4 (Blue jumper wire).
 - Pot 2: pin PTB13->CH8 (Interleaved, by default ADC0-CH8 is connected to PTC0 but changed to PTB13 using interleave function in code) connected to pin PTC1->CH9 (Purple jumper wire). 
@@ -292,6 +298,8 @@ ADC0 and ADC1 Interleaved Channels diagram from NXP S32K1xx Reference Manual Rev
 ![ADC_Exercise6_4Channels_ADC0_2Pots_Interleave.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/ADC_driver/ADC_Exercise6_4Channels_ADC0_2Pots_Interleave.png)
 
 ### <ins>PWM Driver Evidences<ins>
+
+_Back to [Sample Evidences](#8-sample-evidences)_
 
 * #### PWM Exercise 1: Two Channels, Two FTM Timers with SIRC Clock
 A program that generates two PWM channels but using two different timers, must see which pins are available with FTM functionality. Feed those timers with a SIRC clock.
@@ -338,6 +346,8 @@ https://github.com/user-attachments/assets/a163665e-de78-469f-a384-a67201327c4e
 
 ### <ins>SPI Driver Evidences<ins>
 
+_Back to [Sample Evidences](#8-sample-evidences)_
+
 * #### SPI Exercise 1: Read and Print 32 bytes from EEPROM
 Read and display the first 32 bytes of an Eeprom in different formats using Semihosting with RTT.
 
@@ -358,6 +368,8 @@ Wrote the following functions to allow to write a given array of n number of byt
 ![SPI_Exercise5_Function_Write_Read_ArrayData_Terminal.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/SPI_driver/SPI_Exercise5_Function_Write_Read_ArrayData_Terminal.png)
 
 ### <ins>CAN Driver Evidences<ins>
+
+_Back to [Sample Evidences](#8-sample-evidences)_
 
 * #### CAN Example 3: Transmission using Interrupts (ISRs)
 Hardware board transmits (Tx) an 8-byte single message with ID 0x123 and specified Data payload: 01 02 03 04 05 06 11 12. Savvy CAN receiving (Rx) the data, evertime having byte 1 and 8 increased by value of 0x1 as per the example intentional behavior.
@@ -390,6 +402,8 @@ Hardware board receives (Rx) every second an 8-byte single message with ID 0x022
 ![CAN_Example6_Reception_with_Filters_ID_0x022.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/CAN_Driver_examples_results_screenshots/CAN_Example6_Reception_with_Filters_ID_0x022.png)
 
 ### <ins>CAN Interface (CANIF) Driver Examples Results<ins>
+
+_Back to [Sample Evidences](#8-sample-evidences)_
 
 * #### CANIF Example 1: Transmission single PDU
 Hardware board transmits (Tx) an 8-byte single message with ID 0x123 and specified Data payload: 01 02 03 04 05 06 11 12. Savvy CAN receiving (Rx) the data, evertime having byte 1 and 8 increased by value of 0x1 as per the example intentional behavior.
