@@ -322,7 +322,7 @@ Channel (n+1) output in Complementary mode diagram from NXP S32K1xx Reference Ma
 Used a potentiometer to variate the PWM duty cycle, connected to Blue RGB led, from 10% to 90% in steps of 10%.
 Two available methods, with and without steps, can be found in code with algorithm explained.
 
-video
+https://github.com/user-attachments/assets/a163665e-de78-469f-a384-a67201327c4e
 
 ![PWM_Exercise4_ADC_Pot_DutyCycle_RGB_LED_Terminal.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/PWM_driver/PWM_Exercise4_ADC_Pot_DutyCycle_RGB_LED_Terminal.png)
 
