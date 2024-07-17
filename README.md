@@ -254,6 +254,7 @@ Display the values of the two potentiometers in Ohms and Volts.
 Using a jumper wire to connect other channels available from ADC0 to have four channels to sample: 
 - Pot 1: pin PTB1->CH5 connected to pin PTB0->CH4 (Blue jumper wire).
 - Pot 2: pin PTB13->CH8 (Interleaved, by default ADC0-CH8 is connected to PTC0 but changed to PTB13 using interleave function in code) connected to pin PTC1->CH9 (Purple jumper wire). 
+
 Also configure the hardware average sample with a value of 8, and calculate the total timing conversion for the entire group of channels.
 
 ![ADC_Exercise6_4Channels_ADC0_2Pots.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/ADC_driver/ADC_Exercise6_4Channels_ADC0_2Pots.png)
