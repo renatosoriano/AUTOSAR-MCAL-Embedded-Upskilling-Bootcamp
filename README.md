@@ -48,7 +48,6 @@ The Upskilling Bootcamp covers:
 
 _Back to [Table of Contents](#table-of-contents)_
 
-
 **[NXP S32K144-Q100 Evaluation Board for Automotive General Purpose](https://www.nxp.com/design/design-center/development-boards-and-designs/automotive-development-platforms/s32k-mcu-platforms/s32k144-q100-evaluation-board-for-automotive-general-purpose:S32K144EVB)** - Based on the 32-bit Arm® Cortex®-M4F S32K14 MCU, this is the base board used in this bootcamp. 
 
 ![S32K144_pinout.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/S32K144_pinout.png)
@@ -63,6 +62,8 @@ _Back to [Table of Contents](#table-of-contents)_
 
 ## 3. Software Requirements
 
+_Back to [Table of Contents](#table-of-contents)_
+
 **[EB Tresos Studio](https://www.elektrobit.com/products/ecu/eb-tresos/studio/)** - Tool environment for electronic control unit (ECU) development with AUTOSAR. EB tresos Studio lets you configure, validate, and generate your ECU basic software (BSW). EB tresos Studio is the industry-standard tool for microcontroller abstraction layer (MCAL) development by semiconductor suppliers such as NXP, STM, and Infineon. Works on Windows and is free.
 
 **[SEGGER Ozone](https://www.segger.com/products/development-tools/ozone-j-link-debugger/)** - Full-featured graphical debugger for embedded applications. It is possible to debug any embedded application on C/C++ source and assembly level, as well as loading applications built with any tool chain / IDE or debug the target's resident application without any source. Ozone includes all well-known debug controls and information windows and makes use of the best performance of J-Link and J-Trace debug probes. Works on Windows/Linux/Mac and is free.
@@ -70,6 +71,8 @@ _Back to [Table of Contents](#table-of-contents)_
 **[SavvyCAN](https://www.savvycan.com/)** - It is a CAN bus reverse engineering and capture tool. SavvyCAN can use any CAN interface supported by QT's SerialBus system (PeakCAN, Vector, SocketCAN, J2534, etc). It can capture and send to multiple buses and CAN capture devices at once. Works on Windows/Linux/Mac and is free. 
 
 ## 4. Notes
+
+_Back to [Table of Contents](#table-of-contents)_
 
 * ### 4.1 Tools Installation and Configuration Guide:
 
@@ -113,6 +116,8 @@ void OnProjectLoad (void) {
 
 ## 5. Documentation
 
+_Back to [Table of Contents](#table-of-contents)_
+
 You can find here [**Documentation**](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Documentation/) all reference documents regarding:
 * AUTOSAR MCAL drivers.
 * Compiler Manuals.
@@ -122,12 +127,16 @@ You can find here [**Documentation**](https://github.com/renatosoriano/AUTOSAR-M
 
 ## 6. Examples and Exercises
 
+_Back to [Table of Contents](#table-of-contents)_
+
 You can find here [**Tresos Workspace**](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Tresos_Workspace/) the base template file as well as all the examples and exercises created for this Upskilling Bootcamp.
 It is divided in folders for each of the MCAL drivers worked, and inside you will find 2 folders, Examples and Exercises.
 
 _Will be uploading them as they are ready._
 
 ## 7. Final Project
+
+_Back to [Table of Contents](#table-of-contents)_
 
 You can find here the [**Final Project**](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Tresos_Workspace/Final_Project) created for this Upskilling Bootcamp.
 It consists on an AUTOSAR I/O Hardware Abstraction for the on board Buttons and LEDs (PORT and DIO Drivers), Potentiometers (MCU and ADC Drivers), and Buzzer (PWM Driver), all together with the Scheduler and a state machine with specific application events and tasks requirements.
@@ -210,6 +219,9 @@ https://github.com/user-attachments/assets/2bfb6ac9-46a6-4cf8-8ef3-cd11ad5b9d95
 ![Button_3_Hold_Release_Terminal.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/Final_Project/Button_3_Hold_Release_Terminal.png)
 
 ## 8. Sample Evidences
+
+_Back to [Table of Contents](#table-of-contents)_
+
 You can find here captures and media relevant to examples and/or exercises visible output in communication (software) or physical-world (board).
 
 _Will be uploading them as they are ready._
