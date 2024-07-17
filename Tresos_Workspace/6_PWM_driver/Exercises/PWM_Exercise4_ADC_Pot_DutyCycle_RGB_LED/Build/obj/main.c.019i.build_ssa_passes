@@ -1,0 +1,101 @@
+Delay (uint32 ms)
+{
+  uint32 ElapsedTime;
+  uint32 SeedTick;
+  uint32 Timeout;
+  long unsigned int D.8111;
+
+  <bb 2> :
+  _1 = ms * 1000;
+  Timeout = OsIf_MicrosToTicks (_1, 1);
+  _2 = OsIf_GetCounter (1);
+  SeedTick = _2;
+  ElapsedTime = 0;
+
+  <bb 3> :
+  D.8111 = OsIf_GetElapsed (&SeedTick, 1);
+  ElapsedTime = D.8111 + ElapsedTime;
+  if (ElapsedTime < Timeout)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 4> :
+  SeedTick = {CLOBBER};
+  return;
+
+}
+
+
+EcuM_Init ()
+{
+  <bb 2> :
+  Mcu_Init (&Mcu_Config);
+  Mcu_InitClock (0);
+  Mcu_SetMode (0);
+  OsIf_Init (0B);
+  Platform_Init (0B);
+  Port_Init (&Port_Config);
+  Adc_Init (&Adc_Config);
+  Pwm_Init (&Pwm_Config);
+  return;
+
+}
+
+
+main ()
+{
+  uint16_t dutyCycle;
+  uint8_t step;
+  uint16_t adcvalue1_Pot2;
+  uint16_t adcvalue1_Pot1;
+  Adc_ValueGroupType ResultBuffer[2];
+  Adc_ValueGroupType AdcReadGroupBuffer[2];
+  struct Adc_CalibrationStatusType CalibStatus;
+  int D.8108;
+
+  <bb 2> :
+  adcvalue1_Pot1 = 0;
+  adcvalue1_Pot2 = 0;
+  EcuM_Init ();
+  SEGGER_RTT_Init ();
+  Port_Ci_Port_Ip_SetMuxModeSel (1074044928B, 13, 8);
+  Adc_Calibrate (0, &CalibStatus);
+  Adc_SetupResultBuffer (0, &ResultBuffer);
+  Pwm_SetPeriodAndDuty (1, 37500, 32768);
+  Pwm_SetPeriodAndDuty (2, 37500, 32768);
+
+  <bb 3> :
+  Adc_StartGroupConversion (0);
+
+  <bb 4> :
+  _1 = Adc_GetGroupStatus (0);
+  if (_1 == 1)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 5> :
+  Adc_ReadGroup (0, &AdcReadGroupBuffer);
+  adcvalue1_Pot1 = AdcReadGroupBuffer[0];
+  adcvalue1_Pot2 = AdcReadGroupBuffer[1];
+  _2 = (int) adcvalue1_Pot1;
+  _3 = _2 * 9;
+  _4 = _3 / 2703;
+  step = (uint8_t) _4;
+  _5 = (int) step;
+  _6 = _5 * 26214;
+  _7 = _6 / 9;
+  _8 = (short unsigned int) _7;
+  dutyCycle = _8 + 3277;
+  Pwm_SetPeriodAndDuty (0, 37500, dutyCycle);
+  _9 = (int) step;
+  _10 = _9 * 10;
+  _11 = (int) dutyCycle;
+  SEGGER_RTT_printf (0, "Step percentaje: %d, RGB Raw Duty Cycle: %d\n", _10, _11);
+  Delay (500);
+  goto <bb 3>; [INV]
+
+}
+
+
