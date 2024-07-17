@@ -329,9 +329,16 @@ https://github.com/user-attachments/assets/a163665e-de78-469f-a384-a67201327c4e
 ### **SPI Driver Evidences**
 
 * #### SPI Exercise 1: Read and Print 32 bytes from EEPROM
-Read and display the first 32 bytes of an eeprom in different formats using Semihosting with RTT.
+Read and display the first 32 bytes of an Eeprom in different formats using Semihosting with RTT.
 
 ![SPI_Exercise1_ReadPrint_32bytes_EEPROM_ASCII_Terminal.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/SPI_driver/SPI_Exercise1_ReadPrint_32bytes_EEPROM_ASCII_Terminal.png)
+
+* #### SPI Exercise 4: Create Two Functions to Write and Read a Byte
+Wrote two functions that allow to write and read a byte to any valid memory address in the Eeprom memory, functions shall have the following prototypes:
+- void write_byte( uint16 addr, uint8 data );
+- uint8_t read_byte( uint16_t addr );
+
+![SPI_Exercise4_Function_Write_Read_Byte_Terminal.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/SPI_driver/SPI_Exercise4_Function_Write_Read_Byte_Terminal.png)
 
 ### **CAN Driver Evidences**
 
