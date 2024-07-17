@@ -166,9 +166,9 @@ It consists on an AUTOSAR I/O Hardware Abstraction for the on board Buttons and 
 - [Button 2 Hold and Release Event](#button-2-hold-and-release)
 
 **Button 3 Events:**
-- [Button 3 Single Click Event](#button-2-single-click)
-- [Button 3 Double Click Event](#button-2-double-click)
-- [Button 3 Hold and Release Event](#button-2-hold-and-release)
+- [Button 3 Single Click Event](#button-3-single-click)
+- [Button 3 Double Click Event](#button-3-double-click)
+- [Button 3 Hold and Release Event](#button-3-hold-and-release)
 
 
 ### <ins>Button 1 Single Click:<ins>
