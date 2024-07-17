@@ -146,7 +146,6 @@ It is divided in folders for each of the MCAL drivers worked, and inside you wil
 9. [I/O Hardware Abstraction.](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/tree/main/Tresos_Workspace/8_HwIoAb_driver)
 10. [CAN driver.](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/tree/main/Tresos_Workspace/9_CAN_driver)
 11. [CANIF driver.](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/tree/main/Tresos_Workspace/10_CANIF_driver)
-12. [Final Project.](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/tree/main/Tresos_Workspace/Final_Project)
 
 ## 7. Final Project
 
