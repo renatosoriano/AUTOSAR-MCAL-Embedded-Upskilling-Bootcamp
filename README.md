@@ -295,7 +295,7 @@ Both RGB LEDs working, hence the purple color.
 * #### PWM Exercise 2: Two Complementary Channels with DeadTime Insertion
 Generate two complement PWM signal with dead time insertion of around 1% of the period of the signal.
 
-slow mo video
+https://github.com/user-attachments/assets/dade5bbc-cec0-4004-9f04-f78ad7fcd22b
 
 ![PWM_Exercise2_2CH_Complementary_DeadTime_Insertion_Tresos.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/PWM_driver/PWM_Exercise2_2CH_Complementary_DeadTime_Insertion_Tresos.png)
 
