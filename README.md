@@ -11,14 +11,14 @@ Date: July, 2024.
 ![Autosar_MCAL_Certificate_Badge.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/Autosar_MCAL_Certificate_Badge.png)
 
 ## Table of Contents
-1. [**Description**](#description)
-2. [**Hardware Requirements**](#hardware-requirements)
-3. [**Software Requirements**](#software-requirements)
-4. [**Notes**](#notes)
-5. [**Documentation**](#documentation)
-6. [**Examples and Exercises**](#examples-and-exercises)
-7. [**Final Project**](#final-project)
-8. [**Sample Evidences**](#sample-evidences)
+1. [**Description**](#1-description)
+2. [**Hardware Requirements**](#2-hardware-requirements)
+3. [**Software Requirements**](#3-software-requirements)
+4. [**Notes**](#4-notes)
+5. [**Documentation**](#5-documentation)
+6. [**Examples and Exercises**](#6-examples-and-exercises)
+7. [**Final Project**](#7-final-project)
+8. [**Sample Evidences**](#8-sample-evidences)
 
 ## 1. Description
 
