@@ -22,6 +22,8 @@ Date: July, 2024.
 
 ## 1. Description
 
+_Back to [Table of Contents](#table-of-contents)_
+
 This AUTOSAR Upskilling Bootcamp, focused on MCAL layer, shows how to configure multiple peripherals that can be found in the microcontroller hardware by making use of Automotive industry tools.
 This Upskilling consists on 6 weeks, where 10% is theory and the 90% remaining is practice and hands-on.
 
@@ -43,6 +45,9 @@ The Upskilling Bootcamp covers:
 13. Final Project.
 
 ## 2. Hardware Requirements
+
+_Back to [Table of Contents](#table-of-contents)_
+
 
 **[NXP S32K144-Q100 Evaluation Board for Automotive General Purpose](https://www.nxp.com/design/design-center/development-boards-and-designs/automotive-development-platforms/s32k-mcu-platforms/s32k144-q100-evaluation-board-for-automotive-general-purpose:S32K144EVB)** - Based on the 32-bit Arm® Cortex®-M4F S32K14 MCU, this is the base board used in this bootcamp. 
 
