@@ -292,6 +292,32 @@ Both RGB LEDs working, hence the purple color.
 
 ![PWM_Exercise1_2CH_2Timers_FTM_SIRC_Clk.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/PWM_driver/PWM_Exercise1_2CH_2Timers_FTM_SIRC_Clk.png)
 
+* #### PWM Exercise 2: Two Complementary Channels with DeadTime Insertion
+Generate two complement PWM signal with dead time insertion of around 1% of the period of the signal.
+
+slow mo video
+
+![PWM_Exercise2_2CH_Complementary_DeadTime_Insertion_Tresos.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/PWM_driver/PWM_Exercise2_2CH_Complementary_DeadTime_Insertion_Tresos.png)
+
+'_Paired channel enable_' Tresos feature: The channels n and n+1 will be used as a channel pair.
+In this case the pair is Red RGB Led (FTM0-CH0) for 'channel n' and Green RGB Led (FTM0-CH1) for 'channel n+1'.
+
+'_Complementary channel enable_' Tresos feature: Enable the complementary mode for Ftm channel.
+In Complementary mode, the channel (n+1) output (Green RGB Led) is the inverse of the channel (n) output (Red RGB Led).
+
+'_Complementary mode_' Tresos feature: Selects complementary mode of the Ftm channel n+1.
+Here we confirm that the desired mode is 'Invert Output'. Hence when one RGB Led goes OFF the other goes ON and viceversa.
+
+'_Deadtime enable_' Tresos feature: Enable the deadtime delay for Ftm channel.
+The deadtime delay insertion ensures that no two complementary signals (channels n and n+1) drive the active state at the same time.
+
+'_Phase Shift (Ticks)_' Tresos feature: Define the offset value (in tick) from 1 that the leading edge of pulse signal will start.
+In this case it is wanted to be 1% of the period, so the 375 ticks value is the 1% of the 37500 period value configured for the channels.
+
+Channel (n+1) output in Complementary mode diagram from NXP S32K1xx Reference Manual Rev. 13, page 1448: 
+
+![PWM_Exercise2_2CH_Complementary_DeadTime_Insertion_ComplementaryMode.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/PWM_driver/PWM_Exercise2_2CH_Complementary_DeadTime_Insertion_ComplementaryMode.png)
+
 ### **CAN Driver Evidences**
 
 * #### CAN Example 3: Transmission using Interrupts (ISRs)

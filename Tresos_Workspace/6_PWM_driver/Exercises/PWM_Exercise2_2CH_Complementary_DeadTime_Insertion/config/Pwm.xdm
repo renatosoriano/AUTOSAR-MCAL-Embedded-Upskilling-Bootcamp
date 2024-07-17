@@ -1,0 +1,521 @@
+<?xml version='1.0'?>
+<datamodel version="7.0" 
+           xmlns="http://www.tresos.de/_projects/DataModel2/16/root.xsd" 
+           xmlns:a="http://www.tresos.de/_projects/DataModel2/16/attribute.xsd" 
+           xmlns:v="http://www.tresos.de/_projects/DataModel2/06/schema.xsd" 
+           xmlns:d="http://www.tresos.de/_projects/DataModel2/06/data.xsd">
+
+  <d:ctr type="AUTOSAR" factory="autosar" 
+         xmlns:ad="http://www.tresos.de/_projects/DataModel2/08/admindata.xsd" 
+         xmlns:cd="http://www.tresos.de/_projects/DataModel2/08/customdata.xsd" 
+         xmlns:f="http://www.tresos.de/_projects/DataModel2/14/formulaexpr.xsd" 
+         xmlns:icc="http://www.tresos.de/_projects/DataModel2/08/implconfigclass.xsd" 
+         xmlns:mt="http://www.tresos.de/_projects/DataModel2/11/multitest.xsd"  
+         xmlns:variant="http://www.tresos.de/_projects/DataModel2/11/variant.xsd">
+    <d:lst type="TOP-LEVEL-PACKAGES">
+      <d:ctr name="Pwm" type="AR-PACKAGE">
+        <d:lst type="ELEMENTS">
+          <d:chc name="Pwm" type="AR-ELEMENT" value="MODULE-CONFIGURATION">
+            <d:ctr type="MODULE-CONFIGURATION">
+              <a:a name="DEF" value="ASPath:/TS_T40D2M20I0R0/Pwm"/>
+              <d:var name="POST_BUILD_VARIANT_USED" type="BOOLEAN" value="true"/>
+              <d:var name="IMPLEMENTATION_CONFIG_VARIANT" type="ENUMERATION" 
+                     value="VariantPostBuild">
+                <a:a name="IMPORTER_INFO" value="@DEF"/>
+              </d:var>
+              <d:ctr name="PwmChannelConfigSet" type="IDENTIFIABLE">
+                <d:lst name="PwmChannel" type="MAP">
+                  <d:ctr name="PwmChannel_0" type="IDENTIFIABLE">
+                    <d:var name="PwmChannelId" type="INTEGER" value="0">
+                      <a:a name="IMPORTER_INFO">
+                        <a:v>@DEF</a:v>
+                        <a:v>@CALC</a:v>
+                      </a:a>
+                    </d:var>
+                    <d:lst name="PwmChannelEcucPartitionRef"/>
+                    <d:ref name="PwmHwChannel" type="REFERENCE" 
+                           value="ASPath:/Pwm/Pwm/PwmChannelConfigSet/PwmFtm_0/PwmFtmCh_0"/>
+                    <d:var name="PwmChannelClass" type="ENUMERATION" 
+                           value="PWM_VARIABLE_PERIOD">
+                      <a:a name="ENABLE" value="true"/>
+                    </d:var>
+                    <d:var name="PwmPeriodInTicks" type="BOOLEAN" value="true">
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="PwmPeriodDefault" type="FLOAT" value="37500.0"/>
+                    <d:var name="PwmDutycycleDefault" type="INTEGER" 
+                           value="16384"/>
+                    <d:var name="PwmPolarity" type="ENUMERATION" 
+                           value="PWM_HIGH">
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="PwmIdleState" type="ENUMERATION" 
+                           value="PWM_LOW">
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="PwmNotification" type="FUNCTION-NAME" 
+                           value="NULL_PTR">
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:ref name="PwmMcuClockReferencePoint" type="REFERENCE" 
+                           value="ASPath:/Mcu/Mcu/McuModuleConfiguration/McuClockSettingConfig_0/McuClockReferencePoint_0"/>
+                  </d:ctr>
+                </d:lst>
+                <d:lst name="PwmFtm" type="MAP">
+                  <d:ctr name="PwmFtm_0" type="IDENTIFIABLE">
+                    <d:var name="PwmHwInstance" type="ENUMERATION" value="Ftm_0">
+                      <a:a name="IMPORTER_INFO">
+                        <a:v>@DEF</a:v>
+                        <a:v>@CALC</a:v>
+                      </a:a>
+                    </d:var>
+                    <d:ctr name="PwmFtmClkCfg" type="IDENTIFIABLE">
+                      <d:var name="PwmFtmClockSource" type="ENUMERATION" 
+                             value="System_clock">
+                        <a:a name="IMPORTER_INFO">
+                          <a:v>@DEF</a:v>
+                          <a:v>@CALC</a:v>
+                        </a:a>
+                      </d:var>
+                      <d:var name="PwmFtmClockPrescaler" type="ENUMERATION" 
+                             value="Divide_by_128"/>
+                      <d:var name="PwmFtmClockPrescalerAlternate" 
+                             type="ENUMERATION" value="Divide_by_1">
+                        <a:a name="IMPORTER_INFO">
+                          <a:v>@DEF</a:v>
+                          <a:v>@CALC</a:v>
+                        </a:a>
+                      </d:var>
+                    </d:ctr>
+                    <d:ctr name="PwmFtmGlobalChCfg" type="IDENTIFIABLE">
+                      <d:var name="PwmFtmCounterMode" type="ENUMERATION" 
+                             value="Edge_Aligned_mode">
+                        <a:a name="IMPORTER_INFO">
+                          <a:v>@DEF</a:v>
+                          <a:v>@CALC</a:v>
+                        </a:a>
+                      </d:var>
+                      <d:var name="PwmFtmPeriod" type="INTEGER" value="1">
+                        <a:a name="IMPORTER_INFO">
+                          <a:v>@DEF</a:v>
+                          <a:v>@CALC</a:v>
+                        </a:a>
+                      </d:var>
+                      <d:var name="PwmFtmPeriodDither" type="INTEGER" value="0">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="PwmFtmDeadTime" type="INTEGER" value="0">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="PwmFtmDeadTimePrescaler" type="ENUMERATION" 
+                             value="Divide_by_1">
+                        <a:a name="IMPORTER_INFO">
+                          <a:v>@DEF</a:v>
+                          <a:v>@CALC</a:v>
+                        </a:a>
+                      </d:var>
+                    </d:ctr>
+                    <d:ctr name="PwmFtmInstCfg" type="IDENTIFIABLE">
+                      <d:var name="PwmFtmDebugMode" type="ENUMERATION" 
+                             value="Debug_Mode_00">
+                        <a:a name="IMPORTER_INFO">
+                          <a:v>@DEF</a:v>
+                          <a:v>@CALC</a:v>
+                        </a:a>
+                      </d:var>
+                      <d:var name="PwmFtmWriteProtection" type="BOOLEAN" 
+                             value="false">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="PwmFtmInitTrigger" type="BOOLEAN" 
+                             value="false">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="PwmFtmInitTriggerMode" type="ENUMERATION" 
+                             value="Trigger_on_Reload_Point">
+                        <a:a name="IMPORTER_INFO">
+                          <a:v>@DEF</a:v>
+                          <a:v>@CALC</a:v>
+                        </a:a>
+                      </d:var>
+                      <d:var name="PwmFtmOverflowIrq" type="BOOLEAN" 
+                             value="false">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:ctr name="PwmFtmOverflowIrqCallback" 
+                             type="IDENTIFIABLE">
+                        <d:var name="PwmFtmOverflowIrqFunctionCallback" 
+                               type="FUNCTION-NAME" value="NULL_PTR">
+                          <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        </d:var>
+                        <d:var name="PwmFtmOverflowIrqParameterCallback" 
+                               type="FUNCTION-NAME" value="NULL_PTR">
+                          <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        </d:var>
+                      </d:ctr>
+                      <d:var name="PwmFtmReloadIrq" type="BOOLEAN" value="false">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:ctr name="PwmFtmReloadIrqCallback" type="IDENTIFIABLE">
+                        <d:var name="PwmFtmReloadIrqFunctionCallback" 
+                               type="FUNCTION-NAME" value="NULL_PTR">
+                          <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        </d:var>
+                        <d:var name="PwmFtmReloadIrqParameterCallback" 
+                               type="FUNCTION-NAME" value="NULL_PTR">
+                          <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        </d:var>
+                      </d:ctr>
+                    </d:ctr>
+                    <d:ctr name="PwmFtmSyncCfg" type="IDENTIFIABLE">
+                      <d:var name="PwmFtmSyncMode" type="ENUMERATION" 
+                             value="Software_sync_trigger">
+                        <a:a name="IMPORTER_INFO">
+                          <a:v>@DEF</a:v>
+                          <a:v>@CALC</a:v>
+                        </a:a>
+                      </d:var>
+                      <d:var name="PwmFtmHwTrig0" type="BOOLEAN" value="false">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="PwmFtmHwTrig1" type="BOOLEAN" value="false">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="PwmFtmHwTrig2" type="BOOLEAN" value="false">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="PwmFtmAutoHwTrig" type="BOOLEAN" 
+                             value="false">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="PwmFtmMaxLoadPoint" type="BOOLEAN" 
+                             value="false">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="PwmFtmMinLoadPoint" type="BOOLEAN" 
+                             value="false">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="PwmFtmHalfCycleLoadPoint" type="BOOLEAN" 
+                             value="false">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="PwmFtmHalfCycleLoadPointValue" 
+                             type="INTEGER" value="0">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="PwmFtmReloadPointFrequency" type="INTEGER" 
+                             value="0">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="PwmFtmInvertControl" type="ENUMERATION" 
+                             value="Sync_disabled">
+                        <a:a name="IMPORTER_INFO">
+                          <a:v>@DEF</a:v>
+                          <a:v>@CALC</a:v>
+                        </a:a>
+                      </d:var>
+                      <d:var name="PwmFtmSwOutControl" type="ENUMERATION" 
+                             value="Sync_disabled">
+                        <a:a name="IMPORTER_INFO">
+                          <a:v>@DEF</a:v>
+                          <a:v>@CALC</a:v>
+                        </a:a>
+                      </d:var>
+                      <d:var name="PwmFtmOutputMask" type="ENUMERATION" 
+                             value="Sync_disabled">
+                        <a:a name="IMPORTER_INFO">
+                          <a:v>@DEF</a:v>
+                          <a:v>@CALC</a:v>
+                        </a:a>
+                      </d:var>
+                      <d:var name="PwmFtmCounterInitial" type="ENUMERATION" 
+                             value="Sync_on_FTM_Sync_Trigger">
+                        <a:a name="IMPORTER_INFO">
+                          <a:v>@DEF</a:v>
+                          <a:v>@CALC</a:v>
+                        </a:a>
+                      </d:var>
+                      <d:var name="PwmFtmCounterSync" type="ENUMERATION" 
+                             value="Sync_on_FTM_Sync_Trigger">
+                        <a:a name="IMPORTER_INFO">
+                          <a:v>@DEF</a:v>
+                          <a:v>@CALC</a:v>
+                        </a:a>
+                      </d:var>
+                    </d:ctr>
+                    <d:ctr name="FtmGlobalFaultCfg" type="IDENTIFIABLE">
+                      <d:var name="FtmFaultFunctionality" type="ENUMERATION" 
+                             value="FAULT_DISABLED">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="FtmFaultFilterValue" type="INTEGER" value="0">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="FtmFaultOutputState" type="ENUMERATION" 
+                             value="SAFE_VALUE">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="FtmFaultIrqUsed" type="BOOLEAN" value="false">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:lst name="FtmFaultSettings" type="MAP"/>
+                    </d:ctr>
+                    <d:lst name="PwmFtmCh" type="MAP">
+                      <d:ctr name="PwmFtmCh_0" type="IDENTIFIABLE">
+                        <d:var name="PwmFtmChId" type="ENUMERATION" value="CH_0"/>
+                        <d:var name="PwmFtmChPulseType" type="ENUMERATION" 
+                               value="High_true_pulse">
+                          <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        </d:var>
+                        <d:var name="PwmFtmChInitOutput" type="ENUMERATION" 
+                               value="LOW">
+                          <a:a name="IMPORTER_INFO">
+                            <a:v>@DEF</a:v>
+                            <a:v>@CALC</a:v>
+                          </a:a>
+                        </d:var>
+                        <d:var name="PwmFtmChPolarity" type="ENUMERATION" 
+                               value="Channel_active_HIGH">
+                          <a:a name="IMPORTER_INFO">
+                            <a:v>@DEF</a:v>
+                            <a:v>@CALC</a:v>
+                          </a:a>
+                        </d:var>
+                        <d:var name="PwmFtmChDutyCycle" type="INTEGER" value="0">
+                          <a:a name="IMPORTER_INFO">
+                            <a:v>@DEF</a:v>
+                            <a:v>@CALC</a:v>
+                          </a:a>
+                        </d:var>
+                        <d:var name="PwmFtmChDutyCycleDither" type="INTEGER" 
+                               value="0">
+                          <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        </d:var>
+                        <d:var name="PwmFtmChInterrupt" type="BOOLEAN" 
+                               value="false">
+                          <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        </d:var>
+                        <d:ctr name="PwmFtmChInterruptCallback" 
+                               type="IDENTIFIABLE">
+                          <d:var name="PwmFtmChInterruptFunctionCallback" 
+                                 type="FUNCTION-NAME" value="NULL_PTR">
+                            <a:a name="IMPORTER_INFO" value="@DEF"/>
+                          </d:var>
+                          <d:var name="PwmFtmChInterruptParameterCallback" 
+                                 type="FUNCTION-NAME" value="NULL_PTR">
+                            <a:a name="IMPORTER_INFO" value="@DEF"/>
+                          </d:var>
+                        </d:ctr>
+                        <d:var name="PwmFtmChPwmOutputEnable" type="BOOLEAN" 
+                               value="true">
+                          <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        </d:var>
+                        <d:var name="PwmFtmChSwCtrlEnable" type="BOOLEAN" 
+                               value="false">
+                          <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        </d:var>
+                        <d:var name="PwmFtmChExternTriggerEnable" 
+                               type="BOOLEAN" value="false">
+                          <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        </d:var>
+                        <d:var name="PwmFtmChSwCtrlValue" type="BOOLEAN" 
+                               value="false">
+                          <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        </d:var>
+                        <d:var name="PwmFtmChMatchLoadPointEnable" 
+                               type="BOOLEAN" value="false">
+                          <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        </d:var>
+                        <d:var name="PwmFtmPairChEnable" type="BOOLEAN" 
+                               value="true"/>
+                        <d:ctr name="PwmFtmPairedCh" type="IDENTIFIABLE">
+                          <d:var name="PwmFtmPairedChDeadtimeEnable" 
+                                 type="BOOLEAN" value="true"/>
+                          <d:var name="PwmFtmPairedChSync" type="BOOLEAN" 
+                                 value="true">
+                            <a:a name="IMPORTER_INFO" value="@DEF"/>
+                          </d:var>
+                          <d:var name="PwmFtmPairedChExtTrig" type="BOOLEAN" 
+                                 value="false">
+                            <a:a name="IMPORTER_INFO" value="@DEF"/>
+                          </d:var>
+                          <d:var name="PwmFtmPairedChComplementary" 
+                                 type="BOOLEAN" value="true"/>
+                          <d:var name="PwmFtmDutyDitheringPaired" 
+                                 type="BOOLEAN" value="false">
+                            <a:a name="IMPORTER_INFO" value="@DEF"/>
+                          </d:var>
+                          <d:var name="PwmFtmPairedChCombineMode" 
+                                 type="ENUMERATION" 
+                                 value="Combine_modes_disabled">
+                            <a:a name="IMPORTER_INFO">
+                              <a:v>@DEF</a:v>
+                              <a:v>@CALC</a:v>
+                            </a:a>
+                          </d:var>
+                          <d:var name="PwmFtmPairedChComplementaryMode" 
+                                 type="ENUMERATION" value="Invert_Output">
+                            <a:a name="IMPORTER_INFO">
+                              <a:v>@DEF</a:v>
+                              <a:v>@CALC</a:v>
+                            </a:a>
+                          </d:var>
+                          <d:var name="PwmFtmPairedChPhaseShift" type="INTEGER" 
+                                 value="375"/>
+                        </d:ctr>
+                      </d:ctr>
+                    </d:lst>
+                  </d:ctr>
+                </d:lst>
+                <d:lst name="PwmFlexio" type="MAP"/>
+              </d:ctr>
+              <d:ctr name="PwmGeneral" type="IDENTIFIABLE">
+                <d:var name="PwmMulticoreEnabled" type="BOOLEAN" value="false">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="PwmDevErrorDetect" type="BOOLEAN" value="false"/>
+                <d:var name="PwmDutycycleUpdatedEndperiod" type="BOOLEAN" 
+                       value="false">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="PwmPeriodUpdatedEndperiod" type="BOOLEAN" 
+                       value="true">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="PwmNotificationSupported" type="BOOLEAN" 
+                       value="false">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="PwmEnableUserModeSupport" type="BOOLEAN" 
+                       value="false">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="PwmLowPowerStatesSupport" type="BOOLEAN" 
+                       value="false">
+                  <a:a name="ENABLE" value="false"/>
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="PwmPowerStateAsynchTransitionMode" type="BOOLEAN" 
+                       value="false">
+                  <a:a name="ENABLE" value="false"/>
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="PwmEnableDualClockMode" type="BOOLEAN" 
+                       value="false">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="PwmEnableExternalTrigger" type="BOOLEAN" 
+                       value="false">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="PwmEnablePhaseShift" type="BOOLEAN" value="true"/>
+                <d:var name="PwmEnableMaskOutputs" type="BOOLEAN" value="false">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="PwmFaultSupported" type="BOOLEAN" value="false">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="PwmReloadNotificationSupported" type="BOOLEAN" 
+                       value="false">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="PwmMultiChannelSync" type="BOOLEAN" value="false">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="PwmIndex" type="INTEGER" value="0">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:lst name="PwmEcucPartitionRef"/>
+                <d:ref name="PwmKernelEcucPartitionRef" type="REFERENCE" >
+                  <a:a name="ENABLE" value="false"/>
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:ref>
+                <d:lst name="PwmPowerStateConfig" type="MAP"/>
+              </d:ctr>
+              <d:ctr name="PwmConfigurationOfOptApiServices" 
+                     type="IDENTIFIABLE">
+                <d:var name="PwmDeInitApi" type="BOOLEAN" value="true">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="PwmGetOutputState" type="BOOLEAN" value="false">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="PwmSetDutyCycle" type="BOOLEAN" value="true"/>
+                <d:var name="PwmSetOutputToIdle" type="BOOLEAN" value="false">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="PwmSetPeriodAndDuty" type="BOOLEAN" value="true"/>
+                <d:var name="PwmVersionInfoApi" type="BOOLEAN" value="false">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="PwmGetChannelStateApi" type="BOOLEAN" value="false">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="PwmSetDutyCycle_NoUpdate" type="BOOLEAN" 
+                       value="false">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="PwmSetPeriodAndDuty_NoUpdate" type="BOOLEAN" 
+                       value="false">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="PwmSetDutyPhaseShift" type="BOOLEAN" value="false">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="PwmSetChannelDeadTime" type="BOOLEAN" value="false">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="PwmForceOutputToZeroApi" type="BOOLEAN" 
+                       value="false">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="PwmEnableTrigger" type="BOOLEAN" value="false">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="PwmDisableTrigger" type="BOOLEAN" value="false">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="PwmResetCounter" type="BOOLEAN" value="false">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+              </d:ctr>
+              <d:ctr name="CommonPublishedInformation" type="IDENTIFIABLE">
+                <d:var name="ArReleaseMajorVersion" type="INTEGER" value="4">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="ArReleaseMinorVersion" type="INTEGER" value="7">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="ArReleaseRevisionVersion" type="INTEGER" value="0">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="ModuleId" type="INTEGER" value="121">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="SwMajorVersion" type="INTEGER" value="2">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="SwMinorVersion" type="INTEGER" value="0">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="SwPatchVersion" type="INTEGER" value="0">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="VendorApiInfix" type="STRING" value="">
+                  <a:a name="ENABLE" value="false"/>
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="VendorId" type="INTEGER" value="43">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+              </d:ctr>
+            </d:ctr>
+          </d:chc>
+        </d:lst>
+      </d:ctr>
+    </d:lst>
+  </d:ctr>
+
+</datamodel>

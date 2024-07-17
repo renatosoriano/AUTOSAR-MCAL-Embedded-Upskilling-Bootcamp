@@ -1,0 +1,173 @@
+Power_Ip_RCM_GetResetRawValue ()
+{
+  uint32 RegValue;
+  uint32 RawReset;
+  Power_Ip_RawResetType D.5538;
+  struct RCM_Type * _1;
+  long unsigned int _2;
+  struct RCM_Type * _3;
+  long unsigned int _4;
+  Power_Ip_RawResetType _11;
+
+  <bb 2> :
+  _1 = 1074262016B;
+  _2 ={v} _1->SSRS;
+  RegValue_7 = _2 & 12270;
+  if (RegValue_7 != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  _3 = 1074262016B;
+  _4 = RegValue_7 & 12270;
+  _3->SSRS ={v} _4;
+  Power_Ip_u32ResetStatus = RegValue_7;
+
+  <bb 4> :
+  RawReset_10 = Power_Ip_u32ResetStatus;
+  _11 = RawReset_10;
+
+  <bb 5> :
+<L2>:
+  return _11;
+
+}
+
+
+Power_Ip_RCM_GetResetReason ()
+{
+  uint32 NumberOfFlags;
+  uint32 Position;
+  uint32 DynamicMask;
+  uint32 Index;
+  uint32 ActiveValue;
+  uint32 RegValue;
+  uint32 ResetReason;
+  uint32 D.5534;
+  struct RCM_Type * _1;
+  long unsigned int _2;
+  struct RCM_Type * _3;
+  long unsigned int _4;
+  long unsigned int _5;
+  long unsigned int _6;
+  long unsigned int _7;
+  uint32 _36;
+
+  <bb 2> :
+  ResetReason_19 = 12;
+  RegValue_20 = 0;
+  Position_21 = 0;
+  NumberOfFlags_22 = 0;
+  _1 = 1074262016B;
+  _2 ={v} _1->SSRS;
+  RegValue_24 = _2 & 12270;
+  if (RegValue_24 != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  _3 = 1074262016B;
+  _4 = RegValue_24 & 12270;
+  _3->SSRS ={v} _4;
+  Power_Ip_u32ResetStatus = RegValue_24;
+
+  <bb 4> :
+  ActiveValue_27 = Power_Ip_u32ResetStatus;
+  _5 = ActiveValue_27 & 12270;
+  if (_5 == 130)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  ResetReason_35 = 5;
+  goto <bb 14>; [INV]
+
+  <bb 6> :
+  Index_28 = 0;
+  goto <bb 13>; [INV]
+
+  <bb 7> :
+  DynamicMask_29 = 2147483648 >> Index_12;
+  _6 = DynamicMask_29 & 12286;
+  if (_6 != 0)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 8> :
+  _7 = DynamicMask_29 & ActiveValue_27;
+  if (_7 != 0)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 9> :
+  ResetReason_30 = Position_14;
+  NumberOfFlags_31 = NumberOfFlags_17 + 1;
+  if (NumberOfFlags_31 > 1)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 10> :
+  ResetReason_32 = 13;
+  goto <bb 14>; [INV]
+
+  <bb 11> :
+  # ResetReason_8 = PHI <ResetReason_10(8), ResetReason_30(9)>
+  # NumberOfFlags_15 = PHI <NumberOfFlags_17(8), NumberOfFlags_31(9)>
+  Position_33 = Position_14 + 1;
+
+  <bb 12> :
+  # ResetReason_9 = PHI <ResetReason_10(7), ResetReason_8(11)>
+  # Position_13 = PHI <Position_14(7), Position_33(11)>
+  # NumberOfFlags_16 = PHI <NumberOfFlags_17(7), NumberOfFlags_15(11)>
+  Index_34 = Index_12 + 1;
+
+  <bb 13> :
+  # ResetReason_10 = PHI <ResetReason_19(6), ResetReason_9(12)>
+  # Index_12 = PHI <Index_28(6), Index_34(12)>
+  # Position_14 = PHI <Position_21(6), Position_13(12)>
+  # NumberOfFlags_17 = PHI <NumberOfFlags_22(6), NumberOfFlags_16(12)>
+  if (Index_12 <= 31)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 14>; [INV]
+
+  <bb 14> :
+  # ResetReason_11 = PHI <ResetReason_35(5), ResetReason_32(10), ResetReason_10(13)>
+  _36 = ResetReason_11;
+
+  <bb 15> :
+<L14>:
+  return _36;
+
+}
+
+
+Power_Ip_RCM_ResetInit (const struct Power_Ip_RCM_ConfigType * ConfigPtr)
+{
+  long unsigned int _1;
+  struct RCM_Type * _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  struct RCM_Type * _5;
+  long unsigned int _6;
+
+  <bb 2> :
+  _1 = ConfigPtr_8(D)->ResetPinControlConfig;
+  _2 = 1074262016B;
+  _3 = _1 & 7943;
+  _2->RPC ={v} _3;
+  _4 = ConfigPtr_8(D)->ResetInterruptEnableConfig;
+  _5 = 1074262016B;
+  _6 = _4 & 12287;
+  _5->SRIE ={v} _6;
+  return;
+
+}
+
+

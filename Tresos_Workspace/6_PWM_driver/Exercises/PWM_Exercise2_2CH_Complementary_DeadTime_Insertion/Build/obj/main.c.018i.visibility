@@ -1,0 +1,138 @@
+
+Marking local functions:
+
+
+Marking externally visible functions: EcuM_Init/2 main/1
+
+
+Marking externally visible variables:
+
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+Symbol table:
+
+Pwm_Config/11 (Pwm_Config) @0da2ae58
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: EcuM_Init/2 (addr) 
+  Availability: not_available
+  Varpool flags: read-only
+Pwm_Init/10 (Pwm_Init) @0da2be00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: EcuM_Init/2 
+  Calls: 
+Port_Config/9 (Port_Config) @0da2adc8
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: EcuM_Init/2 (addr) 
+  Availability: not_available
+  Varpool flags: read-only
+Port_Init/8 (Port_Init) @0da2bd20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: EcuM_Init/2 
+  Calls: 
+OsIf_Init/7 (OsIf_Init) @0da2bc40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: EcuM_Init/2 
+  Calls: 
+Mcu_SetMode/6 (Mcu_SetMode) @0da2bb60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: EcuM_Init/2 
+  Calls: 
+Mcu_InitClock/5 (Mcu_InitClock) @0da2ba80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: EcuM_Init/2 
+  Calls: 
+Mcu_Config/4 (Mcu_Config) @0da2ac60
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: EcuM_Init/2 (addr) 
+  Availability: not_available
+  Varpool flags: read-only
+Mcu_Init/3 (Mcu_Init) @0da2b9a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: EcuM_Init/2 
+  Calls: 
+EcuM_Init/2 (EcuM_Init) @0da2b460
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Mcu_Config/4 (addr) Port_Config/9 (addr) Pwm_Config/11 (addr) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: main/1 
+  Calls: Pwm_Init/10 Port_Init/8 OsIf_Init/7 Mcu_SetMode/6 Mcu_InitClock/5 Mcu_Init/3 
+main/1 (main) @0da2b1c0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: EcuM_Init/2 
+EcuM_Init ()
+{
+  <bb 2> :
+  Mcu_Init (&Mcu_Config);
+  Mcu_InitClock (0);
+  Mcu_SetMode (0);
+  OsIf_Init (0B);
+  Port_Init (&Port_Config);
+  Pwm_Init (&Pwm_Config);
+  return;
+
+}
+
+
+main ()
+{
+  int D.6497;
+
+  <bb 2> :
+  EcuM_Init ();
+
+  <bb 3> :
+  goto <bb 3>; [INV]
+
+}
+
+
