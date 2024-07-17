@@ -1,0 +1,199 @@
+read_data (uint16 addr, uint8 * data, uint8 size)
+{
+  uint8 i;
+  uint8 Cmd;
+
+  <bb 2> :
+  Cmd = 3;
+  Spi_SetupEB (1, &Cmd, 0B, 1);
+  Spi_SetupEB (2, &addr, 0B, 1);
+  _1 = (short unsigned int) size;
+  Spi_SetupEB (3, 0B, data, _1);
+  Spi_SyncTransmit (1);
+  i = 0;
+  goto <bb 4>; [INV]
+
+  <bb 3> :
+  _2 = (int) i;
+  _3 = (sizetype) i;
+  _4 = data + _3;
+  _5 = *_4;
+  _6 = (int) _5;
+  SEGGER_RTT_printf (0, "[Debug] Data read from eeprom 1 - RxBuffer[%d]: 0x%x\n", _2, _6);
+  i.1_7 = i;
+  i = i.1_7 + 1;
+
+  <bb 4> :
+  if (i < size)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 5> :
+  Cmd = {CLOBBER};
+  return;
+
+}
+
+
+write_data (uint16 addr, uint8 * data, uint8 size)
+{
+  uint8 Cmd;
+  uint8 Wren;
+
+  <bb 2> :
+  Wren = 6;
+  Spi_SetupEB (0, &Wren, 0B, 1);
+  Cmd = 2;
+  Spi_SetupEB (1, &Cmd, 0B, 1);
+  Spi_SetupEB (2, &addr, 0B, 1);
+  _1 = (short unsigned int) size;
+  Spi_SetupEB (3, data, 0B, _1);
+  Spi_SyncTransmit (0);
+  Wren = {CLOBBER};
+  Cmd = {CLOBBER};
+  return;
+
+}
+
+
+read_byte (uint16 addr)
+{
+  Spi_DataBufferType buffer[1];
+  uint8 Cmd;
+  uint8 D.7670;
+
+  <bb 2> :
+  Cmd = 3;
+  Spi_SetupEB (1, &Cmd, 0B, 1);
+  Spi_SetupEB (2, &addr, 0B, 1);
+  Spi_SetupEB (3, 0B, &buffer, 1);
+  Spi_SyncTransmit (1);
+  _1 = buffer[0];
+  _2 = (int) _1;
+  SEGGER_RTT_printf (0, "[Debug] Data read from eeprom 1 - RxBuffer[0]: 0x%x\n", _2);
+  D.7670 = buffer[0];
+  Cmd = {CLOBBER};
+  buffer = {CLOBBER};
+
+  <bb 3> :
+<L1>:
+  return D.7670;
+
+}
+
+
+write_byte (uint16 addr, uint8 * data)
+{
+  uint8 Cmd;
+  uint8 Wren;
+
+  <bb 2> :
+  Wren = 6;
+  Spi_SetupEB (0, &Wren, 0B, 1);
+  Cmd = 2;
+  Spi_SetupEB (1, &Cmd, 0B, 1);
+  Spi_SetupEB (2, &addr, 0B, 1);
+  Spi_SetupEB (3, data, 0B, 1);
+  Spi_SyncTransmit (0);
+  Wren = {CLOBBER};
+  Cmd = {CLOBBER};
+  return;
+
+}
+
+
+EcuM_Init ()
+{
+  <bb 2> :
+  Mcu_Init (&Mcu_Config);
+  Mcu_InitClock (0);
+  Mcu_SetMode (0);
+  OsIf_Init (0B);
+  Platform_Init (0B);
+  Port_Init (&Port_Config);
+  Spi_Init (&Spi_Config);
+  return;
+
+}
+
+
+main ()
+{
+  uint8 i;
+  uint16 sizeRX;
+  uint16 sizeTX;
+  uint16 Address;
+  Spi_DataBufferType RxBuffer[4];
+  Spi_DataBufferType TxBuffer[4];
+  int D.7667;
+
+  <bb 2> :
+  TxBuffer = "\x00\x01\x02\x03";
+  Address = 9;
+  sizeTX = 4;
+  sizeRX = 4;
+  EcuM_Init ();
+  SEGGER_RTT_Init ();
+  _1 = (unsigned char) sizeTX;
+  write_data (Address, &TxBuffer, _1);
+  Delay (5);
+  _2 = (unsigned char) sizeRX;
+  read_data (Address, &RxBuffer, _2);
+  i = 0;
+  goto <bb 4>; [INV]
+
+  <bb 3> :
+  _3 = (int) i;
+  _4 = RxBuffer[_3];
+  _5 = (int) _4;
+  _6 = (int) Address;
+  _7 = (int) i;
+  _8 = _6 + _7;
+  SEGGER_RTT_printf (0, "Data from eeprom 1: 0x%x, Address: 0x%x\n", _5, _8);
+  i.0_9 = i;
+  i = i.0_9 + 1;
+
+  <bb 4> :
+  _10 = (short unsigned int) i;
+  if (sizeRX > _10)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 5> :
+  Delay (10);
+  goto <bb 5>; [INV]
+
+}
+
+
+Delay (uint32 ms)
+{
+  uint32 ElapsedTime;
+  uint32 SeedTick;
+  uint32 Timeout;
+  long unsigned int D.7666;
+
+  <bb 2> :
+  _1 = ms * 1000;
+  Timeout = OsIf_MicrosToTicks (_1, 1);
+  _2 = OsIf_GetCounter (1);
+  SeedTick = _2;
+  ElapsedTime = 0;
+
+  <bb 3> :
+  D.7666 = OsIf_GetElapsed (&SeedTick, 1);
+  ElapsedTime = D.7666 + ElapsedTime;
+  if (ElapsedTime < Timeout)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 4> :
+  SeedTick = {CLOBBER};
+  return;
+
+}
+
+

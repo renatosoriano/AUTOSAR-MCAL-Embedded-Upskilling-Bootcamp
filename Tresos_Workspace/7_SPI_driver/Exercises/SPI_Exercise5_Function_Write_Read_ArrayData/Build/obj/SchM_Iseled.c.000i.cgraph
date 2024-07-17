@@ -1,0 +1,1087 @@
+Trivially needed symbols: SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_04/20 SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_04/19 SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_03/18 SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_03/17 SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_02/16 SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_02/15 SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_01/14 SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_01/13 SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_00/12 SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_00/11 Iseled_schm_read_msr/10 reentry_guard_ISELED_EXCLUSIVE_AREA_04/9 msr_ISELED_EXCLUSIVE_AREA_04/8 reentry_guard_ISELED_EXCLUSIVE_AREA_03/7 msr_ISELED_EXCLUSIVE_AREA_03/6 reentry_guard_ISELED_EXCLUSIVE_AREA_02/5 msr_ISELED_EXCLUSIVE_AREA_02/4 reentry_guard_ISELED_EXCLUSIVE_AREA_01/3 msr_ISELED_EXCLUSIVE_AREA_01/2 reentry_guard_ISELED_EXCLUSIVE_AREA_00/1 msr_ISELED_EXCLUSIVE_AREA_00/0
+
+
+Initial Symbol table:
+
+Sys_GetCoreID/21 (Sys_GetCoreID) @0d9b81c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_04/20 SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_04/19 SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_03/18 SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_03/17 SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_02/16 SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_02/15 SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_01/14 SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_01/13 SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_00/12 SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_00/11 
+  Calls: 
+SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_04/20 (SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_04) @0d9fe380
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @01981040
+  References: reentry_guard_ISELED_EXCLUSIVE_AREA_04/9 (read) reentry_guard_ISELED_EXCLUSIVE_AREA_04/9 (write) msr_ISELED_EXCLUSIVE_AREA_04/8 (read) reentry_guard_ISELED_EXCLUSIVE_AREA_04/9 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Sys_GetCoreID/21 
+SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_04/19 (SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_04) @0d9feee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0d9fe380
+  References: reentry_guard_ISELED_EXCLUSIVE_AREA_04/9 (read) msr_ISELED_EXCLUSIVE_AREA_04/8 (write) reentry_guard_ISELED_EXCLUSIVE_AREA_04/9 (read) reentry_guard_ISELED_EXCLUSIVE_AREA_04/9 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Iseled_schm_read_msr/10 Sys_GetCoreID/21 
+SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_03/18 (SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_03) @0d9feb60
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0d9feee0
+  References: reentry_guard_ISELED_EXCLUSIVE_AREA_03/7 (read) reentry_guard_ISELED_EXCLUSIVE_AREA_03/7 (write) msr_ISELED_EXCLUSIVE_AREA_03/6 (read) reentry_guard_ISELED_EXCLUSIVE_AREA_03/7 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Sys_GetCoreID/21 
+SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_03/17 (SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_03) @0d9fe8c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0d9feb60
+  References: reentry_guard_ISELED_EXCLUSIVE_AREA_03/7 (read) msr_ISELED_EXCLUSIVE_AREA_03/6 (write) reentry_guard_ISELED_EXCLUSIVE_AREA_03/7 (read) reentry_guard_ISELED_EXCLUSIVE_AREA_03/7 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Iseled_schm_read_msr/10 Sys_GetCoreID/21 
+SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_02/16 (SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_02) @0d9fe540
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0d9fe8c0
+  References: reentry_guard_ISELED_EXCLUSIVE_AREA_02/5 (read) reentry_guard_ISELED_EXCLUSIVE_AREA_02/5 (write) msr_ISELED_EXCLUSIVE_AREA_02/4 (read) reentry_guard_ISELED_EXCLUSIVE_AREA_02/5 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Sys_GetCoreID/21 
+SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_02/15 (SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_02) @0d9fe2a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0d9fe540
+  References: reentry_guard_ISELED_EXCLUSIVE_AREA_02/5 (read) msr_ISELED_EXCLUSIVE_AREA_02/4 (write) reentry_guard_ISELED_EXCLUSIVE_AREA_02/5 (read) reentry_guard_ISELED_EXCLUSIVE_AREA_02/5 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Iseled_schm_read_msr/10 Sys_GetCoreID/21 
+SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_01/14 (SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_01) @0d9f8e00
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0d9fe2a0
+  References: reentry_guard_ISELED_EXCLUSIVE_AREA_01/3 (read) reentry_guard_ISELED_EXCLUSIVE_AREA_01/3 (write) msr_ISELED_EXCLUSIVE_AREA_01/2 (read) reentry_guard_ISELED_EXCLUSIVE_AREA_01/3 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Sys_GetCoreID/21 
+SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_01/13 (SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_01) @0d9f87e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0d9f8e00
+  References: reentry_guard_ISELED_EXCLUSIVE_AREA_01/3 (read) msr_ISELED_EXCLUSIVE_AREA_01/2 (write) reentry_guard_ISELED_EXCLUSIVE_AREA_01/3 (read) reentry_guard_ISELED_EXCLUSIVE_AREA_01/3 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Iseled_schm_read_msr/10 Sys_GetCoreID/21 
+SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_00/12 (SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_00) @0d9f8d20
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0d9f87e0
+  References: reentry_guard_ISELED_EXCLUSIVE_AREA_00/1 (read) reentry_guard_ISELED_EXCLUSIVE_AREA_00/1 (write) msr_ISELED_EXCLUSIVE_AREA_00/0 (read) reentry_guard_ISELED_EXCLUSIVE_AREA_00/1 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Sys_GetCoreID/21 
+SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_00/11 (SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_00) @0d9f8a80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0d9f8d20
+  References: reentry_guard_ISELED_EXCLUSIVE_AREA_00/1 (read) msr_ISELED_EXCLUSIVE_AREA_00/0 (write) reentry_guard_ISELED_EXCLUSIVE_AREA_00/1 (read) reentry_guard_ISELED_EXCLUSIVE_AREA_00/1 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Iseled_schm_read_msr/10 Sys_GetCoreID/21 
+Iseled_schm_read_msr/10 (Iseled_schm_read_msr) @0d9f8700
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0d9f8a80
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_04/19 SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_03/17 SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_02/15 SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_01/13 SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_00/11 
+  Calls: 
+reentry_guard_ISELED_EXCLUSIVE_AREA_04/9 (reentry_guard_ISELED_EXCLUSIVE_AREA_04) @0d9f7828
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @0d9f8700
+  References: 
+  Referring: SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_04/19 (read) SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_04/19 (read) SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_04/19 (write) SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_04/20 (read) SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_04/20 (write) SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_04/20 (read) 
+  Availability: not-ready
+  Varpool flags:
+msr_ISELED_EXCLUSIVE_AREA_04/8 (msr_ISELED_EXCLUSIVE_AREA_04) @0d9f7798
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @0d9f7828
+  References: 
+  Referring: SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_04/19 (write) SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_04/20 (read) 
+  Availability: not-ready
+  Varpool flags:
+reentry_guard_ISELED_EXCLUSIVE_AREA_03/7 (reentry_guard_ISELED_EXCLUSIVE_AREA_03) @0d9f7708
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @0d9f7798
+  References: 
+  Referring: SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_03/17 (read) SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_03/17 (read) SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_03/17 (write) SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_03/18 (read) SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_03/18 (write) SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_03/18 (read) 
+  Availability: not-ready
+  Varpool flags:
+msr_ISELED_EXCLUSIVE_AREA_03/6 (msr_ISELED_EXCLUSIVE_AREA_03) @0d9f7678
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @0d9f7708
+  References: 
+  Referring: SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_03/17 (write) SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_03/18 (read) 
+  Availability: not-ready
+  Varpool flags:
+reentry_guard_ISELED_EXCLUSIVE_AREA_02/5 (reentry_guard_ISELED_EXCLUSIVE_AREA_02) @0d9f75e8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @0d9f7678
+  References: 
+  Referring: SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_02/15 (read) SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_02/15 (read) SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_02/15 (write) SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_02/16 (read) SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_02/16 (write) SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_02/16 (read) 
+  Availability: not-ready
+  Varpool flags:
+msr_ISELED_EXCLUSIVE_AREA_02/4 (msr_ISELED_EXCLUSIVE_AREA_02) @0d9f7558
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @0d9f75e8
+  References: 
+  Referring: SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_02/15 (write) SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_02/16 (read) 
+  Availability: not-ready
+  Varpool flags:
+reentry_guard_ISELED_EXCLUSIVE_AREA_01/3 (reentry_guard_ISELED_EXCLUSIVE_AREA_01) @0d9f74c8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @0d9f7558
+  References: 
+  Referring: SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_01/13 (read) SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_01/13 (read) SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_01/13 (write) SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_01/14 (read) SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_01/14 (write) SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_01/14 (read) 
+  Availability: not-ready
+  Varpool flags:
+msr_ISELED_EXCLUSIVE_AREA_01/2 (msr_ISELED_EXCLUSIVE_AREA_01) @0d9f7438
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @0d9f74c8
+  References: 
+  Referring: SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_01/13 (write) SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_01/14 (read) 
+  Availability: not-ready
+  Varpool flags:
+reentry_guard_ISELED_EXCLUSIVE_AREA_00/1 (reentry_guard_ISELED_EXCLUSIVE_AREA_00) @0d9f73a8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @0d9f7438
+  References: 
+  Referring: SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_00/11 (read) SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_00/11 (read) SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_00/11 (write) SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_00/12 (read) SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_00/12 (write) SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_00/12 (read) 
+  Availability: not-ready
+  Varpool flags:
+msr_ISELED_EXCLUSIVE_AREA_00/0 (msr_ISELED_EXCLUSIVE_AREA_00) @0d9f7318
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @0d9f73a8
+  References: 
+  Referring: SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_00/11 (write) SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_00/12 (read) 
+  Availability: not-ready
+  Varpool flags:
+
+Removing unused symbols:
+
+Reclaimed Symbol table:
+
+Sys_GetCoreID/21 (Sys_GetCoreID) @0d9b81c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_04/20 SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_04/19 SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_03/18 SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_03/17 SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_02/16 SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_02/15 SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_01/14 SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_01/13 SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_00/12 SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_00/11 
+  Calls: 
+SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_04/20 (SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_04) @0d9fe380
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: reentry_guard_ISELED_EXCLUSIVE_AREA_04/9 (read) reentry_guard_ISELED_EXCLUSIVE_AREA_04/9 (write) msr_ISELED_EXCLUSIVE_AREA_04/8 (read) reentry_guard_ISELED_EXCLUSIVE_AREA_04/9 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Sys_GetCoreID/21 
+SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_04/19 (SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_04) @0d9feee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: reentry_guard_ISELED_EXCLUSIVE_AREA_04/9 (read) msr_ISELED_EXCLUSIVE_AREA_04/8 (write) reentry_guard_ISELED_EXCLUSIVE_AREA_04/9 (read) reentry_guard_ISELED_EXCLUSIVE_AREA_04/9 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Iseled_schm_read_msr/10 Sys_GetCoreID/21 
+SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_03/18 (SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_03) @0d9feb60
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: reentry_guard_ISELED_EXCLUSIVE_AREA_03/7 (read) reentry_guard_ISELED_EXCLUSIVE_AREA_03/7 (write) msr_ISELED_EXCLUSIVE_AREA_03/6 (read) reentry_guard_ISELED_EXCLUSIVE_AREA_03/7 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Sys_GetCoreID/21 
+SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_03/17 (SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_03) @0d9fe8c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: reentry_guard_ISELED_EXCLUSIVE_AREA_03/7 (read) msr_ISELED_EXCLUSIVE_AREA_03/6 (write) reentry_guard_ISELED_EXCLUSIVE_AREA_03/7 (read) reentry_guard_ISELED_EXCLUSIVE_AREA_03/7 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Iseled_schm_read_msr/10 Sys_GetCoreID/21 
+SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_02/16 (SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_02) @0d9fe540
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: reentry_guard_ISELED_EXCLUSIVE_AREA_02/5 (read) reentry_guard_ISELED_EXCLUSIVE_AREA_02/5 (write) msr_ISELED_EXCLUSIVE_AREA_02/4 (read) reentry_guard_ISELED_EXCLUSIVE_AREA_02/5 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Sys_GetCoreID/21 
+SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_02/15 (SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_02) @0d9fe2a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: reentry_guard_ISELED_EXCLUSIVE_AREA_02/5 (read) msr_ISELED_EXCLUSIVE_AREA_02/4 (write) reentry_guard_ISELED_EXCLUSIVE_AREA_02/5 (read) reentry_guard_ISELED_EXCLUSIVE_AREA_02/5 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Iseled_schm_read_msr/10 Sys_GetCoreID/21 
+SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_01/14 (SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_01) @0d9f8e00
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: reentry_guard_ISELED_EXCLUSIVE_AREA_01/3 (read) reentry_guard_ISELED_EXCLUSIVE_AREA_01/3 (write) msr_ISELED_EXCLUSIVE_AREA_01/2 (read) reentry_guard_ISELED_EXCLUSIVE_AREA_01/3 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Sys_GetCoreID/21 
+SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_01/13 (SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_01) @0d9f87e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: reentry_guard_ISELED_EXCLUSIVE_AREA_01/3 (read) msr_ISELED_EXCLUSIVE_AREA_01/2 (write) reentry_guard_ISELED_EXCLUSIVE_AREA_01/3 (read) reentry_guard_ISELED_EXCLUSIVE_AREA_01/3 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Iseled_schm_read_msr/10 Sys_GetCoreID/21 
+SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_00/12 (SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_00) @0d9f8d20
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: reentry_guard_ISELED_EXCLUSIVE_AREA_00/1 (read) reentry_guard_ISELED_EXCLUSIVE_AREA_00/1 (write) msr_ISELED_EXCLUSIVE_AREA_00/0 (read) reentry_guard_ISELED_EXCLUSIVE_AREA_00/1 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Sys_GetCoreID/21 
+SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_00/11 (SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_00) @0d9f8a80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: reentry_guard_ISELED_EXCLUSIVE_AREA_00/1 (read) msr_ISELED_EXCLUSIVE_AREA_00/0 (write) reentry_guard_ISELED_EXCLUSIVE_AREA_00/1 (read) reentry_guard_ISELED_EXCLUSIVE_AREA_00/1 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Iseled_schm_read_msr/10 Sys_GetCoreID/21 
+Iseled_schm_read_msr/10 (Iseled_schm_read_msr) @0d9f8700
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_04/19 SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_03/17 SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_02/15 SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_01/13 SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_00/11 
+  Calls: 
+reentry_guard_ISELED_EXCLUSIVE_AREA_04/9 (reentry_guard_ISELED_EXCLUSIVE_AREA_04) @0d9f7828
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_04/19 (read) SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_04/19 (read) SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_04/19 (write) SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_04/20 (read) SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_04/20 (write) SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_04/20 (read) 
+  Availability: not-ready
+  Varpool flags:
+msr_ISELED_EXCLUSIVE_AREA_04/8 (msr_ISELED_EXCLUSIVE_AREA_04) @0d9f7798
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_04/19 (write) SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_04/20 (read) 
+  Availability: not-ready
+  Varpool flags:
+reentry_guard_ISELED_EXCLUSIVE_AREA_03/7 (reentry_guard_ISELED_EXCLUSIVE_AREA_03) @0d9f7708
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_03/17 (read) SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_03/17 (read) SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_03/17 (write) SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_03/18 (read) SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_03/18 (write) SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_03/18 (read) 
+  Availability: not-ready
+  Varpool flags:
+msr_ISELED_EXCLUSIVE_AREA_03/6 (msr_ISELED_EXCLUSIVE_AREA_03) @0d9f7678
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_03/17 (write) SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_03/18 (read) 
+  Availability: not-ready
+  Varpool flags:
+reentry_guard_ISELED_EXCLUSIVE_AREA_02/5 (reentry_guard_ISELED_EXCLUSIVE_AREA_02) @0d9f75e8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_02/15 (read) SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_02/15 (read) SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_02/15 (write) SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_02/16 (read) SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_02/16 (write) SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_02/16 (read) 
+  Availability: not-ready
+  Varpool flags:
+msr_ISELED_EXCLUSIVE_AREA_02/4 (msr_ISELED_EXCLUSIVE_AREA_02) @0d9f7558
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_02/15 (write) SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_02/16 (read) 
+  Availability: not-ready
+  Varpool flags:
+reentry_guard_ISELED_EXCLUSIVE_AREA_01/3 (reentry_guard_ISELED_EXCLUSIVE_AREA_01) @0d9f74c8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_01/13 (read) SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_01/13 (read) SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_01/13 (write) SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_01/14 (read) SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_01/14 (write) SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_01/14 (read) 
+  Availability: not-ready
+  Varpool flags:
+msr_ISELED_EXCLUSIVE_AREA_01/2 (msr_ISELED_EXCLUSIVE_AREA_01) @0d9f7438
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_01/13 (write) SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_01/14 (read) 
+  Availability: not-ready
+  Varpool flags:
+reentry_guard_ISELED_EXCLUSIVE_AREA_00/1 (reentry_guard_ISELED_EXCLUSIVE_AREA_00) @0d9f73a8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_00/11 (read) SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_00/11 (read) SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_00/11 (write) SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_00/12 (read) SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_00/12 (write) SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_00/12 (read) 
+  Availability: not-ready
+  Varpool flags:
+msr_ISELED_EXCLUSIVE_AREA_00/0 (msr_ISELED_EXCLUSIVE_AREA_00) @0d9f7318
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_00/11 (write) SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_00/12 (read) 
+  Availability: not-ready
+  Varpool flags:
+
+
+Initial Symbol table:
+
+Sys_GetCoreID/21 (Sys_GetCoreID) @0d9b81c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_04/20 SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_04/19 SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_03/18 SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_03/17 SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_02/16 SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_02/15 SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_01/14 SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_01/13 SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_00/12 SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_00/11 
+  Calls: 
+SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_04/20 (SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_04) @0d9fe380
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: reentry_guard_ISELED_EXCLUSIVE_AREA_04/9 (read) reentry_guard_ISELED_EXCLUSIVE_AREA_04/9 (write) msr_ISELED_EXCLUSIVE_AREA_04/8 (read) reentry_guard_ISELED_EXCLUSIVE_AREA_04/9 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Sys_GetCoreID/21 
+SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_04/19 (SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_04) @0d9feee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: reentry_guard_ISELED_EXCLUSIVE_AREA_04/9 (read) msr_ISELED_EXCLUSIVE_AREA_04/8 (write) reentry_guard_ISELED_EXCLUSIVE_AREA_04/9 (read) reentry_guard_ISELED_EXCLUSIVE_AREA_04/9 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Iseled_schm_read_msr/10 Sys_GetCoreID/21 
+SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_03/18 (SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_03) @0d9feb60
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: reentry_guard_ISELED_EXCLUSIVE_AREA_03/7 (read) reentry_guard_ISELED_EXCLUSIVE_AREA_03/7 (write) msr_ISELED_EXCLUSIVE_AREA_03/6 (read) reentry_guard_ISELED_EXCLUSIVE_AREA_03/7 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Sys_GetCoreID/21 
+SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_03/17 (SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_03) @0d9fe8c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: reentry_guard_ISELED_EXCLUSIVE_AREA_03/7 (read) msr_ISELED_EXCLUSIVE_AREA_03/6 (write) reentry_guard_ISELED_EXCLUSIVE_AREA_03/7 (read) reentry_guard_ISELED_EXCLUSIVE_AREA_03/7 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Iseled_schm_read_msr/10 Sys_GetCoreID/21 
+SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_02/16 (SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_02) @0d9fe540
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: reentry_guard_ISELED_EXCLUSIVE_AREA_02/5 (read) reentry_guard_ISELED_EXCLUSIVE_AREA_02/5 (write) msr_ISELED_EXCLUSIVE_AREA_02/4 (read) reentry_guard_ISELED_EXCLUSIVE_AREA_02/5 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Sys_GetCoreID/21 
+SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_02/15 (SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_02) @0d9fe2a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: reentry_guard_ISELED_EXCLUSIVE_AREA_02/5 (read) msr_ISELED_EXCLUSIVE_AREA_02/4 (write) reentry_guard_ISELED_EXCLUSIVE_AREA_02/5 (read) reentry_guard_ISELED_EXCLUSIVE_AREA_02/5 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Iseled_schm_read_msr/10 Sys_GetCoreID/21 
+SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_01/14 (SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_01) @0d9f8e00
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: reentry_guard_ISELED_EXCLUSIVE_AREA_01/3 (read) reentry_guard_ISELED_EXCLUSIVE_AREA_01/3 (write) msr_ISELED_EXCLUSIVE_AREA_01/2 (read) reentry_guard_ISELED_EXCLUSIVE_AREA_01/3 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Sys_GetCoreID/21 
+SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_01/13 (SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_01) @0d9f87e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: reentry_guard_ISELED_EXCLUSIVE_AREA_01/3 (read) msr_ISELED_EXCLUSIVE_AREA_01/2 (write) reentry_guard_ISELED_EXCLUSIVE_AREA_01/3 (read) reentry_guard_ISELED_EXCLUSIVE_AREA_01/3 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Iseled_schm_read_msr/10 Sys_GetCoreID/21 
+SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_00/12 (SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_00) @0d9f8d20
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: reentry_guard_ISELED_EXCLUSIVE_AREA_00/1 (read) reentry_guard_ISELED_EXCLUSIVE_AREA_00/1 (write) msr_ISELED_EXCLUSIVE_AREA_00/0 (read) reentry_guard_ISELED_EXCLUSIVE_AREA_00/1 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Sys_GetCoreID/21 
+SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_00/11 (SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_00) @0d9f8a80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: reentry_guard_ISELED_EXCLUSIVE_AREA_00/1 (read) msr_ISELED_EXCLUSIVE_AREA_00/0 (write) reentry_guard_ISELED_EXCLUSIVE_AREA_00/1 (read) reentry_guard_ISELED_EXCLUSIVE_AREA_00/1 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Iseled_schm_read_msr/10 Sys_GetCoreID/21 
+Iseled_schm_read_msr/10 (Iseled_schm_read_msr) @0d9f8700
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_04/19 SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_03/17 SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_02/15 SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_01/13 SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_00/11 
+  Calls: 
+reentry_guard_ISELED_EXCLUSIVE_AREA_04/9 (reentry_guard_ISELED_EXCLUSIVE_AREA_04) @0d9f7828
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_04/19 (read) SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_04/19 (read) SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_04/19 (write) SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_04/20 (read) SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_04/20 (write) SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_04/20 (read) 
+  Availability: not-ready
+  Varpool flags:
+msr_ISELED_EXCLUSIVE_AREA_04/8 (msr_ISELED_EXCLUSIVE_AREA_04) @0d9f7798
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_04/19 (write) SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_04/20 (read) 
+  Availability: not-ready
+  Varpool flags:
+reentry_guard_ISELED_EXCLUSIVE_AREA_03/7 (reentry_guard_ISELED_EXCLUSIVE_AREA_03) @0d9f7708
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_03/17 (read) SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_03/17 (read) SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_03/17 (write) SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_03/18 (read) SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_03/18 (write) SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_03/18 (read) 
+  Availability: not-ready
+  Varpool flags:
+msr_ISELED_EXCLUSIVE_AREA_03/6 (msr_ISELED_EXCLUSIVE_AREA_03) @0d9f7678
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_03/17 (write) SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_03/18 (read) 
+  Availability: not-ready
+  Varpool flags:
+reentry_guard_ISELED_EXCLUSIVE_AREA_02/5 (reentry_guard_ISELED_EXCLUSIVE_AREA_02) @0d9f75e8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_02/15 (read) SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_02/15 (read) SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_02/15 (write) SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_02/16 (read) SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_02/16 (write) SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_02/16 (read) 
+  Availability: not-ready
+  Varpool flags:
+msr_ISELED_EXCLUSIVE_AREA_02/4 (msr_ISELED_EXCLUSIVE_AREA_02) @0d9f7558
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_02/15 (write) SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_02/16 (read) 
+  Availability: not-ready
+  Varpool flags:
+reentry_guard_ISELED_EXCLUSIVE_AREA_01/3 (reentry_guard_ISELED_EXCLUSIVE_AREA_01) @0d9f74c8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_01/13 (read) SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_01/13 (read) SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_01/13 (write) SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_01/14 (read) SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_01/14 (write) SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_01/14 (read) 
+  Availability: not-ready
+  Varpool flags:
+msr_ISELED_EXCLUSIVE_AREA_01/2 (msr_ISELED_EXCLUSIVE_AREA_01) @0d9f7438
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_01/13 (write) SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_01/14 (read) 
+  Availability: not-ready
+  Varpool flags:
+reentry_guard_ISELED_EXCLUSIVE_AREA_00/1 (reentry_guard_ISELED_EXCLUSIVE_AREA_00) @0d9f73a8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_00/11 (read) SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_00/11 (read) SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_00/11 (write) SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_00/12 (read) SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_00/12 (write) SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_00/12 (read) 
+  Availability: not-ready
+  Varpool flags:
+msr_ISELED_EXCLUSIVE_AREA_00/0 (msr_ISELED_EXCLUSIVE_AREA_00) @0d9f7318
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_00/11 (write) SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_00/12 (read) 
+  Availability: not-ready
+  Varpool flags:
+
+Removing unused symbols:
+
+Reclaimed Symbol table:
+
+Sys_GetCoreID/21 (Sys_GetCoreID) @0d9b81c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_04/20 SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_04/19 SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_03/18 SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_03/17 SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_02/16 SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_02/15 SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_01/14 SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_01/13 SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_00/12 SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_00/11 
+  Calls: 
+SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_04/20 (SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_04) @0d9fe380
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: reentry_guard_ISELED_EXCLUSIVE_AREA_04/9 (read) reentry_guard_ISELED_EXCLUSIVE_AREA_04/9 (write) msr_ISELED_EXCLUSIVE_AREA_04/8 (read) reentry_guard_ISELED_EXCLUSIVE_AREA_04/9 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Sys_GetCoreID/21 
+SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_04/19 (SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_04) @0d9feee0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: reentry_guard_ISELED_EXCLUSIVE_AREA_04/9 (read) msr_ISELED_EXCLUSIVE_AREA_04/8 (write) reentry_guard_ISELED_EXCLUSIVE_AREA_04/9 (read) reentry_guard_ISELED_EXCLUSIVE_AREA_04/9 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Iseled_schm_read_msr/10 Sys_GetCoreID/21 
+SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_03/18 (SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_03) @0d9feb60
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: reentry_guard_ISELED_EXCLUSIVE_AREA_03/7 (read) reentry_guard_ISELED_EXCLUSIVE_AREA_03/7 (write) msr_ISELED_EXCLUSIVE_AREA_03/6 (read) reentry_guard_ISELED_EXCLUSIVE_AREA_03/7 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Sys_GetCoreID/21 
+SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_03/17 (SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_03) @0d9fe8c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: reentry_guard_ISELED_EXCLUSIVE_AREA_03/7 (read) msr_ISELED_EXCLUSIVE_AREA_03/6 (write) reentry_guard_ISELED_EXCLUSIVE_AREA_03/7 (read) reentry_guard_ISELED_EXCLUSIVE_AREA_03/7 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Iseled_schm_read_msr/10 Sys_GetCoreID/21 
+SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_02/16 (SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_02) @0d9fe540
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: reentry_guard_ISELED_EXCLUSIVE_AREA_02/5 (read) reentry_guard_ISELED_EXCLUSIVE_AREA_02/5 (write) msr_ISELED_EXCLUSIVE_AREA_02/4 (read) reentry_guard_ISELED_EXCLUSIVE_AREA_02/5 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Sys_GetCoreID/21 
+SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_02/15 (SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_02) @0d9fe2a0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: reentry_guard_ISELED_EXCLUSIVE_AREA_02/5 (read) msr_ISELED_EXCLUSIVE_AREA_02/4 (write) reentry_guard_ISELED_EXCLUSIVE_AREA_02/5 (read) reentry_guard_ISELED_EXCLUSIVE_AREA_02/5 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Iseled_schm_read_msr/10 Sys_GetCoreID/21 
+SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_01/14 (SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_01) @0d9f8e00
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: reentry_guard_ISELED_EXCLUSIVE_AREA_01/3 (read) reentry_guard_ISELED_EXCLUSIVE_AREA_01/3 (write) msr_ISELED_EXCLUSIVE_AREA_01/2 (read) reentry_guard_ISELED_EXCLUSIVE_AREA_01/3 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Sys_GetCoreID/21 
+SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_01/13 (SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_01) @0d9f87e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: reentry_guard_ISELED_EXCLUSIVE_AREA_01/3 (read) msr_ISELED_EXCLUSIVE_AREA_01/2 (write) reentry_guard_ISELED_EXCLUSIVE_AREA_01/3 (read) reentry_guard_ISELED_EXCLUSIVE_AREA_01/3 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Iseled_schm_read_msr/10 Sys_GetCoreID/21 
+SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_00/12 (SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_00) @0d9f8d20
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: reentry_guard_ISELED_EXCLUSIVE_AREA_00/1 (read) reentry_guard_ISELED_EXCLUSIVE_AREA_00/1 (write) msr_ISELED_EXCLUSIVE_AREA_00/0 (read) reentry_guard_ISELED_EXCLUSIVE_AREA_00/1 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Sys_GetCoreID/21 
+SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_00/11 (SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_00) @0d9f8a80
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: reentry_guard_ISELED_EXCLUSIVE_AREA_00/1 (read) msr_ISELED_EXCLUSIVE_AREA_00/0 (write) reentry_guard_ISELED_EXCLUSIVE_AREA_00/1 (read) reentry_guard_ISELED_EXCLUSIVE_AREA_00/1 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Iseled_schm_read_msr/10 Sys_GetCoreID/21 
+Iseled_schm_read_msr/10 (Iseled_schm_read_msr) @0d9f8700
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_04/19 SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_03/17 SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_02/15 SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_01/13 SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_00/11 
+  Calls: 
+reentry_guard_ISELED_EXCLUSIVE_AREA_04/9 (reentry_guard_ISELED_EXCLUSIVE_AREA_04) @0d9f7828
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_04/19 (read) SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_04/19 (read) SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_04/19 (write) SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_04/20 (read) SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_04/20 (write) SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_04/20 (read) 
+  Availability: not-ready
+  Varpool flags:
+msr_ISELED_EXCLUSIVE_AREA_04/8 (msr_ISELED_EXCLUSIVE_AREA_04) @0d9f7798
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_04/19 (write) SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_04/20 (read) 
+  Availability: not-ready
+  Varpool flags:
+reentry_guard_ISELED_EXCLUSIVE_AREA_03/7 (reentry_guard_ISELED_EXCLUSIVE_AREA_03) @0d9f7708
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_03/17 (read) SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_03/17 (read) SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_03/17 (write) SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_03/18 (read) SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_03/18 (write) SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_03/18 (read) 
+  Availability: not-ready
+  Varpool flags:
+msr_ISELED_EXCLUSIVE_AREA_03/6 (msr_ISELED_EXCLUSIVE_AREA_03) @0d9f7678
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_03/17 (write) SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_03/18 (read) 
+  Availability: not-ready
+  Varpool flags:
+reentry_guard_ISELED_EXCLUSIVE_AREA_02/5 (reentry_guard_ISELED_EXCLUSIVE_AREA_02) @0d9f75e8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_02/15 (read) SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_02/15 (read) SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_02/15 (write) SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_02/16 (read) SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_02/16 (write) SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_02/16 (read) 
+  Availability: not-ready
+  Varpool flags:
+msr_ISELED_EXCLUSIVE_AREA_02/4 (msr_ISELED_EXCLUSIVE_AREA_02) @0d9f7558
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_02/15 (write) SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_02/16 (read) 
+  Availability: not-ready
+  Varpool flags:
+reentry_guard_ISELED_EXCLUSIVE_AREA_01/3 (reentry_guard_ISELED_EXCLUSIVE_AREA_01) @0d9f74c8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_01/13 (read) SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_01/13 (read) SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_01/13 (write) SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_01/14 (read) SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_01/14 (write) SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_01/14 (read) 
+  Availability: not-ready
+  Varpool flags:
+msr_ISELED_EXCLUSIVE_AREA_01/2 (msr_ISELED_EXCLUSIVE_AREA_01) @0d9f7438
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_01/13 (write) SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_01/14 (read) 
+  Availability: not-ready
+  Varpool flags:
+reentry_guard_ISELED_EXCLUSIVE_AREA_00/1 (reentry_guard_ISELED_EXCLUSIVE_AREA_00) @0d9f73a8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_00/11 (read) SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_00/11 (read) SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_00/11 (write) SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_00/12 (read) SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_00/12 (write) SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_00/12 (read) 
+  Availability: not-ready
+  Varpool flags:
+msr_ISELED_EXCLUSIVE_AREA_00/0 (msr_ISELED_EXCLUSIVE_AREA_00) @0d9f7318
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_00/11 (write) SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_00/12 (read) 
+  Availability: not-ready
+  Varpool flags:
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+Optimized Symbol table:
+
+Sys_GetCoreID/21 (Sys_GetCoreID) @0d9b81c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_04/20 SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_04/19 SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_03/18 SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_03/17 SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_02/16 SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_02/15 SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_01/14 SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_01/13 SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_00/12 SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_00/11 
+  Calls: 
+SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_04/20 (SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_04) @0d9fe380
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: reentry_guard_ISELED_EXCLUSIVE_AREA_04/9 (read) reentry_guard_ISELED_EXCLUSIVE_AREA_04/9 (write) msr_ISELED_EXCLUSIVE_AREA_04/8 (read) reentry_guard_ISELED_EXCLUSIVE_AREA_04/9 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Sys_GetCoreID/21 
+SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_04/19 (SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_04) @0d9feee0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: reentry_guard_ISELED_EXCLUSIVE_AREA_04/9 (read) msr_ISELED_EXCLUSIVE_AREA_04/8 (write) reentry_guard_ISELED_EXCLUSIVE_AREA_04/9 (read) reentry_guard_ISELED_EXCLUSIVE_AREA_04/9 (write) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Iseled_schm_read_msr/10 Sys_GetCoreID/21 
+SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_03/18 (SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_03) @0d9feb60
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: reentry_guard_ISELED_EXCLUSIVE_AREA_03/7 (read) reentry_guard_ISELED_EXCLUSIVE_AREA_03/7 (write) msr_ISELED_EXCLUSIVE_AREA_03/6 (read) reentry_guard_ISELED_EXCLUSIVE_AREA_03/7 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Sys_GetCoreID/21 
+SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_03/17 (SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_03) @0d9fe8c0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: reentry_guard_ISELED_EXCLUSIVE_AREA_03/7 (read) msr_ISELED_EXCLUSIVE_AREA_03/6 (write) reentry_guard_ISELED_EXCLUSIVE_AREA_03/7 (read) reentry_guard_ISELED_EXCLUSIVE_AREA_03/7 (write) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Iseled_schm_read_msr/10 Sys_GetCoreID/21 
+SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_02/16 (SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_02) @0d9fe540
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: reentry_guard_ISELED_EXCLUSIVE_AREA_02/5 (read) reentry_guard_ISELED_EXCLUSIVE_AREA_02/5 (write) msr_ISELED_EXCLUSIVE_AREA_02/4 (read) reentry_guard_ISELED_EXCLUSIVE_AREA_02/5 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Sys_GetCoreID/21 
+SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_02/15 (SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_02) @0d9fe2a0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: reentry_guard_ISELED_EXCLUSIVE_AREA_02/5 (read) msr_ISELED_EXCLUSIVE_AREA_02/4 (write) reentry_guard_ISELED_EXCLUSIVE_AREA_02/5 (read) reentry_guard_ISELED_EXCLUSIVE_AREA_02/5 (write) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Iseled_schm_read_msr/10 Sys_GetCoreID/21 
+SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_01/14 (SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_01) @0d9f8e00
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: reentry_guard_ISELED_EXCLUSIVE_AREA_01/3 (read) reentry_guard_ISELED_EXCLUSIVE_AREA_01/3 (write) msr_ISELED_EXCLUSIVE_AREA_01/2 (read) reentry_guard_ISELED_EXCLUSIVE_AREA_01/3 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Sys_GetCoreID/21 
+SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_01/13 (SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_01) @0d9f87e0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: reentry_guard_ISELED_EXCLUSIVE_AREA_01/3 (read) msr_ISELED_EXCLUSIVE_AREA_01/2 (write) reentry_guard_ISELED_EXCLUSIVE_AREA_01/3 (read) reentry_guard_ISELED_EXCLUSIVE_AREA_01/3 (write) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Iseled_schm_read_msr/10 Sys_GetCoreID/21 
+SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_00/12 (SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_00) @0d9f8d20
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: reentry_guard_ISELED_EXCLUSIVE_AREA_00/1 (read) reentry_guard_ISELED_EXCLUSIVE_AREA_00/1 (write) msr_ISELED_EXCLUSIVE_AREA_00/0 (read) reentry_guard_ISELED_EXCLUSIVE_AREA_00/1 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Sys_GetCoreID/21 
+SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_00/11 (SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_00) @0d9f8a80
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: reentry_guard_ISELED_EXCLUSIVE_AREA_00/1 (read) msr_ISELED_EXCLUSIVE_AREA_00/0 (write) reentry_guard_ISELED_EXCLUSIVE_AREA_00/1 (read) reentry_guard_ISELED_EXCLUSIVE_AREA_00/1 (write) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Iseled_schm_read_msr/10 Sys_GetCoreID/21 
+Iseled_schm_read_msr/10 (Iseled_schm_read_msr) @0d9f8700
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_04/19 SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_03/17 SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_02/15 SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_01/13 SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_00/11 
+  Calls: 
+reentry_guard_ISELED_EXCLUSIVE_AREA_04/9 (reentry_guard_ISELED_EXCLUSIVE_AREA_04) @0d9f7828
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_04/19 (read) SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_04/19 (read) SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_04/19 (write) SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_04/20 (read) SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_04/20 (write) SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_04/20 (read) 
+  Availability: available
+  Varpool flags:
+msr_ISELED_EXCLUSIVE_AREA_04/8 (msr_ISELED_EXCLUSIVE_AREA_04) @0d9f7798
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_04/19 (write) SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_04/20 (read) 
+  Availability: available
+  Varpool flags:
+reentry_guard_ISELED_EXCLUSIVE_AREA_03/7 (reentry_guard_ISELED_EXCLUSIVE_AREA_03) @0d9f7708
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_03/17 (read) SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_03/17 (read) SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_03/17 (write) SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_03/18 (read) SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_03/18 (write) SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_03/18 (read) 
+  Availability: available
+  Varpool flags:
+msr_ISELED_EXCLUSIVE_AREA_03/6 (msr_ISELED_EXCLUSIVE_AREA_03) @0d9f7678
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_03/17 (write) SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_03/18 (read) 
+  Availability: available
+  Varpool flags:
+reentry_guard_ISELED_EXCLUSIVE_AREA_02/5 (reentry_guard_ISELED_EXCLUSIVE_AREA_02) @0d9f75e8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_02/15 (read) SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_02/15 (read) SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_02/15 (write) SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_02/16 (read) SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_02/16 (write) SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_02/16 (read) 
+  Availability: available
+  Varpool flags:
+msr_ISELED_EXCLUSIVE_AREA_02/4 (msr_ISELED_EXCLUSIVE_AREA_02) @0d9f7558
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_02/15 (write) SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_02/16 (read) 
+  Availability: available
+  Varpool flags:
+reentry_guard_ISELED_EXCLUSIVE_AREA_01/3 (reentry_guard_ISELED_EXCLUSIVE_AREA_01) @0d9f74c8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_01/13 (read) SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_01/13 (read) SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_01/13 (write) SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_01/14 (read) SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_01/14 (write) SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_01/14 (read) 
+  Availability: available
+  Varpool flags:
+msr_ISELED_EXCLUSIVE_AREA_01/2 (msr_ISELED_EXCLUSIVE_AREA_01) @0d9f7438
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_01/13 (write) SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_01/14 (read) 
+  Availability: available
+  Varpool flags:
+reentry_guard_ISELED_EXCLUSIVE_AREA_00/1 (reentry_guard_ISELED_EXCLUSIVE_AREA_00) @0d9f73a8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_00/11 (read) SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_00/11 (read) SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_00/11 (write) SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_00/12 (read) SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_00/12 (write) SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_00/12 (read) 
+  Availability: available
+  Varpool flags:
+msr_ISELED_EXCLUSIVE_AREA_00/0 (msr_ISELED_EXCLUSIVE_AREA_00) @0d9f7318
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_00/11 (write) SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_00/12 (read) 
+  Availability: available
+  Varpool flags:
+Materializing clones
+Materialization Call site updates done.
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+Trivially needed variables: reentry_guard_ISELED_EXCLUSIVE_AREA_04/9 msr_ISELED_EXCLUSIVE_AREA_04/8 reentry_guard_ISELED_EXCLUSIVE_AREA_03/7 msr_ISELED_EXCLUSIVE_AREA_03/6 reentry_guard_ISELED_EXCLUSIVE_AREA_02/5 msr_ISELED_EXCLUSIVE_AREA_02/4 reentry_guard_ISELED_EXCLUSIVE_AREA_01/3 msr_ISELED_EXCLUSIVE_AREA_01/2 reentry_guard_ISELED_EXCLUSIVE_AREA_00/1 msr_ISELED_EXCLUSIVE_AREA_00/0
+Removing variables:
+
+Final Symbol table:
+
+Sys_GetCoreID/21 (Sys_GetCoreID) @0d9b81c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_04/20 (SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_04) @0d9fe380
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_04 (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_04/19 (SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_04) @0d9feee0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_04 (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_03/18 (SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_03) @0d9feb60
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_03 (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_03/17 (SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_03) @0d9fe8c0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_03 (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_02/16 (SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_02) @0d9fe540
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_02 (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_02/15 (SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_02) @0d9fe2a0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_02 (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_01/14 (SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_01) @0d9f8e00
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_01 (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_01/13 (SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_01) @0d9f87e0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_01 (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_00/12 (SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_00) @0d9f8d20
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.SchM_Exit_Iseled_ISELED_EXCLUSIVE_AREA_00 (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_00/11 (SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_00) @0d9f8a80
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.SchM_Enter_Iseled_ISELED_EXCLUSIVE_AREA_00 (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+Iseled_schm_read_msr/10 (Iseled_schm_read_msr) @0d9f8700
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.Iseled_schm_read_msr (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+reentry_guard_ISELED_EXCLUSIVE_AREA_04/9 (reentry_guard_ISELED_EXCLUSIVE_AREA_04) @0d9f7828
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written section:.bss.reentry_guard_ISELED_EXCLUSIVE_AREA_04 (implicit_section)
+  Aux: @00000001
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags:
+msr_ISELED_EXCLUSIVE_AREA_04/8 (msr_ISELED_EXCLUSIVE_AREA_04) @0d9f7798
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written section:.bss.msr_ISELED_EXCLUSIVE_AREA_04 (implicit_section)
+  Aux: @0d9f7828
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags:
+reentry_guard_ISELED_EXCLUSIVE_AREA_03/7 (reentry_guard_ISELED_EXCLUSIVE_AREA_03) @0d9f7708
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written section:.bss.reentry_guard_ISELED_EXCLUSIVE_AREA_03 (implicit_section)
+  Aux: @0d9f7798
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags:
+msr_ISELED_EXCLUSIVE_AREA_03/6 (msr_ISELED_EXCLUSIVE_AREA_03) @0d9f7678
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written section:.bss.msr_ISELED_EXCLUSIVE_AREA_03 (implicit_section)
+  Aux: @0d9f7708
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags:
+reentry_guard_ISELED_EXCLUSIVE_AREA_02/5 (reentry_guard_ISELED_EXCLUSIVE_AREA_02) @0d9f75e8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written section:.bss.reentry_guard_ISELED_EXCLUSIVE_AREA_02 (implicit_section)
+  Aux: @0d9f7678
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags:
+msr_ISELED_EXCLUSIVE_AREA_02/4 (msr_ISELED_EXCLUSIVE_AREA_02) @0d9f7558
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written section:.bss.msr_ISELED_EXCLUSIVE_AREA_02 (implicit_section)
+  Aux: @0d9f75e8
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags:
+reentry_guard_ISELED_EXCLUSIVE_AREA_01/3 (reentry_guard_ISELED_EXCLUSIVE_AREA_01) @0d9f74c8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written section:.bss.reentry_guard_ISELED_EXCLUSIVE_AREA_01 (implicit_section)
+  Aux: @0d9f7558
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags:
+msr_ISELED_EXCLUSIVE_AREA_01/2 (msr_ISELED_EXCLUSIVE_AREA_01) @0d9f7438
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written section:.bss.msr_ISELED_EXCLUSIVE_AREA_01 (implicit_section)
+  Aux: @0d9f74c8
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags:
+reentry_guard_ISELED_EXCLUSIVE_AREA_00/1 (reentry_guard_ISELED_EXCLUSIVE_AREA_00) @0d9f73a8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written section:.bss.reentry_guard_ISELED_EXCLUSIVE_AREA_00 (implicit_section)
+  Aux: @0d9f7438
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags:
+msr_ISELED_EXCLUSIVE_AREA_00/0 (msr_ISELED_EXCLUSIVE_AREA_00) @0d9f7318
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written section:.bss.msr_ISELED_EXCLUSIVE_AREA_00 (implicit_section)
+  Aux: @0d9f73a8
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags:

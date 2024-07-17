@@ -269,8 +269,8 @@ Display the values of the two potentiometers in Ohms and Volts.
 
 * #### ADC Exercise 6: Four Channels in ADC0 using 2 Potentiometers
 Using a jumper wire to connect other channels available from ADC0 to have four channels to sample: 
-Pot 1: pin PTB1->CH5 connected to pin PTB0->CH4 (Blue jumper wire).
-Pot 2: pin PTB13->CH8 (Interleaved, by default ADC0-CH8 is connected to PTC0 but changed to PTB13 using interleave function in code) connected to pin PTC1->CH9 (Purple jumper wire). 
+- Pot 1: pin PTB1->CH5 connected to pin PTB0->CH4 (Blue jumper wire).
+- Pot 2: pin PTB13->CH8 (Interleaved, by default ADC0-CH8 is connected to PTC0 but changed to PTB13 using interleave function in code) connected to pin PTC1->CH9 (Purple jumper wire). 
 
 Also configure the hardware average sample with a value of 8, and calculate the total timing conversion for the entire group of channels.
 
@@ -286,8 +286,9 @@ ADC0 and ADC1 Interleaved Channels diagram from NXP S32K1xx Reference Manual Rev
 
 * #### PWM Exercise 1: Two Channels, Two FTM Timers with SIRC Clock
 A program that generates two PWM channels but using two different timers, must see which pins are available with FTM functionality. Feed those timers with a SIRC clock.
-Timer 1: FTM0, Channel: CH0, Pin: RED RGB LED.
-Timer 2: FTM2, Channel: CH0, Pin: BLUE RGB LED.
+- Timer 1: FTM0, Channel: CH0, Pin: RED RGB LED.
+- Timer 2: FTM2, Channel: CH0, Pin: BLUE RGB LED.
+
 Both RGB LEDs working, hence the purple color.
 
 ![PWM_Exercise1_2CH_2Timers_FTM_SIRC_Clk.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/PWM_driver/PWM_Exercise1_2CH_2Timers_FTM_SIRC_Clk.png)
@@ -339,6 +340,13 @@ Wrote two functions that allow to write and read a byte to any valid memory addr
 - uint8_t read_byte( uint16_t addr );
 
 ![SPI_Exercise4_Function_Write_Read_Byte_Terminal.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/SPI_driver/SPI_Exercise4_Function_Write_Read_Byte_Terminal.png)
+
+* #### SPI Exercise 5: Create Two Functions to Write and Read Data from an Array of any Size of Bytes
+Wrote the following functions to allow to write a given array of n number of bytes starting at any address of the eeprom:
+- void write_data( uint16 addr, uint8 *data, uint8 size );
+- void read_data( uint16 addr, uint8 *data, uint8 size );
+
+![SPI_Exercise5_Function_Write_Read_ArrayData_Terminal.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/SPI_driver/SPI_Exercise5_Function_Write_Read_ArrayData_Terminal.png)
 
 ### **CAN Driver Evidences**
 
