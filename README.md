@@ -44,7 +44,8 @@ The Upskilling Bootcamp covers:
 12. CANIF driver.
 13. Final Project.
 
-Classic AUTOSAR layers perspective:
+What it's covered from the Classic AUTOSAR layers perspective:
+
 ![AUTOSAR_layered_view.jpeg](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/Final_Project/AUTOSAR_layered_view.jpeg)
 
 ## 2. Hardware Requirements
