@@ -1,0 +1,91 @@
+EcuM_Init ()
+{
+  <bb 2> :
+  Mcu_Init (&Mcu_Config);
+  Mcu_InitClock (0);
+  Mcu_SetMode (0);
+  OsIf_Init (0B);
+  Platform_Init (0B);
+  Port_Init (&Port_Config);
+  Spi_Init (&Spi_Config);
+  return;
+
+}
+
+
+main ()
+{
+  uint8 i;
+  uint16 Address;
+  uint8 Cmd;
+  Spi_DataBufferType RxBuffer[32];
+  int D.7624;
+
+  <bb 2> :
+  EcuM_Init ();
+  SEGGER_RTT_Init ();
+  i = 0;
+  goto <bb 4>; [INV]
+
+  <bb 3> :
+  Cmd = 3;
+  _1 = (short unsigned int) i;
+  Address = _1;
+  Spi_SetupEB (1, &Cmd, 0B, 1);
+  Spi_SetupEB (2, &Address, 0B, 1);
+  Spi_SetupEB (3, 0B, &RxBuffer, 32);
+  Spi_SyncTransmit (1);
+  _2 = (int) i;
+  Address.0_3 = Address;
+  _4 = (int) Address.0_3;
+  _5 = (int) i;
+  _6 = RxBuffer[0];
+  _7 = (int) _6;
+  _8 = RxBuffer[0];
+  _9 = (int) _8;
+  SEGGER_RTT_printf (0, "Byte: %d - Address: 0x%x - RxBuffer[%d] in Hex: 0x%x, in Dec: %d \n", _2, _4, _5, _7, _9);
+  i.1_10 = i;
+  i = i.1_10 + 1;
+
+  <bb 4> :
+  if (i <= 31)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 5> :
+  Delay (10);
+  goto <bb 5>; [INV]
+
+}
+
+
+Delay (uint32 ms)
+{
+  uint32 ElapsedTime;
+  uint32 SeedTick;
+  uint32 Timeout;
+  long unsigned int D.7623;
+
+  <bb 2> :
+  _1 = ms * 1000;
+  Timeout = OsIf_MicrosToTicks (_1, 1);
+  _2 = OsIf_GetCounter (1);
+  SeedTick = _2;
+  ElapsedTime = 0;
+
+  <bb 3> :
+  D.7623 = OsIf_GetElapsed (&SeedTick, 1);
+  ElapsedTime = D.7623 + ElapsedTime;
+  if (ElapsedTime < Timeout)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 4> :
+  SeedTick = {CLOBBER};
+  return;
+
+}
+
+

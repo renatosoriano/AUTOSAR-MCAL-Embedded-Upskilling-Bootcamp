@@ -326,6 +326,13 @@ https://github.com/user-attachments/assets/a163665e-de78-469f-a384-a67201327c4e
 
 ![PWM_Exercise4_ADC_Pot_DutyCycle_RGB_LED_Terminal.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/PWM_driver/PWM_Exercise4_ADC_Pot_DutyCycle_RGB_LED_Terminal.png)
 
+### **SPI Driver Evidences**
+
+* #### SPI Exercise 1: Read and Print 32 bytes from EEPROM
+Read and display the first 32 bytes of an eeprom in different formats using Semihosting with RTT.
+
+![SPI_Exercise1_ReadPrint_32bytes_EEPROM_ASCII_Terminal.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/SPI_driver/SPI_Exercise1_ReadPrint_32bytes_EEPROM_ASCII_Terminal.png)
+
 ### **CAN Driver Evidences**
 
 * #### CAN Example 3: Transmission using Interrupts (ISRs)
