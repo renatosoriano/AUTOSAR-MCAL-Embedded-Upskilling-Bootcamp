@@ -265,6 +265,16 @@ ADC0 and ADC1 Interleaved Channels diagram from NXP S32K1xx Reference Manual Rev
 
 ![ADC_Exercise6_4Channels_ADC0_2Pots_Interleave.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/ADC_driver/ADC_Exercise6_4Channels_ADC0_2Pots_Interleave.png)
 
+### **PWM Driver Evidences**
+
+* #### PWM Exercise 1: Two Channels, Two FTM Timers with SIRC Clock
+A program that generates two PWM channels but using two different timers, must see which pins are available with FTM functionality. Feed those timers with a SIRC clock.
+- Timer 1: FTM0, Channel: CH0, Pin: RED RGB LED.
+- Timer 2: FTM2, Channel: CH0, Pin: BLUE RGB LED.
+Both RGB LEDs working, hence the purple color.
+
+![PWM_Exercise1_2CH_2Timers_FTM_SIRC_Clk.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/PWM_driver/PWM_Exercise1_2CH_2Timers_FTM_SIRC_Clk.png)
+
 ### **CAN Driver Evidences**
 
 * #### CAN Example 3: Transmission using Interrupts (ISRs)
