@@ -767,19 +767,19 @@ int main( void )
      8f2:	2000      	movs	r0, #0
      8f4:	f007 f8a0 	bl	7a38 <Adc_ReadGroup>
         /* Display value */
-        SEGGER_RTT_printf( 0, "Pot1 CH5 value: %d, Pot2 CH8 value: %d, Pot1 CH4 value: %d, Pot2 CH9 value: %d \n", 
-            AdcReadGroupBuffer[AdcChannel_0], AdcReadGroupBuffer[AdcChannel_1], AdcReadGroupBuffer[AdcChannel_2], AdcReadGroupBuffer[AdcChannel_3] );
+        SEGGER_RTT_printf( 0, "Pot1 CH5 value: %d, Pot1 CH4 value: %d, Pot2 CH8 value: %d, Pot2 CH9 value: %d \n", 
+            AdcReadGroupBuffer[AdcChannel_0], AdcReadGroupBuffer[AdcChannel_2], AdcReadGroupBuffer[AdcChannel_1], AdcReadGroupBuffer[AdcChannel_3] );
      8f8:	f8bd 3014 	ldrh.w	r3, [sp, #20]
-        SEGGER_RTT_printf( 0, "Pot1 CH5 value: %d, Pot2 CH8 value: %d, Pot1 CH4 value: %d, Pot2 CH9 value: %d \n", 
+        SEGGER_RTT_printf( 0, "Pot1 CH5 value: %d, Pot1 CH4 value: %d, Pot2 CH8 value: %d, Pot2 CH9 value: %d \n", 
      8fc:	4619      	mov	r1, r3
-            AdcReadGroupBuffer[AdcChannel_0], AdcReadGroupBuffer[AdcChannel_1], AdcReadGroupBuffer[AdcChannel_2], AdcReadGroupBuffer[AdcChannel_3] );
-     8fe:	f8bd 3016 	ldrh.w	r3, [sp, #22]
-        SEGGER_RTT_printf( 0, "Pot1 CH5 value: %d, Pot2 CH8 value: %d, Pot1 CH4 value: %d, Pot2 CH9 value: %d \n", 
+            AdcReadGroupBuffer[AdcChannel_0], AdcReadGroupBuffer[AdcChannel_2], AdcReadGroupBuffer[AdcChannel_1], AdcReadGroupBuffer[AdcChannel_3] );
+     8fe:	f8bd 3018 	ldrh.w	r3, [sp, #24]
+        SEGGER_RTT_printf( 0, "Pot1 CH5 value: %d, Pot1 CH4 value: %d, Pot2 CH8 value: %d, Pot2 CH9 value: %d \n", 
      902:	4618      	mov	r0, r3
-            AdcReadGroupBuffer[AdcChannel_0], AdcReadGroupBuffer[AdcChannel_1], AdcReadGroupBuffer[AdcChannel_2], AdcReadGroupBuffer[AdcChannel_3] );
-     904:	f8bd 3018 	ldrh.w	r3, [sp, #24]
+            AdcReadGroupBuffer[AdcChannel_0], AdcReadGroupBuffer[AdcChannel_2], AdcReadGroupBuffer[AdcChannel_1], AdcReadGroupBuffer[AdcChannel_3] );
+     904:	f8bd 3016 	ldrh.w	r3, [sp, #22]
      908:	f8bd 201a 	ldrh.w	r2, [sp, #26]
-        SEGGER_RTT_printf( 0, "Pot1 CH5 value: %d, Pot2 CH8 value: %d, Pot1 CH4 value: %d, Pot2 CH9 value: %d \n", 
+        SEGGER_RTT_printf( 0, "Pot1 CH5 value: %d, Pot1 CH4 value: %d, Pot2 CH8 value: %d, Pot2 CH9 value: %d \n", 
      90c:	9201      	str	r2, [sp, #4]
      90e:	9300      	str	r3, [sp, #0]
      910:	4603      	mov	r3, r0
@@ -42293,13 +42293,13 @@ void Det_Start(void)
    10104:	6c617620 	.word	0x6c617620
    10108:	203a6575 	.word	0x203a6575
    1010c:	202c6425 	.word	0x202c6425
-   10110:	32746f50 	.word	0x32746f50
-   10114:	38484320 	.word	0x38484320
+   10110:	31746f50 	.word	0x31746f50
+   10114:	34484320 	.word	0x34484320
    10118:	6c617620 	.word	0x6c617620
    1011c:	203a6575 	.word	0x203a6575
    10120:	202c6425 	.word	0x202c6425
-   10124:	31746f50 	.word	0x31746f50
-   10128:	34484320 	.word	0x34484320
+   10124:	32746f50 	.word	0x32746f50
+   10128:	38484320 	.word	0x38484320
    1012c:	6c617620 	.word	0x6c617620
    10130:	203a6575 	.word	0x203a6575
    10134:	202c6425 	.word	0x202c6425

@@ -77,8 +77,8 @@ int main( void )
         /* Read ready conversion */
         Adc_ReadGroup( AdcGroup_0, AdcReadGroupBuffer );
         /* Display value */
-        SEGGER_RTT_printf( 0, "Pot1 CH5 value: %d, Pot2 CH8 value: %d, Pot1 CH4 value: %d, Pot2 CH9 value: %d \n", 
-            AdcReadGroupBuffer[AdcChannel_0], AdcReadGroupBuffer[AdcChannel_1], AdcReadGroupBuffer[AdcChannel_2], AdcReadGroupBuffer[AdcChannel_3] );
+        SEGGER_RTT_printf( 0, "Pot1 CH5 value: %d, Pot1 CH4 value: %d, Pot2 CH8 value: %d, Pot2 CH9 value: %d \n", 
+            AdcReadGroupBuffer[AdcChannel_0], AdcReadGroupBuffer[AdcChannel_2], AdcReadGroupBuffer[AdcChannel_1], AdcReadGroupBuffer[AdcChannel_3] );
         Delay( 1000u );
     }
 

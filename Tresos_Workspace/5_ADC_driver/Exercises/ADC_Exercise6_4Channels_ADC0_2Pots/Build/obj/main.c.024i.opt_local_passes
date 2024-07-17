@@ -83,13 +83,13 @@ main ()
   Adc_ReadGroup (0, &AdcReadGroupBuffer);
   _2 = AdcReadGroupBuffer[0];
   _3 = (int) _2;
-  _4 = AdcReadGroupBuffer[1];
+  _4 = AdcReadGroupBuffer[2];
   _5 = (int) _4;
-  _6 = AdcReadGroupBuffer[2];
+  _6 = AdcReadGroupBuffer[1];
   _7 = (int) _6;
   _8 = AdcReadGroupBuffer[3];
   _9 = (int) _8;
-  SEGGER_RTT_printf (0, "Pot1 CH5 value: %d, Pot2 CH8 value: %d, Pot1 CH4 value: %d, Pot2 CH9 value: %d \n", _3, _5, _7, _9);
+  SEGGER_RTT_printf (0, "Pot1 CH5 value: %d, Pot1 CH4 value: %d, Pot2 CH8 value: %d, Pot2 CH9 value: %d \n", _3, _5, _7, _9);
   Delay (1000);
   goto <bb 3>; [INV]
 
