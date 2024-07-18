@@ -1,0 +1,296 @@
+SchM_Exit_Fee_FEE_EXCLUSIVE_AREA_03 ()
+{
+  uint32 u32CoreId;
+
+  <bb 2> :
+  _1 = Sys_GetCoreID ();
+  u32CoreId = (uint32) _1;
+  _2 = reentry_guard_FEE_EXCLUSIVE_AREA_03[u32CoreId];
+  _3 = _2 + 4294967295;
+  reentry_guard_FEE_EXCLUSIVE_AREA_03[u32CoreId] = _3;
+  _4 = msr_FEE_EXCLUSIVE_AREA_03[u32CoreId];
+  _5 = _4 & 1;
+  if (_5 == 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 3> :
+  _6 = reentry_guard_FEE_EXCLUSIVE_AREA_03[u32CoreId];
+  if (_6 == 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  __asm__ __volatile__(" cpsie i");
+
+  <bb 5> :
+  return;
+
+}
+
+
+SchM_Enter_Fee_FEE_EXCLUSIVE_AREA_03 ()
+{
+  uint32 u32CoreId;
+  uint32 msr;
+
+  <bb 2> :
+  _1 = Sys_GetCoreID ();
+  u32CoreId = (uint32) _1;
+  _2 = reentry_guard_FEE_EXCLUSIVE_AREA_03[u32CoreId];
+  if (_2 == 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 3> :
+  msr = Fee_schm_read_msr ();
+  _3 = msr & 1;
+  if (_3 == 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  __asm__ __volatile__(" cpsid i");
+
+  <bb 5> :
+  msr_FEE_EXCLUSIVE_AREA_03[u32CoreId] = msr;
+
+  <bb 6> :
+  _4 = reentry_guard_FEE_EXCLUSIVE_AREA_03[u32CoreId];
+  _5 = _4 + 1;
+  reentry_guard_FEE_EXCLUSIVE_AREA_03[u32CoreId] = _5;
+  return;
+
+}
+
+
+SchM_Exit_Fee_FEE_EXCLUSIVE_AREA_02 ()
+{
+  uint32 u32CoreId;
+
+  <bb 2> :
+  _1 = Sys_GetCoreID ();
+  u32CoreId = (uint32) _1;
+  _2 = reentry_guard_FEE_EXCLUSIVE_AREA_02[u32CoreId];
+  _3 = _2 + 4294967295;
+  reentry_guard_FEE_EXCLUSIVE_AREA_02[u32CoreId] = _3;
+  _4 = msr_FEE_EXCLUSIVE_AREA_02[u32CoreId];
+  _5 = _4 & 1;
+  if (_5 == 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 3> :
+  _6 = reentry_guard_FEE_EXCLUSIVE_AREA_02[u32CoreId];
+  if (_6 == 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  __asm__ __volatile__(" cpsie i");
+
+  <bb 5> :
+  return;
+
+}
+
+
+SchM_Enter_Fee_FEE_EXCLUSIVE_AREA_02 ()
+{
+  uint32 u32CoreId;
+  uint32 msr;
+
+  <bb 2> :
+  _1 = Sys_GetCoreID ();
+  u32CoreId = (uint32) _1;
+  _2 = reentry_guard_FEE_EXCLUSIVE_AREA_02[u32CoreId];
+  if (_2 == 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 3> :
+  msr = Fee_schm_read_msr ();
+  _3 = msr & 1;
+  if (_3 == 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  __asm__ __volatile__(" cpsid i");
+
+  <bb 5> :
+  msr_FEE_EXCLUSIVE_AREA_02[u32CoreId] = msr;
+
+  <bb 6> :
+  _4 = reentry_guard_FEE_EXCLUSIVE_AREA_02[u32CoreId];
+  _5 = _4 + 1;
+  reentry_guard_FEE_EXCLUSIVE_AREA_02[u32CoreId] = _5;
+  return;
+
+}
+
+
+SchM_Exit_Fee_FEE_EXCLUSIVE_AREA_01 ()
+{
+  uint32 u32CoreId;
+
+  <bb 2> :
+  _1 = Sys_GetCoreID ();
+  u32CoreId = (uint32) _1;
+  _2 = reentry_guard_FEE_EXCLUSIVE_AREA_01[u32CoreId];
+  _3 = _2 + 4294967295;
+  reentry_guard_FEE_EXCLUSIVE_AREA_01[u32CoreId] = _3;
+  _4 = msr_FEE_EXCLUSIVE_AREA_01[u32CoreId];
+  _5 = _4 & 1;
+  if (_5 == 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 3> :
+  _6 = reentry_guard_FEE_EXCLUSIVE_AREA_01[u32CoreId];
+  if (_6 == 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  __asm__ __volatile__(" cpsie i");
+
+  <bb 5> :
+  return;
+
+}
+
+
+SchM_Enter_Fee_FEE_EXCLUSIVE_AREA_01 ()
+{
+  uint32 u32CoreId;
+  uint32 msr;
+
+  <bb 2> :
+  _1 = Sys_GetCoreID ();
+  u32CoreId = (uint32) _1;
+  _2 = reentry_guard_FEE_EXCLUSIVE_AREA_01[u32CoreId];
+  if (_2 == 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 3> :
+  msr = Fee_schm_read_msr ();
+  _3 = msr & 1;
+  if (_3 == 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  __asm__ __volatile__(" cpsid i");
+
+  <bb 5> :
+  msr_FEE_EXCLUSIVE_AREA_01[u32CoreId] = msr;
+
+  <bb 6> :
+  _4 = reentry_guard_FEE_EXCLUSIVE_AREA_01[u32CoreId];
+  _5 = _4 + 1;
+  reentry_guard_FEE_EXCLUSIVE_AREA_01[u32CoreId] = _5;
+  return;
+
+}
+
+
+SchM_Exit_Fee_FEE_EXCLUSIVE_AREA_00 ()
+{
+  uint32 u32CoreId;
+
+  <bb 2> :
+  _1 = Sys_GetCoreID ();
+  u32CoreId = (uint32) _1;
+  _2 = reentry_guard_FEE_EXCLUSIVE_AREA_00[u32CoreId];
+  _3 = _2 + 4294967295;
+  reentry_guard_FEE_EXCLUSIVE_AREA_00[u32CoreId] = _3;
+  _4 = msr_FEE_EXCLUSIVE_AREA_00[u32CoreId];
+  _5 = _4 & 1;
+  if (_5 == 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 3> :
+  _6 = reentry_guard_FEE_EXCLUSIVE_AREA_00[u32CoreId];
+  if (_6 == 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  __asm__ __volatile__(" cpsie i");
+
+  <bb 5> :
+  return;
+
+}
+
+
+SchM_Enter_Fee_FEE_EXCLUSIVE_AREA_00 ()
+{
+  uint32 u32CoreId;
+  uint32 msr;
+
+  <bb 2> :
+  _1 = Sys_GetCoreID ();
+  u32CoreId = (uint32) _1;
+  _2 = reentry_guard_FEE_EXCLUSIVE_AREA_00[u32CoreId];
+  if (_2 == 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 3> :
+  msr = Fee_schm_read_msr ();
+  _3 = msr & 1;
+  if (_3 == 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  __asm__ __volatile__(" cpsid i");
+
+  <bb 5> :
+  msr_FEE_EXCLUSIVE_AREA_00[u32CoreId] = msr;
+
+  <bb 6> :
+  _4 = reentry_guard_FEE_EXCLUSIVE_AREA_00[u32CoreId];
+  _5 = _4 + 1;
+  reentry_guard_FEE_EXCLUSIVE_AREA_00[u32CoreId] = _5;
+  return;
+
+}
+
+
+Fee_schm_read_msr ()
+{
+  register uint32 reg_tmp;
+  uint32 D.5435;
+
+  <bb 2> :
+  __asm__ __volatile__(" mrs %0, primask " : "=r" reg_tmp);
+  D.5435 = reg_tmp;
+
+  <bb 3> :
+<L0>:
+  return D.5435;
+
+}
+
+

@@ -1,0 +1,152 @@
+Os_CanTask ()
+{
+  <bb 2> :
+  goto <bb 4>; [INV]
+
+  <bb 3> :
+  Can_43_FLEXCAN_MainFunction_Write ();
+
+  <bb 4> :
+  CanIf_bTxFlag.0_1 = CanIf_bTxFlag;
+  _2 = ~CanIf_bTxFlag.0_1;
+  if (_2 != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 5> :
+  CanIf_bTxFlag = 0;
+  goto <bb 7>; [INV]
+
+  <bb 6> :
+  Can_43_FLEXCAN_MainFunction_Read ();
+  Delay (1);
+
+  <bb 7> :
+  CanIf_bRxFlag.1_3 = CanIf_bRxFlag;
+  _4 = ~CanIf_bRxFlag.1_3;
+  if (_4 != 0)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 8> :
+  CanIf_bRxFlag = 0;
+  return;
+
+}
+
+
+Os_50ms_Task ()
+{
+  <bb 2> :
+  Can_43_FLEXCAN_Write (1, &PduInfo);
+  _1 = Can_au8Sdu8bytes[0];
+  _2 = _1;
+  _3 = _2 + 1;
+  Can_au8Sdu8bytes[0] = _3;
+  _4 = Can_au8Sdu8bytes[7];
+  _5 = _4;
+  _6 = _5 + 1;
+  Can_au8Sdu8bytes[7] = _6;
+  return;
+
+}
+
+
+EcuM_Init ()
+{
+  <bb 2> :
+  Mcu_Init (&Mcu_Config);
+  Mcu_InitClock (0);
+  Mcu_SetMode (0);
+  OsIf_Init (0B);
+  Can_43_FLEXCAN_Init (&Can_43_FLEXCAN_Config);
+  return;
+
+}
+
+
+main ()
+{
+  int D.7429;
+
+  <bb 2> :
+  EcuM_Init ();
+  Scheduler_Init (&Scheduler_Config);
+  Can_43_FLEXCAN_SetControllerMode (0, 1);
+  PduInfo.id = 0;
+  PduInfo.swPduHandle = 0;
+  PduInfo.length = 8;
+  PduInfo.sdu = &Can_au8Sdu8bytes;
+
+  <bb 3> :
+  Scheduler_MainFunction ();
+  goto <bb 3>; [INV]
+
+}
+
+
+CanIf_RxIndication (const struct Can_HwType * Mailbox, const struct PduInfoType * PduInfoPtr)
+{
+  <bb 2> :
+  CanIf_bRxFlag = 1;
+  return;
+
+}
+
+
+CanIf_TxConfirmation (PduIdType CanTxPduId)
+{
+  <bb 2> :
+  CanIf_bTxFlag = 1;
+  return;
+
+}
+
+
+CanIf_ControllerModeIndication (uint8 ControllerId, Can_ControllerStateType ControllerMode)
+{
+  <bb 2> :
+  return;
+
+}
+
+
+CanIf_ControllerBusOff (uint8 ControllerId)
+{
+  <bb 2> :
+  return;
+
+}
+
+
+Delay (uint32 ms)
+{
+  uint32 ElapsedTime;
+  uint32 SeedTick;
+  uint32 Timeout;
+  long unsigned int D.7428;
+
+  <bb 2> :
+  _1 = ms * 1000;
+  Timeout = OsIf_MicrosToTicks (_1, 1);
+  _2 = OsIf_GetCounter (1);
+  SeedTick = _2;
+  ElapsedTime = 0;
+
+  <bb 3> :
+  D.7428 = OsIf_GetElapsed (&SeedTick, 1);
+  ElapsedTime = D.7428 + ElapsedTime;
+  if (ElapsedTime < Timeout)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 4> :
+  SeedTick = {CLOBBER};
+  return;
+
+}
+
+
