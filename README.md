@@ -203,6 +203,8 @@ _Back to [Final Project](#7-final-project)_
 
 ![Button_1_Hold_Release.GIF](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/Final_Project/Button_1_Hold_Release.GIF)
 
+https://github.com/user-attachments/assets/b3b2fbca-c40f-4838-b6ee-8cbb92740021
+
 ![Button_1_Hold_Release_Terminal.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/Final_Project/Button_1_Hold_Release_Terminal.png)
 
 ### <ins>Button 2 Single Click:<ins>
@@ -237,6 +239,8 @@ _Back to [Final Project](#7-final-project)_
 
 ![Button_2_Hold_Release.GIF](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/Final_Project/Button_2_Hold_Release.GIF)
 
+https://github.com/user-attachments/assets/41513747-1fff-478c-84a3-2e4da0ab3ca1
+
 ![Button_2_Hold_Release_Terminal.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/Final_Project/Button_2_Hold_Release_Terminal.png)
 
 ### <ins>Button 3 Single Click:<ins>
@@ -270,6 +274,8 @@ _Back to [Final Project](#7-final-project)_
 * Buzzer shall start to beep and play Tone 3, then stop.
 
 ![Button_3_Hold_Release.GIF](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/Final_Project/Button_3_Hold_Release.GIF)
+
+https://github.com/user-attachments/assets/0583da24-9d69-4de4-affc-c40bbd631f13
 
 ![Button_3_Hold_Release_Terminal.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/Final_Project/Button_3_Hold_Release_Terminal.png)
 
