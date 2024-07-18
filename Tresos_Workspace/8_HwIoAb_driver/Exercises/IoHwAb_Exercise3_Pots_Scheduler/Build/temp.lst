@@ -721,13 +721,13 @@ int main( void )
     /* Init the scheduler with two tasks */
     Scheduler_Init( &Scheduler_Config );
      8ba:	4803      	ldr	r0, [pc, #12]	; (8c8 <main+0x18>)
-     8bc:	f000 fd74 	bl	13a8 <Scheduler_Init>
+     8bc:	f000 fd6c 	bl	1398 <Scheduler_Init>
 
     while( 1u ) 
     {
         /* Run the scheduler forever */
         Scheduler_MainFunction( );
-     8c0:	f000 fe2e 	bl	1520 <Scheduler_MainFunction>
+     8c0:	f000 fe26 	bl	1510 <Scheduler_MainFunction>
      8c4:	e7fc      	b.n	8c0 <main+0x10>
      8c6:	bf00      	nop
      8c8:	00011c70 	.word	0x00011c70
@@ -791,15 +791,15 @@ void EcuM_Init( void )
     /* Buttons init */
     HwIoAb_Buttons_Init( &ButtonsCfg );
      90c:	4809      	ldr	r0, [pc, #36]	; (934 <EcuM_Init+0x68>)
-     90e:	f000 f9ef 	bl	cf0 <HwIoAb_Buttons_Init>
+     90e:	f000 f9e7 	bl	ce0 <HwIoAb_Buttons_Init>
     /* RGB Leds init */
     HwIoAb_Leds_Init( &LedsCfg );
      912:	4809      	ldr	r0, [pc, #36]	; (938 <EcuM_Init+0x6c>)
-     914:	f000 fbb2 	bl	107c <HwIoAb_Leds_Init>
+     914:	f000 fbaa 	bl	106c <HwIoAb_Leds_Init>
     /* Pots init */
     HwIoAb_Pots_Init( NULL_PTR );
      918:	2000      	movs	r0, #0
-     91a:	f000 fbfd 	bl	1118 <HwIoAb_Pots_Init>
+     91a:	f000 fbf5 	bl	1108 <HwIoAb_Pots_Init>
 }
      91e:	bf00      	nop
      920:	bd08      	pop	{r3, pc}
@@ -820,7 +820,7 @@ void Os_50ms_Task( void )
 {
      93c:	b508      	push	{r3, lr}
     HwIoAb_Buttons_MainFunction();
-     93e:	f000 fa27 	bl	d90 <HwIoAb_Buttons_MainFunction>
+     93e:	f000 fa1f 	bl	d80 <HwIoAb_Buttons_MainFunction>
 }
      942:	bf00      	nop
      944:	bd08      	pop	{r3, pc}
@@ -847,7 +847,7 @@ void Os_100ms_Task( void )
         RealEvent =  HwIoAb_Buttons_GetEvent( CurrentButton );   // Obtaining event of actual button.
      95a:	f89d 3007 	ldrb.w	r3, [sp, #7]
      95e:	4618      	mov	r0, r3
-     960:	f000 f9f8 	bl	d54 <HwIoAb_Buttons_GetEvent>
+     960:	f000 f9f0 	bl	d44 <HwIoAb_Buttons_GetEvent>
      964:	4603      	mov	r3, r0
      966:	f88d 3006 	strb.w	r3, [sp, #6]
         if ( RealEvent != HWIOAB_BTN_EVENT_IDLE )    // A click was detected
@@ -886,7 +886,7 @@ void Os_100ms_Task( void )
      9ac:	00000a35 	.word	0x00000a35
                             HwIoAb_Leds_TurnToggle( HWI0AB_LED_BLUE_ID );
      9b0:	2000      	movs	r0, #0
-     9b2:	f000 fb9b 	bl	10ec <HwIoAb_Leds_TurnToggle>
+     9b2:	f000 fb93 	bl	10dc <HwIoAb_Leds_TurnToggle>
                             SEGGER_RTT_printf( 0, "Button 1 action: SINGLE_CLICK \n" );
      9b6:	49a7      	ldr	r1, [pc, #668]	; (c54 <__BSS_SRAM_SIZE+0x24>)
      9b8:	2000      	movs	r0, #0
@@ -896,7 +896,7 @@ void Os_100ms_Task( void )
      9c0:	681b      	ldr	r3, [r3, #0]
      9c2:	330a      	adds	r3, #10
      9c4:	4618      	mov	r0, r3
-     9c6:	f000 fbd1 	bl	116c <HwIoAb_Pots_GetValue>
+     9c6:	f000 fbc9 	bl	115c <HwIoAb_Pots_GetValue>
                             SEGGER_RTT_printf( 0, "Pot 1 ADC0 resistance value in ohms: %d\n", PotsControl_Ptr->Ohms_results_main[0] );
      9ca:	4ba3      	ldr	r3, [pc, #652]	; (c58 <__BSS_SRAM_SIZE+0x28>)
      9cc:	681b      	ldr	r3, [r3, #0]
@@ -909,7 +909,7 @@ void Os_100ms_Task( void )
      9da:	e048      	b.n	a6e <Os_100ms_Task+0x126>
                             HwIoAb_Leds_TurnToggle( HWIOAB_LED_RED_ID );
      9dc:	2001      	movs	r0, #1
-     9de:	f000 fb85 	bl	10ec <HwIoAb_Leds_TurnToggle>
+     9de:	f000 fb7d 	bl	10dc <HwIoAb_Leds_TurnToggle>
                             SEGGER_RTT_printf( 0, "Button 1 action: DOUBLE_CLICK \n" );
      9e2:	499f      	ldr	r1, [pc, #636]	; (c60 <__BSS_SRAM_SIZE+0x30>)
      9e4:	2000      	movs	r0, #0
@@ -919,7 +919,7 @@ void Os_100ms_Task( void )
      9ec:	681b      	ldr	r3, [r3, #0]
      9ee:	330a      	adds	r3, #10
      9f0:	4618      	mov	r0, r3
-     9f2:	f000 fbbb 	bl	116c <HwIoAb_Pots_GetValue>
+     9f2:	f000 fbb3 	bl	115c <HwIoAb_Pots_GetValue>
                             SEGGER_RTT_printf( 0, "Pot 2 ADC0 resistance value in ohms: %d\n", PotsControl_Ptr->Ohms_results_main[1] );
      9f6:	4b98      	ldr	r3, [pc, #608]	; (c58 <__BSS_SRAM_SIZE+0x28>)
      9f8:	681b      	ldr	r3, [r3, #0]
@@ -932,7 +932,7 @@ void Os_100ms_Task( void )
      a06:	e032      	b.n	a6e <Os_100ms_Task+0x126>
                             HwIoAb_Leds_TurnToggle( HWIOAB_LED_GREEN_ID );
      a08:	2002      	movs	r0, #2
-     a0a:	f000 fb6f 	bl	10ec <HwIoAb_Leds_TurnToggle>
+     a0a:	f000 fb67 	bl	10dc <HwIoAb_Leds_TurnToggle>
                             SEGGER_RTT_printf( 0, "Button 1 action: HOLD_CLICK \n" );
      a0e:	4996      	ldr	r1, [pc, #600]	; (c68 <__BSS_SRAM_SIZE+0x38>)
      a10:	2000      	movs	r0, #0
@@ -942,7 +942,7 @@ void Os_100ms_Task( void )
      a18:	681b      	ldr	r3, [r3, #0]
      a1a:	330e      	adds	r3, #14
      a1c:	4618      	mov	r0, r3
-     a1e:	f000 fc05 	bl	122c <HwIoAb_Pots_GetAltValue>
+     a1e:	f000 fbfd 	bl	121c <HwIoAb_Pots_GetAltValue>
                             SEGGER_RTT_printf( 0, "Pot 1 ADC1 resistance value in ohms: %d\n", PotsControl_Ptr->Ohms_results_alter[0] );
      a22:	4b8d      	ldr	r3, [pc, #564]	; (c58 <__BSS_SRAM_SIZE+0x28>)
      a24:	681b      	ldr	r3, [r3, #0]
@@ -955,13 +955,13 @@ void Os_100ms_Task( void )
      a32:	e01c      	b.n	a6e <Os_100ms_Task+0x126>
                             HwIoAb_Leds_TurnOff( HWI0AB_LED_BLUE_ID );
      a34:	2000      	movs	r0, #0
-     a36:	f000 fb35 	bl	10a4 <HwIoAb_Leds_TurnOff>
+     a36:	f000 fb2d 	bl	1094 <HwIoAb_Leds_TurnOff>
                             HwIoAb_Leds_TurnOff( HWIOAB_LED_RED_ID );
      a3a:	2001      	movs	r0, #1
-     a3c:	f000 fb32 	bl	10a4 <HwIoAb_Leds_TurnOff>
+     a3c:	f000 fb2a 	bl	1094 <HwIoAb_Leds_TurnOff>
                             HwIoAb_Leds_TurnOff( HWIOAB_LED_GREEN_ID );
      a40:	2002      	movs	r0, #2
-     a42:	f000 fb2f 	bl	10a4 <HwIoAb_Leds_TurnOff>
+     a42:	f000 fb27 	bl	1094 <HwIoAb_Leds_TurnOff>
                             SEGGER_RTT_printf( 0, "Button 1 action: RELEASE \n" );
      a46:	498a      	ldr	r1, [pc, #552]	; (c70 <__BSS_SRAM_SIZE+0x40>)
      a48:	2000      	movs	r0, #0
@@ -971,7 +971,7 @@ void Os_100ms_Task( void )
      a50:	681b      	ldr	r3, [r3, #0]
      a52:	330e      	adds	r3, #14
      a54:	4618      	mov	r0, r3
-     a56:	f000 fbe9 	bl	122c <HwIoAb_Pots_GetAltValue>
+     a56:	f000 fbe1 	bl	121c <HwIoAb_Pots_GetAltValue>
                             SEGGER_RTT_printf( 0, "Pot 2 ADC1 resistance value in ohms: %d\n", PotsControl_Ptr->Ohms_results_alter[1] );
      a5a:	4b7f      	ldr	r3, [pc, #508]	; (c58 <__BSS_SRAM_SIZE+0x28>)
      a5c:	681b      	ldr	r3, [r3, #0]
@@ -999,7 +999,7 @@ void Os_100ms_Task( void )
      a8c:	00000b15 	.word	0x00000b15
                             HwIoAb_Leds_TurnToggle( HWI0AB_LED_BLUE_ID );
      a90:	2000      	movs	r0, #0
-     a92:	f000 fb2b 	bl	10ec <HwIoAb_Leds_TurnToggle>
+     a92:	f000 fb23 	bl	10dc <HwIoAb_Leds_TurnToggle>
                             SEGGER_RTT_printf( 0, "Button 2 action: SINGLE_CLICK \n" );
      a96:	4978      	ldr	r1, [pc, #480]	; (c78 <__BSS_SRAM_SIZE+0x48>)
      a98:	2000      	movs	r0, #0
@@ -1009,7 +1009,7 @@ void Os_100ms_Task( void )
      aa0:	681b      	ldr	r3, [r3, #0]
      aa2:	330a      	adds	r3, #10
      aa4:	4618      	mov	r0, r3
-     aa6:	f000 fb61 	bl	116c <HwIoAb_Pots_GetValue>
+     aa6:	f000 fb59 	bl	115c <HwIoAb_Pots_GetValue>
                             SEGGER_RTT_printf( 0, "Pot 1 ADC0 resistance value in ohms: %d\n", PotsControl_Ptr->Ohms_results_main[0] );
      aaa:	4b6b      	ldr	r3, [pc, #428]	; (c58 <__BSS_SRAM_SIZE+0x28>)
      aac:	681b      	ldr	r3, [r3, #0]
@@ -1022,7 +1022,7 @@ void Os_100ms_Task( void )
      aba:	e048      	b.n	b4e <Os_100ms_Task+0x206>
                             HwIoAb_Leds_TurnToggle( HWIOAB_LED_RED_ID );
      abc:	2001      	movs	r0, #1
-     abe:	f000 fb15 	bl	10ec <HwIoAb_Leds_TurnToggle>
+     abe:	f000 fb0d 	bl	10dc <HwIoAb_Leds_TurnToggle>
                             SEGGER_RTT_printf( 0, "Button 2 action: DOUBLE_CLICK \n" );
      ac2:	496e      	ldr	r1, [pc, #440]	; (c7c <__BSS_SRAM_SIZE+0x4c>)
      ac4:	2000      	movs	r0, #0
@@ -1032,7 +1032,7 @@ void Os_100ms_Task( void )
      acc:	681b      	ldr	r3, [r3, #0]
      ace:	330a      	adds	r3, #10
      ad0:	4618      	mov	r0, r3
-     ad2:	f000 fb4b 	bl	116c <HwIoAb_Pots_GetValue>
+     ad2:	f000 fb43 	bl	115c <HwIoAb_Pots_GetValue>
                             SEGGER_RTT_printf( 0, "Pot 2 ADC0 resistance value in ohms: %d\n", PotsControl_Ptr->Ohms_results_main[1] );
      ad6:	4b60      	ldr	r3, [pc, #384]	; (c58 <__BSS_SRAM_SIZE+0x28>)
      ad8:	681b      	ldr	r3, [r3, #0]
@@ -1045,7 +1045,7 @@ void Os_100ms_Task( void )
      ae6:	e032      	b.n	b4e <Os_100ms_Task+0x206>
                             HwIoAb_Leds_TurnToggle( HWIOAB_LED_GREEN_ID );
      ae8:	2002      	movs	r0, #2
-     aea:	f000 faff 	bl	10ec <HwIoAb_Leds_TurnToggle>
+     aea:	f000 faf7 	bl	10dc <HwIoAb_Leds_TurnToggle>
                             SEGGER_RTT_printf( 0, "Button 2 action: HOLD_CLICK \n" );
      aee:	4964      	ldr	r1, [pc, #400]	; (c80 <__BSS_SRAM_SIZE+0x50>)
      af0:	2000      	movs	r0, #0
@@ -1055,7 +1055,7 @@ void Os_100ms_Task( void )
      af8:	681b      	ldr	r3, [r3, #0]
      afa:	330e      	adds	r3, #14
      afc:	4618      	mov	r0, r3
-     afe:	f000 fb95 	bl	122c <HwIoAb_Pots_GetAltValue>
+     afe:	f000 fb8d 	bl	121c <HwIoAb_Pots_GetAltValue>
                             SEGGER_RTT_printf( 0, "Pot 1 ADC1 resistance value in ohms: %d\n", PotsControl_Ptr->Ohms_results_alter[0] );
      b02:	4b55      	ldr	r3, [pc, #340]	; (c58 <__BSS_SRAM_SIZE+0x28>)
      b04:	681b      	ldr	r3, [r3, #0]
@@ -1068,13 +1068,13 @@ void Os_100ms_Task( void )
      b12:	e01c      	b.n	b4e <Os_100ms_Task+0x206>
                             HwIoAb_Leds_TurnOff( HWI0AB_LED_BLUE_ID );
      b14:	2000      	movs	r0, #0
-     b16:	f000 fac5 	bl	10a4 <HwIoAb_Leds_TurnOff>
+     b16:	f000 fabd 	bl	1094 <HwIoAb_Leds_TurnOff>
                             HwIoAb_Leds_TurnOff( HWIOAB_LED_RED_ID );
      b1a:	2001      	movs	r0, #1
-     b1c:	f000 fac2 	bl	10a4 <HwIoAb_Leds_TurnOff>
+     b1c:	f000 faba 	bl	1094 <HwIoAb_Leds_TurnOff>
                             HwIoAb_Leds_TurnOff( HWIOAB_LED_GREEN_ID );
      b20:	2002      	movs	r0, #2
-     b22:	f000 fabf 	bl	10a4 <HwIoAb_Leds_TurnOff>
+     b22:	f000 fab7 	bl	1094 <HwIoAb_Leds_TurnOff>
                             SEGGER_RTT_printf( 0, "Button 2 action: RELEASE \n" );
      b26:	4957      	ldr	r1, [pc, #348]	; (c84 <__BSS_SRAM_SIZE+0x54>)
      b28:	2000      	movs	r0, #0
@@ -1084,7 +1084,7 @@ void Os_100ms_Task( void )
      b30:	681b      	ldr	r3, [r3, #0]
      b32:	330e      	adds	r3, #14
      b34:	4618      	mov	r0, r3
-     b36:	f000 fb79 	bl	122c <HwIoAb_Pots_GetAltValue>
+     b36:	f000 fb71 	bl	121c <HwIoAb_Pots_GetAltValue>
                             SEGGER_RTT_printf( 0, "Pot 2 ADC1 resistance value in ohms: %d\n", PotsControl_Ptr->Ohms_results_alter[1] );
      b3a:	4b47      	ldr	r3, [pc, #284]	; (c58 <__BSS_SRAM_SIZE+0x28>)
      b3c:	681b      	ldr	r3, [r3, #0]
@@ -1112,7 +1112,7 @@ void Os_100ms_Task( void )
      b6c:	00000bf5 	.word	0x00000bf5
                             HwIoAb_Leds_TurnToggle( HWI0AB_LED_BLUE_ID );
      b70:	2000      	movs	r0, #0
-     b72:	f000 fabb 	bl	10ec <HwIoAb_Leds_TurnToggle>
+     b72:	f000 fab3 	bl	10dc <HwIoAb_Leds_TurnToggle>
                             SEGGER_RTT_printf( 0, "Button 3 action: SINGLE_CLICK \n" );
      b76:	4944      	ldr	r1, [pc, #272]	; (c88 <__BSS_SRAM_SIZE+0x58>)
      b78:	2000      	movs	r0, #0
@@ -1122,7 +1122,7 @@ void Os_100ms_Task( void )
      b80:	681b      	ldr	r3, [r3, #0]
      b82:	330a      	adds	r3, #10
      b84:	4618      	mov	r0, r3
-     b86:	f000 faf1 	bl	116c <HwIoAb_Pots_GetValue>
+     b86:	f000 fae9 	bl	115c <HwIoAb_Pots_GetValue>
                             SEGGER_RTT_printf( 0, "Pot 1 ADC0 resistance value in ohms: %d\n", PotsControl_Ptr->Ohms_results_main[0] );
      b8a:	4b33      	ldr	r3, [pc, #204]	; (c58 <__BSS_SRAM_SIZE+0x28>)
      b8c:	681b      	ldr	r3, [r3, #0]
@@ -1135,7 +1135,7 @@ void Os_100ms_Task( void )
      b9a:	e048      	b.n	c2e <Os_100ms_Task+0x2e6>
                             HwIoAb_Leds_TurnToggle( HWIOAB_LED_RED_ID );
      b9c:	2001      	movs	r0, #1
-     b9e:	f000 faa5 	bl	10ec <HwIoAb_Leds_TurnToggle>
+     b9e:	f000 fa9d 	bl	10dc <HwIoAb_Leds_TurnToggle>
                             SEGGER_RTT_printf( 0, "Button 3 action: DOUBLE_CLICK \n" );
      ba2:	493a      	ldr	r1, [pc, #232]	; (c8c <__BSS_SRAM_SIZE+0x5c>)
      ba4:	2000      	movs	r0, #0
@@ -1145,7 +1145,7 @@ void Os_100ms_Task( void )
      bac:	681b      	ldr	r3, [r3, #0]
      bae:	330a      	adds	r3, #10
      bb0:	4618      	mov	r0, r3
-     bb2:	f000 fadb 	bl	116c <HwIoAb_Pots_GetValue>
+     bb2:	f000 fad3 	bl	115c <HwIoAb_Pots_GetValue>
                             SEGGER_RTT_printf( 0, "Pot 2 ADC0 resistance value in ohms: %d\n", PotsControl_Ptr->Ohms_results_main[1] );
      bb6:	4b28      	ldr	r3, [pc, #160]	; (c58 <__BSS_SRAM_SIZE+0x28>)
      bb8:	681b      	ldr	r3, [r3, #0]
@@ -1158,7 +1158,7 @@ void Os_100ms_Task( void )
      bc6:	e032      	b.n	c2e <Os_100ms_Task+0x2e6>
                             HwIoAb_Leds_TurnToggle( HWIOAB_LED_GREEN_ID );
      bc8:	2002      	movs	r0, #2
-     bca:	f000 fa8f 	bl	10ec <HwIoAb_Leds_TurnToggle>
+     bca:	f000 fa87 	bl	10dc <HwIoAb_Leds_TurnToggle>
                             SEGGER_RTT_printf( 0, "Button 3 action: HOLD_CLICK \n" );
      bce:	4930      	ldr	r1, [pc, #192]	; (c90 <__BSS_SRAM_SIZE+0x60>)
      bd0:	2000      	movs	r0, #0
@@ -1168,7 +1168,7 @@ void Os_100ms_Task( void )
      bd8:	681b      	ldr	r3, [r3, #0]
      bda:	330e      	adds	r3, #14
      bdc:	4618      	mov	r0, r3
-     bde:	f000 fb25 	bl	122c <HwIoAb_Pots_GetAltValue>
+     bde:	f000 fb1d 	bl	121c <HwIoAb_Pots_GetAltValue>
                             SEGGER_RTT_printf( 0, "Pot 1 ADC1 resistance value in ohms: %d\n", PotsControl_Ptr->Ohms_results_alter[0] );
      be2:	4b1d      	ldr	r3, [pc, #116]	; (c58 <__BSS_SRAM_SIZE+0x28>)
      be4:	681b      	ldr	r3, [r3, #0]
@@ -1181,13 +1181,13 @@ void Os_100ms_Task( void )
      bf2:	e01c      	b.n	c2e <Os_100ms_Task+0x2e6>
                             HwIoAb_Leds_TurnOff( HWI0AB_LED_BLUE_ID );
      bf4:	2000      	movs	r0, #0
-     bf6:	f000 fa55 	bl	10a4 <HwIoAb_Leds_TurnOff>
+     bf6:	f000 fa4d 	bl	1094 <HwIoAb_Leds_TurnOff>
                             HwIoAb_Leds_TurnOff( HWIOAB_LED_RED_ID );
      bfa:	2001      	movs	r0, #1
-     bfc:	f000 fa52 	bl	10a4 <HwIoAb_Leds_TurnOff>
+     bfc:	f000 fa4a 	bl	1094 <HwIoAb_Leds_TurnOff>
                             HwIoAb_Leds_TurnOff( HWIOAB_LED_GREEN_ID );
      c00:	2002      	movs	r0, #2
-     c02:	f000 fa4f 	bl	10a4 <HwIoAb_Leds_TurnOff>
+     c02:	f000 fa47 	bl	1094 <HwIoAb_Leds_TurnOff>
                             SEGGER_RTT_printf( 0, "Button 3 action: RELEASE \n" );
      c06:	4923      	ldr	r1, [pc, #140]	; (c94 <__BSS_SRAM_SIZE+0x64>)
      c08:	2000      	movs	r0, #0
@@ -1197,7 +1197,7 @@ void Os_100ms_Task( void )
      c10:	681b      	ldr	r3, [r3, #0]
      c12:	330e      	adds	r3, #14
      c14:	4618      	mov	r0, r3
-     c16:	f000 fb09 	bl	122c <HwIoAb_Pots_GetAltValue>
+     c16:	f000 fb01 	bl	121c <HwIoAb_Pots_GetAltValue>
                             SEGGER_RTT_printf( 0, "Pot 2 ADC1 resistance value in ohms: %d\n", PotsControl_Ptr->Ohms_results_alter[1] );
      c1a:	4b0f      	ldr	r3, [pc, #60]	; (c58 <__BSS_SRAM_SIZE+0x28>)
      c1c:	681b      	ldr	r3, [r3, #0]
@@ -1249,1551 +1249,1554 @@ void Os_100ms_Task( void )
      c90:	000113dc 	.word	0x000113dc
      c94:	000113fc 	.word	0x000113fc
 
-00000c98 <Os_PotsTask>:
-
-void Os_LedsTask( void ){}
-void Os_ButtonsTask( void ){}
-void Os_PotsTask( void ){}
-     c98:	bf00      	nop
-     c9a:	4770      	bx	lr
-
-00000c9c <Os_EepromsTask>:
-void Os_EepromsTask( void ){}
-     c9c:	bf00      	nop
-     c9e:	4770      	bx	lr
-
-00000ca0 <Os_CanTask>:
-void Os_CanTask( void ){}
-     ca0:	bf00      	nop
-     ca2:	4770      	bx	lr
-
-00000ca4 <Os_BuzzerTask>:
-     ca4:	bf00      	nop
-     ca6:	4770      	bx	lr
-
-00000ca8 <Adc_schm_read_msr>:
+00000c98 <Adc_schm_read_msr>:
 * @pre  None
 * @post None
 * 
 */
 uint32 Adc_schm_read_msr(void)
 {
-     ca8:	b410      	push	{r4}
+     c98:	b410      	push	{r4}
         __asm volatile( " mrs %0, CPSR " : "=r" (reg_tmp) );
     #else
         #if ((defined MCAL_ENABLE_USER_MODE_SUPPORT)&&(!defined MCAL_PLATFORM_ARM_M0PLUS))
         __asm volatile( " mrs %0, basepri " : "=r" (reg_tmp) );
         #else
         __asm volatile( " mrs %0, primask " : "=r" (reg_tmp) );
-     caa:	f3ef 8310 	mrs	r3, PRIMASK
-     cae:	461c      	mov	r4, r3
+     c9a:	f3ef 8310 	mrs	r3, PRIMASK
+     c9e:	461c      	mov	r4, r3
         #endif
     #endif
     return (uint32)reg_tmp;
-     cb0:	4623      	mov	r3, r4
+     ca0:	4623      	mov	r3, r4
 }
-     cb2:	4618      	mov	r0, r3
-     cb4:	f85d 4b04 	ldr.w	r4, [sp], #4
-     cb8:	4770      	bx	lr
+     ca2:	4618      	mov	r0, r3
+     ca4:	f85d 4b04 	ldr.w	r4, [sp], #4
+     ca8:	4770      	bx	lr
 
-00000cba <Dio_schm_read_msr>:
+00000caa <Dio_schm_read_msr>:
 * @pre  None
 * @post None
 * 
 */
 uint32 Dio_schm_read_msr(void)
 {
-     cba:	b410      	push	{r4}
+     caa:	b410      	push	{r4}
         __asm volatile( " mrs %0, CPSR " : "=r" (reg_tmp) );
     #else
         #if ((defined MCAL_ENABLE_USER_MODE_SUPPORT)&&(!defined MCAL_PLATFORM_ARM_M0PLUS))
         __asm volatile( " mrs %0, basepri " : "=r" (reg_tmp) );
         #else
         __asm volatile( " mrs %0, primask " : "=r" (reg_tmp) );
-     cbc:	f3ef 8310 	mrs	r3, PRIMASK
-     cc0:	461c      	mov	r4, r3
+     cac:	f3ef 8310 	mrs	r3, PRIMASK
+     cb0:	461c      	mov	r4, r3
         #endif
     #endif
     return (uint32)reg_tmp;
-     cc2:	4623      	mov	r3, r4
+     cb2:	4623      	mov	r3, r4
 }
-     cc4:	4618      	mov	r0, r3
-     cc6:	f85d 4b04 	ldr.w	r4, [sp], #4
-     cca:	4770      	bx	lr
+     cb4:	4618      	mov	r0, r3
+     cb6:	f85d 4b04 	ldr.w	r4, [sp], #4
+     cba:	4770      	bx	lr
 
-00000ccc <Mcu_schm_read_msr>:
+00000cbc <Mcu_schm_read_msr>:
 * @pre  None
 * @post None
 * 
 */
 uint32 Mcu_schm_read_msr(void)
 {
-     ccc:	b410      	push	{r4}
+     cbc:	b410      	push	{r4}
         __asm volatile( " mrs %0, CPSR " : "=r" (reg_tmp) );
     #else
         #if ((defined MCAL_ENABLE_USER_MODE_SUPPORT)&&(!defined MCAL_PLATFORM_ARM_M0PLUS))
         __asm volatile( " mrs %0, basepri " : "=r" (reg_tmp) );
         #else
         __asm volatile( " mrs %0, primask " : "=r" (reg_tmp) );
-     cce:	f3ef 8310 	mrs	r3, PRIMASK
-     cd2:	461c      	mov	r4, r3
+     cbe:	f3ef 8310 	mrs	r3, PRIMASK
+     cc2:	461c      	mov	r4, r3
         #endif
     #endif
     return (uint32)reg_tmp;
-     cd4:	4623      	mov	r3, r4
+     cc4:	4623      	mov	r3, r4
 }
-     cd6:	4618      	mov	r0, r3
-     cd8:	f85d 4b04 	ldr.w	r4, [sp], #4
-     cdc:	4770      	bx	lr
+     cc6:	4618      	mov	r0, r3
+     cc8:	f85d 4b04 	ldr.w	r4, [sp], #4
+     ccc:	4770      	bx	lr
 
-00000cde <Port_schm_read_msr>:
+00000cce <Port_schm_read_msr>:
 * @pre  None
 * @post None
 * 
 */
 uint32 Port_schm_read_msr(void)
 {
-     cde:	b410      	push	{r4}
+     cce:	b410      	push	{r4}
         __asm volatile( " mrs %0, CPSR " : "=r" (reg_tmp) );
     #else
         #if ((defined MCAL_ENABLE_USER_MODE_SUPPORT)&&(!defined MCAL_PLATFORM_ARM_M0PLUS))
         __asm volatile( " mrs %0, basepri " : "=r" (reg_tmp) );
         #else
         __asm volatile( " mrs %0, primask " : "=r" (reg_tmp) );
-     ce0:	f3ef 8310 	mrs	r3, PRIMASK
-     ce4:	461c      	mov	r4, r3
+     cd0:	f3ef 8310 	mrs	r3, PRIMASK
+     cd4:	461c      	mov	r4, r3
         #endif
     #endif
     return (uint32)reg_tmp;
-     ce6:	4623      	mov	r3, r4
+     cd6:	4623      	mov	r3, r4
 }
-     ce8:	4618      	mov	r0, r3
-     cea:	f85d 4b04 	ldr.w	r4, [sp], #4
-     cee:	4770      	bx	lr
+     cd8:	4618      	mov	r0, r3
+     cda:	f85d 4b04 	ldr.w	r4, [sp], #4
+     cde:	4770      	bx	lr
 
-00000cf0 <HwIoAb_Buttons_Init>:
+00000ce0 <HwIoAb_Buttons_Init>:
  * the responsibility of the function to initialize any hardware. 
  * 
  * @param Buttons_Config Pointer to configuration array.
  */
 void HwIoAb_Buttons_Init( const HwIoAb_Buttons_Config * Buttons_Config )
 {
-     cf0:	b084      	sub	sp, #16
-     cf2:	9001      	str	r0, [sp, #4]
+     ce0:	b084      	sub	sp, #16
+     ce2:	9001      	str	r0, [sp, #4]
     ButtonsControl_Ptr->Buttons = HWIOAB_BUTTONS_MAX;
-     cf4:	4b16      	ldr	r3, [pc, #88]	; (d50 <HwIoAb_Buttons_Init+0x60>)
-     cf6:	681b      	ldr	r3, [r3, #0]
-     cf8:	2203      	movs	r2, #3
-     cfa:	701a      	strb	r2, [r3, #0]
+     ce4:	4b16      	ldr	r3, [pc, #88]	; (d40 <HwIoAb_Buttons_Init+0x60>)
+     ce6:	681b      	ldr	r3, [r3, #0]
+     ce8:	2203      	movs	r2, #3
+     cea:	701a      	strb	r2, [r3, #0]
     ButtonsControl_Ptr->ButtonsConfig_Ptr = Buttons_Config;
-     cfc:	4b14      	ldr	r3, [pc, #80]	; (d50 <HwIoAb_Buttons_Init+0x60>)
-     cfe:	681b      	ldr	r3, [r3, #0]
-     d00:	9a01      	ldr	r2, [sp, #4]
-     d02:	605a      	str	r2, [r3, #4]
+     cec:	4b14      	ldr	r3, [pc, #80]	; (d40 <HwIoAb_Buttons_Init+0x60>)
+     cee:	681b      	ldr	r3, [r3, #0]
+     cf0:	9a01      	ldr	r2, [sp, #4]
+     cf2:	605a      	str	r2, [r3, #4]
 
     for(uint8 i = 0; i < ButtonsControl_Ptr->Buttons; i++)   // All button states and events to IDLE.
-     d04:	2300      	movs	r3, #0
-     d06:	f88d 300f 	strb.w	r3, [sp, #15]
-     d0a:	e012      	b.n	d32 <HwIoAb_Buttons_Init+0x42>
+     cf4:	2300      	movs	r3, #0
+     cf6:	f88d 300f 	strb.w	r3, [sp, #15]
+     cfa:	e012      	b.n	d22 <HwIoAb_Buttons_Init+0x42>
     {
         ButtonsControl_Ptr->States[i] = HWIOAB_BTN_STATE_IDLE;
-     d0c:	4b10      	ldr	r3, [pc, #64]	; (d50 <HwIoAb_Buttons_Init+0x60>)
-     d0e:	681a      	ldr	r2, [r3, #0]
-     d10:	f89d 300f 	ldrb.w	r3, [sp, #15]
-     d14:	4413      	add	r3, r2
-     d16:	2200      	movs	r2, #0
-     d18:	721a      	strb	r2, [r3, #8]
+     cfc:	4b10      	ldr	r3, [pc, #64]	; (d40 <HwIoAb_Buttons_Init+0x60>)
+     cfe:	681a      	ldr	r2, [r3, #0]
+     d00:	f89d 300f 	ldrb.w	r3, [sp, #15]
+     d04:	4413      	add	r3, r2
+     d06:	2200      	movs	r2, #0
+     d08:	721a      	strb	r2, [r3, #8]
         ButtonsControl_Ptr->Events[i] = HWIOAB_BTN_EVENT_IDLE;
-     d1a:	4b0d      	ldr	r3, [pc, #52]	; (d50 <HwIoAb_Buttons_Init+0x60>)
-     d1c:	681a      	ldr	r2, [r3, #0]
-     d1e:	f89d 300f 	ldrb.w	r3, [sp, #15]
-     d22:	4413      	add	r3, r2
-     d24:	2200      	movs	r2, #0
-     d26:	72da      	strb	r2, [r3, #11]
+     d0a:	4b0d      	ldr	r3, [pc, #52]	; (d40 <HwIoAb_Buttons_Init+0x60>)
+     d0c:	681a      	ldr	r2, [r3, #0]
+     d0e:	f89d 300f 	ldrb.w	r3, [sp, #15]
+     d12:	4413      	add	r3, r2
+     d14:	2200      	movs	r2, #0
+     d16:	72da      	strb	r2, [r3, #11]
     for(uint8 i = 0; i < ButtonsControl_Ptr->Buttons; i++)   // All button states and events to IDLE.
-     d28:	f89d 300f 	ldrb.w	r3, [sp, #15]
-     d2c:	3301      	adds	r3, #1
-     d2e:	f88d 300f 	strb.w	r3, [sp, #15]
-     d32:	4b07      	ldr	r3, [pc, #28]	; (d50 <HwIoAb_Buttons_Init+0x60>)
-     d34:	681b      	ldr	r3, [r3, #0]
-     d36:	781b      	ldrb	r3, [r3, #0]
-     d38:	f89d 200f 	ldrb.w	r2, [sp, #15]
-     d3c:	429a      	cmp	r2, r3
-     d3e:	d3e5      	bcc.n	d0c <HwIoAb_Buttons_Init+0x1c>
+     d18:	f89d 300f 	ldrb.w	r3, [sp, #15]
+     d1c:	3301      	adds	r3, #1
+     d1e:	f88d 300f 	strb.w	r3, [sp, #15]
+     d22:	4b07      	ldr	r3, [pc, #28]	; (d40 <HwIoAb_Buttons_Init+0x60>)
+     d24:	681b      	ldr	r3, [r3, #0]
+     d26:	781b      	ldrb	r3, [r3, #0]
+     d28:	f89d 200f 	ldrb.w	r2, [sp, #15]
+     d2c:	429a      	cmp	r2, r3
+     d2e:	d3e5      	bcc.n	cfc <HwIoAb_Buttons_Init+0x1c>
     }
 
     ButtonsControl_Ptr->Buttons_init = TRUE;
-     d40:	4b03      	ldr	r3, [pc, #12]	; (d50 <HwIoAb_Buttons_Init+0x60>)
-     d42:	681b      	ldr	r3, [r3, #0]
-     d44:	2201      	movs	r2, #1
-     d46:	739a      	strb	r2, [r3, #14]
+     d30:	4b03      	ldr	r3, [pc, #12]	; (d40 <HwIoAb_Buttons_Init+0x60>)
+     d32:	681b      	ldr	r3, [r3, #0]
+     d34:	2201      	movs	r2, #1
+     d36:	739a      	strb	r2, [r3, #14]
 }
-     d48:	bf00      	nop
-     d4a:	b004      	add	sp, #16
-     d4c:	4770      	bx	lr
-     d4e:	bf00      	nop
-     d50:	1fff8b38 	.word	0x1fff8b38
+     d38:	bf00      	nop
+     d3a:	b004      	add	sp, #16
+     d3c:	4770      	bx	lr
+     d3e:	bf00      	nop
+     d40:	1fff8b38 	.word	0x1fff8b38
 
-00000d54 <HwIoAb_Buttons_GetEvent>:
+00000d44 <HwIoAb_Buttons_GetEvent>:
  * @return event Last event detected in button.
  * 
  * @note The Button ID must be valid.
  */
 uint8 HwIoAb_Buttons_GetEvent( uint8 Button )
 {
-     d54:	b084      	sub	sp, #16
-     d56:	4603      	mov	r3, r0
-     d58:	f88d 3007 	strb.w	r3, [sp, #7]
+     d44:	b084      	sub	sp, #16
+     d46:	4603      	mov	r3, r0
+     d48:	f88d 3007 	strb.w	r3, [sp, #7]
     uint8 temp = 0;
-     d5c:	2300      	movs	r3, #0
-     d5e:	f88d 300f 	strb.w	r3, [sp, #15]
+     d4c:	2300      	movs	r3, #0
+     d4e:	f88d 300f 	strb.w	r3, [sp, #15]
     temp = ButtonsControl_Ptr->Events[Button];                      // Obtaining last event.
-     d62:	4b0a      	ldr	r3, [pc, #40]	; (d8c <HwIoAb_Buttons_GetEvent+0x38>)
+     d52:	4b0a      	ldr	r3, [pc, #40]	; (d7c <HwIoAb_Buttons_GetEvent+0x38>)
+     d54:	681a      	ldr	r2, [r3, #0]
+     d56:	f89d 3007 	ldrb.w	r3, [sp, #7]
+     d5a:	4413      	add	r3, r2
+     d5c:	7adb      	ldrb	r3, [r3, #11]
+     d5e:	f88d 300f 	strb.w	r3, [sp, #15]
+    ButtonsControl_Ptr->Events[Button] = HWIOAB_BTN_EVENT_IDLE;     // Clearing event of button.
+     d62:	4b06      	ldr	r3, [pc, #24]	; (d7c <HwIoAb_Buttons_GetEvent+0x38>)
      d64:	681a      	ldr	r2, [r3, #0]
      d66:	f89d 3007 	ldrb.w	r3, [sp, #7]
      d6a:	4413      	add	r3, r2
-     d6c:	7adb      	ldrb	r3, [r3, #11]
-     d6e:	f88d 300f 	strb.w	r3, [sp, #15]
-    ButtonsControl_Ptr->Events[Button] = HWIOAB_BTN_EVENT_IDLE;     // Clearing event of button.
-     d72:	4b06      	ldr	r3, [pc, #24]	; (d8c <HwIoAb_Buttons_GetEvent+0x38>)
-     d74:	681a      	ldr	r2, [r3, #0]
-     d76:	f89d 3007 	ldrb.w	r3, [sp, #7]
-     d7a:	4413      	add	r3, r2
-     d7c:	2200      	movs	r2, #0
-     d7e:	72da      	strb	r2, [r3, #11]
+     d6c:	2200      	movs	r2, #0
+     d6e:	72da      	strb	r2, [r3, #11]
     return temp;
-     d80:	f89d 300f 	ldrb.w	r3, [sp, #15]
+     d70:	f89d 300f 	ldrb.w	r3, [sp, #15]
 }
-     d84:	4618      	mov	r0, r3
-     d86:	b004      	add	sp, #16
-     d88:	4770      	bx	lr
-     d8a:	bf00      	nop
-     d8c:	1fff8b38 	.word	0x1fff8b38
+     d74:	4618      	mov	r0, r3
+     d76:	b004      	add	sp, #16
+     d78:	4770      	bx	lr
+     d7a:	bf00      	nop
+     d7c:	1fff8b38 	.word	0x1fff8b38
 
-00000d90 <HwIoAb_Buttons_MainFunction>:
+00000d80 <HwIoAb_Buttons_MainFunction>:
  * @note Remember that the timeout count is for detecting a hold click when the button is pressed 1 and 2 times.
  * @note Each button has its own dedicated count.
  * 
  */
 void HwIoAb_Buttons_MainFunction( void )
 {
-     d90:	b500      	push	{lr}
-     d92:	b083      	sub	sp, #12
+     d80:	b500      	push	{lr}
+     d82:	b083      	sub	sp, #12
     static uint32 Counters[HWIOAB_BUTTONS_MAX] = {0, 0, 0};
 
     for( uint8 i = 0; i < ButtonsControl_Ptr->Buttons; i++ )    // Executing state machine for each button.
-     d94:	2300      	movs	r3, #0
-     d96:	f88d 3007 	strb.w	r3, [sp, #7]
-     d9a:	e15d      	b.n	1058 <HwIoAb_Buttons_MainFunction+0x2c8>
+     d84:	2300      	movs	r3, #0
+     d86:	f88d 3007 	strb.w	r3, [sp, #7]
+     d8a:	e15d      	b.n	1048 <HwIoAb_Buttons_MainFunction+0x2c8>
     {
         switch( ButtonsControl_Ptr->States[i] )
-     d9c:	4bb5      	ldr	r3, [pc, #724]	; (1074 <HwIoAb_Buttons_MainFunction+0x2e4>)
-     d9e:	681a      	ldr	r2, [r3, #0]
-     da0:	f89d 3007 	ldrb.w	r3, [sp, #7]
-     da4:	4413      	add	r3, r2
-     da6:	7a1b      	ldrb	r3, [r3, #8]
-     da8:	2b04      	cmp	r3, #4
-     daa:	f200 8145 	bhi.w	1038 <HwIoAb_Buttons_MainFunction+0x2a8>
-     dae:	a201      	add	r2, pc, #4	; (adr r2, db4 <HwIoAb_Buttons_MainFunction+0x24>)
-     db0:	f852 f023 	ldr.w	pc, [r2, r3, lsl #2]
-     db4:	00000dc9 	.word	0x00000dc9
-     db8:	00000e15 	.word	0x00000e15
-     dbc:	00000f3d 	.word	0x00000f3d
-     dc0:	00000fd5 	.word	0x00000fd5
-     dc4:	00000ea1 	.word	0x00000ea1
+     d8c:	4bb5      	ldr	r3, [pc, #724]	; (1064 <HwIoAb_Buttons_MainFunction+0x2e4>)
+     d8e:	681a      	ldr	r2, [r3, #0]
+     d90:	f89d 3007 	ldrb.w	r3, [sp, #7]
+     d94:	4413      	add	r3, r2
+     d96:	7a1b      	ldrb	r3, [r3, #8]
+     d98:	2b04      	cmp	r3, #4
+     d9a:	f200 8145 	bhi.w	1028 <HwIoAb_Buttons_MainFunction+0x2a8>
+     d9e:	a201      	add	r2, pc, #4	; (adr r2, da4 <HwIoAb_Buttons_MainFunction+0x24>)
+     da0:	f852 f023 	ldr.w	pc, [r2, r3, lsl #2]
+     da4:	00000db9 	.word	0x00000db9
+     da8:	00000e05 	.word	0x00000e05
+     dac:	00000f2d 	.word	0x00000f2d
+     db0:	00000fc5 	.word	0x00000fc5
+     db4:	00000e91 	.word	0x00000e91
         {
             case HWIOAB_BTN_STATE_IDLE :
                 // Query for the first time the button is pressed.
                 if(Dio_ReadChannel( ButtonsControl_Ptr->ButtonsConfig_Ptr[i].Button ) == ButtonsControl_Ptr->ButtonsConfig_Ptr[i].Active)   // 0x0 = PRESSED
-     dc8:	4baa      	ldr	r3, [pc, #680]	; (1074 <HwIoAb_Buttons_MainFunction+0x2e4>)
-     dca:	681b      	ldr	r3, [r3, #0]
-     dcc:	685a      	ldr	r2, [r3, #4]
-     dce:	f89d 3007 	ldrb.w	r3, [sp, #7]
-     dd2:	00db      	lsls	r3, r3, #3
-     dd4:	4413      	add	r3, r2
-     dd6:	881b      	ldrh	r3, [r3, #0]
-     dd8:	4618      	mov	r0, r3
-     dda:	f006 fba9 	bl	7530 <Dio_ReadChannel>
-     dde:	4603      	mov	r3, r0
-     de0:	4619      	mov	r1, r3
-     de2:	4ba4      	ldr	r3, [pc, #656]	; (1074 <HwIoAb_Buttons_MainFunction+0x2e4>)
-     de4:	681b      	ldr	r3, [r3, #0]
-     de6:	685a      	ldr	r2, [r3, #4]
-     de8:	f89d 3007 	ldrb.w	r3, [sp, #7]
-     dec:	00db      	lsls	r3, r3, #3
-     dee:	4413      	add	r3, r2
-     df0:	789b      	ldrb	r3, [r3, #2]
-     df2:	4299      	cmp	r1, r3
-     df4:	f040 8122 	bne.w	103c <HwIoAb_Buttons_MainFunction+0x2ac>
+     db8:	4baa      	ldr	r3, [pc, #680]	; (1064 <HwIoAb_Buttons_MainFunction+0x2e4>)
+     dba:	681b      	ldr	r3, [r3, #0]
+     dbc:	685a      	ldr	r2, [r3, #4]
+     dbe:	f89d 3007 	ldrb.w	r3, [sp, #7]
+     dc2:	00db      	lsls	r3, r3, #3
+     dc4:	4413      	add	r3, r2
+     dc6:	881b      	ldrh	r3, [r3, #0]
+     dc8:	4618      	mov	r0, r3
+     dca:	f006 fbb1 	bl	7530 <Dio_ReadChannel>
+     dce:	4603      	mov	r3, r0
+     dd0:	4619      	mov	r1, r3
+     dd2:	4ba4      	ldr	r3, [pc, #656]	; (1064 <HwIoAb_Buttons_MainFunction+0x2e4>)
+     dd4:	681b      	ldr	r3, [r3, #0]
+     dd6:	685a      	ldr	r2, [r3, #4]
+     dd8:	f89d 3007 	ldrb.w	r3, [sp, #7]
+     ddc:	00db      	lsls	r3, r3, #3
+     dde:	4413      	add	r3, r2
+     de0:	789b      	ldrb	r3, [r3, #2]
+     de2:	4299      	cmp	r1, r3
+     de4:	f040 8122 	bne.w	102c <HwIoAb_Buttons_MainFunction+0x2ac>
                 {
                     // Start the 300ms counter if there is a press.
                     Counters[i] = 0;
-     df8:	f89d 3007 	ldrb.w	r3, [sp, #7]
-     dfc:	4a9e      	ldr	r2, [pc, #632]	; (1078 <HwIoAb_Buttons_MainFunction+0x2e8>)
-     dfe:	2100      	movs	r1, #0
-     e00:	f842 1023 	str.w	r1, [r2, r3, lsl #2]
+     de8:	f89d 3007 	ldrb.w	r3, [sp, #7]
+     dec:	4a9e      	ldr	r2, [pc, #632]	; (1068 <HwIoAb_Buttons_MainFunction+0x2e8>)
+     dee:	2100      	movs	r1, #0
+     df0:	f842 1023 	str.w	r1, [r2, r3, lsl #2]
                     ButtonsControl_Ptr->States[i] = HWIOAB_BTN_STATE_SINGLE_CLICK;
-     e04:	4b9b      	ldr	r3, [pc, #620]	; (1074 <HwIoAb_Buttons_MainFunction+0x2e4>)
-     e06:	681a      	ldr	r2, [r3, #0]
-     e08:	f89d 3007 	ldrb.w	r3, [sp, #7]
-     e0c:	4413      	add	r3, r2
-     e0e:	2201      	movs	r2, #1
-     e10:	721a      	strb	r2, [r3, #8]
+     df4:	4b9b      	ldr	r3, [pc, #620]	; (1064 <HwIoAb_Buttons_MainFunction+0x2e4>)
+     df6:	681a      	ldr	r2, [r3, #0]
+     df8:	f89d 3007 	ldrb.w	r3, [sp, #7]
+     dfc:	4413      	add	r3, r2
+     dfe:	2201      	movs	r2, #1
+     e00:	721a      	strb	r2, [r3, #8]
 
                 }
             break;
-     e12:	e113      	b.n	103c <HwIoAb_Buttons_MainFunction+0x2ac>
+     e02:	e113      	b.n	102c <HwIoAb_Buttons_MainFunction+0x2ac>
             case HWIOAB_BTN_STATE_SINGLE_CLICK :
                 Counters[i] += HWIOAB_BUTTONS_PERIOD;
-     e14:	f89d 3007 	ldrb.w	r3, [sp, #7]
-     e18:	4a97      	ldr	r2, [pc, #604]	; (1078 <HwIoAb_Buttons_MainFunction+0x2e8>)
-     e1a:	f852 2023 	ldr.w	r2, [r2, r3, lsl #2]
-     e1e:	f89d 3007 	ldrb.w	r3, [sp, #7]
-     e22:	3232      	adds	r2, #50	; 0x32
-     e24:	4994      	ldr	r1, [pc, #592]	; (1078 <HwIoAb_Buttons_MainFunction+0x2e8>)
-     e26:	f841 2023 	str.w	r2, [r1, r3, lsl #2]
+     e04:	f89d 3007 	ldrb.w	r3, [sp, #7]
+     e08:	4a97      	ldr	r2, [pc, #604]	; (1068 <HwIoAb_Buttons_MainFunction+0x2e8>)
+     e0a:	f852 2023 	ldr.w	r2, [r2, r3, lsl #2]
+     e0e:	f89d 3007 	ldrb.w	r3, [sp, #7]
+     e12:	3232      	adds	r2, #50	; 0x32
+     e14:	4994      	ldr	r1, [pc, #592]	; (1068 <HwIoAb_Buttons_MainFunction+0x2e8>)
+     e16:	f841 2023 	str.w	r2, [r1, r3, lsl #2]
                 // Query if there is a timeout, if the elapsed time is already equal or bigger than the timeout.
                 if(Counters[i] == ButtonsControl_Ptr->ButtonsConfig_Ptr[i].Timeout)
+     e1a:	f89d 3007 	ldrb.w	r3, [sp, #7]
+     e1e:	4a92      	ldr	r2, [pc, #584]	; (1068 <HwIoAb_Buttons_MainFunction+0x2e8>)
+     e20:	f852 2023 	ldr.w	r2, [r2, r3, lsl #2]
+     e24:	4b8f      	ldr	r3, [pc, #572]	; (1064 <HwIoAb_Buttons_MainFunction+0x2e4>)
+     e26:	681b      	ldr	r3, [r3, #0]
+     e28:	6859      	ldr	r1, [r3, #4]
      e2a:	f89d 3007 	ldrb.w	r3, [sp, #7]
-     e2e:	4a92      	ldr	r2, [pc, #584]	; (1078 <HwIoAb_Buttons_MainFunction+0x2e8>)
-     e30:	f852 2023 	ldr.w	r2, [r2, r3, lsl #2]
-     e34:	4b8f      	ldr	r3, [pc, #572]	; (1074 <HwIoAb_Buttons_MainFunction+0x2e4>)
-     e36:	681b      	ldr	r3, [r3, #0]
-     e38:	6859      	ldr	r1, [r3, #4]
-     e3a:	f89d 3007 	ldrb.w	r3, [sp, #7]
-     e3e:	00db      	lsls	r3, r3, #3
-     e40:	440b      	add	r3, r1
-     e42:	685b      	ldr	r3, [r3, #4]
-     e44:	429a      	cmp	r2, r3
-     e46:	d106      	bne.n	e56 <HwIoAb_Buttons_MainFunction+0xc6>
+     e2e:	00db      	lsls	r3, r3, #3
+     e30:	440b      	add	r3, r1
+     e32:	685b      	ldr	r3, [r3, #4]
+     e34:	429a      	cmp	r2, r3
+     e36:	d106      	bne.n	e46 <HwIoAb_Buttons_MainFunction+0xc6>
                 {
                     ButtonsControl_Ptr->States[i] = HWIOAB_BTN_STATE_HOLD_CLICK;
-     e48:	4b8a      	ldr	r3, [pc, #552]	; (1074 <HwIoAb_Buttons_MainFunction+0x2e4>)
-     e4a:	681a      	ldr	r2, [r3, #0]
-     e4c:	f89d 3007 	ldrb.w	r3, [sp, #7]
-     e50:	4413      	add	r3, r2
-     e52:	2203      	movs	r2, #3
-     e54:	721a      	strb	r2, [r3, #8]
+     e38:	4b8a      	ldr	r3, [pc, #552]	; (1064 <HwIoAb_Buttons_MainFunction+0x2e4>)
+     e3a:	681a      	ldr	r2, [r3, #0]
+     e3c:	f89d 3007 	ldrb.w	r3, [sp, #7]
+     e40:	4413      	add	r3, r2
+     e42:	2203      	movs	r2, #3
+     e44:	721a      	strb	r2, [r3, #8]
                 }
 
                 // Query if there is a release.
                 if(Dio_ReadChannel( ButtonsControl_Ptr->ButtonsConfig_Ptr[i].Button ) == !ButtonsControl_Ptr->ButtonsConfig_Ptr[i].Active)   // 0x1 = UNPRESSED
-     e56:	4b87      	ldr	r3, [pc, #540]	; (1074 <HwIoAb_Buttons_MainFunction+0x2e4>)
-     e58:	681b      	ldr	r3, [r3, #0]
-     e5a:	685a      	ldr	r2, [r3, #4]
-     e5c:	f89d 3007 	ldrb.w	r3, [sp, #7]
-     e60:	00db      	lsls	r3, r3, #3
-     e62:	4413      	add	r3, r2
-     e64:	881b      	ldrh	r3, [r3, #0]
-     e66:	4618      	mov	r0, r3
-     e68:	f006 fb62 	bl	7530 <Dio_ReadChannel>
-     e6c:	4603      	mov	r3, r0
-     e6e:	4619      	mov	r1, r3
-     e70:	4b80      	ldr	r3, [pc, #512]	; (1074 <HwIoAb_Buttons_MainFunction+0x2e4>)
-     e72:	681b      	ldr	r3, [r3, #0]
-     e74:	685a      	ldr	r2, [r3, #4]
-     e76:	f89d 3007 	ldrb.w	r3, [sp, #7]
-     e7a:	00db      	lsls	r3, r3, #3
-     e7c:	4413      	add	r3, r2
-     e7e:	789b      	ldrb	r3, [r3, #2]
-     e80:	2b00      	cmp	r3, #0
-     e82:	bf0c      	ite	eq
-     e84:	2301      	moveq	r3, #1
-     e86:	2300      	movne	r3, #0
-     e88:	b2db      	uxtb	r3, r3
-     e8a:	4299      	cmp	r1, r3
-     e8c:	f040 80d8 	bne.w	1040 <HwIoAb_Buttons_MainFunction+0x2b0>
+     e46:	4b87      	ldr	r3, [pc, #540]	; (1064 <HwIoAb_Buttons_MainFunction+0x2e4>)
+     e48:	681b      	ldr	r3, [r3, #0]
+     e4a:	685a      	ldr	r2, [r3, #4]
+     e4c:	f89d 3007 	ldrb.w	r3, [sp, #7]
+     e50:	00db      	lsls	r3, r3, #3
+     e52:	4413      	add	r3, r2
+     e54:	881b      	ldrh	r3, [r3, #0]
+     e56:	4618      	mov	r0, r3
+     e58:	f006 fb6a 	bl	7530 <Dio_ReadChannel>
+     e5c:	4603      	mov	r3, r0
+     e5e:	4619      	mov	r1, r3
+     e60:	4b80      	ldr	r3, [pc, #512]	; (1064 <HwIoAb_Buttons_MainFunction+0x2e4>)
+     e62:	681b      	ldr	r3, [r3, #0]
+     e64:	685a      	ldr	r2, [r3, #4]
+     e66:	f89d 3007 	ldrb.w	r3, [sp, #7]
+     e6a:	00db      	lsls	r3, r3, #3
+     e6c:	4413      	add	r3, r2
+     e6e:	789b      	ldrb	r3, [r3, #2]
+     e70:	2b00      	cmp	r3, #0
+     e72:	bf0c      	ite	eq
+     e74:	2301      	moveq	r3, #1
+     e76:	2300      	movne	r3, #0
+     e78:	b2db      	uxtb	r3, r3
+     e7a:	4299      	cmp	r1, r3
+     e7c:	f040 80d8 	bne.w	1030 <HwIoAb_Buttons_MainFunction+0x2b0>
                 {
                     ButtonsControl_Ptr->States[i] = HWIOAB_BTN_STATE_RELEASE;
-     e90:	4b78      	ldr	r3, [pc, #480]	; (1074 <HwIoAb_Buttons_MainFunction+0x2e4>)
-     e92:	681a      	ldr	r2, [r3, #0]
-     e94:	f89d 3007 	ldrb.w	r3, [sp, #7]
-     e98:	4413      	add	r3, r2
-     e9a:	2204      	movs	r2, #4
-     e9c:	721a      	strb	r2, [r3, #8]
+     e80:	4b78      	ldr	r3, [pc, #480]	; (1064 <HwIoAb_Buttons_MainFunction+0x2e4>)
+     e82:	681a      	ldr	r2, [r3, #0]
+     e84:	f89d 3007 	ldrb.w	r3, [sp, #7]
+     e88:	4413      	add	r3, r2
+     e8a:	2204      	movs	r2, #4
+     e8c:	721a      	strb	r2, [r3, #8]
                 }    
             break;
-     e9e:	e0cf      	b.n	1040 <HwIoAb_Buttons_MainFunction+0x2b0>
+     e8e:	e0cf      	b.n	1030 <HwIoAb_Buttons_MainFunction+0x2b0>
             case HWIOAB_BTN_STATE_RELEASE :
                 Counters[i] += HWIOAB_BUTTONS_PERIOD;
-     ea0:	f89d 3007 	ldrb.w	r3, [sp, #7]
-     ea4:	4a74      	ldr	r2, [pc, #464]	; (1078 <HwIoAb_Buttons_MainFunction+0x2e8>)
-     ea6:	f852 2023 	ldr.w	r2, [r2, r3, lsl #2]
-     eaa:	f89d 3007 	ldrb.w	r3, [sp, #7]
-     eae:	3232      	adds	r2, #50	; 0x32
-     eb0:	4971      	ldr	r1, [pc, #452]	; (1078 <HwIoAb_Buttons_MainFunction+0x2e8>)
-     eb2:	f841 2023 	str.w	r2, [r1, r3, lsl #2]
+     e90:	f89d 3007 	ldrb.w	r3, [sp, #7]
+     e94:	4a74      	ldr	r2, [pc, #464]	; (1068 <HwIoAb_Buttons_MainFunction+0x2e8>)
+     e96:	f852 2023 	ldr.w	r2, [r2, r3, lsl #2]
+     e9a:	f89d 3007 	ldrb.w	r3, [sp, #7]
+     e9e:	3232      	adds	r2, #50	; 0x32
+     ea0:	4971      	ldr	r1, [pc, #452]	; (1068 <HwIoAb_Buttons_MainFunction+0x2e8>)
+     ea2:	f841 2023 	str.w	r2, [r1, r3, lsl #2]
                 // Query if timeout, if timeout is a single click.
                 if(Counters[i] == ButtonsControl_Ptr->ButtonsConfig_Ptr[i].Timeout)
+     ea6:	f89d 3007 	ldrb.w	r3, [sp, #7]
+     eaa:	4a6f      	ldr	r2, [pc, #444]	; (1068 <HwIoAb_Buttons_MainFunction+0x2e8>)
+     eac:	f852 2023 	ldr.w	r2, [r2, r3, lsl #2]
+     eb0:	4b6c      	ldr	r3, [pc, #432]	; (1064 <HwIoAb_Buttons_MainFunction+0x2e4>)
+     eb2:	681b      	ldr	r3, [r3, #0]
+     eb4:	6859      	ldr	r1, [r3, #4]
      eb6:	f89d 3007 	ldrb.w	r3, [sp, #7]
-     eba:	4a6f      	ldr	r2, [pc, #444]	; (1078 <HwIoAb_Buttons_MainFunction+0x2e8>)
-     ebc:	f852 2023 	ldr.w	r2, [r2, r3, lsl #2]
-     ec0:	4b6c      	ldr	r3, [pc, #432]	; (1074 <HwIoAb_Buttons_MainFunction+0x2e4>)
-     ec2:	681b      	ldr	r3, [r3, #0]
-     ec4:	6859      	ldr	r1, [r3, #4]
-     ec6:	f89d 3007 	ldrb.w	r3, [sp, #7]
-     eca:	00db      	lsls	r3, r3, #3
-     ecc:	440b      	add	r3, r1
-     ece:	685b      	ldr	r3, [r3, #4]
-     ed0:	429a      	cmp	r2, r3
-     ed2:	d10d      	bne.n	ef0 <HwIoAb_Buttons_MainFunction+0x160>
+     eba:	00db      	lsls	r3, r3, #3
+     ebc:	440b      	add	r3, r1
+     ebe:	685b      	ldr	r3, [r3, #4]
+     ec0:	429a      	cmp	r2, r3
+     ec2:	d10d      	bne.n	ee0 <HwIoAb_Buttons_MainFunction+0x160>
                 {
                     ButtonsControl_Ptr->Events[i] = HWIOAB_BTN_EVENT_SINGLE_CLICK;
-     ed4:	4b67      	ldr	r3, [pc, #412]	; (1074 <HwIoAb_Buttons_MainFunction+0x2e4>)
-     ed6:	681a      	ldr	r2, [r3, #0]
-     ed8:	f89d 3007 	ldrb.w	r3, [sp, #7]
-     edc:	4413      	add	r3, r2
-     ede:	2201      	movs	r2, #1
-     ee0:	72da      	strb	r2, [r3, #11]
+     ec4:	4b67      	ldr	r3, [pc, #412]	; (1064 <HwIoAb_Buttons_MainFunction+0x2e4>)
+     ec6:	681a      	ldr	r2, [r3, #0]
+     ec8:	f89d 3007 	ldrb.w	r3, [sp, #7]
+     ecc:	4413      	add	r3, r2
+     ece:	2201      	movs	r2, #1
+     ed0:	72da      	strb	r2, [r3, #11]
                     ButtonsControl_Ptr->States[i] = HWIOAB_BTN_STATE_IDLE;
-     ee2:	4b64      	ldr	r3, [pc, #400]	; (1074 <HwIoAb_Buttons_MainFunction+0x2e4>)
-     ee4:	681a      	ldr	r2, [r3, #0]
-     ee6:	f89d 3007 	ldrb.w	r3, [sp, #7]
-     eea:	4413      	add	r3, r2
-     eec:	2200      	movs	r2, #0
-     eee:	721a      	strb	r2, [r3, #8]
+     ed2:	4b64      	ldr	r3, [pc, #400]	; (1064 <HwIoAb_Buttons_MainFunction+0x2e4>)
+     ed4:	681a      	ldr	r2, [r3, #0]
+     ed6:	f89d 3007 	ldrb.w	r3, [sp, #7]
+     eda:	4413      	add	r3, r2
+     edc:	2200      	movs	r2, #0
+     ede:	721a      	strb	r2, [r3, #8]
                 } 
 
                 // Query if a press, if press start 300ms counter again.
                 if(Dio_ReadChannel( ButtonsControl_Ptr->ButtonsConfig_Ptr[i].Button ) == ButtonsControl_Ptr->ButtonsConfig_Ptr[i].Active)   // 0x0 = PRESSED
-     ef0:	4b60      	ldr	r3, [pc, #384]	; (1074 <HwIoAb_Buttons_MainFunction+0x2e4>)
-     ef2:	681b      	ldr	r3, [r3, #0]
-     ef4:	685a      	ldr	r2, [r3, #4]
-     ef6:	f89d 3007 	ldrb.w	r3, [sp, #7]
-     efa:	00db      	lsls	r3, r3, #3
-     efc:	4413      	add	r3, r2
-     efe:	881b      	ldrh	r3, [r3, #0]
-     f00:	4618      	mov	r0, r3
-     f02:	f006 fb15 	bl	7530 <Dio_ReadChannel>
-     f06:	4603      	mov	r3, r0
-     f08:	4619      	mov	r1, r3
-     f0a:	4b5a      	ldr	r3, [pc, #360]	; (1074 <HwIoAb_Buttons_MainFunction+0x2e4>)
-     f0c:	681b      	ldr	r3, [r3, #0]
-     f0e:	685a      	ldr	r2, [r3, #4]
-     f10:	f89d 3007 	ldrb.w	r3, [sp, #7]
-     f14:	00db      	lsls	r3, r3, #3
-     f16:	4413      	add	r3, r2
-     f18:	789b      	ldrb	r3, [r3, #2]
-     f1a:	4299      	cmp	r1, r3
-     f1c:	f040 8092 	bne.w	1044 <HwIoAb_Buttons_MainFunction+0x2b4>
+     ee0:	4b60      	ldr	r3, [pc, #384]	; (1064 <HwIoAb_Buttons_MainFunction+0x2e4>)
+     ee2:	681b      	ldr	r3, [r3, #0]
+     ee4:	685a      	ldr	r2, [r3, #4]
+     ee6:	f89d 3007 	ldrb.w	r3, [sp, #7]
+     eea:	00db      	lsls	r3, r3, #3
+     eec:	4413      	add	r3, r2
+     eee:	881b      	ldrh	r3, [r3, #0]
+     ef0:	4618      	mov	r0, r3
+     ef2:	f006 fb1d 	bl	7530 <Dio_ReadChannel>
+     ef6:	4603      	mov	r3, r0
+     ef8:	4619      	mov	r1, r3
+     efa:	4b5a      	ldr	r3, [pc, #360]	; (1064 <HwIoAb_Buttons_MainFunction+0x2e4>)
+     efc:	681b      	ldr	r3, [r3, #0]
+     efe:	685a      	ldr	r2, [r3, #4]
+     f00:	f89d 3007 	ldrb.w	r3, [sp, #7]
+     f04:	00db      	lsls	r3, r3, #3
+     f06:	4413      	add	r3, r2
+     f08:	789b      	ldrb	r3, [r3, #2]
+     f0a:	4299      	cmp	r1, r3
+     f0c:	f040 8092 	bne.w	1034 <HwIoAb_Buttons_MainFunction+0x2b4>
                 {
                     // Restart the 300ms counter if there is a press.
                     Counters[i] = 0;
-     f20:	f89d 3007 	ldrb.w	r3, [sp, #7]
-     f24:	4a54      	ldr	r2, [pc, #336]	; (1078 <HwIoAb_Buttons_MainFunction+0x2e8>)
-     f26:	2100      	movs	r1, #0
-     f28:	f842 1023 	str.w	r1, [r2, r3, lsl #2]
+     f10:	f89d 3007 	ldrb.w	r3, [sp, #7]
+     f14:	4a54      	ldr	r2, [pc, #336]	; (1068 <HwIoAb_Buttons_MainFunction+0x2e8>)
+     f16:	2100      	movs	r1, #0
+     f18:	f842 1023 	str.w	r1, [r2, r3, lsl #2]
                     ButtonsControl_Ptr->States[i] = HWIOAB_BTN_STATE_DOUBLE_CLICK;
-     f2c:	4b51      	ldr	r3, [pc, #324]	; (1074 <HwIoAb_Buttons_MainFunction+0x2e4>)
-     f2e:	681a      	ldr	r2, [r3, #0]
-     f30:	f89d 3007 	ldrb.w	r3, [sp, #7]
-     f34:	4413      	add	r3, r2
-     f36:	2202      	movs	r2, #2
-     f38:	721a      	strb	r2, [r3, #8]
+     f1c:	4b51      	ldr	r3, [pc, #324]	; (1064 <HwIoAb_Buttons_MainFunction+0x2e4>)
+     f1e:	681a      	ldr	r2, [r3, #0]
+     f20:	f89d 3007 	ldrb.w	r3, [sp, #7]
+     f24:	4413      	add	r3, r2
+     f26:	2202      	movs	r2, #2
+     f28:	721a      	strb	r2, [r3, #8]
                 } 
             break;
-     f3a:	e083      	b.n	1044 <HwIoAb_Buttons_MainFunction+0x2b4>
+     f2a:	e083      	b.n	1034 <HwIoAb_Buttons_MainFunction+0x2b4>
             case HWIOAB_BTN_STATE_DOUBLE_CLICK :
                 Counters[i] += HWIOAB_BUTTONS_PERIOD;
-     f3c:	f89d 3007 	ldrb.w	r3, [sp, #7]
-     f40:	4a4d      	ldr	r2, [pc, #308]	; (1078 <HwIoAb_Buttons_MainFunction+0x2e8>)
-     f42:	f852 2023 	ldr.w	r2, [r2, r3, lsl #2]
-     f46:	f89d 3007 	ldrb.w	r3, [sp, #7]
-     f4a:	3232      	adds	r2, #50	; 0x32
-     f4c:	494a      	ldr	r1, [pc, #296]	; (1078 <HwIoAb_Buttons_MainFunction+0x2e8>)
-     f4e:	f841 2023 	str.w	r2, [r1, r3, lsl #2]
+     f2c:	f89d 3007 	ldrb.w	r3, [sp, #7]
+     f30:	4a4d      	ldr	r2, [pc, #308]	; (1068 <HwIoAb_Buttons_MainFunction+0x2e8>)
+     f32:	f852 2023 	ldr.w	r2, [r2, r3, lsl #2]
+     f36:	f89d 3007 	ldrb.w	r3, [sp, #7]
+     f3a:	3232      	adds	r2, #50	; 0x32
+     f3c:	494a      	ldr	r1, [pc, #296]	; (1068 <HwIoAb_Buttons_MainFunction+0x2e8>)
+     f3e:	f841 2023 	str.w	r2, [r1, r3, lsl #2]
                 // Query if timeout, if timeout is hold 
                 if(Counters[i] == ButtonsControl_Ptr->ButtonsConfig_Ptr[i].Timeout)
+     f42:	f89d 3007 	ldrb.w	r3, [sp, #7]
+     f46:	4a48      	ldr	r2, [pc, #288]	; (1068 <HwIoAb_Buttons_MainFunction+0x2e8>)
+     f48:	f852 2023 	ldr.w	r2, [r2, r3, lsl #2]
+     f4c:	4b45      	ldr	r3, [pc, #276]	; (1064 <HwIoAb_Buttons_MainFunction+0x2e4>)
+     f4e:	681b      	ldr	r3, [r3, #0]
+     f50:	6859      	ldr	r1, [r3, #4]
      f52:	f89d 3007 	ldrb.w	r3, [sp, #7]
-     f56:	4a48      	ldr	r2, [pc, #288]	; (1078 <HwIoAb_Buttons_MainFunction+0x2e8>)
-     f58:	f852 2023 	ldr.w	r2, [r2, r3, lsl #2]
-     f5c:	4b45      	ldr	r3, [pc, #276]	; (1074 <HwIoAb_Buttons_MainFunction+0x2e4>)
-     f5e:	681b      	ldr	r3, [r3, #0]
-     f60:	6859      	ldr	r1, [r3, #4]
-     f62:	f89d 3007 	ldrb.w	r3, [sp, #7]
-     f66:	00db      	lsls	r3, r3, #3
-     f68:	440b      	add	r3, r1
-     f6a:	685b      	ldr	r3, [r3, #4]
-     f6c:	429a      	cmp	r2, r3
-     f6e:	d106      	bne.n	f7e <HwIoAb_Buttons_MainFunction+0x1ee>
+     f56:	00db      	lsls	r3, r3, #3
+     f58:	440b      	add	r3, r1
+     f5a:	685b      	ldr	r3, [r3, #4]
+     f5c:	429a      	cmp	r2, r3
+     f5e:	d106      	bne.n	f6e <HwIoAb_Buttons_MainFunction+0x1ee>
                 {
                     ButtonsControl_Ptr->States[i] = HWIOAB_BTN_STATE_HOLD_CLICK;
-     f70:	4b40      	ldr	r3, [pc, #256]	; (1074 <HwIoAb_Buttons_MainFunction+0x2e4>)
-     f72:	681a      	ldr	r2, [r3, #0]
-     f74:	f89d 3007 	ldrb.w	r3, [sp, #7]
-     f78:	4413      	add	r3, r2
-     f7a:	2203      	movs	r2, #3
-     f7c:	721a      	strb	r2, [r3, #8]
+     f60:	4b40      	ldr	r3, [pc, #256]	; (1064 <HwIoAb_Buttons_MainFunction+0x2e4>)
+     f62:	681a      	ldr	r2, [r3, #0]
+     f64:	f89d 3007 	ldrb.w	r3, [sp, #7]
+     f68:	4413      	add	r3, r2
+     f6a:	2203      	movs	r2, #3
+     f6c:	721a      	strb	r2, [r3, #8]
                 } 
 
                 // Query if release, if release is a double click
                 if(Dio_ReadChannel( ButtonsControl_Ptr->ButtonsConfig_Ptr[i].Button ) == !ButtonsControl_Ptr->ButtonsConfig_Ptr[i].Active)   // 0x1 = UNPRESSED
-     f7e:	4b3d      	ldr	r3, [pc, #244]	; (1074 <HwIoAb_Buttons_MainFunction+0x2e4>)
-     f80:	681b      	ldr	r3, [r3, #0]
-     f82:	685a      	ldr	r2, [r3, #4]
-     f84:	f89d 3007 	ldrb.w	r3, [sp, #7]
-     f88:	00db      	lsls	r3, r3, #3
-     f8a:	4413      	add	r3, r2
-     f8c:	881b      	ldrh	r3, [r3, #0]
-     f8e:	4618      	mov	r0, r3
-     f90:	f006 face 	bl	7530 <Dio_ReadChannel>
-     f94:	4603      	mov	r3, r0
-     f96:	4619      	mov	r1, r3
-     f98:	4b36      	ldr	r3, [pc, #216]	; (1074 <HwIoAb_Buttons_MainFunction+0x2e4>)
-     f9a:	681b      	ldr	r3, [r3, #0]
-     f9c:	685a      	ldr	r2, [r3, #4]
-     f9e:	f89d 3007 	ldrb.w	r3, [sp, #7]
-     fa2:	00db      	lsls	r3, r3, #3
-     fa4:	4413      	add	r3, r2
-     fa6:	789b      	ldrb	r3, [r3, #2]
-     fa8:	2b00      	cmp	r3, #0
-     faa:	bf0c      	ite	eq
-     fac:	2301      	moveq	r3, #1
-     fae:	2300      	movne	r3, #0
-     fb0:	b2db      	uxtb	r3, r3
-     fb2:	4299      	cmp	r1, r3
-     fb4:	d148      	bne.n	1048 <HwIoAb_Buttons_MainFunction+0x2b8>
+     f6e:	4b3d      	ldr	r3, [pc, #244]	; (1064 <HwIoAb_Buttons_MainFunction+0x2e4>)
+     f70:	681b      	ldr	r3, [r3, #0]
+     f72:	685a      	ldr	r2, [r3, #4]
+     f74:	f89d 3007 	ldrb.w	r3, [sp, #7]
+     f78:	00db      	lsls	r3, r3, #3
+     f7a:	4413      	add	r3, r2
+     f7c:	881b      	ldrh	r3, [r3, #0]
+     f7e:	4618      	mov	r0, r3
+     f80:	f006 fad6 	bl	7530 <Dio_ReadChannel>
+     f84:	4603      	mov	r3, r0
+     f86:	4619      	mov	r1, r3
+     f88:	4b36      	ldr	r3, [pc, #216]	; (1064 <HwIoAb_Buttons_MainFunction+0x2e4>)
+     f8a:	681b      	ldr	r3, [r3, #0]
+     f8c:	685a      	ldr	r2, [r3, #4]
+     f8e:	f89d 3007 	ldrb.w	r3, [sp, #7]
+     f92:	00db      	lsls	r3, r3, #3
+     f94:	4413      	add	r3, r2
+     f96:	789b      	ldrb	r3, [r3, #2]
+     f98:	2b00      	cmp	r3, #0
+     f9a:	bf0c      	ite	eq
+     f9c:	2301      	moveq	r3, #1
+     f9e:	2300      	movne	r3, #0
+     fa0:	b2db      	uxtb	r3, r3
+     fa2:	4299      	cmp	r1, r3
+     fa4:	d148      	bne.n	1038 <HwIoAb_Buttons_MainFunction+0x2b8>
                 {
                     ButtonsControl_Ptr->Events[i] = HWIOAB_BTN_EVENT_DOUBLE_CLICK;
-     fb6:	4b2f      	ldr	r3, [pc, #188]	; (1074 <HwIoAb_Buttons_MainFunction+0x2e4>)
-     fb8:	681a      	ldr	r2, [r3, #0]
-     fba:	f89d 3007 	ldrb.w	r3, [sp, #7]
-     fbe:	4413      	add	r3, r2
-     fc0:	2202      	movs	r2, #2
-     fc2:	72da      	strb	r2, [r3, #11]
+     fa6:	4b2f      	ldr	r3, [pc, #188]	; (1064 <HwIoAb_Buttons_MainFunction+0x2e4>)
+     fa8:	681a      	ldr	r2, [r3, #0]
+     faa:	f89d 3007 	ldrb.w	r3, [sp, #7]
+     fae:	4413      	add	r3, r2
+     fb0:	2202      	movs	r2, #2
+     fb2:	72da      	strb	r2, [r3, #11]
                     ButtonsControl_Ptr->States[i] = HWIOAB_BTN_STATE_IDLE;
-     fc4:	4b2b      	ldr	r3, [pc, #172]	; (1074 <HwIoAb_Buttons_MainFunction+0x2e4>)
+     fb4:	4b2b      	ldr	r3, [pc, #172]	; (1064 <HwIoAb_Buttons_MainFunction+0x2e4>)
+     fb6:	681a      	ldr	r2, [r3, #0]
+     fb8:	f89d 3007 	ldrb.w	r3, [sp, #7]
+     fbc:	4413      	add	r3, r2
+     fbe:	2200      	movs	r2, #0
+     fc0:	721a      	strb	r2, [r3, #8]
+                } 
+            break;
+     fc2:	e039      	b.n	1038 <HwIoAb_Buttons_MainFunction+0x2b8>
+            case HWIOAB_BTN_STATE_HOLD_CLICK :
+                ButtonsControl_Ptr->Events[i] = HWIOAB_BTN_EVENT_HOLD_CLICK;
+     fc4:	4b27      	ldr	r3, [pc, #156]	; (1064 <HwIoAb_Buttons_MainFunction+0x2e4>)
      fc6:	681a      	ldr	r2, [r3, #0]
      fc8:	f89d 3007 	ldrb.w	r3, [sp, #7]
      fcc:	4413      	add	r3, r2
-     fce:	2200      	movs	r2, #0
-     fd0:	721a      	strb	r2, [r3, #8]
-                } 
-            break;
-     fd2:	e039      	b.n	1048 <HwIoAb_Buttons_MainFunction+0x2b8>
-            case HWIOAB_BTN_STATE_HOLD_CLICK :
-                ButtonsControl_Ptr->Events[i] = HWIOAB_BTN_EVENT_HOLD_CLICK;
-     fd4:	4b27      	ldr	r3, [pc, #156]	; (1074 <HwIoAb_Buttons_MainFunction+0x2e4>)
-     fd6:	681a      	ldr	r2, [r3, #0]
-     fd8:	f89d 3007 	ldrb.w	r3, [sp, #7]
-     fdc:	4413      	add	r3, r2
-     fde:	2203      	movs	r2, #3
-     fe0:	72da      	strb	r2, [r3, #11]
+     fce:	2203      	movs	r2, #3
+     fd0:	72da      	strb	r2, [r3, #11]
                 // If state jumps here is a hold click, wait until botton is released and go back to IDLE
                 if(Dio_ReadChannel( ButtonsControl_Ptr->ButtonsConfig_Ptr[i].Button ) == !ButtonsControl_Ptr->ButtonsConfig_Ptr[i].Active)   // 0x1 = UNPRESSED
-     fe2:	4b24      	ldr	r3, [pc, #144]	; (1074 <HwIoAb_Buttons_MainFunction+0x2e4>)
-     fe4:	681b      	ldr	r3, [r3, #0]
-     fe6:	685a      	ldr	r2, [r3, #4]
-     fe8:	f89d 3007 	ldrb.w	r3, [sp, #7]
-     fec:	00db      	lsls	r3, r3, #3
-     fee:	4413      	add	r3, r2
-     ff0:	881b      	ldrh	r3, [r3, #0]
-     ff2:	4618      	mov	r0, r3
-     ff4:	f006 fa9c 	bl	7530 <Dio_ReadChannel>
-     ff8:	4603      	mov	r3, r0
-     ffa:	4619      	mov	r1, r3
-     ffc:	4b1d      	ldr	r3, [pc, #116]	; (1074 <HwIoAb_Buttons_MainFunction+0x2e4>)
-     ffe:	681b      	ldr	r3, [r3, #0]
-    1000:	685a      	ldr	r2, [r3, #4]
-    1002:	f89d 3007 	ldrb.w	r3, [sp, #7]
-    1006:	00db      	lsls	r3, r3, #3
-    1008:	4413      	add	r3, r2
-    100a:	789b      	ldrb	r3, [r3, #2]
-    100c:	2b00      	cmp	r3, #0
-    100e:	bf0c      	ite	eq
-    1010:	2301      	moveq	r3, #1
-    1012:	2300      	movne	r3, #0
-    1014:	b2db      	uxtb	r3, r3
-    1016:	4299      	cmp	r1, r3
-    1018:	d118      	bne.n	104c <HwIoAb_Buttons_MainFunction+0x2bc>
+     fd2:	4b24      	ldr	r3, [pc, #144]	; (1064 <HwIoAb_Buttons_MainFunction+0x2e4>)
+     fd4:	681b      	ldr	r3, [r3, #0]
+     fd6:	685a      	ldr	r2, [r3, #4]
+     fd8:	f89d 3007 	ldrb.w	r3, [sp, #7]
+     fdc:	00db      	lsls	r3, r3, #3
+     fde:	4413      	add	r3, r2
+     fe0:	881b      	ldrh	r3, [r3, #0]
+     fe2:	4618      	mov	r0, r3
+     fe4:	f006 faa4 	bl	7530 <Dio_ReadChannel>
+     fe8:	4603      	mov	r3, r0
+     fea:	4619      	mov	r1, r3
+     fec:	4b1d      	ldr	r3, [pc, #116]	; (1064 <HwIoAb_Buttons_MainFunction+0x2e4>)
+     fee:	681b      	ldr	r3, [r3, #0]
+     ff0:	685a      	ldr	r2, [r3, #4]
+     ff2:	f89d 3007 	ldrb.w	r3, [sp, #7]
+     ff6:	00db      	lsls	r3, r3, #3
+     ff8:	4413      	add	r3, r2
+     ffa:	789b      	ldrb	r3, [r3, #2]
+     ffc:	2b00      	cmp	r3, #0
+     ffe:	bf0c      	ite	eq
+    1000:	2301      	moveq	r3, #1
+    1002:	2300      	movne	r3, #0
+    1004:	b2db      	uxtb	r3, r3
+    1006:	4299      	cmp	r1, r3
+    1008:	d118      	bne.n	103c <HwIoAb_Buttons_MainFunction+0x2bc>
                 {
                     ButtonsControl_Ptr->Events[i] = HWIOAB_BTN_EVENT_RELEASE;
-    101a:	4b16      	ldr	r3, [pc, #88]	; (1074 <HwIoAb_Buttons_MainFunction+0x2e4>)
-    101c:	681a      	ldr	r2, [r3, #0]
-    101e:	f89d 3007 	ldrb.w	r3, [sp, #7]
-    1022:	4413      	add	r3, r2
-    1024:	2204      	movs	r2, #4
-    1026:	72da      	strb	r2, [r3, #11]
+    100a:	4b16      	ldr	r3, [pc, #88]	; (1064 <HwIoAb_Buttons_MainFunction+0x2e4>)
+    100c:	681a      	ldr	r2, [r3, #0]
+    100e:	f89d 3007 	ldrb.w	r3, [sp, #7]
+    1012:	4413      	add	r3, r2
+    1014:	2204      	movs	r2, #4
+    1016:	72da      	strb	r2, [r3, #11]
                     ButtonsControl_Ptr->States[i] = HWIOAB_BTN_STATE_IDLE;
-    1028:	4b12      	ldr	r3, [pc, #72]	; (1074 <HwIoAb_Buttons_MainFunction+0x2e4>)
-    102a:	681a      	ldr	r2, [r3, #0]
-    102c:	f89d 3007 	ldrb.w	r3, [sp, #7]
-    1030:	4413      	add	r3, r2
-    1032:	2200      	movs	r2, #0
-    1034:	721a      	strb	r2, [r3, #8]
+    1018:	4b12      	ldr	r3, [pc, #72]	; (1064 <HwIoAb_Buttons_MainFunction+0x2e4>)
+    101a:	681a      	ldr	r2, [r3, #0]
+    101c:	f89d 3007 	ldrb.w	r3, [sp, #7]
+    1020:	4413      	add	r3, r2
+    1022:	2200      	movs	r2, #0
+    1024:	721a      	strb	r2, [r3, #8]
                 }
             break;
-    1036:	e009      	b.n	104c <HwIoAb_Buttons_MainFunction+0x2bc>
+    1026:	e009      	b.n	103c <HwIoAb_Buttons_MainFunction+0x2bc>
             default :
               // If jump here is an error
             break;
+    1028:	bf00      	nop
+    102a:	e008      	b.n	103e <HwIoAb_Buttons_MainFunction+0x2be>
+            break;
+    102c:	bf00      	nop
+    102e:	e006      	b.n	103e <HwIoAb_Buttons_MainFunction+0x2be>
+            break;
+    1030:	bf00      	nop
+    1032:	e004      	b.n	103e <HwIoAb_Buttons_MainFunction+0x2be>
+            break;
+    1034:	bf00      	nop
+    1036:	e002      	b.n	103e <HwIoAb_Buttons_MainFunction+0x2be>
+            break;
     1038:	bf00      	nop
-    103a:	e008      	b.n	104e <HwIoAb_Buttons_MainFunction+0x2be>
+    103a:	e000      	b.n	103e <HwIoAb_Buttons_MainFunction+0x2be>
             break;
     103c:	bf00      	nop
-    103e:	e006      	b.n	104e <HwIoAb_Buttons_MainFunction+0x2be>
-            break;
-    1040:	bf00      	nop
-    1042:	e004      	b.n	104e <HwIoAb_Buttons_MainFunction+0x2be>
-            break;
-    1044:	bf00      	nop
-    1046:	e002      	b.n	104e <HwIoAb_Buttons_MainFunction+0x2be>
-            break;
-    1048:	bf00      	nop
-    104a:	e000      	b.n	104e <HwIoAb_Buttons_MainFunction+0x2be>
-            break;
-    104c:	bf00      	nop
     for( uint8 i = 0; i < ButtonsControl_Ptr->Buttons; i++ )    // Executing state machine for each button.
-    104e:	f89d 3007 	ldrb.w	r3, [sp, #7]
-    1052:	3301      	adds	r3, #1
-    1054:	f88d 3007 	strb.w	r3, [sp, #7]
-    1058:	4b06      	ldr	r3, [pc, #24]	; (1074 <HwIoAb_Buttons_MainFunction+0x2e4>)
-    105a:	681b      	ldr	r3, [r3, #0]
-    105c:	781b      	ldrb	r3, [r3, #0]
-    105e:	f89d 2007 	ldrb.w	r2, [sp, #7]
-    1062:	429a      	cmp	r2, r3
-    1064:	f4ff ae9a 	bcc.w	d9c <HwIoAb_Buttons_MainFunction+0xc>
+    103e:	f89d 3007 	ldrb.w	r3, [sp, #7]
+    1042:	3301      	adds	r3, #1
+    1044:	f88d 3007 	strb.w	r3, [sp, #7]
+    1048:	4b06      	ldr	r3, [pc, #24]	; (1064 <HwIoAb_Buttons_MainFunction+0x2e4>)
+    104a:	681b      	ldr	r3, [r3, #0]
+    104c:	781b      	ldrb	r3, [r3, #0]
+    104e:	f89d 2007 	ldrb.w	r2, [sp, #7]
+    1052:	429a      	cmp	r2, r3
+    1054:	f4ff ae9a 	bcc.w	d8c <HwIoAb_Buttons_MainFunction+0xc>
         }
     }
 }   
-    1068:	bf00      	nop
-    106a:	bf00      	nop
-    106c:	b003      	add	sp, #12
-    106e:	f85d fb04 	ldr.w	pc, [sp], #4
-    1072:	bf00      	nop
-    1074:	1fff8b38 	.word	0x1fff8b38
-    1078:	1fff9244 	.word	0x1fff9244
+    1058:	bf00      	nop
+    105a:	bf00      	nop
+    105c:	b003      	add	sp, #12
+    105e:	f85d fb04 	ldr.w	pc, [sp], #4
+    1062:	bf00      	nop
+    1064:	1fff8b38 	.word	0x1fff8b38
+    1068:	1fff9244 	.word	0x1fff9244
 
-0000107c <HwIoAb_Leds_Init>:
+0000106c <HwIoAb_Leds_Init>:
  * the responsibility of the function to initialize any hardware. 
  * 
  * @param Leds_Config Pointer to configuration array.
  */
 void HwIoAb_Leds_Init( const HwIoAb_Leds_Config * Leds_Config )
 {
-    107c:	b082      	sub	sp, #8
-    107e:	9001      	str	r0, [sp, #4]
+    106c:	b082      	sub	sp, #8
+    106e:	9001      	str	r0, [sp, #4]
     LedsControl_Ptr->Leds = HWIOAB_LEDS_MAX;
-    1080:	4b07      	ldr	r3, [pc, #28]	; (10a0 <HwIoAb_Leds_Init+0x24>)
-    1082:	681b      	ldr	r3, [r3, #0]
-    1084:	2203      	movs	r2, #3
-    1086:	701a      	strb	r2, [r3, #0]
+    1070:	4b07      	ldr	r3, [pc, #28]	; (1090 <HwIoAb_Leds_Init+0x24>)
+    1072:	681b      	ldr	r3, [r3, #0]
+    1074:	2203      	movs	r2, #3
+    1076:	701a      	strb	r2, [r3, #0]
     LedsControl_Ptr->LedsConfig_Ptr = Leds_Config;
-    1088:	4b05      	ldr	r3, [pc, #20]	; (10a0 <HwIoAb_Leds_Init+0x24>)
-    108a:	681b      	ldr	r3, [r3, #0]
-    108c:	9a01      	ldr	r2, [sp, #4]
-    108e:	605a      	str	r2, [r3, #4]
+    1078:	4b05      	ldr	r3, [pc, #20]	; (1090 <HwIoAb_Leds_Init+0x24>)
+    107a:	681b      	ldr	r3, [r3, #0]
+    107c:	9a01      	ldr	r2, [sp, #4]
+    107e:	605a      	str	r2, [r3, #4]
     LedsControl_Ptr->Leds_init = TRUE;
-    1090:	4b03      	ldr	r3, [pc, #12]	; (10a0 <HwIoAb_Leds_Init+0x24>)
-    1092:	681b      	ldr	r3, [r3, #0]
-    1094:	2201      	movs	r2, #1
-    1096:	721a      	strb	r2, [r3, #8]
+    1080:	4b03      	ldr	r3, [pc, #12]	; (1090 <HwIoAb_Leds_Init+0x24>)
+    1082:	681b      	ldr	r3, [r3, #0]
+    1084:	2201      	movs	r2, #1
+    1086:	721a      	strb	r2, [r3, #8]
 }
-    1098:	bf00      	nop
-    109a:	b002      	add	sp, #8
-    109c:	4770      	bx	lr
-    109e:	bf00      	nop
-    10a0:	1fff8b3c 	.word	0x1fff8b3c
+    1088:	bf00      	nop
+    108a:	b002      	add	sp, #8
+    108c:	4770      	bx	lr
+    108e:	bf00      	nop
+    1090:	1fff8b3c 	.word	0x1fff8b3c
 
-000010a4 <HwIoAb_Leds_TurnOff>:
+00001094 <HwIoAb_Leds_TurnOff>:
  * @param Led Led ID.
  * 
  * @note The led ID must be valid.
  */
 void HwIoAb_Leds_TurnOff( uint8 Led ) 
 {
-    10a4:	b500      	push	{lr}
-    10a6:	b083      	sub	sp, #12
-    10a8:	4603      	mov	r3, r0
-    10aa:	f88d 3007 	strb.w	r3, [sp, #7]
+    1094:	b500      	push	{lr}
+    1096:	b083      	sub	sp, #12
+    1098:	4603      	mov	r3, r0
+    109a:	f88d 3007 	strb.w	r3, [sp, #7]
     Dio_WriteChannel( LedsControl_Ptr->LedsConfig_Ptr[ Led ].Led, !LedsControl_Ptr->LedsConfig_Ptr[ Led ].Active );
-    10ae:	4b0e      	ldr	r3, [pc, #56]	; (10e8 <HwIoAb_Leds_TurnOff+0x44>)
+    109e:	4b0e      	ldr	r3, [pc, #56]	; (10d8 <HwIoAb_Leds_TurnOff+0x44>)
+    10a0:	681b      	ldr	r3, [r3, #0]
+    10a2:	685a      	ldr	r2, [r3, #4]
+    10a4:	f89d 3007 	ldrb.w	r3, [sp, #7]
+    10a8:	009b      	lsls	r3, r3, #2
+    10aa:	4413      	add	r3, r2
+    10ac:	8818      	ldrh	r0, [r3, #0]
+    10ae:	4b0a      	ldr	r3, [pc, #40]	; (10d8 <HwIoAb_Leds_TurnOff+0x44>)
     10b0:	681b      	ldr	r3, [r3, #0]
     10b2:	685a      	ldr	r2, [r3, #4]
     10b4:	f89d 3007 	ldrb.w	r3, [sp, #7]
     10b8:	009b      	lsls	r3, r3, #2
     10ba:	4413      	add	r3, r2
-    10bc:	8818      	ldrh	r0, [r3, #0]
-    10be:	4b0a      	ldr	r3, [pc, #40]	; (10e8 <HwIoAb_Leds_TurnOff+0x44>)
-    10c0:	681b      	ldr	r3, [r3, #0]
-    10c2:	685a      	ldr	r2, [r3, #4]
-    10c4:	f89d 3007 	ldrb.w	r3, [sp, #7]
-    10c8:	009b      	lsls	r3, r3, #2
-    10ca:	4413      	add	r3, r2
-    10cc:	789b      	ldrb	r3, [r3, #2]
-    10ce:	2b00      	cmp	r3, #0
-    10d0:	bf0c      	ite	eq
-    10d2:	2301      	moveq	r3, #1
-    10d4:	2300      	movne	r3, #0
-    10d6:	b2db      	uxtb	r3, r3
-    10d8:	4619      	mov	r1, r3
-    10da:	f006 fa3f 	bl	755c <Dio_WriteChannel>
+    10bc:	789b      	ldrb	r3, [r3, #2]
+    10be:	2b00      	cmp	r3, #0
+    10c0:	bf0c      	ite	eq
+    10c2:	2301      	moveq	r3, #1
+    10c4:	2300      	movne	r3, #0
+    10c6:	b2db      	uxtb	r3, r3
+    10c8:	4619      	mov	r1, r3
+    10ca:	f006 fa47 	bl	755c <Dio_WriteChannel>
 }
-    10de:	bf00      	nop
-    10e0:	b003      	add	sp, #12
-    10e2:	f85d fb04 	ldr.w	pc, [sp], #4
-    10e6:	bf00      	nop
-    10e8:	1fff8b3c 	.word	0x1fff8b3c
+    10ce:	bf00      	nop
+    10d0:	b003      	add	sp, #12
+    10d2:	f85d fb04 	ldr.w	pc, [sp], #4
+    10d6:	bf00      	nop
+    10d8:	1fff8b3c 	.word	0x1fff8b3c
 
-000010ec <HwIoAb_Leds_TurnToggle>:
+000010dc <HwIoAb_Leds_TurnToggle>:
  * @param Led Led ID.
  * 
  * @note The led ID must be valid.
  */
 void HwIoAb_Leds_TurnToggle( uint8 Led ) 
 {
-    10ec:	b500      	push	{lr}
-    10ee:	b083      	sub	sp, #12
-    10f0:	4603      	mov	r3, r0
-    10f2:	f88d 3007 	strb.w	r3, [sp, #7]
+    10dc:	b500      	push	{lr}
+    10de:	b083      	sub	sp, #12
+    10e0:	4603      	mov	r3, r0
+    10e2:	f88d 3007 	strb.w	r3, [sp, #7]
     Dio_FlipChannel( LedsControl_Ptr->LedsConfig_Ptr[ Led ].Led );
-    10f6:	4b07      	ldr	r3, [pc, #28]	; (1114 <HwIoAb_Leds_TurnToggle+0x28>)
-    10f8:	681b      	ldr	r3, [r3, #0]
-    10fa:	685a      	ldr	r2, [r3, #4]
-    10fc:	f89d 3007 	ldrb.w	r3, [sp, #7]
-    1100:	009b      	lsls	r3, r3, #2
-    1102:	4413      	add	r3, r2
-    1104:	881b      	ldrh	r3, [r3, #0]
-    1106:	4618      	mov	r0, r3
-    1108:	f006 fa3d 	bl	7586 <Dio_FlipChannel>
+    10e6:	4b07      	ldr	r3, [pc, #28]	; (1104 <HwIoAb_Leds_TurnToggle+0x28>)
+    10e8:	681b      	ldr	r3, [r3, #0]
+    10ea:	685a      	ldr	r2, [r3, #4]
+    10ec:	f89d 3007 	ldrb.w	r3, [sp, #7]
+    10f0:	009b      	lsls	r3, r3, #2
+    10f2:	4413      	add	r3, r2
+    10f4:	881b      	ldrh	r3, [r3, #0]
+    10f6:	4618      	mov	r0, r3
+    10f8:	f006 fa45 	bl	7586 <Dio_FlipChannel>
 }
-    110c:	bf00      	nop
-    110e:	b003      	add	sp, #12
-    1110:	f85d fb04 	ldr.w	pc, [sp], #4
-    1114:	1fff8b3c 	.word	0x1fff8b3c
+    10fc:	bf00      	nop
+    10fe:	b003      	add	sp, #12
+    1100:	f85d fb04 	ldr.w	pc, [sp], #4
+    1104:	1fff8b3c 	.word	0x1fff8b3c
 
-00001118 <HwIoAb_Pots_Init>:
+00001108 <HwIoAb_Pots_Init>:
  * @param Pots_Config Pointer to configuration array.
  * 
  * @note Hardware interleave for pins PTB1 and PTB13 is done in EcuM_Init(). 
  */
 void HwIoAb_Pots_Init( const HwIoAb_Pots_Config * Pots_Config )
 {
-    1118:	b500      	push	{lr}
-    111a:	b085      	sub	sp, #20
-    111c:	9001      	str	r0, [sp, #4]
+    1108:	b500      	push	{lr}
+    110a:	b085      	sub	sp, #20
+    110c:	9001      	str	r0, [sp, #4]
     Adc_CalibrationStatusType Calib_Status_ADC0;
     Adc_CalibrationStatusType Calib_Status_ADC1;
 
     /* Calibrating ADC modules */
     Adc_Calibrate( ADC0HwUnit, &Calib_Status_ADC0 );
-    111e:	ab03      	add	r3, sp, #12
-    1120:	4619      	mov	r1, r3
-    1122:	2000      	movs	r0, #0
-    1124:	f007 fdc2 	bl	8cac <Adc_Calibrate>
+    110e:	ab03      	add	r3, sp, #12
+    1110:	4619      	mov	r1, r3
+    1112:	2000      	movs	r0, #0
+    1114:	f007 fdca 	bl	8cac <Adc_Calibrate>
     Adc_Calibrate( ADC1HwUnit, &Calib_Status_ADC1 );
-    1128:	ab02      	add	r3, sp, #8
-    112a:	4619      	mov	r1, r3
-    112c:	2001      	movs	r0, #1
-    112e:	f007 fdbd 	bl	8cac <Adc_Calibrate>
+    1118:	ab02      	add	r3, sp, #8
+    111a:	4619      	mov	r1, r3
+    111c:	2001      	movs	r0, #1
+    111e:	f007 fdc5 	bl	8cac <Adc_Calibrate>
 
     /* Initializing raw results array/buffer */
     Adc_SetupResultBuffer( ADC0Group_0, HWIOAB_POTS_MAIN_RAW_RESULTS );
-    1132:	4b0d      	ldr	r3, [pc, #52]	; (1168 <HwIoAb_Pots_Init+0x50>)
-    1134:	681b      	ldr	r3, [r3, #0]
-    1136:	3302      	adds	r3, #2
-    1138:	4619      	mov	r1, r3
-    113a:	2000      	movs	r0, #0
-    113c:	f007 fb58 	bl	87f0 <Adc_SetupResultBuffer>
+    1122:	4b0d      	ldr	r3, [pc, #52]	; (1158 <HwIoAb_Pots_Init+0x50>)
+    1124:	681b      	ldr	r3, [r3, #0]
+    1126:	3302      	adds	r3, #2
+    1128:	4619      	mov	r1, r3
+    112a:	2000      	movs	r0, #0
+    112c:	f007 fb60 	bl	87f0 <Adc_SetupResultBuffer>
     Adc_SetupResultBuffer( ADC1Group_0, HWIOAB_POTS_ALTER_RAW_RESULTS );
-    1140:	4b09      	ldr	r3, [pc, #36]	; (1168 <HwIoAb_Pots_Init+0x50>)
-    1142:	681b      	ldr	r3, [r3, #0]
-    1144:	3306      	adds	r3, #6
-    1146:	4619      	mov	r1, r3
-    1148:	2001      	movs	r0, #1
-    114a:	f007 fb51 	bl	87f0 <Adc_SetupResultBuffer>
+    1130:	4b09      	ldr	r3, [pc, #36]	; (1158 <HwIoAb_Pots_Init+0x50>)
+    1132:	681b      	ldr	r3, [r3, #0]
+    1134:	3306      	adds	r3, #6
+    1136:	4619      	mov	r1, r3
+    1138:	2001      	movs	r0, #1
+    113a:	f007 fb59 	bl	87f0 <Adc_SetupResultBuffer>
 
     PotsControl_Ptr->Pots = HWIOAB_POTS_MAX;
-    114e:	4b06      	ldr	r3, [pc, #24]	; (1168 <HwIoAb_Pots_Init+0x50>)
-    1150:	681b      	ldr	r3, [r3, #0]
-    1152:	2202      	movs	r2, #2
-    1154:	701a      	strb	r2, [r3, #0]
+    113e:	4b06      	ldr	r3, [pc, #24]	; (1158 <HwIoAb_Pots_Init+0x50>)
+    1140:	681b      	ldr	r3, [r3, #0]
+    1142:	2202      	movs	r2, #2
+    1144:	701a      	strb	r2, [r3, #0]
     PotsControl_Ptr->Pots_init = TRUE;
-    1156:	4b04      	ldr	r3, [pc, #16]	; (1168 <HwIoAb_Pots_Init+0x50>)
-    1158:	681b      	ldr	r3, [r3, #0]
-    115a:	2201      	movs	r2, #1
-    115c:	749a      	strb	r2, [r3, #18]
+    1146:	4b04      	ldr	r3, [pc, #16]	; (1158 <HwIoAb_Pots_Init+0x50>)
+    1148:	681b      	ldr	r3, [r3, #0]
+    114a:	2201      	movs	r2, #1
+    114c:	749a      	strb	r2, [r3, #18]
 }
-    115e:	bf00      	nop
-    1160:	b005      	add	sp, #20
-    1162:	f85d fb04 	ldr.w	pc, [sp], #4
-    1166:	bf00      	nop
-    1168:	1fff8b40 	.word	0x1fff8b40
+    114e:	bf00      	nop
+    1150:	b005      	add	sp, #20
+    1152:	f85d fb04 	ldr.w	pc, [sp], #4
+    1156:	bf00      	nop
+    1158:	1fff8b40 	.word	0x1fff8b40
 
-0000116c <HwIoAb_Pots_GetValue>:
+0000115c <HwIoAb_Pots_GetValue>:
  * 
  * @note The group uses hardware average of 4 samples. 
  * @note The total conversion time is 117.42us
  */
 void HwIoAb_Pots_GetValue( uint16 *Pots ) 
 {
-    116c:	b500      	push	{lr}
-    116e:	b085      	sub	sp, #20
-    1170:	9001      	str	r0, [sp, #4]
+    115c:	b500      	push	{lr}
+    115e:	b085      	sub	sp, #20
+    1160:	9001      	str	r0, [sp, #4]
     /* Software trigger conversion */
     Adc_StartGroupConversion( ADC0Group_0 );
-    1172:	2000      	movs	r0, #0
-    1174:	f007 fbd6 	bl	8924 <Adc_StartGroupConversion>
+    1162:	2000      	movs	r0, #0
+    1164:	f007 fbde 	bl	8924 <Adc_StartGroupConversion>
     /* Wait until the conversion is done */
     while( Adc_GetGroupStatus( ADC0Group_0 ) == ADC_BUSY );
-    1178:	bf00      	nop
-    117a:	2000      	movs	r0, #0
-    117c:	f007 fcaf 	bl	8ade <Adc_GetGroupStatus>
-    1180:	4603      	mov	r3, r0
-    1182:	2b01      	cmp	r3, #1
-    1184:	d0f9      	beq.n	117a <HwIoAb_Pots_GetValue+0xe>
+    1168:	bf00      	nop
+    116a:	2000      	movs	r0, #0
+    116c:	f007 fcb7 	bl	8ade <Adc_GetGroupStatus>
+    1170:	4603      	mov	r3, r0
+    1172:	2b01      	cmp	r3, #1
+    1174:	d0f9      	beq.n	116a <HwIoAb_Pots_GetValue+0xe>
     /* Reading group conversion values and storing them to the raw result array */
     Adc_ReadGroup( ADC0Group_0, HWIOAB_POTS_MAIN_RAW_RESULTS ); 
-    1186:	4b26      	ldr	r3, [pc, #152]	; (1220 <HwIoAb_Pots_GetValue+0xb4>)
-    1188:	681b      	ldr	r3, [r3, #0]
-    118a:	3302      	adds	r3, #2
-    118c:	4619      	mov	r1, r3
-    118e:	2000      	movs	r0, #0
-    1190:	f007 fc60 	bl	8a54 <Adc_ReadGroup>
+    1176:	4b26      	ldr	r3, [pc, #152]	; (1210 <HwIoAb_Pots_GetValue+0xb4>)
+    1178:	681b      	ldr	r3, [r3, #0]
+    117a:	3302      	adds	r3, #2
+    117c:	4619      	mov	r1, r3
+    117e:	2000      	movs	r0, #0
+    1180:	f007 fc68 	bl	8a54 <Adc_ReadGroup>
 
     /* Calculating resistance of each Pot */
     for ( uint8 i = 0; i < PotsControl_Ptr->Pots; i++ ) 
-    1194:	2300      	movs	r3, #0
-    1196:	f88d 300f 	strb.w	r3, [sp, #15]
-    119a:	e034      	b.n	1206 <HwIoAb_Pots_GetValue+0x9a>
+    1184:	2300      	movs	r3, #0
+    1186:	f88d 300f 	strb.w	r3, [sp, #15]
+    118a:	e034      	b.n	11f6 <HwIoAb_Pots_GetValue+0x9a>
     {
         Pots[i] = HWIOAB_POTS_TOTAL_RESISTANCE * 
         ( ( float ) PotsControl_Ptr->Raw_results_main[i] / HWIOAB_MAX_ADC_VALUE_12B_RES );
-    119c:	4b20      	ldr	r3, [pc, #128]	; (1220 <HwIoAb_Pots_GetValue+0xb4>)
-    119e:	681a      	ldr	r2, [r3, #0]
-    11a0:	f89d 300f 	ldrb.w	r3, [sp, #15]
-    11a4:	005b      	lsls	r3, r3, #1
-    11a6:	4413      	add	r3, r2
-    11a8:	885b      	ldrh	r3, [r3, #2]
-    11aa:	ee07 3a90 	vmov	s15, r3
-    11ae:	eeb8 7a67 	vcvt.f32.u32	s14, s15
-    11b2:	eddf 6a1c 	vldr	s13, [pc, #112]	; 1224 <HwIoAb_Pots_GetValue+0xb8>
-    11b6:	eec7 7a26 	vdiv.f32	s15, s14, s13
+    118c:	4b20      	ldr	r3, [pc, #128]	; (1210 <HwIoAb_Pots_GetValue+0xb4>)
+    118e:	681a      	ldr	r2, [r3, #0]
+    1190:	f89d 300f 	ldrb.w	r3, [sp, #15]
+    1194:	005b      	lsls	r3, r3, #1
+    1196:	4413      	add	r3, r2
+    1198:	885b      	ldrh	r3, [r3, #2]
+    119a:	ee07 3a90 	vmov	s15, r3
+    119e:	eeb8 7a67 	vcvt.f32.u32	s14, s15
+    11a2:	eddf 6a1c 	vldr	s13, [pc, #112]	; 1214 <HwIoAb_Pots_GetValue+0xb8>
+    11a6:	eec7 7a26 	vdiv.f32	s15, s14, s13
         Pots[i] = HWIOAB_POTS_TOTAL_RESISTANCE * 
-    11ba:	ed9f 7a1b 	vldr	s14, [pc, #108]	; 1228 <HwIoAb_Pots_GetValue+0xbc>
-    11be:	ee67 7a87 	vmul.f32	s15, s15, s14
-    11c2:	f89d 300f 	ldrb.w	r3, [sp, #15]
-    11c6:	005b      	lsls	r3, r3, #1
-    11c8:	9a01      	ldr	r2, [sp, #4]
-    11ca:	4413      	add	r3, r2
-    11cc:	eefc 7ae7 	vcvt.u32.f32	s15, s15
-    11d0:	ee17 2a90 	vmov	r2, s15
-    11d4:	b292      	uxth	r2, r2
-    11d6:	801a      	strh	r2, [r3, #0]
+    11aa:	ed9f 7a1b 	vldr	s14, [pc, #108]	; 1218 <HwIoAb_Pots_GetValue+0xbc>
+    11ae:	ee67 7a87 	vmul.f32	s15, s15, s14
+    11b2:	f89d 300f 	ldrb.w	r3, [sp, #15]
+    11b6:	005b      	lsls	r3, r3, #1
+    11b8:	9a01      	ldr	r2, [sp, #4]
+    11ba:	4413      	add	r3, r2
+    11bc:	eefc 7ae7 	vcvt.u32.f32	s15, s15
+    11c0:	ee17 2a90 	vmov	r2, s15
+    11c4:	b292      	uxth	r2, r2
+    11c6:	801a      	strh	r2, [r3, #0]
 
         /* Locking value if needed*/
         if ( Pots[i] > HWIOAB_POTS_TOTAL_RESISTANCE ) 
-    11d8:	f89d 300f 	ldrb.w	r3, [sp, #15]
-    11dc:	005b      	lsls	r3, r3, #1
-    11de:	9a01      	ldr	r2, [sp, #4]
-    11e0:	4413      	add	r3, r2
-    11e2:	881b      	ldrh	r3, [r3, #0]
-    11e4:	f242 7210 	movw	r2, #10000	; 0x2710
-    11e8:	4293      	cmp	r3, r2
-    11ea:	d907      	bls.n	11fc <HwIoAb_Pots_GetValue+0x90>
+    11c8:	f89d 300f 	ldrb.w	r3, [sp, #15]
+    11cc:	005b      	lsls	r3, r3, #1
+    11ce:	9a01      	ldr	r2, [sp, #4]
+    11d0:	4413      	add	r3, r2
+    11d2:	881b      	ldrh	r3, [r3, #0]
+    11d4:	f242 7210 	movw	r2, #10000	; 0x2710
+    11d8:	4293      	cmp	r3, r2
+    11da:	d907      	bls.n	11ec <HwIoAb_Pots_GetValue+0x90>
         { 
             Pots[i] = HWIOAB_POTS_TOTAL_RESISTANCE;
-    11ec:	f89d 300f 	ldrb.w	r3, [sp, #15]
-    11f0:	005b      	lsls	r3, r3, #1
-    11f2:	9a01      	ldr	r2, [sp, #4]
-    11f4:	4413      	add	r3, r2
-    11f6:	f242 7210 	movw	r2, #10000	; 0x2710
-    11fa:	801a      	strh	r2, [r3, #0]
+    11dc:	f89d 300f 	ldrb.w	r3, [sp, #15]
+    11e0:	005b      	lsls	r3, r3, #1
+    11e2:	9a01      	ldr	r2, [sp, #4]
+    11e4:	4413      	add	r3, r2
+    11e6:	f242 7210 	movw	r2, #10000	; 0x2710
+    11ea:	801a      	strh	r2, [r3, #0]
     for ( uint8 i = 0; i < PotsControl_Ptr->Pots; i++ ) 
-    11fc:	f89d 300f 	ldrb.w	r3, [sp, #15]
-    1200:	3301      	adds	r3, #1
-    1202:	f88d 300f 	strb.w	r3, [sp, #15]
-    1206:	4b06      	ldr	r3, [pc, #24]	; (1220 <HwIoAb_Pots_GetValue+0xb4>)
-    1208:	681b      	ldr	r3, [r3, #0]
-    120a:	781b      	ldrb	r3, [r3, #0]
-    120c:	f89d 200f 	ldrb.w	r2, [sp, #15]
-    1210:	429a      	cmp	r2, r3
-    1212:	d3c3      	bcc.n	119c <HwIoAb_Pots_GetValue+0x30>
+    11ec:	f89d 300f 	ldrb.w	r3, [sp, #15]
+    11f0:	3301      	adds	r3, #1
+    11f2:	f88d 300f 	strb.w	r3, [sp, #15]
+    11f6:	4b06      	ldr	r3, [pc, #24]	; (1210 <HwIoAb_Pots_GetValue+0xb4>)
+    11f8:	681b      	ldr	r3, [r3, #0]
+    11fa:	781b      	ldrb	r3, [r3, #0]
+    11fc:	f89d 200f 	ldrb.w	r2, [sp, #15]
+    1200:	429a      	cmp	r2, r3
+    1202:	d3c3      	bcc.n	118c <HwIoAb_Pots_GetValue+0x30>
         }
     }
 }
-    1214:	bf00      	nop
-    1216:	bf00      	nop
-    1218:	b005      	add	sp, #20
-    121a:	f85d fb04 	ldr.w	pc, [sp], #4
-    121e:	bf00      	nop
-    1220:	1fff8b40 	.word	0x1fff8b40
-    1224:	4528f000 	.word	0x4528f000
-    1228:	461c4000 	.word	0x461c4000
+    1204:	bf00      	nop
+    1206:	bf00      	nop
+    1208:	b005      	add	sp, #20
+    120a:	f85d fb04 	ldr.w	pc, [sp], #4
+    120e:	bf00      	nop
+    1210:	1fff8b40 	.word	0x1fff8b40
+    1214:	4528f000 	.word	0x4528f000
+    1218:	461c4000 	.word	0x461c4000
 
-0000122c <HwIoAb_Pots_GetAltValue>:
+0000121c <HwIoAb_Pots_GetAltValue>:
  * 
  * @note The group uses hardware average of 4 samples. 
  * @note The total conversion time is 117.42us
  */
 void HwIoAb_Pots_GetAltValue( uint16 *AltPots ) 
 {
-    122c:	b500      	push	{lr}
-    122e:	b085      	sub	sp, #20
-    1230:	9001      	str	r0, [sp, #4]
+    121c:	b500      	push	{lr}
+    121e:	b085      	sub	sp, #20
+    1220:	9001      	str	r0, [sp, #4]
     /* Software trigger conversion */
     Adc_StartGroupConversion( ADC1Group_0 );
-    1232:	2001      	movs	r0, #1
-    1234:	f007 fb76 	bl	8924 <Adc_StartGroupConversion>
+    1222:	2001      	movs	r0, #1
+    1224:	f007 fb7e 	bl	8924 <Adc_StartGroupConversion>
     /* Wait until the conversion is done */
     while( Adc_GetGroupStatus( ADC1Group_0 ) == ADC_BUSY );
-    1238:	bf00      	nop
-    123a:	2001      	movs	r0, #1
-    123c:	f007 fc4f 	bl	8ade <Adc_GetGroupStatus>
-    1240:	4603      	mov	r3, r0
-    1242:	2b01      	cmp	r3, #1
-    1244:	d0f9      	beq.n	123a <HwIoAb_Pots_GetAltValue+0xe>
+    1228:	bf00      	nop
+    122a:	2001      	movs	r0, #1
+    122c:	f007 fc57 	bl	8ade <Adc_GetGroupStatus>
+    1230:	4603      	mov	r3, r0
+    1232:	2b01      	cmp	r3, #1
+    1234:	d0f9      	beq.n	122a <HwIoAb_Pots_GetAltValue+0xe>
     /* Reading group conversion values and storing them to the raw result array */
     Adc_ReadGroup( ADC1Group_0, HWIOAB_POTS_ALTER_RAW_RESULTS ); 
-    1246:	4b26      	ldr	r3, [pc, #152]	; (12e0 <HwIoAb_Pots_GetAltValue+0xb4>)
-    1248:	681b      	ldr	r3, [r3, #0]
-    124a:	3306      	adds	r3, #6
-    124c:	4619      	mov	r1, r3
-    124e:	2001      	movs	r0, #1
-    1250:	f007 fc00 	bl	8a54 <Adc_ReadGroup>
+    1236:	4b26      	ldr	r3, [pc, #152]	; (12d0 <HwIoAb_Pots_GetAltValue+0xb4>)
+    1238:	681b      	ldr	r3, [r3, #0]
+    123a:	3306      	adds	r3, #6
+    123c:	4619      	mov	r1, r3
+    123e:	2001      	movs	r0, #1
+    1240:	f007 fc08 	bl	8a54 <Adc_ReadGroup>
 
     /* Calculating resistance of each Pot */
     for ( uint8 i = 0; i < PotsControl_Ptr->Pots; i++ ) 
-    1254:	2300      	movs	r3, #0
-    1256:	f88d 300f 	strb.w	r3, [sp, #15]
-    125a:	e034      	b.n	12c6 <HwIoAb_Pots_GetAltValue+0x9a>
+    1244:	2300      	movs	r3, #0
+    1246:	f88d 300f 	strb.w	r3, [sp, #15]
+    124a:	e034      	b.n	12b6 <HwIoAb_Pots_GetAltValue+0x9a>
     {
         AltPots[i] = HWIOAB_POTS_TOTAL_RESISTANCE * 
         ( ( float ) PotsControl_Ptr->Raw_results_alter[i] / HWIOAB_MAX_ADC_VALUE_12B_RES );
-    125c:	4b20      	ldr	r3, [pc, #128]	; (12e0 <HwIoAb_Pots_GetAltValue+0xb4>)
-    125e:	681a      	ldr	r2, [r3, #0]
-    1260:	f89d 300f 	ldrb.w	r3, [sp, #15]
-    1264:	005b      	lsls	r3, r3, #1
-    1266:	4413      	add	r3, r2
-    1268:	88db      	ldrh	r3, [r3, #6]
-    126a:	ee07 3a90 	vmov	s15, r3
-    126e:	eeb8 7a67 	vcvt.f32.u32	s14, s15
-    1272:	eddf 6a1c 	vldr	s13, [pc, #112]	; 12e4 <HwIoAb_Pots_GetAltValue+0xb8>
-    1276:	eec7 7a26 	vdiv.f32	s15, s14, s13
+    124c:	4b20      	ldr	r3, [pc, #128]	; (12d0 <HwIoAb_Pots_GetAltValue+0xb4>)
+    124e:	681a      	ldr	r2, [r3, #0]
+    1250:	f89d 300f 	ldrb.w	r3, [sp, #15]
+    1254:	005b      	lsls	r3, r3, #1
+    1256:	4413      	add	r3, r2
+    1258:	88db      	ldrh	r3, [r3, #6]
+    125a:	ee07 3a90 	vmov	s15, r3
+    125e:	eeb8 7a67 	vcvt.f32.u32	s14, s15
+    1262:	eddf 6a1c 	vldr	s13, [pc, #112]	; 12d4 <HwIoAb_Pots_GetAltValue+0xb8>
+    1266:	eec7 7a26 	vdiv.f32	s15, s14, s13
         AltPots[i] = HWIOAB_POTS_TOTAL_RESISTANCE * 
-    127a:	ed9f 7a1b 	vldr	s14, [pc, #108]	; 12e8 <HwIoAb_Pots_GetAltValue+0xbc>
-    127e:	ee67 7a87 	vmul.f32	s15, s15, s14
-    1282:	f89d 300f 	ldrb.w	r3, [sp, #15]
-    1286:	005b      	lsls	r3, r3, #1
-    1288:	9a01      	ldr	r2, [sp, #4]
-    128a:	4413      	add	r3, r2
-    128c:	eefc 7ae7 	vcvt.u32.f32	s15, s15
-    1290:	ee17 2a90 	vmov	r2, s15
-    1294:	b292      	uxth	r2, r2
-    1296:	801a      	strh	r2, [r3, #0]
+    126a:	ed9f 7a1b 	vldr	s14, [pc, #108]	; 12d8 <HwIoAb_Pots_GetAltValue+0xbc>
+    126e:	ee67 7a87 	vmul.f32	s15, s15, s14
+    1272:	f89d 300f 	ldrb.w	r3, [sp, #15]
+    1276:	005b      	lsls	r3, r3, #1
+    1278:	9a01      	ldr	r2, [sp, #4]
+    127a:	4413      	add	r3, r2
+    127c:	eefc 7ae7 	vcvt.u32.f32	s15, s15
+    1280:	ee17 2a90 	vmov	r2, s15
+    1284:	b292      	uxth	r2, r2
+    1286:	801a      	strh	r2, [r3, #0]
 
         /* Locking value if needed*/
         if ( AltPots[i] > HWIOAB_POTS_TOTAL_RESISTANCE ) 
-    1298:	f89d 300f 	ldrb.w	r3, [sp, #15]
-    129c:	005b      	lsls	r3, r3, #1
-    129e:	9a01      	ldr	r2, [sp, #4]
-    12a0:	4413      	add	r3, r2
-    12a2:	881b      	ldrh	r3, [r3, #0]
-    12a4:	f242 7210 	movw	r2, #10000	; 0x2710
-    12a8:	4293      	cmp	r3, r2
-    12aa:	d907      	bls.n	12bc <HwIoAb_Pots_GetAltValue+0x90>
+    1288:	f89d 300f 	ldrb.w	r3, [sp, #15]
+    128c:	005b      	lsls	r3, r3, #1
+    128e:	9a01      	ldr	r2, [sp, #4]
+    1290:	4413      	add	r3, r2
+    1292:	881b      	ldrh	r3, [r3, #0]
+    1294:	f242 7210 	movw	r2, #10000	; 0x2710
+    1298:	4293      	cmp	r3, r2
+    129a:	d907      	bls.n	12ac <HwIoAb_Pots_GetAltValue+0x90>
         { 
             AltPots[i] = HWIOAB_POTS_TOTAL_RESISTANCE;
-    12ac:	f89d 300f 	ldrb.w	r3, [sp, #15]
-    12b0:	005b      	lsls	r3, r3, #1
-    12b2:	9a01      	ldr	r2, [sp, #4]
-    12b4:	4413      	add	r3, r2
-    12b6:	f242 7210 	movw	r2, #10000	; 0x2710
-    12ba:	801a      	strh	r2, [r3, #0]
+    129c:	f89d 300f 	ldrb.w	r3, [sp, #15]
+    12a0:	005b      	lsls	r3, r3, #1
+    12a2:	9a01      	ldr	r2, [sp, #4]
+    12a4:	4413      	add	r3, r2
+    12a6:	f242 7210 	movw	r2, #10000	; 0x2710
+    12aa:	801a      	strh	r2, [r3, #0]
     for ( uint8 i = 0; i < PotsControl_Ptr->Pots; i++ ) 
-    12bc:	f89d 300f 	ldrb.w	r3, [sp, #15]
-    12c0:	3301      	adds	r3, #1
-    12c2:	f88d 300f 	strb.w	r3, [sp, #15]
-    12c6:	4b06      	ldr	r3, [pc, #24]	; (12e0 <HwIoAb_Pots_GetAltValue+0xb4>)
-    12c8:	681b      	ldr	r3, [r3, #0]
-    12ca:	781b      	ldrb	r3, [r3, #0]
-    12cc:	f89d 200f 	ldrb.w	r2, [sp, #15]
-    12d0:	429a      	cmp	r2, r3
-    12d2:	d3c3      	bcc.n	125c <HwIoAb_Pots_GetAltValue+0x30>
+    12ac:	f89d 300f 	ldrb.w	r3, [sp, #15]
+    12b0:	3301      	adds	r3, #1
+    12b2:	f88d 300f 	strb.w	r3, [sp, #15]
+    12b6:	4b06      	ldr	r3, [pc, #24]	; (12d0 <HwIoAb_Pots_GetAltValue+0xb4>)
+    12b8:	681b      	ldr	r3, [r3, #0]
+    12ba:	781b      	ldrb	r3, [r3, #0]
+    12bc:	f89d 200f 	ldrb.w	r2, [sp, #15]
+    12c0:	429a      	cmp	r2, r3
+    12c2:	d3c3      	bcc.n	124c <HwIoAb_Pots_GetAltValue+0x30>
         }
     }
 }
-    12d4:	bf00      	nop
-    12d6:	bf00      	nop
-    12d8:	b005      	add	sp, #20
-    12da:	f85d fb04 	ldr.w	pc, [sp], #4
-    12de:	bf00      	nop
-    12e0:	1fff8b40 	.word	0x1fff8b40
-    12e4:	4528f000 	.word	0x4528f000
-    12e8:	461c4000 	.word	0x461c4000
+    12c4:	bf00      	nop
+    12c6:	bf00      	nop
+    12c8:	b005      	add	sp, #20
+    12ca:	f85d fb04 	ldr.w	pc, [sp], #4
+    12ce:	bf00      	nop
+    12d0:	1fff8b40 	.word	0x1fff8b40
+    12d4:	4528f000 	.word	0x4528f000
+    12d8:	461c4000 	.word	0x461c4000
 
-000012ec <Bfx_SetBit_u32u8>:
+000012dc <Bfx_SetBit_u32u8>:
  * @param[in]  BitPn Bit position
  *
  * @reqs    SWS_Bfx_00001, SWS_Bfx_00002, SWS_Bfx_00008
  */
 void Bfx_SetBit_u32u8( uint32 *Data, uint8 BitPn )
 {
-    12ec:	b082      	sub	sp, #8
-    12ee:	9001      	str	r0, [sp, #4]
-    12f0:	460b      	mov	r3, r1
-    12f2:	f88d 3003 	strb.w	r3, [sp, #3]
+    12dc:	b082      	sub	sp, #8
+    12de:	9001      	str	r0, [sp, #4]
+    12e0:	460b      	mov	r3, r1
+    12e2:	f88d 3003 	strb.w	r3, [sp, #3]
     *Data |= ( 1u << BitPn );
+    12e6:	9b01      	ldr	r3, [sp, #4]
+    12e8:	681a      	ldr	r2, [r3, #0]
+    12ea:	f89d 3003 	ldrb.w	r3, [sp, #3]
+    12ee:	2101      	movs	r1, #1
+    12f0:	fa01 f303 	lsl.w	r3, r1, r3
+    12f4:	431a      	orrs	r2, r3
     12f6:	9b01      	ldr	r3, [sp, #4]
-    12f8:	681a      	ldr	r2, [r3, #0]
-    12fa:	f89d 3003 	ldrb.w	r3, [sp, #3]
-    12fe:	2101      	movs	r1, #1
-    1300:	fa01 f303 	lsl.w	r3, r1, r3
-    1304:	431a      	orrs	r2, r3
-    1306:	9b01      	ldr	r3, [sp, #4]
-    1308:	601a      	str	r2, [r3, #0]
+    12f8:	601a      	str	r2, [r3, #0]
 }
-    130a:	bf00      	nop
-    130c:	b002      	add	sp, #8
-    130e:	4770      	bx	lr
+    12fa:	bf00      	nop
+    12fc:	b002      	add	sp, #8
+    12fe:	4770      	bx	lr
 
-00001310 <Bfx_ClrBit_u32u8>:
+00001300 <Bfx_ClrBit_u32u8>:
  * @param[in]  BitPn Bit position
  *
  * @reqs    SWS_Bfx_00010, SWS_Bfx_00011, SWS_Bfx_00015
  */
 void Bfx_ClrBit_u32u8( uint32 *Data, uint8 BitPn )
 {
-    1310:	b082      	sub	sp, #8
-    1312:	9001      	str	r0, [sp, #4]
-    1314:	460b      	mov	r3, r1
-    1316:	f88d 3003 	strb.w	r3, [sp, #3]
+    1300:	b082      	sub	sp, #8
+    1302:	9001      	str	r0, [sp, #4]
+    1304:	460b      	mov	r3, r1
+    1306:	f88d 3003 	strb.w	r3, [sp, #3]
     *Data &= ~( 1u << BitPn );
-    131a:	9b01      	ldr	r3, [sp, #4]
-    131c:	681a      	ldr	r2, [r3, #0]
-    131e:	f89d 3003 	ldrb.w	r3, [sp, #3]
-    1322:	2101      	movs	r1, #1
-    1324:	fa01 f303 	lsl.w	r3, r1, r3
-    1328:	43db      	mvns	r3, r3
-    132a:	401a      	ands	r2, r3
-    132c:	9b01      	ldr	r3, [sp, #4]
-    132e:	601a      	str	r2, [r3, #0]
+    130a:	9b01      	ldr	r3, [sp, #4]
+    130c:	681a      	ldr	r2, [r3, #0]
+    130e:	f89d 3003 	ldrb.w	r3, [sp, #3]
+    1312:	2101      	movs	r1, #1
+    1314:	fa01 f303 	lsl.w	r3, r1, r3
+    1318:	43db      	mvns	r3, r3
+    131a:	401a      	ands	r2, r3
+    131c:	9b01      	ldr	r3, [sp, #4]
+    131e:	601a      	str	r2, [r3, #0]
 }
-    1330:	bf00      	nop
-    1332:	b002      	add	sp, #8
-    1334:	4770      	bx	lr
+    1320:	bf00      	nop
+    1322:	b002      	add	sp, #8
+    1324:	4770      	bx	lr
 
-00001336 <Bfx_GetBit_u32u8_u8>:
+00001326 <Bfx_GetBit_u32u8_u8>:
  * @retval Boolean Bit status
  *
  * @reqs    SWS_Bfx_00016, SWS_Bfx_00017, SWS_Bfx_00020
  */
 boolean Bfx_GetBit_u32u8_u8( uint32 Data, uint8 BitPn )
 {
-    1336:	b082      	sub	sp, #8
-    1338:	9001      	str	r0, [sp, #4]
-    133a:	460b      	mov	r3, r1
-    133c:	f88d 3003 	strb.w	r3, [sp, #3]
+    1326:	b082      	sub	sp, #8
+    1328:	9001      	str	r0, [sp, #4]
+    132a:	460b      	mov	r3, r1
+    132c:	f88d 3003 	strb.w	r3, [sp, #3]
     return ( ( Data & ( 1u << BitPn ) ) != 0u );
-    1340:	f89d 3003 	ldrb.w	r3, [sp, #3]
-    1344:	2201      	movs	r2, #1
-    1346:	409a      	lsls	r2, r3
-    1348:	9b01      	ldr	r3, [sp, #4]
-    134a:	4013      	ands	r3, r2
-    134c:	2b00      	cmp	r3, #0
-    134e:	bf14      	ite	ne
-    1350:	2301      	movne	r3, #1
-    1352:	2300      	moveq	r3, #0
-    1354:	b2db      	uxtb	r3, r3
+    1330:	f89d 3003 	ldrb.w	r3, [sp, #3]
+    1334:	2201      	movs	r2, #1
+    1336:	409a      	lsls	r2, r3
+    1338:	9b01      	ldr	r3, [sp, #4]
+    133a:	4013      	ands	r3, r2
+    133c:	2b00      	cmp	r3, #0
+    133e:	bf14      	ite	ne
+    1340:	2301      	movne	r3, #1
+    1342:	2300      	moveq	r3, #0
+    1344:	b2db      	uxtb	r3, r3
 }
-    1356:	4618      	mov	r0, r3
-    1358:	b002      	add	sp, #8
-    135a:	4770      	bx	lr
+    1346:	4618      	mov	r0, r3
+    1348:	b002      	add	sp, #8
+    134a:	4770      	bx	lr
 
-0000135c <Bfx_PutBit_u32u8u8>:
+0000134c <Bfx_PutBit_u32u8u8>:
  * @param[in] Status Source data
  *
  * @reqs    SWS_Bfx_00130, SWS_Bfx_00132
  */
 void Bfx_PutBit_u32u8u8( uint32 *Data, uint8 BitPn, boolean Status )
 {
-    135c:	b082      	sub	sp, #8
-    135e:	9001      	str	r0, [sp, #4]
-    1360:	460b      	mov	r3, r1
-    1362:	f88d 3003 	strb.w	r3, [sp, #3]
-    1366:	4613      	mov	r3, r2
-    1368:	f88d 3002 	strb.w	r3, [sp, #2]
+    134c:	b082      	sub	sp, #8
+    134e:	9001      	str	r0, [sp, #4]
+    1350:	460b      	mov	r3, r1
+    1352:	f88d 3003 	strb.w	r3, [sp, #3]
+    1356:	4613      	mov	r3, r2
+    1358:	f88d 3002 	strb.w	r3, [sp, #2]
     if( Status == TRUE )
-    136c:	f89d 3002 	ldrb.w	r3, [sp, #2]
-    1370:	2b00      	cmp	r3, #0
-    1372:	d00a      	beq.n	138a <Bfx_PutBit_u32u8u8+0x2e>
+    135c:	f89d 3002 	ldrb.w	r3, [sp, #2]
+    1360:	2b00      	cmp	r3, #0
+    1362:	d00a      	beq.n	137a <Bfx_PutBit_u32u8u8+0x2e>
     {
         *Data |= ( 1u << BitPn );
+    1364:	9b01      	ldr	r3, [sp, #4]
+    1366:	681a      	ldr	r2, [r3, #0]
+    1368:	f89d 3003 	ldrb.w	r3, [sp, #3]
+    136c:	2101      	movs	r1, #1
+    136e:	fa01 f303 	lsl.w	r3, r1, r3
+    1372:	431a      	orrs	r2, r3
     1374:	9b01      	ldr	r3, [sp, #4]
-    1376:	681a      	ldr	r2, [r3, #0]
-    1378:	f89d 3003 	ldrb.w	r3, [sp, #3]
-    137c:	2101      	movs	r1, #1
-    137e:	fa01 f303 	lsl.w	r3, r1, r3
-    1382:	431a      	orrs	r2, r3
-    1384:	9b01      	ldr	r3, [sp, #4]
-    1386:	601a      	str	r2, [r3, #0]
+    1376:	601a      	str	r2, [r3, #0]
     }
     else
     {
         *Data &= ~( 1u << BitPn );
     }
 }
-    1388:	e00a      	b.n	13a0 <Bfx_PutBit_u32u8u8+0x44>
+    1378:	e00a      	b.n	1390 <Bfx_PutBit_u32u8u8+0x44>
         *Data &= ~( 1u << BitPn );
-    138a:	9b01      	ldr	r3, [sp, #4]
-    138c:	681a      	ldr	r2, [r3, #0]
-    138e:	f89d 3003 	ldrb.w	r3, [sp, #3]
-    1392:	2101      	movs	r1, #1
-    1394:	fa01 f303 	lsl.w	r3, r1, r3
-    1398:	43db      	mvns	r3, r3
-    139a:	401a      	ands	r2, r3
-    139c:	9b01      	ldr	r3, [sp, #4]
-    139e:	601a      	str	r2, [r3, #0]
+    137a:	9b01      	ldr	r3, [sp, #4]
+    137c:	681a      	ldr	r2, [r3, #0]
+    137e:	f89d 3003 	ldrb.w	r3, [sp, #3]
+    1382:	2101      	movs	r1, #1
+    1384:	fa01 f303 	lsl.w	r3, r1, r3
+    1388:	43db      	mvns	r3, r3
+    138a:	401a      	ands	r2, r3
+    138c:	9b01      	ldr	r3, [sp, #4]
+    138e:	601a      	str	r2, [r3, #0]
 }
-    13a0:	bf00      	nop
-    13a2:	b002      	add	sp, #8
-    13a4:	4770      	bx	lr
+    1390:	bf00      	nop
+    1392:	b002      	add	sp, #8
+    1394:	4770      	bx	lr
 	...
 
-000013a8 <Scheduler_Init>:
+00001398 <Scheduler_Init>:
  * value for the arguments.
  *
  * @param   scheduler  Scheduler control structure
  */
 void Scheduler_Init( const Scheduler_ConfigType *SchedulerPtr )
 {
-    13a8:	b500      	push	{lr}
-    13aa:	b085      	sub	sp, #20
-    13ac:	9001      	str	r0, [sp, #4]
+    1398:	b500      	push	{lr}
+    139a:	b085      	sub	sp, #20
+    139c:	9001      	str	r0, [sp, #4]
     SchedulerControl.TaskFlags = 0u;
-    13ae:	4b56      	ldr	r3, [pc, #344]	; (1508 <Scheduler_Init+0x160>)
-    13b0:	2200      	movs	r2, #0
-    13b2:	641a      	str	r2, [r3, #64]	; 0x40
+    139e:	4b56      	ldr	r3, [pc, #344]	; (14f8 <Scheduler_Init+0x160>)
+    13a0:	2200      	movs	r2, #0
+    13a2:	641a      	str	r2, [r3, #64]	; 0x40
     SchedulerControl.TimerFlags = 0u;
-    13b4:	4b54      	ldr	r3, [pc, #336]	; (1508 <Scheduler_Init+0x160>)
-    13b6:	2200      	movs	r2, #0
-    13b8:	645a      	str	r2, [r3, #68]	; 0x44
+    13a4:	4b54      	ldr	r3, [pc, #336]	; (14f8 <Scheduler_Init+0x160>)
+    13a6:	2200      	movs	r2, #0
+    13a8:	645a      	str	r2, [r3, #68]	; 0x44
     
     for( uint8 i = 0u; i < SchedulerPtr->Tasks; i++ )
-    13ba:	2300      	movs	r3, #0
-    13bc:	f88d 300f 	strb.w	r3, [sp, #15]
-    13c0:	e02f      	b.n	1422 <Scheduler_Init+0x7a>
+    13aa:	2300      	movs	r3, #0
+    13ac:	f88d 300f 	strb.w	r3, [sp, #15]
+    13b0:	e02f      	b.n	1412 <Scheduler_Init+0x7a>
     {
         SchedulerControl.TaskElapsed[ i ] = 0u;
-    13c2:	f89d 300f 	ldrb.w	r3, [sp, #15]
-    13c6:	4a50      	ldr	r2, [pc, #320]	; (1508 <Scheduler_Init+0x160>)
-    13c8:	2100      	movs	r1, #0
-    13ca:	f842 1023 	str.w	r1, [r2, r3, lsl #2]
+    13b2:	f89d 300f 	ldrb.w	r3, [sp, #15]
+    13b6:	4a50      	ldr	r2, [pc, #320]	; (14f8 <Scheduler_Init+0x160>)
+    13b8:	2100      	movs	r1, #0
+    13ba:	f842 1023 	str.w	r1, [r2, r3, lsl #2]
         SchedulerControl.TaskPeriod[ i ] = SchedulerPtr->TaskPtr[ i ].InitPeriod;
-    13ce:	9b01      	ldr	r3, [sp, #4]
-    13d0:	6899      	ldr	r1, [r3, #8]
-    13d2:	f89d 200f 	ldrb.w	r2, [sp, #15]
-    13d6:	4613      	mov	r3, r2
-    13d8:	005b      	lsls	r3, r3, #1
-    13da:	4413      	add	r3, r2
-    13dc:	009b      	lsls	r3, r3, #2
-    13de:	18ca      	adds	r2, r1, r3
-    13e0:	f89d 300f 	ldrb.w	r3, [sp, #15]
-    13e4:	6812      	ldr	r2, [r2, #0]
-    13e6:	4948      	ldr	r1, [pc, #288]	; (1508 <Scheduler_Init+0x160>)
-    13e8:	3306      	adds	r3, #6
-    13ea:	f841 2023 	str.w	r2, [r1, r3, lsl #2]
+    13be:	9b01      	ldr	r3, [sp, #4]
+    13c0:	6899      	ldr	r1, [r3, #8]
+    13c2:	f89d 200f 	ldrb.w	r2, [sp, #15]
+    13c6:	4613      	mov	r3, r2
+    13c8:	005b      	lsls	r3, r3, #1
+    13ca:	4413      	add	r3, r2
+    13cc:	009b      	lsls	r3, r3, #2
+    13ce:	18ca      	adds	r2, r1, r3
+    13d0:	f89d 300f 	ldrb.w	r3, [sp, #15]
+    13d4:	6812      	ldr	r2, [r2, #0]
+    13d6:	4948      	ldr	r1, [pc, #288]	; (14f8 <Scheduler_Init+0x160>)
+    13d8:	3306      	adds	r3, #6
+    13da:	f841 2023 	str.w	r2, [r1, r3, lsl #2]
         Bfx_PutBit_u32u8u8( &SchedulerControl.TaskFlags, i, SchedulerPtr->TaskPtr[ i ].InitFlag );
-    13ee:	9b01      	ldr	r3, [sp, #4]
-    13f0:	6899      	ldr	r1, [r3, #8]
-    13f2:	f89d 200f 	ldrb.w	r2, [sp, #15]
-    13f6:	4613      	mov	r3, r2
-    13f8:	005b      	lsls	r3, r3, #1
-    13fa:	4413      	add	r3, r2
-    13fc:	009b      	lsls	r3, r3, #2
-    13fe:	440b      	add	r3, r1
-    1400:	791b      	ldrb	r3, [r3, #4]
-    1402:	2b00      	cmp	r3, #0
-    1404:	bf14      	ite	ne
-    1406:	2301      	movne	r3, #1
-    1408:	2300      	moveq	r3, #0
-    140a:	b2da      	uxtb	r2, r3
-    140c:	f89d 300f 	ldrb.w	r3, [sp, #15]
-    1410:	4619      	mov	r1, r3
-    1412:	483e      	ldr	r0, [pc, #248]	; (150c <Scheduler_Init+0x164>)
-    1414:	f7ff ffa2 	bl	135c <Bfx_PutBit_u32u8u8>
+    13de:	9b01      	ldr	r3, [sp, #4]
+    13e0:	6899      	ldr	r1, [r3, #8]
+    13e2:	f89d 200f 	ldrb.w	r2, [sp, #15]
+    13e6:	4613      	mov	r3, r2
+    13e8:	005b      	lsls	r3, r3, #1
+    13ea:	4413      	add	r3, r2
+    13ec:	009b      	lsls	r3, r3, #2
+    13ee:	440b      	add	r3, r1
+    13f0:	791b      	ldrb	r3, [r3, #4]
+    13f2:	2b00      	cmp	r3, #0
+    13f4:	bf14      	ite	ne
+    13f6:	2301      	movne	r3, #1
+    13f8:	2300      	moveq	r3, #0
+    13fa:	b2da      	uxtb	r2, r3
+    13fc:	f89d 300f 	ldrb.w	r3, [sp, #15]
+    1400:	4619      	mov	r1, r3
+    1402:	483e      	ldr	r0, [pc, #248]	; (14fc <Scheduler_Init+0x164>)
+    1404:	f7ff ffa2 	bl	134c <Bfx_PutBit_u32u8u8>
     for( uint8 i = 0u; i < SchedulerPtr->Tasks; i++ )
-    1418:	f89d 300f 	ldrb.w	r3, [sp, #15]
-    141c:	3301      	adds	r3, #1
-    141e:	f88d 300f 	strb.w	r3, [sp, #15]
-    1422:	9b01      	ldr	r3, [sp, #4]
-    1424:	791b      	ldrb	r3, [r3, #4]
-    1426:	f89d 200f 	ldrb.w	r2, [sp, #15]
-    142a:	429a      	cmp	r2, r3
-    142c:	d3c9      	bcc.n	13c2 <Scheduler_Init+0x1a>
+    1408:	f89d 300f 	ldrb.w	r3, [sp, #15]
+    140c:	3301      	adds	r3, #1
+    140e:	f88d 300f 	strb.w	r3, [sp, #15]
+    1412:	9b01      	ldr	r3, [sp, #4]
+    1414:	791b      	ldrb	r3, [r3, #4]
+    1416:	f89d 200f 	ldrb.w	r2, [sp, #15]
+    141a:	429a      	cmp	r2, r3
+    141c:	d3c9      	bcc.n	13b2 <Scheduler_Init+0x1a>
     }
 
     for( uint8 i = 0u; i < SchedulerPtr->Timers; i++ )
-    142e:	2300      	movs	r3, #0
-    1430:	f88d 300e 	strb.w	r3, [sp, #14]
-    1434:	e031      	b.n	149a <Scheduler_Init+0xf2>
+    141e:	2300      	movs	r3, #0
+    1420:	f88d 300e 	strb.w	r3, [sp, #14]
+    1424:	e031      	b.n	148a <Scheduler_Init+0xf2>
     {
         SchedulerControl.TimerCount[ i ] = 0u;
-    1436:	f89d 300e 	ldrb.w	r3, [sp, #14]
-    143a:	4a33      	ldr	r2, [pc, #204]	; (1508 <Scheduler_Init+0x160>)
-    143c:	330c      	adds	r3, #12
-    143e:	2100      	movs	r1, #0
-    1440:	f842 1023 	str.w	r1, [r2, r3, lsl #2]
+    1426:	f89d 300e 	ldrb.w	r3, [sp, #14]
+    142a:	4a33      	ldr	r2, [pc, #204]	; (14f8 <Scheduler_Init+0x160>)
+    142c:	330c      	adds	r3, #12
+    142e:	2100      	movs	r1, #0
+    1430:	f842 1023 	str.w	r1, [r2, r3, lsl #2]
         SchedulerControl.TimerTimeout[ i ] = SchedulerPtr->TimerPtr[ i ].InitTimeout;
-    1444:	9b01      	ldr	r3, [sp, #4]
-    1446:	6919      	ldr	r1, [r3, #16]
-    1448:	f89d 200e 	ldrb.w	r2, [sp, #14]
-    144c:	4613      	mov	r3, r2
-    144e:	005b      	lsls	r3, r3, #1
-    1450:	4413      	add	r3, r2
-    1452:	009b      	lsls	r3, r3, #2
-    1454:	18ca      	adds	r2, r1, r3
-    1456:	f89d 300e 	ldrb.w	r3, [sp, #14]
-    145a:	6812      	ldr	r2, [r2, #0]
-    145c:	492a      	ldr	r1, [pc, #168]	; (1508 <Scheduler_Init+0x160>)
-    145e:	330c      	adds	r3, #12
-    1460:	009b      	lsls	r3, r3, #2
-    1462:	440b      	add	r3, r1
-    1464:	605a      	str	r2, [r3, #4]
+    1434:	9b01      	ldr	r3, [sp, #4]
+    1436:	6919      	ldr	r1, [r3, #16]
+    1438:	f89d 200e 	ldrb.w	r2, [sp, #14]
+    143c:	4613      	mov	r3, r2
+    143e:	005b      	lsls	r3, r3, #1
+    1440:	4413      	add	r3, r2
+    1442:	009b      	lsls	r3, r3, #2
+    1444:	18ca      	adds	r2, r1, r3
+    1446:	f89d 300e 	ldrb.w	r3, [sp, #14]
+    144a:	6812      	ldr	r2, [r2, #0]
+    144c:	492a      	ldr	r1, [pc, #168]	; (14f8 <Scheduler_Init+0x160>)
+    144e:	330c      	adds	r3, #12
+    1450:	009b      	lsls	r3, r3, #2
+    1452:	440b      	add	r3, r1
+    1454:	605a      	str	r2, [r3, #4]
         Bfx_PutBit_u32u8u8( &SchedulerControl.TimerFlags, i, SchedulerPtr->TimerPtr[ i ].InitFlag );
-    1466:	9b01      	ldr	r3, [sp, #4]
-    1468:	6919      	ldr	r1, [r3, #16]
-    146a:	f89d 200e 	ldrb.w	r2, [sp, #14]
-    146e:	4613      	mov	r3, r2
-    1470:	005b      	lsls	r3, r3, #1
-    1472:	4413      	add	r3, r2
-    1474:	009b      	lsls	r3, r3, #2
-    1476:	440b      	add	r3, r1
-    1478:	791b      	ldrb	r3, [r3, #4]
-    147a:	2b00      	cmp	r3, #0
-    147c:	bf14      	ite	ne
-    147e:	2301      	movne	r3, #1
-    1480:	2300      	moveq	r3, #0
-    1482:	b2da      	uxtb	r2, r3
-    1484:	f89d 300e 	ldrb.w	r3, [sp, #14]
-    1488:	4619      	mov	r1, r3
-    148a:	4821      	ldr	r0, [pc, #132]	; (1510 <Scheduler_Init+0x168>)
-    148c:	f7ff ff66 	bl	135c <Bfx_PutBit_u32u8u8>
+    1456:	9b01      	ldr	r3, [sp, #4]
+    1458:	6919      	ldr	r1, [r3, #16]
+    145a:	f89d 200e 	ldrb.w	r2, [sp, #14]
+    145e:	4613      	mov	r3, r2
+    1460:	005b      	lsls	r3, r3, #1
+    1462:	4413      	add	r3, r2
+    1464:	009b      	lsls	r3, r3, #2
+    1466:	440b      	add	r3, r1
+    1468:	791b      	ldrb	r3, [r3, #4]
+    146a:	2b00      	cmp	r3, #0
+    146c:	bf14      	ite	ne
+    146e:	2301      	movne	r3, #1
+    1470:	2300      	moveq	r3, #0
+    1472:	b2da      	uxtb	r2, r3
+    1474:	f89d 300e 	ldrb.w	r3, [sp, #14]
+    1478:	4619      	mov	r1, r3
+    147a:	4821      	ldr	r0, [pc, #132]	; (1500 <Scheduler_Init+0x168>)
+    147c:	f7ff ff66 	bl	134c <Bfx_PutBit_u32u8u8>
     for( uint8 i = 0u; i < SchedulerPtr->Timers; i++ )
-    1490:	f89d 300e 	ldrb.w	r3, [sp, #14]
-    1494:	3301      	adds	r3, #1
-    1496:	f88d 300e 	strb.w	r3, [sp, #14]
-    149a:	9b01      	ldr	r3, [sp, #4]
-    149c:	7b1b      	ldrb	r3, [r3, #12]
-    149e:	f89d 200e 	ldrb.w	r2, [sp, #14]
-    14a2:	429a      	cmp	r2, r3
-    14a4:	d3c7      	bcc.n	1436 <Scheduler_Init+0x8e>
+    1480:	f89d 300e 	ldrb.w	r3, [sp, #14]
+    1484:	3301      	adds	r3, #1
+    1486:	f88d 300e 	strb.w	r3, [sp, #14]
+    148a:	9b01      	ldr	r3, [sp, #4]
+    148c:	7b1b      	ldrb	r3, [r3, #12]
+    148e:	f89d 200e 	ldrb.w	r2, [sp, #14]
+    1492:	429a      	cmp	r2, r3
+    1494:	d3c7      	bcc.n	1426 <Scheduler_Init+0x8e>
     }
 
     for( uint8 i = 0u; i < SchedulerPtr->Queues; i++ )
-    14a6:	2300      	movs	r3, #0
-    14a8:	f88d 300d 	strb.w	r3, [sp, #13]
-    14ac:	e01f      	b.n	14ee <Scheduler_Init+0x146>
+    1496:	2300      	movs	r3, #0
+    1498:	f88d 300d 	strb.w	r3, [sp, #13]
+    149c:	e01f      	b.n	14de <Scheduler_Init+0x146>
     {
         SchedulerControl.QueueHeads[ i ] = 0u;
-    14ae:	f89d 300d 	ldrb.w	r3, [sp, #13]
-    14b2:	4a15      	ldr	r2, [pc, #84]	; (1508 <Scheduler_Init+0x160>)
-    14b4:	330e      	adds	r3, #14
-    14b6:	2100      	movs	r1, #0
-    14b8:	f842 1023 	str.w	r1, [r2, r3, lsl #2]
+    149e:	f89d 300d 	ldrb.w	r3, [sp, #13]
+    14a2:	4a15      	ldr	r2, [pc, #84]	; (14f8 <Scheduler_Init+0x160>)
+    14a4:	330e      	adds	r3, #14
+    14a6:	2100      	movs	r1, #0
+    14a8:	f842 1023 	str.w	r1, [r2, r3, lsl #2]
         SchedulerControl.QueueTails[ i ] = 0u;
-    14bc:	f89d 300d 	ldrb.w	r3, [sp, #13]
-    14c0:	4a11      	ldr	r2, [pc, #68]	; (1508 <Scheduler_Init+0x160>)
-    14c2:	330e      	adds	r3, #14
-    14c4:	009b      	lsls	r3, r3, #2
-    14c6:	4413      	add	r3, r2
-    14c8:	2200      	movs	r2, #0
-    14ca:	605a      	str	r2, [r3, #4]
+    14ac:	f89d 300d 	ldrb.w	r3, [sp, #13]
+    14b0:	4a11      	ldr	r2, [pc, #68]	; (14f8 <Scheduler_Init+0x160>)
+    14b2:	330e      	adds	r3, #14
+    14b4:	009b      	lsls	r3, r3, #2
+    14b6:	4413      	add	r3, r2
+    14b8:	2200      	movs	r2, #0
+    14ba:	605a      	str	r2, [r3, #4]
         Bfx_SetBit_u32u8( &SchedulerControl.QueueEmpties, i );
-    14cc:	f89d 300d 	ldrb.w	r3, [sp, #13]
-    14d0:	4619      	mov	r1, r3
-    14d2:	4810      	ldr	r0, [pc, #64]	; (1514 <Scheduler_Init+0x16c>)
-    14d4:	f7ff ff0a 	bl	12ec <Bfx_SetBit_u32u8>
+    14bc:	f89d 300d 	ldrb.w	r3, [sp, #13]
+    14c0:	4619      	mov	r1, r3
+    14c2:	4810      	ldr	r0, [pc, #64]	; (1504 <Scheduler_Init+0x16c>)
+    14c4:	f7ff ff0a 	bl	12dc <Bfx_SetBit_u32u8>
         Bfx_ClrBit_u32u8( &SchedulerControl.QueueFulls, i );
-    14d8:	f89d 300d 	ldrb.w	r3, [sp, #13]
-    14dc:	4619      	mov	r1, r3
-    14de:	480e      	ldr	r0, [pc, #56]	; (1518 <Scheduler_Init+0x170>)
-    14e0:	f7ff ff16 	bl	1310 <Bfx_ClrBit_u32u8>
+    14c8:	f89d 300d 	ldrb.w	r3, [sp, #13]
+    14cc:	4619      	mov	r1, r3
+    14ce:	480e      	ldr	r0, [pc, #56]	; (1508 <Scheduler_Init+0x170>)
+    14d0:	f7ff ff16 	bl	1300 <Bfx_ClrBit_u32u8>
     for( uint8 i = 0u; i < SchedulerPtr->Queues; i++ )
-    14e4:	f89d 300d 	ldrb.w	r3, [sp, #13]
-    14e8:	3301      	adds	r3, #1
-    14ea:	f88d 300d 	strb.w	r3, [sp, #13]
-    14ee:	9b01      	ldr	r3, [sp, #4]
-    14f0:	7d1b      	ldrb	r3, [r3, #20]
-    14f2:	f89d 200d 	ldrb.w	r2, [sp, #13]
-    14f6:	429a      	cmp	r2, r3
-    14f8:	d3d9      	bcc.n	14ae <Scheduler_Init+0x106>
+    14d4:	f89d 300d 	ldrb.w	r3, [sp, #13]
+    14d8:	3301      	adds	r3, #1
+    14da:	f88d 300d 	strb.w	r3, [sp, #13]
+    14de:	9b01      	ldr	r3, [sp, #4]
+    14e0:	7d1b      	ldrb	r3, [r3, #20]
+    14e2:	f89d 200d 	ldrb.w	r2, [sp, #13]
+    14e6:	429a      	cmp	r2, r3
+    14e8:	d3d9      	bcc.n	149e <Scheduler_Init+0x106>
     }
     
     SchedulerLocal = SchedulerPtr;
-    14fa:	4a08      	ldr	r2, [pc, #32]	; (151c <Scheduler_Init+0x174>)
-    14fc:	9b01      	ldr	r3, [sp, #4]
-    14fe:	6013      	str	r3, [r2, #0]
+    14ea:	4a08      	ldr	r2, [pc, #32]	; (150c <Scheduler_Init+0x174>)
+    14ec:	9b01      	ldr	r3, [sp, #4]
+    14ee:	6013      	str	r3, [r2, #0]
 }
-    1500:	bf00      	nop
-    1502:	b005      	add	sp, #20
-    1504:	f85d fb04 	ldr.w	pc, [sp], #4
-    1508:	1fff9274 	.word	0x1fff9274
-    150c:	1fff92b4 	.word	0x1fff92b4
-    1510:	1fff92b8 	.word	0x1fff92b8
-    1514:	1fff92bc 	.word	0x1fff92bc
-    1518:	1fff92c0 	.word	0x1fff92c0
-    151c:	1fff9270 	.word	0x1fff9270
+    14f0:	bf00      	nop
+    14f2:	b005      	add	sp, #20
+    14f4:	f85d fb04 	ldr.w	pc, [sp], #4
+    14f8:	1fff9274 	.word	0x1fff9274
+    14fc:	1fff92b4 	.word	0x1fff92b4
+    1500:	1fff92b8 	.word	0x1fff92b8
+    1504:	1fff92bc 	.word	0x1fff92bc
+    1508:	1fff92c0 	.word	0x1fff92c0
+    150c:	1fff9270 	.word	0x1fff9270
 
-00001520 <Scheduler_MainFunction>:
+00001510 <Scheduler_MainFunction>:
  * if it is time to run accordingly to the period registered on each of them. The function won't return
  * by any means since it is looping inside a __while(1u)__ forever. The algorithm is pretty simple since
  * first task to dispatch will be the first registered in the **Scheduler_ConfigType** array
  */
 void Scheduler_MainFunction( void )
 {
-    1520:	b500      	push	{lr}
-    1522:	b085      	sub	sp, #20
+    1510:	b500      	push	{lr}
+    1512:	b085      	sub	sp, #20
     uint32 Timeout = OsIf_MicrosToTicks( ( SchedulerLocal->Tick * 1000 ), OSIF_COUNTER_SYSTEM );
-    1524:	4b13      	ldr	r3, [pc, #76]	; (1574 <Scheduler_MainFunction+0x54>)
-    1526:	681b      	ldr	r3, [r3, #0]
-    1528:	681b      	ldr	r3, [r3, #0]
-    152a:	f44f 727a 	mov.w	r2, #1000	; 0x3e8
-    152e:	fb02 f303 	mul.w	r3, r2, r3
-    1532:	2101      	movs	r1, #1
-    1534:	4618      	mov	r0, r3
-    1536:	f001 f9a5 	bl	2884 <OsIf_MicrosToTicks>
-    153a:	9002      	str	r0, [sp, #8]
+    1514:	4b13      	ldr	r3, [pc, #76]	; (1564 <Scheduler_MainFunction+0x54>)
+    1516:	681b      	ldr	r3, [r3, #0]
+    1518:	681b      	ldr	r3, [r3, #0]
+    151a:	f44f 727a 	mov.w	r2, #1000	; 0x3e8
+    151e:	fb02 f303 	mul.w	r3, r2, r3
+    1522:	2101      	movs	r1, #1
+    1524:	4618      	mov	r0, r3
+    1526:	f001 f9ad 	bl	2884 <OsIf_MicrosToTicks>
+    152a:	9002      	str	r0, [sp, #8]
     /*get the Systic Timer count for the first time*/
     uint32 SeedTick = OsIf_GetCounter( OSIF_COUNTER_SYSTEM );
-    153c:	2001      	movs	r0, #1
-    153e:	f001 f955 	bl	27ec <OsIf_GetCounter>
-    1542:	4603      	mov	r3, r0
-    1544:	9301      	str	r3, [sp, #4]
+    152c:	2001      	movs	r0, #1
+    152e:	f001 f95d 	bl	27ec <OsIf_GetCounter>
+    1532:	4603      	mov	r3, r0
+    1534:	9301      	str	r3, [sp, #4]
     /*We need to count the elapsed time from zero*/
     uint32 ElapsedTime = 0u;
-    1546:	2300      	movs	r3, #0
-    1548:	9303      	str	r3, [sp, #12]
+    1536:	2300      	movs	r3, #0
+    1538:	9303      	str	r3, [sp, #12]
     
     do /* cppcheck-suppress misra-c2012-14.4 ; this is an infinite loop */
     {
         /* get the elapsed time count from the seed tick value*/
         ElapsedTime += OsIf_GetElapsed( &SeedTick, OSIF_COUNTER_SYSTEM );
-    154a:	ab01      	add	r3, sp, #4
-    154c:	2101      	movs	r1, #1
-    154e:	4618      	mov	r0, r3
-    1550:	f001 f965 	bl	281e <OsIf_GetElapsed>
-    1554:	4602      	mov	r2, r0
-    1556:	9b03      	ldr	r3, [sp, #12]
-    1558:	4413      	add	r3, r2
-    155a:	9303      	str	r3, [sp, #12]
+    153a:	ab01      	add	r3, sp, #4
+    153c:	2101      	movs	r1, #1
+    153e:	4618      	mov	r0, r3
+    1540:	f001 f96d 	bl	281e <OsIf_GetElapsed>
+    1544:	4602      	mov	r2, r0
+    1546:	9b03      	ldr	r3, [sp, #12]
+    1548:	4413      	add	r3, r2
+    154a:	9303      	str	r3, [sp, #12]
         /*query if the elapsed time is already equal or bigger than the timeout*/
         if( ElapsedTime >= Timeout )
-    155c:	9a03      	ldr	r2, [sp, #12]
-    155e:	9b02      	ldr	r3, [sp, #8]
-    1560:	429a      	cmp	r2, r3
-    1562:	d3f2      	bcc.n	154a <Scheduler_MainFunction+0x2a>
+    154c:	9a03      	ldr	r2, [sp, #12]
+    154e:	9b02      	ldr	r3, [sp, #8]
+    1550:	429a      	cmp	r2, r3
+    1552:	d3f2      	bcc.n	153a <Scheduler_MainFunction+0x2a>
         {
             /*reset the elapsed time */
             ElapsedTime = 0u;
-    1564:	2300      	movs	r3, #0
-    1566:	9303      	str	r3, [sp, #12]
+    1554:	2300      	movs	r3, #0
+    1556:	9303      	str	r3, [sp, #12]
             /*Scan all registered timers*/
             Timers_Dispatch( );
-    1568:	f000 f85a 	bl	1620 <Timers_Dispatch>
+    1558:	f000 f85a 	bl	1610 <Timers_Dispatch>
             /*Scan all registered task*/
             Tasks_Dispatch( );
-    156c:	f000 f804 	bl	1578 <Tasks_Dispatch>
+    155c:	f000 f804 	bl	1568 <Tasks_Dispatch>
         ElapsedTime += OsIf_GetElapsed( &SeedTick, OSIF_COUNTER_SYSTEM );
-    1570:	e7eb      	b.n	154a <Scheduler_MainFunction+0x2a>
-    1572:	bf00      	nop
-    1574:	1fff9270 	.word	0x1fff9270
+    1560:	e7eb      	b.n	153a <Scheduler_MainFunction+0x2a>
+    1562:	bf00      	nop
+    1564:	1fff9270 	.word	0x1fff9270
 
-00001578 <Tasks_Dispatch>:
+00001568 <Tasks_Dispatch>:
  * This is the only mechanism to stop a timer. The function only set the flag startFlag to FALSE.
  *
  * @param   scheduler  Scheduler control structure
  */
 STATIC void Tasks_Dispatch( void )
 {
-    1578:	b500      	push	{lr}
-    157a:	b083      	sub	sp, #12
+    1568:	b500      	push	{lr}
+    156a:	b083      	sub	sp, #12
     /*Scan all registered task*/
     for( uint8 i = 0u; i < SchedulerLocal->Tasks; i++ )
-    157c:	2300      	movs	r3, #0
-    157e:	f88d 3007 	strb.w	r3, [sp, #7]
-    1582:	e03c      	b.n	15fe <Tasks_Dispatch+0x86>
+    156c:	2300      	movs	r3, #0
+    156e:	f88d 3007 	strb.w	r3, [sp, #7]
+    1572:	e03c      	b.n	15ee <Tasks_Dispatch+0x86>
     {
         /*Only run those tasks that are started*/
         if( Bfx_GetBit_u32u8_u8( SchedulerControl.TaskFlags, i ) == TRUE )
-    1584:	4b24      	ldr	r3, [pc, #144]	; (1618 <Tasks_Dispatch+0xa0>)
-    1586:	6c1b      	ldr	r3, [r3, #64]	; 0x40
-    1588:	f89d 2007 	ldrb.w	r2, [sp, #7]
-    158c:	4611      	mov	r1, r2
-    158e:	4618      	mov	r0, r3
-    1590:	f7ff fed1 	bl	1336 <Bfx_GetBit_u32u8_u8>
-    1594:	4603      	mov	r3, r0
-    1596:	2b00      	cmp	r3, #0
-    1598:	d01e      	beq.n	15d8 <Tasks_Dispatch+0x60>
+    1574:	4b24      	ldr	r3, [pc, #144]	; (1608 <Tasks_Dispatch+0xa0>)
+    1576:	6c1b      	ldr	r3, [r3, #64]	; 0x40
+    1578:	f89d 2007 	ldrb.w	r2, [sp, #7]
+    157c:	4611      	mov	r1, r2
+    157e:	4618      	mov	r0, r3
+    1580:	f7ff fed1 	bl	1326 <Bfx_GetBit_u32u8_u8>
+    1584:	4603      	mov	r3, r0
+    1586:	2b00      	cmp	r3, #0
+    1588:	d01e      	beq.n	15c8 <Tasks_Dispatch+0x60>
         {
             /*Only run those tasks that already has its elapsed time*/
             if( SchedulerControl.TaskElapsed[ i ] >= SchedulerControl.TaskPeriod[ i ] )
-    159a:	f89d 3007 	ldrb.w	r3, [sp, #7]
-    159e:	4a1e      	ldr	r2, [pc, #120]	; (1618 <Tasks_Dispatch+0xa0>)
-    15a0:	f852 2023 	ldr.w	r2, [r2, r3, lsl #2]
-    15a4:	f89d 3007 	ldrb.w	r3, [sp, #7]
-    15a8:	491b      	ldr	r1, [pc, #108]	; (1618 <Tasks_Dispatch+0xa0>)
-    15aa:	3306      	adds	r3, #6
-    15ac:	f851 3023 	ldr.w	r3, [r1, r3, lsl #2]
-    15b0:	429a      	cmp	r2, r3
-    15b2:	d311      	bcc.n	15d8 <Tasks_Dispatch+0x60>
+    158a:	f89d 3007 	ldrb.w	r3, [sp, #7]
+    158e:	4a1e      	ldr	r2, [pc, #120]	; (1608 <Tasks_Dispatch+0xa0>)
+    1590:	f852 2023 	ldr.w	r2, [r2, r3, lsl #2]
+    1594:	f89d 3007 	ldrb.w	r3, [sp, #7]
+    1598:	491b      	ldr	r1, [pc, #108]	; (1608 <Tasks_Dispatch+0xa0>)
+    159a:	3306      	adds	r3, #6
+    159c:	f851 3023 	ldr.w	r3, [r1, r3, lsl #2]
+    15a0:	429a      	cmp	r2, r3
+    15a2:	d311      	bcc.n	15c8 <Tasks_Dispatch+0x60>
             {
                 SchedulerControl.TaskElapsed[ i ] = 0u;
-    15b4:	f89d 3007 	ldrb.w	r3, [sp, #7]
-    15b8:	4a17      	ldr	r2, [pc, #92]	; (1618 <Tasks_Dispatch+0xa0>)
-    15ba:	2100      	movs	r1, #0
-    15bc:	f842 1023 	str.w	r1, [r2, r3, lsl #2]
+    15a4:	f89d 3007 	ldrb.w	r3, [sp, #7]
+    15a8:	4a17      	ldr	r2, [pc, #92]	; (1608 <Tasks_Dispatch+0xa0>)
+    15aa:	2100      	movs	r1, #0
+    15ac:	f842 1023 	str.w	r1, [r2, r3, lsl #2]
                 /*Run task*/
                 SchedulerLocal->TaskPtr[ i ].TaskFunc( );
-    15c0:	4b16      	ldr	r3, [pc, #88]	; (161c <Tasks_Dispatch+0xa4>)
-    15c2:	681b      	ldr	r3, [r3, #0]
-    15c4:	6899      	ldr	r1, [r3, #8]
-    15c6:	f89d 2007 	ldrb.w	r2, [sp, #7]
-    15ca:	4613      	mov	r3, r2
-    15cc:	005b      	lsls	r3, r3, #1
-    15ce:	4413      	add	r3, r2
-    15d0:	009b      	lsls	r3, r3, #2
-    15d2:	440b      	add	r3, r1
-    15d4:	689b      	ldr	r3, [r3, #8]
-    15d6:	4798      	blx	r3
+    15b0:	4b16      	ldr	r3, [pc, #88]	; (160c <Tasks_Dispatch+0xa4>)
+    15b2:	681b      	ldr	r3, [r3, #0]
+    15b4:	6899      	ldr	r1, [r3, #8]
+    15b6:	f89d 2007 	ldrb.w	r2, [sp, #7]
+    15ba:	4613      	mov	r3, r2
+    15bc:	005b      	lsls	r3, r3, #1
+    15be:	4413      	add	r3, r2
+    15c0:	009b      	lsls	r3, r3, #2
+    15c2:	440b      	add	r3, r1
+    15c4:	689b      	ldr	r3, [r3, #8]
+    15c6:	4798      	blx	r3
             }
         }
         /*Increment the task elapsed time in ticks*/
         SchedulerControl.TaskElapsed[ i ] += SchedulerLocal->Tick;
+    15c8:	f89d 3007 	ldrb.w	r3, [sp, #7]
+    15cc:	4a0e      	ldr	r2, [pc, #56]	; (1608 <Tasks_Dispatch+0xa0>)
+    15ce:	f852 1023 	ldr.w	r1, [r2, r3, lsl #2]
+    15d2:	4b0e      	ldr	r3, [pc, #56]	; (160c <Tasks_Dispatch+0xa4>)
+    15d4:	681b      	ldr	r3, [r3, #0]
+    15d6:	681a      	ldr	r2, [r3, #0]
     15d8:	f89d 3007 	ldrb.w	r3, [sp, #7]
-    15dc:	4a0e      	ldr	r2, [pc, #56]	; (1618 <Tasks_Dispatch+0xa0>)
-    15de:	f852 1023 	ldr.w	r1, [r2, r3, lsl #2]
-    15e2:	4b0e      	ldr	r3, [pc, #56]	; (161c <Tasks_Dispatch+0xa4>)
-    15e4:	681b      	ldr	r3, [r3, #0]
-    15e6:	681a      	ldr	r2, [r3, #0]
-    15e8:	f89d 3007 	ldrb.w	r3, [sp, #7]
-    15ec:	440a      	add	r2, r1
-    15ee:	490a      	ldr	r1, [pc, #40]	; (1618 <Tasks_Dispatch+0xa0>)
-    15f0:	f841 2023 	str.w	r2, [r1, r3, lsl #2]
+    15dc:	440a      	add	r2, r1
+    15de:	490a      	ldr	r1, [pc, #40]	; (1608 <Tasks_Dispatch+0xa0>)
+    15e0:	f841 2023 	str.w	r2, [r1, r3, lsl #2]
     for( uint8 i = 0u; i < SchedulerLocal->Tasks; i++ )
-    15f4:	f89d 3007 	ldrb.w	r3, [sp, #7]
-    15f8:	3301      	adds	r3, #1
-    15fa:	f88d 3007 	strb.w	r3, [sp, #7]
-    15fe:	4b07      	ldr	r3, [pc, #28]	; (161c <Tasks_Dispatch+0xa4>)
-    1600:	681b      	ldr	r3, [r3, #0]
-    1602:	791b      	ldrb	r3, [r3, #4]
-    1604:	f89d 2007 	ldrb.w	r2, [sp, #7]
-    1608:	429a      	cmp	r2, r3
-    160a:	d3bb      	bcc.n	1584 <Tasks_Dispatch+0xc>
+    15e4:	f89d 3007 	ldrb.w	r3, [sp, #7]
+    15e8:	3301      	adds	r3, #1
+    15ea:	f88d 3007 	strb.w	r3, [sp, #7]
+    15ee:	4b07      	ldr	r3, [pc, #28]	; (160c <Tasks_Dispatch+0xa4>)
+    15f0:	681b      	ldr	r3, [r3, #0]
+    15f2:	791b      	ldrb	r3, [r3, #4]
+    15f4:	f89d 2007 	ldrb.w	r2, [sp, #7]
+    15f8:	429a      	cmp	r2, r3
+    15fa:	d3bb      	bcc.n	1574 <Tasks_Dispatch+0xc>
     }
 }
-    160c:	bf00      	nop
-    160e:	bf00      	nop
-    1610:	b003      	add	sp, #12
-    1612:	f85d fb04 	ldr.w	pc, [sp], #4
-    1616:	bf00      	nop
-    1618:	1fff9274 	.word	0x1fff9274
-    161c:	1fff9270 	.word	0x1fff9270
+    15fc:	bf00      	nop
+    15fe:	bf00      	nop
+    1600:	b003      	add	sp, #12
+    1602:	f85d fb04 	ldr.w	pc, [sp], #4
+    1606:	bf00      	nop
+    1608:	1fff9274 	.word	0x1fff9274
+    160c:	1fff9270 	.word	0x1fff9270
 
-00001620 <Timers_Dispatch>:
+00001610 <Timers_Dispatch>:
 
 STATIC void Timers_Dispatch( void )
 {
-    1620:	b500      	push	{lr}
-    1622:	b083      	sub	sp, #12
+    1610:	b500      	push	{lr}
+    1612:	b083      	sub	sp, #12
     /*Scan all registered timers*/
     for( uint8 i = 0u; i < SchedulerLocal->Timers; i++ )
-    1624:	2300      	movs	r3, #0
-    1626:	f88d 3007 	strb.w	r3, [sp, #7]
-    162a:	e046      	b.n	16ba <Timers_Dispatch+0x9a>
+    1614:	2300      	movs	r3, #0
+    1616:	f88d 3007 	strb.w	r3, [sp, #7]
+    161a:	e046      	b.n	16aa <Timers_Dispatch+0x9a>
     {
         /*Only run those timers that are started*/
         if( Bfx_GetBit_u32u8_u8( SchedulerControl.TimerFlags, i ) == TRUE )
-    162c:	4b29      	ldr	r3, [pc, #164]	; (16d4 <Timers_Dispatch+0xb4>)
-    162e:	6c5b      	ldr	r3, [r3, #68]	; 0x44
-    1630:	f89d 2007 	ldrb.w	r2, [sp, #7]
-    1634:	4611      	mov	r1, r2
-    1636:	4618      	mov	r0, r3
-    1638:	f7ff fe7d 	bl	1336 <Bfx_GetBit_u32u8_u8>
-    163c:	4603      	mov	r3, r0
-    163e:	2b00      	cmp	r3, #0
-    1640:	d036      	beq.n	16b0 <Timers_Dispatch+0x90>
+    161c:	4b29      	ldr	r3, [pc, #164]	; (16c4 <Timers_Dispatch+0xb4>)
+    161e:	6c5b      	ldr	r3, [r3, #68]	; 0x44
+    1620:	f89d 2007 	ldrb.w	r2, [sp, #7]
+    1624:	4611      	mov	r1, r2
+    1626:	4618      	mov	r0, r3
+    1628:	f7ff fe7d 	bl	1326 <Bfx_GetBit_u32u8_u8>
+    162c:	4603      	mov	r3, r0
+    162e:	2b00      	cmp	r3, #0
+    1630:	d036      	beq.n	16a0 <Timers_Dispatch+0x90>
         {
             /*Decrement timer count by one tick*/
             SchedulerControl.TimerCount[ i ] -= SchedulerLocal->Tick;
-    1642:	f89d 3007 	ldrb.w	r3, [sp, #7]
-    1646:	4a23      	ldr	r2, [pc, #140]	; (16d4 <Timers_Dispatch+0xb4>)
-    1648:	330c      	adds	r3, #12
-    164a:	f852 1023 	ldr.w	r1, [r2, r3, lsl #2]
-    164e:	4b22      	ldr	r3, [pc, #136]	; (16d8 <Timers_Dispatch+0xb8>)
-    1650:	681b      	ldr	r3, [r3, #0]
-    1652:	681a      	ldr	r2, [r3, #0]
-    1654:	f89d 3007 	ldrb.w	r3, [sp, #7]
-    1658:	1a8a      	subs	r2, r1, r2
-    165a:	491e      	ldr	r1, [pc, #120]	; (16d4 <Timers_Dispatch+0xb4>)
-    165c:	330c      	adds	r3, #12
-    165e:	f841 2023 	str.w	r2, [r1, r3, lsl #2]
+    1632:	f89d 3007 	ldrb.w	r3, [sp, #7]
+    1636:	4a23      	ldr	r2, [pc, #140]	; (16c4 <Timers_Dispatch+0xb4>)
+    1638:	330c      	adds	r3, #12
+    163a:	f852 1023 	ldr.w	r1, [r2, r3, lsl #2]
+    163e:	4b22      	ldr	r3, [pc, #136]	; (16c8 <Timers_Dispatch+0xb8>)
+    1640:	681b      	ldr	r3, [r3, #0]
+    1642:	681a      	ldr	r2, [r3, #0]
+    1644:	f89d 3007 	ldrb.w	r3, [sp, #7]
+    1648:	1a8a      	subs	r2, r1, r2
+    164a:	491e      	ldr	r1, [pc, #120]	; (16c4 <Timers_Dispatch+0xb4>)
+    164c:	330c      	adds	r3, #12
+    164e:	f841 2023 	str.w	r2, [r1, r3, lsl #2]
             /*Only run those timers that already has its elapsed time*/
             if( SchedulerControl.TimerCount[ i ] == 0u )
-    1662:	f89d 3007 	ldrb.w	r3, [sp, #7]
-    1666:	4a1b      	ldr	r2, [pc, #108]	; (16d4 <Timers_Dispatch+0xb4>)
-    1668:	330c      	adds	r3, #12
-    166a:	f852 3023 	ldr.w	r3, [r2, r3, lsl #2]
-    166e:	2b00      	cmp	r3, #0
-    1670:	d11e      	bne.n	16b0 <Timers_Dispatch+0x90>
+    1652:	f89d 3007 	ldrb.w	r3, [sp, #7]
+    1656:	4a1b      	ldr	r2, [pc, #108]	; (16c4 <Timers_Dispatch+0xb4>)
+    1658:	330c      	adds	r3, #12
+    165a:	f852 3023 	ldr.w	r3, [r2, r3, lsl #2]
+    165e:	2b00      	cmp	r3, #0
+    1660:	d11e      	bne.n	16a0 <Timers_Dispatch+0x90>
             {
                 /*Prevent timer from running again*/
                 Bfx_ClrBit_u32u8( &SchedulerControl.TimerFlags, i );
-    1672:	f89d 3007 	ldrb.w	r3, [sp, #7]
-    1676:	4619      	mov	r1, r3
-    1678:	4818      	ldr	r0, [pc, #96]	; (16dc <Timers_Dispatch+0xbc>)
-    167a:	f7ff fe49 	bl	1310 <Bfx_ClrBit_u32u8>
+    1662:	f89d 3007 	ldrb.w	r3, [sp, #7]
+    1666:	4619      	mov	r1, r3
+    1668:	4818      	ldr	r0, [pc, #96]	; (16cc <Timers_Dispatch+0xbc>)
+    166a:	f7ff fe49 	bl	1300 <Bfx_ClrBit_u32u8>
                 /*Check if the timer has a callback assosiate*/
                 if( SchedulerLocal->TimerPtr[ i ].CallbackFunc != NULL )
-    167e:	4b16      	ldr	r3, [pc, #88]	; (16d8 <Timers_Dispatch+0xb8>)
-    1680:	681b      	ldr	r3, [r3, #0]
-    1682:	6919      	ldr	r1, [r3, #16]
-    1684:	f89d 2007 	ldrb.w	r2, [sp, #7]
-    1688:	4613      	mov	r3, r2
-    168a:	005b      	lsls	r3, r3, #1
-    168c:	4413      	add	r3, r2
-    168e:	009b      	lsls	r3, r3, #2
-    1690:	440b      	add	r3, r1
-    1692:	689b      	ldr	r3, [r3, #8]
-    1694:	2b00      	cmp	r3, #0
-    1696:	d00b      	beq.n	16b0 <Timers_Dispatch+0x90>
+    166e:	4b16      	ldr	r3, [pc, #88]	; (16c8 <Timers_Dispatch+0xb8>)
+    1670:	681b      	ldr	r3, [r3, #0]
+    1672:	6919      	ldr	r1, [r3, #16]
+    1674:	f89d 2007 	ldrb.w	r2, [sp, #7]
+    1678:	4613      	mov	r3, r2
+    167a:	005b      	lsls	r3, r3, #1
+    167c:	4413      	add	r3, r2
+    167e:	009b      	lsls	r3, r3, #2
+    1680:	440b      	add	r3, r1
+    1682:	689b      	ldr	r3, [r3, #8]
+    1684:	2b00      	cmp	r3, #0
+    1686:	d00b      	beq.n	16a0 <Timers_Dispatch+0x90>
                 {
                     /*Run callback*/
                     SchedulerLocal->TimerPtr[ i ].CallbackFunc( );
-    1698:	4b0f      	ldr	r3, [pc, #60]	; (16d8 <Timers_Dispatch+0xb8>)
-    169a:	681b      	ldr	r3, [r3, #0]
-    169c:	6919      	ldr	r1, [r3, #16]
-    169e:	f89d 2007 	ldrb.w	r2, [sp, #7]
-    16a2:	4613      	mov	r3, r2
-    16a4:	005b      	lsls	r3, r3, #1
-    16a6:	4413      	add	r3, r2
-    16a8:	009b      	lsls	r3, r3, #2
-    16aa:	440b      	add	r3, r1
-    16ac:	689b      	ldr	r3, [r3, #8]
-    16ae:	4798      	blx	r3
+    1688:	4b0f      	ldr	r3, [pc, #60]	; (16c8 <Timers_Dispatch+0xb8>)
+    168a:	681b      	ldr	r3, [r3, #0]
+    168c:	6919      	ldr	r1, [r3, #16]
+    168e:	f89d 2007 	ldrb.w	r2, [sp, #7]
+    1692:	4613      	mov	r3, r2
+    1694:	005b      	lsls	r3, r3, #1
+    1696:	4413      	add	r3, r2
+    1698:	009b      	lsls	r3, r3, #2
+    169a:	440b      	add	r3, r1
+    169c:	689b      	ldr	r3, [r3, #8]
+    169e:	4798      	blx	r3
     for( uint8 i = 0u; i < SchedulerLocal->Timers; i++ )
-    16b0:	f89d 3007 	ldrb.w	r3, [sp, #7]
-    16b4:	3301      	adds	r3, #1
-    16b6:	f88d 3007 	strb.w	r3, [sp, #7]
-    16ba:	4b07      	ldr	r3, [pc, #28]	; (16d8 <Timers_Dispatch+0xb8>)
-    16bc:	681b      	ldr	r3, [r3, #0]
-    16be:	7b1b      	ldrb	r3, [r3, #12]
-    16c0:	f89d 2007 	ldrb.w	r2, [sp, #7]
-    16c4:	429a      	cmp	r2, r3
-    16c6:	d3b1      	bcc.n	162c <Timers_Dispatch+0xc>
+    16a0:	f89d 3007 	ldrb.w	r3, [sp, #7]
+    16a4:	3301      	adds	r3, #1
+    16a6:	f88d 3007 	strb.w	r3, [sp, #7]
+    16aa:	4b07      	ldr	r3, [pc, #28]	; (16c8 <Timers_Dispatch+0xb8>)
+    16ac:	681b      	ldr	r3, [r3, #0]
+    16ae:	7b1b      	ldrb	r3, [r3, #12]
+    16b0:	f89d 2007 	ldrb.w	r2, [sp, #7]
+    16b4:	429a      	cmp	r2, r3
+    16b6:	d3b1      	bcc.n	161c <Timers_Dispatch+0xc>
                 }
             }
         }
     }
 }
-    16c8:	bf00      	nop
-    16ca:	bf00      	nop
-    16cc:	b003      	add	sp, #12
-    16ce:	f85d fb04 	ldr.w	pc, [sp], #4
-    16d2:	bf00      	nop
-    16d4:	1fff9274 	.word	0x1fff9274
-    16d8:	1fff9270 	.word	0x1fff9270
-    16dc:	1fff92b8 	.word	0x1fff92b8
+    16b8:	bf00      	nop
+    16ba:	bf00      	nop
+    16bc:	b003      	add	sp, #12
+    16be:	f85d fb04 	ldr.w	pc, [sp], #4
+    16c2:	bf00      	nop
+    16c4:	1fff9274 	.word	0x1fff9274
+    16c8:	1fff9270 	.word	0x1fff9270
+    16cc:	1fff92b8 	.word	0x1fff92b8
+
+000016d0 <Os_PotsTask>:
+//void Os_50ms_Task( void );
+//void Os_100ms_Task( void );
+
+void Os_LedsTask( void ){}
+void Os_ButtonsTask( void ){}
+void Os_PotsTask( void ){}
+    16d0:	bf00      	nop
+    16d2:	4770      	bx	lr
+
+000016d4 <Os_EepromsTask>:
+void Os_EepromsTask( void ){}
+    16d4:	bf00      	nop
+    16d6:	4770      	bx	lr
+
+000016d8 <Os_CanTask>:
+void Os_CanTask( void ){}
+    16d8:	bf00      	nop
+    16da:	4770      	bx	lr
+
+000016dc <Os_BuzzerTask>:
+void Os_BuzzerTask( void ){}
+    16dc:	bf00      	nop
+    16de:	4770      	bx	lr
 
 000016e0 <init_data_bss>:
  * Implements    : init_data_bss_Activity
@@ -31003,7 +31006,7 @@ void SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_00(void)
         msr = OsIf_Trusted_Call_Return(Adc_schm_read_msr);
 #else
         msr = Adc_schm_read_msr();  /*read MSR (to store interrupts state)*/
-    bcbc:	f7f4 fff4 	bl	ca8 <Adc_schm_read_msr>
+    bcbc:	f7f4 ffec 	bl	c98 <Adc_schm_read_msr>
     bcc0:	9000      	str	r0, [sp, #0]
 #endif /* MCAL_ENABLE_USER_MODE_SUPPORT */
         if (ISR_ON(msr)) /*if MSR[EE] = 0, skip calling Suspend/Resume AllInterrupts*/
@@ -31108,7 +31111,7 @@ void SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_01(void)
         msr = OsIf_Trusted_Call_Return(Adc_schm_read_msr);
 #else
         msr = Adc_schm_read_msr();  /*read MSR (to store interrupts state)*/
-    bd60:	f7f4 ffa2 	bl	ca8 <Adc_schm_read_msr>
+    bd60:	f7f4 ff9a 	bl	c98 <Adc_schm_read_msr>
     bd64:	9000      	str	r0, [sp, #0]
 #endif /* MCAL_ENABLE_USER_MODE_SUPPORT */
         if (ISR_ON(msr)) /*if MSR[EE] = 0, skip calling Suspend/Resume AllInterrupts*/
@@ -31213,7 +31216,7 @@ void SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_02(void)
         msr = OsIf_Trusted_Call_Return(Adc_schm_read_msr);
 #else
         msr = Adc_schm_read_msr();  /*read MSR (to store interrupts state)*/
-    be04:	f7f4 ff50 	bl	ca8 <Adc_schm_read_msr>
+    be04:	f7f4 ff48 	bl	c98 <Adc_schm_read_msr>
     be08:	9000      	str	r0, [sp, #0]
 #endif /* MCAL_ENABLE_USER_MODE_SUPPORT */
         if (ISR_ON(msr)) /*if MSR[EE] = 0, skip calling Suspend/Resume AllInterrupts*/
@@ -31318,7 +31321,7 @@ void SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_03(void)
         msr = OsIf_Trusted_Call_Return(Adc_schm_read_msr);
 #else
         msr = Adc_schm_read_msr();  /*read MSR (to store interrupts state)*/
-    bea8:	f7f4 fefe 	bl	ca8 <Adc_schm_read_msr>
+    bea8:	f7f4 fef6 	bl	c98 <Adc_schm_read_msr>
     beac:	9000      	str	r0, [sp, #0]
 #endif /* MCAL_ENABLE_USER_MODE_SUPPORT */
         if (ISR_ON(msr)) /*if MSR[EE] = 0, skip calling Suspend/Resume AllInterrupts*/
@@ -31423,7 +31426,7 @@ void SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_04(void)
         msr = OsIf_Trusted_Call_Return(Adc_schm_read_msr);
 #else
         msr = Adc_schm_read_msr();  /*read MSR (to store interrupts state)*/
-    bf4c:	f7f4 feac 	bl	ca8 <Adc_schm_read_msr>
+    bf4c:	f7f4 fea4 	bl	c98 <Adc_schm_read_msr>
     bf50:	9000      	str	r0, [sp, #0]
 #endif /* MCAL_ENABLE_USER_MODE_SUPPORT */
         if (ISR_ON(msr)) /*if MSR[EE] = 0, skip calling Suspend/Resume AllInterrupts*/
@@ -31528,7 +31531,7 @@ void SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_05(void)
         msr = OsIf_Trusted_Call_Return(Adc_schm_read_msr);
 #else
         msr = Adc_schm_read_msr();  /*read MSR (to store interrupts state)*/
-    bff0:	f7f4 fe5a 	bl	ca8 <Adc_schm_read_msr>
+    bff0:	f7f4 fe52 	bl	c98 <Adc_schm_read_msr>
     bff4:	9000      	str	r0, [sp, #0]
 #endif /* MCAL_ENABLE_USER_MODE_SUPPORT */
         if (ISR_ON(msr)) /*if MSR[EE] = 0, skip calling Suspend/Resume AllInterrupts*/
@@ -31633,7 +31636,7 @@ void SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_10(void)
         msr = OsIf_Trusted_Call_Return(Adc_schm_read_msr);
 #else
         msr = Adc_schm_read_msr();  /*read MSR (to store interrupts state)*/
-    c094:	f7f4 fe08 	bl	ca8 <Adc_schm_read_msr>
+    c094:	f7f4 fe00 	bl	c98 <Adc_schm_read_msr>
     c098:	9000      	str	r0, [sp, #0]
 #endif /* MCAL_ENABLE_USER_MODE_SUPPORT */
         if (ISR_ON(msr)) /*if MSR[EE] = 0, skip calling Suspend/Resume AllInterrupts*/
@@ -31738,7 +31741,7 @@ void SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_100(void)
         msr = OsIf_Trusted_Call_Return(Adc_schm_read_msr);
 #else
         msr = Adc_schm_read_msr();  /*read MSR (to store interrupts state)*/
-    c138:	f7f4 fdb6 	bl	ca8 <Adc_schm_read_msr>
+    c138:	f7f4 fdae 	bl	c98 <Adc_schm_read_msr>
     c13c:	9000      	str	r0, [sp, #0]
 #endif /* MCAL_ENABLE_USER_MODE_SUPPORT */
         if (ISR_ON(msr)) /*if MSR[EE] = 0, skip calling Suspend/Resume AllInterrupts*/
@@ -31843,7 +31846,7 @@ void SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_101(void)
         msr = OsIf_Trusted_Call_Return(Adc_schm_read_msr);
 #else
         msr = Adc_schm_read_msr();  /*read MSR (to store interrupts state)*/
-    c1dc:	f7f4 fd64 	bl	ca8 <Adc_schm_read_msr>
+    c1dc:	f7f4 fd5c 	bl	c98 <Adc_schm_read_msr>
     c1e0:	9000      	str	r0, [sp, #0]
 #endif /* MCAL_ENABLE_USER_MODE_SUPPORT */
         if (ISR_ON(msr)) /*if MSR[EE] = 0, skip calling Suspend/Resume AllInterrupts*/
@@ -31948,7 +31951,7 @@ void SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_102(void)
         msr = OsIf_Trusted_Call_Return(Adc_schm_read_msr);
 #else
         msr = Adc_schm_read_msr();  /*read MSR (to store interrupts state)*/
-    c280:	f7f4 fd12 	bl	ca8 <Adc_schm_read_msr>
+    c280:	f7f4 fd0a 	bl	c98 <Adc_schm_read_msr>
     c284:	9000      	str	r0, [sp, #0]
 #endif /* MCAL_ENABLE_USER_MODE_SUPPORT */
         if (ISR_ON(msr)) /*if MSR[EE] = 0, skip calling Suspend/Resume AllInterrupts*/
@@ -32053,7 +32056,7 @@ void SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_103(void)
         msr = OsIf_Trusted_Call_Return(Adc_schm_read_msr);
 #else
         msr = Adc_schm_read_msr();  /*read MSR (to store interrupts state)*/
-    c324:	f7f4 fcc0 	bl	ca8 <Adc_schm_read_msr>
+    c324:	f7f4 fcb8 	bl	c98 <Adc_schm_read_msr>
     c328:	9000      	str	r0, [sp, #0]
 #endif /* MCAL_ENABLE_USER_MODE_SUPPORT */
         if (ISR_ON(msr)) /*if MSR[EE] = 0, skip calling Suspend/Resume AllInterrupts*/
@@ -32158,7 +32161,7 @@ void SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_11(void)
         msr = OsIf_Trusted_Call_Return(Adc_schm_read_msr);
 #else
         msr = Adc_schm_read_msr();  /*read MSR (to store interrupts state)*/
-    c3c8:	f7f4 fc6e 	bl	ca8 <Adc_schm_read_msr>
+    c3c8:	f7f4 fc66 	bl	c98 <Adc_schm_read_msr>
     c3cc:	9000      	str	r0, [sp, #0]
 #endif /* MCAL_ENABLE_USER_MODE_SUPPORT */
         if (ISR_ON(msr)) /*if MSR[EE] = 0, skip calling Suspend/Resume AllInterrupts*/
@@ -32263,7 +32266,7 @@ void SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_12(void)
         msr = OsIf_Trusted_Call_Return(Adc_schm_read_msr);
 #else
         msr = Adc_schm_read_msr();  /*read MSR (to store interrupts state)*/
-    c46c:	f7f4 fc1c 	bl	ca8 <Adc_schm_read_msr>
+    c46c:	f7f4 fc14 	bl	c98 <Adc_schm_read_msr>
     c470:	9000      	str	r0, [sp, #0]
 #endif /* MCAL_ENABLE_USER_MODE_SUPPORT */
         if (ISR_ON(msr)) /*if MSR[EE] = 0, skip calling Suspend/Resume AllInterrupts*/
@@ -32368,7 +32371,7 @@ void SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_13(void)
         msr = OsIf_Trusted_Call_Return(Adc_schm_read_msr);
 #else
         msr = Adc_schm_read_msr();  /*read MSR (to store interrupts state)*/
-    c510:	f7f4 fbca 	bl	ca8 <Adc_schm_read_msr>
+    c510:	f7f4 fbc2 	bl	c98 <Adc_schm_read_msr>
     c514:	9000      	str	r0, [sp, #0]
 #endif /* MCAL_ENABLE_USER_MODE_SUPPORT */
         if (ISR_ON(msr)) /*if MSR[EE] = 0, skip calling Suspend/Resume AllInterrupts*/
@@ -32473,7 +32476,7 @@ void SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_14(void)
         msr = OsIf_Trusted_Call_Return(Adc_schm_read_msr);
 #else
         msr = Adc_schm_read_msr();  /*read MSR (to store interrupts state)*/
-    c5b4:	f7f4 fb78 	bl	ca8 <Adc_schm_read_msr>
+    c5b4:	f7f4 fb70 	bl	c98 <Adc_schm_read_msr>
     c5b8:	9000      	str	r0, [sp, #0]
 #endif /* MCAL_ENABLE_USER_MODE_SUPPORT */
         if (ISR_ON(msr)) /*if MSR[EE] = 0, skip calling Suspend/Resume AllInterrupts*/
@@ -32578,7 +32581,7 @@ void SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_15(void)
         msr = OsIf_Trusted_Call_Return(Adc_schm_read_msr);
 #else
         msr = Adc_schm_read_msr();  /*read MSR (to store interrupts state)*/
-    c658:	f7f4 fb26 	bl	ca8 <Adc_schm_read_msr>
+    c658:	f7f4 fb1e 	bl	c98 <Adc_schm_read_msr>
     c65c:	9000      	str	r0, [sp, #0]
 #endif /* MCAL_ENABLE_USER_MODE_SUPPORT */
         if (ISR_ON(msr)) /*if MSR[EE] = 0, skip calling Suspend/Resume AllInterrupts*/
@@ -32683,7 +32686,7 @@ void SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_16(void)
         msr = OsIf_Trusted_Call_Return(Adc_schm_read_msr);
 #else
         msr = Adc_schm_read_msr();  /*read MSR (to store interrupts state)*/
-    c6fc:	f7f4 fad4 	bl	ca8 <Adc_schm_read_msr>
+    c6fc:	f7f4 facc 	bl	c98 <Adc_schm_read_msr>
     c700:	9000      	str	r0, [sp, #0]
 #endif /* MCAL_ENABLE_USER_MODE_SUPPORT */
         if (ISR_ON(msr)) /*if MSR[EE] = 0, skip calling Suspend/Resume AllInterrupts*/
@@ -32788,7 +32791,7 @@ void SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_17(void)
         msr = OsIf_Trusted_Call_Return(Adc_schm_read_msr);
 #else
         msr = Adc_schm_read_msr();  /*read MSR (to store interrupts state)*/
-    c7a0:	f7f4 fa82 	bl	ca8 <Adc_schm_read_msr>
+    c7a0:	f7f4 fa7a 	bl	c98 <Adc_schm_read_msr>
     c7a4:	9000      	str	r0, [sp, #0]
 #endif /* MCAL_ENABLE_USER_MODE_SUPPORT */
         if (ISR_ON(msr)) /*if MSR[EE] = 0, skip calling Suspend/Resume AllInterrupts*/
@@ -32893,7 +32896,7 @@ void SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_18(void)
         msr = OsIf_Trusted_Call_Return(Adc_schm_read_msr);
 #else
         msr = Adc_schm_read_msr();  /*read MSR (to store interrupts state)*/
-    c844:	f7f4 fa30 	bl	ca8 <Adc_schm_read_msr>
+    c844:	f7f4 fa28 	bl	c98 <Adc_schm_read_msr>
     c848:	9000      	str	r0, [sp, #0]
 #endif /* MCAL_ENABLE_USER_MODE_SUPPORT */
         if (ISR_ON(msr)) /*if MSR[EE] = 0, skip calling Suspend/Resume AllInterrupts*/
@@ -32998,7 +33001,7 @@ void SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_19(void)
         msr = OsIf_Trusted_Call_Return(Adc_schm_read_msr);
 #else
         msr = Adc_schm_read_msr();  /*read MSR (to store interrupts state)*/
-    c8e8:	f7f4 f9de 	bl	ca8 <Adc_schm_read_msr>
+    c8e8:	f7f4 f9d6 	bl	c98 <Adc_schm_read_msr>
     c8ec:	9000      	str	r0, [sp, #0]
 #endif /* MCAL_ENABLE_USER_MODE_SUPPORT */
         if (ISR_ON(msr)) /*if MSR[EE] = 0, skip calling Suspend/Resume AllInterrupts*/
@@ -33103,7 +33106,7 @@ void SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_20(void)
         msr = OsIf_Trusted_Call_Return(Adc_schm_read_msr);
 #else
         msr = Adc_schm_read_msr();  /*read MSR (to store interrupts state)*/
-    c98c:	f7f4 f98c 	bl	ca8 <Adc_schm_read_msr>
+    c98c:	f7f4 f984 	bl	c98 <Adc_schm_read_msr>
     c990:	9000      	str	r0, [sp, #0]
 #endif /* MCAL_ENABLE_USER_MODE_SUPPORT */
         if (ISR_ON(msr)) /*if MSR[EE] = 0, skip calling Suspend/Resume AllInterrupts*/
@@ -33208,7 +33211,7 @@ void SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_21(void)
         msr = OsIf_Trusted_Call_Return(Adc_schm_read_msr);
 #else
         msr = Adc_schm_read_msr();  /*read MSR (to store interrupts state)*/
-    ca30:	f7f4 f93a 	bl	ca8 <Adc_schm_read_msr>
+    ca30:	f7f4 f932 	bl	c98 <Adc_schm_read_msr>
     ca34:	9000      	str	r0, [sp, #0]
 #endif /* MCAL_ENABLE_USER_MODE_SUPPORT */
         if (ISR_ON(msr)) /*if MSR[EE] = 0, skip calling Suspend/Resume AllInterrupts*/
@@ -33313,7 +33316,7 @@ void SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_22(void)
         msr = OsIf_Trusted_Call_Return(Adc_schm_read_msr);
 #else
         msr = Adc_schm_read_msr();  /*read MSR (to store interrupts state)*/
-    cad4:	f7f4 f8e8 	bl	ca8 <Adc_schm_read_msr>
+    cad4:	f7f4 f8e0 	bl	c98 <Adc_schm_read_msr>
     cad8:	9000      	str	r0, [sp, #0]
 #endif /* MCAL_ENABLE_USER_MODE_SUPPORT */
         if (ISR_ON(msr)) /*if MSR[EE] = 0, skip calling Suspend/Resume AllInterrupts*/
@@ -33418,7 +33421,7 @@ void SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_23(void)
         msr = OsIf_Trusted_Call_Return(Adc_schm_read_msr);
 #else
         msr = Adc_schm_read_msr();  /*read MSR (to store interrupts state)*/
-    cb78:	f7f4 f896 	bl	ca8 <Adc_schm_read_msr>
+    cb78:	f7f4 f88e 	bl	c98 <Adc_schm_read_msr>
     cb7c:	9000      	str	r0, [sp, #0]
 #endif /* MCAL_ENABLE_USER_MODE_SUPPORT */
         if (ISR_ON(msr)) /*if MSR[EE] = 0, skip calling Suspend/Resume AllInterrupts*/
@@ -33523,7 +33526,7 @@ void SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_24(void)
         msr = OsIf_Trusted_Call_Return(Adc_schm_read_msr);
 #else
         msr = Adc_schm_read_msr();  /*read MSR (to store interrupts state)*/
-    cc1c:	f7f4 f844 	bl	ca8 <Adc_schm_read_msr>
+    cc1c:	f7f4 f83c 	bl	c98 <Adc_schm_read_msr>
     cc20:	9000      	str	r0, [sp, #0]
 #endif /* MCAL_ENABLE_USER_MODE_SUPPORT */
         if (ISR_ON(msr)) /*if MSR[EE] = 0, skip calling Suspend/Resume AllInterrupts*/
@@ -33628,7 +33631,7 @@ void SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_25(void)
         msr = OsIf_Trusted_Call_Return(Adc_schm_read_msr);
 #else
         msr = Adc_schm_read_msr();  /*read MSR (to store interrupts state)*/
-    ccc0:	f7f3 fff2 	bl	ca8 <Adc_schm_read_msr>
+    ccc0:	f7f3 ffea 	bl	c98 <Adc_schm_read_msr>
     ccc4:	9000      	str	r0, [sp, #0]
 #endif /* MCAL_ENABLE_USER_MODE_SUPPORT */
         if (ISR_ON(msr)) /*if MSR[EE] = 0, skip calling Suspend/Resume AllInterrupts*/
@@ -33733,7 +33736,7 @@ void SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_26(void)
         msr = OsIf_Trusted_Call_Return(Adc_schm_read_msr);
 #else
         msr = Adc_schm_read_msr();  /*read MSR (to store interrupts state)*/
-    cd64:	f7f3 ffa0 	bl	ca8 <Adc_schm_read_msr>
+    cd64:	f7f3 ff98 	bl	c98 <Adc_schm_read_msr>
     cd68:	9000      	str	r0, [sp, #0]
 #endif /* MCAL_ENABLE_USER_MODE_SUPPORT */
         if (ISR_ON(msr)) /*if MSR[EE] = 0, skip calling Suspend/Resume AllInterrupts*/
@@ -33838,7 +33841,7 @@ void SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_27(void)
         msr = OsIf_Trusted_Call_Return(Adc_schm_read_msr);
 #else
         msr = Adc_schm_read_msr();  /*read MSR (to store interrupts state)*/
-    ce08:	f7f3 ff4e 	bl	ca8 <Adc_schm_read_msr>
+    ce08:	f7f3 ff46 	bl	c98 <Adc_schm_read_msr>
     ce0c:	9000      	str	r0, [sp, #0]
 #endif /* MCAL_ENABLE_USER_MODE_SUPPORT */
         if (ISR_ON(msr)) /*if MSR[EE] = 0, skip calling Suspend/Resume AllInterrupts*/
@@ -33943,7 +33946,7 @@ void SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_28(void)
         msr = OsIf_Trusted_Call_Return(Adc_schm_read_msr);
 #else
         msr = Adc_schm_read_msr();  /*read MSR (to store interrupts state)*/
-    ceac:	f7f3 fefc 	bl	ca8 <Adc_schm_read_msr>
+    ceac:	f7f3 fef4 	bl	c98 <Adc_schm_read_msr>
     ceb0:	9000      	str	r0, [sp, #0]
 #endif /* MCAL_ENABLE_USER_MODE_SUPPORT */
         if (ISR_ON(msr)) /*if MSR[EE] = 0, skip calling Suspend/Resume AllInterrupts*/
@@ -34048,7 +34051,7 @@ void SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_29(void)
         msr = OsIf_Trusted_Call_Return(Adc_schm_read_msr);
 #else
         msr = Adc_schm_read_msr();  /*read MSR (to store interrupts state)*/
-    cf50:	f7f3 feaa 	bl	ca8 <Adc_schm_read_msr>
+    cf50:	f7f3 fea2 	bl	c98 <Adc_schm_read_msr>
     cf54:	9000      	str	r0, [sp, #0]
 #endif /* MCAL_ENABLE_USER_MODE_SUPPORT */
         if (ISR_ON(msr)) /*if MSR[EE] = 0, skip calling Suspend/Resume AllInterrupts*/
@@ -34153,7 +34156,7 @@ void SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_30(void)
         msr = OsIf_Trusted_Call_Return(Adc_schm_read_msr);
 #else
         msr = Adc_schm_read_msr();  /*read MSR (to store interrupts state)*/
-    cff4:	f7f3 fe58 	bl	ca8 <Adc_schm_read_msr>
+    cff4:	f7f3 fe50 	bl	c98 <Adc_schm_read_msr>
     cff8:	9000      	str	r0, [sp, #0]
 #endif /* MCAL_ENABLE_USER_MODE_SUPPORT */
         if (ISR_ON(msr)) /*if MSR[EE] = 0, skip calling Suspend/Resume AllInterrupts*/
@@ -34258,7 +34261,7 @@ void SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_31(void)
         msr = OsIf_Trusted_Call_Return(Adc_schm_read_msr);
 #else
         msr = Adc_schm_read_msr();  /*read MSR (to store interrupts state)*/
-    d098:	f7f3 fe06 	bl	ca8 <Adc_schm_read_msr>
+    d098:	f7f3 fdfe 	bl	c98 <Adc_schm_read_msr>
     d09c:	9000      	str	r0, [sp, #0]
 #endif /* MCAL_ENABLE_USER_MODE_SUPPORT */
         if (ISR_ON(msr)) /*if MSR[EE] = 0, skip calling Suspend/Resume AllInterrupts*/
@@ -34363,7 +34366,7 @@ void SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_32(void)
         msr = OsIf_Trusted_Call_Return(Adc_schm_read_msr);
 #else
         msr = Adc_schm_read_msr();  /*read MSR (to store interrupts state)*/
-    d13c:	f7f3 fdb4 	bl	ca8 <Adc_schm_read_msr>
+    d13c:	f7f3 fdac 	bl	c98 <Adc_schm_read_msr>
     d140:	9000      	str	r0, [sp, #0]
 #endif /* MCAL_ENABLE_USER_MODE_SUPPORT */
         if (ISR_ON(msr)) /*if MSR[EE] = 0, skip calling Suspend/Resume AllInterrupts*/
@@ -34468,7 +34471,7 @@ void SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_33(void)
         msr = OsIf_Trusted_Call_Return(Adc_schm_read_msr);
 #else
         msr = Adc_schm_read_msr();  /*read MSR (to store interrupts state)*/
-    d1e0:	f7f3 fd62 	bl	ca8 <Adc_schm_read_msr>
+    d1e0:	f7f3 fd5a 	bl	c98 <Adc_schm_read_msr>
     d1e4:	9000      	str	r0, [sp, #0]
 #endif /* MCAL_ENABLE_USER_MODE_SUPPORT */
         if (ISR_ON(msr)) /*if MSR[EE] = 0, skip calling Suspend/Resume AllInterrupts*/
@@ -34573,7 +34576,7 @@ void SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_34(void)
         msr = OsIf_Trusted_Call_Return(Adc_schm_read_msr);
 #else
         msr = Adc_schm_read_msr();  /*read MSR (to store interrupts state)*/
-    d284:	f7f3 fd10 	bl	ca8 <Adc_schm_read_msr>
+    d284:	f7f3 fd08 	bl	c98 <Adc_schm_read_msr>
     d288:	9000      	str	r0, [sp, #0]
 #endif /* MCAL_ENABLE_USER_MODE_SUPPORT */
         if (ISR_ON(msr)) /*if MSR[EE] = 0, skip calling Suspend/Resume AllInterrupts*/
@@ -34678,7 +34681,7 @@ void SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_35(void)
         msr = OsIf_Trusted_Call_Return(Adc_schm_read_msr);
 #else
         msr = Adc_schm_read_msr();  /*read MSR (to store interrupts state)*/
-    d328:	f7f3 fcbe 	bl	ca8 <Adc_schm_read_msr>
+    d328:	f7f3 fcb6 	bl	c98 <Adc_schm_read_msr>
     d32c:	9000      	str	r0, [sp, #0]
 #endif /* MCAL_ENABLE_USER_MODE_SUPPORT */
         if (ISR_ON(msr)) /*if MSR[EE] = 0, skip calling Suspend/Resume AllInterrupts*/
@@ -34783,7 +34786,7 @@ void SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_36(void)
         msr = OsIf_Trusted_Call_Return(Adc_schm_read_msr);
 #else
         msr = Adc_schm_read_msr();  /*read MSR (to store interrupts state)*/
-    d3cc:	f7f3 fc6c 	bl	ca8 <Adc_schm_read_msr>
+    d3cc:	f7f3 fc64 	bl	c98 <Adc_schm_read_msr>
     d3d0:	9000      	str	r0, [sp, #0]
 #endif /* MCAL_ENABLE_USER_MODE_SUPPORT */
         if (ISR_ON(msr)) /*if MSR[EE] = 0, skip calling Suspend/Resume AllInterrupts*/
@@ -34888,7 +34891,7 @@ void SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_37(void)
         msr = OsIf_Trusted_Call_Return(Adc_schm_read_msr);
 #else
         msr = Adc_schm_read_msr();  /*read MSR (to store interrupts state)*/
-    d470:	f7f3 fc1a 	bl	ca8 <Adc_schm_read_msr>
+    d470:	f7f3 fc12 	bl	c98 <Adc_schm_read_msr>
     d474:	9000      	str	r0, [sp, #0]
 #endif /* MCAL_ENABLE_USER_MODE_SUPPORT */
         if (ISR_ON(msr)) /*if MSR[EE] = 0, skip calling Suspend/Resume AllInterrupts*/
@@ -34993,7 +34996,7 @@ void SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_38(void)
         msr = OsIf_Trusted_Call_Return(Adc_schm_read_msr);
 #else
         msr = Adc_schm_read_msr();  /*read MSR (to store interrupts state)*/
-    d514:	f7f3 fbc8 	bl	ca8 <Adc_schm_read_msr>
+    d514:	f7f3 fbc0 	bl	c98 <Adc_schm_read_msr>
     d518:	9000      	str	r0, [sp, #0]
 #endif /* MCAL_ENABLE_USER_MODE_SUPPORT */
         if (ISR_ON(msr)) /*if MSR[EE] = 0, skip calling Suspend/Resume AllInterrupts*/
@@ -35098,7 +35101,7 @@ void SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_39(void)
         msr = OsIf_Trusted_Call_Return(Adc_schm_read_msr);
 #else
         msr = Adc_schm_read_msr();  /*read MSR (to store interrupts state)*/
-    d5b8:	f7f3 fb76 	bl	ca8 <Adc_schm_read_msr>
+    d5b8:	f7f3 fb6e 	bl	c98 <Adc_schm_read_msr>
     d5bc:	9000      	str	r0, [sp, #0]
 #endif /* MCAL_ENABLE_USER_MODE_SUPPORT */
         if (ISR_ON(msr)) /*if MSR[EE] = 0, skip calling Suspend/Resume AllInterrupts*/
@@ -35203,7 +35206,7 @@ void SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_40(void)
         msr = OsIf_Trusted_Call_Return(Adc_schm_read_msr);
 #else
         msr = Adc_schm_read_msr();  /*read MSR (to store interrupts state)*/
-    d65c:	f7f3 fb24 	bl	ca8 <Adc_schm_read_msr>
+    d65c:	f7f3 fb1c 	bl	c98 <Adc_schm_read_msr>
     d660:	9000      	str	r0, [sp, #0]
 #endif /* MCAL_ENABLE_USER_MODE_SUPPORT */
         if (ISR_ON(msr)) /*if MSR[EE] = 0, skip calling Suspend/Resume AllInterrupts*/
@@ -35308,7 +35311,7 @@ void SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_41(void)
         msr = OsIf_Trusted_Call_Return(Adc_schm_read_msr);
 #else
         msr = Adc_schm_read_msr();  /*read MSR (to store interrupts state)*/
-    d700:	f7f3 fad2 	bl	ca8 <Adc_schm_read_msr>
+    d700:	f7f3 faca 	bl	c98 <Adc_schm_read_msr>
     d704:	9000      	str	r0, [sp, #0]
 #endif /* MCAL_ENABLE_USER_MODE_SUPPORT */
         if (ISR_ON(msr)) /*if MSR[EE] = 0, skip calling Suspend/Resume AllInterrupts*/
@@ -35413,7 +35416,7 @@ void SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_42(void)
         msr = OsIf_Trusted_Call_Return(Adc_schm_read_msr);
 #else
         msr = Adc_schm_read_msr();  /*read MSR (to store interrupts state)*/
-    d7a4:	f7f3 fa80 	bl	ca8 <Adc_schm_read_msr>
+    d7a4:	f7f3 fa78 	bl	c98 <Adc_schm_read_msr>
     d7a8:	9000      	str	r0, [sp, #0]
 #endif /* MCAL_ENABLE_USER_MODE_SUPPORT */
         if (ISR_ON(msr)) /*if MSR[EE] = 0, skip calling Suspend/Resume AllInterrupts*/
@@ -35518,7 +35521,7 @@ void SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_43(void)
         msr = OsIf_Trusted_Call_Return(Adc_schm_read_msr);
 #else
         msr = Adc_schm_read_msr();  /*read MSR (to store interrupts state)*/
-    d848:	f7f3 fa2e 	bl	ca8 <Adc_schm_read_msr>
+    d848:	f7f3 fa26 	bl	c98 <Adc_schm_read_msr>
     d84c:	9000      	str	r0, [sp, #0]
 #endif /* MCAL_ENABLE_USER_MODE_SUPPORT */
         if (ISR_ON(msr)) /*if MSR[EE] = 0, skip calling Suspend/Resume AllInterrupts*/
@@ -35623,7 +35626,7 @@ void SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_44(void)
         msr = OsIf_Trusted_Call_Return(Adc_schm_read_msr);
 #else
         msr = Adc_schm_read_msr();  /*read MSR (to store interrupts state)*/
-    d8ec:	f7f3 f9dc 	bl	ca8 <Adc_schm_read_msr>
+    d8ec:	f7f3 f9d4 	bl	c98 <Adc_schm_read_msr>
     d8f0:	9000      	str	r0, [sp, #0]
 #endif /* MCAL_ENABLE_USER_MODE_SUPPORT */
         if (ISR_ON(msr)) /*if MSR[EE] = 0, skip calling Suspend/Resume AllInterrupts*/
@@ -35728,7 +35731,7 @@ void SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_45(void)
         msr = OsIf_Trusted_Call_Return(Adc_schm_read_msr);
 #else
         msr = Adc_schm_read_msr();  /*read MSR (to store interrupts state)*/
-    d990:	f7f3 f98a 	bl	ca8 <Adc_schm_read_msr>
+    d990:	f7f3 f982 	bl	c98 <Adc_schm_read_msr>
     d994:	9000      	str	r0, [sp, #0]
 #endif /* MCAL_ENABLE_USER_MODE_SUPPORT */
         if (ISR_ON(msr)) /*if MSR[EE] = 0, skip calling Suspend/Resume AllInterrupts*/
@@ -35833,7 +35836,7 @@ void SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_46(void)
         msr = OsIf_Trusted_Call_Return(Adc_schm_read_msr);
 #else
         msr = Adc_schm_read_msr();  /*read MSR (to store interrupts state)*/
-    da34:	f7f3 f938 	bl	ca8 <Adc_schm_read_msr>
+    da34:	f7f3 f930 	bl	c98 <Adc_schm_read_msr>
     da38:	9000      	str	r0, [sp, #0]
 #endif /* MCAL_ENABLE_USER_MODE_SUPPORT */
         if (ISR_ON(msr)) /*if MSR[EE] = 0, skip calling Suspend/Resume AllInterrupts*/
@@ -35938,7 +35941,7 @@ void SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_47(void)
         msr = OsIf_Trusted_Call_Return(Adc_schm_read_msr);
 #else
         msr = Adc_schm_read_msr();  /*read MSR (to store interrupts state)*/
-    dad8:	f7f3 f8e6 	bl	ca8 <Adc_schm_read_msr>
+    dad8:	f7f3 f8de 	bl	c98 <Adc_schm_read_msr>
     dadc:	9000      	str	r0, [sp, #0]
 #endif /* MCAL_ENABLE_USER_MODE_SUPPORT */
         if (ISR_ON(msr)) /*if MSR[EE] = 0, skip calling Suspend/Resume AllInterrupts*/
@@ -36043,7 +36046,7 @@ void SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_48(void)
         msr = OsIf_Trusted_Call_Return(Adc_schm_read_msr);
 #else
         msr = Adc_schm_read_msr();  /*read MSR (to store interrupts state)*/
-    db7c:	f7f3 f894 	bl	ca8 <Adc_schm_read_msr>
+    db7c:	f7f3 f88c 	bl	c98 <Adc_schm_read_msr>
     db80:	9000      	str	r0, [sp, #0]
 #endif /* MCAL_ENABLE_USER_MODE_SUPPORT */
         if (ISR_ON(msr)) /*if MSR[EE] = 0, skip calling Suspend/Resume AllInterrupts*/
@@ -36148,7 +36151,7 @@ void SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_49(void)
         msr = OsIf_Trusted_Call_Return(Adc_schm_read_msr);
 #else
         msr = Adc_schm_read_msr();  /*read MSR (to store interrupts state)*/
-    dc20:	f7f3 f842 	bl	ca8 <Adc_schm_read_msr>
+    dc20:	f7f3 f83a 	bl	c98 <Adc_schm_read_msr>
     dc24:	9000      	str	r0, [sp, #0]
 #endif /* MCAL_ENABLE_USER_MODE_SUPPORT */
         if (ISR_ON(msr)) /*if MSR[EE] = 0, skip calling Suspend/Resume AllInterrupts*/
@@ -36253,7 +36256,7 @@ void SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_50(void)
         msr = OsIf_Trusted_Call_Return(Adc_schm_read_msr);
 #else
         msr = Adc_schm_read_msr();  /*read MSR (to store interrupts state)*/
-    dcc4:	f7f2 fff0 	bl	ca8 <Adc_schm_read_msr>
+    dcc4:	f7f2 ffe8 	bl	c98 <Adc_schm_read_msr>
     dcc8:	9000      	str	r0, [sp, #0]
 #endif /* MCAL_ENABLE_USER_MODE_SUPPORT */
         if (ISR_ON(msr)) /*if MSR[EE] = 0, skip calling Suspend/Resume AllInterrupts*/
@@ -36358,7 +36361,7 @@ void SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_51(void)
         msr = OsIf_Trusted_Call_Return(Adc_schm_read_msr);
 #else
         msr = Adc_schm_read_msr();  /*read MSR (to store interrupts state)*/
-    dd68:	f7f2 ff9e 	bl	ca8 <Adc_schm_read_msr>
+    dd68:	f7f2 ff96 	bl	c98 <Adc_schm_read_msr>
     dd6c:	9000      	str	r0, [sp, #0]
 #endif /* MCAL_ENABLE_USER_MODE_SUPPORT */
         if (ISR_ON(msr)) /*if MSR[EE] = 0, skip calling Suspend/Resume AllInterrupts*/
@@ -36463,7 +36466,7 @@ void SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_54(void)
         msr = OsIf_Trusted_Call_Return(Adc_schm_read_msr);
 #else
         msr = Adc_schm_read_msr();  /*read MSR (to store interrupts state)*/
-    de0c:	f7f2 ff4c 	bl	ca8 <Adc_schm_read_msr>
+    de0c:	f7f2 ff44 	bl	c98 <Adc_schm_read_msr>
     de10:	9000      	str	r0, [sp, #0]
 #endif /* MCAL_ENABLE_USER_MODE_SUPPORT */
         if (ISR_ON(msr)) /*if MSR[EE] = 0, skip calling Suspend/Resume AllInterrupts*/
@@ -36568,7 +36571,7 @@ void SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_55(void)
         msr = OsIf_Trusted_Call_Return(Adc_schm_read_msr);
 #else
         msr = Adc_schm_read_msr();  /*read MSR (to store interrupts state)*/
-    deb0:	f7f2 fefa 	bl	ca8 <Adc_schm_read_msr>
+    deb0:	f7f2 fef2 	bl	c98 <Adc_schm_read_msr>
     deb4:	9000      	str	r0, [sp, #0]
 #endif /* MCAL_ENABLE_USER_MODE_SUPPORT */
         if (ISR_ON(msr)) /*if MSR[EE] = 0, skip calling Suspend/Resume AllInterrupts*/
@@ -36673,7 +36676,7 @@ void SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_56(void)
         msr = OsIf_Trusted_Call_Return(Adc_schm_read_msr);
 #else
         msr = Adc_schm_read_msr();  /*read MSR (to store interrupts state)*/
-    df54:	f7f2 fea8 	bl	ca8 <Adc_schm_read_msr>
+    df54:	f7f2 fea0 	bl	c98 <Adc_schm_read_msr>
     df58:	9000      	str	r0, [sp, #0]
 #endif /* MCAL_ENABLE_USER_MODE_SUPPORT */
         if (ISR_ON(msr)) /*if MSR[EE] = 0, skip calling Suspend/Resume AllInterrupts*/
@@ -36778,7 +36781,7 @@ void SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_57(void)
         msr = OsIf_Trusted_Call_Return(Adc_schm_read_msr);
 #else
         msr = Adc_schm_read_msr();  /*read MSR (to store interrupts state)*/
-    dff8:	f7f2 fe56 	bl	ca8 <Adc_schm_read_msr>
+    dff8:	f7f2 fe4e 	bl	c98 <Adc_schm_read_msr>
     dffc:	9000      	str	r0, [sp, #0]
 #endif /* MCAL_ENABLE_USER_MODE_SUPPORT */
         if (ISR_ON(msr)) /*if MSR[EE] = 0, skip calling Suspend/Resume AllInterrupts*/
@@ -36883,7 +36886,7 @@ void SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_58(void)
         msr = OsIf_Trusted_Call_Return(Adc_schm_read_msr);
 #else
         msr = Adc_schm_read_msr();  /*read MSR (to store interrupts state)*/
-    e09c:	f7f2 fe04 	bl	ca8 <Adc_schm_read_msr>
+    e09c:	f7f2 fdfc 	bl	c98 <Adc_schm_read_msr>
     e0a0:	9000      	str	r0, [sp, #0]
 #endif /* MCAL_ENABLE_USER_MODE_SUPPORT */
         if (ISR_ON(msr)) /*if MSR[EE] = 0, skip calling Suspend/Resume AllInterrupts*/
@@ -36988,7 +36991,7 @@ void SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_59(void)
         msr = OsIf_Trusted_Call_Return(Adc_schm_read_msr);
 #else
         msr = Adc_schm_read_msr();  /*read MSR (to store interrupts state)*/
-    e140:	f7f2 fdb2 	bl	ca8 <Adc_schm_read_msr>
+    e140:	f7f2 fdaa 	bl	c98 <Adc_schm_read_msr>
     e144:	9000      	str	r0, [sp, #0]
 #endif /* MCAL_ENABLE_USER_MODE_SUPPORT */
         if (ISR_ON(msr)) /*if MSR[EE] = 0, skip calling Suspend/Resume AllInterrupts*/
@@ -37093,7 +37096,7 @@ void SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_60(void)
         msr = OsIf_Trusted_Call_Return(Adc_schm_read_msr);
 #else
         msr = Adc_schm_read_msr();  /*read MSR (to store interrupts state)*/
-    e1e4:	f7f2 fd60 	bl	ca8 <Adc_schm_read_msr>
+    e1e4:	f7f2 fd58 	bl	c98 <Adc_schm_read_msr>
     e1e8:	9000      	str	r0, [sp, #0]
 #endif /* MCAL_ENABLE_USER_MODE_SUPPORT */
         if (ISR_ON(msr)) /*if MSR[EE] = 0, skip calling Suspend/Resume AllInterrupts*/
@@ -37198,7 +37201,7 @@ void SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_61(void)
         msr = OsIf_Trusted_Call_Return(Adc_schm_read_msr);
 #else
         msr = Adc_schm_read_msr();  /*read MSR (to store interrupts state)*/
-    e288:	f7f2 fd0e 	bl	ca8 <Adc_schm_read_msr>
+    e288:	f7f2 fd06 	bl	c98 <Adc_schm_read_msr>
     e28c:	9000      	str	r0, [sp, #0]
 #endif /* MCAL_ENABLE_USER_MODE_SUPPORT */
         if (ISR_ON(msr)) /*if MSR[EE] = 0, skip calling Suspend/Resume AllInterrupts*/
@@ -37303,7 +37306,7 @@ void SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_62(void)
         msr = OsIf_Trusted_Call_Return(Adc_schm_read_msr);
 #else
         msr = Adc_schm_read_msr();  /*read MSR (to store interrupts state)*/
-    e32c:	f7f2 fcbc 	bl	ca8 <Adc_schm_read_msr>
+    e32c:	f7f2 fcb4 	bl	c98 <Adc_schm_read_msr>
     e330:	9000      	str	r0, [sp, #0]
 #endif /* MCAL_ENABLE_USER_MODE_SUPPORT */
         if (ISR_ON(msr)) /*if MSR[EE] = 0, skip calling Suspend/Resume AllInterrupts*/
@@ -37408,7 +37411,7 @@ void SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_63(void)
         msr = OsIf_Trusted_Call_Return(Adc_schm_read_msr);
 #else
         msr = Adc_schm_read_msr();  /*read MSR (to store interrupts state)*/
-    e3d0:	f7f2 fc6a 	bl	ca8 <Adc_schm_read_msr>
+    e3d0:	f7f2 fc62 	bl	c98 <Adc_schm_read_msr>
     e3d4:	9000      	str	r0, [sp, #0]
 #endif /* MCAL_ENABLE_USER_MODE_SUPPORT */
         if (ISR_ON(msr)) /*if MSR[EE] = 0, skip calling Suspend/Resume AllInterrupts*/
@@ -37513,7 +37516,7 @@ void SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_64(void)
         msr = OsIf_Trusted_Call_Return(Adc_schm_read_msr);
 #else
         msr = Adc_schm_read_msr();  /*read MSR (to store interrupts state)*/
-    e474:	f7f2 fc18 	bl	ca8 <Adc_schm_read_msr>
+    e474:	f7f2 fc10 	bl	c98 <Adc_schm_read_msr>
     e478:	9000      	str	r0, [sp, #0]
 #endif /* MCAL_ENABLE_USER_MODE_SUPPORT */
         if (ISR_ON(msr)) /*if MSR[EE] = 0, skip calling Suspend/Resume AllInterrupts*/
@@ -37618,7 +37621,7 @@ void SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_65(void)
         msr = OsIf_Trusted_Call_Return(Adc_schm_read_msr);
 #else
         msr = Adc_schm_read_msr();  /*read MSR (to store interrupts state)*/
-    e518:	f7f2 fbc6 	bl	ca8 <Adc_schm_read_msr>
+    e518:	f7f2 fbbe 	bl	c98 <Adc_schm_read_msr>
     e51c:	9000      	str	r0, [sp, #0]
 #endif /* MCAL_ENABLE_USER_MODE_SUPPORT */
         if (ISR_ON(msr)) /*if MSR[EE] = 0, skip calling Suspend/Resume AllInterrupts*/
@@ -37723,7 +37726,7 @@ void SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_66(void)
         msr = OsIf_Trusted_Call_Return(Adc_schm_read_msr);
 #else
         msr = Adc_schm_read_msr();  /*read MSR (to store interrupts state)*/
-    e5bc:	f7f2 fb74 	bl	ca8 <Adc_schm_read_msr>
+    e5bc:	f7f2 fb6c 	bl	c98 <Adc_schm_read_msr>
     e5c0:	9000      	str	r0, [sp, #0]
 #endif /* MCAL_ENABLE_USER_MODE_SUPPORT */
         if (ISR_ON(msr)) /*if MSR[EE] = 0, skip calling Suspend/Resume AllInterrupts*/
@@ -37828,7 +37831,7 @@ void SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_67(void)
         msr = OsIf_Trusted_Call_Return(Adc_schm_read_msr);
 #else
         msr = Adc_schm_read_msr();  /*read MSR (to store interrupts state)*/
-    e660:	f7f2 fb22 	bl	ca8 <Adc_schm_read_msr>
+    e660:	f7f2 fb1a 	bl	c98 <Adc_schm_read_msr>
     e664:	9000      	str	r0, [sp, #0]
 #endif /* MCAL_ENABLE_USER_MODE_SUPPORT */
         if (ISR_ON(msr)) /*if MSR[EE] = 0, skip calling Suspend/Resume AllInterrupts*/
@@ -37933,7 +37936,7 @@ void SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_68(void)
         msr = OsIf_Trusted_Call_Return(Adc_schm_read_msr);
 #else
         msr = Adc_schm_read_msr();  /*read MSR (to store interrupts state)*/
-    e704:	f7f2 fad0 	bl	ca8 <Adc_schm_read_msr>
+    e704:	f7f2 fac8 	bl	c98 <Adc_schm_read_msr>
     e708:	9000      	str	r0, [sp, #0]
 #endif /* MCAL_ENABLE_USER_MODE_SUPPORT */
         if (ISR_ON(msr)) /*if MSR[EE] = 0, skip calling Suspend/Resume AllInterrupts*/
@@ -38038,7 +38041,7 @@ void SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_69(void)
         msr = OsIf_Trusted_Call_Return(Adc_schm_read_msr);
 #else
         msr = Adc_schm_read_msr();  /*read MSR (to store interrupts state)*/
-    e7a8:	f7f2 fa7e 	bl	ca8 <Adc_schm_read_msr>
+    e7a8:	f7f2 fa76 	bl	c98 <Adc_schm_read_msr>
     e7ac:	9000      	str	r0, [sp, #0]
 #endif /* MCAL_ENABLE_USER_MODE_SUPPORT */
         if (ISR_ON(msr)) /*if MSR[EE] = 0, skip calling Suspend/Resume AllInterrupts*/
@@ -38143,7 +38146,7 @@ void SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_70(void)
         msr = OsIf_Trusted_Call_Return(Adc_schm_read_msr);
 #else
         msr = Adc_schm_read_msr();  /*read MSR (to store interrupts state)*/
-    e84c:	f7f2 fa2c 	bl	ca8 <Adc_schm_read_msr>
+    e84c:	f7f2 fa24 	bl	c98 <Adc_schm_read_msr>
     e850:	9000      	str	r0, [sp, #0]
 #endif /* MCAL_ENABLE_USER_MODE_SUPPORT */
         if (ISR_ON(msr)) /*if MSR[EE] = 0, skip calling Suspend/Resume AllInterrupts*/
@@ -38248,7 +38251,7 @@ void SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_71(void)
         msr = OsIf_Trusted_Call_Return(Adc_schm_read_msr);
 #else
         msr = Adc_schm_read_msr();  /*read MSR (to store interrupts state)*/
-    e8f0:	f7f2 f9da 	bl	ca8 <Adc_schm_read_msr>
+    e8f0:	f7f2 f9d2 	bl	c98 <Adc_schm_read_msr>
     e8f4:	9000      	str	r0, [sp, #0]
 #endif /* MCAL_ENABLE_USER_MODE_SUPPORT */
         if (ISR_ON(msr)) /*if MSR[EE] = 0, skip calling Suspend/Resume AllInterrupts*/
@@ -38353,7 +38356,7 @@ void SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_72(void)
         msr = OsIf_Trusted_Call_Return(Adc_schm_read_msr);
 #else
         msr = Adc_schm_read_msr();  /*read MSR (to store interrupts state)*/
-    e994:	f7f2 f988 	bl	ca8 <Adc_schm_read_msr>
+    e994:	f7f2 f980 	bl	c98 <Adc_schm_read_msr>
     e998:	9000      	str	r0, [sp, #0]
 #endif /* MCAL_ENABLE_USER_MODE_SUPPORT */
         if (ISR_ON(msr)) /*if MSR[EE] = 0, skip calling Suspend/Resume AllInterrupts*/
@@ -38458,7 +38461,7 @@ void SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_73(void)
         msr = OsIf_Trusted_Call_Return(Adc_schm_read_msr);
 #else
         msr = Adc_schm_read_msr();  /*read MSR (to store interrupts state)*/
-    ea38:	f7f2 f936 	bl	ca8 <Adc_schm_read_msr>
+    ea38:	f7f2 f92e 	bl	c98 <Adc_schm_read_msr>
     ea3c:	9000      	str	r0, [sp, #0]
 #endif /* MCAL_ENABLE_USER_MODE_SUPPORT */
         if (ISR_ON(msr)) /*if MSR[EE] = 0, skip calling Suspend/Resume AllInterrupts*/
@@ -38563,7 +38566,7 @@ void SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_74(void)
         msr = OsIf_Trusted_Call_Return(Adc_schm_read_msr);
 #else
         msr = Adc_schm_read_msr();  /*read MSR (to store interrupts state)*/
-    eadc:	f7f2 f8e4 	bl	ca8 <Adc_schm_read_msr>
+    eadc:	f7f2 f8dc 	bl	c98 <Adc_schm_read_msr>
     eae0:	9000      	str	r0, [sp, #0]
 #endif /* MCAL_ENABLE_USER_MODE_SUPPORT */
         if (ISR_ON(msr)) /*if MSR[EE] = 0, skip calling Suspend/Resume AllInterrupts*/
@@ -38668,7 +38671,7 @@ void SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_75(void)
         msr = OsIf_Trusted_Call_Return(Adc_schm_read_msr);
 #else
         msr = Adc_schm_read_msr();  /*read MSR (to store interrupts state)*/
-    eb80:	f7f2 f892 	bl	ca8 <Adc_schm_read_msr>
+    eb80:	f7f2 f88a 	bl	c98 <Adc_schm_read_msr>
     eb84:	9000      	str	r0, [sp, #0]
 #endif /* MCAL_ENABLE_USER_MODE_SUPPORT */
         if (ISR_ON(msr)) /*if MSR[EE] = 0, skip calling Suspend/Resume AllInterrupts*/
@@ -38773,7 +38776,7 @@ void SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_76(void)
         msr = OsIf_Trusted_Call_Return(Adc_schm_read_msr);
 #else
         msr = Adc_schm_read_msr();  /*read MSR (to store interrupts state)*/
-    ec24:	f7f2 f840 	bl	ca8 <Adc_schm_read_msr>
+    ec24:	f7f2 f838 	bl	c98 <Adc_schm_read_msr>
     ec28:	9000      	str	r0, [sp, #0]
 #endif /* MCAL_ENABLE_USER_MODE_SUPPORT */
         if (ISR_ON(msr)) /*if MSR[EE] = 0, skip calling Suspend/Resume AllInterrupts*/
@@ -38878,7 +38881,7 @@ void SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_77(void)
         msr = OsIf_Trusted_Call_Return(Adc_schm_read_msr);
 #else
         msr = Adc_schm_read_msr();  /*read MSR (to store interrupts state)*/
-    ecc8:	f7f1 ffee 	bl	ca8 <Adc_schm_read_msr>
+    ecc8:	f7f1 ffe6 	bl	c98 <Adc_schm_read_msr>
     eccc:	9000      	str	r0, [sp, #0]
 #endif /* MCAL_ENABLE_USER_MODE_SUPPORT */
         if (ISR_ON(msr)) /*if MSR[EE] = 0, skip calling Suspend/Resume AllInterrupts*/
@@ -38983,7 +38986,7 @@ void SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_78(void)
         msr = OsIf_Trusted_Call_Return(Adc_schm_read_msr);
 #else
         msr = Adc_schm_read_msr();  /*read MSR (to store interrupts state)*/
-    ed6c:	f7f1 ff9c 	bl	ca8 <Adc_schm_read_msr>
+    ed6c:	f7f1 ff94 	bl	c98 <Adc_schm_read_msr>
     ed70:	9000      	str	r0, [sp, #0]
 #endif /* MCAL_ENABLE_USER_MODE_SUPPORT */
         if (ISR_ON(msr)) /*if MSR[EE] = 0, skip calling Suspend/Resume AllInterrupts*/
@@ -39088,7 +39091,7 @@ void SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_79(void)
         msr = OsIf_Trusted_Call_Return(Adc_schm_read_msr);
 #else
         msr = Adc_schm_read_msr();  /*read MSR (to store interrupts state)*/
-    ee10:	f7f1 ff4a 	bl	ca8 <Adc_schm_read_msr>
+    ee10:	f7f1 ff42 	bl	c98 <Adc_schm_read_msr>
     ee14:	9000      	str	r0, [sp, #0]
 #endif /* MCAL_ENABLE_USER_MODE_SUPPORT */
         if (ISR_ON(msr)) /*if MSR[EE] = 0, skip calling Suspend/Resume AllInterrupts*/
@@ -39193,7 +39196,7 @@ void SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_80(void)
         msr = OsIf_Trusted_Call_Return(Adc_schm_read_msr);
 #else
         msr = Adc_schm_read_msr();  /*read MSR (to store interrupts state)*/
-    eeb4:	f7f1 fef8 	bl	ca8 <Adc_schm_read_msr>
+    eeb4:	f7f1 fef0 	bl	c98 <Adc_schm_read_msr>
     eeb8:	9000      	str	r0, [sp, #0]
 #endif /* MCAL_ENABLE_USER_MODE_SUPPORT */
         if (ISR_ON(msr)) /*if MSR[EE] = 0, skip calling Suspend/Resume AllInterrupts*/
@@ -39298,7 +39301,7 @@ void SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_81(void)
         msr = OsIf_Trusted_Call_Return(Adc_schm_read_msr);
 #else
         msr = Adc_schm_read_msr();  /*read MSR (to store interrupts state)*/
-    ef58:	f7f1 fea6 	bl	ca8 <Adc_schm_read_msr>
+    ef58:	f7f1 fe9e 	bl	c98 <Adc_schm_read_msr>
     ef5c:	9000      	str	r0, [sp, #0]
 #endif /* MCAL_ENABLE_USER_MODE_SUPPORT */
         if (ISR_ON(msr)) /*if MSR[EE] = 0, skip calling Suspend/Resume AllInterrupts*/
@@ -39403,7 +39406,7 @@ void SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_82(void)
         msr = OsIf_Trusted_Call_Return(Adc_schm_read_msr);
 #else
         msr = Adc_schm_read_msr();  /*read MSR (to store interrupts state)*/
-    effc:	f7f1 fe54 	bl	ca8 <Adc_schm_read_msr>
+    effc:	f7f1 fe4c 	bl	c98 <Adc_schm_read_msr>
     f000:	9000      	str	r0, [sp, #0]
 #endif /* MCAL_ENABLE_USER_MODE_SUPPORT */
         if (ISR_ON(msr)) /*if MSR[EE] = 0, skip calling Suspend/Resume AllInterrupts*/
@@ -39508,7 +39511,7 @@ void SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_83(void)
         msr = OsIf_Trusted_Call_Return(Adc_schm_read_msr);
 #else
         msr = Adc_schm_read_msr();  /*read MSR (to store interrupts state)*/
-    f0a0:	f7f1 fe02 	bl	ca8 <Adc_schm_read_msr>
+    f0a0:	f7f1 fdfa 	bl	c98 <Adc_schm_read_msr>
     f0a4:	9000      	str	r0, [sp, #0]
 #endif /* MCAL_ENABLE_USER_MODE_SUPPORT */
         if (ISR_ON(msr)) /*if MSR[EE] = 0, skip calling Suspend/Resume AllInterrupts*/
@@ -39613,7 +39616,7 @@ void SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_84(void)
         msr = OsIf_Trusted_Call_Return(Adc_schm_read_msr);
 #else
         msr = Adc_schm_read_msr();  /*read MSR (to store interrupts state)*/
-    f144:	f7f1 fdb0 	bl	ca8 <Adc_schm_read_msr>
+    f144:	f7f1 fda8 	bl	c98 <Adc_schm_read_msr>
     f148:	9000      	str	r0, [sp, #0]
 #endif /* MCAL_ENABLE_USER_MODE_SUPPORT */
         if (ISR_ON(msr)) /*if MSR[EE] = 0, skip calling Suspend/Resume AllInterrupts*/
@@ -39718,7 +39721,7 @@ void SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_85(void)
         msr = OsIf_Trusted_Call_Return(Adc_schm_read_msr);
 #else
         msr = Adc_schm_read_msr();  /*read MSR (to store interrupts state)*/
-    f1e8:	f7f1 fd5e 	bl	ca8 <Adc_schm_read_msr>
+    f1e8:	f7f1 fd56 	bl	c98 <Adc_schm_read_msr>
     f1ec:	9000      	str	r0, [sp, #0]
 #endif /* MCAL_ENABLE_USER_MODE_SUPPORT */
         if (ISR_ON(msr)) /*if MSR[EE] = 0, skip calling Suspend/Resume AllInterrupts*/
@@ -39823,7 +39826,7 @@ void SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_86(void)
         msr = OsIf_Trusted_Call_Return(Adc_schm_read_msr);
 #else
         msr = Adc_schm_read_msr();  /*read MSR (to store interrupts state)*/
-    f28c:	f7f1 fd0c 	bl	ca8 <Adc_schm_read_msr>
+    f28c:	f7f1 fd04 	bl	c98 <Adc_schm_read_msr>
     f290:	9000      	str	r0, [sp, #0]
 #endif /* MCAL_ENABLE_USER_MODE_SUPPORT */
         if (ISR_ON(msr)) /*if MSR[EE] = 0, skip calling Suspend/Resume AllInterrupts*/
@@ -39928,7 +39931,7 @@ void SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_87(void)
         msr = OsIf_Trusted_Call_Return(Adc_schm_read_msr);
 #else
         msr = Adc_schm_read_msr();  /*read MSR (to store interrupts state)*/
-    f330:	f7f1 fcba 	bl	ca8 <Adc_schm_read_msr>
+    f330:	f7f1 fcb2 	bl	c98 <Adc_schm_read_msr>
     f334:	9000      	str	r0, [sp, #0]
 #endif /* MCAL_ENABLE_USER_MODE_SUPPORT */
         if (ISR_ON(msr)) /*if MSR[EE] = 0, skip calling Suspend/Resume AllInterrupts*/
@@ -40033,7 +40036,7 @@ void SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_88(void)
         msr = OsIf_Trusted_Call_Return(Adc_schm_read_msr);
 #else
         msr = Adc_schm_read_msr();  /*read MSR (to store interrupts state)*/
-    f3d4:	f7f1 fc68 	bl	ca8 <Adc_schm_read_msr>
+    f3d4:	f7f1 fc60 	bl	c98 <Adc_schm_read_msr>
     f3d8:	9000      	str	r0, [sp, #0]
 #endif /* MCAL_ENABLE_USER_MODE_SUPPORT */
         if (ISR_ON(msr)) /*if MSR[EE] = 0, skip calling Suspend/Resume AllInterrupts*/
@@ -40138,7 +40141,7 @@ void SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_89(void)
         msr = OsIf_Trusted_Call_Return(Adc_schm_read_msr);
 #else
         msr = Adc_schm_read_msr();  /*read MSR (to store interrupts state)*/
-    f478:	f7f1 fc16 	bl	ca8 <Adc_schm_read_msr>
+    f478:	f7f1 fc0e 	bl	c98 <Adc_schm_read_msr>
     f47c:	9000      	str	r0, [sp, #0]
 #endif /* MCAL_ENABLE_USER_MODE_SUPPORT */
         if (ISR_ON(msr)) /*if MSR[EE] = 0, skip calling Suspend/Resume AllInterrupts*/
@@ -40243,7 +40246,7 @@ void SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_90(void)
         msr = OsIf_Trusted_Call_Return(Adc_schm_read_msr);
 #else
         msr = Adc_schm_read_msr();  /*read MSR (to store interrupts state)*/
-    f51c:	f7f1 fbc4 	bl	ca8 <Adc_schm_read_msr>
+    f51c:	f7f1 fbbc 	bl	c98 <Adc_schm_read_msr>
     f520:	9000      	str	r0, [sp, #0]
 #endif /* MCAL_ENABLE_USER_MODE_SUPPORT */
         if (ISR_ON(msr)) /*if MSR[EE] = 0, skip calling Suspend/Resume AllInterrupts*/
@@ -40348,7 +40351,7 @@ void SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_91(void)
         msr = OsIf_Trusted_Call_Return(Adc_schm_read_msr);
 #else
         msr = Adc_schm_read_msr();  /*read MSR (to store interrupts state)*/
-    f5c0:	f7f1 fb72 	bl	ca8 <Adc_schm_read_msr>
+    f5c0:	f7f1 fb6a 	bl	c98 <Adc_schm_read_msr>
     f5c4:	9000      	str	r0, [sp, #0]
 #endif /* MCAL_ENABLE_USER_MODE_SUPPORT */
         if (ISR_ON(msr)) /*if MSR[EE] = 0, skip calling Suspend/Resume AllInterrupts*/
@@ -40453,7 +40456,7 @@ void SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_92(void)
         msr = OsIf_Trusted_Call_Return(Adc_schm_read_msr);
 #else
         msr = Adc_schm_read_msr();  /*read MSR (to store interrupts state)*/
-    f664:	f7f1 fb20 	bl	ca8 <Adc_schm_read_msr>
+    f664:	f7f1 fb18 	bl	c98 <Adc_schm_read_msr>
     f668:	9000      	str	r0, [sp, #0]
 #endif /* MCAL_ENABLE_USER_MODE_SUPPORT */
         if (ISR_ON(msr)) /*if MSR[EE] = 0, skip calling Suspend/Resume AllInterrupts*/
@@ -40558,7 +40561,7 @@ void SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_93(void)
         msr = OsIf_Trusted_Call_Return(Adc_schm_read_msr);
 #else
         msr = Adc_schm_read_msr();  /*read MSR (to store interrupts state)*/
-    f708:	f7f1 face 	bl	ca8 <Adc_schm_read_msr>
+    f708:	f7f1 fac6 	bl	c98 <Adc_schm_read_msr>
     f70c:	9000      	str	r0, [sp, #0]
 #endif /* MCAL_ENABLE_USER_MODE_SUPPORT */
         if (ISR_ON(msr)) /*if MSR[EE] = 0, skip calling Suspend/Resume AllInterrupts*/
@@ -40663,7 +40666,7 @@ void SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_94(void)
         msr = OsIf_Trusted_Call_Return(Adc_schm_read_msr);
 #else
         msr = Adc_schm_read_msr();  /*read MSR (to store interrupts state)*/
-    f7ac:	f7f1 fa7c 	bl	ca8 <Adc_schm_read_msr>
+    f7ac:	f7f1 fa74 	bl	c98 <Adc_schm_read_msr>
     f7b0:	9000      	str	r0, [sp, #0]
 #endif /* MCAL_ENABLE_USER_MODE_SUPPORT */
         if (ISR_ON(msr)) /*if MSR[EE] = 0, skip calling Suspend/Resume AllInterrupts*/
@@ -40768,7 +40771,7 @@ void SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_95(void)
         msr = OsIf_Trusted_Call_Return(Adc_schm_read_msr);
 #else
         msr = Adc_schm_read_msr();  /*read MSR (to store interrupts state)*/
-    f850:	f7f1 fa2a 	bl	ca8 <Adc_schm_read_msr>
+    f850:	f7f1 fa22 	bl	c98 <Adc_schm_read_msr>
     f854:	9000      	str	r0, [sp, #0]
 #endif /* MCAL_ENABLE_USER_MODE_SUPPORT */
         if (ISR_ON(msr)) /*if MSR[EE] = 0, skip calling Suspend/Resume AllInterrupts*/
@@ -40873,7 +40876,7 @@ void SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_96(void)
         msr = OsIf_Trusted_Call_Return(Adc_schm_read_msr);
 #else
         msr = Adc_schm_read_msr();  /*read MSR (to store interrupts state)*/
-    f8f4:	f7f1 f9d8 	bl	ca8 <Adc_schm_read_msr>
+    f8f4:	f7f1 f9d0 	bl	c98 <Adc_schm_read_msr>
     f8f8:	9000      	str	r0, [sp, #0]
 #endif /* MCAL_ENABLE_USER_MODE_SUPPORT */
         if (ISR_ON(msr)) /*if MSR[EE] = 0, skip calling Suspend/Resume AllInterrupts*/
@@ -40978,7 +40981,7 @@ void SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_97(void)
         msr = OsIf_Trusted_Call_Return(Adc_schm_read_msr);
 #else
         msr = Adc_schm_read_msr();  /*read MSR (to store interrupts state)*/
-    f998:	f7f1 f986 	bl	ca8 <Adc_schm_read_msr>
+    f998:	f7f1 f97e 	bl	c98 <Adc_schm_read_msr>
     f99c:	9000      	str	r0, [sp, #0]
 #endif /* MCAL_ENABLE_USER_MODE_SUPPORT */
         if (ISR_ON(msr)) /*if MSR[EE] = 0, skip calling Suspend/Resume AllInterrupts*/
@@ -41083,7 +41086,7 @@ void SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_98(void)
         msr = OsIf_Trusted_Call_Return(Adc_schm_read_msr);
 #else
         msr = Adc_schm_read_msr();  /*read MSR (to store interrupts state)*/
-    fa3c:	f7f1 f934 	bl	ca8 <Adc_schm_read_msr>
+    fa3c:	f7f1 f92c 	bl	c98 <Adc_schm_read_msr>
     fa40:	9000      	str	r0, [sp, #0]
 #endif /* MCAL_ENABLE_USER_MODE_SUPPORT */
         if (ISR_ON(msr)) /*if MSR[EE] = 0, skip calling Suspend/Resume AllInterrupts*/
@@ -41188,7 +41191,7 @@ void SchM_Enter_Adc_ADC_EXCLUSIVE_AREA_99(void)
         msr = OsIf_Trusted_Call_Return(Adc_schm_read_msr);
 #else
         msr = Adc_schm_read_msr();  /*read MSR (to store interrupts state)*/
-    fae0:	f7f1 f8e2 	bl	ca8 <Adc_schm_read_msr>
+    fae0:	f7f1 f8da 	bl	c98 <Adc_schm_read_msr>
     fae4:	9000      	str	r0, [sp, #0]
 #endif /* MCAL_ENABLE_USER_MODE_SUPPORT */
         if (ISR_ON(msr)) /*if MSR[EE] = 0, skip calling Suspend/Resume AllInterrupts*/
@@ -41296,7 +41299,7 @@ void SchM_Enter_Dio_DIO_EXCLUSIVE_AREA_00(void)
         msr = OsIf_Trusted_Call_Return(Dio_schm_read_msr);
 #else
         msr = Dio_schm_read_msr();  /*read MSR (to store interrupts state)*/
-    fb84:	f7f1 f899 	bl	cba <Dio_schm_read_msr>
+    fb84:	f7f1 f891 	bl	caa <Dio_schm_read_msr>
     fb88:	9000      	str	r0, [sp, #0]
 #endif /* MCAL_ENABLE_USER_MODE_SUPPORT */
         if (ISR_ON(msr)) /*if MSR[EE] = 0, skip calling Suspend/Resume AllInterrupts*/
@@ -41401,7 +41404,7 @@ void SchM_Enter_Dio_DIO_EXCLUSIVE_AREA_01(void)
         msr = OsIf_Trusted_Call_Return(Dio_schm_read_msr);
 #else
         msr = Dio_schm_read_msr();  /*read MSR (to store interrupts state)*/
-    fc28:	f7f1 f847 	bl	cba <Dio_schm_read_msr>
+    fc28:	f7f1 f83f 	bl	caa <Dio_schm_read_msr>
     fc2c:	9000      	str	r0, [sp, #0]
 #endif /* MCAL_ENABLE_USER_MODE_SUPPORT */
         if (ISR_ON(msr)) /*if MSR[EE] = 0, skip calling Suspend/Resume AllInterrupts*/
@@ -41509,7 +41512,7 @@ void SchM_Enter_Mcu_MCU_EXCLUSIVE_AREA_00(void)
         msr = OsIf_Trusted_Call_Return(Mcu_schm_read_msr);
 #else
         msr = Mcu_schm_read_msr();  /*read MSR (to store interrupts state)*/
-    fccc:	f7f0 fffe 	bl	ccc <Mcu_schm_read_msr>
+    fccc:	f7f0 fff6 	bl	cbc <Mcu_schm_read_msr>
     fcd0:	9000      	str	r0, [sp, #0]
 #endif /* MCAL_ENABLE_USER_MODE_SUPPORT */
         if (ISR_ON(msr)) /*if MSR[EE] = 0, skip calling Suspend/Resume AllInterrupts*/
@@ -41614,7 +41617,7 @@ void SchM_Enter_Mcu_MCU_EXCLUSIVE_AREA_01(void)
         msr = OsIf_Trusted_Call_Return(Mcu_schm_read_msr);
 #else
         msr = Mcu_schm_read_msr();  /*read MSR (to store interrupts state)*/
-    fd70:	f7f0 ffac 	bl	ccc <Mcu_schm_read_msr>
+    fd70:	f7f0 ffa4 	bl	cbc <Mcu_schm_read_msr>
     fd74:	9000      	str	r0, [sp, #0]
 #endif /* MCAL_ENABLE_USER_MODE_SUPPORT */
         if (ISR_ON(msr)) /*if MSR[EE] = 0, skip calling Suspend/Resume AllInterrupts*/
@@ -41719,7 +41722,7 @@ void SchM_Enter_Mcu_MCU_EXCLUSIVE_AREA_02(void)
         msr = OsIf_Trusted_Call_Return(Mcu_schm_read_msr);
 #else
         msr = Mcu_schm_read_msr();  /*read MSR (to store interrupts state)*/
-    fe14:	f7f0 ff5a 	bl	ccc <Mcu_schm_read_msr>
+    fe14:	f7f0 ff52 	bl	cbc <Mcu_schm_read_msr>
     fe18:	9000      	str	r0, [sp, #0]
 #endif /* MCAL_ENABLE_USER_MODE_SUPPORT */
         if (ISR_ON(msr)) /*if MSR[EE] = 0, skip calling Suspend/Resume AllInterrupts*/
@@ -41827,7 +41830,7 @@ void SchM_Enter_Port_PORT_EXCLUSIVE_AREA_00(void)
         msr = OsIf_Trusted_Call_Return(Port_schm_read_msr);
 #else
         msr = Port_schm_read_msr();  /*read MSR (to store interrupts state)*/
-    feb8:	f7f0 ff11 	bl	cde <Port_schm_read_msr>
+    feb8:	f7f0 ff09 	bl	cce <Port_schm_read_msr>
     febc:	9000      	str	r0, [sp, #0]
 #endif /* MCAL_ENABLE_USER_MODE_SUPPORT */
         if (ISR_ON(msr)) /*if MSR[EE] = 0, skip calling Suspend/Resume AllInterrupts*/
@@ -41932,7 +41935,7 @@ void SchM_Enter_Port_PORT_EXCLUSIVE_AREA_01(void)
         msr = OsIf_Trusted_Call_Return(Port_schm_read_msr);
 #else
         msr = Port_schm_read_msr();  /*read MSR (to store interrupts state)*/
-    ff5c:	f7f0 febf 	bl	cde <Port_schm_read_msr>
+    ff5c:	f7f0 feb7 	bl	cce <Port_schm_read_msr>
     ff60:	9000      	str	r0, [sp, #0]
 #endif /* MCAL_ENABLE_USER_MODE_SUPPORT */
         if (ISR_ON(msr)) /*if MSR[EE] = 0, skip calling Suspend/Resume AllInterrupts*/
@@ -42037,7 +42040,7 @@ void SchM_Enter_Port_PORT_EXCLUSIVE_AREA_02(void)
         msr = OsIf_Trusted_Call_Return(Port_schm_read_msr);
 #else
         msr = Port_schm_read_msr();  /*read MSR (to store interrupts state)*/
-   10000:	f7f0 fe6d 	bl	cde <Port_schm_read_msr>
+   10000:	f7f0 fe65 	bl	cce <Port_schm_read_msr>
    10004:	9000      	str	r0, [sp, #0]
 #endif /* MCAL_ENABLE_USER_MODE_SUPPORT */
         if (ISR_ON(msr)) /*if MSR[EE] = 0, skip calling Suspend/Resume AllInterrupts*/
@@ -42142,7 +42145,7 @@ void SchM_Enter_Port_PORT_EXCLUSIVE_AREA_03(void)
         msr = OsIf_Trusted_Call_Return(Port_schm_read_msr);
 #else
         msr = Port_schm_read_msr();  /*read MSR (to store interrupts state)*/
-   100a4:	f7f0 fe1b 	bl	cde <Port_schm_read_msr>
+   100a4:	f7f0 fe13 	bl	cce <Port_schm_read_msr>
    100a8:	9000      	str	r0, [sp, #0]
 #endif /* MCAL_ENABLE_USER_MODE_SUPPORT */
         if (ISR_ON(msr)) /*if MSR[EE] = 0, skip calling Suspend/Resume AllInterrupts*/
@@ -42247,7 +42250,7 @@ void SchM_Enter_Port_PORT_EXCLUSIVE_AREA_04(void)
         msr = OsIf_Trusted_Call_Return(Port_schm_read_msr);
 #else
         msr = Port_schm_read_msr();  /*read MSR (to store interrupts state)*/
-   10148:	f7f0 fdc9 	bl	cde <Port_schm_read_msr>
+   10148:	f7f0 fdc1 	bl	cce <Port_schm_read_msr>
    1014c:	9000      	str	r0, [sp, #0]
 #endif /* MCAL_ENABLE_USER_MODE_SUPPORT */
         if (ISR_ON(msr)) /*if MSR[EE] = 0, skip calling Suspend/Resume AllInterrupts*/
@@ -42352,7 +42355,7 @@ void SchM_Enter_Port_PORT_EXCLUSIVE_AREA_05(void)
         msr = OsIf_Trusted_Call_Return(Port_schm_read_msr);
 #else
         msr = Port_schm_read_msr();  /*read MSR (to store interrupts state)*/
-   101ec:	f7f0 fd77 	bl	cde <Port_schm_read_msr>
+   101ec:	f7f0 fd6f 	bl	cce <Port_schm_read_msr>
    101f0:	9000      	str	r0, [sp, #0]
 #endif /* MCAL_ENABLE_USER_MODE_SUPPORT */
         if (ISR_ON(msr)) /*if MSR[EE] = 0, skip calling Suspend/Resume AllInterrupts*/
@@ -42457,7 +42460,7 @@ void SchM_Enter_Port_PORT_EXCLUSIVE_AREA_06(void)
         msr = OsIf_Trusted_Call_Return(Port_schm_read_msr);
 #else
         msr = Port_schm_read_msr();  /*read MSR (to store interrupts state)*/
-   10290:	f7f0 fd25 	bl	cde <Port_schm_read_msr>
+   10290:	f7f0 fd1d 	bl	cce <Port_schm_read_msr>
    10294:	9000      	str	r0, [sp, #0]
 #endif /* MCAL_ENABLE_USER_MODE_SUPPORT */
         if (ISR_ON(msr)) /*if MSR[EE] = 0, skip calling Suspend/Resume AllInterrupts*/
@@ -42562,7 +42565,7 @@ void SchM_Enter_Port_PORT_EXCLUSIVE_AREA_07(void)
         msr = OsIf_Trusted_Call_Return(Port_schm_read_msr);
 #else
         msr = Port_schm_read_msr();  /*read MSR (to store interrupts state)*/
-   10334:	f7f0 fcd3 	bl	cde <Port_schm_read_msr>
+   10334:	f7f0 fccb 	bl	cce <Port_schm_read_msr>
    10338:	9000      	str	r0, [sp, #0]
 #endif /* MCAL_ENABLE_USER_MODE_SUPPORT */
         if (ISR_ON(msr)) /*if MSR[EE] = 0, skip calling Suspend/Resume AllInterrupts*/
@@ -42667,7 +42670,7 @@ void SchM_Enter_Port_PORT_EXCLUSIVE_AREA_08(void)
         msr = OsIf_Trusted_Call_Return(Port_schm_read_msr);
 #else
         msr = Port_schm_read_msr();  /*read MSR (to store interrupts state)*/
-   103d8:	f7f0 fc81 	bl	cde <Port_schm_read_msr>
+   103d8:	f7f0 fc79 	bl	cce <Port_schm_read_msr>
    103dc:	9000      	str	r0, [sp, #0]
 #endif /* MCAL_ENABLE_USER_MODE_SUPPORT */
         if (ISR_ON(msr)) /*if MSR[EE] = 0, skip calling Suspend/Resume AllInterrupts*/
@@ -42772,7 +42775,7 @@ void SchM_Enter_Port_PORT_EXCLUSIVE_AREA_09(void)
         msr = OsIf_Trusted_Call_Return(Port_schm_read_msr);
 #else
         msr = Port_schm_read_msr();  /*read MSR (to store interrupts state)*/
-   1047c:	f7f0 fc2f 	bl	cde <Port_schm_read_msr>
+   1047c:	f7f0 fc27 	bl	cce <Port_schm_read_msr>
    10480:	9000      	str	r0, [sp, #0]
 #endif /* MCAL_ENABLE_USER_MODE_SUPPORT */
         if (ISR_ON(msr)) /*if MSR[EE] = 0, skip calling Suspend/Resume AllInterrupts*/
@@ -42877,7 +42880,7 @@ void SchM_Enter_Port_PORT_EXCLUSIVE_AREA_10(void)
         msr = OsIf_Trusted_Call_Return(Port_schm_read_msr);
 #else
         msr = Port_schm_read_msr();  /*read MSR (to store interrupts state)*/
-   10520:	f7f0 fbdd 	bl	cde <Port_schm_read_msr>
+   10520:	f7f0 fbd5 	bl	cce <Port_schm_read_msr>
    10524:	9000      	str	r0, [sp, #0]
 #endif /* MCAL_ENABLE_USER_MODE_SUPPORT */
         if (ISR_ON(msr)) /*if MSR[EE] = 0, skip calling Suspend/Resume AllInterrupts*/
@@ -42982,7 +42985,7 @@ void SchM_Enter_Port_PORT_EXCLUSIVE_AREA_11(void)
         msr = OsIf_Trusted_Call_Return(Port_schm_read_msr);
 #else
         msr = Port_schm_read_msr();  /*read MSR (to store interrupts state)*/
-   105c4:	f7f0 fb8b 	bl	cde <Port_schm_read_msr>
+   105c4:	f7f0 fb83 	bl	cce <Port_schm_read_msr>
    105c8:	9000      	str	r0, [sp, #0]
 #endif /* MCAL_ENABLE_USER_MODE_SUPPORT */
         if (ISR_ON(msr)) /*if MSR[EE] = 0, skip calling Suspend/Resume AllInterrupts*/
@@ -43087,7 +43090,7 @@ void SchM_Enter_Port_PORT_EXCLUSIVE_AREA_12(void)
         msr = OsIf_Trusted_Call_Return(Port_schm_read_msr);
 #else
         msr = Port_schm_read_msr();  /*read MSR (to store interrupts state)*/
-   10668:	f7f0 fb39 	bl	cde <Port_schm_read_msr>
+   10668:	f7f0 fb31 	bl	cce <Port_schm_read_msr>
    1066c:	9000      	str	r0, [sp, #0]
 #endif /* MCAL_ENABLE_USER_MODE_SUPPORT */
         if (ISR_ON(msr)) /*if MSR[EE] = 0, skip calling Suspend/Resume AllInterrupts*/
@@ -43192,7 +43195,7 @@ void SchM_Enter_Port_PORT_EXCLUSIVE_AREA_13(void)
         msr = OsIf_Trusted_Call_Return(Port_schm_read_msr);
 #else
         msr = Port_schm_read_msr();  /*read MSR (to store interrupts state)*/
-   1070c:	f7f0 fae7 	bl	cde <Port_schm_read_msr>
+   1070c:	f7f0 fadf 	bl	cce <Port_schm_read_msr>
    10710:	9000      	str	r0, [sp, #0]
 #endif /* MCAL_ENABLE_USER_MODE_SUPPORT */
         if (ISR_ON(msr)) /*if MSR[EE] = 0, skip calling Suspend/Resume AllInterrupts*/
@@ -43297,7 +43300,7 @@ void SchM_Enter_Port_PORT_EXCLUSIVE_AREA_14(void)
         msr = OsIf_Trusted_Call_Return(Port_schm_read_msr);
 #else
         msr = Port_schm_read_msr();  /*read MSR (to store interrupts state)*/
-   107b0:	f7f0 fa95 	bl	cde <Port_schm_read_msr>
+   107b0:	f7f0 fa8d 	bl	cce <Port_schm_read_msr>
    107b4:	9000      	str	r0, [sp, #0]
 #endif /* MCAL_ENABLE_USER_MODE_SUPPORT */
         if (ISR_ON(msr)) /*if MSR[EE] = 0, skip calling Suspend/Resume AllInterrupts*/
@@ -43402,7 +43405,7 @@ void SchM_Enter_Port_PORT_EXCLUSIVE_AREA_15(void)
         msr = OsIf_Trusted_Call_Return(Port_schm_read_msr);
 #else
         msr = Port_schm_read_msr();  /*read MSR (to store interrupts state)*/
-   10854:	f7f0 fa43 	bl	cde <Port_schm_read_msr>
+   10854:	f7f0 fa3b 	bl	cce <Port_schm_read_msr>
    10858:	9000      	str	r0, [sp, #0]
 #endif /* MCAL_ENABLE_USER_MODE_SUPPORT */
         if (ISR_ON(msr)) /*if MSR[EE] = 0, skip calling Suspend/Resume AllInterrupts*/
@@ -43507,7 +43510,7 @@ void SchM_Enter_Port_PORT_EXCLUSIVE_AREA_16(void)
         msr = OsIf_Trusted_Call_Return(Port_schm_read_msr);
 #else
         msr = Port_schm_read_msr();  /*read MSR (to store interrupts state)*/
-   108f8:	f7f0 f9f1 	bl	cde <Port_schm_read_msr>
+   108f8:	f7f0 f9e9 	bl	cce <Port_schm_read_msr>
    108fc:	9000      	str	r0, [sp, #0]
 #endif /* MCAL_ENABLE_USER_MODE_SUPPORT */
         if (ISR_ON(msr)) /*if MSR[EE] = 0, skip calling Suspend/Resume AllInterrupts*/
@@ -43612,7 +43615,7 @@ void SchM_Enter_Port_PORT_EXCLUSIVE_AREA_17(void)
         msr = OsIf_Trusted_Call_Return(Port_schm_read_msr);
 #else
         msr = Port_schm_read_msr();  /*read MSR (to store interrupts state)*/
-   1099c:	f7f0 f99f 	bl	cde <Port_schm_read_msr>
+   1099c:	f7f0 f997 	bl	cce <Port_schm_read_msr>
    109a0:	9000      	str	r0, [sp, #0]
 #endif /* MCAL_ENABLE_USER_MODE_SUPPORT */
         if (ISR_ON(msr)) /*if MSR[EE] = 0, skip calling Suspend/Resume AllInterrupts*/
@@ -43717,7 +43720,7 @@ void SchM_Enter_Port_PORT_EXCLUSIVE_AREA_18(void)
         msr = OsIf_Trusted_Call_Return(Port_schm_read_msr);
 #else
         msr = Port_schm_read_msr();  /*read MSR (to store interrupts state)*/
-   10a40:	f7f0 f94d 	bl	cde <Port_schm_read_msr>
+   10a40:	f7f0 f945 	bl	cce <Port_schm_read_msr>
    10a44:	9000      	str	r0, [sp, #0]
 #endif /* MCAL_ENABLE_USER_MODE_SUPPORT */
         if (ISR_ON(msr)) /*if MSR[EE] = 0, skip calling Suspend/Resume AllInterrupts*/
@@ -43822,7 +43825,7 @@ void SchM_Enter_Port_PORT_EXCLUSIVE_AREA_19(void)
         msr = OsIf_Trusted_Call_Return(Port_schm_read_msr);
 #else
         msr = Port_schm_read_msr();  /*read MSR (to store interrupts state)*/
-   10ae4:	f7f0 f8fb 	bl	cde <Port_schm_read_msr>
+   10ae4:	f7f0 f8f3 	bl	cce <Port_schm_read_msr>
    10ae8:	9000      	str	r0, [sp, #0]
 #endif /* MCAL_ENABLE_USER_MODE_SUPPORT */
         if (ISR_ON(msr)) /*if MSR[EE] = 0, skip calling Suspend/Resume AllInterrupts*/
@@ -43927,7 +43930,7 @@ void SchM_Enter_Port_PORT_EXCLUSIVE_AREA_20(void)
         msr = OsIf_Trusted_Call_Return(Port_schm_read_msr);
 #else
         msr = Port_schm_read_msr();  /*read MSR (to store interrupts state)*/
-   10b88:	f7f0 f8a9 	bl	cde <Port_schm_read_msr>
+   10b88:	f7f0 f8a1 	bl	cce <Port_schm_read_msr>
    10b8c:	9000      	str	r0, [sp, #0]
 #endif /* MCAL_ENABLE_USER_MODE_SUPPORT */
         if (ISR_ON(msr)) /*if MSR[EE] = 0, skip calling Suspend/Resume AllInterrupts*/
@@ -44032,7 +44035,7 @@ void SchM_Enter_Port_PORT_EXCLUSIVE_AREA_21(void)
         msr = OsIf_Trusted_Call_Return(Port_schm_read_msr);
 #else
         msr = Port_schm_read_msr();  /*read MSR (to store interrupts state)*/
-   10c2c:	f7f0 f857 	bl	cde <Port_schm_read_msr>
+   10c2c:	f7f0 f84f 	bl	cce <Port_schm_read_msr>
    10c30:	9000      	str	r0, [sp, #0]
 #endif /* MCAL_ENABLE_USER_MODE_SUPPORT */
         if (ISR_ON(msr)) /*if MSR[EE] = 0, skip calling Suspend/Resume AllInterrupts*/
@@ -44137,7 +44140,7 @@ void SchM_Enter_Port_PORT_EXCLUSIVE_AREA_22(void)
         msr = OsIf_Trusted_Call_Return(Port_schm_read_msr);
 #else
         msr = Port_schm_read_msr();  /*read MSR (to store interrupts state)*/
-   10cd0:	f7f0 f805 	bl	cde <Port_schm_read_msr>
+   10cd0:	f7ef fffd 	bl	cce <Port_schm_read_msr>
    10cd4:	9000      	str	r0, [sp, #0]
 #endif /* MCAL_ENABLE_USER_MODE_SUPPORT */
         if (ISR_ON(msr)) /*if MSR[EE] = 0, skip calling Suspend/Resume AllInterrupts*/
@@ -44242,7 +44245,7 @@ void SchM_Enter_Port_PORT_EXCLUSIVE_AREA_23(void)
         msr = OsIf_Trusted_Call_Return(Port_schm_read_msr);
 #else
         msr = Port_schm_read_msr();  /*read MSR (to store interrupts state)*/
-   10d74:	f7ef ffb3 	bl	cde <Port_schm_read_msr>
+   10d74:	f7ef ffab 	bl	cce <Port_schm_read_msr>
    10d78:	9000      	str	r0, [sp, #0]
 #endif /* MCAL_ENABLE_USER_MODE_SUPPORT */
         if (ISR_ON(msr)) /*if MSR[EE] = 0, skip calling Suspend/Resume AllInterrupts*/
@@ -44347,7 +44350,7 @@ void SchM_Enter_Port_PORT_EXCLUSIVE_AREA_24(void)
         msr = OsIf_Trusted_Call_Return(Port_schm_read_msr);
 #else
         msr = Port_schm_read_msr();  /*read MSR (to store interrupts state)*/
-   10e18:	f7ef ff61 	bl	cde <Port_schm_read_msr>
+   10e18:	f7ef ff59 	bl	cce <Port_schm_read_msr>
    10e1c:	9000      	str	r0, [sp, #0]
 #endif /* MCAL_ENABLE_USER_MODE_SUPPORT */
         if (ISR_ON(msr)) /*if MSR[EE] = 0, skip calling Suspend/Resume AllInterrupts*/
@@ -44452,7 +44455,7 @@ void SchM_Enter_Port_PORT_EXCLUSIVE_AREA_25(void)
         msr = OsIf_Trusted_Call_Return(Port_schm_read_msr);
 #else
         msr = Port_schm_read_msr();  /*read MSR (to store interrupts state)*/
-   10ebc:	f7ef ff0f 	bl	cde <Port_schm_read_msr>
+   10ebc:	f7ef ff07 	bl	cce <Port_schm_read_msr>
    10ec0:	9000      	str	r0, [sp, #0]
 #endif /* MCAL_ENABLE_USER_MODE_SUPPORT */
         if (ISR_ON(msr)) /*if MSR[EE] = 0, skip calling Suspend/Resume AllInterrupts*/
@@ -44557,7 +44560,7 @@ void SchM_Enter_Port_PORT_EXCLUSIVE_AREA_26(void)
         msr = OsIf_Trusted_Call_Return(Port_schm_read_msr);
 #else
         msr = Port_schm_read_msr();  /*read MSR (to store interrupts state)*/
-   10f60:	f7ef febd 	bl	cde <Port_schm_read_msr>
+   10f60:	f7ef feb5 	bl	cce <Port_schm_read_msr>
    10f64:	9000      	str	r0, [sp, #0]
 #endif /* MCAL_ENABLE_USER_MODE_SUPPORT */
         if (ISR_ON(msr)) /*if MSR[EE] = 0, skip calling Suspend/Resume AllInterrupts*/
@@ -44662,7 +44665,7 @@ void SchM_Enter_Port_PORT_EXCLUSIVE_AREA_27(void)
         msr = OsIf_Trusted_Call_Return(Port_schm_read_msr);
 #else
         msr = Port_schm_read_msr();  /*read MSR (to store interrupts state)*/
-   11004:	f7ef fe6b 	bl	cde <Port_schm_read_msr>
+   11004:	f7ef fe63 	bl	cce <Port_schm_read_msr>
    11008:	9000      	str	r0, [sp, #0]
 #endif /* MCAL_ENABLE_USER_MODE_SUPPORT */
         if (ISR_ON(msr)) /*if MSR[EE] = 0, skip calling Suspend/Resume AllInterrupts*/
@@ -45299,9 +45302,9 @@ void Det_Start(void)
 00011c10 <Task_Config>:
    11c10:	00000032 00000001 0000093d 00000064     2.......=...d...
    11c20:	00000001 00000949 000003e8 00000000     ....I...........
-   11c30:	00000c99 00000bb8 00000000 00000c9d     ................
-   11c40:	00001388 00000000 00000ca1 00000bb8     ................
-   11c50:	00000000 00000ca5                       ........
+   11c30:	000016d1 00000bb8 00000000 000016d5     ................
+   11c40:	00001388 00000000 000016d9 00000bb8     ................
+   11c50:	00000000 000016dd                       ........
 
 00011c58 <Timer_Config>:
 	...
