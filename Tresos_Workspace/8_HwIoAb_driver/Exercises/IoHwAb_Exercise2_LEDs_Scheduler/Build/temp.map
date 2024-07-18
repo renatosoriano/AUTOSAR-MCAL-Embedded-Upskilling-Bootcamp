@@ -128,10 +128,6 @@ Discarded input sections
  .text          0x00000000        0x0 Build/obj/main.o
  .data          0x00000000        0x0 Build/obj/main.o
  .bss           0x00000000        0x0 Build/obj/main.o
- .text.Os_LedsTask
-                0x00000000        0x4 Build/obj/main.o
- .text.Os_ButtonsTask
-                0x00000000        0x4 Build/obj/main.o
  .group         0x00000000        0xc Build/obj/IntCtrl_Ip.o
  .group         0x00000000        0xc Build/obj/IntCtrl_Ip.o
  .group         0x00000000        0xc Build/obj/IntCtrl_Ip.o
@@ -11284,6 +11280,10 @@ Discarded input sections
  .text          0x00000000        0x0 Build/obj/Scheduler_Cfg.o
  .data          0x00000000        0x0 Build/obj/Scheduler_Cfg.o
  .bss           0x00000000        0x0 Build/obj/Scheduler_Cfg.o
+ .text.Os_LedsTask
+                0x00000000        0x4 Build/obj/Scheduler_Cfg.o
+ .text.Os_ButtonsTask
+                0x00000000        0x4 Build/obj/Scheduler_Cfg.o
  .debug_macro   0x00000000      0xa96 Build/obj/Scheduler_Cfg.o
  .debug_macro   0x00000000       0x22 Build/obj/Scheduler_Cfg.o
  .debug_macro   0x00000000       0x56 Build/obj/Scheduler_Cfg.o
@@ -14187,69 +14187,69 @@ END GROUP
  .text.Os_100ms_Task
                 0x00000918      0x1e8 Build/obj/main.o
                 0x00000918                Os_100ms_Task
- .text.Os_PotsTask
-                0x00000b00        0x4 Build/obj/main.o
-                0x00000b00                Os_PotsTask
- .text.Os_EepromsTask
-                0x00000b04        0x4 Build/obj/main.o
-                0x00000b04                Os_EepromsTask
- .text.Os_CanTask
-                0x00000b08        0x4 Build/obj/main.o
-                0x00000b08                Os_CanTask
- .text.Os_BuzzerTask
-                0x00000b0c        0x4 Build/obj/main.o
-                0x00000b0c                Os_BuzzerTask
  .text.Dio_schm_read_msr
-                0x00000b10       0x12 Build/obj/SchM_Dio.o
-                0x00000b10                Dio_schm_read_msr
+                0x00000b00       0x12 Build/obj/SchM_Dio.o
+                0x00000b00                Dio_schm_read_msr
  .text.Mcu_schm_read_msr
-                0x00000b22       0x12 Build/obj/SchM_Mcu.o
-                0x00000b22                Mcu_schm_read_msr
+                0x00000b12       0x12 Build/obj/SchM_Mcu.o
+                0x00000b12                Mcu_schm_read_msr
  .text.Port_schm_read_msr
-                0x00000b34       0x12 Build/obj/SchM_Port.o
-                0x00000b34                Port_schm_read_msr
- *fill*         0x00000b46        0x2 
+                0x00000b24       0x12 Build/obj/SchM_Port.o
+                0x00000b24                Port_schm_read_msr
+ *fill*         0x00000b36        0x2 
  .text.HwIoAb_Buttons_Init
-                0x00000b48       0x64 Build/obj/HwIoAb_0_Buttons.o
-                0x00000b48                HwIoAb_Buttons_Init
+                0x00000b38       0x64 Build/obj/HwIoAb_0_Buttons.o
+                0x00000b38                HwIoAb_Buttons_Init
  .text.HwIoAb_Buttons_GetEvent
-                0x00000bac       0x3c Build/obj/HwIoAb_0_Buttons.o
-                0x00000bac                HwIoAb_Buttons_GetEvent
+                0x00000b9c       0x3c Build/obj/HwIoAb_0_Buttons.o
+                0x00000b9c                HwIoAb_Buttons_GetEvent
  .text.HwIoAb_Buttons_MainFunction
-                0x00000be8      0x2ec Build/obj/HwIoAb_0_Buttons.o
-                0x00000be8                HwIoAb_Buttons_MainFunction
+                0x00000bd8      0x2ec Build/obj/HwIoAb_0_Buttons.o
+                0x00000bd8                HwIoAb_Buttons_MainFunction
  .text.HwIoAb_Leds_Init
-                0x00000ed4       0x28 Build/obj/HwIoAb_1_Leds.o
-                0x00000ed4                HwIoAb_Leds_Init
+                0x00000ec4       0x28 Build/obj/HwIoAb_1_Leds.o
+                0x00000ec4                HwIoAb_Leds_Init
  .text.HwIoAb_Leds_TurnOff
-                0x00000efc       0x48 Build/obj/HwIoAb_1_Leds.o
-                0x00000efc                HwIoAb_Leds_TurnOff
+                0x00000eec       0x48 Build/obj/HwIoAb_1_Leds.o
+                0x00000eec                HwIoAb_Leds_TurnOff
  .text.HwIoAb_Leds_TurnToggle
-                0x00000f44       0x2c Build/obj/HwIoAb_1_Leds.o
-                0x00000f44                HwIoAb_Leds_TurnToggle
+                0x00000f34       0x2c Build/obj/HwIoAb_1_Leds.o
+                0x00000f34                HwIoAb_Leds_TurnToggle
  .text.Bfx_SetBit_u32u8
-                0x00000f70       0x24 Build/obj/Scheduler.o
-                0x00000f70                Bfx_SetBit_u32u8
+                0x00000f60       0x24 Build/obj/Scheduler.o
+                0x00000f60                Bfx_SetBit_u32u8
  .text.Bfx_ClrBit_u32u8
-                0x00000f94       0x26 Build/obj/Scheduler.o
-                0x00000f94                Bfx_ClrBit_u32u8
+                0x00000f84       0x26 Build/obj/Scheduler.o
+                0x00000f84                Bfx_ClrBit_u32u8
  .text.Bfx_GetBit_u32u8_u8
-                0x00000fba       0x26 Build/obj/Scheduler.o
-                0x00000fba                Bfx_GetBit_u32u8_u8
+                0x00000faa       0x26 Build/obj/Scheduler.o
+                0x00000faa                Bfx_GetBit_u32u8_u8
  .text.Bfx_PutBit_u32u8u8
-                0x00000fe0       0x4a Build/obj/Scheduler.o
-                0x00000fe0                Bfx_PutBit_u32u8u8
- *fill*         0x0000102a        0x2 
+                0x00000fd0       0x4a Build/obj/Scheduler.o
+                0x00000fd0                Bfx_PutBit_u32u8u8
+ *fill*         0x0000101a        0x2 
  .text.Scheduler_Init
-                0x0000102c      0x178 Build/obj/Scheduler.o
-                0x0000102c                Scheduler_Init
+                0x0000101c      0x178 Build/obj/Scheduler.o
+                0x0000101c                Scheduler_Init
  .text.Scheduler_MainFunction
-                0x000011a4       0x58 Build/obj/Scheduler.o
-                0x000011a4                Scheduler_MainFunction
+                0x00001194       0x58 Build/obj/Scheduler.o
+                0x00001194                Scheduler_MainFunction
  .text.Tasks_Dispatch
-                0x000011fc       0xa8 Build/obj/Scheduler.o
+                0x000011ec       0xa8 Build/obj/Scheduler.o
  .text.Timers_Dispatch
-                0x000012a4       0xc0 Build/obj/Scheduler.o
+                0x00001294       0xc0 Build/obj/Scheduler.o
+ .text.Os_PotsTask
+                0x00001354        0x4 Build/obj/Scheduler_Cfg.o
+                0x00001354                Os_PotsTask
+ .text.Os_EepromsTask
+                0x00001358        0x4 Build/obj/Scheduler_Cfg.o
+                0x00001358                Os_EepromsTask
+ .text.Os_CanTask
+                0x0000135c        0x4 Build/obj/Scheduler_Cfg.o
+                0x0000135c                Os_CanTask
+ .text.Os_BuzzerTask
+                0x00001360        0x4 Build/obj/Scheduler_Cfg.o
+                0x00001360                Os_BuzzerTask
  .text.init_data_bss
                 0x00001364      0x12c Build/obj/startup.o
                 0x00001364                init_data_bss
@@ -15200,203 +15200,203 @@ int_results     0x1fff8000      0x100
 OUTPUT(Build/temp.elf elf32-littlearm)
 LOAD linker stubs
 
-.debug_info     0x00000000    0x18988
- .debug_info    0x00000000     0x16fb Build/obj/main.o
- .debug_info    0x000016fb      0x2b6 Build/obj/OsIf_Timer.o
- .debug_info    0x000019b1      0x2c1 Build/obj/OsIf_Timer_System.o
- .debug_info    0x00001c72      0x188 Build/obj/OsIf_Timer_System_Internal_Systick.o
- .debug_info    0x00001dfa     0x1a90 Build/obj/Clock_Ip.o
- .debug_info    0x0000388a      0x825 Build/obj/Clock_Ip_Data.o
- .debug_info    0x000040af      0xd4d Build/obj/Clock_Ip_Divider.o
- .debug_info    0x00004dfc      0x401 Build/obj/Clock_Ip_DividerTrigger.o
- .debug_info    0x000051fd      0x8ae Build/obj/Clock_Ip_ExtOsc.o
- .debug_info    0x00005aab      0x495 Build/obj/Clock_Ip_FracDiv.o
- .debug_info    0x00005f40      0x309 Build/obj/Clock_Ip_Frequency.o
- .debug_info    0x00006249      0xa42 Build/obj/Clock_Ip_Gate.o
- .debug_info    0x00006c8b      0xc89 Build/obj/Clock_Ip_IntOsc.o
- .debug_info    0x00007914      0x529 Build/obj/Clock_Ip_Monitor.o
- .debug_info    0x00007e3d      0x9bc Build/obj/Clock_Ip_Pll.o
- .debug_info    0x000087f9      0x411 Build/obj/Clock_Ip_ProgFreqSwitch.o
- .debug_info    0x00008c0a     0x100c Build/obj/Clock_Ip_Selector.o
- .debug_info    0x00009c16     0x1ab1 Build/obj/Clock_Ip_Specific.o
- .debug_info    0x0000b6c7     0x1105 Build/obj/Mcu.o
- .debug_info    0x0000c7cc      0xeab Build/obj/Mcu_Ipw.o
- .debug_info    0x0000d677      0x51f Build/obj/Power_Ip.o
- .debug_info    0x0000db96      0x1ae Build/obj/Power_Ip_CortexM4.o
- .debug_info    0x0000dd44      0x18e Build/obj/Power_Ip_PMC.o
- .debug_info    0x0000ded2      0x292 Build/obj/Power_Ip_Private.o
- .debug_info    0x0000e164      0x2fd Build/obj/Power_Ip_RCM.o
- .debug_info    0x0000e461      0x394 Build/obj/Power_Ip_SMC.o
- .debug_info    0x0000e7f5      0x6a4 Build/obj/Port.o
- .debug_info    0x0000ee99      0x9fe Build/obj/Port_Ci_Port_Ip.o
- .debug_info    0x0000f897      0x7b7 Build/obj/Port_Ipw.o
- .debug_info    0x0001004e      0x306 Build/obj/Dio.o
- .debug_info    0x00010354      0x4c6 Build/obj/Dio_Ipw.o
- .debug_info    0x0001081a      0x389 Build/obj/Gpio_Dio_Ip.o
- .debug_info    0x00010ba3      0x216 Build/obj/SchM_Dio.o
- .debug_info    0x00010db9      0x29a Build/obj/SchM_Mcu.o
- .debug_info    0x00011053      0xf7e Build/obj/SchM_Port.o
- .debug_info    0x00011fd1      0x30f Build/obj/HwIoAb_0_Buttons.o
- .debug_info    0x000122e0      0x182 Build/obj/HwIoAb_0_Buttons_Cfg.o
- .debug_info    0x00012462      0x250 Build/obj/HwIoAb_1_Leds.o
- .debug_info    0x000126b2      0x151 Build/obj/HwIoAb_1_Leds_Cfg.o
- .debug_info    0x00012803      0xe47 Build/obj/Scheduler.o
- .debug_info    0x0001364a      0x2eb Build/obj/Scheduler_Cfg.o
- .debug_info    0x00013935      0x238 Build/obj/startup.o
- .debug_info    0x00013b6d      0x447 Build/obj/system.o
- .debug_info    0x00013fb4      0x139 Build/obj/exceptions.o
- .debug_info    0x000140ed      0xba7 Build/obj/Clock_Ip_PBcfg.o
- .debug_info    0x00014c94      0xe6e Build/obj/Mcu_PBcfg.o
- .debug_info    0x00015b02      0x13e Build/obj/OsIf_Cfg.o
- .debug_info    0x00015c40      0x421 Build/obj/Port_Ci_Port_Ip_PBcfg.o
- .debug_info    0x00016061      0x72b Build/obj/Port_PBcfg.o
- .debug_info    0x0001678c      0x2dc Build/obj/Power_Ip_PBcfg.o
- .debug_info    0x00016a68     0x1597 Build/obj/SEGGER_RTT.o
- .debug_info    0x00017fff      0x41c Build/obj/SEGGER_RTT_printf.o
- .debug_info    0x0001841b       0x26 c:/nxp/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/thumb/v7e-m+fp/hard\libgcc.a(_aeabi_uldivmod.o)
- .debug_info    0x00018441      0x521 c:/nxp/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/thumb/v7e-m+fp/hard\libgcc.a(_udivmoddi4.o)
- .debug_info    0x00018962       0x26 c:/nxp/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/thumb/v7e-m+fp/hard\libgcc.a(_dvmd_tls.o)
+.debug_info     0x00000000    0x18990
+ .debug_info    0x00000000     0x168f Build/obj/main.o
+ .debug_info    0x0000168f      0x2b6 Build/obj/OsIf_Timer.o
+ .debug_info    0x00001945      0x2c1 Build/obj/OsIf_Timer_System.o
+ .debug_info    0x00001c06      0x188 Build/obj/OsIf_Timer_System_Internal_Systick.o
+ .debug_info    0x00001d8e     0x1a90 Build/obj/Clock_Ip.o
+ .debug_info    0x0000381e      0x825 Build/obj/Clock_Ip_Data.o
+ .debug_info    0x00004043      0xd4d Build/obj/Clock_Ip_Divider.o
+ .debug_info    0x00004d90      0x401 Build/obj/Clock_Ip_DividerTrigger.o
+ .debug_info    0x00005191      0x8ae Build/obj/Clock_Ip_ExtOsc.o
+ .debug_info    0x00005a3f      0x495 Build/obj/Clock_Ip_FracDiv.o
+ .debug_info    0x00005ed4      0x309 Build/obj/Clock_Ip_Frequency.o
+ .debug_info    0x000061dd      0xa42 Build/obj/Clock_Ip_Gate.o
+ .debug_info    0x00006c1f      0xc89 Build/obj/Clock_Ip_IntOsc.o
+ .debug_info    0x000078a8      0x529 Build/obj/Clock_Ip_Monitor.o
+ .debug_info    0x00007dd1      0x9bc Build/obj/Clock_Ip_Pll.o
+ .debug_info    0x0000878d      0x411 Build/obj/Clock_Ip_ProgFreqSwitch.o
+ .debug_info    0x00008b9e     0x100c Build/obj/Clock_Ip_Selector.o
+ .debug_info    0x00009baa     0x1ab1 Build/obj/Clock_Ip_Specific.o
+ .debug_info    0x0000b65b     0x1105 Build/obj/Mcu.o
+ .debug_info    0x0000c760      0xeab Build/obj/Mcu_Ipw.o
+ .debug_info    0x0000d60b      0x51f Build/obj/Power_Ip.o
+ .debug_info    0x0000db2a      0x1ae Build/obj/Power_Ip_CortexM4.o
+ .debug_info    0x0000dcd8      0x18e Build/obj/Power_Ip_PMC.o
+ .debug_info    0x0000de66      0x292 Build/obj/Power_Ip_Private.o
+ .debug_info    0x0000e0f8      0x2fd Build/obj/Power_Ip_RCM.o
+ .debug_info    0x0000e3f5      0x394 Build/obj/Power_Ip_SMC.o
+ .debug_info    0x0000e789      0x6a4 Build/obj/Port.o
+ .debug_info    0x0000ee2d      0x9fe Build/obj/Port_Ci_Port_Ip.o
+ .debug_info    0x0000f82b      0x7b7 Build/obj/Port_Ipw.o
+ .debug_info    0x0000ffe2      0x306 Build/obj/Dio.o
+ .debug_info    0x000102e8      0x4c6 Build/obj/Dio_Ipw.o
+ .debug_info    0x000107ae      0x389 Build/obj/Gpio_Dio_Ip.o
+ .debug_info    0x00010b37      0x216 Build/obj/SchM_Dio.o
+ .debug_info    0x00010d4d      0x29a Build/obj/SchM_Mcu.o
+ .debug_info    0x00010fe7      0xf7e Build/obj/SchM_Port.o
+ .debug_info    0x00011f65      0x30f Build/obj/HwIoAb_0_Buttons.o
+ .debug_info    0x00012274      0x182 Build/obj/HwIoAb_0_Buttons_Cfg.o
+ .debug_info    0x000123f6      0x250 Build/obj/HwIoAb_1_Leds.o
+ .debug_info    0x00012646      0x151 Build/obj/HwIoAb_1_Leds_Cfg.o
+ .debug_info    0x00012797      0xe47 Build/obj/Scheduler.o
+ .debug_info    0x000135de      0x35f Build/obj/Scheduler_Cfg.o
+ .debug_info    0x0001393d      0x238 Build/obj/startup.o
+ .debug_info    0x00013b75      0x447 Build/obj/system.o
+ .debug_info    0x00013fbc      0x139 Build/obj/exceptions.o
+ .debug_info    0x000140f5      0xba7 Build/obj/Clock_Ip_PBcfg.o
+ .debug_info    0x00014c9c      0xe6e Build/obj/Mcu_PBcfg.o
+ .debug_info    0x00015b0a      0x13e Build/obj/OsIf_Cfg.o
+ .debug_info    0x00015c48      0x421 Build/obj/Port_Ci_Port_Ip_PBcfg.o
+ .debug_info    0x00016069      0x72b Build/obj/Port_PBcfg.o
+ .debug_info    0x00016794      0x2dc Build/obj/Power_Ip_PBcfg.o
+ .debug_info    0x00016a70     0x1597 Build/obj/SEGGER_RTT.o
+ .debug_info    0x00018007      0x41c Build/obj/SEGGER_RTT_printf.o
+ .debug_info    0x00018423       0x26 c:/nxp/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/thumb/v7e-m+fp/hard\libgcc.a(_aeabi_uldivmod.o)
+ .debug_info    0x00018449      0x521 c:/nxp/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/thumb/v7e-m+fp/hard\libgcc.a(_udivmoddi4.o)
+ .debug_info    0x0001896a       0x26 c:/nxp/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/thumb/v7e-m+fp/hard\libgcc.a(_dvmd_tls.o)
 
-.debug_abbrev   0x00000000     0x456e
- .debug_abbrev  0x00000000      0x1f5 Build/obj/main.o
- .debug_abbrev  0x000001f5      0x12a Build/obj/OsIf_Timer.o
- .debug_abbrev  0x0000031f      0x107 Build/obj/OsIf_Timer_System.o
- .debug_abbrev  0x00000426      0x10b Build/obj/OsIf_Timer_System_Internal_Systick.o
- .debug_abbrev  0x00000531      0x24d Build/obj/Clock_Ip.o
- .debug_abbrev  0x0000077e      0x12c Build/obj/Clock_Ip_Data.o
- .debug_abbrev  0x000008aa      0x1e8 Build/obj/Clock_Ip_Divider.o
- .debug_abbrev  0x00000a92      0x117 Build/obj/Clock_Ip_DividerTrigger.o
- .debug_abbrev  0x00000ba9      0x1ec Build/obj/Clock_Ip_ExtOsc.o
- .debug_abbrev  0x00000d95      0x14f Build/obj/Clock_Ip_FracDiv.o
- .debug_abbrev  0x00000ee4       0x92 Build/obj/Clock_Ip_Frequency.o
- .debug_abbrev  0x00000f76      0x1e8 Build/obj/Clock_Ip_Gate.o
- .debug_abbrev  0x0000115e      0x208 Build/obj/Clock_Ip_IntOsc.o
- .debug_abbrev  0x00001366      0x12f Build/obj/Clock_Ip_Monitor.o
- .debug_abbrev  0x00001495      0x22f Build/obj/Clock_Ip_Pll.o
- .debug_abbrev  0x000016c4      0x115 Build/obj/Clock_Ip_ProgFreqSwitch.o
- .debug_abbrev  0x000017d9      0x1e8 Build/obj/Clock_Ip_Selector.o
- .debug_abbrev  0x000019c1      0x254 Build/obj/Clock_Ip_Specific.o
- .debug_abbrev  0x00001c15      0x1c2 Build/obj/Mcu.o
- .debug_abbrev  0x00001dd7      0x14a Build/obj/Mcu_Ipw.o
- .debug_abbrev  0x00001f21      0x1ad Build/obj/Power_Ip.o
- .debug_abbrev  0x000020ce       0xc4 Build/obj/Power_Ip_CortexM4.o
- .debug_abbrev  0x00002192       0xc1 Build/obj/Power_Ip_PMC.o
- .debug_abbrev  0x00002253      0x138 Build/obj/Power_Ip_Private.o
- .debug_abbrev  0x0000238b      0x14a Build/obj/Power_Ip_RCM.o
- .debug_abbrev  0x000024d5      0x15c Build/obj/Power_Ip_SMC.o
- .debug_abbrev  0x00002631      0x148 Build/obj/Port.o
- .debug_abbrev  0x00002779      0x211 Build/obj/Port_Ci_Port_Ip.o
- .debug_abbrev  0x0000298a      0x17d Build/obj/Port_Ipw.o
- .debug_abbrev  0x00002b07       0xf3 Build/obj/Dio.o
- .debug_abbrev  0x00002bfa      0x17d Build/obj/Dio_Ipw.o
- .debug_abbrev  0x00002d77      0x17f Build/obj/Gpio_Dio_Ip.o
- .debug_abbrev  0x00002ef6       0xc0 Build/obj/SchM_Dio.o
- .debug_abbrev  0x00002fb6       0xc0 Build/obj/SchM_Mcu.o
- .debug_abbrev  0x00003076       0xc0 Build/obj/SchM_Port.o
- .debug_abbrev  0x00003136      0x15b Build/obj/HwIoAb_0_Buttons.o
- .debug_abbrev  0x00003291       0xbe Build/obj/HwIoAb_0_Buttons_Cfg.o
- .debug_abbrev  0x0000334f      0x106 Build/obj/HwIoAb_1_Leds.o
- .debug_abbrev  0x00003455       0xcf Build/obj/HwIoAb_1_Leds_Cfg.o
- .debug_abbrev  0x00003524      0x24f Build/obj/Scheduler.o
- .debug_abbrev  0x00003773       0xbf Build/obj/Scheduler_Cfg.o
- .debug_abbrev  0x00003832       0xcb Build/obj/startup.o
- .debug_abbrev  0x000038fd      0x155 Build/obj/system.o
- .debug_abbrev  0x00003a52       0x47 Build/obj/exceptions.o
- .debug_abbrev  0x00003a99      0x101 Build/obj/Clock_Ip_PBcfg.o
- .debug_abbrev  0x00003b9a      0x11f Build/obj/Mcu_PBcfg.o
- .debug_abbrev  0x00003cb9       0x9e Build/obj/OsIf_Cfg.o
- .debug_abbrev  0x00003d57      0x101 Build/obj/Port_Ci_Port_Ip_PBcfg.o
- .debug_abbrev  0x00003e58      0x134 Build/obj/Port_PBcfg.o
- .debug_abbrev  0x00003f8c       0xff Build/obj/Power_Ip_PBcfg.o
- .debug_abbrev  0x0000408b      0x209 Build/obj/SEGGER_RTT.o
- .debug_abbrev  0x00004294      0x190 Build/obj/SEGGER_RTT_printf.o
- .debug_abbrev  0x00004424       0x14 c:/nxp/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/thumb/v7e-m+fp/hard\libgcc.a(_aeabi_uldivmod.o)
- .debug_abbrev  0x00004438      0x122 c:/nxp/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/thumb/v7e-m+fp/hard\libgcc.a(_udivmoddi4.o)
- .debug_abbrev  0x0000455a       0x14 c:/nxp/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/thumb/v7e-m+fp/hard\libgcc.a(_dvmd_tls.o)
+.debug_abbrev   0x00000000     0x4572
+ .debug_abbrev  0x00000000      0x1db Build/obj/main.o
+ .debug_abbrev  0x000001db      0x12a Build/obj/OsIf_Timer.o
+ .debug_abbrev  0x00000305      0x107 Build/obj/OsIf_Timer_System.o
+ .debug_abbrev  0x0000040c      0x10b Build/obj/OsIf_Timer_System_Internal_Systick.o
+ .debug_abbrev  0x00000517      0x24d Build/obj/Clock_Ip.o
+ .debug_abbrev  0x00000764      0x12c Build/obj/Clock_Ip_Data.o
+ .debug_abbrev  0x00000890      0x1e8 Build/obj/Clock_Ip_Divider.o
+ .debug_abbrev  0x00000a78      0x117 Build/obj/Clock_Ip_DividerTrigger.o
+ .debug_abbrev  0x00000b8f      0x1ec Build/obj/Clock_Ip_ExtOsc.o
+ .debug_abbrev  0x00000d7b      0x14f Build/obj/Clock_Ip_FracDiv.o
+ .debug_abbrev  0x00000eca       0x92 Build/obj/Clock_Ip_Frequency.o
+ .debug_abbrev  0x00000f5c      0x1e8 Build/obj/Clock_Ip_Gate.o
+ .debug_abbrev  0x00001144      0x208 Build/obj/Clock_Ip_IntOsc.o
+ .debug_abbrev  0x0000134c      0x12f Build/obj/Clock_Ip_Monitor.o
+ .debug_abbrev  0x0000147b      0x22f Build/obj/Clock_Ip_Pll.o
+ .debug_abbrev  0x000016aa      0x115 Build/obj/Clock_Ip_ProgFreqSwitch.o
+ .debug_abbrev  0x000017bf      0x1e8 Build/obj/Clock_Ip_Selector.o
+ .debug_abbrev  0x000019a7      0x254 Build/obj/Clock_Ip_Specific.o
+ .debug_abbrev  0x00001bfb      0x1c2 Build/obj/Mcu.o
+ .debug_abbrev  0x00001dbd      0x14a Build/obj/Mcu_Ipw.o
+ .debug_abbrev  0x00001f07      0x1ad Build/obj/Power_Ip.o
+ .debug_abbrev  0x000020b4       0xc4 Build/obj/Power_Ip_CortexM4.o
+ .debug_abbrev  0x00002178       0xc1 Build/obj/Power_Ip_PMC.o
+ .debug_abbrev  0x00002239      0x138 Build/obj/Power_Ip_Private.o
+ .debug_abbrev  0x00002371      0x14a Build/obj/Power_Ip_RCM.o
+ .debug_abbrev  0x000024bb      0x15c Build/obj/Power_Ip_SMC.o
+ .debug_abbrev  0x00002617      0x148 Build/obj/Port.o
+ .debug_abbrev  0x0000275f      0x211 Build/obj/Port_Ci_Port_Ip.o
+ .debug_abbrev  0x00002970      0x17d Build/obj/Port_Ipw.o
+ .debug_abbrev  0x00002aed       0xf3 Build/obj/Dio.o
+ .debug_abbrev  0x00002be0      0x17d Build/obj/Dio_Ipw.o
+ .debug_abbrev  0x00002d5d      0x17f Build/obj/Gpio_Dio_Ip.o
+ .debug_abbrev  0x00002edc       0xc0 Build/obj/SchM_Dio.o
+ .debug_abbrev  0x00002f9c       0xc0 Build/obj/SchM_Mcu.o
+ .debug_abbrev  0x0000305c       0xc0 Build/obj/SchM_Port.o
+ .debug_abbrev  0x0000311c      0x15b Build/obj/HwIoAb_0_Buttons.o
+ .debug_abbrev  0x00003277       0xbe Build/obj/HwIoAb_0_Buttons_Cfg.o
+ .debug_abbrev  0x00003335      0x106 Build/obj/HwIoAb_1_Leds.o
+ .debug_abbrev  0x0000343b       0xcf Build/obj/HwIoAb_1_Leds_Cfg.o
+ .debug_abbrev  0x0000350a      0x24f Build/obj/Scheduler.o
+ .debug_abbrev  0x00003759       0xdd Build/obj/Scheduler_Cfg.o
+ .debug_abbrev  0x00003836       0xcb Build/obj/startup.o
+ .debug_abbrev  0x00003901      0x155 Build/obj/system.o
+ .debug_abbrev  0x00003a56       0x47 Build/obj/exceptions.o
+ .debug_abbrev  0x00003a9d      0x101 Build/obj/Clock_Ip_PBcfg.o
+ .debug_abbrev  0x00003b9e      0x11f Build/obj/Mcu_PBcfg.o
+ .debug_abbrev  0x00003cbd       0x9e Build/obj/OsIf_Cfg.o
+ .debug_abbrev  0x00003d5b      0x101 Build/obj/Port_Ci_Port_Ip_PBcfg.o
+ .debug_abbrev  0x00003e5c      0x134 Build/obj/Port_PBcfg.o
+ .debug_abbrev  0x00003f90       0xff Build/obj/Power_Ip_PBcfg.o
+ .debug_abbrev  0x0000408f      0x209 Build/obj/SEGGER_RTT.o
+ .debug_abbrev  0x00004298      0x190 Build/obj/SEGGER_RTT_printf.o
+ .debug_abbrev  0x00004428       0x14 c:/nxp/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/thumb/v7e-m+fp/hard\libgcc.a(_aeabi_uldivmod.o)
+ .debug_abbrev  0x0000443c      0x122 c:/nxp/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/thumb/v7e-m+fp/hard\libgcc.a(_udivmoddi4.o)
+ .debug_abbrev  0x0000455e       0x14 c:/nxp/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/thumb/v7e-m+fp/hard\libgcc.a(_dvmd_tls.o)
 
 .debug_aranges  0x00000000     0x12f0
  .debug_aranges
-                0x00000000       0x68 Build/obj/main.o
+                0x00000000       0x38 Build/obj/main.o
  .debug_aranges
-                0x00000068       0x60 Build/obj/OsIf_Timer.o
+                0x00000038       0x60 Build/obj/OsIf_Timer.o
  .debug_aranges
-                0x000000c8       0x40 Build/obj/OsIf_Timer_System.o
+                0x00000098       0x40 Build/obj/OsIf_Timer_System.o
  .debug_aranges
-                0x00000108       0x30 Build/obj/OsIf_Timer_System_Internal_Systick.o
+                0x000000d8       0x30 Build/obj/OsIf_Timer_System_Internal_Systick.o
  .debug_aranges
-                0x00000138       0xa0 Build/obj/Clock_Ip.o
+                0x00000108       0xa0 Build/obj/Clock_Ip.o
  .debug_aranges
-                0x000001d8       0x18 Build/obj/Clock_Ip_Data.o
+                0x000001a8       0x18 Build/obj/Clock_Ip_Data.o
  .debug_aranges
-                0x000001f0      0x100 Build/obj/Clock_Ip_Divider.o
+                0x000001c0      0x100 Build/obj/Clock_Ip_Divider.o
  .debug_aranges
-                0x000002f0       0x20 Build/obj/Clock_Ip_DividerTrigger.o
+                0x000002c0       0x20 Build/obj/Clock_Ip_DividerTrigger.o
  .debug_aranges
-                0x00000310       0x70 Build/obj/Clock_Ip_ExtOsc.o
+                0x000002e0       0x70 Build/obj/Clock_Ip_ExtOsc.o
  .debug_aranges
-                0x00000380       0x28 Build/obj/Clock_Ip_FracDiv.o
+                0x00000350       0x28 Build/obj/Clock_Ip_FracDiv.o
  .debug_aranges
-                0x000003a8       0x20 Build/obj/Clock_Ip_Frequency.o
+                0x00000378       0x20 Build/obj/Clock_Ip_Frequency.o
  .debug_aranges
-                0x000003c8       0xb8 Build/obj/Clock_Ip_Gate.o
+                0x00000398       0xb8 Build/obj/Clock_Ip_Gate.o
  .debug_aranges
-                0x00000480       0xf0 Build/obj/Clock_Ip_IntOsc.o
+                0x00000450       0xf0 Build/obj/Clock_Ip_IntOsc.o
  .debug_aranges
-                0x00000570       0x30 Build/obj/Clock_Ip_Monitor.o
+                0x00000540       0x30 Build/obj/Clock_Ip_Monitor.o
  .debug_aranges
-                0x000005a0       0x78 Build/obj/Clock_Ip_Pll.o
+                0x00000570       0x78 Build/obj/Clock_Ip_Pll.o
  .debug_aranges
-                0x00000618       0x20 Build/obj/Clock_Ip_ProgFreqSwitch.o
+                0x000005e8       0x20 Build/obj/Clock_Ip_ProgFreqSwitch.o
  .debug_aranges
-                0x00000638      0x150 Build/obj/Clock_Ip_Selector.o
+                0x00000608      0x150 Build/obj/Clock_Ip_Selector.o
  .debug_aranges
-                0x00000788       0x88 Build/obj/Clock_Ip_Specific.o
+                0x00000758       0x88 Build/obj/Clock_Ip_Specific.o
  .debug_aranges
-                0x00000810       0x60 Build/obj/Mcu.o
+                0x000007e0       0x60 Build/obj/Mcu.o
  .debug_aranges
-                0x00000870       0x48 Build/obj/Mcu_Ipw.o
+                0x00000840       0x48 Build/obj/Mcu_Ipw.o
  .debug_aranges
-                0x000008b8       0x58 Build/obj/Power_Ip.o
+                0x00000888       0x58 Build/obj/Power_Ip.o
  .debug_aranges
-                0x00000910       0x38 Build/obj/Power_Ip_CortexM4.o
+                0x000008e0       0x38 Build/obj/Power_Ip_CortexM4.o
  .debug_aranges
-                0x00000948       0x20 Build/obj/Power_Ip_PMC.o
+                0x00000918       0x20 Build/obj/Power_Ip_PMC.o
  .debug_aranges
-                0x00000968       0x38 Build/obj/Power_Ip_Private.o
+                0x00000938       0x38 Build/obj/Power_Ip_Private.o
  .debug_aranges
-                0x000009a0       0x30 Build/obj/Power_Ip_RCM.o
+                0x00000970       0x30 Build/obj/Power_Ip_RCM.o
  .debug_aranges
-                0x000009d0       0x30 Build/obj/Power_Ip_SMC.o
+                0x000009a0       0x30 Build/obj/Power_Ip_SMC.o
  .debug_aranges
-                0x00000a00       0x28 Build/obj/Port.o
+                0x000009d0       0x28 Build/obj/Port.o
  .debug_aranges
-                0x00000a28       0x60 Build/obj/Port_Ci_Port_Ip.o
+                0x000009f8       0x60 Build/obj/Port_Ci_Port_Ip.o
  .debug_aranges
-                0x00000a88       0x30 Build/obj/Port_Ipw.o
+                0x00000a58       0x30 Build/obj/Port_Ipw.o
  .debug_aranges
-                0x00000ab8       0x50 Build/obj/Dio.o
+                0x00000a88       0x50 Build/obj/Dio.o
  .debug_aranges
-                0x00000b08       0x50 Build/obj/Dio_Ipw.o
+                0x00000ad8       0x50 Build/obj/Dio_Ipw.o
  .debug_aranges
-                0x00000b58       0x58 Build/obj/Gpio_Dio_Ip.o
+                0x00000b28       0x58 Build/obj/Gpio_Dio_Ip.o
  .debug_aranges
-                0x00000bb0       0x40 Build/obj/SchM_Dio.o
+                0x00000b80       0x40 Build/obj/SchM_Dio.o
  .debug_aranges
-                0x00000bf0       0x50 Build/obj/SchM_Mcu.o
+                0x00000bc0       0x50 Build/obj/SchM_Mcu.o
  .debug_aranges
-                0x00000c40      0x1e0 Build/obj/SchM_Port.o
+                0x00000c10      0x1e0 Build/obj/SchM_Port.o
  .debug_aranges
-                0x00000e20       0x30 Build/obj/HwIoAb_0_Buttons.o
+                0x00000df0       0x30 Build/obj/HwIoAb_0_Buttons.o
  .debug_aranges
-                0x00000e50       0x18 Build/obj/HwIoAb_0_Buttons_Cfg.o
+                0x00000e20       0x18 Build/obj/HwIoAb_0_Buttons_Cfg.o
  .debug_aranges
-                0x00000e68       0x38 Build/obj/HwIoAb_1_Leds.o
+                0x00000e38       0x38 Build/obj/HwIoAb_1_Leds.o
  .debug_aranges
-                0x00000ea0       0x18 Build/obj/HwIoAb_1_Leds_Cfg.o
+                0x00000e70       0x18 Build/obj/HwIoAb_1_Leds_Cfg.o
  .debug_aranges
-                0x00000eb8      0x150 Build/obj/Scheduler.o
+                0x00000e88      0x150 Build/obj/Scheduler.o
  .debug_aranges
-                0x00001008       0x18 Build/obj/Scheduler_Cfg.o
+                0x00000fd8       0x48 Build/obj/Scheduler_Cfg.o
  .debug_aranges
                 0x00001020       0x20 Build/obj/startup.o
  .debug_aranges
@@ -15420,50 +15420,51 @@ LOAD linker stubs
  .debug_aranges
                 0x000012b0       0x40 Build/obj/SEGGER_RTT_printf.o
 
-.debug_ranges   0x00000000     0x1068
- .debug_ranges  0x00000000       0x58 Build/obj/main.o
- .debug_ranges  0x00000058       0x50 Build/obj/OsIf_Timer.o
- .debug_ranges  0x000000a8       0x30 Build/obj/OsIf_Timer_System.o
- .debug_ranges  0x000000d8       0x20 Build/obj/OsIf_Timer_System_Internal_Systick.o
- .debug_ranges  0x000000f8       0x90 Build/obj/Clock_Ip.o
- .debug_ranges  0x00000188       0xf0 Build/obj/Clock_Ip_Divider.o
- .debug_ranges  0x00000278       0x10 Build/obj/Clock_Ip_DividerTrigger.o
- .debug_ranges  0x00000288       0x60 Build/obj/Clock_Ip_ExtOsc.o
- .debug_ranges  0x000002e8       0x18 Build/obj/Clock_Ip_FracDiv.o
- .debug_ranges  0x00000300       0x10 Build/obj/Clock_Ip_Frequency.o
- .debug_ranges  0x00000310       0xa8 Build/obj/Clock_Ip_Gate.o
- .debug_ranges  0x000003b8       0xe0 Build/obj/Clock_Ip_IntOsc.o
- .debug_ranges  0x00000498       0x20 Build/obj/Clock_Ip_Monitor.o
- .debug_ranges  0x000004b8       0x68 Build/obj/Clock_Ip_Pll.o
- .debug_ranges  0x00000520       0x10 Build/obj/Clock_Ip_ProgFreqSwitch.o
- .debug_ranges  0x00000530      0x140 Build/obj/Clock_Ip_Selector.o
- .debug_ranges  0x00000670       0x78 Build/obj/Clock_Ip_Specific.o
- .debug_ranges  0x000006e8       0x50 Build/obj/Mcu.o
- .debug_ranges  0x00000738       0x38 Build/obj/Mcu_Ipw.o
- .debug_ranges  0x00000770       0x48 Build/obj/Power_Ip.o
- .debug_ranges  0x000007b8       0x28 Build/obj/Power_Ip_CortexM4.o
- .debug_ranges  0x000007e0       0x10 Build/obj/Power_Ip_PMC.o
- .debug_ranges  0x000007f0       0x28 Build/obj/Power_Ip_Private.o
- .debug_ranges  0x00000818       0x20 Build/obj/Power_Ip_RCM.o
- .debug_ranges  0x00000838       0x20 Build/obj/Power_Ip_SMC.o
- .debug_ranges  0x00000858       0x18 Build/obj/Port.o
- .debug_ranges  0x00000870       0x50 Build/obj/Port_Ci_Port_Ip.o
- .debug_ranges  0x000008c0       0x20 Build/obj/Port_Ipw.o
- .debug_ranges  0x000008e0       0x40 Build/obj/Dio.o
- .debug_ranges  0x00000920       0x40 Build/obj/Dio_Ipw.o
- .debug_ranges  0x00000960       0x48 Build/obj/Gpio_Dio_Ip.o
- .debug_ranges  0x000009a8       0x30 Build/obj/SchM_Dio.o
- .debug_ranges  0x000009d8       0x40 Build/obj/SchM_Mcu.o
- .debug_ranges  0x00000a18      0x1d0 Build/obj/SchM_Port.o
- .debug_ranges  0x00000be8       0x20 Build/obj/HwIoAb_0_Buttons.o
- .debug_ranges  0x00000c08       0x28 Build/obj/HwIoAb_1_Leds.o
- .debug_ranges  0x00000c30      0x140 Build/obj/Scheduler.o
- .debug_ranges  0x00000d70       0x10 Build/obj/startup.o
- .debug_ranges  0x00000d80       0x30 Build/obj/system.o
- .debug_ranges  0x00000db0       0x58 Build/obj/exceptions.o
- .debug_ranges  0x00000e08      0x128 Build/obj/SEGGER_RTT.o
- .debug_ranges  0x00000f30       0x48 Build/obj/SEGGER_RTT_printf.o
- .debug_ranges  0x00000f78       0xf0 c:/nxp/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/thumb/v7e-m+fp/hard\libgcc.a(_udivmoddi4.o)
+.debug_ranges   0x00000000     0x1070
+ .debug_ranges  0x00000000       0x28 Build/obj/main.o
+ .debug_ranges  0x00000028       0x50 Build/obj/OsIf_Timer.o
+ .debug_ranges  0x00000078       0x30 Build/obj/OsIf_Timer_System.o
+ .debug_ranges  0x000000a8       0x20 Build/obj/OsIf_Timer_System_Internal_Systick.o
+ .debug_ranges  0x000000c8       0x90 Build/obj/Clock_Ip.o
+ .debug_ranges  0x00000158       0xf0 Build/obj/Clock_Ip_Divider.o
+ .debug_ranges  0x00000248       0x10 Build/obj/Clock_Ip_DividerTrigger.o
+ .debug_ranges  0x00000258       0x60 Build/obj/Clock_Ip_ExtOsc.o
+ .debug_ranges  0x000002b8       0x18 Build/obj/Clock_Ip_FracDiv.o
+ .debug_ranges  0x000002d0       0x10 Build/obj/Clock_Ip_Frequency.o
+ .debug_ranges  0x000002e0       0xa8 Build/obj/Clock_Ip_Gate.o
+ .debug_ranges  0x00000388       0xe0 Build/obj/Clock_Ip_IntOsc.o
+ .debug_ranges  0x00000468       0x20 Build/obj/Clock_Ip_Monitor.o
+ .debug_ranges  0x00000488       0x68 Build/obj/Clock_Ip_Pll.o
+ .debug_ranges  0x000004f0       0x10 Build/obj/Clock_Ip_ProgFreqSwitch.o
+ .debug_ranges  0x00000500      0x140 Build/obj/Clock_Ip_Selector.o
+ .debug_ranges  0x00000640       0x78 Build/obj/Clock_Ip_Specific.o
+ .debug_ranges  0x000006b8       0x50 Build/obj/Mcu.o
+ .debug_ranges  0x00000708       0x38 Build/obj/Mcu_Ipw.o
+ .debug_ranges  0x00000740       0x48 Build/obj/Power_Ip.o
+ .debug_ranges  0x00000788       0x28 Build/obj/Power_Ip_CortexM4.o
+ .debug_ranges  0x000007b0       0x10 Build/obj/Power_Ip_PMC.o
+ .debug_ranges  0x000007c0       0x28 Build/obj/Power_Ip_Private.o
+ .debug_ranges  0x000007e8       0x20 Build/obj/Power_Ip_RCM.o
+ .debug_ranges  0x00000808       0x20 Build/obj/Power_Ip_SMC.o
+ .debug_ranges  0x00000828       0x18 Build/obj/Port.o
+ .debug_ranges  0x00000840       0x50 Build/obj/Port_Ci_Port_Ip.o
+ .debug_ranges  0x00000890       0x20 Build/obj/Port_Ipw.o
+ .debug_ranges  0x000008b0       0x40 Build/obj/Dio.o
+ .debug_ranges  0x000008f0       0x40 Build/obj/Dio_Ipw.o
+ .debug_ranges  0x00000930       0x48 Build/obj/Gpio_Dio_Ip.o
+ .debug_ranges  0x00000978       0x30 Build/obj/SchM_Dio.o
+ .debug_ranges  0x000009a8       0x40 Build/obj/SchM_Mcu.o
+ .debug_ranges  0x000009e8      0x1d0 Build/obj/SchM_Port.o
+ .debug_ranges  0x00000bb8       0x20 Build/obj/HwIoAb_0_Buttons.o
+ .debug_ranges  0x00000bd8       0x28 Build/obj/HwIoAb_1_Leds.o
+ .debug_ranges  0x00000c00      0x140 Build/obj/Scheduler.o
+ .debug_ranges  0x00000d40       0x38 Build/obj/Scheduler_Cfg.o
+ .debug_ranges  0x00000d78       0x10 Build/obj/startup.o
+ .debug_ranges  0x00000d88       0x30 Build/obj/system.o
+ .debug_ranges  0x00000db8       0x58 Build/obj/exceptions.o
+ .debug_ranges  0x00000e10      0x128 Build/obj/SEGGER_RTT.o
+ .debug_ranges  0x00000f38       0x48 Build/obj/SEGGER_RTT_printf.o
+ .debug_ranges  0x00000f80       0xf0 c:/nxp/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/thumb/v7e-m+fp/hard\libgcc.a(_udivmoddi4.o)
 
 .debug_macro    0x00000000    0x1336d
  .debug_macro   0x00000000      0x676 Build/obj/main.o
@@ -15707,146 +15708,146 @@ LOAD linker stubs
  .debug_macro   0x00013200       0x16 Build/obj/SEGGER_RTT.o
  .debug_macro   0x00013216      0x157 Build/obj/SEGGER_RTT_printf.o
 
-.debug_line     0x00000000    0x12cc3
- .debug_line    0x00000000      0x984 Build/obj/main.o
- .debug_line    0x00000984      0x3f0 Build/obj/OsIf_Timer.o
- .debug_line    0x00000d74      0x3dd Build/obj/OsIf_Timer_System.o
- .debug_line    0x00001151      0x37d Build/obj/OsIf_Timer_System_Internal_Systick.o
- .debug_line    0x000014ce      0xcc1 Build/obj/Clock_Ip.o
- .debug_line    0x0000218f      0x3ff Build/obj/Clock_Ip_Data.o
- .debug_line    0x0000258e      0x64a Build/obj/Clock_Ip_Divider.o
- .debug_line    0x00002bd8      0x41c Build/obj/Clock_Ip_DividerTrigger.o
- .debug_line    0x00002ff4      0x520 Build/obj/Clock_Ip_ExtOsc.o
- .debug_line    0x00003514      0x41c Build/obj/Clock_Ip_FracDiv.o
- .debug_line    0x00003930      0x419 Build/obj/Clock_Ip_Frequency.o
- .debug_line    0x00003d49      0x574 Build/obj/Clock_Ip_Gate.o
- .debug_line    0x000042bd      0x75a Build/obj/Clock_Ip_IntOsc.o
- .debug_line    0x00004a17      0x44b Build/obj/Clock_Ip_Monitor.o
- .debug_line    0x00004e62      0x504 Build/obj/Clock_Ip_Pll.o
- .debug_line    0x00005366      0x41c Build/obj/Clock_Ip_ProgFreqSwitch.o
- .debug_line    0x00005782      0x75e Build/obj/Clock_Ip_Selector.o
- .debug_line    0x00005ee0      0xb08 Build/obj/Clock_Ip_Specific.o
- .debug_line    0x000069e8      0x664 Build/obj/Mcu.o
- .debug_line    0x0000704c      0x58e Build/obj/Mcu_Ipw.o
- .debug_line    0x000075da      0x530 Build/obj/Power_Ip.o
- .debug_line    0x00007b0a      0x468 Build/obj/Power_Ip_CortexM4.o
- .debug_line    0x00007f72      0x48f Build/obj/Power_Ip_PMC.o
- .debug_line    0x00008401      0x499 Build/obj/Power_Ip_Private.o
- .debug_line    0x0000889a      0x4e8 Build/obj/Power_Ip_RCM.o
- .debug_line    0x00008d82      0x5d1 Build/obj/Power_Ip_SMC.o
- .debug_line    0x00009353      0x45c Build/obj/Port.o
- .debug_line    0x000097af      0x73c Build/obj/Port_Ci_Port_Ip.o
- .debug_line    0x00009eeb      0x701 Build/obj/Port_Ipw.o
- .debug_line    0x0000a5ec      0x3fc Build/obj/Dio.o
- .debug_line    0x0000a9e8      0x3f7 Build/obj/Dio_Ipw.o
- .debug_line    0x0000addf      0x3af Build/obj/Gpio_Dio_Ip.o
- .debug_line    0x0000b18e      0x41e Build/obj/SchM_Dio.o
- .debug_line    0x0000b5ac      0x46a Build/obj/SchM_Mcu.o
- .debug_line    0x0000ba16      0xbd8 Build/obj/SchM_Port.o
- .debug_line    0x0000c5ee      0x911 Build/obj/HwIoAb_0_Buttons.o
- .debug_line    0x0000ceff      0x4da Build/obj/HwIoAb_0_Buttons_Cfg.o
- .debug_line    0x0000d3d9      0x780 Build/obj/HwIoAb_1_Leds.o
- .debug_line    0x0000db59      0x4d1 Build/obj/HwIoAb_1_Leds_Cfg.o
- .debug_line    0x0000e02a      0xc00 Build/obj/Scheduler.o
- .debug_line    0x0000ec2a      0x270 Build/obj/Scheduler_Cfg.o
- .debug_line    0x0000ee9a      0x32f Build/obj/startup.o
- .debug_line    0x0000f1c9      0x6ea Build/obj/system.o
- .debug_line    0x0000f8b3      0x40a Build/obj/exceptions.o
- .debug_line    0x0000fcbd      0x3f9 Build/obj/Clock_Ip_PBcfg.o
- .debug_line    0x000100b6      0x50b Build/obj/Mcu_PBcfg.o
- .debug_line    0x000105c1      0x2d5 Build/obj/OsIf_Cfg.o
- .debug_line    0x00010896      0x403 Build/obj/Port_Ci_Port_Ip_PBcfg.o
- .debug_line    0x00010c99      0x42e Build/obj/Port_PBcfg.o
- .debug_line    0x000110c7      0x414 Build/obj/Power_Ip_PBcfg.o
- .debug_line    0x000114db      0xbae Build/obj/SEGGER_RTT.o
- .debug_line    0x00012089      0x5ce Build/obj/SEGGER_RTT_printf.o
- .debug_line    0x00012657       0x68 c:/nxp/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/thumb/v7e-m+fp/hard\libgcc.a(_aeabi_uldivmod.o)
- .debug_line    0x000126bf      0x59c c:/nxp/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/thumb/v7e-m+fp/hard\libgcc.a(_udivmoddi4.o)
- .debug_line    0x00012c5b       0x68 c:/nxp/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/thumb/v7e-m+fp/hard\libgcc.a(_dvmd_tls.o)
+.debug_line     0x00000000    0x12cbd
+ .debug_line    0x00000000      0x906 Build/obj/main.o
+ .debug_line    0x00000906      0x3f0 Build/obj/OsIf_Timer.o
+ .debug_line    0x00000cf6      0x3dd Build/obj/OsIf_Timer_System.o
+ .debug_line    0x000010d3      0x37d Build/obj/OsIf_Timer_System_Internal_Systick.o
+ .debug_line    0x00001450      0xcc1 Build/obj/Clock_Ip.o
+ .debug_line    0x00002111      0x3ff Build/obj/Clock_Ip_Data.o
+ .debug_line    0x00002510      0x64a Build/obj/Clock_Ip_Divider.o
+ .debug_line    0x00002b5a      0x41c Build/obj/Clock_Ip_DividerTrigger.o
+ .debug_line    0x00002f76      0x520 Build/obj/Clock_Ip_ExtOsc.o
+ .debug_line    0x00003496      0x41c Build/obj/Clock_Ip_FracDiv.o
+ .debug_line    0x000038b2      0x419 Build/obj/Clock_Ip_Frequency.o
+ .debug_line    0x00003ccb      0x574 Build/obj/Clock_Ip_Gate.o
+ .debug_line    0x0000423f      0x75a Build/obj/Clock_Ip_IntOsc.o
+ .debug_line    0x00004999      0x44b Build/obj/Clock_Ip_Monitor.o
+ .debug_line    0x00004de4      0x504 Build/obj/Clock_Ip_Pll.o
+ .debug_line    0x000052e8      0x41c Build/obj/Clock_Ip_ProgFreqSwitch.o
+ .debug_line    0x00005704      0x75e Build/obj/Clock_Ip_Selector.o
+ .debug_line    0x00005e62      0xb08 Build/obj/Clock_Ip_Specific.o
+ .debug_line    0x0000696a      0x664 Build/obj/Mcu.o
+ .debug_line    0x00006fce      0x58e Build/obj/Mcu_Ipw.o
+ .debug_line    0x0000755c      0x530 Build/obj/Power_Ip.o
+ .debug_line    0x00007a8c      0x468 Build/obj/Power_Ip_CortexM4.o
+ .debug_line    0x00007ef4      0x48f Build/obj/Power_Ip_PMC.o
+ .debug_line    0x00008383      0x499 Build/obj/Power_Ip_Private.o
+ .debug_line    0x0000881c      0x4e8 Build/obj/Power_Ip_RCM.o
+ .debug_line    0x00008d04      0x5d1 Build/obj/Power_Ip_SMC.o
+ .debug_line    0x000092d5      0x45c Build/obj/Port.o
+ .debug_line    0x00009731      0x73c Build/obj/Port_Ci_Port_Ip.o
+ .debug_line    0x00009e6d      0x701 Build/obj/Port_Ipw.o
+ .debug_line    0x0000a56e      0x3fc Build/obj/Dio.o
+ .debug_line    0x0000a96a      0x3f7 Build/obj/Dio_Ipw.o
+ .debug_line    0x0000ad61      0x3af Build/obj/Gpio_Dio_Ip.o
+ .debug_line    0x0000b110      0x41e Build/obj/SchM_Dio.o
+ .debug_line    0x0000b52e      0x46a Build/obj/SchM_Mcu.o
+ .debug_line    0x0000b998      0xbd8 Build/obj/SchM_Port.o
+ .debug_line    0x0000c570      0x911 Build/obj/HwIoAb_0_Buttons.o
+ .debug_line    0x0000ce81      0x4da Build/obj/HwIoAb_0_Buttons_Cfg.o
+ .debug_line    0x0000d35b      0x780 Build/obj/HwIoAb_1_Leds.o
+ .debug_line    0x0000dadb      0x4d1 Build/obj/HwIoAb_1_Leds_Cfg.o
+ .debug_line    0x0000dfac      0xc00 Build/obj/Scheduler.o
+ .debug_line    0x0000ebac      0x2e8 Build/obj/Scheduler_Cfg.o
+ .debug_line    0x0000ee94      0x32f Build/obj/startup.o
+ .debug_line    0x0000f1c3      0x6ea Build/obj/system.o
+ .debug_line    0x0000f8ad      0x40a Build/obj/exceptions.o
+ .debug_line    0x0000fcb7      0x3f9 Build/obj/Clock_Ip_PBcfg.o
+ .debug_line    0x000100b0      0x50b Build/obj/Mcu_PBcfg.o
+ .debug_line    0x000105bb      0x2d5 Build/obj/OsIf_Cfg.o
+ .debug_line    0x00010890      0x403 Build/obj/Port_Ci_Port_Ip_PBcfg.o
+ .debug_line    0x00010c93      0x42e Build/obj/Port_PBcfg.o
+ .debug_line    0x000110c1      0x414 Build/obj/Power_Ip_PBcfg.o
+ .debug_line    0x000114d5      0xbae Build/obj/SEGGER_RTT.o
+ .debug_line    0x00012083      0x5ce Build/obj/SEGGER_RTT_printf.o
+ .debug_line    0x00012651       0x68 c:/nxp/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/thumb/v7e-m+fp/hard\libgcc.a(_aeabi_uldivmod.o)
+ .debug_line    0x000126b9      0x59c c:/nxp/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/thumb/v7e-m+fp/hard\libgcc.a(_udivmoddi4.o)
+ .debug_line    0x00012c55       0x68 c:/nxp/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/thumb/v7e-m+fp/hard\libgcc.a(_dvmd_tls.o)
 
 .debug_str      0x00000000    0x89b91
- .debug_str     0x00000000    0x241ff Build/obj/main.o
-                              0x249c3 (size before relaxing)
- .debug_str     0x000241ff      0x5d0 Build/obj/OsIf_Timer.o
+ .debug_str     0x00000000    0x241b0 Build/obj/main.o
+                              0x24974 (size before relaxing)
+ .debug_str     0x000241b0      0x5d0 Build/obj/OsIf_Timer.o
                                0x8029 (size before relaxing)
- .debug_str     0x000247cf      0x6b9 Build/obj/OsIf_Timer_System.o
+ .debug_str     0x00024780      0x6b9 Build/obj/OsIf_Timer_System.o
                                0x8577 (size before relaxing)
- .debug_str     0x00024e88      0x4c2 Build/obj/OsIf_Timer_System_Internal_Systick.o
+ .debug_str     0x00024e39      0x4c2 Build/obj/OsIf_Timer_System_Internal_Systick.o
                                0x76cb (size before relaxing)
- .debug_str     0x0002534a     0x1de0 Build/obj/Clock_Ip.o
+ .debug_str     0x000252fb     0x1de0 Build/obj/Clock_Ip.o
                               0x13cac (size before relaxing)
- .debug_str     0x0002712a      0xac4 Build/obj/Clock_Ip_Data.o
+ .debug_str     0x000270db      0xac4 Build/obj/Clock_Ip_Data.o
                               0x13094 (size before relaxing)
- .debug_str     0x00027bee      0x59b Build/obj/Clock_Ip_Divider.o
+ .debug_str     0x00027b9f      0x59b Build/obj/Clock_Ip_Divider.o
                               0x12adf (size before relaxing)
- .debug_str     0x00028189      0x1a5 Build/obj/Clock_Ip_DividerTrigger.o
+ .debug_str     0x0002813a      0x1a5 Build/obj/Clock_Ip_DividerTrigger.o
                               0x1261f (size before relaxing)
- .debug_str     0x0002832e      0x2a9 Build/obj/Clock_Ip_ExtOsc.o
+ .debug_str     0x000282df      0x2a9 Build/obj/Clock_Ip_ExtOsc.o
                               0x1297e (size before relaxing)
- .debug_str     0x000285d7      0x18b Build/obj/Clock_Ip_FracDiv.o
+ .debug_str     0x00028588      0x18b Build/obj/Clock_Ip_FracDiv.o
                               0x1260f (size before relaxing)
- .debug_str     0x00028762       0x59 Build/obj/Clock_Ip_Frequency.o
+ .debug_str     0x00028713       0x59 Build/obj/Clock_Ip_Frequency.o
                               0x123b7 (size before relaxing)
- .debug_str     0x000287bb      0x440 Build/obj/Clock_Ip_Gate.o
+ .debug_str     0x0002876c      0x440 Build/obj/Clock_Ip_Gate.o
                               0x12957 (size before relaxing)
- .debug_str     0x00028bfb      0x4a1 Build/obj/Clock_Ip_IntOsc.o
+ .debug_str     0x00028bac      0x4a1 Build/obj/Clock_Ip_IntOsc.o
                               0x12b81 (size before relaxing)
- .debug_str     0x0002909c      0x456 Build/obj/Clock_Ip_Monitor.o
+ .debug_str     0x0002904d      0x456 Build/obj/Clock_Ip_Monitor.o
                               0x12979 (size before relaxing)
- .debug_str     0x000294f2      0x26f Build/obj/Clock_Ip_Pll.o
+ .debug_str     0x000294a3      0x26f Build/obj/Clock_Ip_Pll.o
                               0x12a5e (size before relaxing)
- .debug_str     0x00029761      0x1ad Build/obj/Clock_Ip_ProgFreqSwitch.o
+ .debug_str     0x00029712      0x1ad Build/obj/Clock_Ip_ProgFreqSwitch.o
                               0x1268a (size before relaxing)
- .debug_str     0x0002990e      0x738 Build/obj/Clock_Ip_Selector.o
+ .debug_str     0x000298bf      0x738 Build/obj/Clock_Ip_Selector.o
                               0x12d6c (size before relaxing)
- .debug_str     0x0002a046      0x751 Build/obj/Clock_Ip_Specific.o
+ .debug_str     0x00029ff7      0x751 Build/obj/Clock_Ip_Specific.o
                               0x13ae2 (size before relaxing)
- .debug_str     0x0002a797      0x548 Build/obj/Mcu.o
+ .debug_str     0x0002a748      0x548 Build/obj/Mcu.o
                               0x19020 (size before relaxing)
- .debug_str     0x0002acdf      0x35f Build/obj/Mcu_Ipw.o
+ .debug_str     0x0002ac90      0x35f Build/obj/Mcu_Ipw.o
                               0x18b2c (size before relaxing)
- .debug_str     0x0002b03e      0xef6 Build/obj/Power_Ip.o
+ .debug_str     0x0002afef      0xef6 Build/obj/Power_Ip.o
                               0x1328e (size before relaxing)
- .debug_str     0x0002bf34      0x1fa Build/obj/Power_Ip_CortexM4.o
+ .debug_str     0x0002bee5      0x1fa Build/obj/Power_Ip_CortexM4.o
                               0x117fd (size before relaxing)
- .debug_str     0x0002c12e      0x163 Build/obj/Power_Ip_PMC.o
+ .debug_str     0x0002c0df      0x163 Build/obj/Power_Ip_PMC.o
                               0x12125 (size before relaxing)
- .debug_str     0x0002c291      0x1c2 Build/obj/Power_Ip_Private.o
+ .debug_str     0x0002c242      0x1c2 Build/obj/Power_Ip_Private.o
                               0x124a3 (size before relaxing)
- .debug_str     0x0002c453      0x1d2 Build/obj/Power_Ip_RCM.o
+ .debug_str     0x0002c404      0x1d2 Build/obj/Power_Ip_RCM.o
                               0x123d6 (size before relaxing)
- .debug_str     0x0002c625      0x1ee Build/obj/Power_Ip_SMC.o
+ .debug_str     0x0002c5d6      0x1ee Build/obj/Power_Ip_SMC.o
                               0x12a16 (size before relaxing)
- .debug_str     0x0002c813      0x155 Build/obj/Port.o
+ .debug_str     0x0002c7c4      0x155 Build/obj/Port.o
                               0x133d4 (size before relaxing)
- .debug_str     0x0002c968     0x19a4 Build/obj/Port_Ci_Port_Ip.o
+ .debug_str     0x0002c919     0x19a4 Build/obj/Port_Ci_Port_Ip.o
                                0xfb4f (size before relaxing)
- .debug_str     0x0002e30c      0x21f Build/obj/Port_Ipw.o
+ .debug_str     0x0002e2bd      0x21f Build/obj/Port_Ipw.o
                               0x13650 (size before relaxing)
- .debug_str     0x0002e52b      0x5c9 Build/obj/Dio.o
+ .debug_str     0x0002e4dc      0x5c9 Build/obj/Dio.o
                                0x9700 (size before relaxing)
- .debug_str     0x0002eaf4      0x215 Build/obj/Dio_Ipw.o
+ .debug_str     0x0002eaa5      0x215 Build/obj/Dio_Ipw.o
                                0x77d3 (size before relaxing)
- .debug_str     0x0002ed09      0x2df Build/obj/Gpio_Dio_Ip.o
+ .debug_str     0x0002ecba      0x2df Build/obj/Gpio_Dio_Ip.o
                                0x735d (size before relaxing)
- .debug_str     0x0002efe8      0x348 Build/obj/SchM_Dio.o
+ .debug_str     0x0002ef99      0x348 Build/obj/SchM_Dio.o
                                0x866d (size before relaxing)
- .debug_str     0x0002f330      0x291 Build/obj/SchM_Mcu.o
+ .debug_str     0x0002f2e1      0x291 Build/obj/SchM_Mcu.o
                                0x86f4 (size before relaxing)
- .debug_str     0x0002f5c1     0x1070 Build/obj/SchM_Port.o
+ .debug_str     0x0002f572     0x1070 Build/obj/SchM_Port.o
                                0x94da (size before relaxing)
- .debug_str     0x00030631      0x15d Build/obj/HwIoAb_0_Buttons.o
+ .debug_str     0x000305e2      0x15d Build/obj/HwIoAb_0_Buttons.o
                               0x1fef0 (size before relaxing)
- .debug_str     0x0003078e       0x58 Build/obj/HwIoAb_0_Buttons_Cfg.o
+ .debug_str     0x0003073f       0x58 Build/obj/HwIoAb_0_Buttons_Cfg.o
                               0x13946 (size before relaxing)
- .debug_str     0x000307e6       0xbb Build/obj/HwIoAb_1_Leds.o
+ .debug_str     0x00030797       0xbb Build/obj/HwIoAb_1_Leds.o
                               0x1fd20 (size before relaxing)
- .debug_str     0x000308a1       0x55 Build/obj/HwIoAb_1_Leds_Cfg.o
+ .debug_str     0x00030852       0x55 Build/obj/HwIoAb_1_Leds_Cfg.o
                               0x13890 (size before relaxing)
- .debug_str     0x000308f6      0x524 Build/obj/Scheduler.o
+ .debug_str     0x000308a7      0x524 Build/obj/Scheduler.o
                                0x8437 (size before relaxing)
- .debug_str     0x00030e1a       0x45 Build/obj/Scheduler_Cfg.o
-                               0x638b (size before relaxing)
+ .debug_str     0x00030dcb       0x94 Build/obj/Scheduler_Cfg.o
+                               0x63d7 (size before relaxing)
  .debug_str     0x00030e5f       0xd7 Build/obj/startup.o
                                0x5ff5 (size before relaxing)
  .debug_str     0x00030f36    0x57627 Build/obj/system.o
@@ -16015,89 +16016,90 @@ LOAD linker stubs
  .ARM.attributes
                 0x000007fb       0x34 Build/obj/Scheduler.o
  .ARM.attributes
-                0x0000082f       0x39 Build/obj/Scheduler_Cfg.o
+                0x0000082f       0x34 Build/obj/Scheduler_Cfg.o
  .ARM.attributes
-                0x00000868       0x34 Build/obj/startup.o
+                0x00000863       0x34 Build/obj/startup.o
  .ARM.attributes
-                0x0000089c       0x34 Build/obj/system.o
+                0x00000897       0x34 Build/obj/system.o
  .ARM.attributes
-                0x000008d0       0x34 Build/obj/exceptions.o
+                0x000008cb       0x34 Build/obj/exceptions.o
  .ARM.attributes
-                0x00000904       0x39 Build/obj/Clock_Ip_PBcfg.o
+                0x000008ff       0x39 Build/obj/Clock_Ip_PBcfg.o
  .ARM.attributes
-                0x0000093d       0x39 Build/obj/Mcu_PBcfg.o
+                0x00000938       0x39 Build/obj/Mcu_PBcfg.o
  .ARM.attributes
-                0x00000976       0x39 Build/obj/OsIf_Cfg.o
+                0x00000971       0x39 Build/obj/OsIf_Cfg.o
  .ARM.attributes
-                0x000009af       0x39 Build/obj/Port_Ci_Port_Ip_PBcfg.o
+                0x000009aa       0x39 Build/obj/Port_Ci_Port_Ip_PBcfg.o
  .ARM.attributes
-                0x000009e8       0x39 Build/obj/Port_PBcfg.o
+                0x000009e3       0x39 Build/obj/Port_PBcfg.o
  .ARM.attributes
-                0x00000a21       0x39 Build/obj/Power_Ip_PBcfg.o
+                0x00000a1c       0x39 Build/obj/Power_Ip_PBcfg.o
  .ARM.attributes
-                0x00000a5a       0x34 Build/obj/SEGGER_RTT.o
+                0x00000a55       0x34 Build/obj/SEGGER_RTT.o
  .ARM.attributes
-                0x00000a8e       0x34 Build/obj/SEGGER_RTT_printf.o
+                0x00000a89       0x34 Build/obj/SEGGER_RTT_printf.o
  .ARM.attributes
-                0x00000ac2       0x20 Build/obj/Vector_Table.o
+                0x00000abd       0x20 Build/obj/Vector_Table.o
  .ARM.attributes
-                0x00000ae2       0x1f Build/obj/startup_cm4.o
+                0x00000add       0x1f Build/obj/startup_cm4.o
  .ARM.attributes
-                0x00000b01       0x1e c:/nxp/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/thumb/v7e-m+fp/hard\libgcc.a(_aeabi_uldivmod.o)
+                0x00000afc       0x1e c:/nxp/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/thumb/v7e-m+fp/hard\libgcc.a(_aeabi_uldivmod.o)
  .ARM.attributes
-                0x00000b1f       0x34 c:/nxp/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/thumb/v7e-m+fp/hard\libgcc.a(_udivmoddi4.o)
+                0x00000b1a       0x34 c:/nxp/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/thumb/v7e-m+fp/hard\libgcc.a(_udivmoddi4.o)
  .ARM.attributes
-                0x00000b53       0x1e c:/nxp/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/thumb/v7e-m+fp/hard\libgcc.a(_dvmd_tls.o)
+                0x00000b4e       0x1e c:/nxp/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/thumb/v7e-m+fp/hard\libgcc.a(_dvmd_tls.o)
  .ARM.attributes
-                0x00000b71       0x34 c:/nxp/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-memcpy-stub.o)
+                0x00000b6c       0x34 c:/nxp/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-memcpy-stub.o)
  .ARM.attributes
-                0x00000ba5       0x34 c:/nxp/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-memset.o)
+                0x00000ba0       0x34 c:/nxp/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-memset.o)
 
-.debug_frame    0x00000000     0x30c8
- .debug_frame   0x00000000       0xd4 Build/obj/main.o
- .debug_frame   0x000000d4       0xf4 Build/obj/OsIf_Timer.o
- .debug_frame   0x000001c8       0xa0 Build/obj/OsIf_Timer_System.o
- .debug_frame   0x00000268       0x50 Build/obj/OsIf_Timer_System_Internal_Systick.o
- .debug_frame   0x000002b8      0x1e0 Build/obj/Clock_Ip.o
- .debug_frame   0x00000498      0x300 Build/obj/Clock_Ip_Divider.o
- .debug_frame   0x00000798       0x28 Build/obj/Clock_Ip_DividerTrigger.o
- .debug_frame   0x000007c0      0x12c Build/obj/Clock_Ip_ExtOsc.o
- .debug_frame   0x000008ec       0x40 Build/obj/Clock_Ip_FracDiv.o
- .debug_frame   0x0000092c       0x28 Build/obj/Clock_Ip_Frequency.o
- .debug_frame   0x00000954      0x220 Build/obj/Clock_Ip_Gate.o
- .debug_frame   0x00000b74      0x2dc Build/obj/Clock_Ip_IntOsc.o
- .debug_frame   0x00000e50       0x58 Build/obj/Clock_Ip_Monitor.o
- .debug_frame   0x00000ea8      0x144 Build/obj/Clock_Ip_Pll.o
- .debug_frame   0x00000fec       0x28 Build/obj/Clock_Ip_ProgFreqSwitch.o
- .debug_frame   0x00001014      0x404 Build/obj/Clock_Ip_Selector.o
- .debug_frame   0x00001418      0x16c Build/obj/Clock_Ip_Specific.o
- .debug_frame   0x00001584      0x100 Build/obj/Mcu.o
- .debug_frame   0x00001684       0xb0 Build/obj/Mcu_Ipw.o
- .debug_frame   0x00001734       0xe0 Build/obj/Power_Ip.o
- .debug_frame   0x00001814       0x70 Build/obj/Power_Ip_CortexM4.o
- .debug_frame   0x00001884       0x28 Build/obj/Power_Ip_PMC.o
- .debug_frame   0x000018ac       0x7c Build/obj/Power_Ip_Private.o
- .debug_frame   0x00001928       0x58 Build/obj/Power_Ip_RCM.o
- .debug_frame   0x00001980       0x5c Build/obj/Power_Ip_SMC.o
- .debug_frame   0x000019dc       0x44 Build/obj/Port.o
- .debug_frame   0x00001a20      0x100 Build/obj/Port_Ci_Port_Ip.o
- .debug_frame   0x00001b20       0x68 Build/obj/Port_Ipw.o
- .debug_frame   0x00001b88       0xd4 Build/obj/Dio.o
- .debug_frame   0x00001c5c       0xd4 Build/obj/Dio_Ipw.o
- .debug_frame   0x00001d30       0xd4 Build/obj/Gpio_Dio_Ip.o
- .debug_frame   0x00001e04       0x9c Build/obj/SchM_Dio.o
- .debug_frame   0x00001ea0       0xd4 Build/obj/SchM_Mcu.o
- .debug_frame   0x00001f74      0x64c Build/obj/SchM_Port.o
- .debug_frame   0x000025c0       0x60 Build/obj/HwIoAb_0_Buttons.o
- .debug_frame   0x00002620       0x7c Build/obj/HwIoAb_1_Leds.o
- .debug_frame   0x0000269c      0x3e8 Build/obj/Scheduler.o
- .debug_frame   0x00002a84       0x28 Build/obj/startup.o
- .debug_frame   0x00002aac       0x70 Build/obj/system.o
- .debug_frame   0x00002b1c       0xb0 Build/obj/exceptions.o
- .debug_frame   0x00002bcc      0x3e8 Build/obj/SEGGER_RTT.o
- .debug_frame   0x00002fb4       0xb4 Build/obj/SEGGER_RTT_printf.o
- .debug_frame   0x00003068       0x2c c:/nxp/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/thumb/v7e-m+fp/hard\libgcc.a(_aeabi_uldivmod.o)
- .debug_frame   0x00003094       0x34 c:/nxp/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/thumb/v7e-m+fp/hard\libgcc.a(_udivmoddi4.o)
+.debug_frame    0x00000000     0x30d8
+ .debug_frame   0x00000000       0x74 Build/obj/main.o
+ .debug_frame   0x00000074       0xf4 Build/obj/OsIf_Timer.o
+ .debug_frame   0x00000168       0xa0 Build/obj/OsIf_Timer_System.o
+ .debug_frame   0x00000208       0x50 Build/obj/OsIf_Timer_System_Internal_Systick.o
+ .debug_frame   0x00000258      0x1e0 Build/obj/Clock_Ip.o
+ .debug_frame   0x00000438      0x300 Build/obj/Clock_Ip_Divider.o
+ .debug_frame   0x00000738       0x28 Build/obj/Clock_Ip_DividerTrigger.o
+ .debug_frame   0x00000760      0x12c Build/obj/Clock_Ip_ExtOsc.o
+ .debug_frame   0x0000088c       0x40 Build/obj/Clock_Ip_FracDiv.o
+ .debug_frame   0x000008cc       0x28 Build/obj/Clock_Ip_Frequency.o
+ .debug_frame   0x000008f4      0x220 Build/obj/Clock_Ip_Gate.o
+ .debug_frame   0x00000b14      0x2dc Build/obj/Clock_Ip_IntOsc.o
+ .debug_frame   0x00000df0       0x58 Build/obj/Clock_Ip_Monitor.o
+ .debug_frame   0x00000e48      0x144 Build/obj/Clock_Ip_Pll.o
+ .debug_frame   0x00000f8c       0x28 Build/obj/Clock_Ip_ProgFreqSwitch.o
+ .debug_frame   0x00000fb4      0x404 Build/obj/Clock_Ip_Selector.o
+ .debug_frame   0x000013b8      0x16c Build/obj/Clock_Ip_Specific.o
+ .debug_frame   0x00001524      0x100 Build/obj/Mcu.o
+ .debug_frame   0x00001624       0xb0 Build/obj/Mcu_Ipw.o
+ .debug_frame   0x000016d4       0xe0 Build/obj/Power_Ip.o
+ .debug_frame   0x000017b4       0x70 Build/obj/Power_Ip_CortexM4.o
+ .debug_frame   0x00001824       0x28 Build/obj/Power_Ip_PMC.o
+ .debug_frame   0x0000184c       0x7c Build/obj/Power_Ip_Private.o
+ .debug_frame   0x000018c8       0x58 Build/obj/Power_Ip_RCM.o
+ .debug_frame   0x00001920       0x5c Build/obj/Power_Ip_SMC.o
+ .debug_frame   0x0000197c       0x44 Build/obj/Port.o
+ .debug_frame   0x000019c0      0x100 Build/obj/Port_Ci_Port_Ip.o
+ .debug_frame   0x00001ac0       0x68 Build/obj/Port_Ipw.o
+ .debug_frame   0x00001b28       0xd4 Build/obj/Dio.o
+ .debug_frame   0x00001bfc       0xd4 Build/obj/Dio_Ipw.o
+ .debug_frame   0x00001cd0       0xd4 Build/obj/Gpio_Dio_Ip.o
+ .debug_frame   0x00001da4       0x9c Build/obj/SchM_Dio.o
+ .debug_frame   0x00001e40       0xd4 Build/obj/SchM_Mcu.o
+ .debug_frame   0x00001f14      0x64c Build/obj/SchM_Port.o
+ .debug_frame   0x00002560       0x60 Build/obj/HwIoAb_0_Buttons.o
+ .debug_frame   0x000025c0       0x7c Build/obj/HwIoAb_1_Leds.o
+ .debug_frame   0x0000263c      0x3e8 Build/obj/Scheduler.o
+ .debug_frame   0x00002a24       0x70 Build/obj/Scheduler_Cfg.o
+ .debug_frame   0x00002a94       0x28 Build/obj/startup.o
+ .debug_frame   0x00002abc       0x70 Build/obj/system.o
+ .debug_frame   0x00002b2c       0xb0 Build/obj/exceptions.o
+ .debug_frame   0x00002bdc      0x3e8 Build/obj/SEGGER_RTT.o
+ .debug_frame   0x00002fc4       0xb4 Build/obj/SEGGER_RTT_printf.o
+ .debug_frame   0x00003078       0x2c c:/nxp/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/thumb/v7e-m+fp/hard\libgcc.a(_aeabi_uldivmod.o)
+ .debug_frame   0x000030a4       0x34 c:/nxp/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/thumb/v7e-m+fp/hard\libgcc.a(_udivmoddi4.o)
 
 .debug_loc      0x00000000     0x1073
  .debug_loc     0x00000000     0x1073 c:/nxp/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/thumb/v7e-m+fp/hard\libgcc.a(_udivmoddi4.o)

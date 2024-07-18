@@ -1,3 +1,9 @@
+IPA summary for Os_BuzzerTask/5 is missing.
+IPA summary for Os_CanTask/4 is missing.
+IPA summary for Os_EepromsTask/3 is missing.
+IPA summary for Os_PotsTask/2 is missing.
+IPA summary for Os_ButtonsTask/1 is missing.
+IPA summary for Os_LedsTask/0 is missing.
 
 Flattening functions:
 Overall time estimate: 0.000000 weighted by profile: 0.000000
@@ -13,93 +19,183 @@ Deciding on functions to be inlined into all callers and removing useless specul
 Overall time estimate: 0.000000 weighted by profile: 0.000000
 
 Why inlining failed?
+IPA summary for Os_BuzzerTask/5 is missing.
+IPA summary for Os_CanTask/4 is missing.
+IPA summary for Os_EepromsTask/3 is missing.
+IPA summary for Os_PotsTask/2 is missing.
+IPA summary for Os_ButtonsTask/1 is missing.
+IPA summary for Os_LedsTask/0 is missing.
 Symbol table:
 
-Os_BuzzerTask/9 (Os_BuzzerTask) @0d460460
+Os_100ms_Task/11 (Os_100ms_Task) @0d4af2a0
   Type: function
   Visibility: external public
   Address is taken.
   References: 
-  Referring: Task_Config/0 (addr) 
+  Referring: Task_Config/6 (addr) 
   Availability: not_available
   Function flags:
   Called by: 
   Calls: 
-Os_CanTask/8 (Os_CanTask) @0d4602a0
+Os_50ms_Task/10 (Os_50ms_Task) @0d4af1c0
   Type: function
   Visibility: external public
   Address is taken.
   References: 
-  Referring: Task_Config/0 (addr) 
+  Referring: Task_Config/6 (addr) 
   Availability: not_available
   Function flags:
   Called by: 
   Calls: 
-Os_EepromsTask/7 (Os_EepromsTask) @0d4601c0
-  Type: function
-  Visibility: external public
-  Address is taken.
-  References: 
-  Referring: Task_Config/0 (addr) 
-  Availability: not_available
-  Function flags:
-  Called by: 
-  Calls: 
-Os_PotsTask/6 (Os_PotsTask) @0d4600e0
-  Type: function
-  Visibility: external public
-  Address is taken.
-  References: 
-  Referring: Task_Config/0 (addr) 
-  Availability: not_available
-  Function flags:
-  Called by: 
-  Calls: 
-Os_100ms_Task/5 (Os_100ms_Task) @0d460000
-  Type: function
-  Visibility: external public
-  Address is taken.
-  References: 
-  Referring: Task_Config/0 (addr) 
-  Availability: not_available
-  Function flags:
-  Called by: 
-  Calls: 
-Os_50ms_Task/4 (Os_50ms_Task) @0d42dee0
-  Type: function
-  Visibility: external public
-  Address is taken.
-  References: 
-  Referring: Task_Config/0 (addr) 
-  Availability: not_available
-  Function flags:
-  Called by: 
-  Calls: 
-Scheduler_Config/3 (Scheduler_Config) @0d428bd0
+Scheduler_Config/9 (Scheduler_Config) @0d4a3d80
   Type: variable definition analyzed
   Visibility: force_output externally_visible no_reorder public
-  References: Task_Config/0 (addr) Timer_Config/1 (addr) Queue_Config/2 (addr) 
+  References: Task_Config/6 (addr) Timer_Config/7 (addr) Queue_Config/8 (addr) 
   Referring: 
   Availability: available
   Varpool flags: initialized read-only const-value-known
-Queue_Config/2 (Queue_Config) @0d428b40
+Queue_Config/8 (Queue_Config) @0d4a3cf0
   Type: variable definition analyzed
   Visibility: force_output externally_visible no_reorder public
   References: 
-  Referring: Scheduler_Config/3 (addr) 
+  Referring: Scheduler_Config/9 (addr) 
   Availability: available
   Varpool flags: initialized read-only const-value-known
-Timer_Config/1 (Timer_Config) @0d428ab0
+Timer_Config/7 (Timer_Config) @0d4a3c60
   Type: variable definition analyzed
   Visibility: force_output externally_visible no_reorder public
   References: 
-  Referring: Scheduler_Config/3 (addr) 
+  Referring: Scheduler_Config/9 (addr) 
   Availability: available
   Varpool flags: initialized read-only const-value-known
-Task_Config/0 (Task_Config) @0d428a20
+Task_Config/6 (Task_Config) @0d4a3bd0
   Type: variable definition analyzed
   Visibility: force_output externally_visible no_reorder public
-  References: Os_50ms_Task/4 (addr) Os_100ms_Task/5 (addr) Os_PotsTask/6 (addr) Os_EepromsTask/7 (addr) Os_CanTask/8 (addr) Os_BuzzerTask/9 (addr) 
-  Referring: Scheduler_Config/3 (addr) 
+  References: Os_50ms_Task/10 (addr) Os_100ms_Task/11 (addr) Os_PotsTask/2 (addr) Os_EepromsTask/3 (addr) Os_CanTask/4 (addr) Os_BuzzerTask/5 (addr) 
+  Referring: Scheduler_Config/9 (addr) 
   Availability: available
   Varpool flags: initialized read-only const-value-known
+Os_BuzzerTask/5 (Os_BuzzerTask) @0d4a88c0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  Address is taken.
+  References: 
+  Referring: Task_Config/6 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+Os_CanTask/4 (Os_CanTask) @0d4a8380
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  Address is taken.
+  References: 
+  Referring: Task_Config/6 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+Os_EepromsTask/3 (Os_EepromsTask) @0d4a8d20
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  Address is taken.
+  References: 
+  Referring: Task_Config/6 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+Os_PotsTask/2 (Os_PotsTask) @0d4a8a80
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  Address is taken.
+  References: 
+  Referring: Task_Config/6 (addr) 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+Os_ButtonsTask/1 (Os_ButtonsTask) @0d4a87e0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+Os_LedsTask/0 (Os_LedsTask) @0d4a8540
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+
+;; Function Os_LedsTask (Os_LedsTask, funcdef_no=0, decl_uid=5303, cgraph_uid=1, symbol_order=0)
+
+Os_LedsTask ()
+{
+  <bb 2> :
+  return;
+
+}
+
+
+
+;; Function Os_ButtonsTask (Os_ButtonsTask, funcdef_no=1, decl_uid=5305, cgraph_uid=2, symbol_order=1)
+
+Os_ButtonsTask ()
+{
+  <bb 2> :
+  return;
+
+}
+
+
+
+;; Function Os_PotsTask (Os_PotsTask, funcdef_no=2, decl_uid=5307, cgraph_uid=3, symbol_order=2)
+
+Os_PotsTask ()
+{
+  <bb 2> :
+  return;
+
+}
+
+
+
+;; Function Os_EepromsTask (Os_EepromsTask, funcdef_no=3, decl_uid=5309, cgraph_uid=4, symbol_order=3)
+
+Os_EepromsTask ()
+{
+  <bb 2> :
+  return;
+
+}
+
+
+
+;; Function Os_CanTask (Os_CanTask, funcdef_no=4, decl_uid=5311, cgraph_uid=5, symbol_order=4)
+
+Os_CanTask ()
+{
+  <bb 2> :
+  return;
+
+}
+
+
+
+;; Function Os_BuzzerTask (Os_BuzzerTask, funcdef_no=5, decl_uid=5313, cgraph_uid=6, symbol_order=5)
+
+Os_BuzzerTask ()
+{
+  <bb 2> :
+  return;
+
+}
+
+

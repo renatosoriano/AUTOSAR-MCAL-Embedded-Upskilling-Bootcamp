@@ -195,10 +195,3 @@ void Os_100ms_Task( void )
         }
     }   
 }
-
-void Os_LedsTask( void ){}
-void Os_ButtonsTask( void ){}
-void Os_PotsTask( void ){}
-void Os_EepromsTask( void ){}
-void Os_CanTask( void ){}
-void Os_BuzzerTask( void ){}

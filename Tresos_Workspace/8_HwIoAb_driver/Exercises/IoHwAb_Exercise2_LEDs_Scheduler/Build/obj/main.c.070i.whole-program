@@ -2,7 +2,7 @@
 Marking local functions:
 
 
-Marking externally visible functions: Os_BuzzerTask/10 Os_CanTask/9 Os_EepromsTask/8 Os_PotsTask/7 Os_ButtonsTask/6 Os_LedsTask/5 Os_100ms_Task/4 Os_50ms_Task/3 EcuM_Init/2 main/1
+Marking externally visible functions: Os_100ms_Task/4 Os_50ms_Task/3 EcuM_Init/2 main/1
 
 
 Marking externally visible variables:
@@ -13,7 +13,7 @@ Reclaiming variables:
 Clearing address taken flags:
 Symbol table:
 
-HwIoAb_Leds_TurnOff/30 (HwIoAb_Leds_TurnOff) @0d744ee0
+HwIoAb_Leds_TurnOff/24 (HwIoAb_Leds_TurnOff) @0e5daee0
   Type: function
   Visibility: external public
   References: 
@@ -22,7 +22,7 @@ HwIoAb_Leds_TurnOff/30 (HwIoAb_Leds_TurnOff) @0d744ee0
   Function flags:
   Called by: Os_100ms_Task/4 Os_100ms_Task/4 Os_100ms_Task/4 Os_100ms_Task/4 Os_100ms_Task/4 Os_100ms_Task/4 Os_100ms_Task/4 Os_100ms_Task/4 Os_100ms_Task/4 
   Calls: 
-SEGGER_RTT_printf/29 (SEGGER_RTT_printf) @0d744e00
+SEGGER_RTT_printf/23 (SEGGER_RTT_printf) @0e5dae00
   Type: function
   Visibility: external public
   References: 
@@ -31,7 +31,7 @@ SEGGER_RTT_printf/29 (SEGGER_RTT_printf) @0d744e00
   Function flags:
   Called by: Os_100ms_Task/4 Os_100ms_Task/4 Os_100ms_Task/4 Os_100ms_Task/4 Os_100ms_Task/4 Os_100ms_Task/4 Os_100ms_Task/4 Os_100ms_Task/4 Os_100ms_Task/4 Os_100ms_Task/4 Os_100ms_Task/4 Os_100ms_Task/4 
   Calls: 
-HwIoAb_Leds_TurnToggle/28 (HwIoAb_Leds_TurnToggle) @0d744d20
+HwIoAb_Leds_TurnToggle/22 (HwIoAb_Leds_TurnToggle) @0e5dad20
   Type: function
   Visibility: external public
   References: 
@@ -40,7 +40,7 @@ HwIoAb_Leds_TurnToggle/28 (HwIoAb_Leds_TurnToggle) @0d744d20
   Function flags:
   Called by: Os_100ms_Task/4 Os_100ms_Task/4 Os_100ms_Task/4 Os_100ms_Task/4 Os_100ms_Task/4 Os_100ms_Task/4 Os_100ms_Task/4 Os_100ms_Task/4 Os_100ms_Task/4 
   Calls: 
-HwIoAb_Buttons_GetEvent/27 (HwIoAb_Buttons_GetEvent) @0d744c40
+HwIoAb_Buttons_GetEvent/21 (HwIoAb_Buttons_GetEvent) @0e5dac40
   Type: function
   Visibility: external public
   References: 
@@ -49,7 +49,7 @@ HwIoAb_Buttons_GetEvent/27 (HwIoAb_Buttons_GetEvent) @0d744c40
   Function flags:
   Called by: Os_100ms_Task/4 
   Calls: 
-HwIoAb_Buttons_MainFunction/26 (HwIoAb_Buttons_MainFunction) @0d7448c0
+HwIoAb_Buttons_MainFunction/20 (HwIoAb_Buttons_MainFunction) @0e5da8c0
   Type: function
   Visibility: external public
   References: 
@@ -58,7 +58,7 @@ HwIoAb_Buttons_MainFunction/26 (HwIoAb_Buttons_MainFunction) @0d7448c0
   Function flags:
   Called by: Os_50ms_Task/3 
   Calls: 
-LedsCfg/25 (LedsCfg) @0d991510
+LedsCfg/19 (LedsCfg) @0e5dc1b0
   Type: variable
   Body removed by symtab_remove_unreachable_nodes
   Visibility: external public
@@ -66,7 +66,7 @@ LedsCfg/25 (LedsCfg) @0d991510
   Referring: EcuM_Init/2 (addr) 
   Availability: not_available
   Varpool flags: read-only
-HwIoAb_Leds_Init/24 (HwIoAb_Leds_Init) @0d744700
+HwIoAb_Leds_Init/18 (HwIoAb_Leds_Init) @0e5da700
   Type: function
   Visibility: external public
   References: 
@@ -75,7 +75,7 @@ HwIoAb_Leds_Init/24 (HwIoAb_Leds_Init) @0d744700
   Function flags:
   Called by: EcuM_Init/2 
   Calls: 
-ButtonsCfg/23 (ButtonsCfg) @0d991480
+ButtonsCfg/17 (ButtonsCfg) @0e5dc120
   Type: variable
   Body removed by symtab_remove_unreachable_nodes
   Visibility: external public
@@ -83,7 +83,7 @@ ButtonsCfg/23 (ButtonsCfg) @0d991480
   Referring: EcuM_Init/2 (addr) 
   Availability: not_available
   Varpool flags: read-only
-HwIoAb_Buttons_Init/22 (HwIoAb_Buttons_Init) @0d744620
+HwIoAb_Buttons_Init/16 (HwIoAb_Buttons_Init) @0e5da620
   Type: function
   Visibility: external public
   References: 
@@ -92,7 +92,7 @@ HwIoAb_Buttons_Init/22 (HwIoAb_Buttons_Init) @0d744620
   Function flags:
   Called by: EcuM_Init/2 
   Calls: 
-Port_Config/21 (Port_Config) @0d9913f0
+Port_Config/15 (Port_Config) @0e5dc090
   Type: variable
   Body removed by symtab_remove_unreachable_nodes
   Visibility: external public
@@ -100,7 +100,7 @@ Port_Config/21 (Port_Config) @0d9913f0
   Referring: EcuM_Init/2 (addr) 
   Availability: not_available
   Varpool flags: read-only
-Port_Init/20 (Port_Init) @0d744540
+Port_Init/14 (Port_Init) @0e5da540
   Type: function
   Visibility: external public
   References: 
@@ -109,7 +109,7 @@ Port_Init/20 (Port_Init) @0d744540
   Function flags:
   Called by: EcuM_Init/2 
   Calls: 
-OsIf_Init/19 (OsIf_Init) @0d744460
+OsIf_Init/13 (OsIf_Init) @0e5da460
   Type: function
   Visibility: external public
   References: 
@@ -118,7 +118,7 @@ OsIf_Init/19 (OsIf_Init) @0d744460
   Function flags:
   Called by: EcuM_Init/2 
   Calls: 
-Mcu_InitClock/18 (Mcu_InitClock) @0d744380
+Mcu_InitClock/12 (Mcu_InitClock) @0e5da380
   Type: function
   Visibility: external public
   References: 
@@ -127,7 +127,7 @@ Mcu_InitClock/18 (Mcu_InitClock) @0d744380
   Function flags:
   Called by: EcuM_Init/2 
   Calls: 
-Mcu_SetMode/17 (Mcu_SetMode) @0d7442a0
+Mcu_SetMode/11 (Mcu_SetMode) @0e5da2a0
   Type: function
   Visibility: external public
   References: 
@@ -136,7 +136,7 @@ Mcu_SetMode/17 (Mcu_SetMode) @0d7442a0
   Function flags:
   Called by: EcuM_Init/2 
   Calls: 
-Mcu_Config/16 (Mcu_Config) @0d991288
+Mcu_Config/10 (Mcu_Config) @0e5d1ee8
   Type: variable
   Body removed by symtab_remove_unreachable_nodes
   Visibility: external public
@@ -144,7 +144,7 @@ Mcu_Config/16 (Mcu_Config) @0d991288
   Referring: EcuM_Init/2 (addr) 
   Availability: not_available
   Varpool flags: read-only
-Mcu_Init/15 (Mcu_Init) @0d7441c0
+Mcu_Init/9 (Mcu_Init) @0e5da1c0
   Type: function
   Visibility: external public
   References: 
@@ -153,7 +153,7 @@ Mcu_Init/15 (Mcu_Init) @0d7441c0
   Function flags:
   Called by: EcuM_Init/2 
   Calls: 
-Scheduler_MainFunction/14 (Scheduler_MainFunction) @0d744000
+Scheduler_MainFunction/8 (Scheduler_MainFunction) @0e5da000
   Type: function
   Visibility: external public
   References: 
@@ -162,7 +162,7 @@ Scheduler_MainFunction/14 (Scheduler_MainFunction) @0d744000
   Function flags:
   Called by: main/1 
   Calls: 
-Scheduler_Config/13 (Scheduler_Config) @0d9910d8
+Scheduler_Config/7 (Scheduler_Config) @0e5d1d38
   Type: variable
   Body removed by symtab_remove_unreachable_nodes
   Visibility: external public
@@ -170,7 +170,7 @@ Scheduler_Config/13 (Scheduler_Config) @0d9910d8
   Referring: main/1 (addr) 
   Availability: not_available
   Varpool flags: read-only
-Scheduler_Init/12 (Scheduler_Init) @0d990ee0
+Scheduler_Init/6 (Scheduler_Init) @0e5d2a80
   Type: function
   Visibility: external public
   References: 
@@ -179,7 +179,7 @@ Scheduler_Init/12 (Scheduler_Init) @0d990ee0
   Function flags:
   Called by: main/1 
   Calls: 
-SEGGER_RTT_Init/11 (SEGGER_RTT_Init) @0d990e00
+SEGGER_RTT_Init/5 (SEGGER_RTT_Init) @0e5d27e0
   Type: function
   Visibility: external public
   References: 
@@ -188,7 +188,7 @@ SEGGER_RTT_Init/11 (SEGGER_RTT_Init) @0d990e00
   Function flags:
   Called by: main/1 
   Calls: 
-Os_BuzzerTask/10 (Os_BuzzerTask) @0d9909a0
+Os_100ms_Task/4 (Os_100ms_Task) @0e5d2c40
   Type: function definition analyzed
   Visibility: force_output externally_visible no_reorder public
   References: 
@@ -196,8 +196,8 @@ Os_BuzzerTask/10 (Os_BuzzerTask) @0d9909a0
   Availability: available
   Function flags: body
   Called by: 
-  Calls: 
-Os_CanTask/9 (Os_CanTask) @0d990700
+  Calls: SEGGER_RTT_printf/23 HwIoAb_Leds_TurnOff/24 HwIoAb_Leds_TurnOff/24 HwIoAb_Leds_TurnOff/24 SEGGER_RTT_printf/23 HwIoAb_Leds_TurnToggle/22 SEGGER_RTT_printf/23 HwIoAb_Leds_TurnToggle/22 SEGGER_RTT_printf/23 HwIoAb_Leds_TurnToggle/22 SEGGER_RTT_printf/23 HwIoAb_Leds_TurnOff/24 HwIoAb_Leds_TurnOff/24 HwIoAb_Leds_TurnOff/24 SEGGER_RTT_printf/23 HwIoAb_Leds_TurnToggle/22 SEGGER_RTT_printf/23 HwIoAb_Leds_TurnToggle/22 SEGGER_RTT_printf/23 HwIoAb_Leds_TurnToggle/22 SEGGER_RTT_printf/23 HwIoAb_Leds_TurnOff/24 HwIoAb_Leds_TurnOff/24 HwIoAb_Leds_TurnOff/24 SEGGER_RTT_printf/23 HwIoAb_Leds_TurnToggle/22 SEGGER_RTT_printf/23 HwIoAb_Leds_TurnToggle/22 SEGGER_RTT_printf/23 HwIoAb_Leds_TurnToggle/22 HwIoAb_Buttons_GetEvent/21 
+Os_50ms_Task/3 (Os_50ms_Task) @0e5d29a0
   Type: function definition analyzed
   Visibility: force_output externally_visible no_reorder public
   References: 
@@ -205,127 +205,25 @@ Os_CanTask/9 (Os_CanTask) @0d990700
   Availability: available
   Function flags: body
   Called by: 
-  Calls: 
-Os_EepromsTask/8 (Os_EepromsTask) @0d990460
+  Calls: HwIoAb_Buttons_MainFunction/20 
+EcuM_Init/2 (EcuM_Init) @0e5d2700
   Type: function definition analyzed
   Visibility: force_output externally_visible no_reorder public
-  References: 
-  Referring: 
-  Availability: available
-  Function flags: body
-  Called by: 
-  Calls: 
-Os_PotsTask/7 (Os_PotsTask) @0d9901c0
-  Type: function definition analyzed
-  Visibility: force_output externally_visible no_reorder public
-  References: 
-  Referring: 
-  Availability: available
-  Function flags: body
-  Called by: 
-  Calls: 
-Os_ButtonsTask/6 (Os_ButtonsTask) @0d987a80
-  Type: function definition analyzed
-  Visibility: force_output externally_visible no_reorder public
-  References: 
-  Referring: 
-  Availability: available
-  Function flags: body
-  Called by: 
-  Calls: 
-Os_LedsTask/5 (Os_LedsTask) @0d987ee0
-  Type: function definition analyzed
-  Visibility: force_output externally_visible no_reorder public
-  References: 
-  Referring: 
-  Availability: available
-  Function flags: body
-  Called by: 
-  Calls: 
-Os_100ms_Task/4 (Os_100ms_Task) @0d987c40
-  Type: function definition analyzed
-  Visibility: force_output externally_visible no_reorder public
-  References: 
-  Referring: 
-  Availability: available
-  Function flags: body
-  Called by: 
-  Calls: SEGGER_RTT_printf/29 HwIoAb_Leds_TurnOff/30 HwIoAb_Leds_TurnOff/30 HwIoAb_Leds_TurnOff/30 SEGGER_RTT_printf/29 HwIoAb_Leds_TurnToggle/28 SEGGER_RTT_printf/29 HwIoAb_Leds_TurnToggle/28 SEGGER_RTT_printf/29 HwIoAb_Leds_TurnToggle/28 SEGGER_RTT_printf/29 HwIoAb_Leds_TurnOff/30 HwIoAb_Leds_TurnOff/30 HwIoAb_Leds_TurnOff/30 SEGGER_RTT_printf/29 HwIoAb_Leds_TurnToggle/28 SEGGER_RTT_printf/29 HwIoAb_Leds_TurnToggle/28 SEGGER_RTT_printf/29 HwIoAb_Leds_TurnToggle/28 SEGGER_RTT_printf/29 HwIoAb_Leds_TurnOff/30 HwIoAb_Leds_TurnOff/30 HwIoAb_Leds_TurnOff/30 SEGGER_RTT_printf/29 HwIoAb_Leds_TurnToggle/28 SEGGER_RTT_printf/29 HwIoAb_Leds_TurnToggle/28 SEGGER_RTT_printf/29 HwIoAb_Leds_TurnToggle/28 HwIoAb_Buttons_GetEvent/27 
-Os_50ms_Task/3 (Os_50ms_Task) @0d9879a0
-  Type: function definition analyzed
-  Visibility: force_output externally_visible no_reorder public
-  References: 
-  Referring: 
-  Availability: available
-  Function flags: body
-  Called by: 
-  Calls: HwIoAb_Buttons_MainFunction/26 
-EcuM_Init/2 (EcuM_Init) @0d987700
-  Type: function definition analyzed
-  Visibility: force_output externally_visible no_reorder public
-  References: Mcu_Config/16 (addr) Port_Config/21 (addr) ButtonsCfg/23 (addr) LedsCfg/25 (addr) 
+  References: Mcu_Config/10 (addr) Port_Config/15 (addr) ButtonsCfg/17 (addr) LedsCfg/19 (addr) 
   Referring: 
   Availability: available
   Function flags: body
   Called by: main/1 
-  Calls: HwIoAb_Leds_Init/24 HwIoAb_Buttons_Init/22 Port_Init/20 OsIf_Init/19 Mcu_InitClock/18 Mcu_SetMode/17 Mcu_Init/15 
-main/1 (main) @0d987460
+  Calls: HwIoAb_Leds_Init/18 HwIoAb_Buttons_Init/16 Port_Init/14 OsIf_Init/13 Mcu_InitClock/12 Mcu_SetMode/11 Mcu_Init/9 
+main/1 (main) @0e5d2460
   Type: function definition analyzed
   Visibility: force_output externally_visible no_reorder public
-  References: Scheduler_Config/13 (addr) 
+  References: Scheduler_Config/7 (addr) 
   Referring: 
   Availability: available
   Function flags: body
   Called by: 
-  Calls: Scheduler_MainFunction/14 Scheduler_Init/12 SEGGER_RTT_Init/11 EcuM_Init/2 
-Os_BuzzerTask ()
-{
-  <bb 2> :
-  return;
-
-}
-
-
-Os_CanTask ()
-{
-  <bb 2> :
-  return;
-
-}
-
-
-Os_EepromsTask ()
-{
-  <bb 2> :
-  return;
-
-}
-
-
-Os_PotsTask ()
-{
-  <bb 2> :
-  return;
-
-}
-
-
-Os_ButtonsTask ()
-{
-  <bb 2> :
-  return;
-
-}
-
-
-Os_LedsTask ()
-{
-  <bb 2> :
-  return;
-
-}
-
-
+  Calls: Scheduler_MainFunction/8 Scheduler_Init/6 SEGGER_RTT_Init/5 EcuM_Init/2 
 Os_100ms_Task ()
 {
   uint8 CurrentButton;
@@ -509,7 +407,7 @@ EcuM_Init ()
 
 main ()
 {
-  int D.6858;
+  int D.6840;
 
   <bb 2> :
   EcuM_Init ();
