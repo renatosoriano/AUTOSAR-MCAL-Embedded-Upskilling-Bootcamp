@@ -450,7 +450,7 @@ Hardware board transmits (Tx) three 8-byte messages with ID 0x123, 0x133 and 0x1
 ![CAN_Example5_Transmission_Mailboxes_Buffers.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/CAN_Driver_examples_results_screenshots/CAN_Example5_Transmission_Mailboxes_Buffers.png)
 
 * #### CAN Example 6: Reception with_Filters, ID 0x1EF
-Hardware board receives (Rx) every second an 8-byte single message with ID Ox1EF and specified Data payload: 32 00 00 00 01 02 03 04. Savvy CAN transmits (Tx) the data. Notice how in code we can establish a condition, in this case where the first byte must be 0x32 and once that is confirmed, can proceed and receive the rest of the data.
+Hardware board receives (Rx) every second an 8-byte single message with ID 0x1EF and specified Data payload: 32 00 00 00 01 02 03 04. Savvy CAN transmits (Tx) the data. Notice how in code we can establish a condition, in this case where the first byte must be 0x32 and once that is confirmed, can proceed and receive the rest of the data.
 
 ![CAN_Example6_Reception_with_Filters_ID_0x1EF.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/CAN_Driver_examples_results_screenshots/CAN_Example6_Reception_with_Filters_ID_0x1EF.png)
 
