@@ -186,6 +186,9 @@ int main( void )
 {
     EcuM_Init();
 
+    /* Intiliaze RTT library */
+    SEGGER_RTT_Init();
+
     Can_PduType PduInfo1;
     Can_PduType PduInfo2;
     Can_PduType PduInfo3;

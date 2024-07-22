@@ -22,6 +22,7 @@ main ()
 
   <bb 2> :
   EcuM_Init ();
+  SEGGER_RTT_Init ();
   _1 = Can_43_FLEXCAN_SetBaudrate (0, 2);
   if (_1 == 0)
     goto <bb 3>; [INV]
