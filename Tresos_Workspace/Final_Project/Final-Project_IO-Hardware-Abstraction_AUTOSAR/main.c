@@ -171,12 +171,12 @@ void Os_100ms_Task( void )
         {
             switch( CurrentButton )
             {
-                case HWI0AB_BUTTONS_1_ID :
+                case HWIOAB_BUTTONS_1_ID :
                     switch( RealEvent )
                     {
                         case HWIOAB_BTN_EVENT_SINGLE_CLICK :
                             SEGGER_RTT_printf( 0, "Button 1 action: SINGLE_CLICK \n" );
-                            HwIoAb_Leds_TurnToggle( HWI0AB_LED_BLUE_ID );
+                            HwIoAb_Leds_TurnToggle( HWIOAB_LED_BLUE_ID );
                             SEGGER_RTT_printf( 0, "Blue RGB LED Toggle \n" );
                             HwIoAb_Leds_TurnToggle( HWIOAB_C10_LED2_ID );    // SINGLE_CLICK visual indicator
                         break;
@@ -273,10 +273,3 @@ void Os_100ms_Task( void )
         }
     }   
 }
-
-void Os_LedsTask( void ){}
-void Os_ButtonsTask( void ){}
-void Os_PotsTask( void ){}
-void Os_EepromsTask( void ){}
-void Os_CanTask( void ){}
-void Os_BuzzerTask( void ){}
