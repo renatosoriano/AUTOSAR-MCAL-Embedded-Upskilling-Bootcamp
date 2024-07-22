@@ -240,7 +240,7 @@ int main( void )
             /* Set the message to be transmitted, all messages will be
             transmitted by the CAN interrupt */
             Can_43_FLEXCAN_Write( CanHardwareObject_0, &PduInfo1 );
-            SEGGER_RTT_printf( 0, "CAN msg transmitted at 500kbps using Button: %d \n", Can_au8Sdu8bytes[7] );
+            SEGGER_RTT_printf( 0, "CAN msg 0x%x transmitted at 500kbps using Button: %d \n", PduInfo1.id, Can_au8Sdu8bytes[7] );
         }
         if(ButtonFlag == 2)
         {
@@ -249,7 +249,7 @@ int main( void )
             /* Set the message to be transmitted, all messages will be
             transmitted by the CAN interrupt */
             Can_43_FLEXCAN_Write( CanHardwareObject_0, &PduInfo1 );
-            SEGGER_RTT_printf( 0, "CAN msg transmitted at 500kbps using Button: %d \n", Can_au8Sdu8bytes[7] );
+            SEGGER_RTT_printf( 0, "CAN msg 0x%x transmitted at 500kbps using Button: %d \n", PduInfo1.id, Can_au8Sdu8bytes[7] );
         }
         if(ButtonFlag == 3)
         {
@@ -258,7 +258,7 @@ int main( void )
             /* Set the message to be transmitted, all messages will be
             transmitted by the CAN interrupt */
             Can_43_FLEXCAN_Write( CanHardwareObject_0, &PduInfo1 );
-            SEGGER_RTT_printf( 0, "CAN msg transmitted at 500kbps using Button: %d \n", Can_au8Sdu8bytes[7] );
+            SEGGER_RTT_printf( 0, "CAN msg 0x%x transmitted at 500kbps using Button: %d \n", PduInfo1.id, Can_au8Sdu8bytes[7] );
         }
 
         /* Set the message to be transmitted, all messages will be

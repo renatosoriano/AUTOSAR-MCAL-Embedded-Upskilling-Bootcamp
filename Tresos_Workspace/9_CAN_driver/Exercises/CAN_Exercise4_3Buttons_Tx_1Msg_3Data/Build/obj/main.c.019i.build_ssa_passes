@@ -209,9 +209,10 @@ main ()
   ButtonFlag = 0;
   Can_au8Sdu8bytes[7] = 1;
   Can_43_FLEXCAN_Write (0, &PduInfo1);
-  _8 = Can_au8Sdu8bytes[7];
-  _9 = (int) _8;
-  SEGGER_RTT_printf (0, "CAN msg transmitted at 500kbps using Button: %d \n", _9);
+  _8 = PduInfo1.id;
+  _9 = Can_au8Sdu8bytes[7];
+  _10 = (int) _9;
+  SEGGER_RTT_printf (0, "CAN msg 0x%x transmitted at 500kbps using Button: %d \n", _8, _10);
 
   <bb 38> :
   if (ButtonFlag == 2)
@@ -223,9 +224,10 @@ main ()
   ButtonFlag = 0;
   Can_au8Sdu8bytes[7] = 2;
   Can_43_FLEXCAN_Write (0, &PduInfo1);
-  _10 = Can_au8Sdu8bytes[7];
-  _11 = (int) _10;
-  SEGGER_RTT_printf (0, "CAN msg transmitted at 500kbps using Button: %d \n", _11);
+  _11 = PduInfo1.id;
+  _12 = Can_au8Sdu8bytes[7];
+  _13 = (int) _12;
+  SEGGER_RTT_printf (0, "CAN msg 0x%x transmitted at 500kbps using Button: %d \n", _11, _13);
 
   <bb 40> :
   if (ButtonFlag == 3)
@@ -237,18 +239,19 @@ main ()
   ButtonFlag = 0;
   Can_au8Sdu8bytes[7] = 3;
   Can_43_FLEXCAN_Write (0, &PduInfo1);
-  _12 = Can_au8Sdu8bytes[7];
-  _13 = (int) _12;
-  SEGGER_RTT_printf (0, "CAN msg transmitted at 500kbps using Button: %d \n", _13);
+  _14 = PduInfo1.id;
+  _15 = Can_au8Sdu8bytes[7];
+  _16 = (int) _15;
+  SEGGER_RTT_printf (0, "CAN msg 0x%x transmitted at 500kbps using Button: %d \n", _14, _16);
 
   <bb 42> :
   Can_43_FLEXCAN_Write (0, &PduInfo2);
   Can_43_FLEXCAN_Write (0, &PduInfo3);
 
   <bb 43> :
-  CanIf_bTxFlag.1_14 = CanIf_bTxFlag;
-  _15 = ~CanIf_bTxFlag.1_14;
-  if (_15 != 0)
+  CanIf_bTxFlag.1_17 = CanIf_bTxFlag;
+  _18 = ~CanIf_bTxFlag.1_17;
+  if (_18 != 0)
     goto <bb 43>; [INV]
   else
     goto <bb 44>; [INV]
