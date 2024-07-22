@@ -70,11 +70,11 @@ int main( void )
             {
                 switch( CurrentButton )
                 {
-                    case HWI0AB_BUTTONS_1_ID :
+                    case HWIOAB_BUTTONS_1_ID :
                         switch( RealEvent )
                         {
                             case HWIOAB_BTN_EVENT_SINGLE_CLICK :
-                                HwIoAb_Leds_TurnToggle( HWI0AB_LED_BLUE_ID );
+                                HwIoAb_Leds_TurnToggle( HWIOAB_LED_BLUE_ID );
                                 SEGGER_RTT_printf( 0, "Button 1 action: SINGLE_CLICK \n" );
                             break;
                             case HWIOAB_BTN_EVENT_DOUBLE_CLICK :
@@ -86,7 +86,7 @@ int main( void )
                                 SEGGER_RTT_printf( 0, "Button 1 action: HOLD_CLICK \n" );
                             break;
                             case HWIOAB_BTN_EVENT_RELEASE :
-                                HwIoAb_Leds_TurnOff( HWI0AB_LED_BLUE_ID );
+                                HwIoAb_Leds_TurnOff( HWIOAB_LED_BLUE_ID );
                                 HwIoAb_Leds_TurnOff( HWIOAB_LED_RED_ID );
                                 HwIoAb_Leds_TurnOff( HWIOAB_LED_GREEN_ID );
                                 SEGGER_RTT_printf( 0, "Button 1 action: RELEASE \n" );
@@ -100,7 +100,7 @@ int main( void )
                         switch( RealEvent )
                         {
                             case HWIOAB_BTN_EVENT_SINGLE_CLICK :
-                                HwIoAb_Leds_TurnToggle( HWI0AB_LED_BLUE_ID );
+                                HwIoAb_Leds_TurnToggle( HWIOAB_LED_BLUE_ID );
                                 SEGGER_RTT_printf( 0, "Button 2 action: SINGLE_CLICK \n" );
                             break;
                             case HWIOAB_BTN_EVENT_DOUBLE_CLICK :
@@ -112,7 +112,7 @@ int main( void )
                                 SEGGER_RTT_printf( 0, "Button 2 action: HOLD_CLICK \n" );
                             break;
                             case HWIOAB_BTN_EVENT_RELEASE :
-                                HwIoAb_Leds_TurnOff( HWI0AB_LED_BLUE_ID );
+                                HwIoAb_Leds_TurnOff( HWIOAB_LED_BLUE_ID );
                                 HwIoAb_Leds_TurnOff( HWIOAB_LED_RED_ID );
                                 HwIoAb_Leds_TurnOff( HWIOAB_LED_GREEN_ID );
                                 SEGGER_RTT_printf( 0, "Button 2 action: RELEASE \n" );
@@ -126,7 +126,7 @@ int main( void )
                         switch( RealEvent )
                         {
                             case HWIOAB_BTN_EVENT_SINGLE_CLICK :
-                                HwIoAb_Leds_TurnToggle( HWI0AB_LED_BLUE_ID );
+                                HwIoAb_Leds_TurnToggle( HWIOAB_LED_BLUE_ID );
                                 SEGGER_RTT_printf( 0, "Button 3 action: SINGLE_CLICK \n" );
                             break;
                             case HWIOAB_BTN_EVENT_DOUBLE_CLICK :
@@ -138,7 +138,7 @@ int main( void )
                                 SEGGER_RTT_printf( 0, "Button 3 action: HOLD_CLICK \n" );
                             break;
                             case HWIOAB_BTN_EVENT_RELEASE :
-                                HwIoAb_Leds_TurnOff( HWI0AB_LED_BLUE_ID );
+                                HwIoAb_Leds_TurnOff( HWIOAB_LED_BLUE_ID );
                                 HwIoAb_Leds_TurnOff( HWIOAB_LED_RED_ID );
                                 HwIoAb_Leds_TurnOff( HWIOAB_LED_GREEN_ID );
                                 SEGGER_RTT_printf( 0, "Button 3 action: RELEASE \n" );
