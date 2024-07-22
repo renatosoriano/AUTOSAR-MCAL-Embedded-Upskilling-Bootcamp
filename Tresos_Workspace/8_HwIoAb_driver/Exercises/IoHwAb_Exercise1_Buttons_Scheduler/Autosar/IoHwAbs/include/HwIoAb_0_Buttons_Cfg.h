@@ -11,7 +11,7 @@
 
 #define HWIOAB_BUTTONS_PERIOD 50    /* Periodicity for the main function in milliseconds */
 
-#define HWI0AB_BUTTONS_1_ID 0u      /* Button 1 ID */
+#define HWIOAB_BUTTONS_1_ID 0u      /* Button 1 ID */
 #define HWIOAB_BUTTONS_2_ID 1u      /* Button 2 ID */
 #define HWIOAB_BUTTONS_3_ID 2u      /* Button 3 ID */
 
