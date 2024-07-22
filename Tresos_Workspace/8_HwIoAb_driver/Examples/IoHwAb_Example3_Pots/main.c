@@ -71,11 +71,11 @@ int main( void )
             {
                 switch( CurrentButton )
                 {
-                    case HWI0AB_BUTTONS_1_ID :
+                    case HWIOAB_BUTTONS_1_ID :
                         switch( RealEvent )
                         {
                             case HWIOAB_BTN_EVENT_SINGLE_CLICK :
-                                HwIoAb_Leds_TurnToggle( HWI0AB_LED_BLUE_ID );
+                                HwIoAb_Leds_TurnToggle( HWIOAB_LED_BLUE_ID );
                                 SEGGER_RTT_printf( 0, "Button 1 action: SINGLE_CLICK \n" );
                                 HwIoAb_Pots_GetValue( HWIOAB_POTS_MAIN_CONVERTED_RESULTS );
                                 SEGGER_RTT_printf( 0, "Pot 1 ADC0 resistance value in ohms: %d\n", PotsControl_Ptr->Ohms_results_main[0] );
@@ -93,7 +93,7 @@ int main( void )
                                 SEGGER_RTT_printf( 0, "Pot 1 ADC1 resistance value in ohms: %d\n", PotsControl_Ptr->Ohms_results_alter[0] );
                             break;
                             case HWIOAB_BTN_EVENT_RELEASE :
-                                HwIoAb_Leds_TurnOff( HWI0AB_LED_BLUE_ID );
+                                HwIoAb_Leds_TurnOff( HWIOAB_LED_BLUE_ID );
                                 HwIoAb_Leds_TurnOff( HWIOAB_LED_RED_ID );
                                 HwIoAb_Leds_TurnOff( HWIOAB_LED_GREEN_ID );
                                 SEGGER_RTT_printf( 0, "Button 1 action: RELEASE \n" );
@@ -109,7 +109,7 @@ int main( void )
                         switch( RealEvent )
                         {
                             case HWIOAB_BTN_EVENT_SINGLE_CLICK :
-                                HwIoAb_Leds_TurnToggle( HWI0AB_LED_BLUE_ID );
+                                HwIoAb_Leds_TurnToggle( HWIOAB_LED_BLUE_ID );
                                 SEGGER_RTT_printf( 0, "Button 2 action: SINGLE_CLICK \n" );
                                 HwIoAb_Pots_GetValue( HWIOAB_POTS_MAIN_CONVERTED_RESULTS );
                                 SEGGER_RTT_printf( 0, "Pot 1 ADC0 resistance value in ohms: %d\n", PotsControl_Ptr->Ohms_results_main[0] );
@@ -127,7 +127,7 @@ int main( void )
                                 SEGGER_RTT_printf( 0, "Pot 1 ADC1 resistance value in ohms: %d\n", PotsControl_Ptr->Ohms_results_alter[0] );
                             break;
                             case HWIOAB_BTN_EVENT_RELEASE :
-                                HwIoAb_Leds_TurnOff( HWI0AB_LED_BLUE_ID );
+                                HwIoAb_Leds_TurnOff( HWIOAB_LED_BLUE_ID );
                                 HwIoAb_Leds_TurnOff( HWIOAB_LED_RED_ID );
                                 HwIoAb_Leds_TurnOff( HWIOAB_LED_GREEN_ID );
                                 SEGGER_RTT_printf( 0, "Button 2 action: RELEASE \n" );
@@ -143,7 +143,7 @@ int main( void )
                         switch( RealEvent )
                         {
                             case HWIOAB_BTN_EVENT_SINGLE_CLICK :
-                                HwIoAb_Leds_TurnToggle( HWI0AB_LED_BLUE_ID );
+                                HwIoAb_Leds_TurnToggle( HWIOAB_LED_BLUE_ID );
                                 SEGGER_RTT_printf( 0, "Button 3 action: SINGLE_CLICK \n" );
                                 HwIoAb_Pots_GetValue( HWIOAB_POTS_MAIN_CONVERTED_RESULTS );
                                 SEGGER_RTT_printf( 0, "Pot 1 ADC0 resistance value in ohms: %d\n", PotsControl_Ptr->Ohms_results_main[0] );
@@ -161,7 +161,7 @@ int main( void )
                                 SEGGER_RTT_printf( 0, "Pot 1 ADC1 resistance value in ohms: %d\n", PotsControl_Ptr->Ohms_results_alter[0] );
                             break;
                             case HWIOAB_BTN_EVENT_RELEASE :
-                                HwIoAb_Leds_TurnOff( HWI0AB_LED_BLUE_ID );
+                                HwIoAb_Leds_TurnOff( HWIOAB_LED_BLUE_ID );
                                 HwIoAb_Leds_TurnOff( HWIOAB_LED_RED_ID );
                                 HwIoAb_Leds_TurnOff( HWIOAB_LED_GREEN_ID );
                                 SEGGER_RTT_printf( 0, "Button 3 action: RELEASE \n" );
