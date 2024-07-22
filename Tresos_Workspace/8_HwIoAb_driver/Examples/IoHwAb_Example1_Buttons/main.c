@@ -73,7 +73,7 @@ int main( void )
             {
                 switch( CurrentButton )
                 {
-                    case HWI0AB_BUTTONS_1_ID :
+                    case HWIOAB_BUTTONS_1_ID :
                         switch( RealEvent )
                         {
                             case HWIOAB_BTN_EVENT_SINGLE_CLICK :
