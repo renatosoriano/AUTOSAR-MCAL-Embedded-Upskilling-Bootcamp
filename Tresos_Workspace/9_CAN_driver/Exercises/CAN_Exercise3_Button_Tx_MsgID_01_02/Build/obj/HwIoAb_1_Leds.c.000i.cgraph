@@ -3,7 +3,7 @@ Trivially needed symbols: HwIoAb_Leds_TurnToggle/6 HwIoAb_Leds_TurnOff/5 HwIoAb_
 
 Initial Symbol table:
 
-Dio_FlipChannel/8 (Dio_FlipChannel) @0e4b97e0
+Dio_FlipChannel/8 (Dio_FlipChannel) @0d8b97e0
   Type: function
   Visibility: external public
   References: 
@@ -11,7 +11,7 @@ Dio_FlipChannel/8 (Dio_FlipChannel) @0e4b97e0
   Function flags:
   Called by: HwIoAb_Leds_TurnToggle/6 
   Calls: 
-Dio_WriteChannel/7 (Dio_WriteChannel) @0e4b9540
+Dio_WriteChannel/7 (Dio_WriteChannel) @0d8b9540
   Type: function
   Visibility: external public
   References: 
@@ -19,7 +19,7 @@ Dio_WriteChannel/7 (Dio_WriteChannel) @0e4b9540
   Function flags:
   Called by: HwIoAb_Leds_TurnOff/5 HwIoAb_Leds_TurnOn/4 
   Calls: 
-HwIoAb_Leds_TurnToggle/6 (HwIoAb_Leds_TurnToggle) @0e4b9000
+HwIoAb_Leds_TurnToggle/6 (HwIoAb_Leds_TurnToggle) @0d8b9000
   Type: function definition analyzed
   Visibility: force_output no_reorder public
   Aux: @01981040
@@ -28,50 +28,50 @@ HwIoAb_Leds_TurnToggle/6 (HwIoAb_Leds_TurnToggle) @0e4b9000
   Function flags: body
   Called by: 
   Calls: Dio_FlipChannel/8 
-HwIoAb_Leds_TurnOff/5 (HwIoAb_Leds_TurnOff) @0e4b3c40
+HwIoAb_Leds_TurnOff/5 (HwIoAb_Leds_TurnOff) @0d8b3c40
   Type: function definition analyzed
   Visibility: force_output no_reorder public
-  Aux: @0e4b9000
+  Aux: @0d8b9000
   References: LedsControl_Ptr/2 (read) LedsControl_Ptr/2 (read) 
   Referring: 
   Function flags: body
   Called by: 
   Calls: Dio_WriteChannel/7 
-HwIoAb_Leds_TurnOn/4 (HwIoAb_Leds_TurnOn) @0e4b3460
+HwIoAb_Leds_TurnOn/4 (HwIoAb_Leds_TurnOn) @0d8b3460
   Type: function definition analyzed
   Visibility: force_output no_reorder public
-  Aux: @0e4b3c40
+  Aux: @0d8b3c40
   References: LedsControl_Ptr/2 (read) LedsControl_Ptr/2 (read) 
   Referring: 
   Function flags: body
   Called by: 
   Calls: Dio_WriteChannel/7 
-HwIoAb_Leds_Init/3 (HwIoAb_Leds_Init) @0e4b3e00
+HwIoAb_Leds_Init/3 (HwIoAb_Leds_Init) @0d8b3e00
   Type: function definition analyzed
   Visibility: force_output no_reorder public
-  Aux: @0e4b3460
+  Aux: @0d8b3460
   References: LedsControl_Ptr/2 (read) LedsControl_Ptr/2 (read) LedsControl_Ptr/2 (read) 
   Referring: 
   Function flags: body
   Called by: 
   Calls: 
-LedsControl_Ptr/2 (LedsControl_Ptr) @0e4b1678
+LedsControl_Ptr/2 (LedsControl_Ptr) @0d8b1678
   Type: variable definition analyzed
   Visibility: force_output no_reorder public
-  Aux: @0e4b3e00
+  Aux: @0d8b3e00
   References: LedsCtrl/1 (addr) 
   Referring: HwIoAb_Leds_Init/3 (read) HwIoAb_Leds_Init/3 (read) HwIoAb_Leds_Init/3 (read) HwIoAb_Leds_TurnOn/4 (read) HwIoAb_Leds_TurnOn/4 (read) HwIoAb_Leds_TurnOff/5 (read) HwIoAb_Leds_TurnOff/5 (read) HwIoAb_Leds_TurnToggle/6 (read) 
   Availability: not-ready
   Varpool flags: initialized
-LedsCtrl/1 (LedsCtrl) @0e4b1630
+LedsCtrl/1 (LedsCtrl) @0d8b1630
   Type: variable definition analyzed
   Visibility: force_output no_reorder public
-  Aux: @0e4b1678
+  Aux: @0d8b1678
   References: 
   Referring: LedsControl_Ptr/2 (addr) 
   Availability: not-ready
   Varpool flags:
-DevAssert/0 (DevAssert) @0c5322a0
+DevAssert/0 (DevAssert) @0c4c22a0
   Type: function definition
   Visibility: no_reorder
   References: 
@@ -84,7 +84,7 @@ Removing unused symbols: DevAssert/0
 
 Reclaimed Symbol table:
 
-Dio_FlipChannel/8 (Dio_FlipChannel) @0e4b97e0
+Dio_FlipChannel/8 (Dio_FlipChannel) @0d8b97e0
   Type: function
   Visibility: external public
   References: 
@@ -92,7 +92,7 @@ Dio_FlipChannel/8 (Dio_FlipChannel) @0e4b97e0
   Function flags:
   Called by: HwIoAb_Leds_TurnToggle/6 
   Calls: 
-Dio_WriteChannel/7 (Dio_WriteChannel) @0e4b9540
+Dio_WriteChannel/7 (Dio_WriteChannel) @0d8b9540
   Type: function
   Visibility: external public
   References: 
@@ -100,7 +100,7 @@ Dio_WriteChannel/7 (Dio_WriteChannel) @0e4b9540
   Function flags:
   Called by: HwIoAb_Leds_TurnOff/5 HwIoAb_Leds_TurnOn/4 
   Calls: 
-HwIoAb_Leds_TurnToggle/6 (HwIoAb_Leds_TurnToggle) @0e4b9000
+HwIoAb_Leds_TurnToggle/6 (HwIoAb_Leds_TurnToggle) @0d8b9000
   Type: function definition analyzed
   Visibility: force_output no_reorder public
   References: LedsControl_Ptr/2 (read) 
@@ -108,7 +108,7 @@ HwIoAb_Leds_TurnToggle/6 (HwIoAb_Leds_TurnToggle) @0e4b9000
   Function flags: body
   Called by: 
   Calls: Dio_FlipChannel/8 
-HwIoAb_Leds_TurnOff/5 (HwIoAb_Leds_TurnOff) @0e4b3c40
+HwIoAb_Leds_TurnOff/5 (HwIoAb_Leds_TurnOff) @0d8b3c40
   Type: function definition analyzed
   Visibility: force_output no_reorder public
   References: LedsControl_Ptr/2 (read) LedsControl_Ptr/2 (read) 
@@ -116,7 +116,7 @@ HwIoAb_Leds_TurnOff/5 (HwIoAb_Leds_TurnOff) @0e4b3c40
   Function flags: body
   Called by: 
   Calls: Dio_WriteChannel/7 
-HwIoAb_Leds_TurnOn/4 (HwIoAb_Leds_TurnOn) @0e4b3460
+HwIoAb_Leds_TurnOn/4 (HwIoAb_Leds_TurnOn) @0d8b3460
   Type: function definition analyzed
   Visibility: force_output no_reorder public
   References: LedsControl_Ptr/2 (read) LedsControl_Ptr/2 (read) 
@@ -124,7 +124,7 @@ HwIoAb_Leds_TurnOn/4 (HwIoAb_Leds_TurnOn) @0e4b3460
   Function flags: body
   Called by: 
   Calls: Dio_WriteChannel/7 
-HwIoAb_Leds_Init/3 (HwIoAb_Leds_Init) @0e4b3e00
+HwIoAb_Leds_Init/3 (HwIoAb_Leds_Init) @0d8b3e00
   Type: function definition analyzed
   Visibility: force_output no_reorder public
   References: LedsControl_Ptr/2 (read) LedsControl_Ptr/2 (read) LedsControl_Ptr/2 (read) 
@@ -132,14 +132,14 @@ HwIoAb_Leds_Init/3 (HwIoAb_Leds_Init) @0e4b3e00
   Function flags: body
   Called by: 
   Calls: 
-LedsControl_Ptr/2 (LedsControl_Ptr) @0e4b1678
+LedsControl_Ptr/2 (LedsControl_Ptr) @0d8b1678
   Type: variable definition analyzed
   Visibility: force_output no_reorder public
   References: LedsCtrl/1 (addr) 
   Referring: HwIoAb_Leds_Init/3 (read) HwIoAb_Leds_Init/3 (read) HwIoAb_Leds_Init/3 (read) HwIoAb_Leds_TurnOn/4 (read) HwIoAb_Leds_TurnOn/4 (read) HwIoAb_Leds_TurnOff/5 (read) HwIoAb_Leds_TurnOff/5 (read) HwIoAb_Leds_TurnToggle/6 (read) 
   Availability: not-ready
   Varpool flags: initialized
-LedsCtrl/1 (LedsCtrl) @0e4b1630
+LedsCtrl/1 (LedsCtrl) @0d8b1630
   Type: variable definition analyzed
   Visibility: force_output no_reorder public
   References: 
@@ -150,7 +150,7 @@ LedsCtrl/1 (LedsCtrl) @0e4b1630
 
 Initial Symbol table:
 
-Dio_FlipChannel/8 (Dio_FlipChannel) @0e4b97e0
+Dio_FlipChannel/8 (Dio_FlipChannel) @0d8b97e0
   Type: function
   Visibility: external public
   References: 
@@ -158,7 +158,7 @@ Dio_FlipChannel/8 (Dio_FlipChannel) @0e4b97e0
   Function flags:
   Called by: HwIoAb_Leds_TurnToggle/6 
   Calls: 
-Dio_WriteChannel/7 (Dio_WriteChannel) @0e4b9540
+Dio_WriteChannel/7 (Dio_WriteChannel) @0d8b9540
   Type: function
   Visibility: external public
   References: 
@@ -166,7 +166,7 @@ Dio_WriteChannel/7 (Dio_WriteChannel) @0e4b9540
   Function flags:
   Called by: HwIoAb_Leds_TurnOff/5 HwIoAb_Leds_TurnOn/4 
   Calls: 
-HwIoAb_Leds_TurnToggle/6 (HwIoAb_Leds_TurnToggle) @0e4b9000
+HwIoAb_Leds_TurnToggle/6 (HwIoAb_Leds_TurnToggle) @0d8b9000
   Type: function definition analyzed
   Visibility: force_output no_reorder public
   References: LedsControl_Ptr/2 (read) 
@@ -174,7 +174,7 @@ HwIoAb_Leds_TurnToggle/6 (HwIoAb_Leds_TurnToggle) @0e4b9000
   Function flags: body
   Called by: 
   Calls: Dio_FlipChannel/8 
-HwIoAb_Leds_TurnOff/5 (HwIoAb_Leds_TurnOff) @0e4b3c40
+HwIoAb_Leds_TurnOff/5 (HwIoAb_Leds_TurnOff) @0d8b3c40
   Type: function definition analyzed
   Visibility: force_output no_reorder public
   References: LedsControl_Ptr/2 (read) LedsControl_Ptr/2 (read) 
@@ -182,7 +182,7 @@ HwIoAb_Leds_TurnOff/5 (HwIoAb_Leds_TurnOff) @0e4b3c40
   Function flags: body
   Called by: 
   Calls: Dio_WriteChannel/7 
-HwIoAb_Leds_TurnOn/4 (HwIoAb_Leds_TurnOn) @0e4b3460
+HwIoAb_Leds_TurnOn/4 (HwIoAb_Leds_TurnOn) @0d8b3460
   Type: function definition analyzed
   Visibility: force_output no_reorder public
   References: LedsControl_Ptr/2 (read) LedsControl_Ptr/2 (read) 
@@ -190,7 +190,7 @@ HwIoAb_Leds_TurnOn/4 (HwIoAb_Leds_TurnOn) @0e4b3460
   Function flags: body
   Called by: 
   Calls: Dio_WriteChannel/7 
-HwIoAb_Leds_Init/3 (HwIoAb_Leds_Init) @0e4b3e00
+HwIoAb_Leds_Init/3 (HwIoAb_Leds_Init) @0d8b3e00
   Type: function definition analyzed
   Visibility: force_output no_reorder public
   References: LedsControl_Ptr/2 (read) LedsControl_Ptr/2 (read) LedsControl_Ptr/2 (read) 
@@ -198,14 +198,14 @@ HwIoAb_Leds_Init/3 (HwIoAb_Leds_Init) @0e4b3e00
   Function flags: body
   Called by: 
   Calls: 
-LedsControl_Ptr/2 (LedsControl_Ptr) @0e4b1678
+LedsControl_Ptr/2 (LedsControl_Ptr) @0d8b1678
   Type: variable definition analyzed
   Visibility: force_output no_reorder public
   References: LedsCtrl/1 (addr) 
   Referring: HwIoAb_Leds_Init/3 (read) HwIoAb_Leds_Init/3 (read) HwIoAb_Leds_Init/3 (read) HwIoAb_Leds_TurnOn/4 (read) HwIoAb_Leds_TurnOn/4 (read) HwIoAb_Leds_TurnOff/5 (read) HwIoAb_Leds_TurnOff/5 (read) HwIoAb_Leds_TurnToggle/6 (read) 
   Availability: not-ready
   Varpool flags: initialized
-LedsCtrl/1 (LedsCtrl) @0e4b1630
+LedsCtrl/1 (LedsCtrl) @0d8b1630
   Type: variable definition analyzed
   Visibility: force_output no_reorder public
   References: 
@@ -217,7 +217,7 @@ Removing unused symbols:
 
 Reclaimed Symbol table:
 
-Dio_FlipChannel/8 (Dio_FlipChannel) @0e4b97e0
+Dio_FlipChannel/8 (Dio_FlipChannel) @0d8b97e0
   Type: function
   Visibility: external public
   References: 
@@ -225,7 +225,7 @@ Dio_FlipChannel/8 (Dio_FlipChannel) @0e4b97e0
   Function flags:
   Called by: HwIoAb_Leds_TurnToggle/6 
   Calls: 
-Dio_WriteChannel/7 (Dio_WriteChannel) @0e4b9540
+Dio_WriteChannel/7 (Dio_WriteChannel) @0d8b9540
   Type: function
   Visibility: external public
   References: 
@@ -233,7 +233,7 @@ Dio_WriteChannel/7 (Dio_WriteChannel) @0e4b9540
   Function flags:
   Called by: HwIoAb_Leds_TurnOff/5 HwIoAb_Leds_TurnOn/4 
   Calls: 
-HwIoAb_Leds_TurnToggle/6 (HwIoAb_Leds_TurnToggle) @0e4b9000
+HwIoAb_Leds_TurnToggle/6 (HwIoAb_Leds_TurnToggle) @0d8b9000
   Type: function definition analyzed
   Visibility: force_output no_reorder public
   References: LedsControl_Ptr/2 (read) 
@@ -241,7 +241,7 @@ HwIoAb_Leds_TurnToggle/6 (HwIoAb_Leds_TurnToggle) @0e4b9000
   Function flags: body
   Called by: 
   Calls: Dio_FlipChannel/8 
-HwIoAb_Leds_TurnOff/5 (HwIoAb_Leds_TurnOff) @0e4b3c40
+HwIoAb_Leds_TurnOff/5 (HwIoAb_Leds_TurnOff) @0d8b3c40
   Type: function definition analyzed
   Visibility: force_output no_reorder public
   References: LedsControl_Ptr/2 (read) LedsControl_Ptr/2 (read) 
@@ -249,7 +249,7 @@ HwIoAb_Leds_TurnOff/5 (HwIoAb_Leds_TurnOff) @0e4b3c40
   Function flags: body
   Called by: 
   Calls: Dio_WriteChannel/7 
-HwIoAb_Leds_TurnOn/4 (HwIoAb_Leds_TurnOn) @0e4b3460
+HwIoAb_Leds_TurnOn/4 (HwIoAb_Leds_TurnOn) @0d8b3460
   Type: function definition analyzed
   Visibility: force_output no_reorder public
   References: LedsControl_Ptr/2 (read) LedsControl_Ptr/2 (read) 
@@ -257,7 +257,7 @@ HwIoAb_Leds_TurnOn/4 (HwIoAb_Leds_TurnOn) @0e4b3460
   Function flags: body
   Called by: 
   Calls: Dio_WriteChannel/7 
-HwIoAb_Leds_Init/3 (HwIoAb_Leds_Init) @0e4b3e00
+HwIoAb_Leds_Init/3 (HwIoAb_Leds_Init) @0d8b3e00
   Type: function definition analyzed
   Visibility: force_output no_reorder public
   References: LedsControl_Ptr/2 (read) LedsControl_Ptr/2 (read) LedsControl_Ptr/2 (read) 
@@ -265,14 +265,14 @@ HwIoAb_Leds_Init/3 (HwIoAb_Leds_Init) @0e4b3e00
   Function flags: body
   Called by: 
   Calls: 
-LedsControl_Ptr/2 (LedsControl_Ptr) @0e4b1678
+LedsControl_Ptr/2 (LedsControl_Ptr) @0d8b1678
   Type: variable definition analyzed
   Visibility: force_output no_reorder public
   References: LedsCtrl/1 (addr) 
   Referring: HwIoAb_Leds_Init/3 (read) HwIoAb_Leds_Init/3 (read) HwIoAb_Leds_Init/3 (read) HwIoAb_Leds_TurnOn/4 (read) HwIoAb_Leds_TurnOn/4 (read) HwIoAb_Leds_TurnOff/5 (read) HwIoAb_Leds_TurnOff/5 (read) HwIoAb_Leds_TurnToggle/6 (read) 
   Availability: not-ready
   Varpool flags: initialized
-LedsCtrl/1 (LedsCtrl) @0e4b1630
+LedsCtrl/1 (LedsCtrl) @0d8b1630
   Type: variable definition analyzed
   Visibility: force_output no_reorder public
   References: 
@@ -285,7 +285,7 @@ Reclaiming variables:
 Clearing address taken flags:
 Optimized Symbol table:
 
-Dio_FlipChannel/8 (Dio_FlipChannel) @0e4b97e0
+Dio_FlipChannel/8 (Dio_FlipChannel) @0d8b97e0
   Type: function
   Visibility: external public
   References: 
@@ -294,7 +294,7 @@ Dio_FlipChannel/8 (Dio_FlipChannel) @0e4b97e0
   Function flags:
   Called by: HwIoAb_Leds_TurnToggle/6 
   Calls: 
-Dio_WriteChannel/7 (Dio_WriteChannel) @0e4b9540
+Dio_WriteChannel/7 (Dio_WriteChannel) @0d8b9540
   Type: function
   Visibility: external public
   References: 
@@ -303,7 +303,7 @@ Dio_WriteChannel/7 (Dio_WriteChannel) @0e4b9540
   Function flags:
   Called by: HwIoAb_Leds_TurnOff/5 HwIoAb_Leds_TurnOn/4 
   Calls: 
-HwIoAb_Leds_TurnToggle/6 (HwIoAb_Leds_TurnToggle) @0e4b9000
+HwIoAb_Leds_TurnToggle/6 (HwIoAb_Leds_TurnToggle) @0d8b9000
   Type: function definition analyzed
   Visibility: force_output externally_visible no_reorder public
   References: LedsControl_Ptr/2 (read) 
@@ -312,7 +312,7 @@ HwIoAb_Leds_TurnToggle/6 (HwIoAb_Leds_TurnToggle) @0e4b9000
   Function flags: body
   Called by: 
   Calls: Dio_FlipChannel/8 
-HwIoAb_Leds_TurnOff/5 (HwIoAb_Leds_TurnOff) @0e4b3c40
+HwIoAb_Leds_TurnOff/5 (HwIoAb_Leds_TurnOff) @0d8b3c40
   Type: function definition analyzed
   Visibility: force_output externally_visible no_reorder public
   References: LedsControl_Ptr/2 (read) LedsControl_Ptr/2 (read) 
@@ -321,7 +321,7 @@ HwIoAb_Leds_TurnOff/5 (HwIoAb_Leds_TurnOff) @0e4b3c40
   Function flags: body
   Called by: 
   Calls: Dio_WriteChannel/7 
-HwIoAb_Leds_TurnOn/4 (HwIoAb_Leds_TurnOn) @0e4b3460
+HwIoAb_Leds_TurnOn/4 (HwIoAb_Leds_TurnOn) @0d8b3460
   Type: function definition analyzed
   Visibility: force_output externally_visible no_reorder public
   References: LedsControl_Ptr/2 (read) LedsControl_Ptr/2 (read) 
@@ -330,7 +330,7 @@ HwIoAb_Leds_TurnOn/4 (HwIoAb_Leds_TurnOn) @0e4b3460
   Function flags: body
   Called by: 
   Calls: Dio_WriteChannel/7 
-HwIoAb_Leds_Init/3 (HwIoAb_Leds_Init) @0e4b3e00
+HwIoAb_Leds_Init/3 (HwIoAb_Leds_Init) @0d8b3e00
   Type: function definition analyzed
   Visibility: force_output externally_visible no_reorder public
   References: LedsControl_Ptr/2 (read) LedsControl_Ptr/2 (read) LedsControl_Ptr/2 (read) 
@@ -339,14 +339,14 @@ HwIoAb_Leds_Init/3 (HwIoAb_Leds_Init) @0e4b3e00
   Function flags: body
   Called by: 
   Calls: 
-LedsControl_Ptr/2 (LedsControl_Ptr) @0e4b1678
+LedsControl_Ptr/2 (LedsControl_Ptr) @0d8b1678
   Type: variable definition analyzed
   Visibility: force_output externally_visible no_reorder public
   References: LedsCtrl/1 (addr) 
   Referring: HwIoAb_Leds_Init/3 (read) HwIoAb_Leds_Init/3 (read) HwIoAb_Leds_TurnOn/4 (read) HwIoAb_Leds_TurnOn/4 (read) HwIoAb_Leds_TurnOff/5 (read) HwIoAb_Leds_Init/3 (read) HwIoAb_Leds_TurnOff/5 (read) HwIoAb_Leds_TurnToggle/6 (read) 
   Availability: available
   Varpool flags: initialized
-LedsCtrl/1 (LedsCtrl) @0e4b1630
+LedsCtrl/1 (LedsCtrl) @0d8b1630
   Type: variable definition analyzed
   Visibility: force_output externally_visible no_reorder public
   References: 
@@ -364,7 +364,7 @@ Removing variables:
 
 Final Symbol table:
 
-Dio_FlipChannel/8 (Dio_FlipChannel) @0e4b97e0
+Dio_FlipChannel/8 (Dio_FlipChannel) @0d8b97e0
   Type: function
   Visibility: external public
   References: 
@@ -373,7 +373,7 @@ Dio_FlipChannel/8 (Dio_FlipChannel) @0e4b97e0
   Function flags:
   Called by: 
   Calls: 
-Dio_WriteChannel/7 (Dio_WriteChannel) @0e4b9540
+Dio_WriteChannel/7 (Dio_WriteChannel) @0d8b9540
   Type: function
   Visibility: external public
   References: 
@@ -382,7 +382,7 @@ Dio_WriteChannel/7 (Dio_WriteChannel) @0e4b9540
   Function flags:
   Called by: 
   Calls: 
-HwIoAb_Leds_TurnToggle/6 (HwIoAb_Leds_TurnToggle) @0e4b9000
+HwIoAb_Leds_TurnToggle/6 (HwIoAb_Leds_TurnToggle) @0d8b9000
   Type: function definition analyzed
   Visibility: force_output externally_visible no_reorder asm_written public section:.text.HwIoAb_Leds_TurnToggle (implicit_section)
   References: 
@@ -391,7 +391,7 @@ HwIoAb_Leds_TurnToggle/6 (HwIoAb_Leds_TurnToggle) @0e4b9000
   Function flags:
   Called by: 
   Calls: 
-HwIoAb_Leds_TurnOff/5 (HwIoAb_Leds_TurnOff) @0e4b3c40
+HwIoAb_Leds_TurnOff/5 (HwIoAb_Leds_TurnOff) @0d8b3c40
   Type: function definition analyzed
   Visibility: force_output externally_visible no_reorder asm_written public section:.text.HwIoAb_Leds_TurnOff (implicit_section)
   References: 
@@ -400,7 +400,7 @@ HwIoAb_Leds_TurnOff/5 (HwIoAb_Leds_TurnOff) @0e4b3c40
   Function flags:
   Called by: 
   Calls: 
-HwIoAb_Leds_TurnOn/4 (HwIoAb_Leds_TurnOn) @0e4b3460
+HwIoAb_Leds_TurnOn/4 (HwIoAb_Leds_TurnOn) @0d8b3460
   Type: function definition analyzed
   Visibility: force_output externally_visible no_reorder asm_written public section:.text.HwIoAb_Leds_TurnOn (implicit_section)
   References: 
@@ -409,7 +409,7 @@ HwIoAb_Leds_TurnOn/4 (HwIoAb_Leds_TurnOn) @0e4b3460
   Function flags:
   Called by: 
   Calls: 
-HwIoAb_Leds_Init/3 (HwIoAb_Leds_Init) @0e4b3e00
+HwIoAb_Leds_Init/3 (HwIoAb_Leds_Init) @0d8b3e00
   Type: function definition analyzed
   Visibility: force_output externally_visible no_reorder asm_written public section:.text.HwIoAb_Leds_Init (implicit_section)
   References: 
@@ -418,7 +418,7 @@ HwIoAb_Leds_Init/3 (HwIoAb_Leds_Init) @0e4b3e00
   Function flags:
   Called by: 
   Calls: 
-LedsControl_Ptr/2 (LedsControl_Ptr) @0e4b1678
+LedsControl_Ptr/2 (LedsControl_Ptr) @0d8b1678
   Type: variable definition analyzed
   Visibility: force_output externally_visible no_reorder asm_written public section:.data.LedsControl_Ptr (implicit_section)
   Aux: @00000001
@@ -426,10 +426,10 @@ LedsControl_Ptr/2 (LedsControl_Ptr) @0e4b1678
   Referring: 
   Availability: available
   Varpool flags: initialized
-LedsCtrl/1 (LedsCtrl) @0e4b1630
+LedsCtrl/1 (LedsCtrl) @0d8b1630
   Type: variable definition analyzed
   Visibility: force_output externally_visible no_reorder asm_written public section:.bss.LedsCtrl (implicit_section)
-  Aux: @0e4b1678
+  Aux: @0d8b1678
   References: 
   Referring: LedsControl_Ptr/2 (addr) 
   Availability: available

@@ -159,11 +159,11 @@ int main( void )
             {
                 switch( CurrentButton )
                 {
-                    case HWI0AB_BUTTONS_1_ID :
+                    case HWIOAB_BUTTONS_1_ID :
                         switch( RealEvent )
                         {
                             case HWIOAB_BTN_EVENT_SINGLE_CLICK :
-                                HwIoAb_Leds_TurnToggle( HWI0AB_LED_BLUE_ID );
+                                HwIoAb_Leds_TurnToggle( HWIOAB_LED_BLUE_ID );
                                 SEGGER_RTT_printf( 0, "Button 1 action: SINGLE_CLICK \n" );
                                 ButtonFlag = 1;
                                 SEGGER_RTT_printf( 0, "CAN msg 0x001 transmitted at 500kbps \n" );

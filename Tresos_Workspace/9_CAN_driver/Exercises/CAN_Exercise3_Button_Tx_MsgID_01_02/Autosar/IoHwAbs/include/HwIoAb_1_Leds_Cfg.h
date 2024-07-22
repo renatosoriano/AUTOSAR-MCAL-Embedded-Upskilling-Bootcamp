@@ -9,7 +9,7 @@
 
 #define HWIOAB_LEDS_MAX 11          /* Max number of leds to manage, only 6 needed now */
 
-#define HWI0AB_LED_BLUE_ID  0u     /* RGB Led 1 ID */
+#define HWIOAB_LED_BLUE_ID  0u     /* RGB Led 1 ID */
 #define HWIOAB_LED_RED_ID   1u     /* RGB Led 2 ID */
 #define HWIOAB_LED_GREEN_ID 2u     /* RGB Led 3 ID */
 #define HWIOAB_C8_LED0_ID   3u     /* PORTC8 Led 0 ID */
