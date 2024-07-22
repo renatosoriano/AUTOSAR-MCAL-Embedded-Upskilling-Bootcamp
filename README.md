@@ -297,7 +297,7 @@ You can find here captures and media, relevant to examples and exercises, visibl
 
 _Back to [Sample Evidences](#8-sample-evidences)_
 
-* #### DIO Exercise 8: Rotate LEDs Left-Right using Buttons
+* #### [DIO Exercise 8: Rotate LEDs Left-Right using Buttons](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/tree/main/Tresos_Workspace/1_DIO_PORT_driver/Exercises/DIO_Exercise8_Rotate_LEDs_Left_Right_Buttons)
 Pressing 1st button will rotate the LEDs from right to left, and pressing 2nd button will rotate them from left to right. 3rd button activates a different speed.
 
 ![DIO_Exercise8_Rotate_LEDs_Left_Right_Buttons.GIF](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/DIO_PORT_driver/DIO_Exercise8_Rotate_LEDs_Left_Right_Buttons.GIF)
