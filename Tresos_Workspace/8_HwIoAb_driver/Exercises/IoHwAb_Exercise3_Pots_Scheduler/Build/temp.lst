@@ -884,7 +884,7 @@ void Os_100ms_Task( void )
      9a4:	000009dd 	.word	0x000009dd
      9a8:	00000a09 	.word	0x00000a09
      9ac:	00000a35 	.word	0x00000a35
-                            HwIoAb_Leds_TurnToggle( HWI0AB_LED_BLUE_ID );
+                            HwIoAb_Leds_TurnToggle( HWIOAB_LED_BLUE_ID );
      9b0:	2000      	movs	r0, #0
      9b2:	f000 fb93 	bl	10dc <HwIoAb_Leds_TurnToggle>
                             SEGGER_RTT_printf( 0, "Button 1 action: SINGLE_CLICK \n" );
@@ -953,7 +953,7 @@ void Os_100ms_Task( void )
      a2e:	f001 fc23 	bl	2278 <SEGGER_RTT_printf>
                         break;
      a32:	e01c      	b.n	a6e <Os_100ms_Task+0x126>
-                            HwIoAb_Leds_TurnOff( HWI0AB_LED_BLUE_ID );
+                            HwIoAb_Leds_TurnOff( HWIOAB_LED_BLUE_ID );
      a34:	2000      	movs	r0, #0
      a36:	f000 fb2d 	bl	1094 <HwIoAb_Leds_TurnOff>
                             HwIoAb_Leds_TurnOff( HWIOAB_LED_RED_ID );
@@ -997,7 +997,7 @@ void Os_100ms_Task( void )
      a84:	00000abd 	.word	0x00000abd
      a88:	00000ae9 	.word	0x00000ae9
      a8c:	00000b15 	.word	0x00000b15
-                            HwIoAb_Leds_TurnToggle( HWI0AB_LED_BLUE_ID );
+                            HwIoAb_Leds_TurnToggle( HWIOAB_LED_BLUE_ID );
      a90:	2000      	movs	r0, #0
      a92:	f000 fb23 	bl	10dc <HwIoAb_Leds_TurnToggle>
                             SEGGER_RTT_printf( 0, "Button 2 action: SINGLE_CLICK \n" );
@@ -1066,7 +1066,7 @@ void Os_100ms_Task( void )
      b0e:	f001 fbb3 	bl	2278 <SEGGER_RTT_printf>
                         break;
      b12:	e01c      	b.n	b4e <Os_100ms_Task+0x206>
-                            HwIoAb_Leds_TurnOff( HWI0AB_LED_BLUE_ID );
+                            HwIoAb_Leds_TurnOff( HWIOAB_LED_BLUE_ID );
      b14:	2000      	movs	r0, #0
      b16:	f000 fabd 	bl	1094 <HwIoAb_Leds_TurnOff>
                             HwIoAb_Leds_TurnOff( HWIOAB_LED_RED_ID );
@@ -1110,7 +1110,7 @@ void Os_100ms_Task( void )
      b64:	00000b9d 	.word	0x00000b9d
      b68:	00000bc9 	.word	0x00000bc9
      b6c:	00000bf5 	.word	0x00000bf5
-                            HwIoAb_Leds_TurnToggle( HWI0AB_LED_BLUE_ID );
+                            HwIoAb_Leds_TurnToggle( HWIOAB_LED_BLUE_ID );
      b70:	2000      	movs	r0, #0
      b72:	f000 fab3 	bl	10dc <HwIoAb_Leds_TurnToggle>
                             SEGGER_RTT_printf( 0, "Button 3 action: SINGLE_CLICK \n" );
@@ -1179,7 +1179,7 @@ void Os_100ms_Task( void )
      bee:	f001 fb43 	bl	2278 <SEGGER_RTT_printf>
                         break;
      bf2:	e01c      	b.n	c2e <Os_100ms_Task+0x2e6>
-                            HwIoAb_Leds_TurnOff( HWI0AB_LED_BLUE_ID );
+                            HwIoAb_Leds_TurnOff( HWIOAB_LED_BLUE_ID );
      bf4:	2000      	movs	r0, #0
      bf6:	f000 fa4d 	bl	1094 <HwIoAb_Leds_TurnOff>
                             HwIoAb_Leds_TurnOff( HWIOAB_LED_RED_ID );
