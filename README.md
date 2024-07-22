@@ -308,14 +308,14 @@ https://github.com/user-attachments/assets/80e7ae72-599a-454c-8cb2-881933acbc30
 
 _Back to [Sample Evidences](#8-sample-evidences)_
 
-* #### GPT Exercise 1: Two Timers in OneShot mode using FIRC clock to toggle Two LEDs
+* #### [GPT Exercise 1: Two Timers in OneShot mode using FIRC clock to toggle Two LEDs](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/tree/main/Tresos_Workspace/3_GPT_driver/Exercises/GPT_Exercise1_2Timers_OneShot_FIRC_2LEDs)
 Using two different timers (FTM1 and FTM2) to toggle two pairs of leds (1st pair: normal led C8 and Blue RGB led, 2nd pair: normal led C9 and Green RGB led) at 100ms and 300ms, both timers use notifications in one shot mode, plus been feed by FIRC clock at 12MHz.
 
 ![GPT_Exercise1_2Timers_OneShot_FIRC_2LEDs.GIF](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/GPT_driver/GPT_Exercise1_2Timers_OneShot_FIRC_2LEDs.GIF)
 
 https://github.com/user-attachments/assets/193ff80f-5500-420f-af6e-2be51721c8a4
 
-* #### GPT Exercise 3: Three FTM Timers to toggle all RGB at different Frequencies
+* #### [GPT Exercise 3: Three FTM Timers to toggle all RGB at different Frequencies](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/tree/main/Tresos_Workspace/3_GPT_driver/Exercises/GPT_Exercise3_3Timers_FTM_RGB_DiffClkRef)
 Using three FTM timers with one channel each, toggle the three RGB leds at different values (100ms, 400ms, and 800ms), the most important is that each FTM timer is feed by a different clock reference (12MHz, 4MHz, and 8MHz).
 
 ![GPT_Exercise3_3Timers_FTM_RGB_DiffClkRef.GIF](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/GPT_driver/GPT_Exercise3_3Timers_FTM_RGB_DiffClkRef.GIF)
@@ -326,7 +326,7 @@ https://github.com/user-attachments/assets/51c8bdf2-141e-4744-be3b-26aa9c43fdc1
 
 _Back to [Sample Evidences](#8-sample-evidences)_
 
-* #### ADC Exercise 1: Rotate Speed of Eight LEDs with Potentiometer
+* #### [ADC Exercise 1: Rotate Speed of Eight LEDs with Potentiometer](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/tree/main/Tresos_Workspace/5_ADC_driver/Exercises/ADC_Exercise1_Rotate_Speed_8LEDs_Potentiometer)
 Vary the rotation speed of eight LEDs C8 to C15 using one of the potentiometers on the board.
 
 ![ADC_Exercise1_Rotate_Speed_8LEDs_Potentiometer.GIF](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/ADC_driver/ADC_Exercise1_Rotate_Speed_8LEDs_Potentiometer.GIF)
@@ -335,12 +335,12 @@ https://github.com/user-attachments/assets/52fb87fa-588e-4ca8-92fe-8630d8d8d1d9
 
 ![ADC_Exercise1_Rotate_Speed_8LEDs_Potentiometer_Terminal.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/ADC_driver/ADC_Exercise1_Rotate_Speed_8LEDs_Potentiometer_Terminal.png)
 
-* #### ADC Exercise 2: Two Potentiometers, display Volts and Ohms
+* #### [ADC Exercise 2: Two Potentiometers, display Volts and Ohms](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/tree/main/Tresos_Workspace/5_ADC_driver/Exercises/ADC_Exercise2_2PotValues_Ohms_Volts)
 Display the values of the two potentiometers in Ohms and Volts.
 
 ![ADC_Exercise2_2PotValues_Ohms_Volts_Terminal.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/ADC_driver/ADC_Exercise2_2PotValues_Ohms_Volts_Terminal.png)
 
-* #### ADC Exercise 6: Four Channels in ADC0 using Two Potentiometers
+* #### [ADC Exercise 6: Four Channels in ADC0 using Two Potentiometers](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/tree/main/Tresos_Workspace/5_ADC_driver/Exercises/ADC_Exercise6_4Channels_ADC0_2Pots)
 Using a jumper wire to connect other channels available from ADC0 to have four channels to sample: 
 - Pot 1: pin PTB1->CH5 connected to pin PTB0->CH4 (Blue jumper wire).
 - Pot 2: pin PTB13->CH8 (Interleaved, by default ADC0-CH8 is connected to PTC0 but changed to PTB13 using interleave function in code) connected to pin PTC1->CH9 (Purple jumper wire). 
@@ -359,7 +359,7 @@ ADC0 and ADC1 Interleaved Channels diagram from NXP S32K1xx Reference Manual Rev
 
 _Back to [Sample Evidences](#8-sample-evidences)_
 
-* #### PWM Exercise 1: Two Channels, Two FTM Timers with SIRC Clock
+* #### [PWM Exercise 1: Two Channels, Two FTM Timers with SIRC Clock](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/tree/main/Tresos_Workspace/6_PWM_driver/Exercises/PWM_Exercise1_2CH_2Timers_FTM_SIRC_Clk)
 A program that generates two PWM channels but using two different timers, must see which pins are available with FTM functionality. Feed those timers with a SIRC clock.
 - Timer 1: FTM0, Channel: CH0, Pin: RED RGB LED.
 - Timer 2: FTM2, Channel: CH0, Pin: BLUE RGB LED.
@@ -368,7 +368,7 @@ Both RGB LEDs working, hence the purple color.
 
 ![PWM_Exercise1_2CH_2Timers_FTM_SIRC_Clk.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/PWM_driver/PWM_Exercise1_2CH_2Timers_FTM_SIRC_Clk.png)
 
-* #### PWM Exercise 2: Two Complementary Channels with DeadTime Insertion
+* #### [PWM Exercise 2: Two Complementary Channels with DeadTime Insertion](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/tree/main/Tresos_Workspace/6_PWM_driver/Exercises/PWM_Exercise2_2CH_Complementary_DeadTime_Insertion)
 Generate two complement PWM signal with dead time insertion of around 1% of the period of the signal.
 
 https://github.com/user-attachments/assets/dade5bbc-cec0-4004-9f04-f78ad7fcd22b
@@ -394,7 +394,7 @@ Channel (n+1) output in Complementary mode diagram from NXP S32K1xx Reference Ma
 
 ![PWM_Exercise2_2CH_Complementary_DeadTime_Insertion_ComplementaryMode.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/PWM_driver/PWM_Exercise2_2CH_Complementary_DeadTime_Insertion_ComplementaryMode.png)
 
-* #### PWM Exercise 4: ADC Potentiometer modifies PWM DutyCycle of RGB LED
+* #### [PWM Exercise 4: ADC Potentiometer modifies PWM DutyCycle of RGB LED](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/tree/main/Tresos_Workspace/6_PWM_driver/Exercises/PWM_Exercise4_ADC_Pot_DutyCycle_RGB_LED)
 Used a potentiometer to variate the PWM duty cycle, connected to Blue RGB led, from 10% to 90% in steps of 10%.
 Two available methods, with and without steps, can be found in code with algorithm explained.
 
@@ -406,19 +406,19 @@ https://github.com/user-attachments/assets/a163665e-de78-469f-a384-a67201327c4e
 
 _Back to [Sample Evidences](#8-sample-evidences)_
 
-* #### SPI Exercise 1: Read and Print 32 bytes from EEPROM
+* #### [SPI Exercise 1: Read and Print 32 bytes from EEPROM](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/tree/main/Tresos_Workspace/7_SPI_driver/Exercises/SPI_Exercise1_ReadPrint_32bytes_EEPROM_ASCII)
 Read and display the first 32 bytes of an Eeprom in different formats using Semihosting with RTT.
 
 ![SPI_Exercise1_ReadPrint_32bytes_EEPROM_ASCII_Terminal.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/SPI_driver/SPI_Exercise1_ReadPrint_32bytes_EEPROM_ASCII_Terminal.png)
 
-* #### SPI Exercise 4: Create Two Functions to Write and Read a Byte
+* #### [SPI Exercise 4: Create Two Functions to Write and Read a Byte](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/tree/main/Tresos_Workspace/7_SPI_driver/Exercises/SPI_Exercise4_Function_Write_Read_Byte)
 Wrote two functions that allow to write and read a byte to any valid memory address in the Eeprom memory, functions shall have the following prototypes:
 - void write_byte( uint16 addr, uint8 data );
 - uint8_t read_byte( uint16_t addr );
 
 ![SPI_Exercise4_Function_Write_Read_Byte_Terminal.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/SPI_driver/SPI_Exercise4_Function_Write_Read_Byte_Terminal.png)
 
-* #### SPI Exercise 5: Create Two Functions to Write and Read Data from an Array of any Size of Bytes
+* #### [SPI Exercise 5: Create Two Functions to Write and Read Data from an Array of any Size of Bytes](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/tree/main/Tresos_Workspace/7_SPI_driver/Exercises/SPI_Exercise5_Function_Write_Read_ArrayData)
 Wrote the following functions to allow to write a given array of n number of bytes starting at any address of the eeprom:
 - void write_data( uint16 addr, uint8 *data, uint8 size );
 - void read_data( uint16 addr, uint8 *data, uint8 size );
@@ -459,7 +459,7 @@ Hardware board receives (Rx) every second an 8-byte single message with ID 0x022
 
 ![CAN_Example6_Reception_with_Filters_ID_0x022.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/CAN_Driver_examples_results_screenshots/CAN_Example6_Reception_with_Filters_ID_0x022.png)
 
-* #### CAN Exercise 3: Button Transmits Messages
+* #### [CAN Exercise 3: Button Transmits Messages](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/tree/main/Tresos_Workspace/9_CAN_driver/Exercises/CAN_Exercise3_Button_Tx_MsgID_01_02)
 Program that, upon pressing the button on the board, transmits a message with identifier 0x001 to the CAN bus, and upon releasing it, transmits a message with an identifier of 0x002.
 Hardware board transmits (Tx) two 8-byte messages with ID 0x001 and 0x002, all having the same specified Data payload: 01 02 03 04 05 06 11 12. Savvy CAN receiving (Rx) the data, everytime having byte 1 and 8 increased by value of 0x1 as per the exercise intentional behavior.
 
