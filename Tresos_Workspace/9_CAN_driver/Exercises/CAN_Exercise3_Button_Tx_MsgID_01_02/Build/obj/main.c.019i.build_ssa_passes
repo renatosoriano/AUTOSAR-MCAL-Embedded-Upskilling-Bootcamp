@@ -1,0 +1,309 @@
+EcuM_Init ()
+{
+  <bb 2> :
+  Mcu_Init (&Mcu_Config);
+  Mcu_InitClock (0);
+  Mcu_SetMode (0);
+  OsIf_Init (0B);
+  Platform_Init (0B);
+  Port_Init (&Port_Config);
+  Can_43_FLEXCAN_Init (&Can_43_FLEXCAN_Config);
+  IoHwAb_Init0 (0B);
+  return;
+
+}
+
+
+main ()
+{
+  uint8 CurrentButton;
+  uint8 ButtonFlag;
+  uint8 RealEvent;
+  struct Can_PduType PduInfo3;
+  struct Can_PduType PduInfo2;
+  struct Can_PduType PduInfo1;
+  int D.8077;
+
+  <bb 2> :
+  EcuM_Init ();
+  SEGGER_RTT_Init ();
+  RealEvent = 0;
+  ButtonFlag = 0;
+  _1 = Can_43_FLEXCAN_SetBaudrate (0, 2);
+  if (_1 == 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  SEGGER_RTT_printf (0, "CAN baud rate set successfully. \n");
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  SEGGER_RTT_printf (0, "Failed to set CAN baud rate. \n");
+
+  <bb 5> :
+  _2 = Can_43_FLEXCAN_SetControllerMode (0, 1);
+  if (_2 == 0)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  SEGGER_RTT_printf (0, "CAN controller state machine set successfully. \n");
+  goto <bb 8>; [INV]
+
+  <bb 7> :
+  SEGGER_RTT_printf (0, "Failed to set CAN controller state machine. \n");
+
+  <bb 8> :
+  PduInfo1.id = 1;
+  PduInfo1.swPduHandle = 0;
+  PduInfo1.length = 8;
+  PduInfo1.sdu = &Can_au8Sdu8bytes;
+  PduInfo2.id = 2;
+  PduInfo2.swPduHandle = 1;
+  PduInfo2.length = 8;
+  PduInfo2.sdu = &Can_au8Sdu8bytes;
+  PduInfo3.id = 323;
+  PduInfo3.swPduHandle = 2;
+  PduInfo3.length = 8;
+  PduInfo3.sdu = &Can_au8Sdu8bytes;
+
+  <bb 9> :
+  HwIoAb_Buttons_MainFunction ();
+  Delay (10);
+  CurrentButton = 0;
+  goto <bb 35>; [INV]
+
+  <bb 10> :
+  RealEvent = HwIoAb_Buttons_GetEvent (CurrentButton);
+  if (RealEvent != 0)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 34>; [INV]
+
+  <bb 11> :
+  _3 = (int) CurrentButton;
+  switch (_3) <default: <L30> [INV], case 0: <L9> [INV], case 1: <L16> [INV], case 2: <L23> [INV]>
+
+  <bb 12> :
+<L9>:
+  _4 = (int) RealEvent;
+  switch (_4) <default: <L14> [INV], case 1: <L10> [INV], case 2: <L11> [INV], case 3: <L12> [INV], case 4: <L13> [INV]>
+
+  <bb 13> :
+<L10>:
+  HwIoAb_Leds_TurnToggle (0);
+  SEGGER_RTT_printf (0, "Button 1 action: SINGLE_CLICK \n");
+  ButtonFlag = 1;
+  SEGGER_RTT_printf (0, "CAN msg 0x001 transmitted at 500kbps \n");
+  goto <bb 18>; [INV]
+
+  <bb 14> :
+<L11>:
+  SEGGER_RTT_printf (0, "Button 1 action: DOUBLE_CLICK \n");
+  goto <bb 18>; [INV]
+
+  <bb 15> :
+<L12>:
+  SEGGER_RTT_printf (0, "Button 1 action: HOLD_CLICK \n");
+  goto <bb 18>; [INV]
+
+  <bb 16> :
+<L13>:
+  HwIoAb_Leds_TurnToggle (2);
+  SEGGER_RTT_printf (0, "Button 1 action: RELEASE \n");
+  ButtonFlag = 2;
+  SEGGER_RTT_printf (0, "CAN msg 0x002 transmitted at 500kbps \n");
+  goto <bb 18>; [INV]
+
+  <bb 17> :
+<L14>:
+
+  <bb 18> :
+  goto <bb 34>; [INV]
+
+  <bb 19> :
+<L16>:
+  _5 = (int) RealEvent;
+  switch (_5) <default: <L21> [INV], case 1: <L17> [INV], case 2: <L18> [INV], case 3: <L19> [INV], case 4: <L20> [INV]>
+
+  <bb 20> :
+<L17>:
+  SEGGER_RTT_printf (0, "Button 2 action: SINGLE_CLICK \n");
+  goto <bb 25>; [INV]
+
+  <bb 21> :
+<L18>:
+  SEGGER_RTT_printf (0, "Button 2 action: DOUBLE_CLICK \n");
+  goto <bb 25>; [INV]
+
+  <bb 22> :
+<L19>:
+  SEGGER_RTT_printf (0, "Button 2 action: HOLD_CLICK \n");
+  goto <bb 25>; [INV]
+
+  <bb 23> :
+<L20>:
+  SEGGER_RTT_printf (0, "Button 2 action: RELEASE \n");
+  goto <bb 25>; [INV]
+
+  <bb 24> :
+<L21>:
+
+  <bb 25> :
+  goto <bb 34>; [INV]
+
+  <bb 26> :
+<L23>:
+  _6 = (int) RealEvent;
+  switch (_6) <default: <L28> [INV], case 1: <L24> [INV], case 2: <L25> [INV], case 3: <L26> [INV], case 4: <L27> [INV]>
+
+  <bb 27> :
+<L24>:
+  SEGGER_RTT_printf (0, "Button 3 action: SINGLE_CLICK \n");
+  goto <bb 32>; [INV]
+
+  <bb 28> :
+<L25>:
+  SEGGER_RTT_printf (0, "Button 3 action: DOUBLE_CLICK \n");
+  goto <bb 32>; [INV]
+
+  <bb 29> :
+<L26>:
+  SEGGER_RTT_printf (0, "Button 3 action: HOLD_CLICK \n");
+  goto <bb 32>; [INV]
+
+  <bb 30> :
+<L27>:
+  SEGGER_RTT_printf (0, "Button 3 action: RELEASE \n");
+  goto <bb 32>; [INV]
+
+  <bb 31> :
+<L28>:
+
+  <bb 32> :
+  goto <bb 34>; [INV]
+
+  <bb 33> :
+<L30>:
+
+  <bb 34> :
+  CurrentButton.0_7 = CurrentButton;
+  CurrentButton = CurrentButton.0_7 + 1;
+
+  <bb 35> :
+  if (CurrentButton <= 2)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 36>; [INV]
+
+  <bb 36> :
+  if (ButtonFlag == 1)
+    goto <bb 37>; [INV]
+  else
+    goto <bb 38>; [INV]
+
+  <bb 37> :
+  ButtonFlag = 0;
+  Can_43_FLEXCAN_Write (0, &PduInfo1);
+
+  <bb 38> :
+  if (ButtonFlag == 2)
+    goto <bb 39>; [INV]
+  else
+    goto <bb 40>; [INV]
+
+  <bb 39> :
+  ButtonFlag = 0;
+  Can_43_FLEXCAN_Write (0, &PduInfo2);
+
+  <bb 40> :
+  Can_43_FLEXCAN_Write (0, &PduInfo3);
+
+  <bb 41> :
+  CanIf_bTxFlag.1_8 = CanIf_bTxFlag;
+  _9 = ~CanIf_bTxFlag.1_8;
+  if (_9 != 0)
+    goto <bb 41>; [INV]
+  else
+    goto <bb 42>; [INV]
+
+  <bb 42> :
+  CanIf_bTxFlag = 0;
+  _10 = Can_au8Sdu8bytes[0];
+  _11 = _10;
+  _12 = _11 + 1;
+  Can_au8Sdu8bytes[0] = _12;
+  _13 = Can_au8Sdu8bytes[7];
+  _14 = _13;
+  _15 = _14 + 1;
+  Can_au8Sdu8bytes[7] = _15;
+  goto <bb 9>; [INV]
+
+}
+
+
+CanIf_RxIndication (const struct Can_HwType * Mailbox, const struct PduInfoType * PduInfoPtr)
+{
+  <bb 2> :
+  return;
+
+}
+
+
+CanIf_TxConfirmation (PduIdType CanTxPduId)
+{
+  <bb 2> :
+  CanIf_bTxFlag = 1;
+  return;
+
+}
+
+
+CanIf_ControllerModeIndication (uint8 ControllerId, Can_ControllerStateType ControllerMode)
+{
+  <bb 2> :
+  return;
+
+}
+
+
+CanIf_ControllerBusOff (uint8 ControllerId)
+{
+  <bb 2> :
+  return;
+
+}
+
+
+Delay (uint32 ms)
+{
+  uint32 ElapsedTime;
+  uint32 SeedTick;
+  uint32 Timeout;
+  long unsigned int D.8064;
+
+  <bb 2> :
+  _1 = ms * 1000;
+  Timeout = OsIf_MicrosToTicks (_1, 1);
+  _2 = OsIf_GetCounter (1);
+  SeedTick = _2;
+  ElapsedTime = 0;
+
+  <bb 3> :
+  D.8064 = OsIf_GetElapsed (&SeedTick, 1);
+  ElapsedTime = D.8064 + ElapsedTime;
+  if (ElapsedTime < Timeout)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 4> :
+  SeedTick = {CLOBBER};
+  return;
+
+}
+
+

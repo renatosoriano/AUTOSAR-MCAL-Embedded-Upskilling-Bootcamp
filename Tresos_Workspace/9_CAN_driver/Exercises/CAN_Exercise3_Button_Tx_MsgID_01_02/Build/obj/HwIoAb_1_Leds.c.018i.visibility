@@ -1,0 +1,156 @@
+
+Marking local functions:
+
+
+Marking externally visible functions: HwIoAb_Leds_TurnToggle/6 HwIoAb_Leds_TurnOff/5 HwIoAb_Leds_TurnOn/4 HwIoAb_Leds_Init/3
+
+
+Marking externally visible variables: LedsControl_Ptr/2 LedsCtrl/1
+
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+Symbol table:
+
+Dio_FlipChannel/8 (Dio_FlipChannel) @0e4b97e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: HwIoAb_Leds_TurnToggle/6 
+  Calls: 
+Dio_WriteChannel/7 (Dio_WriteChannel) @0e4b9540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: HwIoAb_Leds_TurnOff/5 HwIoAb_Leds_TurnOn/4 
+  Calls: 
+HwIoAb_Leds_TurnToggle/6 (HwIoAb_Leds_TurnToggle) @0e4b9000
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: LedsControl_Ptr/2 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Dio_FlipChannel/8 
+HwIoAb_Leds_TurnOff/5 (HwIoAb_Leds_TurnOff) @0e4b3c40
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: LedsControl_Ptr/2 (read) LedsControl_Ptr/2 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Dio_WriteChannel/7 
+HwIoAb_Leds_TurnOn/4 (HwIoAb_Leds_TurnOn) @0e4b3460
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: LedsControl_Ptr/2 (read) LedsControl_Ptr/2 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Dio_WriteChannel/7 
+HwIoAb_Leds_Init/3 (HwIoAb_Leds_Init) @0e4b3e00
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: LedsControl_Ptr/2 (read) LedsControl_Ptr/2 (read) LedsControl_Ptr/2 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+LedsControl_Ptr/2 (LedsControl_Ptr) @0e4b1678
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: LedsCtrl/1 (addr) 
+  Referring: HwIoAb_Leds_Init/3 (read) HwIoAb_Leds_Init/3 (read) HwIoAb_Leds_Init/3 (read) HwIoAb_Leds_TurnOn/4 (read) HwIoAb_Leds_TurnOn/4 (read) HwIoAb_Leds_TurnOff/5 (read) HwIoAb_Leds_TurnOff/5 (read) HwIoAb_Leds_TurnToggle/6 (read) 
+  Availability: available
+  Varpool flags: initialized
+LedsCtrl/1 (LedsCtrl) @0e4b1630
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: LedsControl_Ptr/2 (addr) 
+  Availability: available
+  Varpool flags:
+HwIoAb_Leds_TurnToggle (uint8 Led)
+{
+  <bb 2> :
+  LedsControl_Ptr.7_1 = LedsControl_Ptr;
+  _2 = LedsControl_Ptr.7_1->LedsConfig_Ptr;
+  _3 = (unsigned int) Led;
+  _4 = _3 * 4;
+  _5 = _2 + _4;
+  _6 = _5->Led;
+  Dio_FlipChannel (_6);
+  return;
+
+}
+
+
+HwIoAb_Leds_TurnOff (uint8 Led)
+{
+  <bb 2> :
+  LedsControl_Ptr.5_1 = LedsControl_Ptr;
+  _2 = LedsControl_Ptr.5_1->LedsConfig_Ptr;
+  _3 = (unsigned int) Led;
+  _4 = _3 * 4;
+  _5 = _2 + _4;
+  _6 = _5->Led;
+  LedsControl_Ptr.6_7 = LedsControl_Ptr;
+  _8 = LedsControl_Ptr.6_7->LedsConfig_Ptr;
+  _9 = (unsigned int) Led;
+  _10 = _9 * 4;
+  _11 = _8 + _10;
+  _12 = _11->Active;
+  _13 = _12 == 0;
+  _14 = (unsigned char) _13;
+  Dio_WriteChannel (_6, _14);
+  return;
+
+}
+
+
+HwIoAb_Leds_TurnOn (uint8 Led)
+{
+  <bb 2> :
+  LedsControl_Ptr.3_1 = LedsControl_Ptr;
+  _2 = LedsControl_Ptr.3_1->LedsConfig_Ptr;
+  _3 = (unsigned int) Led;
+  _4 = _3 * 4;
+  _5 = _2 + _4;
+  _6 = _5->Led;
+  LedsControl_Ptr.4_7 = LedsControl_Ptr;
+  _8 = LedsControl_Ptr.4_7->LedsConfig_Ptr;
+  _9 = (unsigned int) Led;
+  _10 = _9 * 4;
+  _11 = _8 + _10;
+  _12 = _11->Active;
+  Dio_WriteChannel (_6, _12);
+  return;
+
+}
+
+
+HwIoAb_Leds_Init (const struct HwIoAb_Leds_Config * Leds_Config)
+{
+  <bb 2> :
+  LedsControl_Ptr.0_1 = LedsControl_Ptr;
+  LedsControl_Ptr.0_1->Leds = 11;
+  LedsControl_Ptr.1_2 = LedsControl_Ptr;
+  LedsControl_Ptr.1_2->LedsConfig_Ptr = Leds_Config;
+  LedsControl_Ptr.2_3 = LedsControl_Ptr;
+  LedsControl_Ptr.2_3->Leds_init = 1;
+  return;
+
+}
+
+
