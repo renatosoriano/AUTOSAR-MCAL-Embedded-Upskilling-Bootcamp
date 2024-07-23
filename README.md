@@ -12,7 +12,7 @@ Date: July, 2024.
 
 ## Table of Contents
 
-_<-- Back to [Top of page](#autosar-mcal-embedded-upskilling-bootcamp)_
+_<-- Back to [Top of Page](#autosar-mcal-embedded-upskilling-bootcamp)_
 
 1. [**Description**](#1-description)
 2. [**Hardware Requirements**](#2-hardware-requirements)
