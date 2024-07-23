@@ -1,0 +1,143 @@
+Power_Ip_RCM_GetResetRawValue ()
+{
+  uint32 RegValue;
+  uint32 RawReset;
+  Power_Ip_RawResetType D.5538;
+
+  <bb 2> :
+  _1 = 1074262016B;
+  _2 = _1->SSRS;
+  RegValue = _2 & 12270;
+  if (RegValue != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  _3 = 1074262016B;
+  _4 = RegValue & 12270;
+  _3->SSRS = _4;
+  Power_Ip_u32ResetStatus = RegValue;
+
+  <bb 4> :
+  RawReset = Power_Ip_u32ResetStatus;
+  D.5538 = RawReset;
+
+  <bb 5> :
+<L2>:
+  return D.5538;
+
+}
+
+
+Power_Ip_RCM_GetResetReason ()
+{
+  uint32 NumberOfFlags;
+  uint32 Position;
+  uint32 DynamicMask;
+  uint32 Index;
+  uint32 ActiveValue;
+  uint32 RegValue;
+  uint32 ResetReason;
+  uint32 D.5534;
+
+  <bb 2> :
+  ResetReason = 12;
+  RegValue = 0;
+  Position = 0;
+  NumberOfFlags = 0;
+  _1 = 1074262016B;
+  _2 = _1->SSRS;
+  RegValue = _2 & 12270;
+  if (RegValue != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  _3 = 1074262016B;
+  _4 = RegValue & 12270;
+  _3->SSRS = _4;
+  Power_Ip_u32ResetStatus = RegValue;
+
+  <bb 4> :
+  ActiveValue = Power_Ip_u32ResetStatus;
+  _5 = ActiveValue & 12270;
+  if (_5 == 130)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  ResetReason = 5;
+  goto <bb 14>; [INV]
+
+  <bb 6> :
+  Index = 0;
+  goto <bb 13>; [INV]
+
+  <bb 7> :
+  DynamicMask = 2147483648 >> Index;
+  _6 = DynamicMask & 12286;
+  if (_6 != 0)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 8> :
+  _7 = DynamicMask & ActiveValue;
+  if (_7 != 0)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 9> :
+  ResetReason = Position;
+  NumberOfFlags = NumberOfFlags + 1;
+  if (NumberOfFlags > 1)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 10> :
+  ResetReason = 13;
+  goto <bb 14>; [INV]
+
+  <bb 11> :
+  Position = Position + 1;
+
+  <bb 12> :
+  Index = Index + 1;
+
+  <bb 13> :
+  if (Index <= 31)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 14>; [INV]
+
+  <bb 14> :
+  D.5534 = ResetReason;
+
+  <bb 15> :
+<L14>:
+  return D.5534;
+
+}
+
+
+Power_Ip_RCM_ResetInit (const struct Power_Ip_RCM_ConfigType * ConfigPtr)
+{
+  <bb 2> :
+  _1 = ConfigPtr->ResetPinControlConfig;
+  _2 = 1074262016B;
+  _3 = _1 & 7943;
+  _2->RPC = _3;
+  _4 = ConfigPtr->ResetInterruptEnableConfig;
+  _5 = 1074262016B;
+  _6 = _4 & 12287;
+  _5->SRIE = _6;
+  return;
+
+}
+
+

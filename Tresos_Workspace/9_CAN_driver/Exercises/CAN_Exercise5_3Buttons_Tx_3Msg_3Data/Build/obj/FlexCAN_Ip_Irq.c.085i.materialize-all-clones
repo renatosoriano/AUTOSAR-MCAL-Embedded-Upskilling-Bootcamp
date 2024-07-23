@@ -1,0 +1,110 @@
+CAN2_ORED_0_15_MB_IRQHandler ()
+{
+  <bb 2> :
+  FlexCAN_IRQHandler (2, 0, 15);
+  __asm__ __volatile__(" DSB");
+  return;
+
+}
+
+
+CAN2_Error_IRQHandler ()
+{
+  <bb 2> :
+  FlexCAN_Error_IRQHandler (2);
+  __asm__ __volatile__(" DSB");
+  return;
+
+}
+
+
+CAN2_ORED_IRQHandler ()
+{
+  <bb 2> :
+  FlexCAN_BusOff_IRQHandler (2);
+  __asm__ __volatile__(" DSB");
+  return;
+
+}
+
+
+CAN1_ORED_16_31_MB_IRQHandler ()
+{
+  <bb 2> :
+  FlexCAN_IRQHandler (1, 16, 31);
+  __asm__ __volatile__(" DSB");
+  return;
+
+}
+
+
+CAN1_ORED_0_15_MB_IRQHandler ()
+{
+  <bb 2> :
+  FlexCAN_IRQHandler (1, 0, 15);
+  __asm__ __volatile__(" DSB");
+  return;
+
+}
+
+
+CAN1_Error_IRQHandler ()
+{
+  <bb 2> :
+  FlexCAN_Error_IRQHandler (1);
+  __asm__ __volatile__(" DSB");
+  return;
+
+}
+
+
+CAN1_ORED_IRQHandler ()
+{
+  <bb 2> :
+  FlexCAN_BusOff_IRQHandler (1);
+  __asm__ __volatile__(" DSB");
+  return;
+
+}
+
+
+CAN0_ORED_16_31_MB_IRQHandler ()
+{
+  <bb 2> :
+  FlexCAN_IRQHandler (0, 16, 31);
+  __asm__ __volatile__(" DSB");
+  return;
+
+}
+
+
+CAN0_ORED_0_15_MB_IRQHandler ()
+{
+  <bb 2> :
+  FlexCAN_IRQHandler (0, 0, 15);
+  __asm__ __volatile__(" DSB");
+  return;
+
+}
+
+
+CAN0_Error_IRQHandler ()
+{
+  <bb 2> :
+  FlexCAN_Error_IRQHandler (0);
+  __asm__ __volatile__(" DSB");
+  return;
+
+}
+
+
+CAN0_ORED_IRQHandler ()
+{
+  <bb 2> :
+  FlexCAN_BusOff_IRQHandler (0);
+  __asm__ __volatile__(" DSB");
+  return;
+
+}
+
+
