@@ -1,0 +1,424 @@
+Trivially needed symbols: CanIf_Config/4 CanIf_CanDrvConfig/3 CanIf_Can_43_FLEXCAN_DrvConfig/2 CanIf_Can_43_FLEXCAN_HohToRxPduMapping/1 CanIf_TxPdu/0
+
+
+Initial Symbol table:
+
+CDD_UserTxConfirmation0x143/7 (CDD_UserTxConfirmation0x143) @0d479b60
+  Type: function
+  Visibility: external public
+  Address is taken.
+  References: 
+  Referring: CanIf_TxPdu/0 (addr) 
+  Function flags:
+  Called by: 
+  Calls: 
+CDD_UserTxConfirmation0x002/6 (CDD_UserTxConfirmation0x002) @0d479a80
+  Type: function
+  Visibility: external public
+  Address is taken.
+  References: 
+  Referring: CanIf_TxPdu/0 (addr) 
+  Function flags:
+  Called by: 
+  Calls: 
+CDD_UserTxConfirmation0x001/5 (CDD_UserTxConfirmation0x001) @0d4799a0
+  Type: function
+  Visibility: external public
+  Address is taken.
+  References: 
+  Referring: CanIf_TxPdu/0 (addr) 
+  Function flags:
+  Called by: 
+  Calls: 
+CanIf_Config/4 (CanIf_Config) @0d477798
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @01981040
+  References: CanIf_CanDrvConfig/3 (addr) CanIf_TxPdu/0 (addr) 
+  Referring: 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+CanIf_CanDrvConfig/3 (CanIf_CanDrvConfig) @0d477708
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @0d477798
+  References: CanIf_Can_43_FLEXCAN_DrvConfig/2 (addr) 
+  Referring: CanIf_Config/4 (addr) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+CanIf_Can_43_FLEXCAN_DrvConfig/2 (CanIf_Can_43_FLEXCAN_DrvConfig) @0d477678
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @0d477708
+  References: CanIf_Can_43_FLEXCAN_HohToRxPduMapping/1 (addr) 
+  Referring: CanIf_CanDrvConfig/3 (addr) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+CanIf_Can_43_FLEXCAN_HohToRxPduMapping/1 (CanIf_Can_43_FLEXCAN_HohToRxPduMapping) @0d4775e8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @0d477678
+  References: 
+  Referring: CanIf_Can_43_FLEXCAN_DrvConfig/2 (addr) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+CanIf_TxPdu/0 (CanIf_TxPdu) @0d477558
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @0d4775e8
+  References: CDD_UserTxConfirmation0x001/5 (addr) CDD_UserTxConfirmation0x002/6 (addr) CDD_UserTxConfirmation0x143/7 (addr) 
+  Referring: CanIf_Config/4 (addr) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+
+Removing unused symbols:
+
+Reclaimed Symbol table:
+
+CDD_UserTxConfirmation0x143/7 (CDD_UserTxConfirmation0x143) @0d479b60
+  Type: function
+  Visibility: external public
+  Address is taken.
+  References: 
+  Referring: CanIf_TxPdu/0 (addr) 
+  Function flags:
+  Called by: 
+  Calls: 
+CDD_UserTxConfirmation0x002/6 (CDD_UserTxConfirmation0x002) @0d479a80
+  Type: function
+  Visibility: external public
+  Address is taken.
+  References: 
+  Referring: CanIf_TxPdu/0 (addr) 
+  Function flags:
+  Called by: 
+  Calls: 
+CDD_UserTxConfirmation0x001/5 (CDD_UserTxConfirmation0x001) @0d4799a0
+  Type: function
+  Visibility: external public
+  Address is taken.
+  References: 
+  Referring: CanIf_TxPdu/0 (addr) 
+  Function flags:
+  Called by: 
+  Calls: 
+CanIf_Config/4 (CanIf_Config) @0d477798
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: CanIf_CanDrvConfig/3 (addr) CanIf_TxPdu/0 (addr) 
+  Referring: 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+CanIf_CanDrvConfig/3 (CanIf_CanDrvConfig) @0d477708
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: CanIf_Can_43_FLEXCAN_DrvConfig/2 (addr) 
+  Referring: CanIf_Config/4 (addr) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+CanIf_Can_43_FLEXCAN_DrvConfig/2 (CanIf_Can_43_FLEXCAN_DrvConfig) @0d477678
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: CanIf_Can_43_FLEXCAN_HohToRxPduMapping/1 (addr) 
+  Referring: CanIf_CanDrvConfig/3 (addr) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+CanIf_Can_43_FLEXCAN_HohToRxPduMapping/1 (CanIf_Can_43_FLEXCAN_HohToRxPduMapping) @0d4775e8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: CanIf_Can_43_FLEXCAN_DrvConfig/2 (addr) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+CanIf_TxPdu/0 (CanIf_TxPdu) @0d477558
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: CDD_UserTxConfirmation0x001/5 (addr) CDD_UserTxConfirmation0x002/6 (addr) CDD_UserTxConfirmation0x143/7 (addr) 
+  Referring: CanIf_Config/4 (addr) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+
+
+Initial Symbol table:
+
+CDD_UserTxConfirmation0x143/7 (CDD_UserTxConfirmation0x143) @0d479b60
+  Type: function
+  Visibility: external public
+  Address is taken.
+  References: 
+  Referring: CanIf_TxPdu/0 (addr) 
+  Function flags:
+  Called by: 
+  Calls: 
+CDD_UserTxConfirmation0x002/6 (CDD_UserTxConfirmation0x002) @0d479a80
+  Type: function
+  Visibility: external public
+  Address is taken.
+  References: 
+  Referring: CanIf_TxPdu/0 (addr) 
+  Function flags:
+  Called by: 
+  Calls: 
+CDD_UserTxConfirmation0x001/5 (CDD_UserTxConfirmation0x001) @0d4799a0
+  Type: function
+  Visibility: external public
+  Address is taken.
+  References: 
+  Referring: CanIf_TxPdu/0 (addr) 
+  Function flags:
+  Called by: 
+  Calls: 
+CanIf_Config/4 (CanIf_Config) @0d477798
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: CanIf_CanDrvConfig/3 (addr) CanIf_TxPdu/0 (addr) 
+  Referring: 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+CanIf_CanDrvConfig/3 (CanIf_CanDrvConfig) @0d477708
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: CanIf_Can_43_FLEXCAN_DrvConfig/2 (addr) 
+  Referring: CanIf_Config/4 (addr) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+CanIf_Can_43_FLEXCAN_DrvConfig/2 (CanIf_Can_43_FLEXCAN_DrvConfig) @0d477678
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: CanIf_Can_43_FLEXCAN_HohToRxPduMapping/1 (addr) 
+  Referring: CanIf_CanDrvConfig/3 (addr) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+CanIf_Can_43_FLEXCAN_HohToRxPduMapping/1 (CanIf_Can_43_FLEXCAN_HohToRxPduMapping) @0d4775e8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: CanIf_Can_43_FLEXCAN_DrvConfig/2 (addr) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+CanIf_TxPdu/0 (CanIf_TxPdu) @0d477558
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: CDD_UserTxConfirmation0x001/5 (addr) CDD_UserTxConfirmation0x002/6 (addr) CDD_UserTxConfirmation0x143/7 (addr) 
+  Referring: CanIf_Config/4 (addr) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+
+Removing unused symbols:
+
+Reclaimed Symbol table:
+
+CDD_UserTxConfirmation0x143/7 (CDD_UserTxConfirmation0x143) @0d479b60
+  Type: function
+  Visibility: external public
+  Address is taken.
+  References: 
+  Referring: CanIf_TxPdu/0 (addr) 
+  Function flags:
+  Called by: 
+  Calls: 
+CDD_UserTxConfirmation0x002/6 (CDD_UserTxConfirmation0x002) @0d479a80
+  Type: function
+  Visibility: external public
+  Address is taken.
+  References: 
+  Referring: CanIf_TxPdu/0 (addr) 
+  Function flags:
+  Called by: 
+  Calls: 
+CDD_UserTxConfirmation0x001/5 (CDD_UserTxConfirmation0x001) @0d4799a0
+  Type: function
+  Visibility: external public
+  Address is taken.
+  References: 
+  Referring: CanIf_TxPdu/0 (addr) 
+  Function flags:
+  Called by: 
+  Calls: 
+CanIf_Config/4 (CanIf_Config) @0d477798
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: CanIf_CanDrvConfig/3 (addr) CanIf_TxPdu/0 (addr) 
+  Referring: 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+CanIf_CanDrvConfig/3 (CanIf_CanDrvConfig) @0d477708
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: CanIf_Can_43_FLEXCAN_DrvConfig/2 (addr) 
+  Referring: CanIf_Config/4 (addr) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+CanIf_Can_43_FLEXCAN_DrvConfig/2 (CanIf_Can_43_FLEXCAN_DrvConfig) @0d477678
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: CanIf_Can_43_FLEXCAN_HohToRxPduMapping/1 (addr) 
+  Referring: CanIf_CanDrvConfig/3 (addr) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+CanIf_Can_43_FLEXCAN_HohToRxPduMapping/1 (CanIf_Can_43_FLEXCAN_HohToRxPduMapping) @0d4775e8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: CanIf_Can_43_FLEXCAN_DrvConfig/2 (addr) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+CanIf_TxPdu/0 (CanIf_TxPdu) @0d477558
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: CDD_UserTxConfirmation0x001/5 (addr) CDD_UserTxConfirmation0x002/6 (addr) CDD_UserTxConfirmation0x143/7 (addr) 
+  Referring: CanIf_Config/4 (addr) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+Optimized Symbol table:
+
+CDD_UserTxConfirmation0x143/7 (CDD_UserTxConfirmation0x143) @0d479b60
+  Type: function
+  Visibility: external public
+  Address is taken.
+  References: 
+  Referring: CanIf_TxPdu/0 (addr) 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+CDD_UserTxConfirmation0x002/6 (CDD_UserTxConfirmation0x002) @0d479a80
+  Type: function
+  Visibility: external public
+  Address is taken.
+  References: 
+  Referring: CanIf_TxPdu/0 (addr) 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+CDD_UserTxConfirmation0x001/5 (CDD_UserTxConfirmation0x001) @0d4799a0
+  Type: function
+  Visibility: external public
+  Address is taken.
+  References: 
+  Referring: CanIf_TxPdu/0 (addr) 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+CanIf_Config/4 (CanIf_Config) @0d477798
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: CanIf_CanDrvConfig/3 (addr) CanIf_TxPdu/0 (addr) 
+  Referring: 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+CanIf_CanDrvConfig/3 (CanIf_CanDrvConfig) @0d477708
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: CanIf_Can_43_FLEXCAN_DrvConfig/2 (addr) 
+  Referring: CanIf_Config/4 (addr) 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+CanIf_Can_43_FLEXCAN_DrvConfig/2 (CanIf_Can_43_FLEXCAN_DrvConfig) @0d477678
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: CanIf_Can_43_FLEXCAN_HohToRxPduMapping/1 (addr) 
+  Referring: CanIf_CanDrvConfig/3 (addr) 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+CanIf_Can_43_FLEXCAN_HohToRxPduMapping/1 (CanIf_Can_43_FLEXCAN_HohToRxPduMapping) @0d4775e8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: CanIf_Can_43_FLEXCAN_DrvConfig/2 (addr) 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+CanIf_TxPdu/0 (CanIf_TxPdu) @0d477558
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: CDD_UserTxConfirmation0x001/5 (addr) CDD_UserTxConfirmation0x002/6 (addr) CDD_UserTxConfirmation0x143/7 (addr) 
+  Referring: CanIf_Config/4 (addr) 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+Materializing clones
+Materialization Call site updates done.
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+Trivially needed variables: CanIf_Config/4 CanIf_CanDrvConfig/3 CanIf_Can_43_FLEXCAN_DrvConfig/2 CanIf_Can_43_FLEXCAN_HohToRxPduMapping/1 CanIf_TxPdu/0
+Removing variables:
+
+Final Symbol table:
+
+CDD_UserTxConfirmation0x143/7 (CDD_UserTxConfirmation0x143) @0d479b60
+  Type: function
+  Visibility: external public
+  Address is taken.
+  References: 
+  Referring: CanIf_TxPdu/0 (addr) 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+CDD_UserTxConfirmation0x002/6 (CDD_UserTxConfirmation0x002) @0d479a80
+  Type: function
+  Visibility: external public
+  Address is taken.
+  References: 
+  Referring: CanIf_TxPdu/0 (addr) 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+CDD_UserTxConfirmation0x001/5 (CDD_UserTxConfirmation0x001) @0d4799a0
+  Type: function
+  Visibility: external public
+  Address is taken.
+  References: 
+  Referring: CanIf_TxPdu/0 (addr) 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+CanIf_Config/4 (CanIf_Config) @0d477798
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.rodata.CanIf_Config (implicit_section)
+  Aux: @00000001
+  References: CanIf_CanDrvConfig/3 (addr) CanIf_TxPdu/0 (addr) 
+  Referring: 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+CanIf_CanDrvConfig/3 (CanIf_CanDrvConfig) @0d477708
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written section:.rodata.CanIf_CanDrvConfig (implicit_section)
+  Aux: @0d477798
+  References: CanIf_Can_43_FLEXCAN_DrvConfig/2 (addr) 
+  Referring: CanIf_Config/4 (addr) 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+CanIf_Can_43_FLEXCAN_DrvConfig/2 (CanIf_Can_43_FLEXCAN_DrvConfig) @0d477678
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written section:.rodata.CanIf_Can_43_FLEXCAN_DrvConfig (implicit_section)
+  Aux: @0d477708
+  References: CanIf_Can_43_FLEXCAN_HohToRxPduMapping/1 (addr) 
+  Referring: CanIf_CanDrvConfig/3 (addr) 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+CanIf_Can_43_FLEXCAN_HohToRxPduMapping/1 (CanIf_Can_43_FLEXCAN_HohToRxPduMapping) @0d4775e8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written section:.rodata.CanIf_Can_43_FLEXCAN_HohToRxPduMapping (implicit_section)
+  Aux: @0d477678
+  References: 
+  Referring: CanIf_Can_43_FLEXCAN_DrvConfig/2 (addr) 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+CanIf_TxPdu/0 (CanIf_TxPdu) @0d477558
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written section:.rodata.CanIf_TxPdu (implicit_section)
+  Aux: @0d4775e8
+  References: CDD_UserTxConfirmation0x001/5 (addr) CDD_UserTxConfirmation0x002/6 (addr) CDD_UserTxConfirmation0x143/7 (addr) 
+  Referring: CanIf_Config/4 (addr) 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known

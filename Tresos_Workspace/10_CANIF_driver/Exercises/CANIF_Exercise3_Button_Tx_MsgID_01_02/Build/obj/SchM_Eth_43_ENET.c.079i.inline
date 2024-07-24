@@ -1,0 +1,48 @@
+IPA summary for Eth_43_ENET_schm_read_msr/0 is missing.
+
+Flattening functions:
+Overall time estimate: 0.000000 weighted by profile: 0.000000
+
+Deciding on inlining of small functions.  Starting with size 0.
+node context cache: 0 hits, 0 misses, 0 initializations
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+
+Deciding on functions to be inlined into all callers and removing useless speculations:
+Overall time estimate: 0.000000 weighted by profile: 0.000000
+
+Why inlining failed?
+IPA summary for Eth_43_ENET_schm_read_msr/0 is missing.
+Symbol table:
+
+Eth_43_ENET_schm_read_msr/0 (Eth_43_ENET_schm_read_msr) @0d4e32a0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+
+;; Function Eth_43_ENET_schm_read_msr (Eth_43_ENET_schm_read_msr, funcdef_no=0, decl_uid=5366, cgraph_uid=1, symbol_order=0)
+
+Eth_43_ENET_schm_read_msr ()
+{
+  register uint32 reg_tmp;
+  uint32 D.5375;
+  uint32 _2;
+
+  <bb 2> :
+  __asm__ __volatile__(" mrs %0, primask " : "=r" reg_tmp_1);
+  _2 = reg_tmp_1;
+
+  <bb 3> :
+<L0>:
+  return _2;
+
+}
+
+

@@ -1,0 +1,332 @@
+Clock_Ip_EnableSOSC_TrustedCall (const struct Clock_Ip_XoscConfigType * Config)
+{
+  <bb 2> :
+  _1 = Config->Enable;
+  if (_1 == 1)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  _2 = 1074151424B;
+  _3 = _2->SOSCCSR;
+  _4 = 1074151424B;
+  _5 = _3 | 1;
+  _4->SOSCCSR = _5;
+
+  <bb 4> :
+  return;
+
+}
+
+
+Clock_Ip_DisableSOSC_TrustedCall (Clock_Ip_NameType XoscName)
+{
+  <bb 2> :
+  _1 = 1074151424B;
+  _2 = _1->SOSCCSR;
+  _3 = 1074151424B;
+  _4 = _2 & 4294967294;
+  _3->SOSCCSR = _4;
+  return;
+
+}
+
+
+Clock_Ip_SetSOSC_TrustedCall (const struct Clock_Ip_XoscConfigType * Config)
+{
+  <bb 2> :
+  _1 = Config->Enable;
+  if (_1 == 1)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 19>; [INV]
+
+  <bb 3> :
+  _2 = Config->Gain;
+  _3 = (int) _2;
+  switch (_3) <default: <L3> [INV], case 0: <L1> [INV], case 1: <L2> [INV]>
+
+  <bb 4> :
+<L1>:
+  _4 = 1074151424B;
+  _5 = _4->SOSCCFG;
+  _6 = 1074151424B;
+  _7 = _5 & 4294967287;
+  _6->SOSCCFG = _7;
+  goto <bb 7>; [INV]
+
+  <bb 5> :
+<L2>:
+  _8 = 1074151424B;
+  _9 = _8->SOSCCFG;
+  _10 = 1074151424B;
+  _11 = _9 | 8;
+  _10->SOSCCFG = _11;
+  goto <bb 7>; [INV]
+
+  <bb 6> :
+<L3>:
+
+  <bb 7> :
+  _12 = 1074151424B;
+  _13 = _12->SOSCCFG;
+  _14 = 1074151424B;
+  _15 = _13 & 4294967247;
+  _14->SOSCCFG = _15;
+  _16 = Config->Freq;
+  if (_16 > 3999999)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 8> :
+  _17 = Config->Freq;
+  if (_17 <= 7999999)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 9> :
+  _18 = 1074151424B;
+  _19 = _18->SOSCCFG;
+  _20 = 1074151424B;
+  _21 = _19 | 32;
+  _20->SOSCCFG = _21;
+  goto <bb 11>; [INV]
+
+  <bb 10> :
+  _22 = 1074151424B;
+  _23 = _22->SOSCCFG;
+  _24 = 1074151424B;
+  _25 = _23 | 48;
+  _24->SOSCCFG = _25;
+
+  <bb 11> :
+  _26 = Config->BypassOption;
+  if (_26 == 0)
+    goto <bb 12>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 12> :
+  _27 = 1074151424B;
+  _28 = _27->SOSCCFG;
+  _29 = 1074151424B;
+  _30 = _28 | 4;
+  _29->SOSCCFG = _30;
+  goto <bb 14>; [INV]
+
+  <bb 13> :
+  _31 = 1074151424B;
+  _32 = _31->SOSCCFG;
+  _33 = 1074151424B;
+  _34 = _32 & 4294967291;
+  _33->SOSCCFG = _34;
+
+  <bb 14> :
+  _35 = Config->Monitor;
+  _36 = (int) _35;
+  switch (_36) <default: <L15> [INV], case 0: <L12> [INV], case 1: <L13> [INV], case 2: <L14> [INV]>
+
+  <bb 15> :
+<L12>:
+  _37 = 1074151424B;
+  _37->SOSCCSR = 1;
+  goto <bb 19>; [INV]
+
+  <bb 16> :
+<L13>:
+  _38 = 1074151424B;
+  _38->SOSCCSR = 65537;
+  goto <bb 19>; [INV]
+
+  <bb 17> :
+<L14>:
+  _39 = 1074151424B;
+  _39->SOSCCSR = 196609;
+  goto <bb 19>; [INV]
+
+  <bb 18> :
+<L15>:
+  _40 = 1074151424B;
+  _41 = _40->SOSCCSR;
+  _42 = 1074151424B;
+  _43 = _41 | 1;
+  _42->SOSCCSR = _43;
+
+  <bb 19> :
+  return;
+
+}
+
+
+Clock_Ip_ResetSOSC_TrustedCall (const struct Clock_Ip_XoscConfigType * Config)
+{
+  <bb 2> :
+  _1 = 1074151424B;
+  _2 = _1->SOSCCSR;
+  _3 = 1074151424B;
+  _4 = _2 & 4286578687;
+  _3->SOSCCSR = _4;
+  _5 = 1074151424B;
+  _6 = _5->SOSCCSR;
+  _7 = 1074151424B;
+  _8 = _6 & 4294901759;
+  _7->SOSCCSR = _8;
+  _9 = 1074151424B;
+  _10 = _9->SOSCCSR;
+  _11 = 1074151424B;
+  _12 = _10 & 4294836223;
+  _11->SOSCCSR = _12;
+  _13 = 1074151424B;
+  _14 = _13->SOSCCSR;
+  _15 = 1074151424B;
+  _16 = _14 & 4294967294;
+  _15->SOSCCSR = _16;
+  return;
+
+}
+
+
+Clock_Ip_EnableSOSC (const struct Clock_Ip_XoscConfigType * Config)
+{
+  <bb 2> :
+  if (Config != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  Clock_Ip_EnableSOSC_TrustedCall (Config);
+
+  <bb 4> :
+  return;
+
+}
+
+
+Clock_Ip_DisableSOSC (Clock_Ip_NameType XoscName)
+{
+  <bb 2> :
+  Clock_Ip_DisableSOSC_TrustedCall (XoscName);
+  return;
+
+}
+
+
+Clock_Ip_CompleteSOSC (const struct Clock_Ip_XoscConfigType * Config)
+{
+  uint32 SoscStatus;
+  uint32 TimeoutTicks;
+  uint32 ElapsedTime;
+  uint32 StartTime;
+  boolean TimeoutOccurred;
+
+  <bb 2> :
+  TimeoutOccurred = 0;
+  if (Config != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 3> :
+  _1 = 1074151424B;
+  _2 = _1->SOSCCSR;
+  _3 = _2 & 1;
+  if (_3 != 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 4> :
+  Clock_Ip_StartTimeout (&StartTime, &ElapsedTime, &TimeoutTicks, 50000);
+
+  <bb 5> :
+  _4 = 1074151424B;
+  _5 = _4->SOSCCSR;
+  _6 = _5 >> 24;
+  SoscStatus = _6 & 1;
+  TimeoutTicks.0_7 = TimeoutTicks;
+  TimeoutOccurred = Clock_Ip_TimeoutExpired (&StartTime, &ElapsedTime, TimeoutTicks.0_7);
+  if (SoscStatus == 0)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  _8 = ~TimeoutOccurred;
+  if (_8 != 0)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 7> :
+  if (TimeoutOccurred != 0)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 8> :
+  _9 = Config->Name;
+  Clock_Ip_ReportClockErrors (1, _9);
+
+  <bb 9> :
+  StartTime = {CLOBBER};
+  ElapsedTime = {CLOBBER};
+  TimeoutTicks = {CLOBBER};
+  return;
+
+}
+
+
+Clock_Ip_SetSOSC (const struct Clock_Ip_XoscConfigType * Config)
+{
+  <bb 2> :
+  if (Config != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  Clock_Ip_SetSOSC_TrustedCall (Config);
+
+  <bb 4> :
+  return;
+
+}
+
+
+Clock_Ip_ResetSOSC (const struct Clock_Ip_XoscConfigType * Config)
+{
+  <bb 2> :
+  if (Config != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  Clock_Ip_ResetSOSC_TrustedCall (Config);
+
+  <bb 4> :
+  return;
+
+}
+
+
+Clock_Ip_DisableClockIpExternalOscillatorEmpty (Clock_Ip_NameType XoscName)
+{
+  <bb 2> :
+  return;
+
+}
+
+
+Clock_Ip_ExternalOscillatorEmpty (const struct Clock_Ip_XoscConfigType * Config)
+{
+  <bb 2> :
+  return;
+
+}
+
+
