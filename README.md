@@ -486,7 +486,7 @@ Hardware board receives (Rx) three 8-byte messages with ID 0x154, ID 0x233 and I
 
 ![CAN_Exercise7_3LEDs_Rx_3Msg_3Data.GIF](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/CAN_driver/CAN_Exercise7_3LEDs_Rx_3Msg_3Data.GIF)
 
-video
+https://github.com/user-attachments/assets/0d01ac11-7a19-4fc8-977a-b5de0ad759e0
 
 ![CAN_Exercise7_3LEDs_Rx_3Msg_3Data_Terminal.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/CAN_driver/CAN_Exercise7_3LEDs_Rx_3Msg_3Data_Terminal.png)
 
