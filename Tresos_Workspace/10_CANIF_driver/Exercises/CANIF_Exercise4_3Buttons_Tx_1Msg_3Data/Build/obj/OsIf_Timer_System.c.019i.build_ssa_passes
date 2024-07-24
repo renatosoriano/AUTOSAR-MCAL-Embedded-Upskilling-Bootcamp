@@ -1,0 +1,91 @@
+OsIf_Timer_System_MicrosToTicks (uint32 Micros)
+{
+  uint32 CoreId;
+  uint32 ticks;
+  uint64 interim;
+  uint32 D.5413;
+
+  <bb 2> :
+  ticks = 0;
+  CoreId = 0;
+  _1 = (long long unsigned int) Micros;
+  _2 = OsIf_au32InternalFrequencies[CoreId];
+  _3 = (long long unsigned int) _2;
+  interim = _1 * _3;
+  interim = interim / 1000000;
+  ticks = (uint32) interim;
+  D.5413 = ticks;
+
+  <bb 3> :
+<L0>:
+  return D.5413;
+
+}
+
+
+OsIf_Timer_System_SetTimerFrequency (uint32 Freq)
+{
+  uint32 CoreId;
+
+  <bb 2> :
+  CoreId = 0;
+  OsIf_au32InternalFrequencies[CoreId] = Freq;
+  return;
+
+}
+
+
+OsIf_Timer_System_GetElapsed (uint32 * const CurrentRef)
+{
+  uint32 CoreId;
+  uint32 Elapsed;
+  uint32 D.5411;
+
+  <bb 2> :
+  Elapsed = 0;
+  CoreId = 0;
+  Elapsed = OsIf_Timer_System_Internal_GetElapsed (CurrentRef);
+  D.5411 = Elapsed;
+
+  <bb 3> :
+<L0>:
+  return D.5411;
+
+}
+
+
+OsIf_Timer_System_GetCounter ()
+{
+  uint32 CoreId;
+  uint32 Counter;
+  uint32 D.5409;
+
+  <bb 2> :
+  Counter = 0;
+  CoreId = 0;
+  Counter = OsIf_Timer_System_Internal_GetCounter ();
+  D.5409 = Counter;
+
+  <bb 3> :
+<L0>:
+  return D.5409;
+
+}
+
+
+OsIf_Timer_System_Init ()
+{
+  uint32 CoreId;
+
+  <bb 2> :
+  CoreId = 0;
+  _1 = OsIf_apxPredefinedConfig[CoreId];
+  _2 = _1->counterFrequency;
+  OsIf_au32InternalFrequencies[CoreId] = _2;
+  _3 = OsIf_au32InternalFrequencies[CoreId];
+  OsIf_Timer_System_Internal_Init (_3);
+  return;
+
+}
+
+

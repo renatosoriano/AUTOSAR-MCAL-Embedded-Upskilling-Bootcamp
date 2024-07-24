@@ -1,0 +1,236 @@
+/*==================================================================================================
+*   Project              : RTD AUTOSAR 4.7
+*   Platform             : CORTEXM
+*   Peripheral           : 
+*   Dependencies         : none
+*
+*   Autosar Version      : 4.7.0
+*   Autosar Revision     : ASR_REL_4_7_REV_0000
+*   Autosar Conf.Variant :
+*   SW Version           : 2.0.0
+*   Build Version        : S32K1_RTD_2_0_0_D2308_ASR_REL_4_7_REV_0000_20230804
+*
+*   Copyright 2020-2023 NXP Semiconductors
+*
+*   NXP Confidential. This software is owned or controlled by NXP and may only be
+*   used strictly in accordance with the applicable license terms. By expressly
+*   accepting such terms or by downloading, installing, activating and/or otherwise
+*   using the software, you are agreeing that you have read, and that you agree to
+*   comply with and are bound by, such license terms. If you do not agree to be
+*   bound by the applicable license terms, then you may not retain, install,
+*   activate or otherwise use the software.
+*/
+/*==================================================================================================
+*   @file    exceptions.c
+*   @version 2.0.0
+*
+*   @brief   AUTOSAR Platform - Interrupts table.
+*   @details Interrupts table.
+*            This file contains sample code only. It is not part of the production code deliverables.
+==================================================================================================*/
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+#include "Platform_Types.h"
+#include "Mcal.h"
+#ifdef __ICCARM__ 
+    #pragma default_function_attributes = @ ".systeminit"
+#else
+    __attribute__ ((section (".systeminit")))
+#endif 
+
+#ifdef __ICCARM__ 
+    #pragma default_function_attributes = @ ".systeminit"
+#else
+    __attribute__ ((section (".systeminit")))
+#endif 
+
+void NMI_Handler(void)                  __attribute__ ((weak));               /* NMI Handler */
+#ifndef __ICCARM__
+void HardFault_Handler(void) __attribute__((weak));                     /* Hard Fault Handler */
+#else
+void HardFault_Handler(void) __attribute__((naked, weak));                    /* Hard Fault Handler */
+#endif
+void MemManage_Handler(void)            __attribute__ ((weak));         /* Reserved */
+void BusFault_Handler(void)             __attribute__ ((weak));          /* Bus Fault Handler */
+void UsageFault_Handler(void)           __attribute__ ((weak));        /* Usage Fault Handler */
+void DebugMon_Handler(void)             __attribute__ ((weak));          /* Debug Monitor Handler */
+#ifndef __ICCARM__
+void SVC_Handler(void) __attribute__((weak));                           /* SVCall Handler */
+#else
+void SVC_Handler(void) __attribute__((naked, weak));              /* SVCall Handler */
+#endif
+void PendSV_Handler(void)               __attribute__ ((weak));            /* PendSV Handler */
+void SysTick_Handler(void)              __attribute__ ((weak));           /* SysTick Handler */
+void undefined_handler(void);         /* Undefined Handler */
+#ifdef MCAL_ENABLE_USER_MODE_SUPPORT
+void SVCHandler_main(uint32 * svc_args);
+void HardFault_Handler_main(void);
+void Suspend_Interrupts(void);
+void Resume_Interrupts(void);
+#endif
+
+void HardFault_Handler(void)
+{
+    #ifndef MCAL_ENABLE_USER_MODE_SUPPORT
+        while(TRUE){};
+    #else
+        /* Check type of stack pointer used in Thread mode, LR[2]=0: MSP used, LR[2]=1: PSP used */
+        ASM_KEYWORD("MOVS r0, #4");
+        ASM_KEYWORD("MOV r1, LR");
+        ASM_KEYWORD("TST r0, r1");
+        /* Store MSP or PSP to R0 depend on LR[2] bit */
+        ASM_KEYWORD("BEQ Load_MSP \n"
+                    "MRS R0, PSP \n"
+                    "B Loaded_SP \n"
+            "Load_MSP: \n"
+                    "MRS R0, MSP \n"
+            "Loaded_SP: \n"
+                    );
+        /* Backup Stack pointer to re-use when escalation is SVCall */
+        ASM_KEYWORD("MOV r3, r0");
+        /* Base on instruction code at "Return Address - 2" to distinguish HardFault escalated is SVCall or other */
+        /* Get Return Address in SP + 0x18 */
+        ASM_KEYWORD("ldr r0, [r0, #0x18]\n");
+        /* Get instruction code at Return Address - 2 */
+        #ifdef __ICCARM__
+        ASM_KEYWORD("subs r0, #2\n");
+        #else
+        ASM_KEYWORD("sub r0, #2\n");
+        #endif
+        ASM_KEYWORD("ldrh r0, [r0]\n");
+        /* Store "svc" instruction code 0xDF00 to R1 */
+        ASM_KEYWORD("ldr r1, =0xDF00\n"
+                    "ldr r2, =0xFF00\n");    /* Store bit mask 0xFF00 to R2 to get high byte of instruction code at Return Address - 2 */
+        #ifdef __ICCARM__
+        ASM_KEYWORD("ands r0, r2\n");
+        #else
+        ASM_KEYWORD("and r0, r2\n");
+        #endif
+        ASM_KEYWORD("cmp r0, r1\n"    /* Compare instruction code at Return Address - 2 with "svc" instruction code 0xDF00 */
+                    "bne HardFault_Handler_main\n");    /* Jump to HardFault_Handler_main if HardFault escalated is NOT generated by "svc" instruction */
+        /* Jump to SVCHandler_main due to this is an event generated by escalation of SVCall when PRIMASK=1 */
+        /* Restore Stack pointer to R0 to pass to input parameter svc_args of SVCHandler_main */
+        ASM_KEYWORD("MOV r0, r3\n"
+                    "b       SVCHandler_main \n");
+    #endif
+}
+
+void SVC_Handler(void)
+{
+    #ifndef MCAL_ENABLE_USER_MODE_SUPPORT
+        while(TRUE){};
+    #else
+        /* Check type of stack pointer used in Thread mode, LR[2]=0: MSP used, LR[2]=1: PSP used */
+        ASM_KEYWORD("MOVS r0, #4");
+        ASM_KEYWORD("MOV r1, LR");
+        ASM_KEYWORD("TST r0, r1");
+        /* Store MSP or PSP to R0 depend on LR[2] bit, it will be passed to input parameter svc_args of SVCHandler_main */
+        ASM_KEYWORD("BEQ stacking_used_MSP \n"
+                    "MRS R0, PSP \n"
+                    "b       SVCHandler_main \n"
+            "stacking_used_MSP: \n"
+                    "MRS R0, MSP \n"
+                    "b       SVCHandler_main"
+                    );
+    #endif
+}
+
+void NMI_Handler(void)
+{
+    while(TRUE){};
+}
+
+void MemManage_Handler(void)
+{
+    while(TRUE){};
+}
+void BusFault_Handler(void)
+{
+    while(TRUE){};
+}
+void UsageFault_Handler(void)
+{
+    while(TRUE){};
+}
+
+#ifdef MCAL_ENABLE_USER_MODE_SUPPORT
+void HardFault_Handler_main(void)
+{
+    while(TRUE){};
+}
+
+void SVCHandler_main(uint32 * svc_args)
+{
+    uint32 svc_number;    /* Stack contains:    * r0, r1, r2, r3, r12, r14, the return address and xPSR   */
+                                /* First argument (r0) is svc_args[0]  */
+    /* svc_args[6] =  SP + 0x18  PC(r15) */
+    /* ((uint8 *)svc_args[6])[-2]; = first two bytes, lsb, of the instruction which caused the SVC */
+    /* this will nto work if optimization compiler options are changed*/
+    svc_number = ((uint8 *)svc_args[6])[-2];
+    switch(svc_number)
+    {
+        case 1:
+            /* Handle SVC 01*/
+            ASM_KEYWORD("ldr   r0, =0x00000001");   /* Set User mode for Thread mode */
+            ASM_KEYWORD("msr   CONTROL, r0");
+            break;
+        case 0:
+            /* Handle SVC 00*/
+            ASM_KEYWORD("ldr   r0, =0x00000000");   /* Set Supervisor mode for Thread mode */
+            ASM_KEYWORD("msr   CONTROL, r0");
+            break;
+        case 2:
+            /* Handle SVC 02*/
+            Resume_Interrupts(); /* Resume all interrupts */
+            break;
+        case 3:
+            /* Handle SVC 03*/
+            Suspend_Interrupts(); /* Suspend all interrupts */
+            break;
+        default:
+            /* Unknown SVC*/
+            break;
+    }
+}
+
+void Suspend_Interrupts(void)
+{
+    ASM_KEYWORD(" cpsid i");
+}
+
+void Resume_Interrupts(void)
+{
+    ASM_KEYWORD(" cpsie i");
+}
+#endif
+
+void DebugMon_Handler(void)
+{
+    while(TRUE){};
+}
+void PendSV_Handler(void)
+{
+    while(TRUE){};
+}
+void SysTick_Handler(void)
+{
+    while(TRUE){};
+}
+void undefined_handler(void)
+{
+   while(TRUE){};
+}
+
+#ifdef __ICCARM__ 
+    #pragma default_function_attributes =
+#endif
+
+#ifdef __cplusplus
+}
+#endif
+
+
+

@@ -1,0 +1,25 @@
+Port_RefreshPortDirection ()
+{
+  const struct Port_ConfigType * Port_pConfigPtr.0_1;
+
+  <bb 2> :
+  Port_pConfigPtr.0_1 = Port_pConfigPtr;
+  Port_Ipw_RefreshPortDirection (Port_pConfigPtr.0_1);
+  return;
+
+}
+
+
+Port_Init (const struct Port_ConfigType * ConfigPtr)
+{
+  const struct Port_ConfigType * pLocalConfigPtr;
+
+  <bb 2> :
+  pLocalConfigPtr_2 = ConfigPtr_1(D);
+  Port_Ipw_Init (pLocalConfigPtr_2);
+  Port_pConfigPtr = pLocalConfigPtr_2;
+  return;
+
+}
+
+
