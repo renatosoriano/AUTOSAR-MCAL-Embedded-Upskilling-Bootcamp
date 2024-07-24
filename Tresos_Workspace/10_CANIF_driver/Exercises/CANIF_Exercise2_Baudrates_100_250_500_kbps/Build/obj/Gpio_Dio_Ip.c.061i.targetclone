@@ -1,0 +1,122 @@
+Gpio_Dio_Ip_ReadPin (const struct GPIO_Type * const base, Gpio_Dio_Ip_PinsChannelType pin)
+{
+  Gpio_Dio_Ip_PinsLevelType returnValue;
+  Gpio_Dio_Ip_PinsLevelType D.5421;
+  long unsigned int _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  Gpio_Dio_Ip_PinsLevelType _10;
+
+  <bb 2> :
+  returnValue_5 = 0;
+  _1 ={v} base_7(D)->PDIR;
+  _2 = 1 << pin_8(D);
+  _3 = _1 & _2;
+  _4 = _3 >> pin_8(D);
+  returnValue_9 = (Gpio_Dio_Ip_PinsLevelType) _4;
+  _10 = returnValue_9;
+
+  <bb 3> :
+<L0>:
+  return _10;
+
+}
+
+
+Gpio_Dio_Ip_ReadPins (const struct GPIO_Type * const base)
+{
+  Gpio_Dio_Ip_PinsChannelType returnValue;
+  Gpio_Dio_Ip_PinsChannelType D.5419;
+  Gpio_Dio_Ip_PinsChannelType _5;
+
+  <bb 2> :
+  returnValue_1 = 0;
+  returnValue_4 ={v} base_3(D)->PDIR;
+  _5 = returnValue_4;
+
+  <bb 3> :
+<L0>:
+  return _5;
+
+}
+
+
+Gpio_Dio_Ip_TogglePins (struct GPIO_Type * const base, Gpio_Dio_Ip_PinsChannelType pins)
+{
+  <bb 2> :
+  base_2(D)->PTOR ={v} pins_3(D);
+  return;
+
+}
+
+
+Gpio_Dio_Ip_ClearPins (struct GPIO_Type * const base, Gpio_Dio_Ip_PinsChannelType pins)
+{
+  <bb 2> :
+  base_2(D)->PCOR ={v} pins_3(D);
+  return;
+
+}
+
+
+Gpio_Dio_Ip_SetPins (struct GPIO_Type * const base, Gpio_Dio_Ip_PinsChannelType pins)
+{
+  <bb 2> :
+  base_2(D)->PSOR ={v} pins_3(D);
+  return;
+
+}
+
+
+Gpio_Dio_Ip_GetPinsOutput (const struct GPIO_Type * const base)
+{
+  Gpio_Dio_Ip_PinsChannelType returnValue;
+  Gpio_Dio_Ip_PinsChannelType D.5417;
+  Gpio_Dio_Ip_PinsChannelType _5;
+
+  <bb 2> :
+  returnValue_1 = 0;
+  returnValue_4 ={v} base_3(D)->PDOR;
+  _5 = returnValue_4;
+
+  <bb 3> :
+<L0>:
+  return _5;
+
+}
+
+
+Gpio_Dio_Ip_WritePins (struct GPIO_Type * const base, Gpio_Dio_Ip_PinsChannelType pins)
+{
+  <bb 2> :
+  base_2(D)->PDOR ={v} pins_3(D);
+  return;
+
+}
+
+
+Gpio_Dio_Ip_WritePin (struct GPIO_Type * const base, Gpio_Dio_Ip_PinsChannelType pin, Gpio_Dio_Ip_PinsLevelType value)
+{
+  Gpio_Dio_Ip_PinsChannelType pinsValues;
+  long unsigned int _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+
+  <bb 2> :
+  SchM_Enter_Dio_DIO_EXCLUSIVE_AREA_00 ();
+  pinsValues_8 ={v} base_7(D)->PDOR;
+  _1 = 1 << pin_9(D);
+  _2 = ~_1;
+  pinsValues_10 = pinsValues_8 & _2;
+  _3 = (long unsigned int) value_11(D);
+  _4 = _3 << pin_9(D);
+  pinsValues_12 = pinsValues_10 | _4;
+  base_7(D)->PDOR ={v} pinsValues_12;
+  SchM_Exit_Dio_DIO_EXCLUSIVE_AREA_00 ();
+  return;
+
+}
+
+
