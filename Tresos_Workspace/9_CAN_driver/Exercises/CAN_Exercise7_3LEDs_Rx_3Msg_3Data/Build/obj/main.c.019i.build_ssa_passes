@@ -1,0 +1,282 @@
+EcuM_Init ()
+{
+  <bb 2> :
+  Mcu_Init (&Mcu_Config);
+  Mcu_InitClock (0);
+  Mcu_SetMode (0);
+  OsIf_Init (0B);
+  Platform_Init (0B);
+  Port_Init (&Port_Config);
+  Can_43_FLEXCAN_Init (&Can_43_FLEXCAN_Config);
+  IoHwAb_Init0 (0B);
+  return;
+
+}
+
+
+main ()
+{
+  uint32 blinkingtime;
+  int D.8062;
+
+  <bb 2> :
+  EcuM_Init ();
+  SEGGER_RTT_Init ();
+  blinkingtime = 0;
+  _1 = Can_43_FLEXCAN_SetBaudrate (0, 2);
+  if (_1 == 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  SEGGER_RTT_printf (0, "CAN baud rate set successfully. \n");
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  SEGGER_RTT_printf (0, "Failed to set CAN baud rate. \n");
+
+  <bb 5> :
+  _2 = Can_43_FLEXCAN_SetControllerMode (0, 1);
+  if (_2 == 0)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  SEGGER_RTT_printf (0, "CAN controller state machine set successfully. \n");
+  goto <bb 8>; [INV]
+
+  <bb 7> :
+  SEGGER_RTT_printf (0, "Failed to set CAN controller state machine. \n");
+
+  <bb 8> :
+  LEDFlag.3_3 = LEDFlag;
+  if (LEDFlag.3_3 == 1)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 9> :
+  LEDFlag = 0;
+  _4 = Can_au8Sdu8bytes[7];
+  _5 = (int) _4;
+  _6 = Can_au8Sdu8bytes[6];
+  _7 = (int) _6;
+  _8 = _5 + _7;
+  blinkingtime = (uint32) _8;
+  CANIDRx.4_9 = CANIDRx;
+  SEGGER_RTT_printf (0, "CAN msg 0x%x received at 500kbps to blink BLUE LED for: %d ms \n", CANIDRx.4_9, blinkingtime);
+  HwIoAb_Leds_TurnToggle (0);
+  Delay (blinkingtime);
+
+  <bb 10> :
+  LEDFlag.5_10 = LEDFlag;
+  if (LEDFlag.5_10 == 2)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 11> :
+  LEDFlag = 0;
+  _11 = Can_au8Sdu8bytes[7];
+  _12 = (int) _11;
+  _13 = Can_au8Sdu8bytes[6];
+  _14 = (int) _13;
+  _15 = _12 + _14;
+  blinkingtime = (uint32) _15;
+  CANIDRx.6_16 = CANIDRx;
+  SEGGER_RTT_printf (0, "CAN msg 0x%x received at 500kbps to blink RED LED for: %d ms \n", CANIDRx.6_16, blinkingtime);
+  HwIoAb_Leds_TurnToggle (1);
+  Delay (blinkingtime);
+
+  <bb 12> :
+  LEDFlag.7_17 = LEDFlag;
+  if (LEDFlag.7_17 == 3)
+    goto <bb 13>; [INV]
+  else
+    goto <bb 14>; [INV]
+
+  <bb 13> :
+  LEDFlag = 0;
+  _18 = Can_au8Sdu8bytes[7];
+  _19 = (int) _18;
+  _20 = Can_au8Sdu8bytes[6];
+  _21 = (int) _20;
+  _22 = _19 + _21;
+  _23 = Can_au8Sdu8bytes[5];
+  _24 = (int) _23;
+  _25 = _22 + _24;
+  blinkingtime = (uint32) _25;
+  CANIDRx.8_26 = CANIDRx;
+  SEGGER_RTT_printf (0, "CAN msg 0x%x received at 500kbps to blink GREEN LED for: %d ms \n", CANIDRx.8_26, blinkingtime);
+  HwIoAb_Leds_TurnToggle (2);
+  Delay (blinkingtime);
+
+  <bb 14> :
+  goto <bb 8>; [INV]
+
+}
+
+
+CanIf_RxIndication (const struct Can_HwType * Mailbox, const struct PduInfoType * PduInfoPtr)
+{
+  uint8 i;
+  uint8 i;
+  uint8 i;
+
+  <bb 2> :
+  _1 = Mailbox->CanId;
+  if (_1 == 340)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 3> :
+  _2 = Mailbox->CanId;
+  CANIDRx = _2;
+  i = 0;
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  _3 = PduInfoPtr->SduDataPtr;
+  _4 = (sizetype) i;
+  _5 = _3 + _4;
+  _6 = (int) i;
+  _7 = *_5;
+  Can_au8Sdu8bytes[_6] = _7;
+  i.0_8 = i;
+  i = i.0_8 + 1;
+
+  <bb 5> :
+  if (i <= 7)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 6> :
+  LEDFlag = 1;
+
+  <bb 7> :
+  _9 = Mailbox->CanId;
+  if (_9 == 563)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 8> :
+  _10 = Mailbox->CanId;
+  CANIDRx = _10;
+  i = 0;
+  goto <bb 10>; [INV]
+
+  <bb 9> :
+  _11 = PduInfoPtr->SduDataPtr;
+  _12 = (sizetype) i;
+  _13 = _11 + _12;
+  _14 = (int) i;
+  _15 = *_13;
+  Can_au8Sdu8bytes[_14] = _15;
+  i.1_16 = i;
+  i = i.1_16 + 1;
+
+  <bb 10> :
+  if (i <= 7)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 11> :
+  LEDFlag = 2;
+
+  <bb 12> :
+  _17 = Mailbox->CanId;
+  if (_17 == 898)
+    goto <bb 13>; [INV]
+  else
+    goto <bb 17>; [INV]
+
+  <bb 13> :
+  _18 = Mailbox->CanId;
+  CANIDRx = _18;
+  i = 0;
+  goto <bb 15>; [INV]
+
+  <bb 14> :
+  _19 = PduInfoPtr->SduDataPtr;
+  _20 = (sizetype) i;
+  _21 = _19 + _20;
+  _22 = (int) i;
+  _23 = *_21;
+  Can_au8Sdu8bytes[_22] = _23;
+  i.2_24 = i;
+  i = i.2_24 + 1;
+
+  <bb 15> :
+  if (i <= 7)
+    goto <bb 14>; [INV]
+  else
+    goto <bb 16>; [INV]
+
+  <bb 16> :
+  LEDFlag = 3;
+
+  <bb 17> :
+  return;
+
+}
+
+
+CanIf_TxConfirmation (PduIdType CanTxPduId)
+{
+  <bb 2> :
+  return;
+
+}
+
+
+CanIf_ControllerModeIndication (uint8 ControllerId, Can_ControllerStateType ControllerMode)
+{
+  <bb 2> :
+  return;
+
+}
+
+
+CanIf_ControllerBusOff (uint8 ControllerId)
+{
+  <bb 2> :
+  return;
+
+}
+
+
+Delay (uint32 ms)
+{
+  uint32 ElapsedTime;
+  uint32 SeedTick;
+  uint32 Timeout;
+  long unsigned int D.8043;
+
+  <bb 2> :
+  _1 = ms * 1000;
+  Timeout = OsIf_MicrosToTicks (_1, 1);
+  _2 = OsIf_GetCounter (1);
+  SeedTick = _2;
+  ElapsedTime = 0;
+
+  <bb 3> :
+  D.8043 = OsIf_GetElapsed (&SeedTick, 1);
+  ElapsedTime = D.8043 + ElapsedTime;
+  if (ElapsedTime < Timeout)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 4> :
+  SeedTick = {CLOBBER};
+  return;
+
+}
+
+

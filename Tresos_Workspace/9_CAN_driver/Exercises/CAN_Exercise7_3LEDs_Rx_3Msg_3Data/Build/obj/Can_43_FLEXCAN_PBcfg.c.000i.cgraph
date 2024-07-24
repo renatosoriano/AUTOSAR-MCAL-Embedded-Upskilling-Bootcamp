@@ -1,0 +1,608 @@
+Trivially needed symbols: Can_43_FLEXCAN_Config/11 Can_apController/10 Can_aControllerConfig/9 Can_apHwObject_Ctrl0/8 Can_aBaudrateConfig_Ctrl0/7 Can_aHwObjectConfig/6 Can_aHwObjIDToCtrlIDMap/5 Can_aCtrlOffsetToCtrlIDMap/4 Can_aHwFilter_Object2/3 Can_aHwFilter_Object1/2 Can_aHwFilter_Object0/1 Can_au32HwBufferAddr_Ctrl0/0
+
+
+Initial Symbol table:
+
+Can_43_FLEXCANIpwHwChannelConfig0/12 (Can_43_FLEXCANIpwHwChannelConfig0) @0d982b88
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: Can_aControllerConfig/9 (addr) 
+  Availability: not-ready
+  Varpool flags: read-only
+Can_43_FLEXCAN_Config/11 (Can_43_FLEXCAN_Config) @0d982a68
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @01981040
+  References: Can_aCtrlOffsetToCtrlIDMap/4 (addr) Can_aHwObjIDToCtrlIDMap/5 (addr) Can_aHwObjectConfig/6 (addr) Can_apController/10 (addr) 
+  Referring: 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+Can_apController/10 (Can_apController) @0d9829d8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @0d982a68
+  References: Can_aControllerConfig/9 (addr) 
+  Referring: Can_43_FLEXCAN_Config/11 (addr) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+Can_aControllerConfig/9 (Can_aControllerConfig) @0d982948
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @0d9829d8
+  References: Can_aBaudrateConfig_Ctrl0/7 (addr) Can_43_FLEXCANIpwHwChannelConfig0/12 (addr) Can_apHwObject_Ctrl0/8 (addr) 
+  Referring: Can_apController/10 (addr) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+Can_apHwObject_Ctrl0/8 (Can_apHwObject_Ctrl0) @0d982870
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @0d982948
+  References: Can_aHwObjectConfig/6 (addr) Can_aHwObjectConfig/6 (addr) Can_aHwObjectConfig/6 (addr) 
+  Referring: Can_aControllerConfig/9 (addr) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+Can_aBaudrateConfig_Ctrl0/7 (Can_aBaudrateConfig_Ctrl0) @0d9827e0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @0d982870
+  References: 
+  Referring: Can_aControllerConfig/9 (addr) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+Can_aHwObjectConfig/6 (Can_aHwObjectConfig) @0d466c60
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @0d9827e0
+  References: Can_aHwFilter_Object0/1 (addr) Can_au32HwBufferAddr_Ctrl0/0 (addr) Can_aHwFilter_Object1/2 (addr) Can_au32HwBufferAddr_Ctrl0/0 (addr) Can_aHwFilter_Object2/3 (addr) Can_au32HwBufferAddr_Ctrl0/0 (addr) 
+  Referring: Can_apHwObject_Ctrl0/8 (addr) Can_apHwObject_Ctrl0/8 (addr) Can_apHwObject_Ctrl0/8 (addr) Can_43_FLEXCAN_Config/11 (addr) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+Can_aHwObjIDToCtrlIDMap/5 (Can_aHwObjIDToCtrlIDMap) @0d982438
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @0d466c60
+  References: 
+  Referring: Can_43_FLEXCAN_Config/11 (addr) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+Can_aCtrlOffsetToCtrlIDMap/4 (Can_aCtrlOffsetToCtrlIDMap) @0d9823a8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @0d982438
+  References: 
+  Referring: Can_43_FLEXCAN_Config/11 (addr) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+Can_aHwFilter_Object2/3 (Can_aHwFilter_Object2) @0d982318
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @0d9823a8
+  References: 
+  Referring: Can_aHwObjectConfig/6 (addr) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+Can_aHwFilter_Object1/2 (Can_aHwFilter_Object1) @0d982288
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @0d982318
+  References: 
+  Referring: Can_aHwObjectConfig/6 (addr) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+Can_aHwFilter_Object0/1 (Can_aHwFilter_Object0) @0d9821f8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @0d982288
+  References: 
+  Referring: Can_aHwObjectConfig/6 (addr) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+Can_au32HwBufferAddr_Ctrl0/0 (Can_au32HwBufferAddr_Ctrl0) @0d982168
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  Aux: @0d9821f8
+  References: 
+  Referring: Can_aHwObjectConfig/6 (addr) Can_aHwObjectConfig/6 (addr) Can_aHwObjectConfig/6 (addr) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+
+Removing unused symbols:
+
+Reclaimed Symbol table:
+
+Can_43_FLEXCANIpwHwChannelConfig0/12 (Can_43_FLEXCANIpwHwChannelConfig0) @0d982b88
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: Can_aControllerConfig/9 (addr) 
+  Availability: not-ready
+  Varpool flags: read-only
+Can_43_FLEXCAN_Config/11 (Can_43_FLEXCAN_Config) @0d982a68
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: Can_aCtrlOffsetToCtrlIDMap/4 (addr) Can_aHwObjIDToCtrlIDMap/5 (addr) Can_aHwObjectConfig/6 (addr) Can_apController/10 (addr) 
+  Referring: 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+Can_apController/10 (Can_apController) @0d9829d8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: Can_aControllerConfig/9 (addr) 
+  Referring: Can_43_FLEXCAN_Config/11 (addr) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+Can_aControllerConfig/9 (Can_aControllerConfig) @0d982948
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: Can_aBaudrateConfig_Ctrl0/7 (addr) Can_43_FLEXCANIpwHwChannelConfig0/12 (addr) Can_apHwObject_Ctrl0/8 (addr) 
+  Referring: Can_apController/10 (addr) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+Can_apHwObject_Ctrl0/8 (Can_apHwObject_Ctrl0) @0d982870
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: Can_aHwObjectConfig/6 (addr) Can_aHwObjectConfig/6 (addr) Can_aHwObjectConfig/6 (addr) 
+  Referring: Can_aControllerConfig/9 (addr) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+Can_aBaudrateConfig_Ctrl0/7 (Can_aBaudrateConfig_Ctrl0) @0d9827e0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: Can_aControllerConfig/9 (addr) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+Can_aHwObjectConfig/6 (Can_aHwObjectConfig) @0d466c60
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: Can_aHwFilter_Object0/1 (addr) Can_au32HwBufferAddr_Ctrl0/0 (addr) Can_aHwFilter_Object1/2 (addr) Can_au32HwBufferAddr_Ctrl0/0 (addr) Can_aHwFilter_Object2/3 (addr) Can_au32HwBufferAddr_Ctrl0/0 (addr) 
+  Referring: Can_apHwObject_Ctrl0/8 (addr) Can_apHwObject_Ctrl0/8 (addr) Can_apHwObject_Ctrl0/8 (addr) Can_43_FLEXCAN_Config/11 (addr) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+Can_aHwObjIDToCtrlIDMap/5 (Can_aHwObjIDToCtrlIDMap) @0d982438
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: Can_43_FLEXCAN_Config/11 (addr) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+Can_aCtrlOffsetToCtrlIDMap/4 (Can_aCtrlOffsetToCtrlIDMap) @0d9823a8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: Can_43_FLEXCAN_Config/11 (addr) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+Can_aHwFilter_Object2/3 (Can_aHwFilter_Object2) @0d982318
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: Can_aHwObjectConfig/6 (addr) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+Can_aHwFilter_Object1/2 (Can_aHwFilter_Object1) @0d982288
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: Can_aHwObjectConfig/6 (addr) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+Can_aHwFilter_Object0/1 (Can_aHwFilter_Object0) @0d9821f8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: Can_aHwObjectConfig/6 (addr) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+Can_au32HwBufferAddr_Ctrl0/0 (Can_au32HwBufferAddr_Ctrl0) @0d982168
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: Can_aHwObjectConfig/6 (addr) Can_aHwObjectConfig/6 (addr) Can_aHwObjectConfig/6 (addr) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+
+
+Initial Symbol table:
+
+Can_43_FLEXCANIpwHwChannelConfig0/12 (Can_43_FLEXCANIpwHwChannelConfig0) @0d982b88
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: Can_aControllerConfig/9 (addr) 
+  Availability: not-ready
+  Varpool flags: read-only
+Can_43_FLEXCAN_Config/11 (Can_43_FLEXCAN_Config) @0d982a68
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: Can_aCtrlOffsetToCtrlIDMap/4 (addr) Can_aHwObjIDToCtrlIDMap/5 (addr) Can_aHwObjectConfig/6 (addr) Can_apController/10 (addr) 
+  Referring: 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+Can_apController/10 (Can_apController) @0d9829d8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: Can_aControllerConfig/9 (addr) 
+  Referring: Can_43_FLEXCAN_Config/11 (addr) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+Can_aControllerConfig/9 (Can_aControllerConfig) @0d982948
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: Can_aBaudrateConfig_Ctrl0/7 (addr) Can_43_FLEXCANIpwHwChannelConfig0/12 (addr) Can_apHwObject_Ctrl0/8 (addr) 
+  Referring: Can_apController/10 (addr) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+Can_apHwObject_Ctrl0/8 (Can_apHwObject_Ctrl0) @0d982870
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: Can_aHwObjectConfig/6 (addr) Can_aHwObjectConfig/6 (addr) Can_aHwObjectConfig/6 (addr) 
+  Referring: Can_aControllerConfig/9 (addr) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+Can_aBaudrateConfig_Ctrl0/7 (Can_aBaudrateConfig_Ctrl0) @0d9827e0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: Can_aControllerConfig/9 (addr) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+Can_aHwObjectConfig/6 (Can_aHwObjectConfig) @0d466c60
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: Can_aHwFilter_Object0/1 (addr) Can_au32HwBufferAddr_Ctrl0/0 (addr) Can_aHwFilter_Object1/2 (addr) Can_au32HwBufferAddr_Ctrl0/0 (addr) Can_aHwFilter_Object2/3 (addr) Can_au32HwBufferAddr_Ctrl0/0 (addr) 
+  Referring: Can_apHwObject_Ctrl0/8 (addr) Can_apHwObject_Ctrl0/8 (addr) Can_apHwObject_Ctrl0/8 (addr) Can_43_FLEXCAN_Config/11 (addr) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+Can_aHwObjIDToCtrlIDMap/5 (Can_aHwObjIDToCtrlIDMap) @0d982438
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: Can_43_FLEXCAN_Config/11 (addr) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+Can_aCtrlOffsetToCtrlIDMap/4 (Can_aCtrlOffsetToCtrlIDMap) @0d9823a8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: Can_43_FLEXCAN_Config/11 (addr) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+Can_aHwFilter_Object2/3 (Can_aHwFilter_Object2) @0d982318
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: Can_aHwObjectConfig/6 (addr) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+Can_aHwFilter_Object1/2 (Can_aHwFilter_Object1) @0d982288
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: Can_aHwObjectConfig/6 (addr) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+Can_aHwFilter_Object0/1 (Can_aHwFilter_Object0) @0d9821f8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: Can_aHwObjectConfig/6 (addr) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+Can_au32HwBufferAddr_Ctrl0/0 (Can_au32HwBufferAddr_Ctrl0) @0d982168
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: Can_aHwObjectConfig/6 (addr) Can_aHwObjectConfig/6 (addr) Can_aHwObjectConfig/6 (addr) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+
+Removing unused symbols:
+
+Reclaimed Symbol table:
+
+Can_43_FLEXCANIpwHwChannelConfig0/12 (Can_43_FLEXCANIpwHwChannelConfig0) @0d982b88
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: Can_aControllerConfig/9 (addr) 
+  Availability: not-ready
+  Varpool flags: read-only
+Can_43_FLEXCAN_Config/11 (Can_43_FLEXCAN_Config) @0d982a68
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: Can_aCtrlOffsetToCtrlIDMap/4 (addr) Can_aHwObjIDToCtrlIDMap/5 (addr) Can_aHwObjectConfig/6 (addr) Can_apController/10 (addr) 
+  Referring: 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+Can_apController/10 (Can_apController) @0d9829d8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: Can_aControllerConfig/9 (addr) 
+  Referring: Can_43_FLEXCAN_Config/11 (addr) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+Can_aControllerConfig/9 (Can_aControllerConfig) @0d982948
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: Can_aBaudrateConfig_Ctrl0/7 (addr) Can_43_FLEXCANIpwHwChannelConfig0/12 (addr) Can_apHwObject_Ctrl0/8 (addr) 
+  Referring: Can_apController/10 (addr) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+Can_apHwObject_Ctrl0/8 (Can_apHwObject_Ctrl0) @0d982870
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: Can_aHwObjectConfig/6 (addr) Can_aHwObjectConfig/6 (addr) Can_aHwObjectConfig/6 (addr) 
+  Referring: Can_aControllerConfig/9 (addr) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+Can_aBaudrateConfig_Ctrl0/7 (Can_aBaudrateConfig_Ctrl0) @0d9827e0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: Can_aControllerConfig/9 (addr) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+Can_aHwObjectConfig/6 (Can_aHwObjectConfig) @0d466c60
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: Can_aHwFilter_Object0/1 (addr) Can_au32HwBufferAddr_Ctrl0/0 (addr) Can_aHwFilter_Object1/2 (addr) Can_au32HwBufferAddr_Ctrl0/0 (addr) Can_aHwFilter_Object2/3 (addr) Can_au32HwBufferAddr_Ctrl0/0 (addr) 
+  Referring: Can_apHwObject_Ctrl0/8 (addr) Can_apHwObject_Ctrl0/8 (addr) Can_apHwObject_Ctrl0/8 (addr) Can_43_FLEXCAN_Config/11 (addr) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+Can_aHwObjIDToCtrlIDMap/5 (Can_aHwObjIDToCtrlIDMap) @0d982438
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: Can_43_FLEXCAN_Config/11 (addr) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+Can_aCtrlOffsetToCtrlIDMap/4 (Can_aCtrlOffsetToCtrlIDMap) @0d9823a8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: Can_43_FLEXCAN_Config/11 (addr) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+Can_aHwFilter_Object2/3 (Can_aHwFilter_Object2) @0d982318
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: Can_aHwObjectConfig/6 (addr) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+Can_aHwFilter_Object1/2 (Can_aHwFilter_Object1) @0d982288
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: Can_aHwObjectConfig/6 (addr) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+Can_aHwFilter_Object0/1 (Can_aHwFilter_Object0) @0d9821f8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: Can_aHwObjectConfig/6 (addr) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+Can_au32HwBufferAddr_Ctrl0/0 (Can_au32HwBufferAddr_Ctrl0) @0d982168
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder
+  References: 
+  Referring: Can_aHwObjectConfig/6 (addr) Can_aHwObjectConfig/6 (addr) Can_aHwObjectConfig/6 (addr) 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+Optimized Symbol table:
+
+Can_43_FLEXCANIpwHwChannelConfig0/12 (Can_43_FLEXCANIpwHwChannelConfig0) @0d982b88
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: Can_aControllerConfig/9 (addr) 
+  Availability: not_available
+  Varpool flags: read-only
+Can_43_FLEXCAN_Config/11 (Can_43_FLEXCAN_Config) @0d982a68
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Can_aCtrlOffsetToCtrlIDMap/4 (addr) Can_aHwObjIDToCtrlIDMap/5 (addr) Can_aHwObjectConfig/6 (addr) Can_apController/10 (addr) 
+  Referring: 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+Can_apController/10 (Can_apController) @0d9829d8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: Can_aControllerConfig/9 (addr) 
+  Referring: Can_43_FLEXCAN_Config/11 (addr) 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+Can_aControllerConfig/9 (Can_aControllerConfig) @0d982948
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: Can_aBaudrateConfig_Ctrl0/7 (addr) Can_43_FLEXCANIpwHwChannelConfig0/12 (addr) Can_apHwObject_Ctrl0/8 (addr) 
+  Referring: Can_apController/10 (addr) 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+Can_apHwObject_Ctrl0/8 (Can_apHwObject_Ctrl0) @0d982870
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: Can_aHwObjectConfig/6 (addr) Can_aHwObjectConfig/6 (addr) Can_aHwObjectConfig/6 (addr) 
+  Referring: Can_aControllerConfig/9 (addr) 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+Can_aBaudrateConfig_Ctrl0/7 (Can_aBaudrateConfig_Ctrl0) @0d9827e0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: Can_aControllerConfig/9 (addr) 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+Can_aHwObjectConfig/6 (Can_aHwObjectConfig) @0d466c60
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: Can_aHwFilter_Object0/1 (addr) Can_au32HwBufferAddr_Ctrl0/0 (addr) Can_aHwFilter_Object1/2 (addr) Can_au32HwBufferAddr_Ctrl0/0 (addr) Can_aHwFilter_Object2/3 (addr) Can_au32HwBufferAddr_Ctrl0/0 (addr) 
+  Referring: Can_apHwObject_Ctrl0/8 (addr) Can_apHwObject_Ctrl0/8 (addr) Can_apHwObject_Ctrl0/8 (addr) Can_43_FLEXCAN_Config/11 (addr) 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+Can_aHwObjIDToCtrlIDMap/5 (Can_aHwObjIDToCtrlIDMap) @0d982438
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: Can_43_FLEXCAN_Config/11 (addr) 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+Can_aCtrlOffsetToCtrlIDMap/4 (Can_aCtrlOffsetToCtrlIDMap) @0d9823a8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: Can_43_FLEXCAN_Config/11 (addr) 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+Can_aHwFilter_Object2/3 (Can_aHwFilter_Object2) @0d982318
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: Can_aHwObjectConfig/6 (addr) 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+Can_aHwFilter_Object1/2 (Can_aHwFilter_Object1) @0d982288
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: Can_aHwObjectConfig/6 (addr) 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+Can_aHwFilter_Object0/1 (Can_aHwFilter_Object0) @0d9821f8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: Can_aHwObjectConfig/6 (addr) 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+Can_au32HwBufferAddr_Ctrl0/0 (Can_au32HwBufferAddr_Ctrl0) @0d982168
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: Can_aHwObjectConfig/6 (addr) Can_aHwObjectConfig/6 (addr) Can_aHwObjectConfig/6 (addr) 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+Materializing clones
+Materialization Call site updates done.
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+Trivially needed variables: Can_43_FLEXCAN_Config/11 Can_apController/10 Can_aControllerConfig/9 Can_apHwObject_Ctrl0/8 Can_aBaudrateConfig_Ctrl0/7 Can_aHwObjectConfig/6 Can_aHwObjIDToCtrlIDMap/5 Can_aCtrlOffsetToCtrlIDMap/4 Can_aHwFilter_Object2/3 Can_aHwFilter_Object1/2 Can_aHwFilter_Object0/1 Can_au32HwBufferAddr_Ctrl0/0
+Removing variables:
+
+Final Symbol table:
+
+Can_43_FLEXCANIpwHwChannelConfig0/12 (Can_43_FLEXCANIpwHwChannelConfig0) @0d982b88
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: Can_aControllerConfig/9 (addr) 
+  Availability: not_available
+  Varpool flags: read-only
+Can_43_FLEXCAN_Config/11 (Can_43_FLEXCAN_Config) @0d982a68
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.rodata.Can_43_FLEXCAN_Config (implicit_section)
+  Aux: @00000001
+  References: Can_aCtrlOffsetToCtrlIDMap/4 (addr) Can_aHwObjIDToCtrlIDMap/5 (addr) Can_aHwObjectConfig/6 (addr) Can_apController/10 (addr) 
+  Referring: 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+Can_apController/10 (Can_apController) @0d9829d8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written section:.rodata.Can_apController (implicit_section)
+  Aux: @0d982a68
+  References: Can_aControllerConfig/9 (addr) 
+  Referring: Can_43_FLEXCAN_Config/11 (addr) 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+Can_aControllerConfig/9 (Can_aControllerConfig) @0d982948
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written section:.rodata.Can_aControllerConfig (implicit_section)
+  Aux: @0d9829d8
+  References: Can_aBaudrateConfig_Ctrl0/7 (addr) Can_43_FLEXCANIpwHwChannelConfig0/12 (addr) Can_apHwObject_Ctrl0/8 (addr) 
+  Referring: Can_apController/10 (addr) 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+Can_apHwObject_Ctrl0/8 (Can_apHwObject_Ctrl0) @0d982870
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written section:.rodata.Can_apHwObject_Ctrl0 (implicit_section)
+  Aux: @0d982948
+  References: Can_aHwObjectConfig/6 (addr) Can_aHwObjectConfig/6 (addr) Can_aHwObjectConfig/6 (addr) 
+  Referring: Can_aControllerConfig/9 (addr) 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+Can_aBaudrateConfig_Ctrl0/7 (Can_aBaudrateConfig_Ctrl0) @0d9827e0
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written section:.rodata.Can_aBaudrateConfig_Ctrl0 (implicit_section)
+  Aux: @0d982870
+  References: 
+  Referring: Can_aControllerConfig/9 (addr) 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+Can_aHwObjectConfig/6 (Can_aHwObjectConfig) @0d466c60
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written section:.rodata.Can_aHwObjectConfig (implicit_section)
+  Aux: @0d9827e0
+  References: Can_aHwFilter_Object0/1 (addr) Can_au32HwBufferAddr_Ctrl0/0 (addr) Can_aHwFilter_Object1/2 (addr) Can_au32HwBufferAddr_Ctrl0/0 (addr) Can_aHwFilter_Object2/3 (addr) Can_au32HwBufferAddr_Ctrl0/0 (addr) 
+  Referring: Can_apHwObject_Ctrl0/8 (addr) Can_apHwObject_Ctrl0/8 (addr) Can_apHwObject_Ctrl0/8 (addr) Can_43_FLEXCAN_Config/11 (addr) 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+Can_aHwObjIDToCtrlIDMap/5 (Can_aHwObjIDToCtrlIDMap) @0d982438
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written section:.rodata.Can_aHwObjIDToCtrlIDMap (implicit_section)
+  Aux: @0d466c60
+  References: 
+  Referring: Can_43_FLEXCAN_Config/11 (addr) 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+Can_aCtrlOffsetToCtrlIDMap/4 (Can_aCtrlOffsetToCtrlIDMap) @0d9823a8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written section:.rodata.Can_aCtrlOffsetToCtrlIDMap (implicit_section)
+  Aux: @0d982438
+  References: 
+  Referring: Can_43_FLEXCAN_Config/11 (addr) 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+Can_aHwFilter_Object2/3 (Can_aHwFilter_Object2) @0d982318
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written section:.rodata.Can_aHwFilter_Object2 (implicit_section)
+  Aux: @0d9823a8
+  References: 
+  Referring: Can_aHwObjectConfig/6 (addr) 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+Can_aHwFilter_Object1/2 (Can_aHwFilter_Object1) @0d982288
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written section:.rodata.Can_aHwFilter_Object1 (implicit_section)
+  Aux: @0d982318
+  References: 
+  Referring: Can_aHwObjectConfig/6 (addr) 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+Can_aHwFilter_Object0/1 (Can_aHwFilter_Object0) @0d9821f8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written section:.rodata.Can_aHwFilter_Object0 (implicit_section)
+  Aux: @0d982288
+  References: 
+  Referring: Can_aHwObjectConfig/6 (addr) 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known
+Can_au32HwBufferAddr_Ctrl0/0 (Can_au32HwBufferAddr_Ctrl0) @0d982168
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly asm_written section:.rodata.Can_au32HwBufferAddr_Ctrl0 (implicit_section)
+  Aux: @0d9821f8
+  References: 
+  Referring: Can_aHwObjectConfig/6 (addr) Can_aHwObjectConfig/6 (addr) Can_aHwObjectConfig/6 (addr) 
+  Availability: available
+  Varpool flags: initialized read-only const-value-known

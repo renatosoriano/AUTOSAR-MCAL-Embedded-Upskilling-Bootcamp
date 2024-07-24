@@ -1,0 +1,227 @@
+/**
+ * @file main.c
+ * @brief This file contains the main function of the project
+ * @author Renato Soriano
+ * 
+ * ***********************************************************************************************************************
+ * Exercise 7. 
+ * Write a program that receives three CAN messages, each with a different CAN-ID, and where the first 2 bytes of each message 
+ * indicate the time for an LED to blink. Use a separate LED for each message. 
+ * ***********************************************************************************************************************
+*/
+#include "Mcu.h"
+#include "Port.h"
+#include "Dio.h"
+#include "Platform.h"
+#include "Osif.h"
+#include "Can_43_FLEXCAN.h"
+#include "SEGGER_RTT.h"
+#include "IoHwAb.h"
+
+#define CAN_BAUDRATE_100kbps_ID 0   // CanControllerBaudRateConfigID set to 0 in Tresos (CanControllerBaudrateConfig_100kbps)
+#define CAN_BAUDRATE_250kbps_ID 1   // CanControllerBaudRateConfigID set to 1 in Tresos (CanControllerBaudrateConfig_250kbps)
+#define CAN_BAUDRATE_500kbps_ID 2   // CanControllerBaudRateConfigID set to 2 in Tresos (CanControllerBaudrateConfig_500kbps)
+
+/* Message to Tx and Rx */
+uint8 Can_au8Sdu8bytes[8U];
+uint8 LEDFlag = 0;      // LED Flag for Msg Rx
+uint32 CANIDRx = 0;     // Variable to store CAN ID
+
+void EcuM_Init( void );
+
+/*this is dummy delay function prepare just for this example, in a real application 
+no delay shall be used*/
+void Delay( uint32 ms )
+{
+    uint32 Timeout = OsIf_MicrosToTicks( ms * 1000u, OSIF_COUNTER_SYSTEM );
+    uint32 SeedTick = OsIf_GetCounter( OSIF_COUNTER_SYSTEM );
+    uint32 ElapsedTime = 0u;
+    do{
+        ElapsedTime += OsIf_GetElapsed( &SeedTick, OSIF_COUNTER_SYSTEM );
+    }
+    while( ElapsedTime < Timeout );
+}
+
+/*CanIf callback function implementation, just to avoid compiler errors
+in reality this function is already implemented in CanIf layer*/
+void CanIf_ControllerBusOff(uint8 ControllerId)
+{
+    (void)ControllerId;
+}
+
+/*CanIf callback function implementation, just to avoid compiler errors
+in reality this function is already implemented in CanIf layer*/
+void CanIf_ControllerModeIndication(uint8 ControllerId, Can_ControllerStateType ControllerMode )
+{
+    (void)ControllerId;
+    (void)ControllerMode;
+}
+
+/*CanIf callback function implementation to set the flag when a message is transmited
+this function is called by the interrupt function three times, once every message has
+been transmitted. In reality this function is already implemented in CanIf layer*/
+void CanIf_TxConfirmation( PduIdType CanTxPduId )
+{
+    (void)CanTxPduId;
+}
+
+/*CanIf callback function implementation to set the flag when a message is received
+this function is called by the CAN interrupt.
+In reality this function is already implemented in CanIf layer*/
+void CanIf_RxIndication(const Can_HwType* Mailbox, const PduInfoType* PduInfoPtr )
+{
+    (void)Mailbox;
+
+    /* CanId is stored in Mailbox->CanId */
+    if(Mailbox->CanId == 0x154)
+    {
+        CANIDRx = Mailbox->CanId;
+        /* The received message is store in PduInfoPtr->SduDataPtr */
+        for(uint8 i = 0; i < 8 ; i++)
+        {
+            Can_au8Sdu8bytes[i] = PduInfoPtr->SduDataPtr[i];
+        }
+        LEDFlag = 1;
+    }
+
+    /* CanId is stored in Mailbox->CanId */
+    if(Mailbox->CanId == 0x233)
+    {
+        CANIDRx = Mailbox->CanId;
+        /* The received message is store in PduInfoPtr->SduDataPtr */
+        for(uint8 i = 0; i < 8 ; i++)
+        {
+            Can_au8Sdu8bytes[i] = PduInfoPtr->SduDataPtr[i];
+        }
+        LEDFlag = 2;
+    }
+
+    /* CanId is stored in Mailbox->CanId */
+    if(Mailbox->CanId == 0x382)
+    {
+        CANIDRx = Mailbox->CanId;
+        /* The received message is store in PduInfoPtr->SduDataPtr */
+        for(uint8 i = 0; i < 8 ; i++)
+        {
+            Can_au8Sdu8bytes[i] = PduInfoPtr->SduDataPtr[i];
+        }
+        LEDFlag = 3;
+    }
+}
+
+/**
+ * @brief This is the main function of the project
+ * 
+ * This is the main function of the project, it is the entry point of the program
+ * 
+ * @return Always zero
+*/
+int main( void )
+{
+    EcuM_Init();
+
+    /* Intiliaze RTT library */
+    SEGGER_RTT_Init();
+
+    uint32 blinkingtime = 0;
+
+    /* Set the specified baudrate */
+    if (Can_43_FLEXCAN_SetBaudrate(CanController_0, CAN_BAUDRATE_500kbps_ID ) == E_OK) {
+        SEGGER_RTT_printf( 0, "CAN baud rate set successfully. \n" );
+
+    } else {
+        SEGGER_RTT_printf( 0, "Failed to set CAN baud rate. \n" );
+    }
+
+    /* Start the CAN controller and make it active in the CAN bus network */
+
+    /* The CAN module notifies the upper layer (CanIf_ControllerModeIndication) after 
+    a successful state transition about the new state. The monitoring whether the 
+    requested state is achieved is part of an upper layer module and is not part of 
+    the Can module. */
+    if (Can_43_FLEXCAN_SetControllerMode( CanController_0, CAN_CS_STARTED ) == E_OK) {
+        SEGGER_RTT_printf( 0, "CAN controller state machine set successfully. \n" );
+
+    } else {
+        SEGGER_RTT_printf( 0, "Failed to set CAN controller state machine. \n" );
+    }
+
+    while( 1u )
+    {
+
+        if(LEDFlag == 1)
+        {
+            LEDFlag = 0;
+            /* Use the first and second byte received to determine the time for blinking */
+            /* 
+            Payload used for testing: 0x00 0x00 0x00 0x00 0x00 0x00 0x32 0x64 
+            Byte 0: 0x64 (100), Byte 1: 0x32 (50), blinking time: 0x96 (150) ms
+            */
+            blinkingtime = (uint32)(Can_au8Sdu8bytes[7] + Can_au8Sdu8bytes[6]);
+            //SEGGER_RTT_printf( 0, "[Debug] Byte 0: 0x%x, Byte 1: 0x%x, blinking time: 0x%x ms \n", Can_au8Sdu8bytes[7], Can_au8Sdu8bytes[6], blinkingtime );
+            SEGGER_RTT_printf( 0, "CAN msg 0x%x received at 500kbps to blink BLUE LED for: %d ms \n", CANIDRx, blinkingtime );
+            HwIoAb_Leds_TurnToggle( HWIOAB_LED_BLUE_ID );
+            Delay(blinkingtime);
+        }
+        if(LEDFlag == 2)
+        {
+            LEDFlag = 0;
+            /* Use the first and second byte received to determine the time for blinking */
+            /* 
+            Payload used for testing: 0x00 0x00 0x00 0x00 0x00 0x00 0xFF 0xFF 
+            Byte 0: 0xFF (255), Byte 1: 0xFF (255), blinking time: 0x01FE (510) ms
+            */
+            blinkingtime = (uint32)(Can_au8Sdu8bytes[7] + Can_au8Sdu8bytes[6]);
+            //SEGGER_RTT_printf( 0, "[Debug] Byte 0: 0x%x, Byte 1: 0x%x, blinking time: 0x%x ms \n", Can_au8Sdu8bytes[7], Can_au8Sdu8bytes[6], blinkingtime );
+            SEGGER_RTT_printf( 0, "CAN msg 0x%x received at 500kbps to blink RED LED for: %d ms \n", CANIDRx, blinkingtime );
+            HwIoAb_Leds_TurnToggle( HWIOAB_LED_RED_ID );
+            Delay(blinkingtime);
+        }
+        if(LEDFlag == 3)
+        {
+            LEDFlag = 0;
+            /* Use the first and second byte received to determine the time for blinking */
+            /* 
+            Payload used for testing: 0x00 0x00 0x00 0x00 0x00 0xFF 0xE6 0xFA 
+            Byte 0: 0xFA (250), Byte 1: 0xE6 (230), Byte 2: 0xFF (255), blinking time: 0x02DF (735) ms
+            */
+            blinkingtime = (uint32)(Can_au8Sdu8bytes[7] + Can_au8Sdu8bytes[6] + Can_au8Sdu8bytes[5]);
+            //SEGGER_RTT_printf( 0, "[Debug] Byte 0: 0x%x, Byte 1: 0x%x, Byte 2: 0x%x, blinking time: 0x%x ms \n", Can_au8Sdu8bytes[7], Can_au8Sdu8bytes[6], Can_au8Sdu8bytes[5], blinkingtime );
+            SEGGER_RTT_printf( 0, "CAN msg 0x%x received at 500kbps to blink GREEN LED for: %d ms \n", CANIDRx, blinkingtime );
+            HwIoAb_Leds_TurnToggle( HWIOAB_LED_GREEN_ID );
+            Delay(blinkingtime);
+        }
+        
+    }
+
+    return 0u;
+}
+
+/**
+ * @brief This function initialize the microcontroller and the peripherals
+ * 
+ * it is just a temporary function, in the future this function will be replaced when the EcuM module 
+ * is configured and implemented
+*/
+void EcuM_Init( void )
+{
+    /* Init Mcu module, including internal PLL, reference to Mcu Config structure can 
+    be found at Mcu_PBcfg.h and PLL defines at Mcu_Cfg.h */
+    Mcu_Init( &Mcu_Config );
+    Mcu_InitClock( McuClockSettingConfig_0 );
+    Mcu_SetMode( McuModeSettingConf_0 );
+    /* Init the internal tick reference Systick Timer */
+    OsIf_Init( NULL_PTR );
+    
+    /* Enable and setup interrupts in use by the Can Driver */
+    Platform_Init( NULL_PTR );
+
+    /* Apply all the Pin Port microcontroller configuration */
+    Port_Init( &Port_Config );
+
+    /* Init the FlexCAN2 with the paramters set in Tresos WITHOUT loop back mode */
+    Can_43_FLEXCAN_Init( &Can_43_FLEXCAN_Config );
+
+    /* Initializing IO Hardware Abstractions with the module ID 0 */
+    IoHwAb_Init0( NULL_PTR );
+}

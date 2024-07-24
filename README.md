@@ -468,17 +468,27 @@ Hardware board transmits (Tx) two 8-byte messages with ID 0x001 and 0x002, all h
 
 ![CAN_Exercise3_Button_Tx_MsgID_01_02.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/CAN_driver/CAN_Exercise3_Button_Tx_MsgID_01_02.png)
 
-* #### [CAN Exercise 4: Three Buttons Transmits a Message with Three Different Datasets](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/tree/main/Tresos_Workspace/9_CAN_driver/Exercises/CAN_Exercise4_3Buttons_Tx_1Msg_3Data)
+* #### [CAN Exercise 4: Three Buttons, Transmits a Message with Three Different Datasets](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/tree/main/Tresos_Workspace/9_CAN_driver/Exercises/CAN_Exercise4_3Buttons_Tx_1Msg_3Data)
 A program that senses three buttons and, upon pressing each one, sends a message indicating which button was pressed. Interrupts used in this program.
 Hardware board transmits (Tx) an 8-byte message with ID 0x154, having the default Data payload: 00 00 00 00 00 00 00 00 that then will have the last byte changed to 01, 02 or 03 depending on which button is pressed. Savvy CAN receiving (Rx) the data.
 
 ![CAN_Exercise4_3Buttons_Tx_1Msg_3Data.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/CAN_driver/CAN_Exercise4_3Buttons_Tx_1Msg_3Data.png)
 
-* #### [CAN Exercise 5: Three Buttons Transmits Three Message with Three Different Datasets](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/tree/main/Tresos_Workspace/9_CAN_driver/Exercises/CAN_Exercise5_3Buttons_Tx_3Msg_3Data)
+* #### [CAN Exercise 5: Three Buttons, Transmits Three Message with Three Different Datasets](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/tree/main/Tresos_Workspace/9_CAN_driver/Exercises/CAN_Exercise5_3Buttons_Tx_3Msg_3Data)
 Previous program modified (Exercise 4) so that each message is sent with a different CAN-ID.
 Hardware board transmits (Tx) three 8-byte messages with ID 0x154, ID 0x233 and ID 0x382, having all default Data payload: 00 00 00 00 00 00 00 00 that then will have the last byte changed to 01, 02 or 03 depending on which button is pressed. Savvy CAN receiving (Rx) the data.
 
 ![CAN_Exercise5_3Buttons_Tx_3Msg_3Data.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/CAN_driver/CAN_Exercise5_3Buttons_Tx_3Msg_3Data.png)
+
+* #### [CAN Exercise 7: Three LEDs, Receives Three Message with Three Different Datasets](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/tree/main/Tresos_Workspace/9_CAN_driver/Exercises/CAN_Exercise7_3LEDs_Rx_3Msg_3Data)
+A program that receives three CAN messages, each with a different CAN-ID, and where the first 2 bytes (for two messages) and 3 bytes (for third message) indicate the time for an LED to blink. Use a separate LED for each message.
+Hardware board receives (Rx) three 8-byte messages with ID 0x154, ID 0x233 and ID 0x382, having all default Data payload except for the first 2 to 3 bytes that change to an specific value that represents the time in ms for the LEDs to toggle. Savvy CAN transmits (Tx) the data, with each message configured in the Frame Sender window.
+
+![CAN_Exercise7_3LEDs_Rx_3Msg_3Data.GIF](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/CAN_driver/CAN_Exercise7_3LEDs_Rx_3Msg_3Data.GIF)
+
+video
+
+![CAN_Exercise7_3LEDs_Rx_3Msg_3Data_Terminal.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/CAN_driver/CAN_Exercise7_3LEDs_Rx_3Msg_3Data_Terminal.png)
 
 ### <ins>CAN Interface (CANIF) Driver Evidences<ins>
 
