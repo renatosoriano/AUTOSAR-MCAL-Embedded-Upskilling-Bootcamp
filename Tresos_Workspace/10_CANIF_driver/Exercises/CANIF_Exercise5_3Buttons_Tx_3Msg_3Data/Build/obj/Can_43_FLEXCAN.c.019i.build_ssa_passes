@@ -1,0 +1,924 @@
+Can_43_FLEXCAN_ProcessBusOffInterrupt (uint8 u8CtrlOffset)
+{
+  const struct Can_43_FLEXCAN_ControllerConfigType * Can_pController;
+  uint32 u32CoreId;
+  uint8 u8ControllerID;
+
+  <bb 2> :
+  u8ControllerID = 0;
+  u32CoreId = 0;
+  Can_pController = 0B;
+  u32CoreId = 0;
+  _1 = Can_apxConfig[u32CoreId];
+  if (_1 != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 3> :
+  _2 = Can_apxConfig[u32CoreId];
+  _3 = _2->Can_pCtrlOffsetToCtrlIDMap;
+  _4 = (sizetype) u8CtrlOffset;
+  _5 = _3 + _4;
+  u8ControllerID = *_5;
+  _6 = Can_apxConfig[u32CoreId];
+  _7 = _6->Can_ppController;
+  _8 = (unsigned int) u8ControllerID;
+  _9 = _8 * 4;
+  _10 = _7 + _9;
+  Can_pController = *_10;
+  if (Can_pController != 0B)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 4> :
+  _11 = Can_43_FLEXCAN_Ipw_SetControllerToStopMode (Can_pController);
+  if (_11 == 0)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  _12 = (int) u8ControllerID;
+  Can_eControllerState[_12] = 2;
+  _13 = Can_pController->Can_u8AbstControllerID;
+  CanIf_ControllerBusOff (_13);
+
+  <bb 6> :
+  return;
+
+}
+
+
+Can_43_FLEXCAN_ProcessMesgBufferCommonInterrupt (uint8 u8CtrlOffset, uint8 u8MbIdx, Can_43_FLEXCAN_MbType mbType)
+{
+  const struct Can_43_FLEXCAN_ControllerConfigType * Can_pController;
+  uint32 u32CoreId;
+  uint8 u8ControllerID;
+
+  <bb 2> :
+  u8ControllerID = 0;
+  u32CoreId = 0;
+  Can_pController = 0B;
+  u32CoreId = 0;
+  _1 = Can_apxConfig[u32CoreId];
+  if (_1 != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 3> :
+  _2 = Can_apxConfig[u32CoreId];
+  _3 = _2->Can_pCtrlOffsetToCtrlIDMap;
+  _4 = (sizetype) u8CtrlOffset;
+  _5 = _3 + _4;
+  u8ControllerID = *_5;
+  _6 = Can_apxConfig[u32CoreId];
+  _7 = _6->Can_ppController;
+  _8 = (unsigned int) u8ControllerID;
+  _9 = _8 * 4;
+  _10 = _7 + _9;
+  Can_pController = *_10;
+  if (Can_pController != 0B)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  _11 = Can_apxConfig[u32CoreId];
+  Can_43_FLEXCAN_Ipw_ProcessHwObject (Can_pController, _11, u8MbIdx, mbType);
+
+  <bb 5> :
+  return;
+
+}
+
+
+Can_43_FLEXCAN_MainFunction_Mode ()
+{
+  const struct Can_43_FLEXCAN_ControllerConfigType * Can_pController;
+  uint32 u32CoreId;
+  uint8 u8ControllerID;
+
+  <bb 2> :
+  u8ControllerID = 0;
+  u32CoreId = 0;
+  Can_pController = 0B;
+  u32CoreId = 0;
+  _1 = Can_apxConfig[u32CoreId];
+  if (_1 != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 3> :
+  goto <bb 8>; [INV]
+
+  <bb 4> :
+  _2 = Can_apxConfig[u32CoreId];
+  _3 = _2->Can_ppController;
+  _4 = (unsigned int) u8ControllerID;
+  _5 = _4 * 4;
+  _6 = _3 + _5;
+  Can_pController = *_6;
+  if (Can_pController != 0B)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 5> :
+  _7 = Can_pController->Can_bActivation;
+  if (_7 != 0)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  _8 = (int) u8ControllerID;
+  _9 = &Can_eControllerState[_8];
+  Can_43_FLEXCAN_Ipw_MainFunction_Mode (Can_pController, _9);
+
+  <bb 7> :
+  u8ControllerID.6_10 = u8ControllerID;
+  u8ControllerID = u8ControllerID.6_10 + 1;
+
+  <bb 8> :
+  if (u8ControllerID == 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 9> :
+  return;
+
+}
+
+
+Can_43_FLEXCAN_MainFunction_BusOff ()
+{
+  <bb 2> :
+  return;
+
+}
+
+
+Can_43_FLEXCAN_MainFunction_Read ()
+{
+  <bb 2> :
+  return;
+
+}
+
+
+Can_43_FLEXCAN_MainFunction_Write ()
+{
+  <bb 2> :
+  return;
+
+}
+
+
+Can_43_FLEXCAN_Write (Can_HwHandleType Hth, const struct Can_PduType * PduInfo)
+{
+  const struct Can_43_FLEXCAN_HwObjectConfigType * Can_pHwObject;
+  const struct Can_43_FLEXCAN_ControllerConfigType * Can_pController;
+  Can_HwHandleType HwObjectID;
+  uint32 u32CoreId;
+  uint8 u8ControllerID;
+  Std_ReturnType eRetVal;
+  Std_ReturnType D.7082;
+
+  <bb 2> :
+  eRetVal = 1;
+  u8ControllerID = 0;
+  u32CoreId = 0;
+  HwObjectID = 0;
+  Can_pController = 0B;
+  Can_pHwObject = 0B;
+  u32CoreId = 0;
+  HwObjectID = Hth;
+  _1 = Can_apxConfig[u32CoreId];
+  _2 = _1->Can_pHwObjIDToCtrlIDMap;
+  _3 = (sizetype) HwObjectID;
+  _4 = _2 + _3;
+  u8ControllerID = *_4;
+  _5 = Can_apxConfig[u32CoreId];
+  _6 = _5->Can_ppController;
+  _7 = (unsigned int) u8ControllerID;
+  _8 = _7 * 4;
+  _9 = _6 + _8;
+  Can_pController = *_9;
+  if (Can_pController != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 3> :
+  _10 = Can_apxConfig[u32CoreId];
+  _11 = _10->Can_pHwObjectConfig;
+  _12 = (unsigned int) HwObjectID;
+  _13 = _12 * 36;
+  Can_pHwObject = _11 + _13;
+  _14 = (int) u8ControllerID;
+  _15 = Can_eControllerState[_14];
+  if (_15 == 1)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  eRetVal = Can_43_FLEXCAN_Ipw_Write (Can_pController, Can_pHwObject, PduInfo);
+
+  <bb 5> :
+  D.7082 = eRetVal;
+
+  <bb 6> :
+<L4>:
+  return D.7082;
+
+}
+
+
+Can_43_FLEXCAN_GetControllerTxErrorCounter (uint8 ControllerId, uint8 * TxErrorCounterPtr)
+{
+  const struct Can_43_FLEXCAN_ControllerConfigType * Can_pController;
+  uint32 u32CoreId;
+  Std_ReturnType eRetVal;
+  Std_ReturnType D.7076;
+
+  <bb 2> :
+  eRetVal = 1;
+  u32CoreId = 0;
+  Can_pController = 0B;
+  u32CoreId = 0;
+  _1 = Can_apxConfig[u32CoreId];
+  _2 = _1->Can_ppController;
+  _3 = (unsigned int) ControllerId;
+  _4 = _3 * 4;
+  _5 = _2 + _4;
+  Can_pController = *_5;
+  eRetVal = Can_43_FLEXCAN_Ipw_GetControllerTxErrorCounter (Can_pController, TxErrorCounterPtr);
+  D.7076 = eRetVal;
+
+  <bb 3> :
+<L0>:
+  return D.7076;
+
+}
+
+
+Can_43_FLEXCAN_GetControllerRxErrorCounter (uint8 ControllerId, uint8 * RxErrorCounterPtr)
+{
+  const struct Can_43_FLEXCAN_ControllerConfigType * Can_pController;
+  uint32 u32CoreId;
+  Std_ReturnType eRetVal;
+  Std_ReturnType D.7074;
+
+  <bb 2> :
+  eRetVal = 1;
+  u32CoreId = 0;
+  Can_pController = 0B;
+  u32CoreId = 0;
+  _1 = Can_apxConfig[u32CoreId];
+  _2 = _1->Can_ppController;
+  _3 = (unsigned int) ControllerId;
+  _4 = _3 * 4;
+  _5 = _2 + _4;
+  Can_pController = *_5;
+  eRetVal = Can_43_FLEXCAN_Ipw_GetControllerRxErrorCounter (Can_pController, RxErrorCounterPtr);
+  D.7074 = eRetVal;
+
+  <bb 3> :
+<L0>:
+  return D.7074;
+
+}
+
+
+Can_43_FLEXCAN_GetControllerMode (uint8 Controller, Can_ControllerStateType * ControllerModePtr)
+{
+  Std_ReturnType eRetVal;
+  Std_ReturnType D.7072;
+
+  <bb 2> :
+  eRetVal = 1;
+  _1 = (int) Controller;
+  _2 = Can_eControllerState[_1];
+  *ControllerModePtr = _2;
+  eRetVal = 0;
+  D.7072 = eRetVal;
+
+  <bb 3> :
+<L0>:
+  return D.7072;
+
+}
+
+
+Can_43_FLEXCAN_GetControllerErrorState (uint8 ControllerId, Can_ErrorStateType * ErrorStatePtr)
+{
+  const struct Can_43_FLEXCAN_ControllerConfigType * Can_pController;
+  uint32 u32CoreId;
+  uint8 errorState;
+  Std_ReturnType eRetVal;
+  Std_ReturnType D.7069;
+
+  <bb 2> :
+  eRetVal = 1;
+  errorState = 0;
+  u32CoreId = 0;
+  Can_pController = 0B;
+  u32CoreId = 0;
+  _1 = Can_apxConfig[u32CoreId];
+  _2 = _1->Can_ppController;
+  _3 = (unsigned int) ControllerId;
+  _4 = _3 * 4;
+  _5 = _2 + _4;
+  Can_pController = *_5;
+  eRetVal = Can_43_FLEXCAN_Ipw_GetControllerErrorState (Can_pController, &errorState);
+  if (eRetVal == 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 3> :
+  errorState.5_6 = errorState;
+  _7 = (int) errorState.5_6;
+  switch (_7) <default: <L3> [INV], case 0: <L1> [INV], case 1: <L2> [INV]>
+
+  <bb 4> :
+<L1>:
+  *ErrorStatePtr = 0;
+  goto <bb 7>; [INV]
+
+  <bb 5> :
+<L2>:
+  *ErrorStatePtr = 1;
+  goto <bb 7>; [INV]
+
+  <bb 6> :
+<L3>:
+  *ErrorStatePtr = 2;
+
+  <bb 7> :
+  D.7069 = eRetVal;
+  errorState = {CLOBBER};
+
+  <bb 8> :
+<L7>:
+  return D.7069;
+
+}
+
+
+Can_43_FLEXCAN_EnableControllerInterrupts (uint8 Controller)
+{
+  const struct Can_43_FLEXCAN_ControllerConfigType * Can_pController;
+  uint32 u32CoreId;
+
+  <bb 2> :
+  u32CoreId = 0;
+  Can_pController = 0B;
+  u32CoreId = 0;
+  _1 = Can_apxConfig[u32CoreId];
+  _2 = _1->Can_ppController;
+  _3 = (unsigned int) Controller;
+  _4 = _3 * 4;
+  _5 = _2 + _4;
+  Can_pController = *_5;
+  SchM_Enter_Can_43_FLEXCAN_CAN_EXCLUSIVE_AREA_01 ();
+  _6 = (int) Controller;
+  _7 = Can_au8DisableInterruptLevel[_6];
+  if (_7 != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  _8 = (int) Controller;
+  _9 = Can_au8DisableInterruptLevel[_8];
+  _10 = (int) Controller;
+  _11 = _9 + 255;
+  Can_au8DisableInterruptLevel[_10] = _11;
+
+  <bb 4> :
+  SchM_Exit_Can_43_FLEXCAN_CAN_EXCLUSIVE_AREA_01 ();
+  _12 = (int) Controller;
+  _13 = Can_au8DisableInterruptLevel[_12];
+  if (_13 == 0)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  Can_43_FLEXCAN_Ipw_EnableControllerInterrupts (Can_pController);
+
+  <bb 6> :
+  return;
+
+}
+
+
+Can_43_FLEXCAN_DisableControllerInterrupts (uint8 Controller)
+{
+  const struct Can_43_FLEXCAN_ControllerConfigType * Can_pController;
+  uint32 u32CoreId;
+
+  <bb 2> :
+  u32CoreId = 0;
+  Can_pController = 0B;
+  u32CoreId = 0;
+  _1 = Can_apxConfig[u32CoreId];
+  _2 = _1->Can_ppController;
+  _3 = (unsigned int) Controller;
+  _4 = _3 * 4;
+  _5 = _2 + _4;
+  Can_pController = *_5;
+  SchM_Enter_Can_43_FLEXCAN_CAN_EXCLUSIVE_AREA_00 ();
+  _6 = (int) Controller;
+  _7 = Can_au8DisableInterruptLevel[_6];
+  _8 = (int) Controller;
+  _9 = _7 + 1;
+  Can_au8DisableInterruptLevel[_8] = _9;
+  SchM_Exit_Can_43_FLEXCAN_CAN_EXCLUSIVE_AREA_00 ();
+  Can_43_FLEXCAN_Ipw_DisableControllerInterrupts (Can_pController);
+  return;
+
+}
+
+
+Can_43_FLEXCAN_SetControllerMode (uint8 Controller, Can_ControllerStateType Transition)
+{
+  unsigned int D.7062;
+  const struct Can_43_FLEXCAN_ControllerConfigType * Can_pController;
+  uint32 u32CoreId;
+  Std_ReturnType eRetVal;
+  Std_ReturnType D.7060;
+
+  <bb 2> :
+  eRetVal = 1;
+  u32CoreId = 0;
+  Can_pController = 0B;
+  u32CoreId = 0;
+  _1 = Can_apxConfig[u32CoreId];
+  _2 = _1->Can_ppController;
+  _3 = (unsigned int) Controller;
+  _4 = _3 * 4;
+  _5 = _2 + _4;
+  Can_pController = *_5;
+  switch (Transition) <default: <L18> [INV], case 1: <L0> [INV], case 2: <L5> [INV], case 3: <L13> [INV]>
+
+  <bb 3> :
+<L0>:
+  _6 = (int) Controller;
+  _7 = Can_eControllerState[_6];
+  if (_7 == 2)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 4> :
+  _8 = Can_43_FLEXCAN_Ipw_SetControllerToStartMode (Can_pController);
+  if (_8 == 0)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  _9 = (int) Controller;
+  Can_eControllerState[_9] = 1;
+  _10 = Can_pController->Can_u8AbstControllerID;
+  CanIf_ControllerModeIndication (_10, 1);
+  eRetVal = 0;
+
+  <bb 6> :
+  goto <bb 19>; [INV]
+
+  <bb 7> :
+<L5>:
+  _11 = (int) Controller;
+  _12 = Can_eControllerState[_11];
+  switch (_12) <default: <L11> [INV], case 1: <L6> [INV], case 2 ... 3: <L9> [INV]>
+
+  <bb 8> :
+<L6>:
+  _13 = Can_43_FLEXCAN_Ipw_SetControllerToStopMode (Can_pController);
+  if (_13 == 0)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 9> :
+  _14 = (int) Controller;
+  Can_eControllerState[_14] = 2;
+  _15 = Can_pController->Can_u8AbstControllerID;
+  CanIf_ControllerModeIndication (_15, 2);
+  eRetVal = 0;
+
+  <bb 10> :
+  goto <bb 13>; [INV]
+
+  <bb 11> :
+<L9>:
+  _16 = (int) Controller;
+  Can_eControllerState[_16] = 2;
+  _17 = Can_pController->Can_u8AbstControllerID;
+  CanIf_ControllerModeIndication (_17, 2);
+  eRetVal = 0;
+  goto <bb 13>; [INV]
+
+  <bb 12> :
+<L11>:
+
+  <bb 13> :
+  goto <bb 19>; [INV]
+
+  <bb 14> :
+<L13>:
+  _18 = (int) Controller;
+  _19 = Can_eControllerState[_18];
+  D.7062 = _19 + 4294967294;
+  if (D.7062 <= 1)
+    goto <bb 15>; [INV]
+  else
+    goto <bb 16>; [INV]
+
+  <bb 15> :
+<L14>:
+  _20 = (int) Controller;
+  Can_eControllerState[_20] = 3;
+  _21 = Can_pController->Can_u8AbstControllerID;
+  CanIf_ControllerModeIndication (_21, 3);
+  eRetVal = 0;
+  goto <bb 17>; [INV]
+
+  <bb 16> :
+<L16>:
+
+  <bb 17> :
+  goto <bb 19>; [INV]
+
+  <bb 18> :
+<L18>:
+
+  <bb 19> :
+  D.7060 = eRetVal;
+
+  <bb 20> :
+<L20>:
+  return D.7060;
+
+}
+
+
+Can_43_FLEXCAN_SetBaudrate (uint8 Controller, uint16 BaudRateConfigID)
+{
+  const struct Can_43_FLEXCAN_ControllerConfigType * Can_pController;
+  uint32 u32CoreId;
+  Std_ReturnType eRetVal;
+  Std_ReturnType D.7052;
+
+  <bb 2> :
+  eRetVal = 1;
+  u32CoreId = 0;
+  Can_pController = 0B;
+  u32CoreId = 0;
+  _1 = Can_apxConfig[u32CoreId];
+  _2 = _1->Can_ppController;
+  _3 = (unsigned int) Controller;
+  _4 = _3 * 4;
+  _5 = _2 + _4;
+  Can_pController = *_5;
+  _6 = (int) Controller;
+  _7 = Can_eControllerState[_6];
+  if (_7 == 2)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  eRetVal = Can_43_FLEXCAN_Ipw_SetBaudrate (Can_pController, BaudRateConfigID);
+
+  <bb 4> :
+  D.7052 = eRetVal;
+
+  <bb 5> :
+<L2>:
+  return D.7052;
+
+}
+
+
+Can_43_FLEXCAN_DeInit ()
+{
+  uint32 u32CoreId;
+  boolean bCtrlBusy;
+  uint8 u8ControllerID;
+
+  <bb 2> :
+  u8ControllerID = 0;
+  bCtrlBusy = 0;
+  u32CoreId = 0;
+  u32CoreId = 0;
+  u8ControllerID = 0;
+  goto <bb 7>; [INV]
+
+  <bb 3> :
+  _1 = Can_apxConfig[u32CoreId];
+  _2 = _1->Can_ppController;
+  _3 = (unsigned int) u8ControllerID;
+  _4 = _3 * 4;
+  _5 = _2 + _4;
+  _6 = *_5;
+  if (_6 != 0B)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 4> :
+  _7 = (int) u8ControllerID;
+  _8 = Can_eControllerState[_7];
+  if (_8 == 1)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  bCtrlBusy = 1;
+  goto <bb 8>; [INV]
+
+  <bb 6> :
+  u8ControllerID.4_9 = u8ControllerID;
+  u8ControllerID = u8ControllerID.4_9 + 1;
+
+  <bb 7> :
+  if (u8ControllerID == 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 8> :
+  _10 = ~bCtrlBusy;
+  if (_10 != 0)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 9> :
+  Can_DeInitControllers (u32CoreId);
+  Can_apxConfig[u32CoreId] = 0B;
+
+  <bb 10> :
+  return;
+
+}
+
+
+Can_43_FLEXCAN_Init (const struct Can_43_FLEXCAN_ConfigType * Config)
+{
+  boolean bCtrlBusy;
+  uint32 u32CoreId;
+
+  <bb 2> :
+  u32CoreId = 0;
+  bCtrlBusy = 0;
+  u32CoreId = 0;
+  Can_apxConfig[u32CoreId] = Config;
+  bCtrlBusy = Can_IsControllersBusy (u32CoreId);
+  _1 = ~bCtrlBusy;
+  if (_1 != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  Can_InitControllers (u32CoreId);
+
+  <bb 4> :
+  return;
+
+}
+
+
+Can_DeInitControllers (uint32 u32CoreId)
+{
+  const struct Can_43_FLEXCAN_ControllerConfigType * Can_pController;
+  uint8 u8ControllerID;
+
+  <bb 2> :
+  u8ControllerID = 0;
+  Can_pController = 0B;
+  u8ControllerID = 0;
+  goto <bb 7>; [INV]
+
+  <bb 3> :
+  _1 = Can_apxConfig[u32CoreId];
+  _2 = _1->Can_ppController;
+  _3 = (unsigned int) u8ControllerID;
+  _4 = _3 * 4;
+  _5 = _2 + _4;
+  _6 = *_5;
+  if (_6 != 0B)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 4> :
+  _7 = Can_apxConfig[u32CoreId];
+  _8 = _7->Can_ppController;
+  _9 = (unsigned int) u8ControllerID;
+  _10 = _9 * 4;
+  _11 = _8 + _10;
+  Can_pController = *_11;
+  _12 = Can_pController->Can_bActivation;
+  if (_12 != 0)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  _13 = (int) u8ControllerID;
+  Can_eControllerState[_13] = 0;
+  Can_43_FLEXCAN_Ipw_DeInit (Can_pController);
+
+  <bb 6> :
+  u8ControllerID.3_14 = u8ControllerID;
+  u8ControllerID = u8ControllerID.3_14 + 1;
+
+  <bb 7> :
+  if (u8ControllerID == 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 8> :
+  return;
+
+}
+
+
+Can_InitControllers (uint32 u32CoreId)
+{
+  const struct Can_43_FLEXCAN_ControllerConfigType * Can_pController;
+  uint8 u8ControllerID;
+  boolean bCtrlBusy;
+
+  <bb 2> :
+  bCtrlBusy = 0;
+  u8ControllerID = 0;
+  Can_pController = 0B;
+  u8ControllerID = 0;
+  goto <bb 9>; [INV]
+
+  <bb 3> :
+  _1 = Can_apxConfig[u32CoreId];
+  _2 = _1->Can_ppController;
+  _3 = (unsigned int) u8ControllerID;
+  _4 = _3 * 4;
+  _5 = _2 + _4;
+  _6 = *_5;
+  if (_6 != 0B)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 4> :
+  _7 = Can_apxConfig[u32CoreId];
+  _8 = _7->Can_ppController;
+  _9 = (unsigned int) u8ControllerID;
+  _10 = _9 * 4;
+  _11 = _8 + _10;
+  Can_pController = *_11;
+  _12 = Can_pController->Can_bActivation;
+  if (_12 != 0)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 5> :
+  _13 = (int) u8ControllerID;
+  Can_au8DisableInterruptLevel[_13] = 0;
+  _14 = Can_43_FLEXCAN_Ipw_Init (Can_pController);
+  if (_14 == 0)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  _15 = (int) u8ControllerID;
+  Can_eControllerState[_15] = 2;
+  goto <bb 8>; [INV]
+
+  <bb 7> :
+  bCtrlBusy = 1;
+  goto <bb 10>; [INV]
+
+  <bb 8> :
+  u8ControllerID.1_16 = u8ControllerID;
+  u8ControllerID = u8ControllerID.1_16 + 1;
+
+  <bb 9> :
+  if (u8ControllerID == 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 10> :
+  if (bCtrlBusy != 0)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 16>; [INV]
+
+  <bb 11> :
+  u8ControllerID = 0;
+  goto <bb 15>; [INV]
+
+  <bb 12> :
+  _17 = Can_apxConfig[u32CoreId];
+  _18 = _17->Can_ppController;
+  _19 = (unsigned int) u8ControllerID;
+  _20 = _19 * 4;
+  _21 = _18 + _20;
+  _22 = *_21;
+  if (_22 != 0B)
+    goto <bb 13>; [INV]
+  else
+    goto <bb 14>; [INV]
+
+  <bb 13> :
+  _23 = (int) u8ControllerID;
+  Can_eControllerState[_23] = 0;
+
+  <bb 14> :
+  u8ControllerID.2_24 = u8ControllerID;
+  u8ControllerID = u8ControllerID.2_24 + 1;
+
+  <bb 15> :
+  if (u8ControllerID == 0)
+    goto <bb 12>; [INV]
+  else
+    goto <bb 16>; [INV]
+
+  <bb 16> :
+  return;
+
+}
+
+
+Can_IsControllersBusy (uint32 u32CoreId)
+{
+  uint8 u8ControllerID;
+  boolean bCtrlBusy;
+  boolean D.7025;
+
+  <bb 2> :
+  bCtrlBusy = 0;
+  u8ControllerID = 0;
+  u8ControllerID = 0;
+  goto <bb 7>; [INV]
+
+  <bb 3> :
+  _1 = Can_apxConfig[u32CoreId];
+  _2 = _1->Can_ppController;
+  _3 = (unsigned int) u8ControllerID;
+  _4 = _3 * 4;
+  _5 = _2 + _4;
+  _6 = *_5;
+  if (_6 != 0B)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 4> :
+  _7 = (int) u8ControllerID;
+  _8 = Can_eControllerState[_7];
+  if (_8 != 0)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  bCtrlBusy = 1;
+  goto <bb 8>; [INV]
+
+  <bb 6> :
+  u8ControllerID.0_9 = u8ControllerID;
+  u8ControllerID = u8ControllerID.0_9 + 1;
+
+  <bb 7> :
+  if (u8ControllerID == 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 8> :
+  D.7025 = bCtrlBusy;
+
+  <bb 9> :
+<L7>:
+  return D.7025;
+
+}
+
+
