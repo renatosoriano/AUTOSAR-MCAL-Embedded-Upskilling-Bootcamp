@@ -173,7 +173,6 @@ int main( void )
                             case HWIOAB_BTN_EVENT_HOLD_CLICK :
                                 SEGGER_RTT_printf( 0, "Button 1 action: HOLD_CLICK \n" );
                             break;
-                            break;
                             case HWIOAB_BTN_EVENT_RELEASE :
                                 SEGGER_RTT_printf( 0, "Button 1 action: RELEASE \n" );
                             break;
