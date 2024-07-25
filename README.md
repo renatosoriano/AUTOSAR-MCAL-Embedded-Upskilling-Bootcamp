@@ -248,18 +248,19 @@ void OnProjectLoad (void) {
 _<-- Back to [Table of Contents](#table-of-contents)_
 
 You can find here [**Documentation**](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Documentation/) all reference documents regarding:
-* AUTOSAR MCAL drivers.
-* Compiler Manuals.
-* NXP S32K144 Board.
-* Modular S-1 Board.
-* SEGGER Tools.
+* [AUTOSAR Driver Specification.](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/tree/main/Documentation/AUTOSAR%20Driver%20Specification)
+* [EB Tresos S32K1 MCAL drivers.](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/tree/main/Documentation/EB%20Tresos%20MCAL%20Real%20Time%20Drivers)
+* [Compiler Manuals.](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/tree/main/Documentation/Manuals)
+* [NXP S32K144 Board.](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/tree/main/Documentation/S32K144%20Board)
+* [Modular S-1 Board.](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/tree/main/Documentation/Modular%20S-1%20Board)
+* [SEGGER Tools.](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/tree/main/Documentation/SEGGER)
 
 ## 6. Examples and Exercises
 
 _<-- Back to [Table of Contents](#table-of-contents)_
 
 You can find here [**Tresos Workspace**](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Tresos_Workspace/) the base template file as well as all the examples and exercises created for this Upskilling Bootcamp.
-It is divided in folders for each of the MCAL drivers worked, and inside you will find 2 folders, **Examples** and **Exercises**.
+It is divided in folders for each of the MCAL drivers worked, and inside you will find 2 folders, **Examples** and **Exercises**. For getting started using EB Tresos for ach of the MCAL Modules, highly recommend reading [EB Tresos S32K1 MCAL drivers User Manuals](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/tree/main/Documentation/EB%20Tresos%20MCAL%20Real%20Time%20Drivers), they explain how to configure each MCAL from the EB Tresos GUI perspective.
 
 1. [Templates: Tresos Project and Ozone Semihosting RTT.](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/tree/main/Tresos_Workspace/0_Template_Initial_File)
 2. [DIO and PORT driver.](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/tree/main/Tresos_Workspace/1_DIO_PORT_driver)
