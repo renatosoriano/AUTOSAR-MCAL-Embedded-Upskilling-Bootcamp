@@ -152,7 +152,7 @@ _Back to [Setup Notes](#4-setup-notes)_
 
 1. Git clone the project (that also comes with a makefile to compile the basic example in there and run it into the hardware board).
 
-2. Open EB Tresos, go to **File → Import…**, then select **General → Existing Projects into Workspace**, then **Next** and **Browse…** the project folder (the cloned repository), check the template-s144 project and **Finish**. Ignore the warning in the image, is because I already have it in the workspace.
+2. Open EB Tresos, go to **File → Import…**, then select **General → Existing Projects into Workspace**, then **Next** and **Browse…** the project folder (the cloned repository), click check on the template-s144 project and **Finish**. 
 
 ![Setup_image_11.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/Tools_Setup/Setup_image_11.png)
 
