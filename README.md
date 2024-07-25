@@ -90,7 +90,7 @@ As a summary, these are the steps to follow in order to have the environment set
 * For NXP / EB Tresos tools installation:
 
 1. Create your own NXP account.
-2. Go to [Real-Time Drivers RTD](https://www.nxp.com/design/design-center/software/automotive-software-and-tools/real-time-drivers-rtd:AUTOMOTIVE-RTD). You should scroll until you reach the Download section for the Real-Time Drivers for S32K1. Click on Download and will open a new website that asks to log-in using your account
+2. Go to [Real-Time Drivers RTD](https://www.nxp.com/design/design-center/software/automotive-software-and-tools/real-time-drivers-rtd:AUTOMOTIVE-RTD). You should scroll until you reach the Download section for the Real-Time Drivers for S32K1. Click on Download and will open a new website that asks to log-in using your account.
 
 ![Setup_image_1.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/Tools_Setup/Setup_image_1.png)
 
@@ -102,23 +102,27 @@ As a summary, these are the steps to follow in order to have the environment set
 
 ![Setup_image_3.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/Tools_Setup/Setup_image_3.png)
 
-5. You will see Software Terms and Conditions, click I Agree and then we will see the main Product Download section. Download **EBTresosStudio_EBTresosStudio.uip**, **EB_Client_License_Administrator_1_5_1_Setup.exe** and **setup.exe**. Notice that you will see a text highlighted in yellow with the license code to be input in the EB Client License Administrator.
+5. You will see Software Terms and Conditions, click '_I Agree_' and then we will see the main Product Download section. Download **EBTresosStudio_EBTresosStudio.uip**, **EB_Client_License_Administrator_1_5_1_Setup.exe** and **setup.exe**. Place all the files in a folder, the **EBTresosStudio_EBTresosStudio.uip** might be downloaded automatically as a .zip file. In case it is not, change the file extension from .uip to .zip, then extract. Execute **setup.exe** and click **Install**.
 
 ![Setup_image_4.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/Tools_Setup/Setup_image_4.png)
 
+![Setup_image_19.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/Tools_Setup/Setup_image_19.png)
+
+6. Once the EB Tresos tool is installed, notice that in the website there was a text highlighted in yellow that contains the chain of characters for the license code. Input that in the EB Client License Administrator.
+
 ![Setup_image_5.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/Tools_Setup/Setup_image_5.png)
 
-6. Now let's download _S32K1_S32M24x - Real-Time Drivers for Cortex-M_. Go back and click on the first option and then donwload latest version which at the moment of writing this is _S32K1-S32M24X Real Time Drivers AUTOSAR R21-11 Version 2.0.0 P04_.
+7. Now let's download _S32K1_S32M24x - Real-Time Drivers for Cortex-M_. Go back and click on the first option and then download latest version which at the moment of writing this is _S32K1-S32M24X Real Time Drivers AUTOSAR R21-11 Version 2.0.0 P04_.
 
 ![Setup_image_2.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/Tools_Setup/Setup_image_2.png)
 
 ![Setup_image_6.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/Tools_Setup/Setup_image_6.png)
 
-7. **VERY IMPORTANT: At the moment of installing it do not forget to point it out the EB Tresos install path!**
+8. <ins>VERY IMPORTANT: At the moment of installing it do not forget to point it out to the EB Tresos install path!<ins>
 
 ![Setup_image_7.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/Tools_Setup/Setup_image_7.png)
 
-8. Now we need a compiler, let's download the GCC NXP one from this [link](https://www.nxp.com/design/design-center/software/development-software/s32-design-studio-ide/s32-design-studio-for-s32-platform:S32DS-S32PLATFORM). Scroll down until you reach the Downloads section and there look up for this item as in the image: _NXP Embedded GCC 10.2 Compiler Tools for ARM v7 Embedded, build 1728 - Windows_. Only the compiler is needed, not the S32 Design Studio.
+9. Now we need a compiler, let's download the GCC NXP one from this [link](https://www.nxp.com/design/design-center/software/development-software/s32-design-studio-ide/s32-design-studio-for-s32-platform:S32DS-S32PLATFORM). Scroll down until you reach the Downloads section and there look up for this item as in the image: _NXP Embedded GCC 10.2 Compiler Tools for ARM v7 Embedded, build 1728 - Windows_. Only the compiler is needed, not the S32 Design Studio.
 
 ![Setup_image_8.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/Tools_Setup/Setup_image_8.png)
 
@@ -152,7 +156,7 @@ As a summary, these are the steps to follow in order to have the environment set
 
 * For compiling and flashing the project to the device:
 
-1. You can work your code using VS Code, then open the terminal and select bash as the shell (please avoid powershell). Type 'cd' then leave an empty space ' ' an then and drag and drop your project folder to insert the path and then Enter. You should be ready to start compiling. Type 'make' and wait for it to finish, should see something like this:
+1. You can work your code using VS Code, open the terminal and select bash as the shell (please avoid powershell). Type 'cd' then leave an empty space ' ' and then drag and drop your project folder to insert the path and then Enter. You should be ready to start compiling. Type 'make' and wait for it to finish, should see something like this:
 
 ![Setup_image_14.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/Tools_Setup/Setup_image_14.png)
 
@@ -182,11 +186,11 @@ $ make
 
 5. Go to **File → Save Project as...** and select a name for your .jdebug file (recommend the same name as the Tresos project). Then go to **File → Edit Project File...** and a window should open with the .jdebug file code configuration. Go to the note below [4.2 Ozone .jdebug files made portable for running debugger correctly](#42-ozone-jdebug-files-made-portable-for-running-debugger-correctly) to make sure you are configuring correctly and portable your file.
 
-6. Click the first green icon (that looks like a 'Power ON/OFF' icon) to download the binary into the Microcontroller. You might see some pop-up small dialog windows while loading, just click 'Yes' and the initial Green icon now should be Red. The program execution is now halted and ready to begin, so click the second icon (currently a 'Play' icon) to **Resume program Execution** and see the hardware board working by blinking an LED.
+6. Click the first green icon (that looks like a 'Power ON/OFF' icon) to download the binary into the microcontroller. You might see some pop-up small dialog windows while loading, just click 'Yes' and the initial Green icon now should be Red. The program execution is now halted and ready to begin, so click the second icon (currently a 'Play' icon) to **Resume program Execution** and see the hardware board working by blinking an LED.
 
 ![Setup_image_18.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/Tools_Setup/Setup_image_18.png)
 
-7. And that's it! Don't forget to read Ozone documentation to get familiar with all the amazing functions it provides, it is really powerful.
+7. And that's it! Don't forget to read Ozone documentation to get familiar with all the amazing functions it provides (call stack, disassembly, registers, memory), it is really powerful.
 
 * ### 4.2 Ozone .jdebug files made portable for running debugger correctly:
 After generating MCAL source files with EB Tresos Studio IDE and building the project, we need to make use of the .jdebug files that I'm providing in order to be capable or flashing the board with Ozone as well as for debugging. 
