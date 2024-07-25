@@ -85,6 +85,109 @@ _<-- Back to [Table of Contents](#table-of-contents)_
 
 You can find here [**Setup AUTOSAR Tools**](https://embedded-house.ghost.io/part-0-setup-your-autosar-tools/) the section where Modular MX explains the right procedure to download, install and configure all needed tools, including its dependencies, how to import the template project file and flash it to the device.
 
+As a summary, these are the steps to follow in order to have the environment set up with all tools **FREE** of charge:
+
+* For NXP / EB Tresos tools installation:
+
+1. Create your own NXP account.
+2. Go to [Real-Time Drivers RTD](https://www.nxp.com/design/design-center/software/automotive-software-and-tools/real-time-drivers-rtd:AUTOMOTIVE-RTD). You should scroll until you reach the Download section for the Real-Time Drivers for S32K1. Click on Download and will open a new website that asks to log-in using your account
+
+![Setup_image_1.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/Tools_Setup/Setup_image_1.png)
+
+3. You should have reached this area called _Product Information: Automotive SW - S32K1 - Real-Time Drivers_ where we will download the Real-Time Drivers for S32K1 as well as EB Tresos Studio
+
+![Setup_image_2.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/Tools_Setup/Setup_image_2.png)
+
+4. First let's download _EB tresos Studio / AUTOSAR Configuration Tool_. Click on the second option and then click on _EB tresos Studio 29.0.0_ which as of now is the latest version.
+
+![Setup_image_3.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/Tools_Setup/Setup_image_3.png)
+
+5. You will see Software Terms and Conditions, click I Agree and then we will see the main Product Download section. Download **EBTresosStudio_EBTresosStudio.uip**, **EB_Client_License_Administrator_1_5_1_Setup.exe** and **setup.exe**. Notice that you will see a text highlighted in yellow with the license code to be input in the EB Client License Administrator.
+
+![Setup_image_4.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/Tools_Setup/Setup_image_4.png)
+
+![Setup_image_5.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/Tools_Setup/Setup_image_5.png)
+
+6. Now let's download _S32K1_S32M24x - Real-Time Drivers for Cortex-M_. Go back and click on the first option and then donwload latest version which at the moment of writing this is _S32K1-S32M24X Real Time Drivers AUTOSAR R21-11 Version 2.0.0 P04_.
+
+![Setup_image_2.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/Tools_Setup/Setup_image_2.png)
+
+![Setup_image_6.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/Tools_Setup/Setup_image_6.png)
+
+7. **VERY IMPORTANT: At the moment of installing it do not forget to point it out the EB Tresos install path!**
+
+![Setup_image_7.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/Tools_Setup/Setup_image_7.png)
+
+8. Now we need a compiler, let's download the GCC NXP one from this [link](https://www.nxp.com/design/design-center/software/development-software/s32-design-studio-ide/s32-design-studio-for-s32-platform:S32DS-S32PLATFORM). Scroll down until you reach the Downloads section and there look up for this item as in the image: _NXP Embedded GCC 10.2 Compiler Tools for ARM v7 Embedded, build 1728 - Windows_. Only the compiler is needed, not the S32 Design Studio.
+
+![Setup_image_8.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/Tools_Setup/Setup_image_8.png)
+
+* For SEGGER tools installation:
+
+1. For the Debugger, the hardware board provided by [Modular MX](https://www.linkedin.com/company/modular-mx/) is programmed with SEGGER J-Link to flash and debug the microcontroller. In case you acquire separately the NXP S32K144, you need to switch from OpenSDA for J-Link. Go to [**Setup AUTOSAR Tools**](https://embedded-house.ghost.io/part-0-setup-your-autosar-tools/) and perform the steps in section _Switching OpenSDA for J-Link_.
+
+2. After that, drivers are needed so go to [SEGGER J-Link official page](https://www.segger.com/downloads/jlink) and download and install the latest version of J-Link Software and Documentation Pack.
+
+![Setup_image_9.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/Tools_Setup/Setup_image_9.png)
+
+3. For [SEGGER Ozone Debugger](https://www.segger.com/products/development-tools/ozone-j-link-debugger/) download and install the latest version.
+
+![Setup_image_10.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/Tools_Setup/Setup_image_10.png)
+
+* For importing the EB Tresos template project file:
+
+1. Git clone the project (that also comes with a makefile to compile the basic example in there and run it into the hardware board).
+
+2. Open EB Tresos, go to **File → Import…**, then select **General → Existing Projects into Workspace**, then **Next** and **Browse…** the project folder (the cloned repository) and **Finish**.
+
+![Setup_image_11.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/Tools_Setup/Setup_image_11.png)
+
+3. Select the project and double click in **template-s144 → template-s144 (CORTEXM, S32K14X)** to display all the modules in use, then just click the hammer icon _Generate code for the currently selected project_.
+
+![Setup_image_12.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/Tools_Setup/Setup_image_12.png)
+
+4. Might see a warning dialog box regarding Module Configurations. Just ignore, those are not required due to the license type.
+
+![Setup_image_13.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/Tools_Setup/Setup_image_13.png)
+
+* For compiling and flashing the project to the device:
+
+1. You can work your code using VS Code, then open the terminal and select bash as the shell (please avoid powershell). Type 'cd' then leave an empty space ' ' an then and drag and drop your project folder to insert the path and then Enter. You should be ready to start compiling. Type 'make' and wait for it to finish, should see something like this:
+
+![Setup_image_14.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/Tools_Setup/Setup_image_14.png)
+
+```c
+renatosoriano@RENATOSORIAD632 MINGW64 /c/EB/tresos/workspace/template-s144 (master)
+$ make
+...
+...
+/c/NXP/gcc-10.2-arm32-eabi/bin/arm-none-eabi-objcopy -Oihex Build/temp.elf Build/temp.hex
+/c/NXP/gcc-10.2-arm32-eabi/bin/arm-none-eabi-objdump -S Build/temp.elf > Build/temp.lst
+/c/NXP/gcc-10.2-arm32-eabi/bin/arm-none-eabi-size --format=berkeley Build/temp.elf
+   text    data     bss     dec     hex filename
+  31384      40    2464   33888    8460 Build/temp.elf
+```
+
+2. After compiling we can flash the microcontroller using Ozone. Open the program and click in **File → New → New Project Wizard**.
+
+![Setup_image_15.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/Tools_Setup/Setup_image_15.png)
+
+3. Configure the fields **Device**, **Register Set** and **Peripherals** as in the image below and then clik **Next** two times.
+
+![Setup_image_16.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/Tools_Setup/Setup_image_16.png)
+
+4. Then in the following page select the .elf file that was generated after Build, then **Next** and **Finish**.
+
+![Setup_image_17.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/Tools_Setup/Setup_image_17.png)
+
+5. Go to **File → Save Project as...** and select a name for your .jdebug file (recommend the same name as the Tresos project). Then go to **File → Edit Project File...** and a window should open with the .jdebug file code configuration. Go to the note below [4.2 Ozone .jdebug files made portable for running debugger correctly](#42-ozone-jdebug-files-made-portable-for-running-debugger-correctly) to make sure you are configuring correctly and portable your file.
+
+6. Click the first green icon (that looks like a 'Power ON/OFF' icon) to download the binary into the Microcontroller. You might see some pop-up small dialog windows while loading, just click 'Yes' and the initial Green icon now should be Red. The program execution is now halted and ready to begin, so click the second icon (currently a 'Play' icon) to **Resume program Execution** and see the hardware board working by blinking an LED.
+
+![Setup_image_18.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/Tools_Setup/Setup_image_18.png)
+
+7. And that's it! Don't forget to read Ozone documentation to get familiar with all the amazing functions it provides, it is really powerful.
+
 * ### 4.2 Ozone .jdebug files made portable for running debugger correctly:
 After generating MCAL source files with EB Tresos Studio IDE and building the project, we need to make use of the .jdebug files that I'm providing in order to be capable or flashing the board with Ozone as well as for debugging. 
 These files after generated were modified to be portable (using $(ProjectDir)), hence no need to be modified again and are ready to be executed.
