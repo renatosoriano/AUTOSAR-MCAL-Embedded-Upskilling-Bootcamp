@@ -87,7 +87,7 @@ You can find here [**Setup AUTOSAR Tools**](https://embedded-house.ghost.io/part
 
 As a summary, these are the steps to follow in order to have the environment set up with all tools **FREE** of charge:
 
-* For NXP / EB Tresos tools installation:
+#### For NXP / EB Tresos tools installation:
 
 1. Create your own NXP account.
 2. Go to [Real-Time Drivers RTD](https://www.nxp.com/design/design-center/software/automotive-software-and-tools/real-time-drivers-rtd:AUTOMOTIVE-RTD). You should scroll until you reach the Download section for the Real-Time Drivers for S32K1. Click on Download and will open a new website that asks to log-in using your account.
@@ -126,7 +126,7 @@ As a summary, these are the steps to follow in order to have the environment set
 
 ![Setup_image_8.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/Tools_Setup/Setup_image_8.png)
 
-* For SEGGER tools installation:
+#### For SEGGER tools installation:
 
 1. For the Debugger, the hardware board provided by [Modular MX](https://www.linkedin.com/company/modular-mx/) is programmed with SEGGER J-Link to flash and debug the microcontroller. In case you acquire separately the NXP S32K144, you need to switch from OpenSDA for J-Link. Go to [**Setup AUTOSAR Tools**](https://embedded-house.ghost.io/part-0-setup-your-autosar-tools/) and perform the steps in section _Switching OpenSDA for J-Link_.
 
@@ -138,7 +138,7 @@ As a summary, these are the steps to follow in order to have the environment set
 
 ![Setup_image_10.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/Tools_Setup/Setup_image_10.png)
 
-* For importing the EB Tresos template project file:
+#### For importing the EB Tresos template project file:
 
 1. Git clone the project (that also comes with a makefile to compile the basic example in there and run it into the hardware board).
 
@@ -154,7 +154,7 @@ As a summary, these are the steps to follow in order to have the environment set
 
 ![Setup_image_13.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/Tools_Setup/Setup_image_13.png)
 
-* For compiling and flashing the project to the device:
+#### For compiling and flashing the project to the device:
 
 1. You can work your code using VS Code, open the terminal and select bash as the shell (please avoid powershell). Type 'cd' then leave an empty space ' ' and then drag and drop your project folder to insert the path and then Enter. You should be ready to start compiling. Type 'make' and wait for it to finish, should see something like this:
 
