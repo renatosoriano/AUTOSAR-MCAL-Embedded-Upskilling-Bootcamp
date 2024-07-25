@@ -247,7 +247,7 @@ void OnProjectLoad (void) {
 
 _<-- Back to [Table of Contents](#table-of-contents)_
 
-You can find here [**Documentation**](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Documentation/) all reference documents regarding:
+You can find here the [**Documentation**](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Documentation/) reference regarding:
 * [AUTOSAR Driver Specification.](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/tree/main/Documentation/AUTOSAR%20Driver%20Specification)
 * [EB Tresos S32K1 MCAL drivers.](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/tree/main/Documentation/EB%20Tresos%20MCAL%20Real%20Time%20Drivers)
 * [Compiler Manuals.](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/tree/main/Documentation/Manuals)
