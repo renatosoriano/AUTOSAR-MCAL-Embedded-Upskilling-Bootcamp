@@ -518,3 +518,15 @@ Hardware board receives (Rx) every second an 8-byte single message with ID 0x1EF
 Hardware board receives (Rx) every second an 8-byte single message with ID 0x010 and specified Data payload: 32 08 07 06 05 04 03 02. Savvy CAN transmits (Tx) the data. Notice how in code we can establish a condition, in this case where the first byte must be 0x32 and once that is confirmed, can proceed and receive the rest of the data.
 
 ![CANIF_Example4_Reception_single_PDU_single_Hrh_ID_0x010.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/CANIF_Driver_examples_results_screenshots/CANIF_Example4_Reception_single_PDU_single_Hrh_ID_0x010.png)
+
+* #### [CANIF Exercise 3: Button Transmits Messages](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/tree/main/Tresos_Workspace/10_CANIF_driver/Exercises/CANIF_Exercise3_Button_Tx_MsgID_01_02)
+Same exercise and output as [CAN Exercise 3: Button Transmits Messages](#can-exercise-3-button-transmits-messages) but this time configured and implemented using CAN Interface module from the Communication Hardware Abstraction layer.
+
+* #### [CANIF Exercise 4: Three Buttons, Transmits a Message with Three Different Datasets](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/tree/main/Tresos_Workspace/10_CANIF_driver/Exercises/CANIF_Exercise4_3Buttons_Tx_1Msg_3Data)
+Same exercise and output as [CAN Exercise 4: Three Buttons, Transmits a Message with Three Different Datasets](#can-exercise-4-three-buttons-transmits-a-message-with-three-different-datasets) but this time configured and implemented using CAN Interface module from the Communication Hardware Abstraction layer.
+
+* #### [CANIF Exercise 5: Three Buttons, Transmits Three Message with Three Different Datasets](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/tree/main/Tresos_Workspace/10_CANIF_driver/Exercises/CANIF_Exercise5_3Buttons_Tx_3Msg_3Data)
+Same exercise and output as [CAN Exercise 5: Three Buttons, Transmits Three Message with Three Different Datasets](#can-exercise-5-three-buttons-transmits-three-message-with-three-different-datasets) but this time configured and implemented using CAN Interface module from the Communication Hardware Abstraction layer.
+
+* #### [CANIF Exercise 7: Three LEDs, Receives Three Message with Three Different Datasets](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/tree/main/Tresos_Workspace/10_CANIF_driver/Exercises/CANIF_Exercise7_3LEDs_Rx_3Msg_3Data)
+Same exercise and output as [CAN Exercise 7: Three LEDs, Receives Three Message with Three Different Datasets](#can-exercise-7-three-leds-receives-three-message-with-three-different-datasets) but this time configured and implemented using CAN Interface module from the Communication Hardware Abstraction layer.
