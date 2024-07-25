@@ -266,7 +266,7 @@ It is divided in folders for each of the MCAL drivers worked, and inside you wil
 2. [DIO and PORT driver.](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/tree/main/Tresos_Workspace/1_DIO_PORT_driver)
 3. [MCU driver.](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/tree/main/Tresos_Workspace/2_MCU_driver)
 4. [GPT driver.](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/tree/main/Tresos_Workspace/3_GPT_driver)
-5. [Platform Driver.](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/tree/main/Tresos_Workspace/4_Platform_driver)
+5. [Platform driver.](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/tree/main/Tresos_Workspace/4_Platform_driver)
 6. [ADC driver.](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/tree/main/Tresos_Workspace/5_ADC_driver)
 7. [PWM driver.](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/tree/main/Tresos_Workspace/6_PWM_driver)
 8. [SPI driver.](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/tree/main/Tresos_Workspace/7_SPI_driver)
