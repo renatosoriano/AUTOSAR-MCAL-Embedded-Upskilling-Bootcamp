@@ -154,7 +154,7 @@ _Back to [Setup Notes](#4-setup-notes)_
 
 2. Open EB Tresos, go to **File → Import…**, then select **General → Existing Projects into Workspace**, then **Next** and **Browse…** the project folder (the cloned repository), click check on the template-s144 project and **Finish**. 
 
-![Setup_image_11.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/Tools_Setup/Setup_image_11.png)
+![Setup_image_21.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/Tools_Setup/Setup_image_21.png)
 
 3. Select the project and double click in **template-s144 → template-s144 (CORTEXM, S32K14X)** to display all the modules in use, then just click the hammer icon _'Generate code for the currently selected project'_.
 
