@@ -260,12 +260,12 @@ You can find here [**Documentation**](https://github.com/renatosoriano/AUTOSAR-M
 _<-- Back to [Table of Contents](#table-of-contents)_
 
 You can find here [**Tresos Workspace**](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Tresos_Workspace/) the base template file as well as all the examples and exercises created for this Upskilling Bootcamp.
-It is divided in folders for each of the MCAL drivers worked, and inside you will find 2 folders, **Examples** and **Exercises**. For getting started using EB Tresos for ach of the MCAL Modules, highly recommend reading [EB Tresos S32K1 MCAL drivers User Manuals](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/tree/main/Documentation/EB%20Tresos%20MCAL%20Real%20Time%20Drivers), they explain how to configure each MCAL from the EB Tresos GUI perspective.
+It is divided in folders for each of the MCAL drivers worked, and inside you will find 2 folders, **Examples** and **Exercises**. 
 
 1. [Templates: Tresos Project and Ozone Semihosting RTT.](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/tree/main/Tresos_Workspace/0_Template_Initial_File)
 2. [DIO and PORT driver.](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/tree/main/Tresos_Workspace/1_DIO_PORT_driver)
 3. [MCU driver.](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/tree/main/Tresos_Workspace/2_MCU_driver)
-4. [GPT Driver.](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/tree/main/Tresos_Workspace/3_GPT_driver)
+4. [GPT driver.](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/tree/main/Tresos_Workspace/3_GPT_driver)
 5. [Platform Driver.](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/tree/main/Tresos_Workspace/4_Platform_driver)
 6. [ADC driver.](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/tree/main/Tresos_Workspace/5_ADC_driver)
 7. [PWM driver.](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/tree/main/Tresos_Workspace/6_PWM_driver)
@@ -273,6 +273,11 @@ It is divided in folders for each of the MCAL drivers worked, and inside you wil
 9. [I/O Hardware Abstraction.](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/tree/main/Tresos_Workspace/8_HwIoAb_driver)
 10. [CAN driver.](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/tree/main/Tresos_Workspace/9_CAN_driver)
 11. [CANIF driver.](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/tree/main/Tresos_Workspace/10_CANIF_driver)
+
+For easier understanding using EB Tresos when doing each of the MCAL Modules Examples and Exercises, highly recommend going to [**Documentation**](#5-documentation) and read [EB Tresos S32K1 MCAL drivers User Manuals](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/tree/main/Documentation/EB%20Tresos%20MCAL%20Real%20Time%20Drivers), they explain how to configure each MCAL from the EB Tresos GUI perspective.
+Here is an example:
+
+![EB_Tresos_S32K1_MCAL_User_Manual_Example.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/EB_Tresos_S32K1_MCAL_User_Manual_Example.png)
 
 ## 7. Final Project
 
