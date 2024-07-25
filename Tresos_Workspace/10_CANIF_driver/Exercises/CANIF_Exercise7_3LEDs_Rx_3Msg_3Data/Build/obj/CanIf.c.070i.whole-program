@@ -1,0 +1,557 @@
+
+Marking local functions:
+
+
+Marking externally visible functions: CanIf_GetControllerTxErrorCounter/13 CanIf_GetControllerRxErrorCounter/12 CanIf_GetControllerMode/11 CanIf_GetControllerErrorState/10 CanIf_EnableControllerInterrupts/9 CanIf_DisableControllerInterrupts/8 CanIf_SetControllerMode/7 CanIf_ControllerBusOff/6 CanIf_ControllerModeIndication/5 CanIf_RxIndication/4 CanIf_TxConfirmation/3 CanIf_Transmit/2 CanIf_Init/1
+
+
+Marking externally visible variables:
+
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+Symbol table:
+
+CanIf_PCConfig/14 (CanIf_PCConfig) @0d46e7e0
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: CanIf_Transmit/2 (read) CanIf_RxIndication/4 (read) CanIf_RxIndication/4 (read) CanIf_RxIndication/4 (read) 
+  Availability: not_available
+  Varpool flags: read-only
+CanIf_GetControllerTxErrorCounter/13 (CanIf_GetControllerTxErrorCounter) @0d46bee0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+CanIf_GetControllerRxErrorCounter/12 (CanIf_GetControllerRxErrorCounter) @0d46bc40
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+CanIf_GetControllerMode/11 (CanIf_GetControllerMode) @0d46b9a0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+CanIf_GetControllerErrorState/10 (CanIf_GetControllerErrorState) @0d46b700
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+CanIf_EnableControllerInterrupts/9 (CanIf_EnableControllerInterrupts) @0d46b460
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+CanIf_DisableControllerInterrupts/8 (CanIf_DisableControllerInterrupts) @0d46b1c0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+CanIf_SetControllerMode/7 (CanIf_SetControllerMode) @0d44cee0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+CanIf_ControllerBusOff/6 (CanIf_ControllerBusOff) @0d44c9a0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+CanIf_ControllerModeIndication/5 (CanIf_ControllerModeIndication) @0d44c460
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+CanIf_RxIndication/4 (CanIf_RxIndication) @0d44ce00
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: CanIf_ConfigPtr/0 (read) CanIf_PCConfig/14 (read) CanIf_PCConfig/14 (read) CanIf_PCConfig/14 (read) CanIf_ConfigPtr/0 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+   Indirect call Num speculative call targets: 0
+CanIf_TxConfirmation/3 (CanIf_TxConfirmation) @0d44cb60
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: CanIf_ConfigPtr/0 (read) CanIf_ConfigPtr/0 (read) CanIf_ConfigPtr/0 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+   Indirect call Num speculative call targets: 0
+CanIf_Transmit/2 (CanIf_Transmit) @0d44c8c0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: CanIf_ConfigPtr/0 (read) CanIf_ConfigPtr/0 (read) CanIf_ConfigPtr/0 (read) CanIf_PCConfig/14 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+   Indirect call Num speculative call targets: 0
+CanIf_Init/1 (CanIf_Init) @0d44c620
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: CanIf_ConfigPtr/0 (write) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+CanIf_ConfigPtr/0 (CanIf_ConfigPtr) @0d449af8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: CanIf_Transmit/2 (read) CanIf_Init/1 (write) CanIf_Transmit/2 (read) CanIf_TxConfirmation/3 (read) CanIf_Transmit/2 (read) CanIf_TxConfirmation/3 (read) CanIf_TxConfirmation/3 (read) CanIf_RxIndication/4 (read) CanIf_RxIndication/4 (read) 
+  Availability: available
+  Varpool flags:
+CanIf_GetControllerTxErrorCounter (uint8 ControllerId, uint8 * TxErrorCounterPtr)
+{
+  <bb 2> :
+  return;
+
+}
+
+
+CanIf_GetControllerRxErrorCounter (uint8 ControllerId, uint8 * RxErrorCounterPtr)
+{
+  <bb 2> :
+  return;
+
+}
+
+
+CanIf_GetControllerMode (uint8 Controller, Can_ControllerStateType * ControllerModePtr)
+{
+  <bb 2> :
+  return;
+
+}
+
+
+CanIf_GetControllerErrorState (uint8 ControllerId, Can_ErrorStateType * ErrorStatePtr)
+{
+  <bb 2> :
+  return;
+
+}
+
+
+CanIf_EnableControllerInterrupts (uint8 Controller)
+{
+  <bb 2> :
+  return;
+
+}
+
+
+CanIf_DisableControllerInterrupts (uint8 Controller)
+{
+  <bb 2> :
+  return;
+
+}
+
+
+CanIf_SetControllerMode (uint8 Controller, Can_ControllerStateType Transition)
+{
+  <bb 2> :
+  return;
+
+}
+
+
+CanIf_ControllerBusOff (uint8 ControllerId)
+{
+  <bb 2> :
+  return;
+
+}
+
+
+CanIf_ControllerModeIndication (uint8 ControllerId, Can_ControllerStateType ControllerMode)
+{
+  <bb 2> :
+  return;
+
+}
+
+
+CanIf_RxIndication (const struct Can_HwType * Mailbox, const struct PduInfoType * PduInfoPtr)
+{
+  uint8 CanDrvId;
+  const struct CanIf_RxPduType * RxPduInfo;
+  struct PduInfoType PduInfo;
+  PduIdType UserPduId;
+  const struct CanIf_ConfigType * CanIf_ConfigPtr.6_1;
+  unsigned char _2;
+  unsigned char _3;
+  short unsigned int _4;
+  const struct CanIf_CtrlPCConfigType * _5;
+  unsigned char _6;
+  unsigned int _7;
+  unsigned int _8;
+  const struct CanIf_CtrlPCConfigType * _9;
+  const struct CanIf_CanDrvPCConfigType * _10;
+  short unsigned int _11;
+  const struct CanIf_CtrlPCConfigType * _12;
+  unsigned char _13;
+  unsigned int _14;
+  unsigned int _15;
+  const struct CanIf_CtrlPCConfigType * _16;
+  const struct CanIf_CanDrvPCConfigType * _17;
+  const struct CanIf_ConfigType * CanIf_ConfigPtr.7_18;
+  const struct CanIf_CanDrvConfigType * const * _19;
+  unsigned int _20;
+  unsigned int _21;
+  const struct CanIf_CanDrvConfigType * const * _22;
+  const struct CanIf_CanDrvConfigType * _23;
+  const struct CanIf_RxPduType * const * _24;
+  short unsigned int _25;
+  unsigned int _26;
+  unsigned int _27;
+  const struct CanIf_RxPduType * const * _28;
+  void (*<T500>) (PduIdType, const struct PduInfoType *) _29;
+  _Bool _30;
+  long unsigned int _31;
+  short unsigned int _32;
+  long unsigned int _33;
+  short unsigned int _34;
+  long unsigned int _35;
+  long unsigned int _36;
+  uint8 * _37;
+  void (*<T500>) (PduIdType, const struct PduInfoType *) _38;
+
+  <bb 2> :
+  UserPduId_41 = 0;
+  RxPduInfo_42 = 0B;
+  CanDrvId_43 = 0;
+  CanIf_ConfigPtr.6_1 = CanIf_ConfigPtr;
+  if (CanIf_ConfigPtr.6_1 != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 3> :
+  _2 = Mailbox_45(D)->ControllerId;
+  _3 = CanIf_PCConfig.NumOfCtrl;
+  if (_2 < _3)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 4> :
+  _4 = Mailbox_45(D)->Hoh;
+  _5 = CanIf_PCConfig.CanIfCtrlConfigPtr;
+  _6 = Mailbox_45(D)->ControllerId;
+  _7 = (unsigned int) _6;
+  _8 = _7 * 8;
+  _9 = _5 + _8;
+  _10 = _9->CanDrvConfigPtr;
+  _11 = _10->NumCanHoh;
+  if (_4 < _11)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 5> :
+  _12 = CanIf_PCConfig.CanIfCtrlConfigPtr;
+  _13 = Mailbox_45(D)->ControllerId;
+  _14 = (unsigned int) _13;
+  _15 = _14 * 8;
+  _16 = _12 + _15;
+  _17 = _16->CanDrvConfigPtr;
+  CanDrvId_46 = _17->CanDrvId;
+  CanIf_ConfigPtr.7_18 = CanIf_ConfigPtr;
+  _19 = CanIf_ConfigPtr.7_18->CanDrvConfigPtr;
+  _20 = (unsigned int) CanDrvId_46;
+  _21 = _20 * 4;
+  _22 = _19 + _21;
+  _23 = *_22;
+  _24 = _23->HohToRxPduMappingPtr;
+  _25 = Mailbox_45(D)->Hoh;
+  _26 = (unsigned int) _25;
+  _27 = _26 * 4;
+  _28 = _24 + _27;
+  RxPduInfo_47 = *_28;
+  if (RxPduInfo_47 != 0B)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 6> :
+  _29 = RxPduInfo_47->UserRxIndication;
+  if (_29 != 0B)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 7> :
+  UserPduId_48 = RxPduInfo_47->PduId;
+  _30 = RxPduInfo_47->PduLengthCheck;
+  if (_30 != 0)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 8> :
+  _31 = PduInfoPtr_49(D)->SduLength;
+  _32 = RxPduInfo_47->PduLength;
+  _33 = (long unsigned int) _32;
+  if (_31 > _33)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 9> :
+  _34 = RxPduInfo_47->PduLength;
+  _35 = (long unsigned int) _34;
+  PduInfo.SduLength = _35;
+  goto <bb 11>; [INV]
+
+  <bb 10> :
+  _36 = PduInfoPtr_49(D)->SduLength;
+  PduInfo.SduLength = _36;
+
+  <bb 11> :
+  _37 = PduInfoPtr_49(D)->SduDataPtr;
+  PduInfo.SduDataPtr = _37;
+  _38 = RxPduInfo_47->UserRxIndication;
+  _38 (UserPduId_48, &PduInfo);
+
+  <bb 12> :
+  PduInfo ={v} {CLOBBER};
+  return;
+
+}
+
+
+CanIf_TxConfirmation (PduIdType CanTxPduId)
+{
+  const struct CanIf_TxPduType * TxPduInfo;
+  PduIdType UserPduId;
+  const struct CanIf_ConfigType * CanIf_ConfigPtr.3_1;
+  const struct CanIf_ConfigType * CanIf_ConfigPtr.4_2;
+  unsigned char _3;
+  short unsigned int _4;
+  const struct CanIf_ConfigType * CanIf_ConfigPtr.5_5;
+  const struct CanIf_TxPduType * _6;
+  unsigned int _7;
+  unsigned int _8;
+  void (*<T505>) (PduIdType, Std_ReturnType) _9;
+  void (*<T505>) (PduIdType, Std_ReturnType) _10;
+
+  <bb 2> :
+  TxPduInfo_12 = 0B;
+  CanIf_ConfigPtr.3_1 = CanIf_ConfigPtr;
+  if (CanIf_ConfigPtr.3_1 != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 3> :
+  CanIf_ConfigPtr.4_2 = CanIf_ConfigPtr;
+  _3 = CanIf_ConfigPtr.4_2->NumTxPdu;
+  _4 = (short unsigned int) _3;
+  if (CanTxPduId_14(D) < _4)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 4> :
+  CanIf_ConfigPtr.5_5 = CanIf_ConfigPtr;
+  _6 = CanIf_ConfigPtr.5_5->CanIf_TxPduConfigPtr;
+  _7 = (unsigned int) CanTxPduId_14(D);
+  _8 = _7 * 20;
+  TxPduInfo_15 = _6 + _8;
+  _9 = TxPduInfo_15->UserTxConfirmation;
+  if (_9 != 0B)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  UserPduId_16 = TxPduInfo_15->PduId;
+  _10 = TxPduInfo_15->UserTxConfirmation;
+  _10 (UserPduId_16, 0);
+
+  <bb 6> :
+  return;
+
+}
+
+
+CanIf_Transmit (PduIdType CanTxPduId, const struct PduInfoType * PduInfoPtr)
+{
+  const struct CanIf_CtrlPCConfigType * CanIfController;
+  uint8 CanIfControllerId;
+  const struct CanIf_TxPduType * TxPduInfo;
+  struct Can_PduType PduInfo;
+  Can_HwHandleType CanHth;
+  Std_ReturnType RetVal;
+  Std_ReturnType D.5544;
+  const struct CanIf_ConfigType * CanIf_ConfigPtr.0_1;
+  const struct CanIf_ConfigType * CanIf_ConfigPtr.1_2;
+  unsigned char _3;
+  short unsigned int _4;
+  const struct CanIf_ConfigType * CanIf_ConfigPtr.2_5;
+  const struct CanIf_TxPduType * _6;
+  unsigned int _7;
+  unsigned int _8;
+  const struct CanIf_CtrlPCConfigType * _9;
+  unsigned int _10;
+  unsigned int _11;
+  long unsigned int _12;
+  <unnamed type> _13;
+  long unsigned int _14;
+  long unsigned int _15;
+  long unsigned int _16;
+  long unsigned int _17;
+  long unsigned int _18;
+  long unsigned int _19;
+  long unsigned int _20;
+  unsigned char _21;
+  uint8 * _22;
+  const struct CanIf_CanDrvPCConfigType * _23;
+  const struct CanIf_CanDrvFuncPtrType * _24;
+  Std_ReturnType (*<T50e>) (Can_HwHandleType, const struct Can_PduType *) _25;
+  Std_ReturnType _50;
+
+  <bb 2> :
+  RetVal_29 = 1;
+  CanHth_30 = 0;
+  TxPduInfo_31 = 0B;
+  CanIfControllerId_32 = 0;
+  CanIfController_33 = 0B;
+  CanIf_ConfigPtr.0_1 = CanIf_ConfigPtr;
+  if (CanIf_ConfigPtr.0_1 != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 3> :
+  CanIf_ConfigPtr.1_2 = CanIf_ConfigPtr;
+  _3 = CanIf_ConfigPtr.1_2->NumTxPdu;
+  _4 = (short unsigned int) _3;
+  if (CanTxPduId_35(D) < _4)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 4> :
+  CanIf_ConfigPtr.2_5 = CanIf_ConfigPtr;
+  _6 = CanIf_ConfigPtr.2_5->CanIf_TxPduConfigPtr;
+  _7 = (unsigned int) CanTxPduId_35(D);
+  _8 = _7 * 20;
+  TxPduInfo_36 = _6 + _8;
+  CanIfControllerId_37 = TxPduInfo_36->CanIfCtrlId;
+  _9 = CanIf_PCConfig.CanIfCtrlConfigPtr;
+  _10 = (unsigned int) CanIfControllerId_37;
+  _11 = _10 * 8;
+  CanIfController_38 = _9 + _11;
+  CanHth_39 = TxPduInfo_36->CanHth;
+  _12 = TxPduInfo_36->CanId;
+  PduInfo.id = _12;
+  _13 = TxPduInfo_36->CanFrameType;
+  switch (_13) <default: <L5> [INV], case 0: <L2> [INV], case 1: <L3> [INV], case 3: <L4> [INV]>
+
+  <bb 5> :
+<L2>:
+  _14 = PduInfo.id;
+  _15 = _14 | 2147483648;
+  PduInfo.id = _15;
+  goto <bb 9>; [INV]
+
+  <bb 6> :
+<L3>:
+  _16 = PduInfo.id;
+  _17 = _16 | 3221225472;
+  PduInfo.id = _17;
+  goto <bb 9>; [INV]
+
+  <bb 7> :
+<L4>:
+  _18 = PduInfo.id;
+  _19 = _18 | 1073741824;
+  PduInfo.id = _19;
+  goto <bb 9>; [INV]
+
+  <bb 8> :
+<L5>:
+
+  <bb 9> :
+  _20 = PduInfoPtr_44(D)->SduLength;
+  _21 = (unsigned char) _20;
+  PduInfo.length = _21;
+  _22 = PduInfoPtr_44(D)->SduDataPtr;
+  PduInfo.sdu = _22;
+  PduInfo.swPduHandle = CanTxPduId_35(D);
+  _23 = CanIfController_38->CanDrvConfigPtr;
+  _24 = _23->CanApi;
+  _25 = _24->CanWrite;
+  RetVal_49 = _25 (CanHth_39, &PduInfo);
+
+  <bb 10> :
+  # RetVal_26 = PHI <RetVal_29(2), RetVal_29(3), RetVal_49(9)>
+  _50 = RetVal_26;
+  PduInfo ={v} {CLOBBER};
+
+  <bb 11> :
+<L10>:
+  return _50;
+
+}
+
+
+CanIf_Init (const struct CanIf_ConfigType * ConfigPtr)
+{
+  <bb 2> :
+  CanIf_ConfigPtr = ConfigPtr_2(D);
+  return;
+
+}
+
+

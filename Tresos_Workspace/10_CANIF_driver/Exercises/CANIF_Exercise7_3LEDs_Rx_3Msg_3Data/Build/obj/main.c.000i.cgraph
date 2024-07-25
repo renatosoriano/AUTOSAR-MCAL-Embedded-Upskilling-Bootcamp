@@ -1,0 +1,1496 @@
+Trivially needed symbols: EcuM_Init/12 main/11 CDD_UserRxConfirmation0x382/10 CDD_UserRxConfirmation0x233/9 CDD_UserRxConfirmation0x154/8 Delay/7 LEDFlag/6 Can_au8Sdu8bytes/5
+
+
+Initial Symbol table:
+
+IoHwAb_Init0/33 (IoHwAb_Init0) @0eb1e1c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: EcuM_Init/12 
+  Calls: 
+CanIf_Config/32 (CanIf_Config) @0eb1d8b8
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: EcuM_Init/12 (addr) 
+  Availability: not-ready
+  Varpool flags: read-only
+CanIf_Init/31 (CanIf_Init) @0eb1e0e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: EcuM_Init/12 
+  Calls: 
+Can_43_FLEXCAN_Config/30 (Can_43_FLEXCAN_Config) @0eb1d828
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: EcuM_Init/12 (addr) 
+  Availability: not-ready
+  Varpool flags: read-only
+Can_43_FLEXCAN_Init/29 (Can_43_FLEXCAN_Init) @0eb1e000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: EcuM_Init/12 
+  Calls: 
+Port_Config/28 (Port_Config) @0eb1d798
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: EcuM_Init/12 (addr) 
+  Availability: not-ready
+  Varpool flags: read-only
+Port_Init/27 (Port_Init) @0ead69a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: EcuM_Init/12 
+  Calls: 
+Platform_Init/26 (Platform_Init) @0ead6ee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: EcuM_Init/12 
+  Calls: 
+OsIf_Init/25 (OsIf_Init) @0ead6e00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: EcuM_Init/12 
+  Calls: 
+Mcu_SetMode/24 (Mcu_SetMode) @0ead6d20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: EcuM_Init/12 
+  Calls: 
+Mcu_InitClock/23 (Mcu_InitClock) @0ead6c40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: EcuM_Init/12 
+  Calls: 
+Mcu_Config/22 (Mcu_Config) @0eb1d5e8
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: EcuM_Init/12 (addr) 
+  Availability: not-ready
+  Varpool flags: read-only
+Mcu_Init/21 (Mcu_Init) @0ead6b60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: EcuM_Init/12 
+  Calls: 
+HwIoAb_Leds_TurnToggle/20 (HwIoAb_Leds_TurnToggle) @0ead68c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: main/11 main/11 main/11 
+  Calls: 
+Can_43_FLEXCAN_SetControllerMode/19 (Can_43_FLEXCAN_SetControllerMode) @0ead67e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: main/11 
+  Calls: 
+SEGGER_RTT_printf/18 (SEGGER_RTT_printf) @0ead6700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: main/11 main/11 main/11 main/11 main/11 main/11 main/11 
+  Calls: 
+Can_43_FLEXCAN_SetBaudrate/17 (Can_43_FLEXCAN_SetBaudrate) @0ead6620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: main/11 
+  Calls: 
+SEGGER_RTT_Init/16 (SEGGER_RTT_Init) @0ead6540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: main/11 
+  Calls: 
+OsIf_GetElapsed/15 (OsIf_GetElapsed) @0ead60e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Delay/7 
+  Calls: 
+OsIf_GetCounter/14 (OsIf_GetCounter) @0ead6000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Delay/7 
+  Calls: 
+OsIf_MicrosToTicks/13 (OsIf_MicrosToTicks) @0eacc9a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Delay/7 
+  Calls: 
+EcuM_Init/12 (EcuM_Init) @0eaccb60
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @01981040
+  References: Mcu_Config/22 (addr) Port_Config/28 (addr) Can_43_FLEXCAN_Config/30 (addr) CanIf_Config/32 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: main/11 
+  Calls: IoHwAb_Init0/33 CanIf_Init/31 Can_43_FLEXCAN_Init/29 Port_Init/27 Platform_Init/26 OsIf_Init/25 Mcu_SetMode/24 Mcu_InitClock/23 Mcu_Init/21 
+main/11 (main) @0eacc8c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0eaccb60
+  References: LEDFlag/6 (read) LEDFlag/6 (write) Can_au8Sdu8bytes/5 (read) Can_au8Sdu8bytes/5 (read) LEDFlag/6 (read) LEDFlag/6 (write) Can_au8Sdu8bytes/5 (read) Can_au8Sdu8bytes/5 (read) LEDFlag/6 (read) LEDFlag/6 (write) Can_au8Sdu8bytes/5 (read) Can_au8Sdu8bytes/5 (read) Can_au8Sdu8bytes/5 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Delay/7 HwIoAb_Leds_TurnToggle/20 SEGGER_RTT_printf/18 Delay/7 HwIoAb_Leds_TurnToggle/20 SEGGER_RTT_printf/18 Delay/7 HwIoAb_Leds_TurnToggle/20 SEGGER_RTT_printf/18 SEGGER_RTT_printf/18 SEGGER_RTT_printf/18 Can_43_FLEXCAN_SetControllerMode/19 SEGGER_RTT_printf/18 SEGGER_RTT_printf/18 Can_43_FLEXCAN_SetBaudrate/17 SEGGER_RTT_Init/16 EcuM_Init/12 
+CDD_UserRxConfirmation0x382/10 (CDD_UserRxConfirmation0x382) @0eacc620
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0eacc8c0
+  References: Can_au8Sdu8bytes/5 (write) LEDFlag/6 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+CDD_UserRxConfirmation0x233/9 (CDD_UserRxConfirmation0x233) @0eacc380
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0eacc620
+  References: Can_au8Sdu8bytes/5 (write) LEDFlag/6 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+CDD_UserRxConfirmation0x154/8 (CDD_UserRxConfirmation0x154) @0eacc0e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0eacc380
+  References: Can_au8Sdu8bytes/5 (write) LEDFlag/6 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+Delay/7 (Delay) @0eac91c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0eacc0e0
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: main/11 main/11 main/11 
+  Calls: OsIf_GetElapsed/15 OsIf_GetCounter/14 OsIf_MicrosToTicks/13 
+LEDFlag/6 (LEDFlag) @0eac58b8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0eac91c0
+  References: 
+  Referring: CDD_UserRxConfirmation0x154/8 (write) CDD_UserRxConfirmation0x233/9 (write) CDD_UserRxConfirmation0x382/10 (write) main/11 (read) main/11 (write) main/11 (read) main/11 (write) main/11 (read) main/11 (write) 
+  Availability: not-ready
+  Varpool flags: initialized
+Can_au8Sdu8bytes/5 (Can_au8Sdu8bytes) @0eac5828
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  Aux: @0eac58b8
+  References: 
+  Referring: CDD_UserRxConfirmation0x154/8 (write) CDD_UserRxConfirmation0x233/9 (write) CDD_UserRxConfirmation0x382/10 (write) main/11 (read) main/11 (read) main/11 (read) main/11 (read) main/11 (read) main/11 (read) main/11 (read) 
+  Availability: not-ready
+  Varpool flags:
+Platform_Ipw_InstallIrqHandler/4 (Platform_Ipw_InstallIrqHandler) @0e7f09a0
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+Platform_Ipw_GetIrqPriority/3 (Platform_Ipw_GetIrqPriority) @0e7f0700
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+Platform_Ipw_SetIrqPriority/2 (Platform_Ipw_SetIrqPriority) @0e7f0460
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+Platform_Ipw_SetIrq/1 (Platform_Ipw_SetIrq) @0e7f01c0
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+DevAssert/0 (DevAssert) @0e31ca80
+  Type: function definition
+  Visibility: no_reorder
+  References: 
+  Referring: 
+  Function flags:
+  Called by: 
+  Calls: 
+
+Removing unused symbols: Platform_Ipw_InstallIrqHandler/4 Platform_Ipw_GetIrqPriority/3 Platform_Ipw_SetIrqPriority/2 Platform_Ipw_SetIrq/1 DevAssert/0
+
+Reclaimed Symbol table:
+
+IoHwAb_Init0/33 (IoHwAb_Init0) @0eb1e1c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: EcuM_Init/12 
+  Calls: 
+CanIf_Config/32 (CanIf_Config) @0eb1d8b8
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: EcuM_Init/12 (addr) 
+  Availability: not-ready
+  Varpool flags: read-only
+CanIf_Init/31 (CanIf_Init) @0eb1e0e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: EcuM_Init/12 
+  Calls: 
+Can_43_FLEXCAN_Config/30 (Can_43_FLEXCAN_Config) @0eb1d828
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: EcuM_Init/12 (addr) 
+  Availability: not-ready
+  Varpool flags: read-only
+Can_43_FLEXCAN_Init/29 (Can_43_FLEXCAN_Init) @0eb1e000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: EcuM_Init/12 
+  Calls: 
+Port_Config/28 (Port_Config) @0eb1d798
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: EcuM_Init/12 (addr) 
+  Availability: not-ready
+  Varpool flags: read-only
+Port_Init/27 (Port_Init) @0ead69a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: EcuM_Init/12 
+  Calls: 
+Platform_Init/26 (Platform_Init) @0ead6ee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: EcuM_Init/12 
+  Calls: 
+OsIf_Init/25 (OsIf_Init) @0ead6e00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: EcuM_Init/12 
+  Calls: 
+Mcu_SetMode/24 (Mcu_SetMode) @0ead6d20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: EcuM_Init/12 
+  Calls: 
+Mcu_InitClock/23 (Mcu_InitClock) @0ead6c40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: EcuM_Init/12 
+  Calls: 
+Mcu_Config/22 (Mcu_Config) @0eb1d5e8
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: EcuM_Init/12 (addr) 
+  Availability: not-ready
+  Varpool flags: read-only
+Mcu_Init/21 (Mcu_Init) @0ead6b60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: EcuM_Init/12 
+  Calls: 
+HwIoAb_Leds_TurnToggle/20 (HwIoAb_Leds_TurnToggle) @0ead68c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: main/11 main/11 main/11 
+  Calls: 
+Can_43_FLEXCAN_SetControllerMode/19 (Can_43_FLEXCAN_SetControllerMode) @0ead67e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: main/11 
+  Calls: 
+SEGGER_RTT_printf/18 (SEGGER_RTT_printf) @0ead6700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: main/11 main/11 main/11 main/11 main/11 main/11 main/11 
+  Calls: 
+Can_43_FLEXCAN_SetBaudrate/17 (Can_43_FLEXCAN_SetBaudrate) @0ead6620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: main/11 
+  Calls: 
+SEGGER_RTT_Init/16 (SEGGER_RTT_Init) @0ead6540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: main/11 
+  Calls: 
+OsIf_GetElapsed/15 (OsIf_GetElapsed) @0ead60e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Delay/7 
+  Calls: 
+OsIf_GetCounter/14 (OsIf_GetCounter) @0ead6000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Delay/7 
+  Calls: 
+OsIf_MicrosToTicks/13 (OsIf_MicrosToTicks) @0eacc9a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Delay/7 
+  Calls: 
+EcuM_Init/12 (EcuM_Init) @0eaccb60
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Mcu_Config/22 (addr) Port_Config/28 (addr) Can_43_FLEXCAN_Config/30 (addr) CanIf_Config/32 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: main/11 
+  Calls: IoHwAb_Init0/33 CanIf_Init/31 Can_43_FLEXCAN_Init/29 Port_Init/27 Platform_Init/26 OsIf_Init/25 Mcu_SetMode/24 Mcu_InitClock/23 Mcu_Init/21 
+main/11 (main) @0eacc8c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: LEDFlag/6 (read) LEDFlag/6 (write) Can_au8Sdu8bytes/5 (read) Can_au8Sdu8bytes/5 (read) LEDFlag/6 (read) LEDFlag/6 (write) Can_au8Sdu8bytes/5 (read) Can_au8Sdu8bytes/5 (read) LEDFlag/6 (read) LEDFlag/6 (write) Can_au8Sdu8bytes/5 (read) Can_au8Sdu8bytes/5 (read) Can_au8Sdu8bytes/5 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Delay/7 HwIoAb_Leds_TurnToggle/20 SEGGER_RTT_printf/18 Delay/7 HwIoAb_Leds_TurnToggle/20 SEGGER_RTT_printf/18 Delay/7 HwIoAb_Leds_TurnToggle/20 SEGGER_RTT_printf/18 SEGGER_RTT_printf/18 SEGGER_RTT_printf/18 Can_43_FLEXCAN_SetControllerMode/19 SEGGER_RTT_printf/18 SEGGER_RTT_printf/18 Can_43_FLEXCAN_SetBaudrate/17 SEGGER_RTT_Init/16 EcuM_Init/12 
+CDD_UserRxConfirmation0x382/10 (CDD_UserRxConfirmation0x382) @0eacc620
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Can_au8Sdu8bytes/5 (write) LEDFlag/6 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+CDD_UserRxConfirmation0x233/9 (CDD_UserRxConfirmation0x233) @0eacc380
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Can_au8Sdu8bytes/5 (write) LEDFlag/6 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+CDD_UserRxConfirmation0x154/8 (CDD_UserRxConfirmation0x154) @0eacc0e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Can_au8Sdu8bytes/5 (write) LEDFlag/6 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+Delay/7 (Delay) @0eac91c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: main/11 main/11 main/11 
+  Calls: OsIf_GetElapsed/15 OsIf_GetCounter/14 OsIf_MicrosToTicks/13 
+LEDFlag/6 (LEDFlag) @0eac58b8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: CDD_UserRxConfirmation0x154/8 (write) CDD_UserRxConfirmation0x233/9 (write) CDD_UserRxConfirmation0x382/10 (write) main/11 (read) main/11 (write) main/11 (read) main/11 (write) main/11 (read) main/11 (write) 
+  Availability: not-ready
+  Varpool flags: initialized
+Can_au8Sdu8bytes/5 (Can_au8Sdu8bytes) @0eac5828
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: CDD_UserRxConfirmation0x154/8 (write) CDD_UserRxConfirmation0x233/9 (write) CDD_UserRxConfirmation0x382/10 (write) main/11 (read) main/11 (read) main/11 (read) main/11 (read) main/11 (read) main/11 (read) main/11 (read) 
+  Availability: not-ready
+  Varpool flags:
+
+
+Initial Symbol table:
+
+IoHwAb_Init0/33 (IoHwAb_Init0) @0eb1e1c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: EcuM_Init/12 
+  Calls: 
+CanIf_Config/32 (CanIf_Config) @0eb1d8b8
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: EcuM_Init/12 (addr) 
+  Availability: not-ready
+  Varpool flags: read-only
+CanIf_Init/31 (CanIf_Init) @0eb1e0e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: EcuM_Init/12 
+  Calls: 
+Can_43_FLEXCAN_Config/30 (Can_43_FLEXCAN_Config) @0eb1d828
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: EcuM_Init/12 (addr) 
+  Availability: not-ready
+  Varpool flags: read-only
+Can_43_FLEXCAN_Init/29 (Can_43_FLEXCAN_Init) @0eb1e000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: EcuM_Init/12 
+  Calls: 
+Port_Config/28 (Port_Config) @0eb1d798
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: EcuM_Init/12 (addr) 
+  Availability: not-ready
+  Varpool flags: read-only
+Port_Init/27 (Port_Init) @0ead69a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: EcuM_Init/12 
+  Calls: 
+Platform_Init/26 (Platform_Init) @0ead6ee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: EcuM_Init/12 
+  Calls: 
+OsIf_Init/25 (OsIf_Init) @0ead6e00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: EcuM_Init/12 
+  Calls: 
+Mcu_SetMode/24 (Mcu_SetMode) @0ead6d20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: EcuM_Init/12 
+  Calls: 
+Mcu_InitClock/23 (Mcu_InitClock) @0ead6c40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: EcuM_Init/12 
+  Calls: 
+Mcu_Config/22 (Mcu_Config) @0eb1d5e8
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: EcuM_Init/12 (addr) 
+  Availability: not-ready
+  Varpool flags: read-only
+Mcu_Init/21 (Mcu_Init) @0ead6b60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: EcuM_Init/12 
+  Calls: 
+HwIoAb_Leds_TurnToggle/20 (HwIoAb_Leds_TurnToggle) @0ead68c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: main/11 main/11 main/11 
+  Calls: 
+Can_43_FLEXCAN_SetControllerMode/19 (Can_43_FLEXCAN_SetControllerMode) @0ead67e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: main/11 
+  Calls: 
+SEGGER_RTT_printf/18 (SEGGER_RTT_printf) @0ead6700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: main/11 main/11 main/11 main/11 main/11 main/11 main/11 
+  Calls: 
+Can_43_FLEXCAN_SetBaudrate/17 (Can_43_FLEXCAN_SetBaudrate) @0ead6620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: main/11 
+  Calls: 
+SEGGER_RTT_Init/16 (SEGGER_RTT_Init) @0ead6540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: main/11 
+  Calls: 
+OsIf_GetElapsed/15 (OsIf_GetElapsed) @0ead60e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Delay/7 
+  Calls: 
+OsIf_GetCounter/14 (OsIf_GetCounter) @0ead6000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Delay/7 
+  Calls: 
+OsIf_MicrosToTicks/13 (OsIf_MicrosToTicks) @0eacc9a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Delay/7 
+  Calls: 
+EcuM_Init/12 (EcuM_Init) @0eaccb60
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Mcu_Config/22 (addr) Port_Config/28 (addr) Can_43_FLEXCAN_Config/30 (addr) CanIf_Config/32 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: main/11 
+  Calls: IoHwAb_Init0/33 CanIf_Init/31 Can_43_FLEXCAN_Init/29 Port_Init/27 Platform_Init/26 OsIf_Init/25 Mcu_SetMode/24 Mcu_InitClock/23 Mcu_Init/21 
+main/11 (main) @0eacc8c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: LEDFlag/6 (read) LEDFlag/6 (write) Can_au8Sdu8bytes/5 (read) Can_au8Sdu8bytes/5 (read) LEDFlag/6 (read) LEDFlag/6 (write) Can_au8Sdu8bytes/5 (read) Can_au8Sdu8bytes/5 (read) LEDFlag/6 (read) LEDFlag/6 (write) Can_au8Sdu8bytes/5 (read) Can_au8Sdu8bytes/5 (read) Can_au8Sdu8bytes/5 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Delay/7 HwIoAb_Leds_TurnToggle/20 SEGGER_RTT_printf/18 Delay/7 HwIoAb_Leds_TurnToggle/20 SEGGER_RTT_printf/18 Delay/7 HwIoAb_Leds_TurnToggle/20 SEGGER_RTT_printf/18 SEGGER_RTT_printf/18 SEGGER_RTT_printf/18 Can_43_FLEXCAN_SetControllerMode/19 SEGGER_RTT_printf/18 SEGGER_RTT_printf/18 Can_43_FLEXCAN_SetBaudrate/17 SEGGER_RTT_Init/16 EcuM_Init/12 
+CDD_UserRxConfirmation0x382/10 (CDD_UserRxConfirmation0x382) @0eacc620
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Can_au8Sdu8bytes/5 (write) LEDFlag/6 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+CDD_UserRxConfirmation0x233/9 (CDD_UserRxConfirmation0x233) @0eacc380
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Can_au8Sdu8bytes/5 (write) LEDFlag/6 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+CDD_UserRxConfirmation0x154/8 (CDD_UserRxConfirmation0x154) @0eacc0e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Can_au8Sdu8bytes/5 (write) LEDFlag/6 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+Delay/7 (Delay) @0eac91c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: main/11 main/11 main/11 
+  Calls: OsIf_GetElapsed/15 OsIf_GetCounter/14 OsIf_MicrosToTicks/13 
+LEDFlag/6 (LEDFlag) @0eac58b8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: CDD_UserRxConfirmation0x154/8 (write) CDD_UserRxConfirmation0x233/9 (write) CDD_UserRxConfirmation0x382/10 (write) main/11 (read) main/11 (write) main/11 (read) main/11 (write) main/11 (read) main/11 (write) 
+  Availability: not-ready
+  Varpool flags: initialized
+Can_au8Sdu8bytes/5 (Can_au8Sdu8bytes) @0eac5828
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: CDD_UserRxConfirmation0x154/8 (write) CDD_UserRxConfirmation0x233/9 (write) CDD_UserRxConfirmation0x382/10 (write) main/11 (read) main/11 (read) main/11 (read) main/11 (read) main/11 (read) main/11 (read) main/11 (read) 
+  Availability: not-ready
+  Varpool flags:
+
+Removing unused symbols:
+
+Reclaimed Symbol table:
+
+IoHwAb_Init0/33 (IoHwAb_Init0) @0eb1e1c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: EcuM_Init/12 
+  Calls: 
+CanIf_Config/32 (CanIf_Config) @0eb1d8b8
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: EcuM_Init/12 (addr) 
+  Availability: not-ready
+  Varpool flags: read-only
+CanIf_Init/31 (CanIf_Init) @0eb1e0e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: EcuM_Init/12 
+  Calls: 
+Can_43_FLEXCAN_Config/30 (Can_43_FLEXCAN_Config) @0eb1d828
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: EcuM_Init/12 (addr) 
+  Availability: not-ready
+  Varpool flags: read-only
+Can_43_FLEXCAN_Init/29 (Can_43_FLEXCAN_Init) @0eb1e000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: EcuM_Init/12 
+  Calls: 
+Port_Config/28 (Port_Config) @0eb1d798
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: EcuM_Init/12 (addr) 
+  Availability: not-ready
+  Varpool flags: read-only
+Port_Init/27 (Port_Init) @0ead69a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: EcuM_Init/12 
+  Calls: 
+Platform_Init/26 (Platform_Init) @0ead6ee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: EcuM_Init/12 
+  Calls: 
+OsIf_Init/25 (OsIf_Init) @0ead6e00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: EcuM_Init/12 
+  Calls: 
+Mcu_SetMode/24 (Mcu_SetMode) @0ead6d20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: EcuM_Init/12 
+  Calls: 
+Mcu_InitClock/23 (Mcu_InitClock) @0ead6c40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: EcuM_Init/12 
+  Calls: 
+Mcu_Config/22 (Mcu_Config) @0eb1d5e8
+  Type: variable
+  Visibility: external public
+  References: 
+  Referring: EcuM_Init/12 (addr) 
+  Availability: not-ready
+  Varpool flags: read-only
+Mcu_Init/21 (Mcu_Init) @0ead6b60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: EcuM_Init/12 
+  Calls: 
+HwIoAb_Leds_TurnToggle/20 (HwIoAb_Leds_TurnToggle) @0ead68c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: main/11 main/11 main/11 
+  Calls: 
+Can_43_FLEXCAN_SetControllerMode/19 (Can_43_FLEXCAN_SetControllerMode) @0ead67e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: main/11 
+  Calls: 
+SEGGER_RTT_printf/18 (SEGGER_RTT_printf) @0ead6700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: main/11 main/11 main/11 main/11 main/11 main/11 main/11 
+  Calls: 
+Can_43_FLEXCAN_SetBaudrate/17 (Can_43_FLEXCAN_SetBaudrate) @0ead6620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: main/11 
+  Calls: 
+SEGGER_RTT_Init/16 (SEGGER_RTT_Init) @0ead6540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: main/11 
+  Calls: 
+OsIf_GetElapsed/15 (OsIf_GetElapsed) @0ead60e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Delay/7 
+  Calls: 
+OsIf_GetCounter/14 (OsIf_GetCounter) @0ead6000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Delay/7 
+  Calls: 
+OsIf_MicrosToTicks/13 (OsIf_MicrosToTicks) @0eacc9a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags:
+  Called by: Delay/7 
+  Calls: 
+EcuM_Init/12 (EcuM_Init) @0eaccb60
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Mcu_Config/22 (addr) Port_Config/28 (addr) Can_43_FLEXCAN_Config/30 (addr) CanIf_Config/32 (addr) 
+  Referring: 
+  Function flags: body
+  Called by: main/11 
+  Calls: IoHwAb_Init0/33 CanIf_Init/31 Can_43_FLEXCAN_Init/29 Port_Init/27 Platform_Init/26 OsIf_Init/25 Mcu_SetMode/24 Mcu_InitClock/23 Mcu_Init/21 
+main/11 (main) @0eacc8c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: LEDFlag/6 (read) LEDFlag/6 (write) Can_au8Sdu8bytes/5 (read) Can_au8Sdu8bytes/5 (read) LEDFlag/6 (read) LEDFlag/6 (write) Can_au8Sdu8bytes/5 (read) Can_au8Sdu8bytes/5 (read) LEDFlag/6 (read) LEDFlag/6 (write) Can_au8Sdu8bytes/5 (read) Can_au8Sdu8bytes/5 (read) Can_au8Sdu8bytes/5 (read) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: Delay/7 HwIoAb_Leds_TurnToggle/20 SEGGER_RTT_printf/18 Delay/7 HwIoAb_Leds_TurnToggle/20 SEGGER_RTT_printf/18 Delay/7 HwIoAb_Leds_TurnToggle/20 SEGGER_RTT_printf/18 SEGGER_RTT_printf/18 SEGGER_RTT_printf/18 Can_43_FLEXCAN_SetControllerMode/19 SEGGER_RTT_printf/18 SEGGER_RTT_printf/18 Can_43_FLEXCAN_SetBaudrate/17 SEGGER_RTT_Init/16 EcuM_Init/12 
+CDD_UserRxConfirmation0x382/10 (CDD_UserRxConfirmation0x382) @0eacc620
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Can_au8Sdu8bytes/5 (write) LEDFlag/6 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+CDD_UserRxConfirmation0x233/9 (CDD_UserRxConfirmation0x233) @0eacc380
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Can_au8Sdu8bytes/5 (write) LEDFlag/6 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+CDD_UserRxConfirmation0x154/8 (CDD_UserRxConfirmation0x154) @0eacc0e0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: Can_au8Sdu8bytes/5 (write) LEDFlag/6 (write) 
+  Referring: 
+  Function flags: body
+  Called by: 
+  Calls: 
+Delay/7 (Delay) @0eac91c0
+  Type: function definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: 
+  Function flags: body
+  Called by: main/11 main/11 main/11 
+  Calls: OsIf_GetElapsed/15 OsIf_GetCounter/14 OsIf_MicrosToTicks/13 
+LEDFlag/6 (LEDFlag) @0eac58b8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: CDD_UserRxConfirmation0x154/8 (write) CDD_UserRxConfirmation0x233/9 (write) CDD_UserRxConfirmation0x382/10 (write) main/11 (read) main/11 (write) main/11 (read) main/11 (write) main/11 (read) main/11 (write) 
+  Availability: not-ready
+  Varpool flags: initialized
+Can_au8Sdu8bytes/5 (Can_au8Sdu8bytes) @0eac5828
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder public
+  References: 
+  Referring: CDD_UserRxConfirmation0x154/8 (write) CDD_UserRxConfirmation0x233/9 (write) CDD_UserRxConfirmation0x382/10 (write) main/11 (read) main/11 (read) main/11 (read) main/11 (read) main/11 (read) main/11 (read) main/11 (read) 
+  Availability: not-ready
+  Varpool flags:
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+Optimized Symbol table:
+
+IoHwAb_Init0/33 (IoHwAb_Init0) @0eb1e1c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: EcuM_Init/12 
+  Calls: 
+CanIf_Config/32 (CanIf_Config) @0eb1d8b8
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: EcuM_Init/12 (addr) 
+  Availability: not_available
+  Varpool flags: read-only
+CanIf_Init/31 (CanIf_Init) @0eb1e0e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: EcuM_Init/12 
+  Calls: 
+Can_43_FLEXCAN_Config/30 (Can_43_FLEXCAN_Config) @0eb1d828
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: EcuM_Init/12 (addr) 
+  Availability: not_available
+  Varpool flags: read-only
+Can_43_FLEXCAN_Init/29 (Can_43_FLEXCAN_Init) @0eb1e000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: EcuM_Init/12 
+  Calls: 
+Port_Config/28 (Port_Config) @0eb1d798
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: EcuM_Init/12 (addr) 
+  Availability: not_available
+  Varpool flags: read-only
+Port_Init/27 (Port_Init) @0ead69a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: EcuM_Init/12 
+  Calls: 
+Platform_Init/26 (Platform_Init) @0ead6ee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: EcuM_Init/12 
+  Calls: 
+OsIf_Init/25 (OsIf_Init) @0ead6e00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: EcuM_Init/12 
+  Calls: 
+Mcu_SetMode/24 (Mcu_SetMode) @0ead6d20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: EcuM_Init/12 
+  Calls: 
+Mcu_InitClock/23 (Mcu_InitClock) @0ead6c40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: EcuM_Init/12 
+  Calls: 
+Mcu_Config/22 (Mcu_Config) @0eb1d5e8
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: EcuM_Init/12 (addr) 
+  Availability: not_available
+  Varpool flags: read-only
+Mcu_Init/21 (Mcu_Init) @0ead6b60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: EcuM_Init/12 
+  Calls: 
+HwIoAb_Leds_TurnToggle/20 (HwIoAb_Leds_TurnToggle) @0ead68c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: main/11 main/11 main/11 
+  Calls: 
+Can_43_FLEXCAN_SetControllerMode/19 (Can_43_FLEXCAN_SetControllerMode) @0ead67e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: main/11 
+  Calls: 
+SEGGER_RTT_printf/18 (SEGGER_RTT_printf) @0ead6700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: main/11 main/11 main/11 main/11 main/11 main/11 main/11 
+  Calls: 
+Can_43_FLEXCAN_SetBaudrate/17 (Can_43_FLEXCAN_SetBaudrate) @0ead6620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: main/11 
+  Calls: 
+SEGGER_RTT_Init/16 (SEGGER_RTT_Init) @0ead6540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: main/11 
+  Calls: 
+OsIf_GetElapsed/15 (OsIf_GetElapsed) @0ead60e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Delay/7 
+  Calls: 
+OsIf_GetCounter/14 (OsIf_GetCounter) @0ead6000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Delay/7 
+  Calls: 
+OsIf_MicrosToTicks/13 (OsIf_MicrosToTicks) @0eacc9a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Delay/7 
+  Calls: 
+EcuM_Init/12 (EcuM_Init) @0eaccb60
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Mcu_Config/22 (addr) Port_Config/28 (addr) Can_43_FLEXCAN_Config/30 (addr) CanIf_Config/32 (addr) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: main/11 
+  Calls: IoHwAb_Init0/33 CanIf_Init/31 Can_43_FLEXCAN_Init/29 Port_Init/27 Platform_Init/26 OsIf_Init/25 Mcu_SetMode/24 Mcu_InitClock/23 Mcu_Init/21 
+main/11 (main) @0eacc8c0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: LEDFlag/6 (read) LEDFlag/6 (write) Can_au8Sdu8bytes/5 (read) Can_au8Sdu8bytes/5 (read) LEDFlag/6 (read) LEDFlag/6 (write) Can_au8Sdu8bytes/5 (read) Can_au8Sdu8bytes/5 (read) LEDFlag/6 (read) LEDFlag/6 (write) Can_au8Sdu8bytes/5 (read) Can_au8Sdu8bytes/5 (read) Can_au8Sdu8bytes/5 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: Delay/7 HwIoAb_Leds_TurnToggle/20 SEGGER_RTT_printf/18 Delay/7 HwIoAb_Leds_TurnToggle/20 SEGGER_RTT_printf/18 Delay/7 HwIoAb_Leds_TurnToggle/20 SEGGER_RTT_printf/18 SEGGER_RTT_printf/18 SEGGER_RTT_printf/18 Can_43_FLEXCAN_SetControllerMode/19 SEGGER_RTT_printf/18 SEGGER_RTT_printf/18 Can_43_FLEXCAN_SetBaudrate/17 SEGGER_RTT_Init/16 EcuM_Init/12 
+CDD_UserRxConfirmation0x382/10 (CDD_UserRxConfirmation0x382) @0eacc620
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Can_au8Sdu8bytes/5 (write) LEDFlag/6 (write) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+CDD_UserRxConfirmation0x233/9 (CDD_UserRxConfirmation0x233) @0eacc380
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Can_au8Sdu8bytes/5 (write) LEDFlag/6 (write) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+CDD_UserRxConfirmation0x154/8 (CDD_UserRxConfirmation0x154) @0eacc0e0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Can_au8Sdu8bytes/5 (write) LEDFlag/6 (write) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+Delay/7 (Delay) @0eac91c0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: main/11 main/11 main/11 
+  Calls: OsIf_GetElapsed/15 OsIf_GetCounter/14 OsIf_MicrosToTicks/13 
+LEDFlag/6 (LEDFlag) @0eac58b8
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: CDD_UserRxConfirmation0x233/9 (write) CDD_UserRxConfirmation0x382/10 (write) CDD_UserRxConfirmation0x154/8 (write) main/11 (read) main/11 (write) main/11 (read) main/11 (write) main/11 (read) main/11 (write) 
+  Availability: available
+  Varpool flags: initialized
+Can_au8Sdu8bytes/5 (Can_au8Sdu8bytes) @0eac5828
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: CDD_UserRxConfirmation0x233/9 (write) CDD_UserRxConfirmation0x382/10 (write) CDD_UserRxConfirmation0x154/8 (write) main/11 (read) main/11 (read) main/11 (read) main/11 (read) main/11 (read) main/11 (read) main/11 (read) 
+  Availability: available
+  Varpool flags:
+Materializing clones
+Materialization Call site updates done.
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+Trivially needed variables: LEDFlag/6 Can_au8Sdu8bytes/5
+Removing variables:
+
+Final Symbol table:
+
+IoHwAb_Init0/33 (IoHwAb_Init0) @0eb1e1c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+CanIf_Config/32 (CanIf_Config) @0eb1d8b8
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Varpool flags: read-only
+CanIf_Init/31 (CanIf_Init) @0eb1e0e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+Can_43_FLEXCAN_Config/30 (Can_43_FLEXCAN_Config) @0eb1d828
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Varpool flags: read-only
+Can_43_FLEXCAN_Init/29 (Can_43_FLEXCAN_Init) @0eb1e000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+Port_Config/28 (Port_Config) @0eb1d798
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Varpool flags: read-only
+Port_Init/27 (Port_Init) @0ead69a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+Platform_Init/26 (Platform_Init) @0ead6ee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+OsIf_Init/25 (OsIf_Init) @0ead6e00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+Mcu_SetMode/24 (Mcu_SetMode) @0ead6d20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+Mcu_InitClock/23 (Mcu_InitClock) @0ead6c40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+Mcu_Config/22 (Mcu_Config) @0eb1d5e8
+  Type: variable
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Varpool flags: read-only
+Mcu_Init/21 (Mcu_Init) @0ead6b60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+HwIoAb_Leds_TurnToggle/20 (HwIoAb_Leds_TurnToggle) @0ead68c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+Can_43_FLEXCAN_SetControllerMode/19 (Can_43_FLEXCAN_SetControllerMode) @0ead67e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+SEGGER_RTT_printf/18 (SEGGER_RTT_printf) @0ead6700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+Can_43_FLEXCAN_SetBaudrate/17 (Can_43_FLEXCAN_SetBaudrate) @0ead6620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+SEGGER_RTT_Init/16 (SEGGER_RTT_Init) @0ead6540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+OsIf_GetElapsed/15 (OsIf_GetElapsed) @0ead60e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+OsIf_GetCounter/14 (OsIf_GetCounter) @0ead6000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+OsIf_MicrosToTicks/13 (OsIf_MicrosToTicks) @0eacc9a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: 
+  Calls: 
+EcuM_Init/12 (EcuM_Init) @0eaccb60
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.EcuM_Init (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+main/11 (main) @0eacc8c0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.main (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+CDD_UserRxConfirmation0x382/10 (CDD_UserRxConfirmation0x382) @0eacc620
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.CDD_UserRxConfirmation0x382 (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+CDD_UserRxConfirmation0x233/9 (CDD_UserRxConfirmation0x233) @0eacc380
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.CDD_UserRxConfirmation0x233 (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+CDD_UserRxConfirmation0x154/8 (CDD_UserRxConfirmation0x154) @0eacc0e0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.CDD_UserRxConfirmation0x154 (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+Delay/7 (Delay) @0eac91c0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.text.Delay (implicit_section)
+  References: 
+  Referring: 
+  Availability: available
+  Function flags:
+  Called by: 
+  Calls: 
+LEDFlag/6 (LEDFlag) @0eac58b8
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.bss.LEDFlag (implicit_section)
+  Aux: @00000001
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags: initialized
+Can_au8Sdu8bytes/5 (Can_au8Sdu8bytes) @0eac5828
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder asm_written public section:.bss.Can_au8Sdu8bytes (implicit_section)
+  Aux: @0eac58b8
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags:
