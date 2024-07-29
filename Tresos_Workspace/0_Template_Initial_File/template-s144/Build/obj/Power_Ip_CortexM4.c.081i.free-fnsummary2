@@ -1,0 +1,72 @@
+Power_Ip_CM4_DisableDeepSleep ()
+{
+  uint32 TempValue;
+  struct Power_Ip_CM4_Type * Power_Ip_pxCM4.6_1;
+  struct Power_Ip_CM4_Type * Power_Ip_pxCM4.7_2;
+
+  <bb 2> :
+  TempValue_3 = 0;
+  Power_Ip_pxCM4.6_1 = Power_Ip_pxCM4;
+  TempValue_5 ={v} Power_Ip_pxCM4.6_1->SCR;
+  TempValue_6 = TempValue_5 & 4294967291;
+  Power_Ip_pxCM4.7_2 = Power_Ip_pxCM4;
+  Power_Ip_pxCM4.7_2->SCR ={v} TempValue_6;
+  return;
+
+}
+
+
+Power_Ip_CM4_EnableDeepSleep ()
+{
+  uint32 TempValue;
+  struct Power_Ip_CM4_Type * Power_Ip_pxCM4.4_1;
+  struct Power_Ip_CM4_Type * Power_Ip_pxCM4.5_2;
+
+  <bb 2> :
+  TempValue_3 = 0;
+  Power_Ip_pxCM4.4_1 = Power_Ip_pxCM4;
+  TempValue_5 ={v} Power_Ip_pxCM4.4_1->SCR;
+  TempValue_6 = TempValue_5 | 4;
+  Power_Ip_pxCM4.5_2 = Power_Ip_pxCM4;
+  Power_Ip_pxCM4.5_2->SCR ={v} TempValue_6;
+  return;
+
+}
+
+
+Power_Ip_CM4_EnableSleepOnExit ()
+{
+  uint32 TempValue;
+  struct Power_Ip_CM4_Type * Power_Ip_pxCM4.2_1;
+  struct Power_Ip_CM4_Type * Power_Ip_pxCM4.3_2;
+
+  <bb 2> :
+  TempValue_3 = 0;
+  Power_Ip_pxCM4.2_1 = Power_Ip_pxCM4;
+  TempValue_5 ={v} Power_Ip_pxCM4.2_1->SCR;
+  TempValue_6 = TempValue_5 | 2;
+  Power_Ip_pxCM4.3_2 = Power_Ip_pxCM4;
+  Power_Ip_pxCM4.3_2->SCR ={v} TempValue_6;
+  return;
+
+}
+
+
+Power_Ip_CM4_DisableSleepOnExit ()
+{
+  uint32 TempValue;
+  struct Power_Ip_CM4_Type * Power_Ip_pxCM4.0_1;
+  struct Power_Ip_CM4_Type * Power_Ip_pxCM4.1_2;
+
+  <bb 2> :
+  TempValue_3 = 0;
+  Power_Ip_pxCM4.0_1 = Power_Ip_pxCM4;
+  TempValue_5 ={v} Power_Ip_pxCM4.0_1->SCR;
+  TempValue_6 = TempValue_5 & 4294967293;
+  Power_Ip_pxCM4.1_2 = Power_Ip_pxCM4;
+  Power_Ip_pxCM4.1_2->SCR ={v} TempValue_6;
+  return;
+
+}
+
+

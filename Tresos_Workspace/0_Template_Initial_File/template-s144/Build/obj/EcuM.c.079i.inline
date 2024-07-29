@@ -1,0 +1,91 @@
+IPA summary for EcuM_CheckWakeup/3 is missing.
+IPA summary for EcuM_ValidateWakeupEvent/2 is missing.
+IPA summary for EcuM_SetWakeupEvent/1 is missing.
+
+Flattening functions:
+Overall time estimate: 0.000000 weighted by profile: 0.000000
+
+Deciding on inlining of small functions.  Starting with size 0.
+node context cache: 0 hits, 0 misses, 0 initializations
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+
+Deciding on functions to be inlined into all callers and removing useless speculations:
+Overall time estimate: 0.000000 weighted by profile: 0.000000
+
+Why inlining failed?
+IPA summary for EcuM_CheckWakeup/3 is missing.
+IPA summary for EcuM_ValidateWakeupEvent/2 is missing.
+IPA summary for EcuM_SetWakeupEvent/1 is missing.
+Symbol table:
+
+EcuM_CheckWakeup/3 (EcuM_CheckWakeup) @0e15e700
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+EcuM_ValidateWakeupEvent/2 (EcuM_ValidateWakeupEvent) @0e15e460
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+EcuM_SetWakeupEvent/1 (EcuM_SetWakeupEvent) @0e15e1c0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: EcuMLastWakeupEvent/0 (write) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+EcuMLastWakeupEvent/0 (EcuMLastWakeupEvent) @0e15af78
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: EcuM_SetWakeupEvent/1 (write) 
+  Availability: available
+  Varpool flags:
+
+;; Function EcuM_SetWakeupEvent (EcuM_SetWakeupEvent, funcdef_no=0, decl_uid=5235, cgraph_uid=1, symbol_order=1)
+
+EcuM_SetWakeupEvent (EcuM_WakeupSourceType events)
+{
+  <bb 2> :
+  EcuMLastWakeupEvent = events_2(D);
+  return;
+
+}
+
+
+
+;; Function EcuM_ValidateWakeupEvent (EcuM_ValidateWakeupEvent, funcdef_no=1, decl_uid=5237, cgraph_uid=2, symbol_order=2)
+
+EcuM_ValidateWakeupEvent (EcuM_WakeupSourceType events)
+{
+  <bb 2> :
+  return;
+
+}
+
+
+
+;; Function EcuM_CheckWakeup (EcuM_CheckWakeup, funcdef_no=2, decl_uid=5239, cgraph_uid=3, symbol_order=3)
+
+EcuM_CheckWakeup (EcuM_WakeupSourceType wakeupSource)
+{
+  <bb 2> :
+  return;
+
+}
+
+

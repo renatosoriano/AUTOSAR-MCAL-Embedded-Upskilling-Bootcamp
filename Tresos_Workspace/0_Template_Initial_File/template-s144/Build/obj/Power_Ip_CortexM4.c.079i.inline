@@ -1,0 +1,152 @@
+IPA summary for Power_Ip_CM4_DisableDeepSleep/4 is missing.
+IPA summary for Power_Ip_CM4_EnableDeepSleep/3 is missing.
+IPA summary for Power_Ip_CM4_EnableSleepOnExit/2 is missing.
+IPA summary for Power_Ip_CM4_DisableSleepOnExit/1 is missing.
+
+Flattening functions:
+Overall time estimate: 0.000000 weighted by profile: 0.000000
+
+Deciding on inlining of small functions.  Starting with size 0.
+node context cache: 0 hits, 0 misses, 0 initializations
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+
+Deciding on functions to be inlined into all callers and removing useless speculations:
+Overall time estimate: 0.000000 weighted by profile: 0.000000
+
+Why inlining failed?
+IPA summary for Power_Ip_CM4_DisableDeepSleep/4 is missing.
+IPA summary for Power_Ip_CM4_EnableDeepSleep/3 is missing.
+IPA summary for Power_Ip_CM4_EnableSleepOnExit/2 is missing.
+IPA summary for Power_Ip_CM4_DisableSleepOnExit/1 is missing.
+Symbol table:
+
+Power_Ip_CM4_DisableDeepSleep/4 (Power_Ip_CM4_DisableDeepSleep) @0e1462a0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Power_Ip_pxCM4/0 (read) Power_Ip_pxCM4/0 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+Power_Ip_CM4_EnableDeepSleep/3 (Power_Ip_CM4_EnableDeepSleep) @0e146000
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Power_Ip_pxCM4/0 (read) Power_Ip_pxCM4/0 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+Power_Ip_CM4_EnableSleepOnExit/2 (Power_Ip_CM4_EnableSleepOnExit) @0e13ab60
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Power_Ip_pxCM4/0 (read) Power_Ip_pxCM4/0 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+Power_Ip_CM4_DisableSleepOnExit/1 (Power_Ip_CM4_DisableSleepOnExit) @0e13ad20
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: Power_Ip_pxCM4/0 (read) Power_Ip_pxCM4/0 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+Power_Ip_pxCM4/0 (Power_Ip_pxCM4) @0e1428b8
+  Type: variable definition analyzed
+  Visibility: force_output no_reorder prevailing_def_ironly
+  References: 
+  Referring: Power_Ip_CM4_EnableSleepOnExit/2 (read) Power_Ip_CM4_EnableSleepOnExit/2 (read) Power_Ip_CM4_EnableDeepSleep/3 (read) Power_Ip_CM4_EnableDeepSleep/3 (read) Power_Ip_CM4_DisableSleepOnExit/1 (read) Power_Ip_CM4_DisableSleepOnExit/1 (read) Power_Ip_CM4_DisableDeepSleep/4 (read) Power_Ip_CM4_DisableDeepSleep/4 (read) 
+  Availability: available
+  Varpool flags: initialized
+
+;; Function Power_Ip_CM4_DisableSleepOnExit (Power_Ip_CM4_DisableSleepOnExit, funcdef_no=0, decl_uid=5457, cgraph_uid=1, symbol_order=1)
+
+Power_Ip_CM4_DisableSleepOnExit ()
+{
+  uint32 TempValue;
+  struct Power_Ip_CM4_Type * Power_Ip_pxCM4.0_1;
+  struct Power_Ip_CM4_Type * Power_Ip_pxCM4.1_2;
+
+  <bb 2> :
+  TempValue_3 = 0;
+  Power_Ip_pxCM4.0_1 = Power_Ip_pxCM4;
+  TempValue_5 ={v} Power_Ip_pxCM4.0_1->SCR;
+  TempValue_6 = TempValue_5 & 4294967293;
+  Power_Ip_pxCM4.1_2 = Power_Ip_pxCM4;
+  Power_Ip_pxCM4.1_2->SCR ={v} TempValue_6;
+  return;
+
+}
+
+
+
+;; Function Power_Ip_CM4_EnableSleepOnExit (Power_Ip_CM4_EnableSleepOnExit, funcdef_no=1, decl_uid=5455, cgraph_uid=2, symbol_order=2)
+
+Power_Ip_CM4_EnableSleepOnExit ()
+{
+  uint32 TempValue;
+  struct Power_Ip_CM4_Type * Power_Ip_pxCM4.2_1;
+  struct Power_Ip_CM4_Type * Power_Ip_pxCM4.3_2;
+
+  <bb 2> :
+  TempValue_3 = 0;
+  Power_Ip_pxCM4.2_1 = Power_Ip_pxCM4;
+  TempValue_5 ={v} Power_Ip_pxCM4.2_1->SCR;
+  TempValue_6 = TempValue_5 | 2;
+  Power_Ip_pxCM4.3_2 = Power_Ip_pxCM4;
+  Power_Ip_pxCM4.3_2->SCR ={v} TempValue_6;
+  return;
+
+}
+
+
+
+;; Function Power_Ip_CM4_EnableDeepSleep (Power_Ip_CM4_EnableDeepSleep, funcdef_no=2, decl_uid=5459, cgraph_uid=3, symbol_order=3)
+
+Power_Ip_CM4_EnableDeepSleep ()
+{
+  uint32 TempValue;
+  struct Power_Ip_CM4_Type * Power_Ip_pxCM4.4_1;
+  struct Power_Ip_CM4_Type * Power_Ip_pxCM4.5_2;
+
+  <bb 2> :
+  TempValue_3 = 0;
+  Power_Ip_pxCM4.4_1 = Power_Ip_pxCM4;
+  TempValue_5 ={v} Power_Ip_pxCM4.4_1->SCR;
+  TempValue_6 = TempValue_5 | 4;
+  Power_Ip_pxCM4.5_2 = Power_Ip_pxCM4;
+  Power_Ip_pxCM4.5_2->SCR ={v} TempValue_6;
+  return;
+
+}
+
+
+
+;; Function Power_Ip_CM4_DisableDeepSleep (Power_Ip_CM4_DisableDeepSleep, funcdef_no=3, decl_uid=5461, cgraph_uid=4, symbol_order=4)
+
+Power_Ip_CM4_DisableDeepSleep ()
+{
+  uint32 TempValue;
+  struct Power_Ip_CM4_Type * Power_Ip_pxCM4.6_1;
+  struct Power_Ip_CM4_Type * Power_Ip_pxCM4.7_2;
+
+  <bb 2> :
+  TempValue_3 = 0;
+  Power_Ip_pxCM4.6_1 = Power_Ip_pxCM4;
+  TempValue_5 ={v} Power_Ip_pxCM4.6_1->SCR;
+  TempValue_6 = TempValue_5 & 4294967291;
+  Power_Ip_pxCM4.7_2 = Power_Ip_pxCM4;
+  Power_Ip_pxCM4.7_2->SCR ={v} TempValue_6;
+  return;
+
+}
+
+

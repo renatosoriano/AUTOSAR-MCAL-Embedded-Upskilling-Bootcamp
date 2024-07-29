@@ -227,14 +227,14 @@ void OnProjectLoad (void) {
   //
   // Dialog-generated settings
   //
-  Project.AddPathSubstitute ("C:/EB/tresos/workspace/DIO_Example4_Reading_channel", "$(ProjectDir)");
-  Project.AddPathSubstitute ("c:/eb/tresos/workspace/dio_example4_reading_channel", "$(ProjectDir)");
+  Project.AddPathSubstitute ("C:/EB/tresos/workspace/template-s144", "$(ProjectDir)");
+  Project.AddPathSubstitute ("c:/eb/tresos/workspace/template-s144", "$(ProjectDir)");
   Project.SetDevice ("S32K144");
   Project.SetHostIF ("USB", "");
   Project.SetTargetIF ("JTAG");
   Project.SetTIFSpeed ("4 MHz");
   Project.AddSvdFile ("$(InstallDir)/Config/CPU/Cortex-M4F.svd");
-  //Project.AddSvdFile ("C:/EB/tresos/workspace/DIO_Example4_Reading_channel/S32K144.svd");
+  //Project.AddSvdFile ("C:/EB/tresos/workspace/template-s144/S32K144.svd");
   Project.AddSvdFile ("$(ProjectDir)/S32K144.svd");
   //
   // User settings

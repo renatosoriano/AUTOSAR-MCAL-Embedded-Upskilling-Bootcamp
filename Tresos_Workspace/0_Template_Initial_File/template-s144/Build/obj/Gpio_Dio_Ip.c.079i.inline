@@ -1,0 +1,277 @@
+IPA summary for Gpio_Dio_Ip_ReadPin/8 is missing.
+IPA summary for Gpio_Dio_Ip_ReadPins/7 is missing.
+IPA summary for Gpio_Dio_Ip_TogglePins/6 is missing.
+IPA summary for Gpio_Dio_Ip_ClearPins/5 is missing.
+IPA summary for Gpio_Dio_Ip_SetPins/4 is missing.
+IPA summary for Gpio_Dio_Ip_GetPinsOutput/3 is missing.
+IPA summary for Gpio_Dio_Ip_WritePins/2 is missing.
+IPA summary for Gpio_Dio_Ip_WritePin/1 is missing.
+
+Flattening functions:
+Overall time estimate: 0.000000 weighted by profile: 0.000000
+
+Deciding on inlining of small functions.  Starting with size 0.
+node context cache: 0 hits, 0 misses, 0 initializations
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+
+Deciding on functions to be inlined into all callers and removing useless speculations:
+Overall time estimate: 0.000000 weighted by profile: 0.000000
+
+Why inlining failed?
+function body not available                       :        2 calls, 2.000000 freq, 0 count
+IPA summary for Gpio_Dio_Ip_ReadPin/8 is missing.
+IPA summary for Gpio_Dio_Ip_ReadPins/7 is missing.
+IPA summary for Gpio_Dio_Ip_TogglePins/6 is missing.
+IPA summary for Gpio_Dio_Ip_ClearPins/5 is missing.
+IPA summary for Gpio_Dio_Ip_SetPins/4 is missing.
+IPA summary for Gpio_Dio_Ip_GetPinsOutput/3 is missing.
+IPA summary for Gpio_Dio_Ip_WritePins/2 is missing.
+IPA summary for Gpio_Dio_Ip_WritePin/1 is missing.
+Symbol table:
+
+SchM_Exit_Dio_DIO_EXCLUSIVE_AREA_00/10 (SchM_Exit_Dio_DIO_EXCLUSIVE_AREA_00) @0e241b60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Gpio_Dio_Ip_WritePin/1 
+  Calls: 
+SchM_Enter_Dio_DIO_EXCLUSIVE_AREA_00/9 (SchM_Enter_Dio_DIO_EXCLUSIVE_AREA_00) @0e2418c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags:
+  Called by: Gpio_Dio_Ip_WritePin/1 
+  Calls: 
+Gpio_Dio_Ip_ReadPin/8 (Gpio_Dio_Ip_ReadPin) @0e241d20
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+Gpio_Dio_Ip_ReadPins/7 (Gpio_Dio_Ip_ReadPins) @0e241a80
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+Gpio_Dio_Ip_TogglePins/6 (Gpio_Dio_Ip_TogglePins) @0e2417e0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+Gpio_Dio_Ip_ClearPins/5 (Gpio_Dio_Ip_ClearPins) @0e241460
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+Gpio_Dio_Ip_SetPins/4 (Gpio_Dio_Ip_SetPins) @0e2410e0
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+Gpio_Dio_Ip_GetPinsOutput/3 (Gpio_Dio_Ip_GetPinsOutput) @0e15cb60
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+Gpio_Dio_Ip_WritePins/2 (Gpio_Dio_Ip_WritePins) @0e15ce00
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: 
+Gpio_Dio_Ip_WritePin/1 (Gpio_Dio_Ip_WritePin) @0e15ca80
+  Type: function definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body
+  Called by: 
+  Calls: SchM_Exit_Dio_DIO_EXCLUSIVE_AREA_00/10 SchM_Enter_Dio_DIO_EXCLUSIVE_AREA_00/9 
+GpioBaseAdresses/0 (GpioBaseAdresses) @0e161798
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible no_reorder public
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags: initialized
+
+;; Function Gpio_Dio_Ip_WritePin (Gpio_Dio_Ip_WritePin, funcdef_no=0, decl_uid=5349, cgraph_uid=1, symbol_order=1)
+
+Gpio_Dio_Ip_WritePin (struct GPIO_Type * const base, Gpio_Dio_Ip_PinsChannelType pin, Gpio_Dio_Ip_PinsLevelType value)
+{
+  Gpio_Dio_Ip_PinsChannelType pinsValues;
+  long unsigned int _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+
+  <bb 2> :
+  SchM_Enter_Dio_DIO_EXCLUSIVE_AREA_00 ();
+  pinsValues_8 ={v} base_7(D)->PDOR;
+  _1 = 1 << pin_9(D);
+  _2 = ~_1;
+  pinsValues_10 = pinsValues_8 & _2;
+  _3 = (long unsigned int) value_11(D);
+  _4 = _3 << pin_9(D);
+  pinsValues_12 = pinsValues_10 | _4;
+  base_7(D)->PDOR ={v} pinsValues_12;
+  SchM_Exit_Dio_DIO_EXCLUSIVE_AREA_00 ();
+  return;
+
+}
+
+
+
+;; Function Gpio_Dio_Ip_WritePins (Gpio_Dio_Ip_WritePins, funcdef_no=1, decl_uid=5352, cgraph_uid=2, symbol_order=2)
+
+Gpio_Dio_Ip_WritePins (struct GPIO_Type * const base, Gpio_Dio_Ip_PinsChannelType pins)
+{
+  <bb 2> :
+  base_2(D)->PDOR ={v} pins_3(D);
+  return;
+
+}
+
+
+
+;; Function Gpio_Dio_Ip_GetPinsOutput (Gpio_Dio_Ip_GetPinsOutput, funcdef_no=2, decl_uid=5354, cgraph_uid=3, symbol_order=3)
+
+Gpio_Dio_Ip_GetPinsOutput (const struct GPIO_Type * const base)
+{
+  Gpio_Dio_Ip_PinsChannelType returnValue;
+  Gpio_Dio_Ip_PinsChannelType D.5417;
+  Gpio_Dio_Ip_PinsChannelType _5;
+
+  <bb 2> :
+  returnValue_1 = 0;
+  returnValue_4 ={v} base_3(D)->PDOR;
+  _5 = returnValue_4;
+
+  <bb 3> :
+<L0>:
+  return _5;
+
+}
+
+
+
+;; Function Gpio_Dio_Ip_SetPins (Gpio_Dio_Ip_SetPins, funcdef_no=3, decl_uid=5357, cgraph_uid=4, symbol_order=4)
+
+Gpio_Dio_Ip_SetPins (struct GPIO_Type * const base, Gpio_Dio_Ip_PinsChannelType pins)
+{
+  <bb 2> :
+  base_2(D)->PSOR ={v} pins_3(D);
+  return;
+
+}
+
+
+
+;; Function Gpio_Dio_Ip_ClearPins (Gpio_Dio_Ip_ClearPins, funcdef_no=4, decl_uid=5360, cgraph_uid=5, symbol_order=5)
+
+Gpio_Dio_Ip_ClearPins (struct GPIO_Type * const base, Gpio_Dio_Ip_PinsChannelType pins)
+{
+  <bb 2> :
+  base_2(D)->PCOR ={v} pins_3(D);
+  return;
+
+}
+
+
+
+;; Function Gpio_Dio_Ip_TogglePins (Gpio_Dio_Ip_TogglePins, funcdef_no=5, decl_uid=5363, cgraph_uid=6, symbol_order=6)
+
+Gpio_Dio_Ip_TogglePins (struct GPIO_Type * const base, Gpio_Dio_Ip_PinsChannelType pins)
+{
+  <bb 2> :
+  base_2(D)->PTOR ={v} pins_3(D);
+  return;
+
+}
+
+
+
+;; Function Gpio_Dio_Ip_ReadPins (Gpio_Dio_Ip_ReadPins, funcdef_no=6, decl_uid=5365, cgraph_uid=7, symbol_order=7)
+
+Gpio_Dio_Ip_ReadPins (const struct GPIO_Type * const base)
+{
+  Gpio_Dio_Ip_PinsChannelType returnValue;
+  Gpio_Dio_Ip_PinsChannelType D.5419;
+  Gpio_Dio_Ip_PinsChannelType _5;
+
+  <bb 2> :
+  returnValue_1 = 0;
+  returnValue_4 ={v} base_3(D)->PDIR;
+  _5 = returnValue_4;
+
+  <bb 3> :
+<L0>:
+  return _5;
+
+}
+
+
+
+;; Function Gpio_Dio_Ip_ReadPin (Gpio_Dio_Ip_ReadPin, funcdef_no=7, decl_uid=5368, cgraph_uid=8, symbol_order=8)
+
+Gpio_Dio_Ip_ReadPin (const struct GPIO_Type * const base, Gpio_Dio_Ip_PinsChannelType pin)
+{
+  Gpio_Dio_Ip_PinsLevelType returnValue;
+  Gpio_Dio_Ip_PinsLevelType D.5421;
+  long unsigned int _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  Gpio_Dio_Ip_PinsLevelType _10;
+
+  <bb 2> :
+  returnValue_5 = 0;
+  _1 ={v} base_7(D)->PDIR;
+  _2 = 1 << pin_8(D);
+  _3 = _1 & _2;
+  _4 = _3 >> pin_8(D);
+  returnValue_9 = (Gpio_Dio_Ip_PinsLevelType) _4;
+  _10 = returnValue_9;
+
+  <bb 3> :
+<L0>:
+  return _10;
+
+}
+
+

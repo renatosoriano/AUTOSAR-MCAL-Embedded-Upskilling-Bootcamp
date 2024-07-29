@@ -1,0 +1,722 @@
+Port_Ipw_RefreshPortDirection (const struct Port_ConfigType * pConfigPtr)
+{
+  uint16 PinPad;
+  uint16 u16PinIndex;
+  uint16 u16NumPins;
+  const struct Port_PinConfigType * _1;
+  unsigned int _2;
+  unsigned int _3;
+  const struct Port_PinConfigType * _4;
+  _Bool _5;
+  _Bool _6;
+  const struct Port_PinConfigType * _7;
+  unsigned int _8;
+  unsigned int _9;
+  const struct Port_PinConfigType * _10;
+  _Bool _11;
+  const struct Port_PinConfigType * _12;
+  unsigned int _13;
+  unsigned int _14;
+  const struct Port_PinConfigType * _15;
+  const struct Port_PinConfigType * _16;
+  unsigned int _17;
+  unsigned int _18;
+  const struct Port_PinConfigType * _19;
+  <unnamed type> _20;
+  short unsigned int _21;
+  long unsigned int _22;
+  struct GPIO_Type * _23;
+  long unsigned int _24;
+  long unsigned int _25;
+  long unsigned int _26;
+  long unsigned int _27;
+  short unsigned int _28;
+  long unsigned int _29;
+  struct GPIO_Type * _30;
+  long unsigned int _31;
+  const struct Port_PinConfigType * _32;
+  unsigned int _33;
+  unsigned int _34;
+  const struct Port_PinConfigType * _35;
+  <unnamed type> _36;
+  const struct Port_PinConfigType * _37;
+  unsigned int _38;
+  unsigned int _39;
+  const struct Port_PinConfigType * _40;
+  <unnamed type> _41;
+  short unsigned int _42;
+  long unsigned int _43;
+  struct GPIO_Type * _44;
+  long unsigned int _45;
+  long unsigned int _46;
+  long unsigned int _47;
+  long unsigned int _48;
+  long unsigned int _49;
+  short unsigned int _50;
+  long unsigned int _51;
+  struct GPIO_Type * _52;
+  long unsigned int _53;
+  short unsigned int _54;
+  long unsigned int _55;
+  struct GPIO_Type * _56;
+  long unsigned int _57;
+  long unsigned int _58;
+  long unsigned int _59;
+  long unsigned int _60;
+  long unsigned int _61;
+  short unsigned int _62;
+  long unsigned int _63;
+  struct GPIO_Type * _64;
+  long unsigned int _65;
+  const struct Port_PinConfigType * _66;
+  unsigned int _67;
+  unsigned int _68;
+  const struct Port_PinConfigType * _69;
+  <unnamed type> _70;
+  short unsigned int _71;
+  long unsigned int _72;
+  struct GPIO_Type * _73;
+  long unsigned int _74;
+  long unsigned int _75;
+  long unsigned int _76;
+  long unsigned int _77;
+  short unsigned int _78;
+  long unsigned int _79;
+  struct GPIO_Type * _80;
+  long unsigned int _81;
+  short unsigned int u16PinIndex.2_82;
+
+  <bb 2> :
+  u16NumPins_89 = pConfigPtr_88(D)->u16NumPins;
+  u16PinIndex_90 = 0;
+  goto <bb 13>; [INV]
+
+  <bb 3> :
+  _1 = pConfigPtr_88(D)->pUsedPadConfig;
+  _2 = (unsigned int) u16PinIndex_83;
+  _3 = _2 * 20;
+  _4 = _1 + _3;
+  _5 = _4->bDC;
+  _6 = ~_5;
+  if (_6 != 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 4> :
+  _7 = pConfigPtr_88(D)->pUsedPadConfig;
+  _8 = (unsigned int) u16PinIndex_83;
+  _9 = _8 * 20;
+  _10 = _7 + _9;
+  _11 = _10->bGPIO;
+  if (_11 != 0)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 5> :
+  _12 = pConfigPtr_88(D)->pUsedPadConfig;
+  _13 = (unsigned int) u16PinIndex_83;
+  _14 = _13 * 20;
+  _15 = _12 + _14;
+  PinPad_91 = _15->Pin;
+  _16 = pConfigPtr_88(D)->pUsedPadConfig;
+  _17 = (unsigned int) u16PinIndex_83;
+  _18 = _17 * 20;
+  _19 = _16 + _18;
+  _20 = _19->ePadDir;
+  if (_20 == 2)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  SchM_Enter_Port_PORT_EXCLUSIVE_AREA_19 ();
+  _21 = PinPad_91 >> 5;
+  _22 = (long unsigned int) _21;
+  _23 = Port_au32PortCiGpioBaseAddr[_22];
+  _24 ={v} _23->PDDR;
+  _25 = (long unsigned int) PinPad_91;
+  _26 = _25 & 31;
+  _27 = 1 << _26;
+  _28 = PinPad_91 >> 5;
+  _29 = (long unsigned int) _28;
+  _30 = Port_au32PortCiGpioBaseAddr[_29];
+  _31 = _24 | _27;
+  _30->PDDR ={v} _31;
+  SchM_Exit_Port_PORT_EXCLUSIVE_AREA_19 ();
+  goto <bb 12>; [INV]
+
+  <bb 7> :
+  _32 = pConfigPtr_88(D)->pUsedPadConfig;
+  _33 = (unsigned int) u16PinIndex_83;
+  _34 = _33 * 20;
+  _35 = _32 + _34;
+  _36 = _35->ePadDir;
+  if (_36 == 1)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 8> :
+  _37 = pConfigPtr_88(D)->pUsedPadConfig;
+  _38 = (unsigned int) u16PinIndex_83;
+  _39 = _38 * 20;
+  _40 = _37 + _39;
+  _41 = _40->ePadDir;
+  if (_41 == 3)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 9> :
+  SchM_Enter_Port_PORT_EXCLUSIVE_AREA_19 ();
+  _42 = PinPad_91 >> 5;
+  _43 = (long unsigned int) _42;
+  _44 = Port_au32PortCiGpioBaseAddr[_43];
+  _45 ={v} _44->PDDR;
+  _46 = (long unsigned int) PinPad_91;
+  _47 = _46 & 31;
+  _48 = 1 << _47;
+  _49 = ~_48;
+  _50 = PinPad_91 >> 5;
+  _51 = (long unsigned int) _50;
+  _52 = Port_au32PortCiGpioBaseAddr[_51];
+  _53 = _45 & _49;
+  _52->PDDR ={v} _53;
+  SchM_Exit_Port_PORT_EXCLUSIVE_AREA_19 ();
+  SchM_Enter_Port_PORT_EXCLUSIVE_AREA_20 ();
+  _54 = PinPad_91 >> 5;
+  _55 = (long unsigned int) _54;
+  _56 = Port_au32PortCiGpioBaseAddr[_55];
+  _57 ={v} _56->PIDR;
+  _58 = (long unsigned int) PinPad_91;
+  _59 = _58 & 31;
+  _60 = 1 << _59;
+  _61 = ~_60;
+  _62 = PinPad_91 >> 5;
+  _63 = (long unsigned int) _62;
+  _64 = Port_au32PortCiGpioBaseAddr[_63];
+  _65 = _57 & _61;
+  _64->PIDR ={v} _65;
+  _66 = pConfigPtr_88(D)->pUsedPadConfig;
+  _67 = (unsigned int) u16PinIndex_83;
+  _68 = _67 * 20;
+  _69 = _66 + _68;
+  _70 = _69->ePadDir;
+  if (_70 == 3)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 10> :
+  _71 = PinPad_91 >> 5;
+  _72 = (long unsigned int) _71;
+  _73 = Port_au32PortCiGpioBaseAddr[_72];
+  _74 ={v} _73->PIDR;
+  _75 = (long unsigned int) PinPad_91;
+  _76 = _75 & 31;
+  _77 = 1 << _76;
+  _78 = PinPad_91 >> 5;
+  _79 = (long unsigned int) _78;
+  _80 = Port_au32PortCiGpioBaseAddr[_79];
+  _81 = _74 | _77;
+  _80->PIDR ={v} _81;
+
+  <bb 11> :
+  SchM_Exit_Port_PORT_EXCLUSIVE_AREA_20 ();
+
+  <bb 12> :
+  u16PinIndex.2_82 = u16PinIndex_83;
+  u16PinIndex_102 = u16PinIndex.2_82 + 1;
+
+  <bb 13> :
+  # u16PinIndex_83 = PHI <u16PinIndex_90(2), u16PinIndex_102(12)>
+  if (u16PinIndex_83 < u16NumPins_89)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 14>; [INV]
+
+  <bb 14> :
+  return;
+
+}
+
+
+Port_Ipw_Init (const struct Port_ConfigType * pConfigPtr)
+{
+  uint8 u8Port;
+  uint8 u8NumDigFilterPorts;
+  uint16 u16PinIndex;
+  const struct Port_Ci_Port_Ip_DigitalFilterConfigType * _1;
+  unsigned int _2;
+  unsigned int _3;
+  const struct Port_Ci_Port_Ip_DigitalFilterConfigType * _4;
+  int _5;
+  struct PORT_Type * _6;
+  const struct Port_Ci_Port_Ip_DigitalFilterConfigType * _7;
+  unsigned int _8;
+  unsigned int _9;
+  const struct Port_Ci_Port_Ip_DigitalFilterConfigType * _10;
+  int _11;
+  struct PORT_Type * _12;
+  long unsigned int _13;
+  const struct Port_Ci_Port_Ip_DigitalFilterConfigType * _14;
+  unsigned int _15;
+  unsigned int _16;
+  const struct Port_Ci_Port_Ip_DigitalFilterConfigType * _17;
+  long unsigned int _18;
+  int _19;
+  struct PORT_Type * _20;
+  long unsigned int _21;
+  short unsigned int u16PinIndex.0_22;
+  short unsigned int _23;
+  const struct Port_Ci_Port_Ip_PinSettingsConfig * _24;
+
+  <bb 2> :
+  u8NumDigFilterPorts_29 = pConfigPtr_28(D)->u8NumDigitalFilterPorts;
+  u16PinIndex_30 = 0;
+  goto <bb 4>; [INV]
+
+  <bb 3> :
+  _1 = pConfigPtr_28(D)->pDigitalFilterConfig;
+  _2 = (unsigned int) u16PinIndex_25;
+  _3 = _2 * 8;
+  _4 = _1 + _3;
+  u8Port_33 = _4->u8Port;
+  _5 = (int) u8Port_33;
+  _6 = Port_au32PortCiPortBaseAddr[_5];
+  _7 = pConfigPtr_28(D)->pDigitalFilterConfig;
+  _8 = (unsigned int) u16PinIndex_25;
+  _9 = _8 * 8;
+  _10 = _7 + _9;
+  Port_Ci_Port_Ip_ConfigDigitalFilter (_6, _10);
+  SchM_Enter_Port_PORT_EXCLUSIVE_AREA_15 ();
+  _11 = (int) u8Port_33;
+  _12 = Port_au32PortCiPortBaseAddr[_11];
+  _13 ={v} _12->DFER;
+  _14 = pConfigPtr_28(D)->pDigitalFilterConfig;
+  _15 = (unsigned int) u16PinIndex_25;
+  _16 = _15 * 8;
+  _17 = _14 + _16;
+  _18 = _17->u32PinMask;
+  _19 = (int) u8Port_33;
+  _20 = Port_au32PortCiPortBaseAddr[_19];
+  _21 = _13 | _18;
+  _20->DFER ={v} _21;
+  SchM_Exit_Port_PORT_EXCLUSIVE_AREA_15 ();
+  u16PinIndex.0_22 = u16PinIndex_25;
+  u16PinIndex_38 = u16PinIndex.0_22 + 1;
+
+  <bb 4> :
+  # u16PinIndex_25 = PHI <u16PinIndex_30(2), u16PinIndex_38(3)>
+  _23 = (short unsigned int) u8NumDigFilterPorts_29;
+  if (u16PinIndex_25 < _23)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 5> :
+  _24 = pConfigPtr_28(D)->IpConfigPtr;
+  Port_Ci_Port_Ip_Init (1, _24);
+  Port_Ipw_Init_UnusedPins (pConfigPtr_28(D));
+  return;
+
+}
+
+
+Port_Ipw_Init_UnusedPins (const struct Port_ConfigType * pConfigPtr)
+{
+  Port_PinDirectionType eLocalPDDIR;
+  uint32 u32LocalPCR;
+  uint8 u8LocalPDO;
+  uint16 u16NumUnusedPins;
+  uint16 u16PinIndex;
+  const struct Port_UnUsedPinConfigType * _1;
+  const struct Port_UnUsedPinConfigType * _2;
+  const struct Port_UnUsedPinConfigType * _3;
+  const uint16 * _4;
+  unsigned int _5;
+  unsigned int _6;
+  const uint16 * _7;
+  short unsigned int _8;
+  long unsigned int _9;
+  long unsigned int _10;
+  const uint16 * _11;
+  unsigned int _12;
+  unsigned int _13;
+  const uint16 * _14;
+  short unsigned int _15;
+  short unsigned int _16;
+  long unsigned int _17;
+  struct GPIO_Type * _18;
+  long unsigned int _19;
+  const uint16 * _20;
+  unsigned int _21;
+  unsigned int _22;
+  const uint16 * _23;
+  short unsigned int _24;
+  long unsigned int _25;
+  long unsigned int _26;
+  const uint16 * _27;
+  unsigned int _28;
+  unsigned int _29;
+  const uint16 * _30;
+  short unsigned int _31;
+  short unsigned int _32;
+  long unsigned int _33;
+  struct GPIO_Type * _34;
+  long unsigned int _35;
+  const uint16 * _36;
+  unsigned int _37;
+  unsigned int _38;
+  const uint16 * _39;
+  short unsigned int _40;
+  short unsigned int _41;
+  long unsigned int _42;
+  struct GPIO_Type * _43;
+  long unsigned int _44;
+  const uint16 * _45;
+  unsigned int _46;
+  unsigned int _47;
+  const uint16 * _48;
+  short unsigned int _49;
+  long unsigned int _50;
+  long unsigned int _51;
+  long unsigned int _52;
+  const uint16 * _53;
+  unsigned int _54;
+  unsigned int _55;
+  const uint16 * _56;
+  short unsigned int _57;
+  short unsigned int _58;
+  long unsigned int _59;
+  struct GPIO_Type * _60;
+  long unsigned int _61;
+  const uint16 * _62;
+  unsigned int _63;
+  unsigned int _64;
+  const uint16 * _65;
+  short unsigned int _66;
+  short unsigned int _67;
+  long unsigned int _68;
+  struct GPIO_Type * _69;
+  long unsigned int _70;
+  const uint16 * _71;
+  unsigned int _72;
+  unsigned int _73;
+  const uint16 * _74;
+  short unsigned int _75;
+  long unsigned int _76;
+  long unsigned int _77;
+  long unsigned int _78;
+  long unsigned int _79;
+  const uint16 * _80;
+  unsigned int _81;
+  unsigned int _82;
+  const uint16 * _83;
+  short unsigned int _84;
+  short unsigned int _85;
+  long unsigned int _86;
+  struct GPIO_Type * _87;
+  long unsigned int _88;
+  const uint16 * _89;
+  unsigned int _90;
+  unsigned int _91;
+  const uint16 * _92;
+  short unsigned int _93;
+  short unsigned int _94;
+  long unsigned int _95;
+  struct GPIO_Type * _96;
+  long unsigned int _97;
+  const uint16 * _98;
+  unsigned int _99;
+  unsigned int _100;
+  const uint16 * _101;
+  short unsigned int _102;
+  long unsigned int _103;
+  long unsigned int _104;
+  long unsigned int _105;
+  long unsigned int _106;
+  const uint16 * _107;
+  unsigned int _108;
+  unsigned int _109;
+  const uint16 * _110;
+  short unsigned int _111;
+  short unsigned int _112;
+  long unsigned int _113;
+  struct GPIO_Type * _114;
+  long unsigned int _115;
+  const uint16 * _116;
+  unsigned int _117;
+  unsigned int _118;
+  const uint16 * _119;
+  short unsigned int _120;
+  short unsigned int _121;
+  long unsigned int _122;
+  struct GPIO_Type * _123;
+  long unsigned int _124;
+  const uint16 * _125;
+  unsigned int _126;
+  unsigned int _127;
+  const uint16 * _128;
+  short unsigned int _129;
+  long unsigned int _130;
+  long unsigned int _131;
+  long unsigned int _132;
+  const uint16 * _133;
+  unsigned int _134;
+  unsigned int _135;
+  const uint16 * _136;
+  short unsigned int _137;
+  short unsigned int _138;
+  long unsigned int _139;
+  struct GPIO_Type * _140;
+  long unsigned int _141;
+  const uint16 * _142;
+  unsigned int _143;
+  unsigned int _144;
+  const uint16 * _145;
+  short unsigned int _146;
+  short unsigned int _147;
+  long unsigned int _148;
+  struct PORT_Type * _149;
+  const uint16 * _150;
+  unsigned int _151;
+  unsigned int _152;
+  const uint16 * _153;
+  short unsigned int _154;
+  long unsigned int _155;
+  long unsigned int _156;
+  short unsigned int u16PinIndex.1_157;
+
+  <bb 2> :
+  u16NumUnusedPins_165 = pConfigPtr_164(D)->u16NumUnusedPins;
+  _1 = pConfigPtr_164(D)->pUnusedPadConfig;
+  u8LocalPDO_166 = _1->u8PDO;
+  _2 = pConfigPtr_164(D)->pUnusedPadConfig;
+  u32LocalPCR_167 = _2->u32PCR;
+  _3 = pConfigPtr_164(D)->pUnusedPadConfig;
+  eLocalPDDIR_168 = _3->ePadDir;
+  u16PinIndex_169 = 0;
+  goto <bb 13>; [INV]
+
+  <bb 3> :
+  if (eLocalPDDIR_168 == 2)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 4> :
+  if (u8LocalPDO_166 == 1)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  _4 = pConfigPtr_164(D)->pUnusedPads;
+  _5 = (unsigned int) u16PinIndex_158;
+  _6 = _5 * 2;
+  _7 = _4 + _6;
+  _8 = *_7;
+  _9 = (long unsigned int) _8;
+  _10 = _9 & 31;
+  _11 = pConfigPtr_164(D)->pUnusedPads;
+  _12 = (unsigned int) u16PinIndex_158;
+  _13 = _12 * 2;
+  _14 = _11 + _13;
+  _15 = *_14;
+  _16 = _15 >> 5;
+  _17 = (long unsigned int) _16;
+  _18 = Port_au32PortCiGpioBaseAddr[_17];
+  _19 = 1 << _10;
+  _18->PSOR ={v} _19;
+  goto <bb 8>; [INV]
+
+  <bb 6> :
+  if (u8LocalPDO_166 == 0)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 7> :
+  _20 = pConfigPtr_164(D)->pUnusedPads;
+  _21 = (unsigned int) u16PinIndex_158;
+  _22 = _21 * 2;
+  _23 = _20 + _22;
+  _24 = *_23;
+  _25 = (long unsigned int) _24;
+  _26 = _25 & 31;
+  _27 = pConfigPtr_164(D)->pUnusedPads;
+  _28 = (unsigned int) u16PinIndex_158;
+  _29 = _28 * 2;
+  _30 = _27 + _29;
+  _31 = *_30;
+  _32 = _31 >> 5;
+  _33 = (long unsigned int) _32;
+  _34 = Port_au32PortCiGpioBaseAddr[_33];
+  _35 = 1 << _26;
+  _34->PCOR ={v} _35;
+
+  <bb 8> :
+  SchM_Enter_Port_PORT_EXCLUSIVE_AREA_09 ();
+  _36 = pConfigPtr_164(D)->pUnusedPads;
+  _37 = (unsigned int) u16PinIndex_158;
+  _38 = _37 * 2;
+  _39 = _36 + _38;
+  _40 = *_39;
+  _41 = _40 >> 5;
+  _42 = (long unsigned int) _41;
+  _43 = Port_au32PortCiGpioBaseAddr[_42];
+  _44 ={v} _43->PDDR;
+  _45 = pConfigPtr_164(D)->pUnusedPads;
+  _46 = (unsigned int) u16PinIndex_158;
+  _47 = _46 * 2;
+  _48 = _45 + _47;
+  _49 = *_48;
+  _50 = (long unsigned int) _49;
+  _51 = _50 & 31;
+  _52 = 1 << _51;
+  _53 = pConfigPtr_164(D)->pUnusedPads;
+  _54 = (unsigned int) u16PinIndex_158;
+  _55 = _54 * 2;
+  _56 = _53 + _55;
+  _57 = *_56;
+  _58 = _57 >> 5;
+  _59 = (long unsigned int) _58;
+  _60 = Port_au32PortCiGpioBaseAddr[_59];
+  _61 = _44 | _52;
+  _60->PDDR ={v} _61;
+  SchM_Exit_Port_PORT_EXCLUSIVE_AREA_09 ();
+  goto <bb 12>; [INV]
+
+  <bb 9> :
+  SchM_Enter_Port_PORT_EXCLUSIVE_AREA_09 ();
+  _62 = pConfigPtr_164(D)->pUnusedPads;
+  _63 = (unsigned int) u16PinIndex_158;
+  _64 = _63 * 2;
+  _65 = _62 + _64;
+  _66 = *_65;
+  _67 = _66 >> 5;
+  _68 = (long unsigned int) _67;
+  _69 = Port_au32PortCiGpioBaseAddr[_68];
+  _70 ={v} _69->PDDR;
+  _71 = pConfigPtr_164(D)->pUnusedPads;
+  _72 = (unsigned int) u16PinIndex_158;
+  _73 = _72 * 2;
+  _74 = _71 + _73;
+  _75 = *_74;
+  _76 = (long unsigned int) _75;
+  _77 = _76 & 31;
+  _78 = 1 << _77;
+  _79 = ~_78;
+  _80 = pConfigPtr_164(D)->pUnusedPads;
+  _81 = (unsigned int) u16PinIndex_158;
+  _82 = _81 * 2;
+  _83 = _80 + _82;
+  _84 = *_83;
+  _85 = _84 >> 5;
+  _86 = (long unsigned int) _85;
+  _87 = Port_au32PortCiGpioBaseAddr[_86];
+  _88 = _70 & _79;
+  _87->PDDR ={v} _88;
+  SchM_Exit_Port_PORT_EXCLUSIVE_AREA_09 ();
+  SchM_Enter_Port_PORT_EXCLUSIVE_AREA_10 ();
+  _89 = pConfigPtr_164(D)->pUnusedPads;
+  _90 = (unsigned int) u16PinIndex_158;
+  _91 = _90 * 2;
+  _92 = _89 + _91;
+  _93 = *_92;
+  _94 = _93 >> 5;
+  _95 = (long unsigned int) _94;
+  _96 = Port_au32PortCiGpioBaseAddr[_95];
+  _97 ={v} _96->PIDR;
+  _98 = pConfigPtr_164(D)->pUnusedPads;
+  _99 = (unsigned int) u16PinIndex_158;
+  _100 = _99 * 2;
+  _101 = _98 + _100;
+  _102 = *_101;
+  _103 = (long unsigned int) _102;
+  _104 = _103 & 31;
+  _105 = 1 << _104;
+  _106 = ~_105;
+  _107 = pConfigPtr_164(D)->pUnusedPads;
+  _108 = (unsigned int) u16PinIndex_158;
+  _109 = _108 * 2;
+  _110 = _107 + _109;
+  _111 = *_110;
+  _112 = _111 >> 5;
+  _113 = (long unsigned int) _112;
+  _114 = Port_au32PortCiGpioBaseAddr[_113];
+  _115 = _97 & _106;
+  _114->PIDR ={v} _115;
+  if (eLocalPDDIR_168 == 3)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 10> :
+  _116 = pConfigPtr_164(D)->pUnusedPads;
+  _117 = (unsigned int) u16PinIndex_158;
+  _118 = _117 * 2;
+  _119 = _116 + _118;
+  _120 = *_119;
+  _121 = _120 >> 5;
+  _122 = (long unsigned int) _121;
+  _123 = Port_au32PortCiGpioBaseAddr[_122];
+  _124 ={v} _123->PIDR;
+  _125 = pConfigPtr_164(D)->pUnusedPads;
+  _126 = (unsigned int) u16PinIndex_158;
+  _127 = _126 * 2;
+  _128 = _125 + _127;
+  _129 = *_128;
+  _130 = (long unsigned int) _129;
+  _131 = _130 & 31;
+  _132 = 1 << _131;
+  _133 = pConfigPtr_164(D)->pUnusedPads;
+  _134 = (unsigned int) u16PinIndex_158;
+  _135 = _134 * 2;
+  _136 = _133 + _135;
+  _137 = *_136;
+  _138 = _137 >> 5;
+  _139 = (long unsigned int) _138;
+  _140 = Port_au32PortCiGpioBaseAddr[_139];
+  _141 = _124 | _132;
+  _140->PIDR ={v} _141;
+
+  <bb 11> :
+  SchM_Exit_Port_PORT_EXCLUSIVE_AREA_10 ();
+
+  <bb 12> :
+  _142 = pConfigPtr_164(D)->pUnusedPads;
+  _143 = (unsigned int) u16PinIndex_158;
+  _144 = _143 * 2;
+  _145 = _142 + _144;
+  _146 = *_145;
+  _147 = _146 >> 5;
+  _148 = (long unsigned int) _147;
+  _149 = Port_au32PortCiPortBaseAddr[_148];
+  _150 = pConfigPtr_164(D)->pUnusedPads;
+  _151 = (unsigned int) u16PinIndex_158;
+  _152 = _151 * 2;
+  _153 = _150 + _152;
+  _154 = *_153;
+  _155 = (long unsigned int) _154;
+  _156 = _155 & 31;
+  _149->PCR[_156] ={v} u32LocalPCR_167;
+  u16PinIndex.1_157 = u16PinIndex_158;
+  u16PinIndex_183 = u16PinIndex.1_157 + 1;
+
+  <bb 13> :
+  # u16PinIndex_158 = PHI <u16PinIndex_169(2), u16PinIndex_183(12)>
+  if (u16PinIndex_158 < u16NumUnusedPins_165)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 14>; [INV]
+
+  <bb 14> :
+  return;
+
+}
+
+

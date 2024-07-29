@@ -1,0 +1,845 @@
+Clock_Ip_DisableFirc_TrustedCall (Clock_Ip_NameType Name)
+{
+  <bb 2> :
+  _1 = 1074151424B;
+  _2 = _1->FIRCCSR;
+  _3 = 1074151424B;
+  _4 = _2 & 4294967294;
+  _3->FIRCCSR = _4;
+  return;
+
+}
+
+
+Clock_Ip_EnableFirc_TrustedCall (const struct Clock_Ip_IrcoscConfigType * Config)
+{
+  uint32 IrcoscStatus;
+  uint32 TimeoutTicks;
+  uint32 ElapsedTime;
+  uint32 StartTime;
+  boolean TimeoutOccurred;
+
+  <bb 2> :
+  TimeoutOccurred = 0;
+  _1 = Config->Enable;
+  if (_1 == 1)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 3> :
+  _2 = 1074151424B;
+  _3 = _2->FIRCCSR;
+  _4 = 1074151424B;
+  _5 = _3 | 1;
+  _4->FIRCCSR = _5;
+  Clock_Ip_StartTimeout (&StartTime, &ElapsedTime, &TimeoutTicks, 50000);
+
+  <bb 4> :
+  _6 = 1074151424B;
+  _7 = _6->FIRCCSR;
+  _8 = _7 >> 24;
+  IrcoscStatus = _8 & 1;
+  TimeoutTicks.5_9 = TimeoutTicks;
+  TimeoutOccurred = Clock_Ip_TimeoutExpired (&StartTime, &ElapsedTime, TimeoutTicks.5_9);
+  if (IrcoscStatus == 0)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  _10 = ~TimeoutOccurred;
+  if (_10 != 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 6> :
+  if (TimeoutOccurred != 0)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 7> :
+  _11 = Config->Name;
+  Clock_Ip_ReportClockErrors (1, _11);
+
+  <bb 8> :
+  StartTime = {CLOBBER};
+  ElapsedTime = {CLOBBER};
+  TimeoutTicks = {CLOBBER};
+  return;
+
+}
+
+
+Clock_Ip_SetFirc_TrustedCall (const struct Clock_Ip_IrcoscConfigType * Config)
+{
+  uint32 IrcoscStatus;
+  uint32 TimeoutTicks;
+  uint32 ElapsedTime;
+  uint32 StartTime;
+  boolean SircWasDisabled;
+  boolean TimeoutOccurred;
+  uint32 Instance;
+
+  <bb 2> :
+  _1 = Config->Name;
+  _2 = Clock_Ip_au8ClockFeatures[_1][0];
+  Instance = (uint32) _2;
+  TimeoutOccurred = 0;
+  SircWasDisabled = 0;
+  _3 = 1074151424B;
+  _4 = _3->FIRCCSR;
+  _5 = 1074151424B;
+  _6 = _4 & 4286578687;
+  _5->FIRCCSR = _6;
+  _7 = 1074151424B;
+  _8 = _7->FIRCCSR;
+  _9 = _8 & 33554432;
+  if (_9 != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 15>; [INV]
+
+  <bb 3> :
+  _10 = Config->Range;
+  _11 = (long unsigned int) _10;
+  _12 = 1074151424B;
+  _13 = _12->FIRCCFG;
+  _14 = _13 & 3;
+  if (_11 != _14)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 4> :
+  _15 = Config->Regulator;
+  _16 = (long unsigned int) _15;
+  _17 = 1074151424B;
+  _18 = _17->FIRCCSR;
+  _19 = _18 >> 3;
+  _20 = _19 & 1;
+  if (_16 != _20)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 21>; [INV]
+
+  <bb 5> :
+  _21 = 1074151424B;
+  _22 = _21->SIRCCSR;
+  _23 = _22 & 1;
+  if (_23 == 0)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  SircWasDisabled = 1;
+  Clock_Ip_SetSirc (0B);
+
+  <bb 7> :
+  SetInputSouceSytemClock (2);
+  _24 = 1074151424B;
+  _25 = _24->FIRCCSR;
+  _26 = 1074151424B;
+  _27 = _25 & 4294967294;
+  _26->FIRCCSR = _27;
+  _28 = Config->Enable;
+  if (_28 == 1)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 21>; [INV]
+
+  <bb 8> :
+  _29 = Config->Range;
+  _30 = (long unsigned int) _29;
+  _31 = 1074151424B;
+  _32 = _30 & 3;
+  _31->FIRCCFG = _32;
+  _33 = 1074151424B;
+  _34 = _33->FIRCCSR;
+  _35 = Config->Regulator;
+  _36 = (long unsigned int) _35;
+  _37 = _36 << 3;
+  _38 = _37 & 8;
+  _39 = _34 | _38;
+  _40 = 1074151424B;
+  _41 = _39 | 1;
+  _40->FIRCCSR = _41;
+  Clock_Ip_StartTimeout (&StartTime, &ElapsedTime, &TimeoutTicks, 50000);
+
+  <bb 9> :
+  _42 = 1074151424B;
+  _43 = _42->FIRCCSR;
+  _44 = _43 >> 24;
+  IrcoscStatus = _44 & 1;
+  TimeoutTicks.3_45 = TimeoutTicks;
+  TimeoutOccurred = Clock_Ip_TimeoutExpired (&StartTime, &ElapsedTime, TimeoutTicks.3_45);
+  if (IrcoscStatus == 0)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 10> :
+  _46 = ~TimeoutOccurred;
+  if (_46 != 0)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 11> :
+  if (TimeoutOccurred != 0)
+    goto <bb 12>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 12> :
+  _47 = Config->Name;
+  Clock_Ip_ReportClockErrors (1, _47);
+
+  <bb 13> :
+  SetInputSouceSytemClock (3);
+  if (SircWasDisabled != 0)
+    goto <bb 14>; [INV]
+  else
+    goto <bb 21>; [INV]
+
+  <bb 14> :
+  Clock_Ip_DisableSirc (2);
+  goto <bb 21>; [INV]
+
+  <bb 15> :
+  _48 = 1074151424B;
+  _49 = _48->FIRCCSR;
+  _50 = 1074151424B;
+  _51 = _49 & 4294967294;
+  _50->FIRCCSR = _51;
+  _52 = Config->Enable;
+  if (_52 == 1)
+    goto <bb 16>; [INV]
+  else
+    goto <bb 21>; [INV]
+
+  <bb 16> :
+  _53 = Config->Range;
+  _54 = (long unsigned int) _53;
+  _55 = 1074151424B;
+  _56 = _54 & 3;
+  _55->FIRCCFG = _56;
+  _57 = 1074151424B;
+  _58 = _57->FIRCCSR;
+  _59 = Config->Regulator;
+  _60 = (long unsigned int) _59;
+  _61 = _60 << 3;
+  _62 = _61 & 8;
+  _63 = _58 | _62;
+  _64 = 1074151424B;
+  _65 = _63 | 1;
+  _64->FIRCCSR = _65;
+  Clock_Ip_StartTimeout (&StartTime, &ElapsedTime, &TimeoutTicks, 50000);
+
+  <bb 17> :
+  _66 = 1074151424B;
+  _67 = _66->FIRCCSR;
+  _68 = _67 >> 24;
+  IrcoscStatus = _68 & 1;
+  TimeoutTicks.4_69 = TimeoutTicks;
+  TimeoutOccurred = Clock_Ip_TimeoutExpired (&StartTime, &ElapsedTime, TimeoutTicks.4_69);
+  if (IrcoscStatus == 0)
+    goto <bb 18>; [INV]
+  else
+    goto <bb 19>; [INV]
+
+  <bb 18> :
+  _70 = ~TimeoutOccurred;
+  if (_70 != 0)
+    goto <bb 17>; [INV]
+  else
+    goto <bb 19>; [INV]
+
+  <bb 19> :
+  if (TimeoutOccurred != 0)
+    goto <bb 20>; [INV]
+  else
+    goto <bb 21>; [INV]
+
+  <bb 20> :
+  _71 = Config->Name;
+  Clock_Ip_ReportClockErrors (1, _71);
+
+  <bb 21> :
+  StartTime = {CLOBBER};
+  ElapsedTime = {CLOBBER};
+  TimeoutTicks = {CLOBBER};
+  return;
+
+}
+
+
+Clock_Ip_DisableSircStop_TrustedCall (Clock_Ip_NameType Name)
+{
+  <bb 2> :
+  _1 = 1074151424B;
+  _2 = _1->SIRCCSR;
+  _3 = 1074151424B;
+  _4 = _2 & 4294967293;
+  _3->SIRCCSR = _4;
+  return;
+
+}
+
+
+Clock_Ip_EnableSircStop_TrustedCall (const struct Clock_Ip_IrcoscConfigType * Config)
+{
+  <bb 2> :
+  _1 = Config->Enable;
+  if (_1 == 1)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  _2 = 1074151424B;
+  _3 = _2->SIRCCSR;
+  _4 = 1074151424B;
+  _5 = _3 | 2;
+  _4->SIRCCSR = _5;
+
+  <bb 4> :
+  return;
+
+}
+
+
+Clock_Ip_SetSircStop_TrustedCall (const struct Clock_Ip_IrcoscConfigType * Config)
+{
+  <bb 2> :
+  _1 = 1074151424B;
+  _2 = _1->SIRCCSR;
+  _3 = 1074151424B;
+  _4 = _2 & 4286578687;
+  _3->SIRCCSR = _4;
+  _5 = 1074151424B;
+  _6 = _5->SIRCCSR;
+  _7 = 1074151424B;
+  _8 = _6 & 4294967293;
+  _7->SIRCCSR = _8;
+  _9 = 1074151424B;
+  _10 = _9->SIRCCSR;
+  _11 = Config->StopModeEnable;
+  _12 = (long unsigned int) _11;
+  _13 = _12 << 1;
+  _14 = _13 & 2;
+  _15 = 1074151424B;
+  _16 = _10 | _14;
+  _15->SIRCCSR = _16;
+  return;
+
+}
+
+
+Clock_Ip_DisableSircVlp_TrustedCall (Clock_Ip_NameType Name)
+{
+  <bb 2> :
+  _1 = 1074151424B;
+  _2 = _1->SIRCCSR;
+  _3 = 1074151424B;
+  _4 = _2 & 4294967291;
+  _3->SIRCCSR = _4;
+  return;
+
+}
+
+
+Clock_Ip_EnableSircVlp_TrustedCall (const struct Clock_Ip_IrcoscConfigType * Config)
+{
+  <bb 2> :
+  _1 = Config->Enable;
+  if (_1 == 1)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  _2 = 1074151424B;
+  _3 = _2->SIRCCSR;
+  _4 = 1074151424B;
+  _5 = _3 | 4;
+  _4->SIRCCSR = _5;
+
+  <bb 4> :
+  return;
+
+}
+
+
+Clock_Ip_SetSircVlp_TrustedCall (const struct Clock_Ip_IrcoscConfigType * Config)
+{
+  <bb 2> :
+  _1 = 1074151424B;
+  _2 = _1->SIRCCSR;
+  _3 = 1074151424B;
+  _4 = _2 & 4286578687;
+  _3->SIRCCSR = _4;
+  _5 = 1074151424B;
+  _6 = _5->SIRCCSR;
+  _7 = 1074151424B;
+  _8 = _6 & 4294967291;
+  _7->SIRCCSR = _8;
+  _9 = 1074151424B;
+  _10 = _9->SIRCCSR;
+  _11 = Config->LowPowerModeEnable;
+  _12 = (long unsigned int) _11;
+  _13 = _12 << 2;
+  _14 = _13 & 4;
+  _15 = 1074151424B;
+  _16 = _10 | _14;
+  _15->SIRCCSR = _16;
+  return;
+
+}
+
+
+Clock_Ip_DisableSirc_TrustedCall (Clock_Ip_NameType Name)
+{
+  <bb 2> :
+  _1 = 1074151424B;
+  _2 = _1->SIRCCSR;
+  _3 = 1074151424B;
+  _4 = _2 & 4294967294;
+  _3->SIRCCSR = _4;
+  _5 = 1074151424B;
+  _6 = _5->SIRCCSR;
+  _7 = 1074151424B;
+  _8 = _6 & 4294967291;
+  _7->SIRCCSR = _8;
+  return;
+
+}
+
+
+Clock_Ip_EnableSirc_TrustedCall (const struct Clock_Ip_IrcoscConfigType * Config)
+{
+  uint32 IrcoscStatus;
+  uint32 TimeoutTicks;
+  uint32 ElapsedTime;
+  uint32 StartTime;
+  boolean TimeoutOccurred;
+
+  <bb 2> :
+  TimeoutOccurred = 0;
+  _1 = 1074151424B;
+  _2 = _1->SIRCCSR;
+  _3 = 1074151424B;
+  _4 = _2 | 1;
+  _3->SIRCCSR = _4;
+  _5 = 1074151424B;
+  _6 = _5->SIRCCSR;
+  _7 = 1074151424B;
+  _8 = _6 | 4;
+  _7->SIRCCSR = _8;
+  Clock_Ip_StartTimeout (&StartTime, &ElapsedTime, &TimeoutTicks, 50000);
+
+  <bb 3> :
+  _9 = 1074151424B;
+  _10 = _9->SIRCCSR;
+  _11 = _10 >> 24;
+  IrcoscStatus = _11 & 1;
+  TimeoutTicks.2_12 = TimeoutTicks;
+  TimeoutOccurred = Clock_Ip_TimeoutExpired (&StartTime, &ElapsedTime, TimeoutTicks.2_12);
+  if (IrcoscStatus == 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  _13 = ~TimeoutOccurred;
+  if (_13 != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 5> :
+  if (TimeoutOccurred != 0)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  _14 = Config->Name;
+  Clock_Ip_ReportClockErrors (1, _14);
+
+  <bb 7> :
+  StartTime = {CLOBBER};
+  ElapsedTime = {CLOBBER};
+  TimeoutTicks = {CLOBBER};
+  return;
+
+}
+
+
+Clock_Ip_SetSirc_TrustedCall (const struct Clock_Ip_IrcoscConfigType * Config)
+{
+  struct Clock_Ip_IrcoscConfigType SircConfig;
+  uint32 IrcoscStatus;
+  uint32 TimeoutTicks;
+  uint32 ElapsedTime;
+  uint32 StartTime;
+  boolean TimeoutOccurred;
+
+  <bb 2> :
+  TimeoutOccurred = 0;
+  if (Config == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  SircConfig.Name = 5;
+  SircConfig.Range = 1;
+  SircConfig.Enable = 1;
+  SircConfig.LowPowerModeEnable = 1;
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  _1 = Config->Name;
+  SircConfig.Name = _1;
+  _2 = Config->Range;
+  SircConfig.Range = _2;
+  _3 = Config->Enable;
+  SircConfig.Enable = _3;
+  _4 = Config->LowPowerModeEnable;
+  SircConfig.LowPowerModeEnable = _4;
+
+  <bb 5> :
+  _5 = 1074151424B;
+  _6 = _5->SIRCCSR;
+  _7 = 1074151424B;
+  _8 = _6 & 4286578687;
+  _7->SIRCCSR = _8;
+  _9 = 1074151424B;
+  _10 = _9->SIRCCSR;
+  _11 = 1074151424B;
+  _12 = _10 & 4294967294;
+  _11->SIRCCSR = _12;
+  _13 = 1074151424B;
+  _14 = _13->SIRCCSR;
+  _15 = 1074151424B;
+  _16 = _14 & 4294967291;
+  _15->SIRCCSR = _16;
+  _17 = SircConfig.Enable;
+  if (_17 == 1)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 6> :
+  _18 = SircConfig.Range;
+  _19 = (long unsigned int) _18;
+  _20 = 1074151424B;
+  _21 = _19 & 1;
+  _20->SIRCCFG = _21;
+  _22 = 1074151424B;
+  _23 = _22->SIRCCSR;
+  _24 = 1074151424B;
+  _25 = _23 | 1;
+  _24->SIRCCSR = _25;
+  _26 = 1074151424B;
+  _27 = _26->SIRCCSR;
+  _28 = SircConfig.LowPowerModeEnable;
+  _29 = (long unsigned int) _28;
+  _30 = _29 << 2;
+  _31 = _30 & 4;
+  _32 = 1074151424B;
+  _33 = _27 | _31;
+  _32->SIRCCSR = _33;
+  Clock_Ip_StartTimeout (&StartTime, &ElapsedTime, &TimeoutTicks, 50000);
+
+  <bb 7> :
+  _34 = 1074151424B;
+  _35 = _34->SIRCCSR;
+  _36 = _35 >> 24;
+  IrcoscStatus = _36 & 1;
+  TimeoutTicks.1_37 = TimeoutTicks;
+  TimeoutOccurred = Clock_Ip_TimeoutExpired (&StartTime, &ElapsedTime, TimeoutTicks.1_37);
+  if (IrcoscStatus == 0)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 8> :
+  _38 = ~TimeoutOccurred;
+  if (_38 != 0)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 9> :
+  if (TimeoutOccurred != 0)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 10> :
+  _39 = SircConfig.Name;
+  Clock_Ip_ReportClockErrors (1, _39);
+
+  <bb 11> :
+  StartTime = {CLOBBER};
+  ElapsedTime = {CLOBBER};
+  TimeoutTicks = {CLOBBER};
+  SircConfig = {CLOBBER};
+  return;
+
+}
+
+
+Clock_Ip_DisableFirc (Clock_Ip_NameType Name)
+{
+  <bb 2> :
+  Clock_Ip_DisableFirc_TrustedCall (Name);
+  return;
+
+}
+
+
+Clock_Ip_EnableFirc (const struct Clock_Ip_IrcoscConfigType * Config)
+{
+  <bb 2> :
+  if (Config != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  Clock_Ip_EnableFirc_TrustedCall (Config);
+
+  <bb 4> :
+  return;
+
+}
+
+
+Clock_Ip_SetFirc (const struct Clock_Ip_IrcoscConfigType * Config)
+{
+  <bb 2> :
+  if (Config != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  Clock_Ip_SetFirc_TrustedCall (Config);
+
+  <bb 4> :
+  return;
+
+}
+
+
+SetInputSouceSytemClock (uint32 SourceClock)
+{
+  uint32 ScsStatus;
+  uint32 TimeoutTicks;
+  uint32 ElapsedTime;
+  uint32 StartTime;
+  boolean TimeoutOccurred;
+  uint32 RegValue;
+
+  <bb 2> :
+  TimeoutOccurred = 0;
+  _1 = 1074151424B;
+  RegValue = _1->RCCR;
+  RegValue = RegValue & 4043309055;
+  _2 = SourceClock << 24;
+  RegValue = RegValue | _2;
+  _3 = 1074151424B;
+  _3->RCCR = RegValue;
+  Clock_Ip_StartTimeout (&StartTime, &ElapsedTime, &TimeoutTicks, 50000);
+
+  <bb 3> :
+  _4 = 1074151424B;
+  _5 = _4->CSR;
+  _6 = _5 >> 24;
+  _7 = _6 & 15;
+  _8 = SourceClock == _7;
+  _9 = (int) _8;
+  ScsStatus = (uint32) _9;
+  TimeoutTicks.0_10 = TimeoutTicks;
+  TimeoutOccurred = Clock_Ip_TimeoutExpired (&StartTime, &ElapsedTime, TimeoutTicks.0_10);
+  if (ScsStatus == 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  _11 = ~TimeoutOccurred;
+  if (_11 != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 5> :
+  if (TimeoutOccurred != 0)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  Clock_Ip_ReportClockErrors (1, 5);
+
+  <bb 7> :
+  StartTime = {CLOBBER};
+  ElapsedTime = {CLOBBER};
+  TimeoutTicks = {CLOBBER};
+  return;
+
+}
+
+
+Clock_Ip_DisableSircStop (Clock_Ip_NameType Name)
+{
+  <bb 2> :
+  Clock_Ip_DisableSircStop_TrustedCall (Name);
+  return;
+
+}
+
+
+Clock_Ip_EnableSircStop (const struct Clock_Ip_IrcoscConfigType * Config)
+{
+  <bb 2> :
+  if (Config != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  Clock_Ip_EnableSircStop_TrustedCall (Config);
+
+  <bb 4> :
+  return;
+
+}
+
+
+Clock_Ip_SetSircStop (const struct Clock_Ip_IrcoscConfigType * Config)
+{
+  <bb 2> :
+  if (Config != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  Clock_Ip_SetSircStop_TrustedCall (Config);
+
+  <bb 4> :
+  return;
+
+}
+
+
+Clock_Ip_DisableSircVlp (Clock_Ip_NameType Name)
+{
+  <bb 2> :
+  Clock_Ip_DisableSircVlp_TrustedCall (Name);
+  return;
+
+}
+
+
+Clock_Ip_EnableSircVlp (const struct Clock_Ip_IrcoscConfigType * Config)
+{
+  <bb 2> :
+  if (Config != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  Clock_Ip_EnableSircVlp_TrustedCall (Config);
+
+  <bb 4> :
+  return;
+
+}
+
+
+Clock_Ip_SetSircVlp (const struct Clock_Ip_IrcoscConfigType * Config)
+{
+  <bb 2> :
+  if (Config != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  Clock_Ip_SetSircVlp_TrustedCall (Config);
+
+  <bb 4> :
+  return;
+
+}
+
+
+Clock_Ip_DisableSirc (Clock_Ip_NameType Name)
+{
+  <bb 2> :
+  Clock_Ip_DisableSirc_TrustedCall (Name);
+  return;
+
+}
+
+
+Clock_Ip_EnableSirc (const struct Clock_Ip_IrcoscConfigType * Config)
+{
+  <bb 2> :
+  if (Config != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  Clock_Ip_EnableSirc_TrustedCall (Config);
+
+  <bb 4> :
+  return;
+
+}
+
+
+Clock_Ip_SetSirc (const struct Clock_Ip_IrcoscConfigType * Config)
+{
+  <bb 2> :
+  if (Config != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  Clock_Ip_SetSirc_TrustedCall (Config);
+
+  <bb 4> :
+  return;
+
+}
+
+
+Clock_Ip_InternalOscillatorEmpty_Disable (Clock_Ip_NameType Name)
+{
+  <bb 2> :
+  return;
+
+}
+
+
+Clock_Ip_InternalOscillatorEmpty (const struct Clock_Ip_IrcoscConfigType * Config)
+{
+  <bb 2> :
+  return;
+
+}
+
+
