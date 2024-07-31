@@ -129,7 +129,7 @@ _Back to [Setup Notes](#4-setup-notes)_
 
 ![Setup_image_7.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/Tools_Setup/Setup_image_7.png)
 
-9. Now we need a compiler, let's download the GCC NXP one from this [link](https://www.nxp.com/design/design-center/software/development-software/s32-design-studio-ide/s32-design-studio-for-s32-platform:S32DS-S32PLATFORM). Scroll down until you reach the Downloads section and there look up for this item as in the image: _NXP Embedded GCC 10.2 Compiler Tools for ARM v7 Embedded, build 1728 - Windows_. Proceed to install. (Only the compiler is needed, not the S32 Design Studio.)
+9. Now we need a compiler, let's download the [GCC NXP](https://www.nxp.com/design/design-center/software/development-software/s32-design-studio-ide/s32-design-studio-for-s32-platform:S32DS-S32PLATFORM). Scroll down until you reach the Downloads section and there look up for this item as in the image: _NXP Embedded GCC 10.2 Compiler Tools for ARM v7 Embedded, build 1728 - Windows_. Proceed to install. (Only the compiler is needed, not the S32 Design Studio.)
 
 ![Setup_image_8.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/Tools_Setup/Setup_image_8.png)
 
@@ -199,7 +199,7 @@ $ make
 
 ![Setup_image_17.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/Tools_Setup/Setup_image_17.png)
 
-5. Go to **File → Save Project as...** and select a name for your .jdebug file (recommend the same name as the Tresos project). Then go to **File → Edit Project File...** and a window should open with the .jdebug file code configuration. Go to the note below [4.2 Ozone .jdebug files made portable for running debugger correctly](#42-ozone-jdebug-files-made-portable-for-running-debugger-correctly) to make sure you are configuring correctly and portable your file.
+5. Go to **File → Save Project as...** and select a name for your .jdebug file (recommend the same name as the Tresos project). Then go to **File → Edit Project File...** and a window should open with the .jdebug file code configuration. Reference the note below [Ozone .jdebug portable files for running debugger](#ozone-jdebug-portable-files-for-running-debugger) to make sure you are configuring correctly and portable your file.
 
 6. Click the first green icon (that looks like a 'Power ON/OFF' icon) to download the binary into the microcontroller. You might see some pop-up small dialog windows while loading, just click 'Yes' and the initial Green icon now should be Red. The program execution is now halted and ready to begin, so click the second icon (currently a 'Play' icon) to **Resume program Execution** and see the hardware board working by blinking an LED.
 
@@ -250,33 +250,33 @@ void OnProjectLoad (void) {
 
 _Back to [Setup Notes](#4-setup-notes)_
 
-1. [SavvyCAN](https://www.savvycan.com/) is an open source project that allows to send, receive and decode CAN messages. It does not require specific installation or driver, just unzip and run the corresponding executable for your OS.
+1. [SavvyCAN](https://www.savvycan.com/) is an open source project that allows to send, receive and decode CAN messages. It does not require specific installation or driver, just unzip and run the corresponding executable for your OS. (For this software I used MacOS but is exactly the same for Windows).
 
 ![Setup_image_21.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/Tools_Setup/Setup_image_21.png)
 
-2. Once open plug the board and we should be able to see a new COM port in your computer. The software has several options for connection types, in this case the one used is very common is easy to configure. Once the application is open and the program in the hardware board is running, go to menu bar and click **Connection → Open Connection Window**, then click in **Add New Device Connection**.
+2. Once the software is open, plug the board and we should be able to see a new COM port in your computer. The software has several options for connection types, in this case the one used is very common and easy to configure. Once the program in the hardware board is running, go to menu bar and click **Connection → Open Connection Window**, then click in **Add New Device Connection**.
 
 ![Setup_image_22.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/Tools_Setup/Setup_image_22.png)
 
 3. A new window will pop up and select **LAWICEL / SLCAN Serial**, then select the corresponding serial port of the device just connected and the following settings: **Serial Port Speed: 115200** and **CAN Bus Speed: 100000** (this CAN speed can be changed later on once the CAN exercises are executed with the corresponding baudrate configuration in EB Tresos).
 
+MacOS perspective:\
+![Setup_image_24.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/Tools_Setup/Setup_image_24.png)
+
 Windows perspective:
 ![Setup_image_23.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/Tools_Setup/Setup_image_23.png)
-
-MacOS perspective:
-![Setup_image_24.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/Tools_Setup/Setup_image_24.png)
 
 4. After setting up connection the new device should be added to the list with status **Connected**.
 
 ![Setup_image_25.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/Tools_Setup/Setup_image_25.png)
 
-5. Close connection window and go back to he main interface. If hardware board is running CAN application (example or exercise) then CAN traffic should be seem immediately.
-
-Windows perspective:
-![Setup_image_26.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/Tools_Setup/Setup_image_26.png)
+5. Close connection window and go back to he main interface. If hardware board is running a CAN Tresos project (example or exercise) then CAN traffic should be seen immediately.
 
 MacOS perspective:
 ![Setup_image_27.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/Tools_Setup/Setup_image_27.png)
+
+Windows perspective:
+![Setup_image_26.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/Tools_Setup/Setup_image_26.png)
 
 6. To be able to send CAN messages go to **Send Frames → Custom**. There we can customize the frames we need as for the **Bus**, **ID**, **Length**, **Data**, and even **Trigger** periodicity. Once it is configured we can Start/Stop sending each message by checking/unchecking the box in the first column or use the **Enable/Disable All** buttons at the bottom.
 
