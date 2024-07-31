@@ -260,7 +260,7 @@ _Back to [Setup Notes](#4-setup-notes)_
 
 3. A new window will pop up and select **LAWICEL / SLCAN Serial**, then select the corresponding serial port of the device just connected and the following settings: **Serial Port Speed: 115200** and **CAN Bus Speed: 100000** (this CAN speed can be changed later on once the CAN exercises are executed with the corresponding baudrate configuration in EB Tresos).
 
-MacOS perspective:\
+MacOS perspective:
 
 ![Setup_image_24.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/Tools_Setup/Setup_image_24.png)
 
