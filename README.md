@@ -81,15 +81,18 @@ _<-- Back to [Table of Contents](#table-of-contents)_
 
 _<-- Back to [Table of Contents](#table-of-contents)_
 
-* ### 4.1 Tools Installation and Configuration Guide:
-
-_Back to [Setup Notes](#4-setup-notes)_
-
 You can find here [**Setup AUTOSAR Tools**](https://embedded-house.ghost.io/part-0-setup-your-autosar-tools/) the section where Modular MX explains the right procedure to download, install and configure all needed tools, including its dependencies, how to import the template project file and flash it to the device.
 
-As a summary, these are the steps to follow in order to have the environment set up with all tools **FREE** of charge:
+Same information is presented here, with the steps to follow in order to have the environment set up with all tools **FREE** of charge:
 
-#### <ins>For NXP / EB Tresos tools installation:<ins>
+- [**NXP / EB Tresos tools installation.**](#nxp--eb-tresos-tools-installation)
+- [**SEGGER tools installation.**](#segger-tools-installation)
+- [**Importing the EB Tresos template project file.**](#importing-the-eb-tresos-template-project-file)
+- [**Compiling and flashing the project to the device.**](#compiling-and-flashing-the-project-to-the-device)
+- [**Ozone .jdebug portable files for running debugger.**](#ozone-jdebug-portable-files-for-running-debugger)
+- [**Configuring SavvyCAN.**](#configuring-savvycan)
+
+#### <ins>NXP / EB Tresos tools installation:<ins>
 
 _Back to [Setup Notes](#4-setup-notes)_
 
@@ -132,7 +135,7 @@ _Back to [Setup Notes](#4-setup-notes)_
 
 ![Setup_image_20.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/Tools_Setup/Setup_image_20.png)
 
-#### <ins>For SEGGER tools installation:<ins>
+#### <ins>SEGGER tools installation:<ins>
 
 _Back to [Setup Notes](#4-setup-notes)_
 
@@ -146,7 +149,7 @@ _Back to [Setup Notes](#4-setup-notes)_
 
 ![Setup_image_10.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/Tools_Setup/Setup_image_10.png)
 
-#### <ins>For importing the EB Tresos template project file:<ins>
+#### <ins>Importing the EB Tresos template project file:<ins>
 
 _Back to [Setup Notes](#4-setup-notes)_
 
@@ -164,7 +167,7 @@ _Back to [Setup Notes](#4-setup-notes)_
 
 ![Setup_image_13.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/Tools_Setup/Setup_image_13.png)
 
-#### <ins>For compiling and flashing the project to the device:<ins>
+#### <ins>Compiling and flashing the project to the device:<ins>
 
 _Back to [Setup Notes](#4-setup-notes)_
 
@@ -204,14 +207,15 @@ $ make
 
 7. And that's it! Don't forget to read Ozone documentation to get familiar with all the amazing functions it provides (call stack, disassembly, registers, memory), it is really powerful.
 
-* ### 4.2 Ozone .jdebug files made portable for running debugger correctly:
+#### <ins>Ozone .jdebug portable files for running debugger:<ins>
 
 _Back to [Setup Notes](#4-setup-notes)_
 
-After generating MCAL source files with EB Tresos Studio IDE and building the project, we need to make use of the .jdebug files that I'm providing in order to be capable or flashing the board with Ozone as well as for debugging. 
-These files after generated were modified to be portable (using $(ProjectDir)), hence no need to be modified again and are ready to be executed.
+1. After generating MCAL source files with EB Tresos Studio IDE and building the project, we need to make use of the .jdebug files that I'm providing in order to be capable or flashing the board with Ozone as well as for debugging. 
 
-Below you can see an example of the snippet for the .jdebug configuration file for any given project. 
+2. These files after generated were modified to be portable (using $(ProjectDir)), hence no need to be modified again and are ready to be executed.
+
+3. Below you can see an example of the snippet for the .jdebug configuration file for any given project. 
 
 ```c
 /*********************************************************************
@@ -242,6 +246,47 @@ void OnProjectLoad (void) {
   File.Open ("$(ProjectDir)/Build/temp.elf");
 }
 ```
+#### <ins>Configuring SavvyCAN:<ins>
+
+_Back to [Setup Notes](#4-setup-notes)_
+
+1. [SavvyCAN](https://www.savvycan.com/) is an open source project that allows to send, receive and decode CAN messages. It does not require specific installation or driver, just unzip and run the corresponding executable for your OS.
+
+![Setup_image_21.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/Tools_Setup/Setup_image_21.png)
+
+2. Once open plug the board and we should be able to see a new COM port in your computer. The software has several options for connection types, in this case the one used is very common is easy to configure. Once the application is open and the program in the hardware board is running, go to menu bar and click **Connection → Open Connection Window**, then click in **Add New Device Connection**.
+
+![Setup_image_22.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/Tools_Setup/Setup_image_22.png)
+
+3. A new window will pop up and select **LAWICEL / SLCAN Serial**, then select the corresponding serial port of the device just connected and the following settings: **Serial Port Speed: 115200** and **CAN Bus Speed: 100000** (this CAN speed can be changed later on once the CAN exercises are executed with the corresponding baudrate configuration in EB Tresos).
+
+Windows perspective:
+![Setup_image_23.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/Tools_Setup/Setup_image_23.png)
+
+MacOS perspective:
+![Setup_image_24.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/Tools_Setup/Setup_image_24.png)
+
+4. After setting up connection the new device should be added to the list with status **Connected**.
+
+![Setup_image_25.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/Tools_Setup/Setup_image_25.png)
+
+5. Close connection window and go back to he main interface. If hardware board is running CAN application (example or exercise) then CAN traffic should be seem immediately.
+
+Windows perspective:
+![Setup_image_26.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/Tools_Setup/Setup_image_26.png)
+
+MacOS perspective:
+![Setup_image_27.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/Tools_Setup/Setup_image_27.png)
+
+6. To be able to send CAN messages go to **Send Frames → Custom**. There we can customize the frames we need as for the **Bus**, **ID**, **Length**, **Data**, and even **Trigger** periodicity. Once it is configured we can Start/Stop sending each message by checking/unchecking the box in the first column or use the **Enable/Disable All** buttons at the bottom.
+
+![Setup_image_28.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/Tools_Setup/Setup_image_28.png)
+
+7. And that's it! Now you can play with CAN communication by Transmitting (Tx) and Receiving (Rx) data between the hardware board and the host PC. If you want to dive deeper into this tool you can watch these videos:
+
+* [SavvyCAN Walkthrough Part 1](https://youtu.be/HmAGsg8sdN0?si=MxZQmltsNkZHeWRV)
+* [Fuzzing and CAN sending with SavvyCAN](https://youtu.be/c997HCmKH8s?si=bo55JlusIwBDevW0)
+* [CAN Bus Interface & Logger + SavvyCAN [USB | SD | Free Software]](https://youtu.be/PkIQpcPrA2E?si=VZpUNGD2sCYR2DYR)
 
 ## 5. Documentation
 
