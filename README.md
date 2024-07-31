@@ -261,9 +261,11 @@ _Back to [Setup Notes](#4-setup-notes)_
 3. A new window will pop up and select **LAWICEL / SLCAN Serial**, then select the corresponding serial port of the device just connected and the following settings: **Serial Port Speed: 115200** and **CAN Bus Speed: 100000** (this CAN speed can be changed later on once the CAN exercises are executed with the corresponding baudrate configuration in EB Tresos).
 
 MacOS perspective:\
+
 ![Setup_image_24.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/Tools_Setup/Setup_image_24.png)
 
 Windows perspective:
+
 ![Setup_image_23.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/Tools_Setup/Setup_image_23.png)
 
 4. After setting up connection the new device should be added to the list with status **Connected**.
@@ -273,9 +275,11 @@ Windows perspective:
 5. Close connection window and go back to he main interface. If hardware board is running a CAN Tresos project (example or exercise) then CAN traffic should be seen immediately.
 
 MacOS perspective:
+
 ![Setup_image_27.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/Tools_Setup/Setup_image_27.png)
 
 Windows perspective:
+
 ![Setup_image_26.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/Tools_Setup/Setup_image_26.png)
 
 6. To be able to send CAN messages go to **Send Frames → Custom**. There we can customize the frames we need as for the **Bus**, **ID**, **Length**, **Data**, and even **Trigger** periodicity. Once it is configured we can Start/Stop sending each message by checking/unchecking the box in the first column or use the **Enable/Disable All** buttons at the bottom.
