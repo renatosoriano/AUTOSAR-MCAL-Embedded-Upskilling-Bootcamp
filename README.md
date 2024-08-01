@@ -157,6 +157,8 @@ _Back to [Setup Notes](#4-setup-notes)_
 
 2. Open EB Tresos, go to **File → Import…**, then select **General → Existing Projects into Workspace**, then **Next** and **Browse…** the project folder (the cloned repository), click check on the template-s144 project and **Finish**. 
 
+![Setup_image_29.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/Tools_Setup/Setup_image_29.png)
+
 ![Setup_image_11.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/Tools_Setup/Setup_image_11.png)
 
 3. Select the project and double click in **template-s144 → template-s144 (CORTEXM, S32K14X)** to display all the modules in use, then just click the hammer icon _'Generate code for the currently selected project'_.
@@ -323,10 +325,93 @@ It is divided in folders for each of the MCAL drivers worked, and inside you wil
 10. [CAN driver.](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/tree/main/Tresos_Workspace/9_CAN_driver)
 11. [CANIF driver.](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/tree/main/Tresos_Workspace/10_CANIF_driver)
 
-For easier understanding using EB Tresos when doing each of the MCAL Modules Examples and Exercises, highly recommend going to [**Documentation**](#5-documentation) and read [EB Tresos S32K1 MCAL drivers User Manuals](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/tree/main/Documentation/EB%20Tresos%20MCAL%20Real%20Time%20Drivers), they explain how to configure each MCAL from the EB Tresos GUI perspective.
+For easier understanding using EB Tresos, when doing each of the MCAL Modules Examples and Exercises, highly recommend going to [**Documentation**](#5-documentation) and read [EB Tresos S32K1 MCAL drivers User Manuals](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/tree/main/Documentation/EB%20Tresos%20MCAL%20Real%20Time%20Drivers), they explain how to configure each MCAL from the EB Tresos GUI perspective.
 Here is an example:
 
 ![EB_Tresos_S32K1_MCAL_User_Manual_Example.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/EB_Tresos_S32K1_MCAL_User_Manual_Example.png)
+
+Even more interesting, NXP provides within the RTD driver installation a series of [NXP EB Tresos MCAL Examples](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/tree/main/Documentation/NXP%20EB%20Tresos%20MCAL%20Examples) that can be used as reference for each of the MCAL Modules in EB Tresos. These are located in:
+
+```c
+C:\NXP\SW32K1_S32M24x_RTD_R21-11_2.0.0_P04\eclipse\plugins\<Driver>_TS_T40D2M20I0R0\examples\EBT\S32K1
+```
+where <Driver> can be any of the MCAL modules like 'Dio', 'Port', 'Spi', etc.
+
+To use them copy the project example folder of interest and paste it into the workspace folder, for instance:
+
+```c
+C:\NXP\SW32K1_S32M24x_RTD_R21-11_2.0.0_P04\eclipse\plugins\Can_43_FLEXCAN_TS_T40D2M20I0R0\examples\EBT\S32K1\Can_example_S32K144
+```
+Copy to: 
+
+```c
+C:\EB\tresos\workspace\Can_example_S32K144
+```
+
+After that and similar to any other project, follow the already explained import process by opening EB Tresos, cliking on **File → Import → General → Existing Projects into Workspace**, then **Next** and **Browse…** the project folder of the NXP example just copied, click check on the  project and **Finish**. 
+
+![NXP_EB_Tresos_MCAL_Examples_2.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/NXP_EB_Tresos_MCAL_Examples/NXP_EB_Tresos_MCAL_Examples_2.png)
+
+![NXP_EB_Tresos_MCAL_Examples_1.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/NXP_EB_Tresos_MCAL_Examples/NXP_EB_Tresos_MCAL_Examples_1.png)
+
+Once the project is imported now is time to build it. <ins>CLOSE EB TRESOS<ins> and open the project in VS Code since there are a few modifications that need to be done. 
+
+Proced to open the file **readme.txt** and read the general instructions for configuration. What those instructions say is to open  **project_parameters.mk** and update the following variables with the correct paths: **TRESOS_DIR**, **GCC_DIR**, **PLUGINS_DIR** as well as comment out **T32_DIR** since it will not be used. The image below shows an example on how the file must be in the end:
+
+![NXP_EB_Tresos_MCAL_Examples_3.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/NXP_EB_Tresos_MCAL_Examples/NXP_EB_Tresos_MCAL_Examples_3.png)
+
+Now open **check_build_params.mk** and comment the last lines because TRACE32 will not be used.
+
+![NXP_EB_Tresos_MCAL_Examples_4.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/NXP_EB_Tresos_MCAL_Examples/NXP_EB_Tresos_MCAL_Examples_4.png)
+
+After modifying and saving the changes, open the terminal and select **bash** as the shell (please avoid **powershell**). Type 'cd' then leave an empty space ' ' and then drag and drop your project folder to insert the path and then Enter. You should be ready to start compiling. **Do not forget to <ins>CLOSE EB TRESOS<ins> otherwise the following 'make generate' will fail.**
+
+First type '**make clean**' and wait for it to finish, type '**make generate**' and wait for it to finish, lastly type '**make build**' and wait for it to finish . Should see something like this:
+
+```c
+renatosoriano@RENATOSORIAD632 MINGW64 /c/EB/tresos/workspace/Can_example_S32K144
+$ make clean
+======================================================================
+Removing files and directories from the compliation output
+
+renatosoriano@RENATOSORIAD632 MINGW64 /c/EB/tresos/workspace/Can_example_S32K144
+$ make generate
+C:/EB/tresos/bin/tresos_cmd.bat generate Can_example_S32K144 2>&1
+EB tresos Studio 29.0.0 b220329-0119
+Copyright 2003-2022 Elektrobit Automotive GmbH
+Current workspace: C:\EB\tresos\workspace
+Generating project Can_example_S32K144
+INFO 24-07-31,23:47:00 (12145) Using a shortened feature name ("EB_TS_MOD_USPlatform_TS_T40D2M" instead of "EB_TS_MOD_USPlatform_TS_T40D2M20I0R0") for license check.
+INFO 24-07-31,23:47:00 (12145) Using a shortened feature name ("EB_TS_MOD_USPlatform_TS_T40D2M" instead of "EB_TS_MOD_USPlatform_TS_T40D2M20I0R0") for license check.
+INFO 24-07-31,23:47:00 (12145) Using a shortened feature name ("EB_TS_MOD_USPlatform_TS_T40D2M" instead of "EB_TS_MOD_USPlatform_TS_T40D2M20I0R0") for license check.
+...
+...
+INFO 24-07-31,23:48:11 (13030) Running generator "EcuC_TS_T40D2M20I0R0_UniqueNGGeneratorId" in mode "generate" for module "EcuC_TS_T40D2M20I0R0"
+INFO 24-07-31,23:48:11 (13030) Running generator "Can_43_FLEXCAN_TS_T40D2M20I0R0_UniqueNGGeneratorId" in mode "generate" for module "Can_43_FLEXCAN_TS_T40D2M20I0R0"
+INFO 24-07-31,23:48:12 (13030) Running generator "Mcu_TS_T40D2M20I0R0_UniqueNGGeneratorId" in mode "generate" for module "Mcu_TS_T40D2M20I0R0"
+Errors "0" Warnings "3"
+
+renatosoriano@RENATOSORIAD632 MINGW64 /c/EB/tresos/workspace/Can_example_S32K144
+$ make build
+======================================================================
+Creating directory for object files
+Compiling src/main.c
+Compiling generate/src/CanIf_Cfg.c
+Compiling generate/src/CanIf_PBcfg.c
+Compiling generate/src/Can_43_FLEXCAN_Ipw_PBcfg.c
+Compiling generate/src/Can_43_FLEXCAN_PBcfg.c
+...
+...
+Compiling C:/NXP/SW32K1_S32M24x_RTD_R21-11_2.0.0_P04/eclipse/plugins/Rte_TS_T40D2M20I0R0/src/SchM_Can_43_FLEXCAN.c
+Compiling C:/NXP/SW32K1_S32M24x_RTD_R21-11_2.0.0_P04/eclipse/plugins/Platform_TS_T40D2M20I0R0/startup/src/m4/gcc/Vector_Table.s
+Compiling C:/NXP/SW32K1_S32M24x_RTD_R21-11_2.0.0_P04/eclipse/plugins/Platform_TS_T40D2M20I0R0/startup/src/m4/gcc/startup_cm4.s
+Linking main.elf
+c:/nxp/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/bin/real-ld.exe: warning: c:/nxp/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-memset.o) uses variable-size enums yet the output is to use 32-bit enums; use of enum values across objects may fail
+```
+
+After successful compilation the **main.elf** file can be found in the **<Driver>_example_S32K144\out** directory. Now is just a matter of doing the same process with Ozone in order to flash the project to the hardware board.
+
+And that's it! You can now open EB Tresos and explore the configuration, parameters, containers and properties of all NXP project examples to see what is going on, to analyze and compare with the examples and exercises of this Upskilling Bootcamp.
 
 ## 7. Final Project
 
