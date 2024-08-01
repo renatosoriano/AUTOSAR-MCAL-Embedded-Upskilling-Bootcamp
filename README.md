@@ -155,7 +155,7 @@ _Back to [Setup Notes](#4-setup-notes)_
 
 1. Git clone the project (that also comes with a makefile to compile the basic example in there and run it into the hardware board).
 
-2. Open EB Tresos, go to **File → Import…**, then select **General → Existing Projects into Workspace**, then **Next** and **Browse…** the project folder (the cloned repository), click check on the template-s144 project and **Finish**. 
+2. Open EB Tresos, go to **File → Import…**, then select **General → Existing Projects into Workspace**, then **Next** and **Browse…** the project folder (the cloned repository), click check on the **'template-s144'** project and **Finish**. 
 
 ![Setup_image_29.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/Tools_Setup/Setup_image_29.png)
 
@@ -335,7 +335,7 @@ Even more interesting, NXP provides within the RTD driver installation a series 
 ```c
 C:\NXP\SW32K1_S32M24x_RTD_R21-11_2.0.0_P04\eclipse\plugins\<Driver>_TS_T40D2M20I0R0\examples\EBT\S32K1
 ```
-where <Driver> can be any of the MCAL modules like 'Dio', 'Port', 'Spi', etc.
+where **'Driver'** can be any of the MCAL modules like 'Dio', 'Port', 'Spi', etc.
 
 To use them copy the project example folder of interest and paste it into the workspace folder, for instance:
 
@@ -356,7 +356,7 @@ After that and similar to any other project, follow the already explained import
 
 Once the project is imported now is time to build it. <ins>CLOSE EB TRESOS<ins> and open the project in VS Code since there are a few modifications that need to be done. 
 
-Proced to open the file **readme.txt** and read the general instructions for configuration. What those instructions say is to open  **project_parameters.mk** and update the following variables with the correct paths: **TRESOS_DIR**, **GCC_DIR**, **PLUGINS_DIR** as well as comment out **T32_DIR** since it will not be used. The image below shows an example on how the file must be in the end:
+Proced to open the file **readme.txt** and read the general instructions for configuration. What those instructions say is to open  **project_parameters.mk** and update the following variables with the correct paths: **'TRESOS_DIR'**, **'GCC_DIR'**, **'PLUGINS_DIR'** as well as comment out **'T32_DIR'** since it will not be used. The image below shows an example on how the file must be in the end:
 
 ![NXP_EB_Tresos_MCAL_Examples_3.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/NXP_EB_Tresos_MCAL_Examples/NXP_EB_Tresos_MCAL_Examples_3.png)
 
@@ -366,7 +366,7 @@ Now open **check_build_params.mk** and comment the last lines because TRACE32 wi
 
 After modifying and saving the changes, open the terminal and select **bash** as the shell (please avoid **powershell**). Type 'cd' then leave an empty space ' ' and then drag and drop your project folder to insert the path and then Enter. You should be ready to start compiling. **Do not forget to <ins>CLOSE EB TRESOS<ins> otherwise the following 'make generate' will fail.**
 
-First type '**make clean**' and wait for it to finish, type '**make generate**' and wait for it to finish, lastly type '**make build**' and wait for it to finish . Should see something like this:
+First type '**make clean**' and wait for it to finish, after that type '**make generate**' and wait for it to finish, lastly type '**make build**' and wait for it to finish. Should see something like this:
 
 ```c
 renatosoriano@RENATOSORIAD632 MINGW64 /c/EB/tresos/workspace/Can_example_S32K144
@@ -409,7 +409,7 @@ Linking main.elf
 c:/nxp/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/bin/real-ld.exe: warning: c:/nxp/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-memset.o) uses variable-size enums yet the output is to use 32-bit enums; use of enum values across objects may fail
 ```
 
-After successful compilation the **main.elf** file can be found in the **<Driver>_example_S32K144\out** directory. Now is just a matter of doing the same process with Ozone in order to flash the project to the hardware board.
+If your output is same as above that means the build was successful. The **main.elf** file can be found in the **'Driver'_example_S32K144\out** directory. Now is just a matter of doing the same process with Ozone in order to flash the project to the hardware board.
 
 And that's it! You can now open EB Tresos and explore the configuration, parameters, containers and properties of all NXP project examples to see what is going on, to analyze and compare with the examples and exercises of this Upskilling Bootcamp.
 
