@@ -389,7 +389,7 @@ INFO 24-07-31,23:47:00 (12145) Using a shortened feature name ("EB_TS_MOD_USPlat
 INFO 24-07-31,23:48:11 (13030) Running generator "EcuC_TS_T40D2M20I0R0_UniqueNGGeneratorId" in mode "generate" for module "EcuC_TS_T40D2M20I0R0"
 INFO 24-07-31,23:48:11 (13030) Running generator "Can_43_FLEXCAN_TS_T40D2M20I0R0_UniqueNGGeneratorId" in mode "generate" for module "Can_43_FLEXCAN_TS_T40D2M20I0R0"
 INFO 24-07-31,23:48:12 (13030) Running generator "Mcu_TS_T40D2M20I0R0_UniqueNGGeneratorId" in mode "generate" for module "Mcu_TS_T40D2M20I0R0"
-Errors "0" Warnings "3"
+Errors "0" Warnings "0"
 
 renatosoriano@RENATOSORIAD632 MINGW64 /c/EB/tresos/workspace/Can_example_S32K144
 $ make build
