@@ -1,0 +1,290 @@
+<?xml version='1.0'?>
+<datamodel version="7.0" 
+           xmlns="http://www.tresos.de/_projects/DataModel2/16/root.xsd" 
+           xmlns:a="http://www.tresos.de/_projects/DataModel2/16/attribute.xsd" 
+           xmlns:v="http://www.tresos.de/_projects/DataModel2/06/schema.xsd" 
+           xmlns:d="http://www.tresos.de/_projects/DataModel2/06/data.xsd">
+
+  <d:ctr type="AUTOSAR" factory="autosar" 
+         xmlns:ad="http://www.tresos.de/_projects/DataModel2/08/admindata.xsd" 
+         xmlns:cd="http://www.tresos.de/_projects/DataModel2/08/customdata.xsd" 
+         xmlns:f="http://www.tresos.de/_projects/DataModel2/14/formulaexpr.xsd" 
+         xmlns:icc="http://www.tresos.de/_projects/DataModel2/08/implconfigclass.xsd" 
+         xmlns:mt="http://www.tresos.de/_projects/DataModel2/11/multitest.xsd"  
+         xmlns:variant="http://www.tresos.de/_projects/DataModel2/11/variant.xsd">
+    <d:lst type="TOP-LEVEL-PACKAGES">
+      <d:ctr name="MemAcc" type="AR-PACKAGE">
+        <d:lst type="ELEMENTS">
+          <d:chc name="MemAcc" type="AR-ELEMENT" value="MODULE-CONFIGURATION">
+            <d:ctr type="MODULE-CONFIGURATION">
+              <a:a name="DEF" value="ASPath:/TS_T40D2M20I0R0/MemAcc"/>
+              <d:var name="POST_BUILD_VARIANT_USED" type="BOOLEAN" value="false">
+                <a:a name="IMPORTER_INFO" value="@DEF"/>
+              </d:var>
+              <d:var name="IMPLEMENTATION_CONFIG_VARIANT" type="ENUMERATION" 
+                     value="VariantPreCompile"/>
+              <d:ctr name="MemAccGeneral" type="IDENTIFIABLE">
+                <d:var name="MemAccDevErrorDetect" type="BOOLEAN" value="false">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="MemAccUseMemFuncPtrTable" type="BOOLEAN" 
+                       value="false">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="MemAcc64BitSupport" type="BOOLEAN" value="false">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="MemAccCompareApi" type="BOOLEAN" value="false">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="MemAccCompareBufferSize" type="INTEGER" value="128">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="MemAccMainFunctionPeriod" type="FLOAT" value="0.2">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="MemAccTimeoutMethod" type="ENUMERATION" 
+                       value="OSIF_COUNTER_DUMMY">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+              </d:ctr>
+              <d:lst name="MemAccAddressAreaConfiguration" type="MAP">
+                <d:ctr name="MemAccAddressAreaConfiguration_0" 
+                       type="IDENTIFIABLE">
+                  <d:var name="MemAccAddressAreaId" type="INTEGER" value="0">
+                    <a:a name="IMPORTER_INFO">
+                      <a:v>@DEF</a:v>
+                      <a:v>@CALC</a:v>
+                    </a:a>
+                  </d:var>
+                  <d:var name="MemAccAddressAreaPriority" type="INTEGER" 
+                         value="0">
+                    <a:a name="IMPORTER_INFO" value="@DEF"/>
+                  </d:var>
+                  <d:var name="MemAccBufferAlignmentValue" type="INTEGER" 
+                         value="1"/>
+                  <d:var name="MemAccJobEndNotificationName" 
+                         type="FUNCTION-NAME" value="Fee_JobEndNotification"/>
+                  <d:lst name="MemAccSubAddressAreaConfiguration" type="MAP">
+                    <d:ctr name="MemAccSubAddressAreaConfiguration_0" 
+                           type="IDENTIFIABLE">
+                      <d:var name="MemAccLogicalStartAddress" type="INTEGER" 
+                             value="0">
+                        <a:a name="IMPORTER_INFO">
+                          <a:v>@DEF</a:v>
+                          <a:v>@CALC</a:v>
+                        </a:a>
+                      </d:var>
+                      <d:var name="MemAccSectorOffset" type="INTEGER" value="0">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="MemAccNumberOfSectors" type="INTEGER" 
+                             value="1">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="MemAccMemInvocation" type="ENUMERATION" 
+                             value="INDIRECT_STATIC"/>
+                      <d:var name="MemAccMemNamePrefix" type="STRING" 
+                             value="Mem_43_INFLS"/>
+                      <d:var name="MemAccNumberOfEraseRetries" type="INTEGER" 
+                             value="0">
+                        <a:a name="ENABLE" value="false"/>
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="MemAccNumberOfWriteRetries" type="INTEGER" 
+                             value="0">
+                        <a:a name="ENABLE" value="false"/>
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="MemAccUseEraseBurst" type="BOOLEAN" 
+                             value="false">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="MemAccUseReadBurst" type="BOOLEAN" 
+                             value="false">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="MemAccUseWriteBurst" type="BOOLEAN" 
+                             value="false">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:ref name="MemAccSectorBatchRef" type="REFERENCE" 
+                             value="ASPath:/Mem_43_INFLS/Mem/MemInstance_0/MemSectorBatch_0"/>
+                    </d:ctr>
+                    <d:ctr name="MemAccSubAddressAreaConfiguration_1" 
+                           type="IDENTIFIABLE">
+                      <d:var name="MemAccLogicalStartAddress" type="INTEGER" 
+                             value="2048">
+                        <a:a name="IMPORTER_INFO">
+                          <a:v>@CALC</a:v>
+                          <a:v>@DEF</a:v>
+                        </a:a>
+                      </d:var>
+                      <d:var name="MemAccSectorOffset" type="INTEGER" value="0">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="MemAccNumberOfSectors" type="INTEGER" 
+                             value="1">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="MemAccMemInvocation" type="ENUMERATION" 
+                             value="INDIRECT_STATIC"/>
+                      <d:var name="MemAccMemNamePrefix" type="STRING" 
+                             value="Mem_43_INFLS"/>
+                      <d:var name="MemAccNumberOfEraseRetries" type="INTEGER" 
+                             value="0">
+                        <a:a name="ENABLE" value="false"/>
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="MemAccNumberOfWriteRetries" type="INTEGER" 
+                             value="0">
+                        <a:a name="ENABLE" value="false"/>
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="MemAccUseEraseBurst" type="BOOLEAN" 
+                             value="false">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="MemAccUseReadBurst" type="BOOLEAN" 
+                             value="false">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="MemAccUseWriteBurst" type="BOOLEAN" 
+                             value="false">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:ref name="MemAccSectorBatchRef" type="REFERENCE" 
+                             value="ASPath:/Mem_43_INFLS/Mem/MemInstance_0/MemSectorBatch_1"/>
+                    </d:ctr>
+                    <d:ctr name="MemAccSubAddressAreaConfiguration_2" 
+                           type="IDENTIFIABLE">
+                      <d:var name="MemAccLogicalStartAddress" type="INTEGER" 
+                             value="4096"/>
+                      <d:var name="MemAccSectorOffset" type="INTEGER" value="0">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="MemAccNumberOfSectors" type="INTEGER" 
+                             value="1">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="MemAccMemInvocation" type="ENUMERATION" 
+                             value="INDIRECT_STATIC"/>
+                      <d:var name="MemAccMemNamePrefix" type="STRING" 
+                             value="Mem_43_INFLS"/>
+                      <d:var name="MemAccNumberOfEraseRetries" type="INTEGER" 
+                             value="0">
+                        <a:a name="ENABLE" value="false"/>
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="MemAccNumberOfWriteRetries" type="INTEGER" 
+                             value="0">
+                        <a:a name="ENABLE" value="false"/>
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="MemAccUseEraseBurst" type="BOOLEAN" 
+                             value="false">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="MemAccUseReadBurst" type="BOOLEAN" 
+                             value="false">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="MemAccUseWriteBurst" type="BOOLEAN" 
+                             value="false">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:ref name="MemAccSectorBatchRef" type="REFERENCE" 
+                             value="ASPath:/Mem_43_INFLS/Mem/MemInstance_0/MemSectorBatch_2"/>
+                    </d:ctr>
+                    <d:ctr name="MemAccSubAddressAreaConfiguration_3" 
+                           type="IDENTIFIABLE">
+                      <d:var name="MemAccLogicalStartAddress" type="INTEGER" 
+                             value="6144">
+                        <a:a name="IMPORTER_INFO">
+                          <a:v>@CALC</a:v>
+                          <a:v>@DEF</a:v>
+                        </a:a>
+                      </d:var>
+                      <d:var name="MemAccSectorOffset" type="INTEGER" value="0">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="MemAccNumberOfSectors" type="INTEGER" 
+                             value="1">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="MemAccMemInvocation" type="ENUMERATION" 
+                             value="INDIRECT_STATIC"/>
+                      <d:var name="MemAccMemNamePrefix" type="STRING" 
+                             value="Mem_43_INFLS"/>
+                      <d:var name="MemAccNumberOfEraseRetries" type="INTEGER" 
+                             value="0">
+                        <a:a name="ENABLE" value="false"/>
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="MemAccNumberOfWriteRetries" type="INTEGER" 
+                             value="0">
+                        <a:a name="ENABLE" value="false"/>
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="MemAccUseEraseBurst" type="BOOLEAN" 
+                             value="false">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="MemAccUseReadBurst" type="BOOLEAN" 
+                             value="false">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="MemAccUseWriteBurst" type="BOOLEAN" 
+                             value="false">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:ref name="MemAccSectorBatchRef" type="REFERENCE" 
+                             value="ASPath:/Mem_43_INFLS/Mem/MemInstance_0/MemSectorBatch_3"/>
+                    </d:ctr>
+                  </d:lst>
+                </d:ctr>
+              </d:lst>
+              <d:ctr name="AutosarExt" type="IDENTIFIABLE">
+                <d:var name="MemAccEnableUserModeSupport" type="BOOLEAN" 
+                       value="false">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+              </d:ctr>
+              <d:ctr name="CommonPublishedInformation" type="IDENTIFIABLE">
+                <d:var name="ArReleaseMajorVersion" type="INTEGER" value="4">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="ArReleaseMinorVersion" type="INTEGER" value="7">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="ArReleaseRevisionVersion" type="INTEGER" value="0">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="ModuleId" type="INTEGER" value="41">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="SwMajorVersion" type="INTEGER" value="2">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="SwMinorVersion" type="INTEGER" value="0">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="SwPatchVersion" type="INTEGER" value="0">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="VendorApiInfix" type="STRING" value="">
+                  <a:a name="ENABLE" value="false"/>
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="VendorId" type="INTEGER" value="43">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+              </d:ctr>
+            </d:ctr>
+          </d:chc>
+        </d:lst>
+      </d:ctr>
+    </d:lst>
+  </d:ctr>
+
+</datamodel>
