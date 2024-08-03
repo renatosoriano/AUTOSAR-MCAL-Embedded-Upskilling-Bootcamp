@@ -300,7 +300,8 @@ _<-- Back to [Table of Contents](#table-of-contents)_
 
 You can find here the [**Documentation**](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Documentation/) reference regarding:
 * [AUTOSAR Driver Specification.](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/tree/main/Documentation/AUTOSAR%20Driver%20Specification)
-* [EB Tresos S32K1 MCAL drivers.](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/tree/main/Documentation/EB%20Tresos%20MCAL%20Real%20Time%20Drivers)
+* [NXP EB Tresos MCAL drivers Integration/User Manuals.](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/tree/main/Documentation/NXP%20EB%20Tresos%20MCAL%20drivers%20Integration-User%20Manuals)
+* [NXP EB Tresos S32K144 MCAL drivers Project Examples.](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/tree/main/Documentation/NXP%20EB%20Tresos%20S32K144%20MCAL%20drivers%20Project%20Examples)
 * [Compiler Manuals.](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/tree/main/Documentation/Manuals)
 * [NXP S32K144 Board.](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/tree/main/Documentation/S32K144%20Board)
 * [Modular S-1 Board.](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/tree/main/Documentation/Modular%20S-1%20Board)
@@ -325,12 +326,12 @@ It is divided in folders for each of the MCAL drivers worked, and inside you wil
 10. [CAN driver.](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/tree/main/Tresos_Workspace/9_CAN_driver)
 11. [CANIF driver.](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/tree/main/Tresos_Workspace/10_CANIF_driver)
 
-For easier understanding using EB Tresos, when doing each of the MCAL Modules Examples and Exercises, highly recommend going to [**Documentation**](#5-documentation) and read [EB Tresos S32K1 MCAL drivers User Manuals](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/tree/main/Documentation/EB%20Tresos%20MCAL%20Real%20Time%20Drivers), they explain how to configure each MCAL from the EB Tresos GUI perspective.
+For easier understanding using EB Tresos, when doing each of the MCAL Modules Examples and Exercises, highly recommend going to [**Documentation**](#5-documentation) and read [NXP EB Tresos MCAL drivers Integration/User Manuals](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/tree/main/Documentation/NXP%20EB%20Tresos%20MCAL%20drivers%20Integration-User%20Manuals), they explain how to configure each MCAL from the EB Tresos GUI perspective.
 Here is an example:
 
 ![EB_Tresos_S32K1_MCAL_User_Manual_Example.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/EB_Tresos_S32K1_MCAL_User_Manual_Example.png)
 
-Even more interesting, NXP provides within the RTD driver installation a series of [NXP EB Tresos MCAL Examples](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/tree/main/Documentation/NXP%20EB%20Tresos%20MCAL%20Examples) that can be used as reference for each of the MCAL Modules in EB Tresos. These are located in:
+Even more interesting, NXP provides within the RTD driver installation a series of [NXP EB Tresos S32K144 MCAL drivers Project Examples](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/tree/main/Documentation/NXP%20EB%20Tresos%20S32K144%20MCAL%20drivers%20Project%20Examples) that can be used as reference for each of the MCAL Modules in EB Tresos. These are located in:
 
 ```c
 C:\NXP\SW32K1_S32M24x_RTD_R21-11_2.0.0_P04\eclipse\plugins\<Driver>_TS_T40D2M20I0R0\examples\EBT\S32K1
