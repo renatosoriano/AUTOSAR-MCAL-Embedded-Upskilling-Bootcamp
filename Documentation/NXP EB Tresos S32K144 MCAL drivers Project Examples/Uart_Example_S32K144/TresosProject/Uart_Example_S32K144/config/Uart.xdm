@@ -1,0 +1,965 @@
+<?xml version='1.0'?>
+<datamodel version="7.0" 
+           xmlns="http://www.tresos.de/_projects/DataModel2/16/root.xsd" 
+           xmlns:a="http://www.tresos.de/_projects/DataModel2/16/attribute.xsd" 
+           xmlns:v="http://www.tresos.de/_projects/DataModel2/06/schema.xsd" 
+           xmlns:d="http://www.tresos.de/_projects/DataModel2/06/data.xsd">
+
+  <d:ctr type="AUTOSAR" factory="autosar" 
+         xmlns:ad="http://www.tresos.de/_projects/DataModel2/08/admindata.xsd" 
+         xmlns:cd="http://www.tresos.de/_projects/DataModel2/08/customdata.xsd" 
+         xmlns:f="http://www.tresos.de/_projects/DataModel2/14/formulaexpr.xsd" 
+         xmlns:icc="http://www.tresos.de/_projects/DataModel2/08/implconfigclass.xsd" 
+         xmlns:mt="http://www.tresos.de/_projects/DataModel2/11/multitest.xsd"  
+         xmlns:variant="http://www.tresos.de/_projects/DataModel2/11/variant.xsd">
+    <d:lst type="TOP-LEVEL-PACKAGES">
+      <d:ctr name="Uart" type="AR-PACKAGE">
+        <d:lst type="ELEMENTS">
+          <d:chc name="Uart" type="AR-ELEMENT" value="MODULE-CONFIGURATION">
+            <d:ctr type="MODULE-CONFIGURATION">
+              <a:a name="DEF" value="ASPath:/TS_T40D2M20I0R0/Uart"/>
+              <d:var name="POST_BUILD_VARIANT_USED" type="BOOLEAN" value="true"/>
+              <d:var name="IMPLEMENTATION_CONFIG_VARIANT" type="ENUMERATION" 
+                     value="VariantPreCompile"/>
+              <d:ctr name="GeneralConfiguration" type="IDENTIFIABLE">
+                <d:var name="UartDevErrorDetect" type="BOOLEAN" value="true">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="DisableUartRuntimeErrorDetect" type="BOOLEAN" 
+                       value="false">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="UartMulticoreSupport" type="BOOLEAN" value="false">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="UartEnableUserModeSupport" type="BOOLEAN" 
+                       value="false">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="UartTimeoutMethod" type="ENUMERATION" 
+                       value="OSIF_COUNTER_DUMMY">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="UartTimeoutDuration" type="INTEGER" 
+                       value="10000000">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="UartDmaEnable" type="BOOLEAN" value="false">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="UartVersionInfoApi" type="BOOLEAN" value="true">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="UartCallbackCapability" type="BOOLEAN" 
+                       value="false">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="UartCallback" type="FUNCTION-NAME" value="NULL_PTR">
+                  <a:a name="ENABLE" value="false"/>
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:lst name="UartEcucPartitionRef"/>
+              </d:ctr>
+              <d:ctr name="UartGlobalConfig" type="IDENTIFIABLE">
+                <d:lst name="UartChannel" type="MAP">
+                  <d:ctr name="LPUART0" type="IDENTIFIABLE">
+                    <d:var name="UartHwUsing" type="ENUMERATION" 
+                           value="LPUART_IP">
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="UartChannelId" type="INTEGER" value="0">
+                      <a:a name="IMPORTER_INFO">
+                        <a:v>@DEF</a:v>
+                        <a:v>@CALC</a:v>
+                      </a:a>
+                    </d:var>
+                    <d:ref name="UartClockRef" type="REFERENCE" 
+                           value="ASPath:/Mcu/Mcu/McuModuleConfiguration/McuClockSettingConfig_0/LPUART0_CLK">
+                      <a:a name="VARIANTS" type="Variant">
+                        <variant:pbvcond>
+                          <variant:criterion 
+                                             value="ASPath:/EB/PostBuildSelectable/PostBuildSelectableCriterion"/>
+                          <variant:cond>
+                            <variant:tst expr="0"/>
+                          </variant:cond>
+                        </variant:pbvcond>
+                      </a:a>
+                    </d:ref>
+                    <d:ref name="UartClockRef" type="REFERENCE" 
+                           value="ASPath:/Mcu/Mcu/McuModuleConfiguration/McuClockSettingConfig_0/LPUART0_CLK">
+                      <a:a name="VARIANTS" type="Variant">
+                        <variant:pbvcond>
+                          <variant:criterion 
+                                             value="ASPath:/EB/PostBuildSelectable/PostBuildSelectableCriterion"/>
+                          <variant:cond>
+                            <variant:tst expr="1"/>
+                          </variant:cond>
+                        </variant:pbvcond>
+                      </a:a>
+                    </d:ref>
+                    <d:ref name="UartClockRef" type="REFERENCE" 
+                           value="ASPath:/Mcu/Mcu/McuModuleConfiguration/McuClockSettingConfig_0/LPUART0_CLK">
+                      <a:a name="VARIANTS" type="Variant">
+                        <variant:pbvcond>
+                          <variant:criterion 
+                                             value="ASPath:/EB/PostBuildSelectable/PostBuildSelectableCriterion"/>
+                          <variant:cond>
+                            <variant:tst expr="2"/>
+                          </variant:cond>
+                        </variant:pbvcond>
+                      </a:a>
+                    </d:ref>
+                    <d:ref name="UartChannelEcucPartitionRef" type="REFERENCE" >
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:ref>
+                    <d:ctr name="DetailModuleConfiguration" type="IDENTIFIABLE">
+                      <d:var name="UartHwChannel" type="ENUMERATION" 
+                             value="LPUART_0">
+                        <a:a name="IMPORTER_INFO">
+                          <a:v>@DEF</a:v>
+                          <a:v>@CALC</a:v>
+                        </a:a>
+                      </d:var>
+                      <d:var name="DesireBaudrate" type="ENUMERATION" 
+                             value="LPUART_UART_BAUDRATE_9600"/>
+                      <d:var name="CustomBaudrateMantissa" type="INTEGER" 
+                             value="1">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="CustomBaudrateDivisor" type="INTEGER" 
+                             value="4">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="CustomBaudrateValue" type="INTEGER" 
+                             value="1000000">
+                        <a:a name="IMPORTER_INFO">
+                          <a:v>@DEF</a:v>
+                          <a:v>@CALC</a:v>
+                        </a:a>
+                      </d:var>
+                      <d:var name="UartInteruptDmaMethod" type="ENUMERATION" 
+                             value="LPUART_UART_IP_USING_INTERRUPTS">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        <a:a name="VARIANTS" type="Variant">
+                          <variant:pbvcond>
+                            <variant:criterion 
+                                               value="ASPath:/EB/PostBuildSelectable/PostBuildSelectableCriterion"/>
+                            <variant:cond>
+                              <variant:tst expr="0"/>
+                            </variant:cond>
+                          </variant:pbvcond>
+                        </a:a>
+                      </d:var>
+                      <d:var name="UartInteruptDmaMethod" type="ENUMERATION" 
+                             value="LPUART_UART_IP_USING_INTERRUPTS">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        <a:a name="VARIANTS" type="Variant">
+                          <variant:pbvcond>
+                            <variant:criterion 
+                                               value="ASPath:/EB/PostBuildSelectable/PostBuildSelectableCriterion"/>
+                            <variant:cond>
+                              <variant:tst expr="1"/>
+                            </variant:cond>
+                          </variant:pbvcond>
+                        </a:a>
+                      </d:var>
+                      <d:var name="UartInteruptDmaMethod" type="ENUMERATION" 
+                             value="LPUART_UART_IP_USING_INTERRUPTS">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        <a:a name="VARIANTS" type="Variant">
+                          <variant:pbvcond>
+                            <variant:criterion 
+                                               value="ASPath:/EB/PostBuildSelectable/PostBuildSelectableCriterion"/>
+                            <variant:cond>
+                              <variant:tst expr="2"/>
+                            </variant:cond>
+                          </variant:pbvcond>
+                        </a:a>
+                      </d:var>
+                      <d:ref name="UartDmaTxChannelRef" type="REFERENCE" >
+                        <a:a name="ENABLE" value="false"/>
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        <a:a name="VARIANTS" type="Variant">
+                          <variant:pbvcond>
+                            <variant:criterion 
+                                               value="ASPath:/EB/PostBuildSelectable/PostBuildSelectableCriterion"/>
+                            <variant:cond>
+                              <variant:tst expr="0"/>
+                            </variant:cond>
+                          </variant:pbvcond>
+                        </a:a>
+                      </d:ref>
+                      <d:ref name="UartDmaTxChannelRef" type="REFERENCE" >
+                        <a:a name="ENABLE" value="false"/>
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        <a:a name="VARIANTS" type="Variant">
+                          <variant:pbvcond>
+                            <variant:criterion 
+                                               value="ASPath:/EB/PostBuildSelectable/PostBuildSelectableCriterion"/>
+                            <variant:cond>
+                              <variant:tst expr="1"/>
+                            </variant:cond>
+                          </variant:pbvcond>
+                        </a:a>
+                      </d:ref>
+                      <d:ref name="UartDmaTxChannelRef" type="REFERENCE" >
+                        <a:a name="ENABLE" value="false"/>
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        <a:a name="VARIANTS" type="Variant">
+                          <variant:pbvcond>
+                            <variant:criterion 
+                                               value="ASPath:/EB/PostBuildSelectable/PostBuildSelectableCriterion"/>
+                            <variant:cond>
+                              <variant:tst expr="2"/>
+                            </variant:cond>
+                          </variant:pbvcond>
+                        </a:a>
+                      </d:ref>
+                      <d:ref name="UartDmaRxChannelRef" type="REFERENCE" >
+                        <a:a name="ENABLE" value="false"/>
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        <a:a name="VARIANTS" type="Variant">
+                          <variant:pbvcond>
+                            <variant:criterion 
+                                               value="ASPath:/EB/PostBuildSelectable/PostBuildSelectableCriterion"/>
+                            <variant:cond>
+                              <variant:tst expr="0"/>
+                            </variant:cond>
+                          </variant:pbvcond>
+                        </a:a>
+                      </d:ref>
+                      <d:ref name="UartDmaRxChannelRef" type="REFERENCE" >
+                        <a:a name="ENABLE" value="false"/>
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        <a:a name="VARIANTS" type="Variant">
+                          <variant:pbvcond>
+                            <variant:criterion 
+                                               value="ASPath:/EB/PostBuildSelectable/PostBuildSelectableCriterion"/>
+                            <variant:cond>
+                              <variant:tst expr="1"/>
+                            </variant:cond>
+                          </variant:pbvcond>
+                        </a:a>
+                      </d:ref>
+                      <d:ref name="UartDmaRxChannelRef" type="REFERENCE" >
+                        <a:a name="ENABLE" value="false"/>
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        <a:a name="VARIANTS" type="Variant">
+                          <variant:pbvcond>
+                            <variant:criterion 
+                                               value="ASPath:/EB/PostBuildSelectable/PostBuildSelectableCriterion"/>
+                            <variant:cond>
+                              <variant:tst expr="2"/>
+                            </variant:cond>
+                          </variant:pbvcond>
+                        </a:a>
+                      </d:ref>
+                      <d:var name="UartParityType" type="ENUMERATION" 
+                             value="LPUART_UART_IP_PARITY_DISABLED">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        <a:a name="VARIANTS" type="Variant">
+                          <variant:pbvcond>
+                            <variant:criterion 
+                                               value="ASPath:/EB/PostBuildSelectable/PostBuildSelectableCriterion"/>
+                            <variant:cond>
+                              <variant:tst expr="0"/>
+                            </variant:cond>
+                          </variant:pbvcond>
+                        </a:a>
+                      </d:var>
+                      <d:var name="UartParityType" type="ENUMERATION" 
+                             value="LPUART_UART_IP_PARITY_DISABLED">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        <a:a name="VARIANTS" type="Variant">
+                          <variant:pbvcond>
+                            <variant:criterion 
+                                               value="ASPath:/EB/PostBuildSelectable/PostBuildSelectableCriterion"/>
+                            <variant:cond>
+                              <variant:tst expr="1"/>
+                            </variant:cond>
+                          </variant:pbvcond>
+                        </a:a>
+                      </d:var>
+                      <d:var name="UartParityType" type="ENUMERATION" 
+                             value="LPUART_UART_IP_PARITY_DISABLED">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        <a:a name="VARIANTS" type="Variant">
+                          <variant:pbvcond>
+                            <variant:criterion 
+                                               value="ASPath:/EB/PostBuildSelectable/PostBuildSelectableCriterion"/>
+                            <variant:cond>
+                              <variant:tst expr="2"/>
+                            </variant:cond>
+                          </variant:pbvcond>
+                        </a:a>
+                      </d:var>
+                      <d:var name="UartStopBitNumber" type="ENUMERATION" 
+                             value="LPUART_UART_IP_ONE_STOP_BIT">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        <a:a name="VARIANTS" type="Variant">
+                          <variant:pbvcond>
+                            <variant:criterion 
+                                               value="ASPath:/EB/PostBuildSelectable/PostBuildSelectableCriterion"/>
+                            <variant:cond>
+                              <variant:tst expr="0"/>
+                            </variant:cond>
+                          </variant:pbvcond>
+                        </a:a>
+                      </d:var>
+                      <d:var name="UartStopBitNumber" type="ENUMERATION" 
+                             value="LPUART_UART_IP_ONE_STOP_BIT">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        <a:a name="VARIANTS" type="Variant">
+                          <variant:pbvcond>
+                            <variant:criterion 
+                                               value="ASPath:/EB/PostBuildSelectable/PostBuildSelectableCriterion"/>
+                            <variant:cond>
+                              <variant:tst expr="1"/>
+                            </variant:cond>
+                          </variant:pbvcond>
+                        </a:a>
+                      </d:var>
+                      <d:var name="UartStopBitNumber" type="ENUMERATION" 
+                             value="LPUART_UART_IP_ONE_STOP_BIT">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        <a:a name="VARIANTS" type="Variant">
+                          <variant:pbvcond>
+                            <variant:criterion 
+                                               value="ASPath:/EB/PostBuildSelectable/PostBuildSelectableCriterion"/>
+                            <variant:cond>
+                              <variant:tst expr="2"/>
+                            </variant:cond>
+                          </variant:pbvcond>
+                        </a:a>
+                      </d:var>
+                      <d:var name="UartWordLength" type="ENUMERATION" 
+                             value="LPUART_UART_IP_8_BITS_PER_CHAR">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        <a:a name="VARIANTS" type="Variant">
+                          <variant:pbvcond>
+                            <variant:criterion 
+                                               value="ASPath:/EB/PostBuildSelectable/PostBuildSelectableCriterion"/>
+                            <variant:cond>
+                              <variant:tst expr="0"/>
+                            </variant:cond>
+                          </variant:pbvcond>
+                        </a:a>
+                      </d:var>
+                      <d:var name="UartWordLength" type="ENUMERATION" 
+                             value="LPUART_UART_IP_8_BITS_PER_CHAR">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        <a:a name="VARIANTS" type="Variant">
+                          <variant:pbvcond>
+                            <variant:criterion 
+                                               value="ASPath:/EB/PostBuildSelectable/PostBuildSelectableCriterion"/>
+                            <variant:cond>
+                              <variant:tst expr="1"/>
+                            </variant:cond>
+                          </variant:pbvcond>
+                        </a:a>
+                      </d:var>
+                      <d:var name="UartWordLength" type="ENUMERATION" 
+                             value="LPUART_UART_IP_8_BITS_PER_CHAR">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        <a:a name="VARIANTS" type="Variant">
+                          <variant:pbvcond>
+                            <variant:criterion 
+                                               value="ASPath:/EB/PostBuildSelectable/PostBuildSelectableCriterion"/>
+                            <variant:cond>
+                              <variant:tst expr="2"/>
+                            </variant:cond>
+                          </variant:pbvcond>
+                        </a:a>
+                      </d:var>
+                      <d:var name="UartInternalLoopbackEnable" type="BOOLEAN" 
+                             value="false">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="UartTimeoutEnable" type="BOOLEAN" 
+                             value="false">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                    </d:ctr>
+                    <d:ctr name="FlexioModuleConfiguration" type="IDENTIFIABLE">
+                      <d:ref name="UartHwChannelRef" type="REFERENCE" >
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:ref>
+                      <d:var name="FlexioUartInteruptDmaMethod" 
+                             type="ENUMERATION" 
+                             value="FLEXIO_UART_IP_DRIVER_TYPE_INTERRUPTS">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:ref name="FlexioDmaChannelRef" type="REFERENCE" >
+                        <a:a name="ENABLE" value="false"/>
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:ref>
+                      <d:var name="DesireBaudrate" type="ENUMERATION" 
+                             value="FLEXIO_UART_BAUDRATE_9600">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="CustomTimerDecrement" type="ENUMERATION" 
+                             value="FLEXIO_TIMER_DECREMENT_FXIO_CLK_SHIFT_TMR">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="CustomBaudrateDivider" type="INTEGER" 
+                             value="32">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="CustomBaudrateValue" type="INTEGER" value="0">
+                        <a:a name="IMPORTER_INFO">
+                          <a:v>@DEF</a:v>
+                          <a:v>@CALC</a:v>
+                        </a:a>
+                      </d:var>
+                      <d:var name="bitCount" type="ENUMERATION" 
+                             value="FLEXIO_UART_IP_8_BITS_PER_CHAR">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="driverDirection" type="ENUMERATION" 
+                             value="FLEXIO_UART_IP_DIRECTION_TX">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                    </d:ctr>
+                  </d:ctr>
+                  <d:ctr name="FLEXIO0_Rx" type="IDENTIFIABLE">
+                    <d:var name="UartHwUsing" type="ENUMERATION" 
+                           value="FLEXIO_IP">
+                      <a:a name="VARIANTS" type="Variant">
+                        <variant:pbvcond>
+                          <variant:criterion 
+                                             value="ASPath:/EB/PostBuildSelectable/PostBuildSelectableCriterion"/>
+                          <variant:cond>
+                            <variant:tst expr="0"/>
+                          </variant:cond>
+                        </variant:pbvcond>
+                      </a:a>
+                    </d:var>
+                    <d:var name="UartChannelId" type="INTEGER" value="1"/>
+                    <d:ref name="UartClockRef" type="REFERENCE" 
+                           value="ASPath:/Mcu/Mcu/McuModuleConfiguration/McuClockSettingConfig_0/FLEXIO_CLK">
+                      <a:a name="VARIANTS" type="Variant">
+                        <variant:pbvcond>
+                          <variant:criterion 
+                                             value="ASPath:/EB/PostBuildSelectable/PostBuildSelectableCriterion"/>
+                          <variant:cond>
+                            <variant:tst expr="0"/>
+                          </variant:cond>
+                        </variant:pbvcond>
+                      </a:a>
+                    </d:ref>
+                    <d:ref name="UartChannelEcucPartitionRef" type="REFERENCE" >
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      <a:a name="VARIANTS" type="Variant">
+                        <variant:pbvcond>
+                          <variant:criterion 
+                                             value="ASPath:/EB/PostBuildSelectable/PostBuildSelectableCriterion"/>
+                          <variant:cond>
+                            <variant:tst expr="0"/>
+                          </variant:cond>
+                        </variant:pbvcond>
+                      </a:a>
+                    </d:ref>
+                    <d:ctr name="DetailModuleConfiguration" type="IDENTIFIABLE">
+                      <d:var name="UartHwChannel" type="ENUMERATION" 
+                             value="LPUART_2">
+                        <a:a name="IMPORTER_INFO">
+                          <a:v>@DEF</a:v>
+                          <a:v>@CALC</a:v>
+                        </a:a>
+                        <a:a name="VARIANTS" type="Variant">
+                          <variant:pbvcond>
+                            <variant:criterion 
+                                               value="ASPath:/EB/PostBuildSelectable/PostBuildSelectableCriterion"/>
+                            <variant:cond>
+                              <variant:tst expr="0"/>
+                            </variant:cond>
+                          </variant:pbvcond>
+                        </a:a>
+                      </d:var>
+                      <d:var name="DesireBaudrate" type="ENUMERATION" 
+                             value="LPUART_UART_BAUDRATE_9600">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        <a:a name="VARIANTS" type="Variant">
+                          <variant:pbvcond>
+                            <variant:criterion 
+                                               value="ASPath:/EB/PostBuildSelectable/PostBuildSelectableCriterion"/>
+                            <variant:cond>
+                              <variant:tst expr="0"/>
+                            </variant:cond>
+                          </variant:pbvcond>
+                        </a:a>
+                      </d:var>
+                      <d:var name="CustomBaudrateMantissa" type="INTEGER" 
+                             value="1">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="CustomBaudrateDivisor" type="INTEGER" 
+                             value="4">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="CustomBaudrateValue" type="INTEGER" value="0">
+                        <a:a name="IMPORTER_INFO">
+                          <a:v>@DEF</a:v>
+                          <a:v>@CALC</a:v>
+                        </a:a>
+                      </d:var>
+                      <d:var name="UartInteruptDmaMethod" type="ENUMERATION" 
+                             value="LPUART_UART_IP_USING_INTERRUPTS">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        <a:a name="VARIANTS" type="Variant">
+                          <variant:pbvcond>
+                            <variant:criterion 
+                                               value="ASPath:/EB/PostBuildSelectable/PostBuildSelectableCriterion"/>
+                            <variant:cond>
+                              <variant:tst expr="0"/>
+                            </variant:cond>
+                          </variant:pbvcond>
+                        </a:a>
+                      </d:var>
+                      <d:ref name="UartDmaTxChannelRef" type="REFERENCE" >
+                        <a:a name="ENABLE" value="false"/>
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        <a:a name="VARIANTS" type="Variant">
+                          <variant:pbvcond>
+                            <variant:criterion 
+                                               value="ASPath:/EB/PostBuildSelectable/PostBuildSelectableCriterion"/>
+                            <variant:cond>
+                              <variant:tst expr="0"/>
+                            </variant:cond>
+                          </variant:pbvcond>
+                        </a:a>
+                      </d:ref>
+                      <d:ref name="UartDmaRxChannelRef" type="REFERENCE" >
+                        <a:a name="ENABLE" value="false"/>
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        <a:a name="VARIANTS" type="Variant">
+                          <variant:pbvcond>
+                            <variant:criterion 
+                                               value="ASPath:/EB/PostBuildSelectable/PostBuildSelectableCriterion"/>
+                            <variant:cond>
+                              <variant:tst expr="0"/>
+                            </variant:cond>
+                          </variant:pbvcond>
+                        </a:a>
+                      </d:ref>
+                      <d:var name="UartParityType" type="ENUMERATION" 
+                             value="LPUART_UART_IP_PARITY_DISABLED">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        <a:a name="VARIANTS" type="Variant">
+                          <variant:pbvcond>
+                            <variant:criterion 
+                                               value="ASPath:/EB/PostBuildSelectable/PostBuildSelectableCriterion"/>
+                            <variant:cond>
+                              <variant:tst expr="0"/>
+                            </variant:cond>
+                          </variant:pbvcond>
+                        </a:a>
+                      </d:var>
+                      <d:var name="UartStopBitNumber" type="ENUMERATION" 
+                             value="LPUART_UART_IP_ONE_STOP_BIT">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        <a:a name="VARIANTS" type="Variant">
+                          <variant:pbvcond>
+                            <variant:criterion 
+                                               value="ASPath:/EB/PostBuildSelectable/PostBuildSelectableCriterion"/>
+                            <variant:cond>
+                              <variant:tst expr="0"/>
+                            </variant:cond>
+                          </variant:pbvcond>
+                        </a:a>
+                      </d:var>
+                      <d:var name="UartWordLength" type="ENUMERATION" 
+                             value="LPUART_UART_IP_8_BITS_PER_CHAR">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        <a:a name="VARIANTS" type="Variant">
+                          <variant:pbvcond>
+                            <variant:criterion 
+                                               value="ASPath:/EB/PostBuildSelectable/PostBuildSelectableCriterion"/>
+                            <variant:cond>
+                              <variant:tst expr="0"/>
+                            </variant:cond>
+                          </variant:pbvcond>
+                        </a:a>
+                      </d:var>
+                      <d:var name="UartInternalLoopbackEnable" type="BOOLEAN" 
+                             value="false">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="UartTimeoutEnable" type="BOOLEAN" 
+                             value="false">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                    </d:ctr>
+                    <d:ctr name="FlexioModuleConfiguration" type="IDENTIFIABLE">
+                      <d:ref name="UartHwChannelRef" type="REFERENCE" 
+                             value="ASPath:/Mcl/Mcl/MclConfig/FlexioCommon_0/Flexio_Rx"/>
+                      <d:var name="FlexioUartInteruptDmaMethod" 
+                             type="ENUMERATION" 
+                             value="FLEXIO_UART_IP_DRIVER_TYPE_INTERRUPTS">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        <a:a name="VARIANTS" type="Variant">
+                          <variant:pbvcond>
+                            <variant:criterion 
+                                               value="ASPath:/EB/PostBuildSelectable/PostBuildSelectableCriterion"/>
+                            <variant:cond>
+                              <variant:tst expr="0"/>
+                            </variant:cond>
+                          </variant:pbvcond>
+                        </a:a>
+                      </d:var>
+                      <d:ref name="FlexioDmaChannelRef" type="REFERENCE" >
+                        <a:a name="ENABLE" value="false"/>
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        <a:a name="VARIANTS" type="Variant">
+                          <variant:pbvcond>
+                            <variant:criterion 
+                                               value="ASPath:/EB/PostBuildSelectable/PostBuildSelectableCriterion"/>
+                            <variant:cond>
+                              <variant:tst expr="0"/>
+                            </variant:cond>
+                          </variant:pbvcond>
+                        </a:a>
+                      </d:ref>
+                      <d:var name="DesireBaudrate" type="ENUMERATION" 
+                             value="FLEXIO_UART_BAUDRATE_9600">
+                        <a:a name="VARIANTS" type="Variant">
+                          <variant:pbvcond>
+                            <variant:criterion 
+                                               value="ASPath:/EB/PostBuildSelectable/PostBuildSelectableCriterion"/>
+                            <variant:cond>
+                              <variant:tst expr="0"/>
+                            </variant:cond>
+                          </variant:pbvcond>
+                        </a:a>
+                      </d:var>
+                      <d:var name="CustomTimerDecrement" type="ENUMERATION" 
+                             value="FLEXIO_TIMER_DECREMENT_FXIO_CLK_SHIFT_TMR">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="CustomBaudrateDivider" type="INTEGER" 
+                             value="32">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="CustomBaudrateValue" type="INTEGER" 
+                             value="60606">
+                        <a:a name="IMPORTER_INFO">
+                          <a:v>@DEF</a:v>
+                          <a:v>@CALC</a:v>
+                        </a:a>
+                      </d:var>
+                      <d:var name="bitCount" type="ENUMERATION" 
+                             value="FLEXIO_UART_IP_8_BITS_PER_CHAR">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        <a:a name="VARIANTS" type="Variant">
+                          <variant:pbvcond>
+                            <variant:criterion 
+                                               value="ASPath:/EB/PostBuildSelectable/PostBuildSelectableCriterion"/>
+                            <variant:cond>
+                              <variant:tst expr="0"/>
+                            </variant:cond>
+                          </variant:pbvcond>
+                        </a:a>
+                      </d:var>
+                      <d:var name="driverDirection" type="ENUMERATION" 
+                             value="FLEXIO_UART_IP_DIRECTION_RX">
+                        <a:a name="VARIANTS" type="Variant">
+                          <variant:pbvcond>
+                            <variant:criterion 
+                                               value="ASPath:/EB/PostBuildSelectable/PostBuildSelectableCriterion"/>
+                            <variant:cond>
+                              <variant:tst expr="0"/>
+                            </variant:cond>
+                          </variant:pbvcond>
+                        </a:a>
+                      </d:var>
+                    </d:ctr>
+                  </d:ctr>
+                  <d:ctr name="FLEXIO1_Tx" type="IDENTIFIABLE">
+                    <d:var name="UartHwUsing" type="ENUMERATION" 
+                           value="FLEXIO_IP">
+                      <a:a name="VARIANTS" type="Variant">
+                        <variant:pbvcond>
+                          <variant:criterion 
+                                             value="ASPath:/EB/PostBuildSelectable/PostBuildSelectableCriterion"/>
+                          <variant:cond>
+                            <variant:tst expr="0"/>
+                          </variant:cond>
+                        </variant:pbvcond>
+                      </a:a>
+                    </d:var>
+                    <d:var name="UartChannelId" type="INTEGER" value="2"/>
+                    <d:ref name="UartClockRef" type="REFERENCE" 
+                           value="ASPath:/Mcu/Mcu/McuModuleConfiguration/McuClockSettingConfig_0/FLEXIO_CLK">
+                      <a:a name="VARIANTS" type="Variant">
+                        <variant:pbvcond>
+                          <variant:criterion 
+                                             value="ASPath:/EB/PostBuildSelectable/PostBuildSelectableCriterion"/>
+                          <variant:cond>
+                            <variant:tst expr="0"/>
+                          </variant:cond>
+                        </variant:pbvcond>
+                      </a:a>
+                    </d:ref>
+                    <d:ref name="UartChannelEcucPartitionRef" type="REFERENCE" >
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      <a:a name="VARIANTS" type="Variant">
+                        <variant:pbvcond>
+                          <variant:criterion 
+                                             value="ASPath:/EB/PostBuildSelectable/PostBuildSelectableCriterion"/>
+                          <variant:cond>
+                            <variant:tst expr="0"/>
+                          </variant:cond>
+                        </variant:pbvcond>
+                      </a:a>
+                    </d:ref>
+                    <d:ctr name="DetailModuleConfiguration" type="IDENTIFIABLE">
+                      <d:var name="UartHwChannel" type="ENUMERATION" value="">
+                        <a:a name="IMPORTER_INFO">
+                          <a:v>@DEF</a:v>
+                          <a:v>@CALC</a:v>
+                        </a:a>
+                        <a:a name="VARIANTS" type="Variant">
+                          <variant:pbvcond>
+                            <variant:criterion 
+                                               value="ASPath:/EB/PostBuildSelectable/PostBuildSelectableCriterion"/>
+                            <variant:cond>
+                              <variant:tst expr="0"/>
+                            </variant:cond>
+                          </variant:pbvcond>
+                        </a:a>
+                      </d:var>
+                      <d:var name="DesireBaudrate" type="ENUMERATION" 
+                             value="LPUART_UART_BAUDRATE_9600">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        <a:a name="VARIANTS" type="Variant">
+                          <variant:pbvcond>
+                            <variant:criterion 
+                                               value="ASPath:/EB/PostBuildSelectable/PostBuildSelectableCriterion"/>
+                            <variant:cond>
+                              <variant:tst expr="0"/>
+                            </variant:cond>
+                          </variant:pbvcond>
+                        </a:a>
+                      </d:var>
+                      <d:var name="CustomBaudrateMantissa" type="INTEGER" 
+                             value="1">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="CustomBaudrateDivisor" type="INTEGER" 
+                             value="4">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="CustomBaudrateValue" type="INTEGER" value="0">
+                        <a:a name="IMPORTER_INFO">
+                          <a:v>@DEF</a:v>
+                          <a:v>@CALC</a:v>
+                        </a:a>
+                      </d:var>
+                      <d:var name="UartInteruptDmaMethod" type="ENUMERATION" 
+                             value="LPUART_UART_IP_USING_INTERRUPTS">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        <a:a name="VARIANTS" type="Variant">
+                          <variant:pbvcond>
+                            <variant:criterion 
+                                               value="ASPath:/EB/PostBuildSelectable/PostBuildSelectableCriterion"/>
+                            <variant:cond>
+                              <variant:tst expr="0"/>
+                            </variant:cond>
+                          </variant:pbvcond>
+                        </a:a>
+                      </d:var>
+                      <d:ref name="UartDmaTxChannelRef" type="REFERENCE" >
+                        <a:a name="ENABLE" value="false"/>
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        <a:a name="VARIANTS" type="Variant">
+                          <variant:pbvcond>
+                            <variant:criterion 
+                                               value="ASPath:/EB/PostBuildSelectable/PostBuildSelectableCriterion"/>
+                            <variant:cond>
+                              <variant:tst expr="0"/>
+                            </variant:cond>
+                          </variant:pbvcond>
+                        </a:a>
+                      </d:ref>
+                      <d:ref name="UartDmaRxChannelRef" type="REFERENCE" >
+                        <a:a name="ENABLE" value="false"/>
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        <a:a name="VARIANTS" type="Variant">
+                          <variant:pbvcond>
+                            <variant:criterion 
+                                               value="ASPath:/EB/PostBuildSelectable/PostBuildSelectableCriterion"/>
+                            <variant:cond>
+                              <variant:tst expr="0"/>
+                            </variant:cond>
+                          </variant:pbvcond>
+                        </a:a>
+                      </d:ref>
+                      <d:var name="UartParityType" type="ENUMERATION" 
+                             value="LPUART_UART_IP_PARITY_DISABLED">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        <a:a name="VARIANTS" type="Variant">
+                          <variant:pbvcond>
+                            <variant:criterion 
+                                               value="ASPath:/EB/PostBuildSelectable/PostBuildSelectableCriterion"/>
+                            <variant:cond>
+                              <variant:tst expr="0"/>
+                            </variant:cond>
+                          </variant:pbvcond>
+                        </a:a>
+                      </d:var>
+                      <d:var name="UartStopBitNumber" type="ENUMERATION" 
+                             value="LPUART_UART_IP_ONE_STOP_BIT">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        <a:a name="VARIANTS" type="Variant">
+                          <variant:pbvcond>
+                            <variant:criterion 
+                                               value="ASPath:/EB/PostBuildSelectable/PostBuildSelectableCriterion"/>
+                            <variant:cond>
+                              <variant:tst expr="0"/>
+                            </variant:cond>
+                          </variant:pbvcond>
+                        </a:a>
+                      </d:var>
+                      <d:var name="UartWordLength" type="ENUMERATION" 
+                             value="LPUART_UART_IP_8_BITS_PER_CHAR">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        <a:a name="VARIANTS" type="Variant">
+                          <variant:pbvcond>
+                            <variant:criterion 
+                                               value="ASPath:/EB/PostBuildSelectable/PostBuildSelectableCriterion"/>
+                            <variant:cond>
+                              <variant:tst expr="0"/>
+                            </variant:cond>
+                          </variant:pbvcond>
+                        </a:a>
+                      </d:var>
+                      <d:var name="UartInternalLoopbackEnable" type="BOOLEAN" 
+                             value="false">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="UartTimeoutEnable" type="BOOLEAN" 
+                             value="false">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                    </d:ctr>
+                    <d:ctr name="FlexioModuleConfiguration" type="IDENTIFIABLE">
+                      <d:ref name="UartHwChannelRef" type="REFERENCE" 
+                             value="ASPath:/Mcl/Mcl/MclConfig/FlexioCommon_0/Flexio_Tx"/>
+                      <d:var name="FlexioUartInteruptDmaMethod" 
+                             type="ENUMERATION" 
+                             value="FLEXIO_UART_IP_DRIVER_TYPE_INTERRUPTS">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        <a:a name="VARIANTS" type="Variant">
+                          <variant:pbvcond>
+                            <variant:criterion 
+                                               value="ASPath:/EB/PostBuildSelectable/PostBuildSelectableCriterion"/>
+                            <variant:cond>
+                              <variant:tst expr="0"/>
+                            </variant:cond>
+                          </variant:pbvcond>
+                        </a:a>
+                      </d:var>
+                      <d:ref name="FlexioDmaChannelRef" type="REFERENCE" >
+                        <a:a name="ENABLE" value="false"/>
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        <a:a name="VARIANTS" type="Variant">
+                          <variant:pbvcond>
+                            <variant:criterion 
+                                               value="ASPath:/EB/PostBuildSelectable/PostBuildSelectableCriterion"/>
+                            <variant:cond>
+                              <variant:tst expr="0"/>
+                            </variant:cond>
+                          </variant:pbvcond>
+                        </a:a>
+                      </d:ref>
+                      <d:var name="DesireBaudrate" type="ENUMERATION" 
+                             value="FLEXIO_UART_BAUDRATE_9600">
+                        <a:a name="VARIANTS" type="Variant">
+                          <variant:pbvcond>
+                            <variant:criterion 
+                                               value="ASPath:/EB/PostBuildSelectable/PostBuildSelectableCriterion"/>
+                            <variant:cond>
+                              <variant:tst expr="0"/>
+                            </variant:cond>
+                          </variant:pbvcond>
+                        </a:a>
+                      </d:var>
+                      <d:var name="CustomTimerDecrement" type="ENUMERATION" 
+                             value="FLEXIO_TIMER_DECREMENT_FXIO_CLK_SHIFT_TMR">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="CustomBaudrateDivider" type="INTEGER" 
+                             value="32">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="CustomBaudrateValue" type="INTEGER" 
+                             value="60606">
+                        <a:a name="IMPORTER_INFO">
+                          <a:v>@DEF</a:v>
+                          <a:v>@CALC</a:v>
+                        </a:a>
+                      </d:var>
+                      <d:var name="bitCount" type="ENUMERATION" 
+                             value="FLEXIO_UART_IP_8_BITS_PER_CHAR">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        <a:a name="VARIANTS" type="Variant">
+                          <variant:pbvcond>
+                            <variant:criterion 
+                                               value="ASPath:/EB/PostBuildSelectable/PostBuildSelectableCriterion"/>
+                            <variant:cond>
+                              <variant:tst expr="0"/>
+                            </variant:cond>
+                          </variant:pbvcond>
+                        </a:a>
+                      </d:var>
+                      <d:var name="driverDirection" type="ENUMERATION" 
+                             value="FLEXIO_UART_IP_DIRECTION_TX">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        <a:a name="VARIANTS" type="Variant">
+                          <variant:pbvcond>
+                            <variant:criterion 
+                                               value="ASPath:/EB/PostBuildSelectable/PostBuildSelectableCriterion"/>
+                            <variant:cond>
+                              <variant:tst expr="0"/>
+                            </variant:cond>
+                          </variant:pbvcond>
+                        </a:a>
+                      </d:var>
+                    </d:ctr>
+                  </d:ctr>
+                </d:lst>
+              </d:ctr>
+              <d:ctr name="CommonPublishedInformation" type="IDENTIFIABLE">
+                <d:var name="ArReleaseMajorVersion" type="INTEGER" value="4">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="ArReleaseMinorVersion" type="INTEGER" value="7">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="ArReleaseRevisionVersion" type="INTEGER" value="0">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="ModuleId" type="INTEGER" value="255">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="SwMajorVersion" type="INTEGER" value="2"/>
+                <d:var name="SwMinorVersion" type="INTEGER" value="0"/>
+                <d:var name="SwPatchVersion" type="INTEGER" value="0"/>
+                <d:var name="VendorApiInfix" type="STRING" value="">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="VendorId" type="INTEGER" value="43">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+              </d:ctr>
+            </d:ctr>
+          </d:chc>
+        </d:lst>
+      </d:ctr>
+    </d:lst>
+  </d:ctr>
+
+</datamodel>
