@@ -1,0 +1,279 @@
+<?xml version='1.0'?>
+<datamodel version="7.0" 
+           xmlns="http://www.tresos.de/_projects/DataModel2/16/root.xsd" 
+           xmlns:a="http://www.tresos.de/_projects/DataModel2/16/attribute.xsd" 
+           xmlns:v="http://www.tresos.de/_projects/DataModel2/06/schema.xsd" 
+           xmlns:d="http://www.tresos.de/_projects/DataModel2/06/data.xsd">
+
+  <d:ctr type="AUTOSAR" factory="autosar" 
+         xmlns:ad="http://www.tresos.de/_projects/DataModel2/08/admindata.xsd" 
+         xmlns:cd="http://www.tresos.de/_projects/DataModel2/08/customdata.xsd" 
+         xmlns:f="http://www.tresos.de/_projects/DataModel2/14/formulaexpr.xsd" 
+         xmlns:icc="http://www.tresos.de/_projects/DataModel2/08/implconfigclass.xsd" 
+         xmlns:mt="http://www.tresos.de/_projects/DataModel2/11/multitest.xsd"  
+         xmlns:variant="http://www.tresos.de/_projects/DataModel2/11/variant.xsd">
+    <d:lst type="TOP-LEVEL-PACKAGES">
+      <d:ctr name="I2s" type="AR-PACKAGE">
+        <d:lst type="ELEMENTS">
+          <d:chc name="I2s" type="AR-ELEMENT" value="MODULE-CONFIGURATION">
+            <d:ctr type="MODULE-CONFIGURATION">
+              <a:a name="DEF" value="ASPath:/TS_T40D2M20I0R0/I2s"/>
+              <d:var name="POST_BUILD_VARIANT_USED" type="BOOLEAN" value="true"/>
+              <d:var name="IMPLEMENTATION_CONFIG_VARIANT" type="ENUMERATION" 
+                     value="VariantPreCompile"/>
+              <d:ctr name="GeneralConfiguration" type="IDENTIFIABLE">
+                <d:var name="I2sDevErrorDetect" type="BOOLEAN" value="true">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="I2sMulticoreSupport" type="BOOLEAN" value="false">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="I2sEnableUserModeSupport" type="BOOLEAN" 
+                       value="false">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="I2sVersionInfoApi" type="BOOLEAN" value="true">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="I2sTimeoutMethod" type="ENUMERATION" 
+                       value="OSIF_COUNTER_DUMMY"/>
+                <d:var name="I2sTimeoutVal" type="INTEGER" value="50000">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:ctr name="I2sSaiSupport" type="IDENTIFIABLE">
+                  <d:var name="I2sSaiEnable" type="BOOLEAN" value="false"/>
+                  <d:var name="SaiIpDevErrorDetect" type="BOOLEAN" value="true">
+                    <a:a name="IMPORTER_INFO" value="@DEF"/>
+                  </d:var>
+                  <d:var name="SaiDmaFeature" type="BOOLEAN" value="false"/>
+                  <d:var name="SaiAutoDisableClockFeature" type="BOOLEAN" 
+                         value="true"/>
+                  <d:var name="SaiFifoPackFeature" type="BOOLEAN" value="false">
+                    <a:a name="IMPORTER_INFO" value="@DEF"/>
+                  </d:var>
+                  <d:var name="SaiBitClkSwapSupport" type="BOOLEAN" 
+                         value="false">
+                    <a:a name="IMPORTER_INFO" value="@DEF"/>
+                  </d:var>
+                  <d:var name="SaiEnableDataMasking" type="BOOLEAN" 
+                         value="false"/>
+                </d:ctr>
+                <d:ctr name="I2sFlexioSupport" type="IDENTIFIABLE">
+                  <d:var name="I2sFlexioI2sEnable" type="BOOLEAN" value="true"/>
+                  <d:var name="FlexioI2sIpDevErrorDetect" type="BOOLEAN" 
+                         value="true">
+                    <a:a name="IMPORTER_INFO" value="@DEF"/>
+                  </d:var>
+                  <d:var name="FlexioI2sDmaFeature" type="BOOLEAN" value="false"/>
+                </d:ctr>
+              </d:ctr>
+              <d:ctr name="I2sConfigSet" type="IDENTIFIABLE">
+                <d:lst name="I2sConfiguration" type="MAP">
+                  <d:ctr name="I2sConfiguration_0" type="IDENTIFIABLE">
+                    <d:var name="I2sIpType" type="ENUMERATION" 
+                           value="FLEXIO_I2S">
+                      <a:a name="VARIANTS" type="Variant">
+                        <variant:pbvcond>
+                          <variant:criterion 
+                                             value="ASPath:/EB/PostBuildSelectable/PostBuildSelectableCriterion"/>
+                          <variant:cond>
+                            <variant:tst expr="0"/>
+                          </variant:cond>
+                        </variant:pbvcond>
+                      </a:a>
+                    </d:var>
+                    <d:var name="I2sLogicalChannelId" type="INTEGER" value="0">
+                      <a:a name="IMPORTER_INFO">
+                        <a:v>@DEF</a:v>
+                        <a:v>@CALC</a:v>
+                      </a:a>
+                    </d:var>
+                    <d:var name="I2sCallback" type="FUNCTION-NAME" 
+                           value="NULL_PTR">
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:ref name="I2sModuleRef" type="REFERENCE" 
+                           value="ASPath:/I2s/I2s/I2sConfigSet/FlexioHwConfiguration_0">
+                      <a:a name="VARIANTS" type="Variant">
+                        <variant:pbvcond>
+                          <variant:criterion 
+                                             value="ASPath:/EB/PostBuildSelectable/PostBuildSelectableCriterion"/>
+                          <variant:cond>
+                            <variant:tst expr="0"/>
+                          </variant:cond>
+                        </variant:pbvcond>
+                      </a:a>
+                    </d:ref>
+                    <d:lst name="I2sChannelEcucPartitionRef"/>
+                  </d:ctr>
+                </d:lst>
+                <d:lst name="SaiHwConfiguration" type="MAP"/>
+                <d:lst name="FlexioHwConfiguration" type="MAP">
+                  <d:ctr name="FlexioHwConfiguration_0" type="IDENTIFIABLE">
+                    <d:var name="FlexioI2sInstanceId" type="INTEGER" value="0">
+                      <a:a name="IMPORTER_INFO">
+                        <a:v>@DEF</a:v>
+                        <a:v>@CALC</a:v>
+                      </a:a>
+                    </d:var>
+                    <d:var name="FlexioI2sBitsWidth" type="INTEGER" value="2">
+                      <a:a name="VARIANTS" type="Variant">
+                        <variant:pbvcond>
+                          <variant:criterion 
+                                             value="ASPath:/EB/PostBuildSelectable/PostBuildSelectableCriterion"/>
+                          <variant:cond>
+                            <variant:tst expr="0"/>
+                          </variant:cond>
+                        </variant:pbvcond>
+                      </a:a>
+                    </d:var>
+                    <d:var name="FlexioI2sMode" type="ENUMERATION" 
+                           value="Master">
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      <a:a name="VARIANTS" type="Variant">
+                        <variant:pbvcond>
+                          <variant:criterion 
+                                             value="ASPath:/EB/PostBuildSelectable/PostBuildSelectableCriterion"/>
+                          <variant:cond>
+                            <variant:tst expr="0"/>
+                          </variant:cond>
+                        </variant:pbvcond>
+                      </a:a>
+                    </d:var>
+                    <d:ref name="FlexioI2sClkSrcRef" type="REFERENCE" 
+                           value="ASPath:/I2s/I2s/I2sClockReferencePoint_0">
+                      <a:a name="VARIANTS" type="Variant">
+                        <variant:pbvcond>
+                          <variant:criterion 
+                                             value="ASPath:/EB/PostBuildSelectable/PostBuildSelectableCriterion"/>
+                          <variant:cond>
+                            <variant:tst expr="0"/>
+                          </variant:cond>
+                        </variant:pbvcond>
+                      </a:a>
+                    </d:ref>
+                    <d:var name="FlexioI2sBaudRate" type="INTEGER" value="20000">
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      <a:a name="VARIANTS" type="Variant">
+                        <variant:pbvcond>
+                          <variant:criterion 
+                                             value="ASPath:/EB/PostBuildSelectable/PostBuildSelectableCriterion"/>
+                          <variant:cond>
+                            <variant:tst expr="0"/>
+                          </variant:cond>
+                        </variant:pbvcond>
+                      </a:a>
+                    </d:var>
+                    <d:var name="FlexioI2sTransferType" type="ENUMERATION" 
+                           value="INTERRUPT">
+                      <a:a name="VARIANTS" type="Variant">
+                        <variant:pbvcond>
+                          <variant:criterion 
+                                             value="ASPath:/EB/PostBuildSelectable/PostBuildSelectableCriterion"/>
+                          <variant:cond>
+                            <variant:tst expr="0"/>
+                          </variant:cond>
+                        </variant:pbvcond>
+                      </a:a>
+                    </d:var>
+                    <d:ref name="FlexioI2sTxLine" type="REFERENCE" 
+                           value="ASPath:/Mcl/Mcl/MclConfig/FlexioCommon_0/FlexioMclLogicChannels_0">
+                      <a:a name="VARIANTS" type="Variant">
+                        <variant:pbvcond>
+                          <variant:criterion 
+                                             value="ASPath:/EB/PostBuildSelectable/PostBuildSelectableCriterion"/>
+                          <variant:cond>
+                            <variant:tst expr="0"/>
+                          </variant:cond>
+                        </variant:pbvcond>
+                      </a:a>
+                    </d:ref>
+                    <d:ref name="FlexioI2sSckLine" type="REFERENCE" 
+                           value="ASPath:/Mcl/Mcl/MclConfig/FlexioCommon_0/FlexioMclLogicChannels_1">
+                      <a:a name="VARIANTS" type="Variant">
+                        <variant:pbvcond>
+                          <variant:criterion 
+                                             value="ASPath:/EB/PostBuildSelectable/PostBuildSelectableCriterion"/>
+                          <variant:cond>
+                            <variant:tst expr="0"/>
+                          </variant:cond>
+                        </variant:pbvcond>
+                      </a:a>
+                    </d:ref>
+                    <d:var name="FlexioI2sRxLine" type="BOOLEAN" value="true">
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      <a:a name="VARIANTS" type="Variant">
+                        <variant:pbvcond>
+                          <variant:criterion 
+                                             value="ASPath:/EB/PostBuildSelectable/PostBuildSelectableCriterion"/>
+                          <variant:cond>
+                            <variant:tst expr="0"/>
+                          </variant:cond>
+                        </variant:pbvcond>
+                      </a:a>
+                    </d:var>
+                    <d:var name="FlexioI2sWsLine" type="BOOLEAN" value="true">
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      <a:a name="VARIANTS" type="Variant">
+                        <variant:pbvcond>
+                          <variant:criterion 
+                                             value="ASPath:/EB/PostBuildSelectable/PostBuildSelectableCriterion"/>
+                          <variant:cond>
+                            <variant:tst expr="0"/>
+                          </variant:cond>
+                        </variant:pbvcond>
+                      </a:a>
+                    </d:var>
+                    <d:ref name="FlexioI2sDmaTxChannel" type="REFERENCE" 
+                           value="ASPath:/Mcl/Mcl/MclConfig/dmaLogicChannel_Type_0">
+                      <a:a name="ENABLE" value="true"/>
+                    </d:ref>
+                    <d:ref name="FlexioI2sDmaRxChannel" type="REFERENCE" 
+                           value="ASPath:/Mcl/Mcl/MclConfig/dmaLogicChannel_Type_1">
+                      <a:a name="ENABLE" value="true"/>
+                    </d:ref>
+                    <d:var name="FlexioI2sCallbackParam" type="FUNCTION-NAME" 
+                           value="NULL_PTR">
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                  </d:ctr>
+                </d:lst>
+              </d:ctr>
+              <d:lst name="I2sEcucPartitionRef"/>
+              <d:ctr name="CommonPublishedInformation" type="IDENTIFIABLE">
+                <d:var name="ArReleaseMajorVersion" type="INTEGER" value="4">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="ArReleaseMinorVersion" type="INTEGER" value="7">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="ArReleaseRevisionVersion" type="INTEGER" value="0">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="ModuleId" type="INTEGER" value="255">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="SwMajorVersion" type="INTEGER" value="2"/>
+                <d:var name="SwMinorVersion" type="INTEGER" value="0"/>
+                <d:var name="SwPatchVersion" type="INTEGER" value="0"/>
+                <d:var name="VendorApiInfix" type="STRING" value="">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="VendorId" type="INTEGER" value="43">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+              </d:ctr>
+              <d:lst name="I2sClockReferencePoint" type="MAP">
+                <d:ctr name="I2sClockReferencePoint_0" type="IDENTIFIABLE">
+                  <d:ref name="I2sClockReference" type="REFERENCE" 
+                         value="ASPath:/Mcu/Mcu/McuModuleConfiguration/McuClockSettingConfig_Default/McuClockReferencePoint_10"/>
+                </d:ctr>
+              </d:lst>
+            </d:ctr>
+          </d:chc>
+        </d:lst>
+      </d:ctr>
+    </d:lst>
+  </d:ctr>
+
+</datamodel>
