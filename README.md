@@ -125,6 +125,12 @@ _Back to [Setup Notes](#4-setup-notes)_
 
 ![Setup_image_6.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/Tools_Setup/Setup_image_6.png)
 
+![Setup_image_30.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/Tools_Setup/Setup_image_30.png)
+
+![Setup_image_31.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/Tools_Setup/Setup_image_31.png)
+
+![Setup_image_32.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/Tools_Setup/Setup_image_32.png)
+
 8. <ins>VERY IMPORTANT: At the moment of installing it do not forget to point it out to the EB Tresos install path!<ins>
 
 ![Setup_image_7.png](https://github.com/renatosoriano/AUTOSAR-MCAL-Embedded-Upskilling-Bootcamp/blob/main/Images/Tools_Setup/Setup_image_7.png)
